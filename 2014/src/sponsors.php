@@ -83,7 +83,22 @@ function sponsorsByLevel(){
                 'desc' => 'GitCafe 是一個基於程式碼託管服務打造的技術協作與分享平台，幫助研發團隊更好的進行專案和程式碼的管理與協作，為企業提供最佳化的工作流程與解決方案；同時助力國內外IT企業打造更好的開發者生態系統，獲得強有力的企業級技術推廣平台。',
             ],
         ], // end of geek
-
+        'developer' => [
+            [
+                'id'   => 'newsoft',
+                'name' => 'NewSoft',
+                'img'  => 'NewSoft.png',
+                'url'  => 'http://www.newsoft.com.tw/',
+                'desc' => '力新國際於行動應用、雲端服務與軟硬體整合等技術與應用上，具深厚的研發實力，致力於提供全方位的雲端行動服務，如：雲端維運管理平台、行動行銷、行動應用策略規劃與UX/UI規劃等，至今客戶涵蓋有電信、政府、金融、科技….等，提供企業多元化的行動雲端應用解決方案。'
+            ],
+//NewSoft Technology Corporation has employed leading-edge technology to 
+//develop a core of powerful software and hardware product integration in 
+//mobile applications and cloud services. We have been developing 
+//applications for cloud computing, mobile marketing, mobile strategy and 
+//UX/UI planning, to provide enterprises a wide range of cloud solutions. 
+//Customers include Telecommunications, government, finance, technology and 
+//other industries.
+//Website: www.newsoftinc.com/',
         'developer' => [
             [
                 'id'   => 'mobilogic',
