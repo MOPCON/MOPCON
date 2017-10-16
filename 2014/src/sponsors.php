@@ -84,7 +84,22 @@ function sponsorsByLevel(){
                 'desc' => '美商新蛋公司(Newegg Inc.)成立於美國加州，是以科技類及消費性電子商品為主要產品核心的全球領先電子商務平台，經營市場遍布美加、歐洲、澳紐、台灣、中國大陸及印度等地。Newegg.com提供業界最新、最快的IT產品，搭配嶄新的服務內容和令人讚嘆的賣場體驗，在全球客戶服務評級中屢次獲得業界領先的殊榮。',
             ],
         ], // end of geek
-
+        'developer' => [
+            [
+                'id'   => 'newsoft',
+                'name' => 'NewSoft',
+                'img'  => 'NewSoft.png',
+                'url'  => 'http://www.newsoft.com.tw/',
+                'desc' => '力新國際於行動應用、雲端服務與軟硬體整合等技術與應用上，具深厚的研發實力，致力於提供全方位的雲端行動服務，如：雲端維運管理平台、行動行銷、行動應用策略規劃與UX/UI規劃等，至今客戶涵蓋有電信、政府、金融、科技….等，提供企業多元化的行動雲端應用解決方案。'
+            ],
+//NewSoft Technology Corporation has employed leading-edge technology to 
+//develop a core of powerful software and hardware product integration in 
+//mobile applications and cloud services. We have been developing 
+//applications for cloud computing, mobile marketing, mobile strategy and 
+//UX/UI planning, to provide enterprises a wide range of cloud solutions. 
+//Customers include Telecommunications, government, finance, technology and 
+//other industries.
+//Website: www.newsoftinc.com/',
         'developer' => [
             [
                 'id'   => 'mobilogic',
