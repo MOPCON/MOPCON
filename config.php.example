@@ -1,18 +1,17 @@
 <?php
-
 return [
-    'base_uri' => 'https://mopcon.org',
+    'base_uri' => 'https://dev.mopcon.org/',
     '2018' => [
-        'sheetKey' => '',
+        'sheetKey' => '1ZF6mWynbUWIb234q5ydqpu9XolNE6CRGcwyLygGaTZ4',
         'sheetGridId' => [
-            'schedule' => '',
-            'speaker' => '',
-            'schedule-unconf' => '',
-            'sponsor' => '',
-            'community' => '',
-            'volunteer' => '',
-            'carousel' => '',
-            'news' => ''
+            'schedule' => 'oaz88cr',
+            'speaker' => 'ozg0bjp',
+            'schedule-unconf' => 'oxo5gdm',
+            'sponsor' => 'o6bk8rc',
+            'community' => 'o95452q',
+            'volunteer' => 'o2invo3',
+            'carousel' => 'oc61n7p',
+            'news' => 'o9dug9m'
         ]
     ]
 ];
