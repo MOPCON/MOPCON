@@ -16096,7 +16096,7 @@ __d("legacy:fb.xfbml.plugins",["IframePlugin","PluginConfig","PluginTags","XFBML
   'use strict';
 
   function getSpreadsheetData(sheetId, callback) {
-    var url = 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/od6/public/values?alt=json';
+    var url = window.location.protocol + '//' + window.location.hostname + '/2017/api/badget.json';
 
     $.getJSON(url, function (data) {
       if (!(data.feed && data.feed.entry)) {
@@ -16159,7 +16159,7 @@ __d("legacy:fb.xfbml.plugins",["IframePlugin","PluginConfig","PluginTags","XFBML
  * heatmap.js v2.0.5 | JavaScript Heatmap Library
  *
  * Copyright 2008-2016 Patrick Wied <heatmapjs@patrick-wied.at> - All rights reserved.
- * Dual licensed under MIT and Beerware license 
+ * Dual licensed under MIT and Beerware license
  *
  * :: 2016-09-05 01:16
  */
