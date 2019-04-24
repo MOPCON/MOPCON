@@ -16095,21 +16095,6 @@ __d("legacy:fb.xfbml.plugins",["IframePlugin","PluginConfig","PluginTags","XFBML
 
   'use strict';
 
-  function getSpreadsheetData(sheetId, callback) {
-    var url = window.location.protocol + '//' + window.location.hostname + '/2017/api/badget.json';
-
-    $.getJSON(url, function (data) {
-      if (!(data.feed && data.feed.entry)) {
-        return callback('Invalid Spreadsheet ID')
-      }
-
-      callback(null, data.feed.entry.map(function (entry) {
-        return rowToObject(entry);
-      }));
-    }).fail(function (err) {
-      callback(err);
-    });
-  }
 
   function rowToObject(cell) {
     var obj = {};
@@ -16152,7 +16137,6 @@ __d("legacy:fb.xfbml.plugins",["IframePlugin","PluginConfig","PluginTags","XFBML
     return obj;
   }
 
-  window.getSpreadsheetData = getSpreadsheetData;
 
 }(jQuery, window));
 /*
