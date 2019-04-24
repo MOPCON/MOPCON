@@ -16095,21 +16095,6 @@ __d("legacy:fb.xfbml.plugins",["IframePlugin","PluginConfig","PluginTags","XFBML
 
   'use strict';
 
-  function getSpreadsheetData(sheetId, callback) {
-    var url = 'https://spreadsheets.google.com/feeds/list/' + sheetId + '/od6/public/values?alt=json';
-
-    $.getJSON(url, function (data) {
-      if (!(data.feed && data.feed.entry)) {
-        return callback('Invalid Spreadsheet ID')
-      }
-
-      callback(null, data.feed.entry.map(function (entry) {
-        return rowToObject(entry);
-      }));
-    }).fail(function (err) {
-      callback(err);
-    });
-  }
 
   function rowToObject(cell) {
     var obj = {};
@@ -16152,14 +16137,13 @@ __d("legacy:fb.xfbml.plugins",["IframePlugin","PluginConfig","PluginTags","XFBML
     return obj;
   }
 
-  window.getSpreadsheetData = getSpreadsheetData;
 
 }(jQuery, window));
 /*
  * heatmap.js v2.0.5 | JavaScript Heatmap Library
  *
  * Copyright 2008-2016 Patrick Wied <heatmapjs@patrick-wied.at> - All rights reserved.
- * Dual licensed under MIT and Beerware license 
+ * Dual licensed under MIT and Beerware license
  *
  * :: 2016-09-05 01:16
  */
