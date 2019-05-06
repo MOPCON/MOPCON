@@ -5,7 +5,6 @@ use MopCon2018\Utils\GoogleDocsSpreadsheet;
 use MopCon2018\Utils\Api;
 use MopConApi2018\App\Models\FieldgameBoothMission;
 use MopConApi2018\App\Models\FieldgameQuiz;
-use MopConApi2018\App\Models\MopConResource;
 use MopConApi2018\App\Models\User;
 use MopConApi2018\App\Models\UserPassbook;
 use MopCon\RedisFactory;
