@@ -56,8 +56,17 @@ class SpeakerService
 
     public function parse(array $row, string $type = 'speaker')
     {
-        $row['session_id'] = $this->sessionSpeakerMapping[$row['speaker_id']];
+        $row['session_id'] = $this->sessionSpeakerMapping[$row['speaker_id']] ?? 0;
         $tags = $this->parseTags($row['tags']);
+        $filterKeys = [
+            'photo_for_' . $type . '_web',
+            'photo_for_' . $type . '_mobile'
+        ];
+        foreach ($filterKeys as $filterkey) {
+            if (!filter_var($filterkey, FILTER_VALIDATE_URL)) {
+                $row[$filterkey] = url($row[$filterkey]);
+            }
+        }
         $row['img'] = [
             'web' => $row['photo_for_' . $type . '_web'],
             'mobile' => $row['photo_for_' . $type . '_mobile'],

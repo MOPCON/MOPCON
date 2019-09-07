@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Service\SpeakerService;
+use Illuminate\Http\Response;
 
 class SpeakerController extends Controller
 {
@@ -48,6 +49,15 @@ class SpeakerController extends Controller
         } catch (\Exception $e) {
             return $this->returnError($e->getMessage());
         }
+    }
+
+    public function imagesView($platform, $name)
+    {
+        $dir = $this->imgPath . 'speaker/'. $platform . '/' . $name . '.*';
+        $path = glob($dir);
+        $path = end($path);
+        $type = mime_content_type($path);
+        return (new Response(file_get_contents($path), 200))->header('Content-Type', $type);
     }
 
     /**

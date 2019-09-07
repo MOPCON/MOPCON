@@ -149,7 +149,7 @@ class SessionController extends Controller
             if (isset($this->sponsors[$speaker['sponsor_id']])) {
                 $session['sponsor_info'] = $this->sponsors[$speaker['sponsor_id']];
             }
-            $session_id = $this->sessionSpeakerMapping[$speaker['speaker_id']];
+            $session_id = $this->sessionSpeakerMapping[$speaker['speaker_id']] ?? 0;
             $session['session_id'] = $session_id;
             $this->convertToMultipleSpeaker($sessions, $session, $session_id);
         }

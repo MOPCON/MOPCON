@@ -85,10 +85,6 @@ class SpeakerControllerTest extends TestCase
     {
         return [
             [
-                'production',
-                0
-            ],
-            [
                 'develop',
                 29
             ],
