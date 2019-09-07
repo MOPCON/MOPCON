@@ -22,7 +22,8 @@
     "morgan": "~1.7.0",
     "owl.carousel": "^2.3.4",
     "request": "^2.81.0",
-    "serve-favicon": "~2.3.2"
+    "serve-favicon": "~2.3.2",
+    "vue-lottie": "^0.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",

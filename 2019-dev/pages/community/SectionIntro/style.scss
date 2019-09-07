@@ -1,0 +1,57 @@
+.section-intro {
+  @include rwd(pad) {
+    min-height: initial;
+    min-height: auto;
+  }
+
+  .banner {
+    @include bgCenter(100%, 447px);
+    background-image: url(./images/introBanner.png);
+    background-repeat: no-repeat;
+    margin-bottom: 108px;
+    @include rwd(pad) {
+      @include bgCenter(100%, 249.4px);
+    }
+  }
+
+  .title {
+    font-size: 32px;
+    @include rwd(pad) {
+      span:nth-child(1) {
+        display: block;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    @include rwd(pad) {
+      flex-flow: column nowrap;
+    }
+  }
+
+  &__info {
+    margin-top: 64px;
+    margin-right: 32px;
+    @include rwd(pad) {
+      margin-right: 0px;
+      text-align: left;
+    }
+    line-height: 2;
+    .join {
+      margin-top: 64px;
+    }
+  }
+
+  &__img {
+    max-width: 558px;
+    flex: 0 0 auto;
+    margin-right: -84px;
+    @include rwd(sm) {
+      margin-right: 0px;
+      width: 100%;
+      height: 211px;
+      margin-top: 48px;
+    }
+  }
+}

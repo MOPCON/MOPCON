@@ -1,0 +1,254 @@
+.section-volunteer-team {
+  margin-top: 108px;
+  @include rwd(pad) {
+    min-height: initial;
+    min-height: auto;
+    margin-top: 86px;
+  }
+
+  .title {
+    font-size: 32px;
+    @include rwd(pad) {
+      display: none;
+    }
+  }
+
+  .title_mobile {
+    font-size: 32px;
+    display: none;
+    @include rwd(pad) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &__message {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 84px;
+    @include rwd(pad) {
+      margin-top: 18px;
+      flex-flow: column nowrap;
+      align-items: center;
+    }
+  }
+
+  &__join {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    max-width: 368px;
+    .message-title {
+      font-size: 32px;
+      margin-bottom: 32px;
+      @include rwd(pad) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__sponsor {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    max-width: 368px;
+    @include rwd(pad) {
+      margin-top: 74px;
+    }
+    .message-title {
+      font-size: 32px;
+      margin-bottom: 32px;
+      @include rwd(pad) {
+        font-size: 24px;
+      }
+    }
+  }
+  @mixin btn($color, $colorBg) {
+    position: relative;
+    padding: 12px 46px;
+    font-size: 19px;
+    border: 1px solid $color;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 32px;
+    z-index: 2;
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      height: 100%;
+      width: 100%;
+      border-radius: 10px;
+    }
+    &::before {
+      top: 0px;
+      left: 0px;
+      background-color: $colorBg;
+      z-index: -1;
+    }
+    &::after {
+      top: 10px;
+      left: 10px;
+      background-color: $color;
+      opacity: 0.19;
+      z-index: -2;
+    }
+    &:hover {
+      transition: all 0.15s;
+      transform: translate(3px, 3px);
+      &::after {
+        top: 0px;
+        left: 0px;
+      }
+    }
+    @include rwd(pad) {
+      padding: 12px 17px;
+    }
+  }  
+
+  .btn-primary {
+    @include btn ($colorPrimary, $colorBg)
+  }
+
+  .btn-third {
+    @include btn ($colorThird, $colorBg);
+  }
+  
+  /* 志工團隊卡片樣式 */
+  &__intro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 56px;
+    @include rwd(pad) {
+      justify-content: flex-start;
+    }
+  }
+  .volunteer {
+    display: flex;
+    margin-bottom: 90px;
+    justify-content: space-around;
+    flex: 0 0 27%;
+    &:nth-child(4n + 4) {
+      flex: 0 0 23%;
+      justify-content: flex-end;
+    }
+    &:nth-child(4n + 1) {
+      flex: 0 0 23%;
+      justify-content: flex-start;
+    }
+    @include rwd(pad) {
+      justify-content: space-around !important;
+      flex: 0 0 50% !important;
+    }
+    &__content {
+      max-width: 177px;
+      text-align: center;
+      color: $colorWhite;
+      &:hover .photo {
+        filter: brightness(0) invert(1);
+      }
+    }
+    .photo {
+      width: 177px;
+      height: 177px;
+      margin-bottom: 13px;
+      @include rwd(pad) {
+        width: 132px;
+        height: 132px;
+      }
+    }
+  }
+  /deep/ .modal.fade .modal-content {
+    max-width: 553px;
+    border-radius: 0px;
+    padding: 0 0 80px 0;
+    @include rwd(pad) {
+      max-width: 325px;
+      padding: 0 0 32px 0;
+    }
+  }
+  /deep/ .close {
+    padding: 22px;
+    float: left;
+    @include rwd(pad) {
+      padding: 22px 0 0 22px;
+    }
+  }
+  .modal-body {
+    display: flex;
+    flex-direction: row;
+    @include rwd(pad) {
+      flex-direction: column;
+      padding: 0px 21px;
+    }
+    .info {
+      border-right: 1px solid $colorPrimary;
+      border-right-style: dashed;
+      flex: 0 0 55%;
+      padding-bottom: 40px;
+      @include rwd(pad) {
+        border-right: 0px;
+        border-right-style: none;
+        border-bottom: 1px solid $colorPrimary;
+        border-bottom-style: dashed;
+        flex: 0 0 55%;
+      }
+      .content {
+        max-width: 220px;
+        margin: 0 auto;
+        text-align: center;
+        @include rwd(pad) {
+          max-width: 100%
+        }
+      }
+      img {
+        width: 112px;
+        height: 112px;
+        @include rwd(pad) {
+          width: 90px;
+          height: 90px;
+        }
+      }
+      .volunteer {
+        &_title {
+          font-size: 24px;
+          margin-top: 17px;
+          margin-bottom: 94px;
+          @include rwd(pad) {
+            margin-top: 6px;
+            margin-bottom: 30px;
+          }
+        }
+        &_intro {
+          text-align: left;
+          @include rwd(pad) {
+            color: $colorPrimary;
+          }
+        }
+      }
+    }
+    .member {
+      flex: 0 0 45%;
+      padding-left: 50px;
+      @include rwd(pad) {
+        margin-top: 22px;
+        padding-left: 0px;
+      }
+      .member_title {
+        margin-bottom: 12px;
+      }
+      .member_name {
+        line-height: 1.88;
+        color: $colorPrimary;
+        @include rwd(pad) {
+          &:nth-child(odd) {
+            padding-left: 18px;
+          }
+          width: 50%;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
