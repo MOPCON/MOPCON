@@ -78,11 +78,7 @@
           .then(({ success, data, message }) => {
             if (success) {
               vm.tempCommunityData = data;
-              if (vm.show === id) {
-                vm.show = -1;
-              } else {
-                vm.show = id;
-              }
+              vm.show = vm.show === id ? -1 : id;
             }
           })
       },
