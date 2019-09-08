@@ -1,7 +1,6 @@
 const path = require('path');
+const axios = require('axios');
 require('dotenv').config();
-
-const eventResult = ['captain-america', 'iron-man', 'hulk', 'black-widow'];
 
 module.exports = {
   mode: 'universal',
@@ -194,12 +193,23 @@ module.exports = {
   generate: {
     dir: path.resolve(__dirname, '../2019/'),
     // dir: '../2019',
-    // 預渲染頁面
-    routes: [
-      '/event/captain-america',
-      '/event/iron-man',
-      '/event/hulk',
-      '/event/black-widow',
-    ],
+    // 從 api 抓取所有講者 id 後動態產生所有講者 html 頁面
+    routes: function() {
+      return axios.get(`${process.env.BASE_URL}/api/2019/speaker`).then(res => {
+        // 攤位遊戲頁面
+        let pages = [
+          '/event/captain-america',
+          '/event/iron-man',
+          '/event/hulk',
+          '/event/black-widow',
+        ];
+
+        // 講者頁面
+        res.data.data.forEach(speaker => {
+          pages.push(`/speaker/${speaker.speaker_id}`);
+        });
+        return pages;
+      });
+    },
   },
 };
