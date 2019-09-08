@@ -138,6 +138,7 @@ module.exports = {
     { src: '~/plugins/vue-clipboard.js', ssr: false },
     { src: '~/plugins/vue-awesom-swiper', ssr: false },
     { src: '~/plugins/vue-social-sharing', ssr: false },
+    { src: '~/plugins/lottie', ssr: false},
     { src: '~/plugins/vue-moment.js' },
   ],
 

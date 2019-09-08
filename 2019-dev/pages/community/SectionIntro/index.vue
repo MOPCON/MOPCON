@@ -20,7 +20,9 @@
           </p>
         </div>
         <div class="section-intro__img">
-          <lottie :options="defaultOptions" v-on:animCreated="handleAnimation" />
+          <no-ssr>
+            <lottie :options="defaultOptions" v-on:animCreated="handleAnimation" />
+          </no-ssr>
         </div>
       </div>
     </section>
@@ -28,14 +30,10 @@
 </template>
 
 <script>
-  import lottie from 'vue-lottie';
   import * as animationData from "./images/lottie/animate.json";
 
   export default {
     name: "sectionIntro",
-    components: {
-      'lottie': lottie
-    },
     data() {
       return {
         defaultOptions: {animationData: animationData.default},
