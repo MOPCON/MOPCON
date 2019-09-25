@@ -14,12 +14,9 @@ class AppHomeController extends Controller
 
     public function __construct()
     {
-        global $app;
-
         parent::__construct();
-        $request = Request::create('/api/2019/news', 'GET');
-        $response = json_decode($app->dispatch($request)->getContent(), true);
-        $this->newsAry = $response['data'] ?? [];
+        $response = app(NewsController::class)->index();
+        $this->newsAry = $response->getData()->data ?? [];
     }
 
     public function index()
@@ -32,7 +29,6 @@ class AppHomeController extends Controller
         }, $this->jsonAry);
 
         $result['news'] = $this->newsAry;
-
         return $this->returnSuccess('success', $result);
     }
 
