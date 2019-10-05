@@ -65,6 +65,7 @@ export const state = () => ({
   sessionUnconfData: [],
   tags: [],
   buyTicketUrl: '',
+  utm: '',
 });
 
 export const mutations = {
@@ -103,6 +104,9 @@ export const mutations = {
   },
   setBuyTicketUrl(state, payload) {
     state.buyTicketUrl = payload;
+  },
+  setUtm(state, payload) {
+    state.utm = payload;
   },
 };
 
@@ -162,6 +166,13 @@ export const actions = {
       currency: 'TWD',
     });
   },
+  setUtmData({ commit }, utm) {
+    commit('setUtm', utm);
+    const nowDate = new Date();
+    nowDate.setTime(nowDate.getTime() + (60*60*1000));
+    const expires = "expires="+ nowDate.toUTCString();
+    document.cookie = `mopcon_utm=${utm};${expires}; path=/;`
+  },
 };
 
 export const getters = {
@@ -178,4 +189,5 @@ export const getters = {
   locales: state => state.locales,
   locale: state => state.locale,
   tags: state => state.tags,
+  utm: state => state.utm,
 };

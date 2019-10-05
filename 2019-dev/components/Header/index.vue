@@ -129,6 +129,24 @@ export default {
             }
         },
     },
+    mounted() {
+        const getUtm = document.cookie.match(new RegExp("(^| )mopcon_utm=([^;]*)(;|$)"));
+        if (getUtm != null) {
+            this.$store.dispatch('setUtmData', getUtm[2]);
+        }
+        if (location.search !== '') {
+            const loctionSearch = location.search.replace('?','').replace('/','')
+            const paramaters = loctionSearch.split('&');
+            const re = new RegExp('utm_');
+            this.utm = '?';
+            paramaters.forEach(ele => {
+                if(re.test(ele)) {
+                    this.utm += ele + '&';
+                }
+            });
+            this.$store.dispatch('setUtmData', this.utm);
+        }
+    },
 };
 </script>
 

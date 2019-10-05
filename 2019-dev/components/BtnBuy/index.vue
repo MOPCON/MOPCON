@@ -18,7 +18,7 @@ export default {
             return this.$route.name === 'ticket' ? true : false;
         },
         buyTicketUrl() {
-            return this.$store.getters.buyTicketUrl;
+            return this.$store.getters.buyTicketUrl + this.$store.getters.utm;
         },
     },
 };

@@ -1,5 +1,5 @@
 <template>
-    <a class="cardTicket" :class="[type, statusClass, {beEngaged: beEngaged}]" :href="link" target="_blank">
+    <a class="cardTicket" :class="[type, statusClass, {beEngaged: beEngaged}]" :href="link + utm" target="_blank">
         <div class="cardTicket__head">
             <div class="cardTicket__head__title">{{title}}</div>
             <div class="cardTicket__head__count" v-if="count">限量：{{count}}名</div>
@@ -84,6 +84,11 @@ export default {
             default: '',
         },
     },
+    data() {
+        return {
+            utm: '',
+        }
+    },
     computed: {
         btnText() {
             // status 狀態對應文字
@@ -113,6 +118,9 @@ export default {
             this.$emit('onTicketClick', ticket, price);
         },
     },
+    mounted() {
+        this.utm = this.$store.getters.utm;
+    }
 };
 </script>
 
