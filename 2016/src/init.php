@@ -254,9 +254,9 @@ function render($template_name, $params)
 {
     $main_msg = [
         'zh' => [
-            'sitetitle' => '行動科技應用開發者年會 | MOPCON 2016 | Mobile / Open / Platform Conference',
-            'ogtitle' => '行動科技應用開發者年會 | MOPCON 2016 | Mobile / Open / Platform Conference',
-            'ogsitename' => '行動科技應用開發者年會 | MOPCON 2016 | Mobile / Open / Platform Conference',
+            'sitetitle' => '行動科技年會 | MOPCON 2016 | Mobile / Open / Platform Conference',
+            'ogtitle' => '行動科技年會 | MOPCON 2016 | Mobile / Open / Platform Conference',
+            'ogsitename' => '行動科技年會 | MOPCON 2016 | Mobile / Open / Platform Conference',
             'ogdesc' => '濁水溪以南最強大行動科技研討會，2016強勢回歸',
             'nav' => [
                 'cfp' => '徵稿',

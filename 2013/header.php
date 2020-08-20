@@ -1,6 +1,6 @@
 <?
-    $title = isset($title) ? "MOPCON 2013 | ".$title : "行動科技應用開發者年會 | MOPCON 2013 | Mobile / Open / Platform Conference";
-    $og_descr = isset($og_descr) ? "MOPCON 2013 | ".$og_descr : "Mobile Open Platform Conference (MOPCON) 行動科技應用開發者年會 是全台第一個針對移動式裝置的技術研討會，希望大家共同來參與。";
+    $title = isset($title) ? "MOPCON 2013 | ".$title : "行動科技年會 | MOPCON 2013 | Mobile / Open / Platform Conference";
+    $og_descr = isset($og_descr) ? "MOPCON 2013 | ".$og_descr : "Mobile Open Platform Conference (MOPCON) 行動科技年會 是全台第一個針對移動式裝置的技術研討會，希望大家共同來參與。";
     $page_file = isset($page_file) ? $page_file : "";
 ?>
     <meta charset="utf-8">
@@ -15,7 +15,7 @@
     <meta content="http://mopcon.org/img/snapshot.jpg" property="og:image">
     <meta content="website" property="og:type">
     <meta content="<?=$title ?>" property="og:site_name">
-    <meta name="description" content="行動科技應用開發者年會 | MOPCON 2013 | Mobile / Open / Platform Conference">
+    <meta name="description" content="行動科技年會 | MOPCON 2013 | Mobile / Open / Platform Conference">
     <link type="text/css" href="css/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
     <link type="text/css" href="css/all.css" media="screen" rel="stylesheet">
     <link rel="SHORTCUT ICON" href="favicon.ico">

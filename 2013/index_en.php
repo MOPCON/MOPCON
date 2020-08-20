@@ -1,18 +1,18 @@
 <html lang="zh-TW" class="">
   <head>
         <meta charset="utf-8">
-    <title>行動科技應用開發者年會 | MOPCON 2013 | Mobile / Open / Platform Conference</title>
+    <title>行動科技年會 | MOPCON 2013 | Mobile / Open / Platform Conference</title>
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="行動科技應用開發者年會 | MOPCON 2013 | Mobile / Open / Platform Conference" property="og:title">
+    <meta content="行動科技年會 | MOPCON 2013 | Mobile / Open / Platform Conference" property="og:title">
     <meta content="http://mopcon.org" property="og:url">
-    <meta content="Mobile Open Platform Conference (MOPCON) 行動科技應用開發者年會 是全台第一個針對移動式裝置的技術研討會，希望大家共同來參與。" property="og:description">
+    <meta content="Mobile Open Platform Conference (MOPCON) 行動科技年會 是全台第一個針對移動式裝置的技術研討會，希望大家共同來參與。" property="og:description">
     <meta content="http://mopcon.org/img/snapshot.jpg" property="og:image">
     <meta content="website" property="og:type">
-    <meta content="行動科技應用開發者年會 | MOPCON 2013 | Mobile / Open / Platform Conference" property="og:site_name">
-    <meta name="description" content="行動科技應用開發者年會 | MOPCON 2013 | Mobile / Open / Platform Conference">
+    <meta content="行動科技年會 | MOPCON 2013 | Mobile / Open / Platform Conference" property="og:site_name">
+    <meta name="description" content="行動科技年會 | MOPCON 2013 | Mobile / Open / Platform Conference">
     <link type="text/css" href="css/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
     <link type="text/css" href="css/all.css" media="screen" rel="stylesheet">
     <link rel="SHORTCUT ICON" href="favicon.ico">

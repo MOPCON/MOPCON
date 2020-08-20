@@ -11,7 +11,7 @@
     <meta content="http://mopcon.org/img/snapshot.jpg" property="og:image">
     <meta content="website" property="og:type">
     <meta content="MOPCON 2013 | 主辦社群" property="og:site_name">
-    <meta name="description" content="行動科技應用開發者年會 | MOPCON 2013 | Mobile / Open / Platform Conference">
+    <meta name="description" content="行動科技年會 | MOPCON 2013 | Mobile / Open / Platform Conference">
     <link type="text/css" href="css/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
     <link type="text/css" href="css/all.css" media="screen" rel="stylesheet">
     <link rel="SHORTCUT ICON" href="favicon.ico">

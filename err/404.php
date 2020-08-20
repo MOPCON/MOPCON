@@ -17,18 +17,18 @@
 <html lang="zh-TW">
   <head>
     <meta charset="utf-8">
-    <title>行動科技應用開發者年會 | MOPCON | Mobile / Open / Platform Conference</title>
+    <title>行動科技年會 | MOPCON | Mobile / Open / Platform Conference</title>
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="行動科技應用開發者年會 | MOPCON | Mobile / Open / Platform Conference" property="og:title">
+    <meta content="行動科技年會 | MOPCON | Mobile / Open / Platform Conference" property="og:title">
     <meta content="http://mopcon.org" property="og:url">
-    <meta content="Mobile Open Platform Conference (MOPCON) 行動科技應用開發者年會 是全台第一個針對移動式裝置的技術研討會，希望大家共同來參與。" property="og:description">
+    <meta content="Mobile Open Platform Conference (MOPCON) 行動科技年會 是全台第一個針對移動式裝置的技術研討會，希望大家共同來參與。" property="og:description">
     <meta content="http://mopcon.org/img/snapshot.jpg" property="og:image">
     <meta content="website" property="og:type">
-    <meta content="行動科技應用開發者年會 | MOPCON | Mobile / Open / Platform Conference" property="og:site_name">
-    <meta name="description" content="行動科技應用開發者年會 | MOPCON | Mobile / Open / Platform Conference">
+    <meta content="行動科技年會 | MOPCON | Mobile / Open / Platform Conference" property="og:site_name">
+    <meta name="description" content="行動科技年會 | MOPCON | Mobile / Open / Platform Conference">
     <link rel="SHORTCUT ICON" href="favicon.ico">
     <!-- <style type="text/css"> @font-face { font-family: "ct10"; src: url(http://ds3.justfont.com/file/get/100001_0_30668557695/ct10_d3e8f81b2827.jpeg?type=eot); src: local(" "),      url(http://ds3.justfont.com/file/get/100001_0_30668557695/ct10_d3e8f81b2827.jpeg?type=ttf) format("truetype"),      url(http://ds3.justfont.com/file/get/100001_0_30668557695/ct10_d3e8f81b2827.jpeg?type=woff) format("woff");} #ct10 { font-family: "ct10"; }.ct10 { font-family: "ct10"; }</style> -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>

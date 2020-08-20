@@ -12,7 +12,7 @@
     <meta content="http://mopcon.org/img/snapshot.jpg" property="og:image">
     <meta content="website" property="og:type">
     <meta content="MOPCON 2013 | Mobile Open Platform Conference's Call For Papers!" property="og:site_name">
-    <meta name="description" content="行動科技應用開發者年會 | MOPCON 2013 | Mobile / Open / Platform Conference">
+    <meta name="description" content="行動科技年會 | MOPCON 2013 | Mobile / Open / Platform Conference">
     <link type="text/css" href="css/bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet">
     <link type="text/css" href="css/all.css" media="screen" rel="stylesheet">
     <link rel="SHORTCUT ICON" href="favicon.ico">
@@ -129,7 +129,7 @@ $(function () {
             <li>Digital media and content oriented delivery</li>
           </ul>
           <p>Additionally, we are willing to accept various interesting applications beyond the above topics, such as wearable technologies and HTML5 based cross-device applications.
-          <!--<p>細節請參考<a target="_blank" href="MOPCON-CallForPaper.pdf">行動科技應用開發者年會演講徵求書</a>-->
+          <!--<p>細節請參考<a target="_blank" href="MOPCON-CallForPaper.pdf">行動科技年會演講徵求書</a>-->
         </div>
       </div>
 
