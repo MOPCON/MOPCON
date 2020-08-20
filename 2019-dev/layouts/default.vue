@@ -1,7 +1,7 @@
 <template>
     <div class="layout">
         <div class="full-loading" ref="fullLoading"></div>
-        <SectionModal id="SectionModal"/>
+        <!-- <SectionModal id="SectionModal"/> -->
         <Header />
         <nuxt />
         <!-- <BtnBuy /> -->
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import SectionModal from "~/components/SectionModal";
+// import SectionModal from "~/components/SectionModal";
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
 import BtnBuy from '~/components/BtnBuy';
@@ -18,7 +18,7 @@ import BtnBuy from '~/components/BtnBuy';
 export default {
     name: 'layout',
     components: {
-        SectionModal,
+        // SectionModal,
         Footer,
         Header,
         BtnBuy,
