@@ -1,0 +1,86 @@
+{
+  "title": "banner API",
+  "description": "提供 banner 資訊的 API",
+  "required": [
+    "success",
+    "message",
+    "data"
+  ],
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Request 是否成功"
+    },
+    "message": {
+      "type": "string",
+      "description": "訊息"
+    },
+    "data": {
+      "type": "object",
+      "items": {
+        "type": "array",
+        "required": [
+          "banner",
+          "news"
+        ]
+      },
+      "properties": {
+        "banner": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "img",
+              "link"
+            ],
+            "items": {
+              "img": {
+                "type": "string",
+                "description": "banner 圖片 url"
+              },
+              "link": {
+                "type": "string",
+                "description": "banner 所在連結"
+              }
+            }
+          }
+        },
+        "news": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "date",
+              "title",
+              "description",
+              "link"
+            ]
+          },
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "news id"
+            },
+            "date": {
+              "type": "string",
+              "description": "news 時間戳"
+            },
+            "title": {
+              "type": "string",
+              "description": "news 標題"
+            },
+            "description": {
+              "type": "string",
+              "description": "news 內容與描述"
+            },
+            "link": {
+              "type": "string",
+              "description": "news 連結"
+            }
+          }
+        }
+      }
+    }
+  }
+}
