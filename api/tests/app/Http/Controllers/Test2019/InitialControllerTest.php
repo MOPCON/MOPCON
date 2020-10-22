@@ -1,5 +1,9 @@
 <?php
 
+namespace Tests\App\Http\Controllers\Test2019;
+
+use TestCase;
+
 class InitialControllerTest extends TestCase
 {
     /**
