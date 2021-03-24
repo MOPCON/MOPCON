@@ -1,3 +1,3 @@
 ## redmine integration
 
-`refs #issueID`
+`refs issueID`
