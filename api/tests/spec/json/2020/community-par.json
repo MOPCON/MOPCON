@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "代表為參與社群清單 API",
+  "description": "提供代表參與社群資訊的 API",
+  "required": [
+    "success",
+    "message",
+    "data"
+  ],
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Request 是否成功"
+    },
+    "message": {
+      "type": "string",
+      "description": "訊息"
+    },
+    "data": {
+      "type": "object",
+      "items": {
+        "required": [
+          "name",
+          "name_e",
+          "photo",
+          "introduction",
+          "introduction_e",
+          "facebook",
+          "twitter",
+          "instagram",
+          "telegram",
+          "event"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "中文社群名稱"
+          },
+          "name_e": {
+            "type": "string",
+            "description": "英文社群名稱"
+          },
+          "photo": {
+            "type": "string",
+            "description": "icon 圖片"
+          },
+          "introduction": {
+            "type": "string",
+            "description": "中文簡介"
+          },
+          "introduction_e": {
+            "type": "string",
+            "description": "英文簡介"
+          },
+          "facebook": {
+            "type": "string",
+            "description": "facebook 連結"
+          },
+          "twitter": {
+            "type": "string",
+            "description": "twitter 連結"
+          },
+          "instagram": {
+            "type": "string",
+            "description": "instagram 連結"
+          },
+          "telegram": {
+            "type": "string",
+            "description": "telegram 連結"
+          },
+          "event": {
+            "type": "string",
+            "description": "event 連結"
+          }
+        }
+      }
+    }
+  }
+}
