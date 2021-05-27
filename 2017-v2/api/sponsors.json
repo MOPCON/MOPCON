@@ -1,0 +1,1491 @@
+{
+    "version": "1.0",
+    "encoding": "UTF-8",
+    "feed": {
+        "xmlns": "http://www.w3.org/2005/Atom",
+        "xmlns$openSearch": "http://a9.com/-/spec/opensearchrss/1.0/",
+        "xmlns$gsx": "http://schemas.google.com/spreadsheets/2006/extended",
+        "id": {
+            "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values"
+        },
+        "updated": {
+            "$t": "2017-10-25T10:54:56.698Z"
+        },
+        "category": [
+            {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }
+        ],
+        "title": {
+            "type": "text",
+            "$t": "贊助商資料"
+        },
+        "link": [
+            {
+                "rel": "alternate",
+                "type": "application/atom+xml",
+                "href": "https://docs.google.com/spreadsheets/d/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/pubhtml"
+            },
+            {
+                "rel": "http://schemas.google.com/g/2005#feed",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values"
+            },
+            {
+                "rel": "http://schemas.google.com/g/2005#post",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values"
+            },
+            {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values?alt\u003djson"
+            }
+        ],
+        "author": [
+            {
+                "name": {
+                    "$t": "jacksonxu45252"
+                },
+                "email": {
+                    "$t": "jacksonxu45252@gmail.com"
+                }
+            }
+        ],
+        "openSearch$totalResults": {
+            "$t": "23"
+        },
+        "openSearch$startIndex": {
+            "$t": "1"
+        },
+        "entry": [
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cokwr"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "1"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: GoogleCloud, 贊助商等級: Tony Stark, 名稱: Google Cloud, 名稱en: Google Cloud, 介紹: Google Cloud 是由 Google 所提供整合產品、科技與服務的獨特解決方案，協助我們的客戶以簡單的操作方式達到客戶所需求的效能。Google Cloud 橫跨商業的每個層面，包括 Google Cloud Platform 所有的服務、協作生產力應用套件-- G Suite、機器學習工具與 API、企業地圖 API、以及 接上雲端的 Android 電話、平板與 Chromebook，這一切的解決方案與服務，都是建構於雲端之上。, 介紹en: Google Cloud is Google’s unique and broad portfolio of products, technologies and services that let our customers operate easily in a digital world with the performance they demand. Google Cloud spans every layer of the business, including all of Google Cloud Platform; our user facing collaboration and productivity applications — now named G Suite; all of our machine learning tools and APIs; the enterprise Maps APIs; and also the Android phones, tablets and Chromebooks that access the cloud. All this, built for the cloud from the get-go., 網址: https://www.google.com/cloud/, 照片: GoogleCloud.png, 窗口: Chloe, remarks: informed"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cokwr"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "1"
+                },
+                "gsx$id": {
+                    "$t": "GoogleCloud"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Tony Stark"
+                },
+                "gsx$名稱": {
+                    "$t": "Google Cloud"
+                },
+                "gsx$名稱en": {
+                    "$t": "Google Cloud"
+                },
+                "gsx$介紹": {
+                    "$t": "Google Cloud 是由 Google 所提供整合產品、科技與服務的獨特解決方案，協助我們的客戶以簡單的操作方式達到客戶所需求的效能。Google Cloud 橫跨商業的每個層面，包括 Google Cloud Platform 所有的服務、協作生產力應用套件-- G Suite、機器學習工具與 API、企業地圖 API、以及 接上雲端的 Android 電話、平板與 Chromebook，這一切的解決方案與服務，都是建構於雲端之上。"
+                },
+                "gsx$介紹en": {
+                    "$t": "Google Cloud is Google’s unique and broad portfolio of products, technologies and services that let our customers operate easily in a digital world with the performance they demand. Google Cloud spans every layer of the business, including all of Google Cloud Platform; our user facing collaboration and productivity applications — now named G Suite; all of our machine learning tools and APIs; the enterprise Maps APIs; and also the Android phones, tablets and Chromebooks that access the cloud. All this, built for the cloud from the get-go."
+                },
+                "gsx$網址": {
+                    "$t": "https://www.google.com/cloud/"
+                },
+                "gsx$照片": {
+                    "$t": "GoogleCloud.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Chloe"
+                },
+                "gsx$remarks": {
+                    "$t": "informed"
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cpzh4"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "2"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: Webduino, 贊助商等級: Bruce Wayne, 名稱: Webduino, 名稱en: Webduino, 介紹: Webduino 是 2015 年起源於高雄的熱血創意團隊，創立成員有前、後端工程師、韌體工程師以及視覺設計師，憑著一股對網頁技術無止盡的愛，實現真正用 Web 串接 Arduino 的完整過程，純粹撰寫 HTML 與 Javascript 的網頁語法，就能夠玩轉各式各樣的傳感器，為廣大的開發者和網頁設計師，創造了前所未有的開發模式，簡單的圖形化程式編輯介面，降低踏入物聯網世界的門檻，實現 IoT 的解決方案。, 介紹en: Webduino was launched by our team in 2015. With the great passion and deep dedication, we not only successfully launched the service but also showed up in several technology events and conferences. Webduino provides you the most enjoyable experience of developing IoT projects. Everyone can easily control \u0026 deploy your sensors and electronic components using only HTML and JavaScript., 網址: https://webduino.io/index.html, 照片: Webduino.png, 窗口: Ofa"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cpzh4"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "2"
+                },
+                "gsx$id": {
+                    "$t": "Webduino"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Bruce Wayne"
+                },
+                "gsx$名稱": {
+                    "$t": "Webduino"
+                },
+                "gsx$名稱en": {
+                    "$t": "Webduino"
+                },
+                "gsx$介紹": {
+                    "$t": "Webduino 是 2015 年起源於高雄的熱血創意團隊，創立成員有前、後端工程師、韌體工程師以及視覺設計師，憑著一股對網頁技術無止盡的愛，實現真正用 Web 串接 Arduino 的完整過程，純粹撰寫 HTML 與 Javascript 的網頁語法，就能夠玩轉各式各樣的傳感器，為廣大的開發者和網頁設計師，創造了前所未有的開發模式，簡單的圖形化程式編輯介面，降低踏入物聯網世界的門檻，實現 IoT 的解決方案。"
+                },
+                "gsx$介紹en": {
+                    "$t": "Webduino was launched by our team in 2015. With the great passion and deep dedication, we not only successfully launched the service but also showed up in several technology events and conferences. Webduino provides you the most enjoyable experience of developing IoT projects. Everyone can easily control \u0026 deploy your sensors and electronic components using only HTML and JavaScript."
+                },
+                "gsx$網址": {
+                    "$t": "https://webduino.io/index.html"
+                },
+                "gsx$照片": {
+                    "$t": "Webduino.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Ofa"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cre1l"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "3"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: Pumo, 贊助商等級: Bruce Wayne, 名稱: 捕夢網數位科技, 名稱en: 捕夢網數位科技, 介紹: 捕夢網 – 企業雲端，最佳捷徑\n以台灣企業為服務對象，提供一站式IT服務。從網址註冊、UEGO購物商城、虛擬主機，到進階的雲端服務、資訊安全。\n捕夢網的服務\n\n網址註冊\n註冊屬於您的最佳網址，建立鮮明獨特的企業形象，帶來最佳的宣傳效果\n\n虛擬主機\n隨時因應市場所需，開發多元化虛擬主機，擁有最齊全的虛擬主機服務\n\n雲端主機\n無論是跨國大型企業 / 本土中小企業，累積多年客戶服務經驗，打造最合適的雲端解決方案\n\n資安服務\n打造精實的資安防禦，找出網站弱點，封阻漏洞抵擋駭客。重視客戶的網站安全\n\n雲端服務\n提供多元化雲端服務，讓企業活用雲端優勢，釋放行動效率，擁有新時代的雲端競爭力, 介紹en: 捕夢網 – 企業雲端，最佳捷徑\n以台灣企業為服務對象，提供一站式IT服務。從網址註冊、UEGO購物商城、虛擬主機，到進階的雲端服務、資訊安全。\n捕夢網的服務\n\n網址註冊\n註冊屬於您的最佳網址，建立鮮明獨特的企業形象，帶來最佳的宣傳效果\n\n虛擬主機\n隨時因應市場所需，開發多元化虛擬主機，擁有最齊全的虛擬主機服務\n\n雲端主機\n無論是跨國大型企業 / 本土中小企業，累積多年客戶服務經驗，打造最合適的雲端解決方案\n\n資安服務\n打造精實的資安防禦，找出網站弱點，封阻漏洞抵擋駭客。重視客戶的網站安全\n\n雲端服務\n提供多元化雲端服務，讓企業活用雲端優勢，釋放行動效率，擁有新時代的雲端競爭力, 網址: https://www.pumo.com.tw/www/, 照片: Pumo.png, 窗口: Chloe"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cre1l"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "3"
+                },
+                "gsx$id": {
+                    "$t": "Pumo"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Bruce Wayne"
+                },
+                "gsx$名稱": {
+                    "$t": "捕夢網數位科技"
+                },
+                "gsx$名稱en": {
+                    "$t": "捕夢網數位科技"
+                },
+                "gsx$介紹": {
+                    "$t": "捕夢網 – 企業雲端，最佳捷徑\n以台灣企業為服務對象，提供一站式IT服務。從網址註冊、UEGO購物商城、虛擬主機，到進階的雲端服務、資訊安全。\n捕夢網的服務\n\n網址註冊\n註冊屬於您的最佳網址，建立鮮明獨特的企業形象，帶來最佳的宣傳效果\n\n虛擬主機\n隨時因應市場所需，開發多元化虛擬主機，擁有最齊全的虛擬主機服務\n\n雲端主機\n無論是跨國大型企業 / 本土中小企業，累積多年客戶服務經驗，打造最合適的雲端解決方案\n\n資安服務\n打造精實的資安防禦，找出網站弱點，封阻漏洞抵擋駭客。重視客戶的網站安全\n\n雲端服務\n提供多元化雲端服務，讓企業活用雲端優勢，釋放行動效率，擁有新時代的雲端競爭力"
+                },
+                "gsx$介紹en": {
+                    "$t": "捕夢網 – 企業雲端，最佳捷徑\n以台灣企業為服務對象，提供一站式IT服務。從網址註冊、UEGO購物商城、虛擬主機，到進階的雲端服務、資訊安全。\n捕夢網的服務\n\n網址註冊\n註冊屬於您的最佳網址，建立鮮明獨特的企業形象，帶來最佳的宣傳效果\n\n虛擬主機\n隨時因應市場所需，開發多元化虛擬主機，擁有最齊全的虛擬主機服務\n\n雲端主機\n無論是跨國大型企業 / 本土中小企業，累積多年客戶服務經驗，打造最合適的雲端解決方案\n\n資安服務\n打造精實的資安防禦，找出網站弱點，封阻漏洞抵擋駭客。重視客戶的網站安全\n\n雲端服務\n提供多元化雲端服務，讓企業活用雲端優勢，釋放行動效率，擁有新時代的雲端競爭力"
+                },
+                "gsx$網址": {
+                    "$t": "https://www.pumo.com.tw/www/"
+                },
+                "gsx$照片": {
+                    "$t": "Pumo.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Chloe"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/chk2m"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "4"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: AWS, 贊助商等級: Bruce Wayne, 名稱: AWS, 名稱en: AWS, 介紹: 關於Amazon Web Services\n11年來，Amazon Web Services一直是全球應用最廣泛的雲端服務平台。透過位於美國、澳洲、巴西、加拿大、中國、德國、印度、愛爾蘭、日本、韓國、新加坡和英國等16個地理區域的44個可用區域 (Availability Zones)，AWS為客戶提供超過90種功能全面的雲端服務，包括運算、儲存、網絡、數據庫、分析、應用服務、配置、管理、開發、行動、物聯網、人工智慧、安全、混合雲和企業應用等。AWS的服務獲得全球超過百萬客戶的信任，包含發展迅速的新創公司、大型企業和政府機構。AWS協助客戶強化自身基礎設施，提高營運上的彈性與應變能力，同時降低成本。欲瞭解更多AWS的相關資訊，請至：https://aws.amazon.com。, 介紹en: About Amazon Web Services\n\nFor 11 years, Amazon Web Services has been the world’s most comprehensive and broadly adopted cloud platform. AWS offers over 90 fully featured services for compute, storage, networking, database, analytics, application services, deployment, management, developer, mobile, Internet of Things (IoT), Artificial Intelligence (AI), security, hybrid, and enterprise applications, from 44 Availability Zones (AZs) across 16 geographic regions in the U.S., Australia, Brazil, Canada, China, Germany, India, Ireland, Japan, Korea, Singapore, and the UK. AWS services are trusted by millions of active customers around the world -- including the fastest growing startups, largest enterprises, and leading government agencies -- to power their infrastructure, make them more agile, and lower costs. To learn more about AWS, visit https://aws.amazon.com.\n\n \n\n, 網址: https://aws.amazon.com/tw/, 照片: AWS.png, 窗口: Ofa"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/chk2m"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "4"
+                },
+                "gsx$id": {
+                    "$t": "AWS"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Bruce Wayne"
+                },
+                "gsx$名稱": {
+                    "$t": "AWS"
+                },
+                "gsx$名稱en": {
+                    "$t": "AWS"
+                },
+                "gsx$介紹": {
+                    "$t": "關於Amazon Web Services\n11年來，Amazon Web Services一直是全球應用最廣泛的雲端服務平台。透過位於美國、澳洲、巴西、加拿大、中國、德國、印度、愛爾蘭、日本、韓國、新加坡和英國等16個地理區域的44個可用區域 (Availability Zones)，AWS為客戶提供超過90種功能全面的雲端服務，包括運算、儲存、網絡、數據庫、分析、應用服務、配置、管理、開發、行動、物聯網、人工智慧、安全、混合雲和企業應用等。AWS的服務獲得全球超過百萬客戶的信任，包含發展迅速的新創公司、大型企業和政府機構。AWS協助客戶強化自身基礎設施，提高營運上的彈性與應變能力，同時降低成本。欲瞭解更多AWS的相關資訊，請至：https://aws.amazon.com。"
+                },
+                "gsx$介紹en": {
+                    "$t": "About Amazon Web Services\n\nFor 11 years, Amazon Web Services has been the world’s most comprehensive and broadly adopted cloud platform. AWS offers over 90 fully featured services for compute, storage, networking, database, analytics, application services, deployment, management, developer, mobile, Internet of Things (IoT), Artificial Intelligence (AI), security, hybrid, and enterprise applications, from 44 Availability Zones (AZs) across 16 geographic regions in the U.S., Australia, Brazil, Canada, China, Germany, India, Ireland, Japan, Korea, Singapore, and the UK. AWS services are trusted by millions of active customers around the world -- including the fastest growing startups, largest enterprises, and leading government agencies -- to power their infrastructure, make them more agile, and lower costs. To learn more about AWS, visit https://aws.amazon.com.\n\n \n\n"
+                },
+                "gsx$網址": {
+                    "$t": "https://aws.amazon.com/tw/"
+                },
+                "gsx$照片": {
+                    "$t": "AWS.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Ofa"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/ciyn3"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "5"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: kkboxpng, 贊助商等級: Bruce Wayne, 名稱: KKBOX, 名稱en: KKBOX, 介紹: 亞洲頂尖數位音樂服務品牌\n擁有三千萬首豐富音樂曲庫，還提供細緻且個人化的音樂內容，KKBOX 就是懂你的音樂喜好。 線上一起聽及獨家直播演唱會讓愛追星的你跟偶像隨時隨地零距離!立即啟動專屬你的音樂體驗，享受無窮的聽音樂樂趣!\n, 介紹en: 亞洲頂尖數位音樂服務品牌\n擁有三千萬首豐富音樂曲庫，還提供細緻且個人化的音樂內容，KKBOX 就是懂你的音樂喜好。 線上一起聽及獨家直播演唱會讓愛追星的你跟偶像隨時隨地零距離!立即啟動專屬你的音樂體驗，享受無窮的聽音樂樂趣!\n, 網址: https://www.kkbox.com/tw/tc/index.html, 照片: kkbox.png, 窗口: Chloe"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/ciyn3"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "5"
+                },
+                "gsx$id": {
+                    "$t": "kkboxpng"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Bruce Wayne"
+                },
+                "gsx$名稱": {
+                    "$t": "KKBOX"
+                },
+                "gsx$名稱en": {
+                    "$t": "KKBOX"
+                },
+                "gsx$介紹": {
+                    "$t": "亞洲頂尖數位音樂服務品牌\n擁有三千萬首豐富音樂曲庫，還提供細緻且個人化的音樂內容，KKBOX 就是懂你的音樂喜好。 線上一起聽及獨家直播演唱會讓愛追星的你跟偶像隨時隨地零距離!立即啟動專屬你的音樂體驗，享受無窮的聽音樂樂趣!\n"
+                },
+                "gsx$介紹en": {
+                    "$t": "亞洲頂尖數位音樂服務品牌\n擁有三千萬首豐富音樂曲庫，還提供細緻且個人化的音樂內容，KKBOX 就是懂你的音樂喜好。 線上一起聽及獨家直播演唱會讓愛追星的你跟偶像隨時隨地零距離!立即啟動專屬你的音樂體驗，享受無窮的聽音樂樂趣!\n"
+                },
+                "gsx$網址": {
+                    "$t": "https://www.kkbox.com/tw/tc/index.html"
+                },
+                "gsx$照片": {
+                    "$t": "kkbox.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Chloe"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/ckd7g"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "6"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: OathYahoo, 贊助商等級: Bruce Wayne, 名稱: Yahoo, 名稱en: Yahoo, 介紹: Oath 是 Verizon 威訊通訊旗下的子公司，我們透過價值主導、致力於建立讓人們喜愛的品牌。我們在全球擁有超過 10 億用戶，提供包括 Yahoo 等超過 50 個媒體內容、科技與廣告產品品牌。作爲全球數位行動領導者，Oath 正在重新定義媒體的未來。\n在台灣，我們持續以 Yahoo 奇摩為子品牌，提供包括 Yahoo TV、新聞、電子信箱、搜尋、拍賣、超級商城、購物中心、股市、電影、運動、名人娛樂等多項服務。除服務廣大網友及廣告主，Yahoo 奇摩也為企業提供電子商務解決方案。同時，我們長期致力於培育台灣人才，提供豐富機會與產業接軌，提升各領域人才競爭力。\nOath持續招募中，更多熱門技術類職缺說明歡迎至 104 查詢或來信 oathcareer.tw@oath.com 詢問！, 介紹en: Oath 是 Verizon 威訊通訊旗下的子公司，我們透過價值主導、致力於建立讓人們喜愛的品牌。我們在全球擁有超過 10 億用戶，提供包括 Yahoo 等超過 50 個媒體內容、科技與廣告產品品牌。作爲全球數位行動領導者，Oath 正在重新定義媒體的未來。\n在台灣，我們持續以 Yahoo 奇摩為子品牌，提供包括 Yahoo TV、新聞、電子信箱、搜尋、拍賣、超級商城、購物中心、股市、電影、運動、名人娛樂等多項服務。除服務廣大網友及廣告主，Yahoo 奇摩也為企業提供電子商務解決方案。同時，我們長期致力於培育台灣人才，提供豐富機會與產業接軌，提升各領域人才競爭力。\nOath持續招募中，更多熱門技術類職缺說明歡迎至 104 查詢或來信 oathcareer.tw@oath.com 詢問！, 網址: http://ycorpblog.tumblr.com/, 照片: OathYahoo.png, 窗口: Ofa"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/ckd7g"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "6"
+                },
+                "gsx$id": {
+                    "$t": "OathYahoo"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Bruce Wayne"
+                },
+                "gsx$名稱": {
+                    "$t": "Yahoo"
+                },
+                "gsx$名稱en": {
+                    "$t": "Yahoo"
+                },
+                "gsx$介紹": {
+                    "$t": "Oath 是 Verizon 威訊通訊旗下的子公司，我們透過價值主導、致力於建立讓人們喜愛的品牌。我們在全球擁有超過 10 億用戶，提供包括 Yahoo 等超過 50 個媒體內容、科技與廣告產品品牌。作爲全球數位行動領導者，Oath 正在重新定義媒體的未來。\n在台灣，我們持續以 Yahoo 奇摩為子品牌，提供包括 Yahoo TV、新聞、電子信箱、搜尋、拍賣、超級商城、購物中心、股市、電影、運動、名人娛樂等多項服務。除服務廣大網友及廣告主，Yahoo 奇摩也為企業提供電子商務解決方案。同時，我們長期致力於培育台灣人才，提供豐富機會與產業接軌，提升各領域人才競爭力。\nOath持續招募中，更多熱門技術類職缺說明歡迎至 104 查詢或來信 oathcareer.tw@oath.com 詢問！"
+                },
+                "gsx$介紹en": {
+                    "$t": "Oath 是 Verizon 威訊通訊旗下的子公司，我們透過價值主導、致力於建立讓人們喜愛的品牌。我們在全球擁有超過 10 億用戶，提供包括 Yahoo 等超過 50 個媒體內容、科技與廣告產品品牌。作爲全球數位行動領導者，Oath 正在重新定義媒體的未來。\n在台灣，我們持續以 Yahoo 奇摩為子品牌，提供包括 Yahoo TV、新聞、電子信箱、搜尋、拍賣、超級商城、購物中心、股市、電影、運動、名人娛樂等多項服務。除服務廣大網友及廣告主，Yahoo 奇摩也為企業提供電子商務解決方案。同時，我們長期致力於培育台灣人才，提供豐富機會與產業接軌，提升各領域人才競爭力。\nOath持續招募中，更多熱門技術類職缺說明歡迎至 104 查詢或來信 oathcareer.tw@oath.com 詢問！"
+                },
+                "gsx$網址": {
+                    "$t": "http://ycorpblog.tumblr.com/"
+                },
+                "gsx$照片": {
+                    "$t": "OathYahoo.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Ofa"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/clrrx"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "7"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: 104, 贊助商等級: Geek, 名稱: 104資訊科技, 名稱en: 104資訊科技, 介紹: 104人力銀行成立於1996年，2006年以「一零四資訊科技股份有限公司」於台灣證券交易所掛牌，成為台灣第一家上市的網路公司，穩居台灣流量最多的人力資源服務網站，2007年進入大陸市場，持續以成為華人地區人力資源領導品牌為使命。職涯使命，期待壯有所用，對求職者「不只找工作，幫你找方向」，對企業「不只找人才，為你管理人才」；銀髮使命，期待老有所終，發揮健康長者的價值，照顧失能長者的尊嚴；孩子使命，期待幼有所長，幫每一個孩子找到天份。全集團追求產業創新，以C.M.O.S.四大核心概念（cloud雲端、mobile行動、open開放、social社群）提供多元職涯服務及人才管理解決方案，包括網路求職、職涯社群、職涯競爭力、高階獵才、企業大師、人資管理系統、測驗評量、人資顧問諮詢等，2014年成立社會企業處，提供夢想搖籃、工作世界、兒童美術館等社會創新服務，2015年成立銀髮事業處建構中高齡照護資源平台，完善企業社會責任。如需進一步資料，請上104企業網站：corp.104.com.tw。, 介紹en: 104 cares about a person’s value and an organic environment where a worker can be transformed into a talent.\n \nA person will spend 30 years working and change seven jobs on average in his/her life. When a person finds a job based on salary rather than ideal values or social influence, workplaces will not advance; when an employer focuses on labor costs, the company is unable to accumulate human capital and the country will not progress.\n \nAs a model in the market, 104 pursues quality in work and life. As our missions indicate, “More than a job, we help you define a career; more than an employee, we help you manage talent”, only by seeing a person’s value will workers and employers enjoy prosperity and organic workplaces.\n \nThe most sincere business commitment is to grow with clients and lead society forward.\n \nTo achieve industrial innovation, we have transformed ourselves into 104 2.0 based on four core concepts (cloud, mobile, open, and social). 104 2.0 aims to optimize the scope of service and in-depth demands based on existing diversified careers and human resources.  \n \nIn view of the aging population and low birth rate, 104 extends the scope of service from workers to the elderly and children and reaffirms three core values of business development: commitment to the elderly, commitment to career matchmaking, and commitment to children. We hope to prevent 8% workers from withdrawing from workplaces by taking advantage of the value of the healthy elderly and respecting the dignity of the disabled elderly. Also, we look forward to finding the ability of every child in order to relieve the talent shortage.\n \nCare for mothers in Taiwan and encourage innovative thinking and value transformation\n \nThe birth of 104 originates from unemployment. 104 always bears a social responsibility to provide a stable workplace and to care for the land. We always look forward to transforming workers into givers, who take courage to help society and solve problems. And doing so often creates unique values and personal significance.\n \nWhether a life is different depends on the courage to achieve one thing without limit.\n\f\n, 網址: http://corp.104.com.tw/, 照片: 104.png, 窗口: Shawn"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/clrrx"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "7"
+                },
+                "gsx$id": {
+                    "$t": "104"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Geek"
+                },
+                "gsx$名稱": {
+                    "$t": "104資訊科技"
+                },
+                "gsx$名稱en": {
+                    "$t": "104資訊科技"
+                },
+                "gsx$介紹": {
+                    "$t": "104人力銀行成立於1996年，2006年以「一零四資訊科技股份有限公司」於台灣證券交易所掛牌，成為台灣第一家上市的網路公司，穩居台灣流量最多的人力資源服務網站，2007年進入大陸市場，持續以成為華人地區人力資源領導品牌為使命。職涯使命，期待壯有所用，對求職者「不只找工作，幫你找方向」，對企業「不只找人才，為你管理人才」；銀髮使命，期待老有所終，發揮健康長者的價值，照顧失能長者的尊嚴；孩子使命，期待幼有所長，幫每一個孩子找到天份。全集團追求產業創新，以C.M.O.S.四大核心概念（cloud雲端、mobile行動、open開放、social社群）提供多元職涯服務及人才管理解決方案，包括網路求職、職涯社群、職涯競爭力、高階獵才、企業大師、人資管理系統、測驗評量、人資顧問諮詢等，2014年成立社會企業處，提供夢想搖籃、工作世界、兒童美術館等社會創新服務，2015年成立銀髮事業處建構中高齡照護資源平台，完善企業社會責任。如需進一步資料，請上104企業網站：corp.104.com.tw。"
+                },
+                "gsx$介紹en": {
+                    "$t": "104 cares about a person’s value and an organic environment where a worker can be transformed into a talent.\n \nA person will spend 30 years working and change seven jobs on average in his/her life. When a person finds a job based on salary rather than ideal values or social influence, workplaces will not advance; when an employer focuses on labor costs, the company is unable to accumulate human capital and the country will not progress.\n \nAs a model in the market, 104 pursues quality in work and life. As our missions indicate, “More than a job, we help you define a career; more than an employee, we help you manage talent”, only by seeing a person’s value will workers and employers enjoy prosperity and organic workplaces.\n \nThe most sincere business commitment is to grow with clients and lead society forward.\n \nTo achieve industrial innovation, we have transformed ourselves into 104 2.0 based on four core concepts (cloud, mobile, open, and social). 104 2.0 aims to optimize the scope of service and in-depth demands based on existing diversified careers and human resources.  \n \nIn view of the aging population and low birth rate, 104 extends the scope of service from workers to the elderly and children and reaffirms three core values of business development: commitment to the elderly, commitment to career matchmaking, and commitment to children. We hope to prevent 8% workers from withdrawing from workplaces by taking advantage of the value of the healthy elderly and respecting the dignity of the disabled elderly. Also, we look forward to finding the ability of every child in order to relieve the talent shortage.\n \nCare for mothers in Taiwan and encourage innovative thinking and value transformation\n \nThe birth of 104 originates from unemployment. 104 always bears a social responsibility to provide a stable workplace and to care for the land. We always look forward to transforming workers into givers, who take courage to help society and solve problems. And doing so often creates unique values and personal significance.\n \nWhether a life is different depends on the courage to achieve one thing without limit.\n\f\n"
+                },
+                "gsx$網址": {
+                    "$t": "http://corp.104.com.tw/"
+                },
+                "gsx$照片": {
+                    "$t": "104.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Shawn"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cu76f"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "13"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: BankofKH, 贊助商等級: Geek, 名稱: 高雄銀行, 名稱en: 高雄銀行, 介紹: 高雄銀行於1982年1月13日正式設立，全台設有36個分行據點，持續致力於提供客戶專業且優質服務，連續數年獲得財金公司「電子金融業務推動優良獎」與「行動支付業務最佳創新卓越獎」，2016年則再度獲得「電子金流業務最佳創新卓越獎」。為加速推展數位金融業務，高雄銀行於今年4月成立「數位金融處」，積極推動並尋求創新業務合作，另一方面亦對外招募及培養優秀數位金融人才，扮演高雄銀行數位轉型的領頭羊。, 介紹en: Bank of Kaohsiung (BOK), officially established on January 13th 1982, has 36 branches and strives to provide our customers with professional and high-quality service. As the winner of \"E-finance Business Promotion Award\" and \"Best Innovation Award of Mobile Payment\" of FISC for successive years, BOK acquired another \"Best Innovation Award for Electronic Finance\" in 2016. To accelerate the development of digital financial services, in April 2017, BOK set up the \"Digital Finance Department\", of which the task is to promote and seek innovative business cooperation. BOK also provides a complete recruitment program and cultivates digital finance talented employees. Digital Finance Department plays a role as digital transformation leader of BOK., 網址: https://www.bok.com.tw/, 照片: BankofKH.png, 窗口: Ofa"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cu76f"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "13"
+                },
+                "gsx$id": {
+                    "$t": "BankofKH"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Geek"
+                },
+                "gsx$名稱": {
+                    "$t": "高雄銀行"
+                },
+                "gsx$名稱en": {
+                    "$t": "高雄銀行"
+                },
+                "gsx$介紹": {
+                    "$t": "高雄銀行於1982年1月13日正式設立，全台設有36個分行據點，持續致力於提供客戶專業且優質服務，連續數年獲得財金公司「電子金融業務推動優良獎」與「行動支付業務最佳創新卓越獎」，2016年則再度獲得「電子金流業務最佳創新卓越獎」。為加速推展數位金融業務，高雄銀行於今年4月成立「數位金融處」，積極推動並尋求創新業務合作，另一方面亦對外招募及培養優秀數位金融人才，扮演高雄銀行數位轉型的領頭羊。"
+                },
+                "gsx$介紹en": {
+                    "$t": "Bank of Kaohsiung (BOK), officially established on January 13th 1982, has 36 branches and strives to provide our customers with professional and high-quality service. As the winner of \"E-finance Business Promotion Award\" and \"Best Innovation Award of Mobile Payment\" of FISC for successive years, BOK acquired another \"Best Innovation Award for Electronic Finance\" in 2016. To accelerate the development of digital financial services, in April 2017, BOK set up the \"Digital Finance Department\", of which the task is to promote and seek innovative business cooperation. BOK also provides a complete recruitment program and cultivates digital finance talented employees. Digital Finance Department plays a role as digital transformation leader of BOK."
+                },
+                "gsx$網址": {
+                    "$t": "https://www.bok.com.tw/"
+                },
+                "gsx$照片": {
+                    "$t": "BankofKH.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Ofa"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cvlqs"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "13"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: iPass, 贊助商等級: Geek, 名稱: 一卡通, 名稱en: 一卡通, 介紹: 「iPASS一卡通」是原由高雄捷運公司發行之交通票證，於2007年12月正式發卡、2008年3月高雄捷運紅線通車後正式啟用，使用範圍包含高雄捷運、全台西部之公車與客運、臺鐵、高雄市公共腳踏車、台南市公共腳踏車、愛之船、渡輪及停車場等。\n一卡通票證公司承襲先前高雄捷運公司累積之發行經驗及維運技術，除繼續擴大「iPASS一卡通」票證於交通領域之使用，並跨足多用途支付（小額消費）業務，持續進行票證應用整合，使用範圍擴展至特約商店小額消費、停車費、觀光及藝文門票、政府規費、醫院批價等多樣化服務，大幅增加持卡人之便利性、實用性。\n, 介紹en: iPASS was a transportation ticket originally issued by the Kaohsiung Rapid Transit Corporation (KRTC). It was first issued in December, 2007, and was officially launched in March, 2008 after the Kaohsiung MRT Red Line started its operation. The scope of iPASS use includes: Kaohsiung MRT, buses in Western Taiwan, Taiwan Railway, Kaohsiung public bikes, Tainan public bikes, the Love Boat, ferries and parking lots.\nPassed down on the KRTC’s past experience of issuance as well as its maintenance and operation techniques, iPASS Corporation will continue not only to cooperate with more transportation system companies, but also to include multi-functional payment business (small transactions). In addition, it will continue to integrate the applications of different tickets, and extend its usage scope to more diversified services, such as making small transactions in authorized stores and paying for parking fees, tourist and show tickets, government charges and fees as well as medical bills, in hopes of dramatically increasing the convenience and practicability of the card.\n, 網址: https://www.i-pass.com.tw/, 照片: iPass.png, 窗口: Ofa"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cvlqs"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "13"
+                },
+                "gsx$id": {
+                    "$t": "iPass"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Geek"
+                },
+                "gsx$名稱": {
+                    "$t": "一卡通"
+                },
+                "gsx$名稱en": {
+                    "$t": "一卡通"
+                },
+                "gsx$介紹": {
+                    "$t": "「iPASS一卡通」是原由高雄捷運公司發行之交通票證，於2007年12月正式發卡、2008年3月高雄捷運紅線通車後正式啟用，使用範圍包含高雄捷運、全台西部之公車與客運、臺鐵、高雄市公共腳踏車、台南市公共腳踏車、愛之船、渡輪及停車場等。\n一卡通票證公司承襲先前高雄捷運公司累積之發行經驗及維運技術，除繼續擴大「iPASS一卡通」票證於交通領域之使用，並跨足多用途支付（小額消費）業務，持續進行票證應用整合，使用範圍擴展至特約商店小額消費、停車費、觀光及藝文門票、政府規費、醫院批價等多樣化服務，大幅增加持卡人之便利性、實用性。\n"
+                },
+                "gsx$介紹en": {
+                    "$t": "iPASS was a transportation ticket originally issued by the Kaohsiung Rapid Transit Corporation (KRTC). It was first issued in December, 2007, and was officially launched in March, 2008 after the Kaohsiung MRT Red Line started its operation. The scope of iPASS use includes: Kaohsiung MRT, buses in Western Taiwan, Taiwan Railway, Kaohsiung public bikes, Tainan public bikes, the Love Boat, ferries and parking lots.\nPassed down on the KRTC’s past experience of issuance as well as its maintenance and operation techniques, iPASS Corporation will continue not only to cooperate with more transportation system companies, but also to include multi-functional payment business (small transactions). In addition, it will continue to integrate the applications of different tickets, and extend its usage scope to more diversified services, such as making small transactions in authorized stores and paying for parking fees, tourist and show tickets, government charges and fees as well as medical bills, in hopes of dramatically increasing the convenience and practicability of the card.\n"
+                },
+                "gsx$網址": {
+                    "$t": "https://www.i-pass.com.tw/"
+                },
+                "gsx$照片": {
+                    "$t": "iPass.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Ofa"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cyevm"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "8"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: HotelYam, 贊助商等級: Developer, 名稱: 塩旅社, 名稱en: 塩旅社, 介紹: -我們透過旅店與來自世界各地的朋友交流-\n社會公民 / 你我都是這個世界的公民，透過行動關注而讓我們的社會更有活力，我們透過實際的行動參與社會，取之社會回饋社會的生態系統的建構，共存共好。\n多元串連，接線生 / 讓塩旅社成為接線生，串接起各種可能與跨域整合，在這個快速的時代，不同領域的對話與串接已是不可或缺的關鍵。\n在地文化 / 日本時代，因為運輸與打狗築港需求，將鹽場填海造陸，變成新市街。也將縱貫線鐵道延伸到打狗港邊。\n                   鐵道是高雄港與鹽埕發展的重要火車頭。 YAM一方面為「塩」的台語音譯，另一方面YAM英文字意「蕃薯」，具有台灣象徵意義。\n, 介紹en: HOTEL YAM is located in YanChengPu Dist., next to the most famous tourist area in Kaohsiung, such as Pier 2 Art Center, Sizihwan Bay, Chai Shan (Monkey Mountain) and Love River, and it takes travelers only 5-mins-walk from metro YanChengPu station to the hotel. As part of our commitment to eco friendliness, we provide only shampoo, shower gel and no bottled water in the room. When traveler arrive at HOTEL YAM, please enjoy the ocean breeze at 1st floor, find the local art works displayed in 2nd floor and relax yourself while you are with HOTEL YAM. We look forward to welcoming you at our hotel and have the opportunity to see you again., 網址: http://hotelyam.homi.cc, 照片: HotelYam.png, 窗口: Ofa"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cyevm"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "8"
+                },
+                "gsx$id": {
+                    "$t": "HotelYam"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Developer"
+                },
+                "gsx$名稱": {
+                    "$t": "塩旅社"
+                },
+                "gsx$名稱en": {
+                    "$t": "塩旅社"
+                },
+                "gsx$介紹": {
+                    "$t": "-我們透過旅店與來自世界各地的朋友交流-\n社會公民 / 你我都是這個世界的公民，透過行動關注而讓我們的社會更有活力，我們透過實際的行動參與社會，取之社會回饋社會的生態系統的建構，共存共好。\n多元串連，接線生 / 讓塩旅社成為接線生，串接起各種可能與跨域整合，在這個快速的時代，不同領域的對話與串接已是不可或缺的關鍵。\n在地文化 / 日本時代，因為運輸與打狗築港需求，將鹽場填海造陸，變成新市街。也將縱貫線鐵道延伸到打狗港邊。\n                   鐵道是高雄港與鹽埕發展的重要火車頭。 YAM一方面為「塩」的台語音譯，另一方面YAM英文字意「蕃薯」，具有台灣象徵意義。\n"
+                },
+                "gsx$介紹en": {
+                    "$t": "HOTEL YAM is located in YanChengPu Dist., next to the most famous tourist area in Kaohsiung, such as Pier 2 Art Center, Sizihwan Bay, Chai Shan (Monkey Mountain) and Love River, and it takes travelers only 5-mins-walk from metro YanChengPu station to the hotel. As part of our commitment to eco friendliness, we provide only shampoo, shower gel and no bottled water in the room. When traveler arrive at HOTEL YAM, please enjoy the ocean breeze at 1st floor, find the local art works displayed in 2nd floor and relax yourself while you are with HOTEL YAM. We look forward to welcoming you at our hotel and have the opportunity to see you again."
+                },
+                "gsx$網址": {
+                    "$t": "http://hotelyam.homi.cc"
+                },
+                "gsx$照片": {
+                    "$t": "HotelYam.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Ofa"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cztg3"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "9"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: MingPu, 贊助商等級: Developer, 名稱: 銘圃資訊, 名稱en: 銘圃資訊, 介紹: 銘圃資訊有限公司，專注紙本數據擷取解決方案。\n深受學校、政府機關及工商業等市場之客戶好評，市佔率70%以上。\n我們在資料輸入方面有更好的選擇，讓工作效率獲得加倍的提升。\n, 介紹en: 銘圃資訊有限公司，專注紙本數據擷取解決方案。\n深受學校、政府機關及工商業等市場之客戶好評，市佔率70%以上。\n我們在資料輸入方面有更好的選擇，讓工作效率獲得加倍的提升。\n, 網址: http://www.sekonicmp.com.tw/, 照片: MingPu.png, 窗口: Ofa"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cztg3"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "9"
+                },
+                "gsx$id": {
+                    "$t": "MingPu"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Developer"
+                },
+                "gsx$名稱": {
+                    "$t": "銘圃資訊"
+                },
+                "gsx$名稱en": {
+                    "$t": "銘圃資訊"
+                },
+                "gsx$介紹": {
+                    "$t": "銘圃資訊有限公司，專注紙本數據擷取解決方案。\n深受學校、政府機關及工商業等市場之客戶好評，市佔率70%以上。\n我們在資料輸入方面有更好的選擇，讓工作效率獲得加倍的提升。\n"
+                },
+                "gsx$介紹en": {
+                    "$t": "銘圃資訊有限公司，專注紙本數據擷取解決方案。\n深受學校、政府機關及工商業等市場之客戶好評，市佔率70%以上。\n我們在資料輸入方面有更好的選擇，讓工作效率獲得加倍的提升。\n"
+                },
+                "gsx$網址": {
+                    "$t": "http://www.sekonicmp.com.tw/"
+                },
+                "gsx$照片": {
+                    "$t": "MingPu.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Ofa"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/d180g"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "10"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: PuloApp, 贊助商等級: Developer, 名稱: 世穎資訊(PuloApp), 名稱en: 世穎資訊(PuloApp), 介紹: PULO 找師傅App：一起裝修你的家\n想要改造家的一角或全部？提供各種專業的師傅幫你！\n一個戀家的 App 團隊，要用自己的專長，幫助人們完成自己的家。\nPULO 覺得，除了專業技能，每位師傅都有值得挖掘的故事，可以成為和消費者之間的橋樑，讓彼此結為難能可貴的朋友。\nPULO 承諾，打造安心裝修服務：估價→簽約→施工→驗收→入住，PULO 站在你左右，分享喜悅, 介紹en: PULO app：Professional Decoration Platform\nDiscover the possibility of your house with professional contractor.\n\nWe’re a group of home-lovers who want to help people decorating their house with our professionals. \n\nPULO think every contractor is a good friend for you. Except the professional skill, \nthey also have a lot of invaluable experience for your reference that could help you discover what you truly want with your house.\n\nWe’ll always stand by your side and promise you a satisfied service.\nThe process of our service is “Provide the quotes→Sign the contract→Carry out the construction→Inspect the works”.\n, 網址: http://www.puloapp.com/, 照片: PuloApp.png, 窗口: Ofa"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/d180g"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "10"
+                },
+                "gsx$id": {
+                    "$t": "PuloApp"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Developer"
+                },
+                "gsx$名稱": {
+                    "$t": "世穎資訊(PuloApp)"
+                },
+                "gsx$名稱en": {
+                    "$t": "世穎資訊(PuloApp)"
+                },
+                "gsx$介紹": {
+                    "$t": "PULO 找師傅App：一起裝修你的家\n想要改造家的一角或全部？提供各種專業的師傅幫你！\n一個戀家的 App 團隊，要用自己的專長，幫助人們完成自己的家。\nPULO 覺得，除了專業技能，每位師傅都有值得挖掘的故事，可以成為和消費者之間的橋樑，讓彼此結為難能可貴的朋友。\nPULO 承諾，打造安心裝修服務：估價→簽約→施工→驗收→入住，PULO 站在你左右，分享喜悅"
+                },
+                "gsx$介紹en": {
+                    "$t": "PULO app：Professional Decoration Platform\nDiscover the possibility of your house with professional contractor.\n\nWe’re a group of home-lovers who want to help people decorating their house with our professionals. \n\nPULO think every contractor is a good friend for you. Except the professional skill, \nthey also have a lot of invaluable experience for your reference that could help you discover what you truly want with your house.\n\nWe’ll always stand by your side and promise you a satisfied service.\nThe process of our service is “Provide the quotes→Sign the contract→Carry out the construction→Inspect the works”.\n"
+                },
+                "gsx$網址": {
+                    "$t": "http://www.puloapp.com/"
+                },
+                "gsx$照片": {
+                    "$t": "PuloApp.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Ofa"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/d2mkx"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "11"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: niceMDM, 贊助商等級: Developer, 名稱: 乃師實業, 名稱en: 乃師實業, 介紹: niceStudio, Inc -- 致力於企業行動運用方案的提供者。我們是在地的團隊，提供敏捷的產品與服務，滿足企業客戶在行動應用上的需求。如果需要我們服務，歡迎來信: service@nicestudio.com.tw。, 介紹en: niceStudio, Inc -- the provider of mobile application solution for enterprise. We are focus on agile products and services to meet the needs of enterprise customers in mobile applications. If you need our services, please contact: service@nicestudio.com.tw, 網址: http://www.nicestudio.com.tw/, 照片: niceMDM.png, 窗口: Chuck"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/d2mkx"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "11"
+                },
+                "gsx$id": {
+                    "$t": "niceMDM"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Developer"
+                },
+                "gsx$名稱": {
+                    "$t": "乃師實業"
+                },
+                "gsx$名稱en": {
+                    "$t": "乃師實業"
+                },
+                "gsx$介紹": {
+                    "$t": "niceStudio, Inc -- 致力於企業行動運用方案的提供者。我們是在地的團隊，提供敏捷的產品與服務，滿足企業客戶在行動應用上的需求。如果需要我們服務，歡迎來信: service@nicestudio.com.tw。"
+                },
+                "gsx$介紹en": {
+                    "$t": "niceStudio, Inc -- the provider of mobile application solution for enterprise. We are focus on agile products and services to meet the needs of enterprise customers in mobile applications. If you need our services, please contact: service@nicestudio.com.tw"
+                },
+                "gsx$網址": {
+                    "$t": "http://www.nicestudio.com.tw/"
+                },
+                "gsx$照片": {
+                    "$t": "niceMDM.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Chuck"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cssly"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "12"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: Archilife, 贊助商等級: Developer, 名稱: 祐生基金會, 名稱en: 祐生基金會, 介紹: 祐生研究基金會由推動建築與環境永續發展之研究開始，推動長期的知識累積與人才培養。除了過去建築、環境、生態、健康與資訊社會與文化等面向之碩士論文獎助主題外，本會目前定期舉辦的聯誼會及讀書會，強化祐生成員的知識密度。其後，於 2011 年起，本會持續針對國內開源活動進行贊助，也針對國內獨立遊戲開發者，推動知識與資訊分享聚會，並贊助台灣開發者前往特定國際遊戲競賽，期能幫助國內相關社群之發展。, 介紹en: Since 1987, the Archilife Research Foundation started long-term researches in architecture, sustainability, and go on to other areas of knowledge integration. Efforts including previously giving scholarships in aforementioned areas, and currently holding reading group meetings and communion events for knowledge keepers to better our understandings of the world. From 2011, we also have been sponsoring various Open Source related events, holding meetups and game jams for local game developers' community, and giving out scholarships to support indie game teams and encourage them to go to international game festivals., 網址: https://archilife.org/, 照片: Archilife.png, 窗口: Ofa"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cssly"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "12"
+                },
+                "gsx$id": {
+                    "$t": "Archilife"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Developer"
+                },
+                "gsx$名稱": {
+                    "$t": "祐生基金會"
+                },
+                "gsx$名稱en": {
+                    "$t": "祐生基金會"
+                },
+                "gsx$介紹": {
+                    "$t": "祐生研究基金會由推動建築與環境永續發展之研究開始，推動長期的知識累積與人才培養。除了過去建築、環境、生態、健康與資訊社會與文化等面向之碩士論文獎助主題外，本會目前定期舉辦的聯誼會及讀書會，強化祐生成員的知識密度。其後，於 2011 年起，本會持續針對國內開源活動進行贊助，也針對國內獨立遊戲開發者，推動知識與資訊分享聚會，並贊助台灣開發者前往特定國際遊戲競賽，期能幫助國內相關社群之發展。"
+                },
+                "gsx$介紹en": {
+                    "$t": "Since 1987, the Archilife Research Foundation started long-term researches in architecture, sustainability, and go on to other areas of knowledge integration. Efforts including previously giving scholarships in aforementioned areas, and currently holding reading group meetings and communion events for knowledge keepers to better our understandings of the world. From 2011, we also have been sponsoring various Open Source related events, holding meetups and game jams for local game developers' community, and giving out scholarships to support indie game teams and encourage them to go to international game festivals."
+                },
+                "gsx$網址": {
+                    "$t": "https://archilife.org/"
+                },
+                "gsx$照片": {
+                    "$t": "Archilife.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Ofa"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cx0b9"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "14"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: Dcard, 贊助商等級: Developer, 名稱: Dcard, 名稱en: Dcard, 介紹: Dcard 於 2011 年由台灣大學學生打造，是一支致力於讓分享更自由，讓資訊流動更美好的國際團隊。我們提供的社群服務，擁有每個月超越八百萬的不重複訪客，與雙位數的月成長曲線。在學生族群有極高的滲透率，以及超越 Line、Facebook 的黏著時間；在各大媒體有高量的曝光和影響力。\r\n\r\nDcard 的抽卡，讓使用者在午夜 12 點抽卡配對；論壇功能，讓使用者能以全匿名的方式在平台上面討論各種話題，至今成為許多主題的最大討論論壇、演變成擁有百萬量級註冊用戶的社群平台。\r\n\r\n未來我們希望持續為這個社會創造價值及可能性，或許是讓每個人都有話語影響力，亦或是讓每個人能自在的交友，甚至是許多許多現在無法想像的可能性。, 介紹en: Dcard is established in 2011. Dcard has become the most popular platform for the young generation since then. The anonymous forum feature that enables members to speak the unspeakable on Dcard. With 8 million+ monthly unique visitors and longer user-time than Line and Facebook, Dcard is the most prominent social network to be the next thing to the world.\r\nJoin us now to be part of this wave!, 網址:  https://www.dcard.tw/f, 照片: Dcard.png, 窗口: Chloe"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/cx0b9"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "14"
+                },
+                "gsx$id": {
+                    "$t": "Dcard"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Developer"
+                },
+                "gsx$名稱": {
+                    "$t": "Dcard"
+                },
+                "gsx$名稱en": {
+                    "$t": "Dcard"
+                },
+                "gsx$介紹": {
+                    "$t": "Dcard 於 2011 年由台灣大學學生打造，是一支致力於讓分享更自由，讓資訊流動更美好的國際團隊。我們提供的社群服務，擁有每個月超越八百萬的不重複訪客，與雙位數的月成長曲線。在學生族群有極高的滲透率，以及超越 Line、Facebook 的黏著時間；在各大媒體有高量的曝光和影響力。\r\n\r\nDcard 的抽卡，讓使用者在午夜 12 點抽卡配對；論壇功能，讓使用者能以全匿名的方式在平台上面討論各種話題，至今成為許多主題的最大討論論壇、演變成擁有百萬量級註冊用戶的社群平台。\r\n\r\n未來我們希望持續為這個社會創造價值及可能性，或許是讓每個人都有話語影響力，亦或是讓每個人能自在的交友，甚至是許多許多現在無法想像的可能性。"
+                },
+                "gsx$介紹en": {
+                    "$t": "Dcard is established in 2011. Dcard has become the most popular platform for the young generation since then. The anonymous forum feature that enables members to speak the unspeakable on Dcard. With 8 million+ monthly unique visitors and longer user-time than Line and Facebook, Dcard is the most prominent social network to be the next thing to the world.\r\nJoin us now to be part of this wave!"
+                },
+                "gsx$網址": {
+                    "$t": " https://www.dcard.tw/f"
+                },
+                "gsx$照片": {
+                    "$t": "Dcard.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Chloe"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/d9ney"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "15"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: Wistron, 贊助商等級: Developer, 名稱: 緯創資通, 名稱en: 緯創資通, 介紹: 緯創資通是全球最大的資訊及通訊產品專業設計及代工廠商之一，目前全球擁有8個研發支援中心、9個製造基地、15個客服中心及全球維修中心，共有90000位員工架構堅實的全球營運網絡。產品涵蓋筆記型及桌上型電腦、平板電腦、智慧型手機、伺服器、網路家電產品、有線及無線數據通訊、數位消費性電子產品等。全球資訊領導品牌廠商大部份都是緯創客戶。 \n \n高雄研發中心於2015年成立，主要研發方向以雲端服務與維運、物聯網與大數據分析、行動辦公室軟體、人工智慧、生物辨識等最新科技研發。, 介紹en: 緯創資通是全球最大的資訊及通訊產品專業設計及代工廠商之一，目前全球擁有8個研發支援中心、9個製造基地、15個客服中心及全球維修中心，共有90000位員工架構堅實的全球營運網絡。產品涵蓋筆記型及桌上型電腦、平板電腦、智慧型手機、伺服器、網路家電產品、有線及無線數據通訊、數位消費性電子產品等。全球資訊領導品牌廠商大部份都是緯創客戶。 \n \n高雄研發中心於2015年成立，主要研發方向以雲端服務與維運、物聯網與大數據分析、行動辦公室軟體、人工智慧、生物辨識等最新科技研發。, 網址: http://www.wistron.com.tw/, 照片: Wistron.png, 窗口: Ofa"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/d9ney"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "15"
+                },
+                "gsx$id": {
+                    "$t": "Wistron"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Developer"
+                },
+                "gsx$名稱": {
+                    "$t": "緯創資通"
+                },
+                "gsx$名稱en": {
+                    "$t": "緯創資通"
+                },
+                "gsx$介紹": {
+                    "$t": "緯創資通是全球最大的資訊及通訊產品專業設計及代工廠商之一，目前全球擁有8個研發支援中心、9個製造基地、15個客服中心及全球維修中心，共有90000位員工架構堅實的全球營運網絡。產品涵蓋筆記型及桌上型電腦、平板電腦、智慧型手機、伺服器、網路家電產品、有線及無線數據通訊、數位消費性電子產品等。全球資訊領導品牌廠商大部份都是緯創客戶。 \n \n高雄研發中心於2015年成立，主要研發方向以雲端服務與維運、物聯網與大數據分析、行動辦公室軟體、人工智慧、生物辨識等最新科技研發。"
+                },
+                "gsx$介紹en": {
+                    "$t": "緯創資通是全球最大的資訊及通訊產品專業設計及代工廠商之一，目前全球擁有8個研發支援中心、9個製造基地、15個客服中心及全球維修中心，共有90000位員工架構堅實的全球營運網絡。產品涵蓋筆記型及桌上型電腦、平板電腦、智慧型手機、伺服器、網路家電產品、有線及無線數據通訊、數位消費性電子產品等。全球資訊領導品牌廠商大部份都是緯創客戶。 \n \n高雄研發中心於2015年成立，主要研發方向以雲端服務與維運、物聯網與大數據分析、行動辦公室軟體、人工智慧、生物辨識等最新科技研發。"
+                },
+                "gsx$網址": {
+                    "$t": "http://www.wistron.com.tw/"
+                },
+                "gsx$照片": {
+                    "$t": "Wistron.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Ofa"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/db1zf"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "16"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: Gandi, 贊助商等級: Developer, 名稱: Gandi, 名稱en: Gandi, 介紹: Gandi 於 1999 年成立，目前是全球知名註冊商之一，我們提供超過 750 種域名並管理 2 百萬個網域以上。Gandi 同時也是 SSL 憑證認證機構與雲端主機服務提供者。\n, 介紹en: Founded in 1999, Gandi is among the top registrars in the world, offering over 750 domain extensions and manages over 2 million domain names. Gandi is also a leading SSL Certification Authority and public cloud hosting service provider., 網址: https://www.gandi.net, 照片: Gandi.png, 窗口: Ofa"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/db1zf"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "16"
+                },
+                "gsx$id": {
+                    "$t": "Gandi"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "Developer"
+                },
+                "gsx$名稱": {
+                    "$t": "Gandi"
+                },
+                "gsx$名稱en": {
+                    "$t": "Gandi"
+                },
+                "gsx$介紹": {
+                    "$t": "Gandi 於 1999 年成立，目前是全球知名註冊商之一，我們提供超過 750 種域名並管理 2 百萬個網域以上。Gandi 同時也是 SSL 憑證認證機構與雲端主機服務提供者。\n"
+                },
+                "gsx$介紹en": {
+                    "$t": "Founded in 1999, Gandi is among the top registrars in the world, offering over 750 domain extensions and manages over 2 million domain names. Gandi is also a leading SSL Certification Authority and public cloud hosting service provider."
+                },
+                "gsx$網址": {
+                    "$t": "https://www.gandi.net"
+                },
+                "gsx$照片": {
+                    "$t": "Gandi.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Ofa"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/ddv49"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "18"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: HackMD, 贊助商等級: 特別感謝, 名稱: HackMd, 名稱en: HackMd, 介紹: HackMD 提供您建立即時的跨平台 Markdown 筆記。\n能用於組織您的想法、與夥伴討論並即時預覽結果，\n不但如此，同時也能支援簡報、圖表、數學表達式。\n從上線以來，共超過 22 萬份筆記被寫在 HackMD 上，\n我們幫助使用者製作文件、便條、工作事項、write-ups、作業、教學甚至提供開放討論的平台。\n現在就加入吧！您也能用聰明的方式寫作！\n一用就愛上 \u003c3, 介紹en: HackMD enables you to create realtime collaborative markdown notes on all platforms. It could be used to organize your thoughts, discuss with your teammates, and preview the result in realtime.\nNot only can it power notes but slides, charts, and math expressions are also supported.\n\nSince launch, more than 220,000 notes have been taken in HackMD.\nWe help people write their documents, memos, todo lists, write-ups, homework, tutorials, and even provide a platform for open discussion to happen.\nJoin us now! You could write smarter!\nCome and love it \u003c3, 網址: https://hackmd.io/, 照片: HackMD.png"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/ddv49"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "18"
+                },
+                "gsx$id": {
+                    "$t": "HackMD"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "特別感謝"
+                },
+                "gsx$名稱": {
+                    "$t": "HackMd"
+                },
+                "gsx$名稱en": {
+                    "$t": "HackMd"
+                },
+                "gsx$介紹": {
+                    "$t": "HackMD 提供您建立即時的跨平台 Markdown 筆記。\n能用於組織您的想法、與夥伴討論並即時預覽結果，\n不但如此，同時也能支援簡報、圖表、數學表達式。\n從上線以來，共超過 22 萬份筆記被寫在 HackMD 上，\n我們幫助使用者製作文件、便條、工作事項、write-ups、作業、教學甚至提供開放討論的平台。\n現在就加入吧！您也能用聰明的方式寫作！\n一用就愛上 \u003c3"
+                },
+                "gsx$介紹en": {
+                    "$t": "HackMD enables you to create realtime collaborative markdown notes on all platforms. It could be used to organize your thoughts, discuss with your teammates, and preview the result in realtime.\nNot only can it power notes but slides, charts, and math expressions are also supported.\n\nSince launch, more than 220,000 notes have been taken in HackMD.\nWe help people write their documents, memos, todo lists, write-ups, homework, tutorials, and even provide a platform for open discussion to happen.\nJoin us now! You could write smarter!\nCome and love it \u003c3"
+                },
+                "gsx$網址": {
+                    "$t": "https://hackmd.io/"
+                },
+                "gsx$照片": {
+                    "$t": "HackMD.png"
+                },
+                "gsx$窗口": {
+                    "$t": ""
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/dcgjs"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "17"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: Facebook, 贊助商等級: 特別感謝, 名稱: Facebook, 名稱en: Facebook, 網址: https://www.facebook.com/, 照片: Facebook.png, 窗口: Ofa"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/dcgjs"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "17"
+                },
+                "gsx$id": {
+                    "$t": "Facebook"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "特別感謝"
+                },
+                "gsx$名稱": {
+                    "$t": "Facebook"
+                },
+                "gsx$名稱en": {
+                    "$t": "Facebook"
+                },
+                "gsx$介紹": {
+                    "$t": ""
+                },
+                "gsx$介紹en": {
+                    "$t": ""
+                },
+                "gsx$網址": {
+                    "$t": "https://www.facebook.com/"
+                },
+                "gsx$照片": {
+                    "$t": "Facebook.png"
+                },
+                "gsx$窗口": {
+                    "$t": "Ofa"
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/d415a"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "19"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: KKTIX, 贊助商等級: 特別感謝, 名稱: KKTIX, 名稱en: KKTIX, 網址: https://kktix.com/, 照片: KKTIX.png"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/d415a"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "19"
+                },
+                "gsx$id": {
+                    "$t": "KKTIX"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "特別感謝"
+                },
+                "gsx$名稱": {
+                    "$t": "KKTIX"
+                },
+                "gsx$名稱en": {
+                    "$t": "KKTIX"
+                },
+                "gsx$介紹": {
+                    "$t": ""
+                },
+                "gsx$介紹en": {
+                    "$t": ""
+                },
+                "gsx$網址": {
+                    "$t": "https://kktix.com/"
+                },
+                "gsx$照片": {
+                    "$t": "KKTIX.png"
+                },
+                "gsx$窗口": {
+                    "$t": ""
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/d5fpr"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "20"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: 打狗啤酒, 贊助商等級: 特別感謝, 名稱: 打狗啤酒, 名稱en: Takao Brewing, 網址: http://www.tkbeer.com/, 照片: tkbeer.png"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/d5fpr"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "20"
+                },
+                "gsx$id": {
+                    "$t": "打狗啤酒"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "特別感謝"
+                },
+                "gsx$名稱": {
+                    "$t": "打狗啤酒"
+                },
+                "gsx$名稱en": {
+                    "$t": "Takao Brewing"
+                },
+                "gsx$介紹": {
+                    "$t": ""
+                },
+                "gsx$介紹en": {
+                    "$t": ""
+                },
+                "gsx$網址": {
+                    "$t": "http://www.tkbeer.com/"
+                },
+                "gsx$照片": {
+                    "$t": "tkbeer.png"
+                },
+                "gsx$窗口": {
+                    "$t": ""
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/d6ua4"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "21"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: TT 面膜, 贊助商等級: 特別感謝, 網址: https://www.ttmask.com/, 照片: tt.png"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/d6ua4"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "21"
+                },
+                "gsx$id": {
+                    "$t": "TT 面膜"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "特別感謝"
+                },
+                "gsx$名稱": {
+                    "$t": ""
+                },
+                "gsx$名稱en": {
+                    "$t": ""
+                },
+                "gsx$介紹": {
+                    "$t": ""
+                },
+                "gsx$介紹en": {
+                    "$t": ""
+                },
+                "gsx$網址": {
+                    "$t": "https://www.ttmask.com/"
+                },
+                "gsx$照片": {
+                    "$t": "tt.png"
+                },
+                "gsx$窗口": {
+                    "$t": ""
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/d88ul"
+                },
+                "updated": {
+                    "$t": "2017-10-25T10:54:56.698Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "22"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "id: 樹德科技大學, 贊助商等級: 特別感謝, 網址: https://www.stu.edu.tw/, 照片: SHU-TE.png"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1MXWK7N8NAUFaoHiaOuDK2E3Llev5buhHnUAW86nDdAc/1/public/values/d88ul"
+                    }
+                ],
+                "gsx$贊助商編號": {
+                    "$t": "22"
+                },
+                "gsx$id": {
+                    "$t": "樹德科技大學"
+                },
+                "gsx$贊助商等級": {
+                    "$t": "特別感謝"
+                },
+                "gsx$名稱": {
+                    "$t": ""
+                },
+                "gsx$名稱en": {
+                    "$t": ""
+                },
+                "gsx$介紹": {
+                    "$t": ""
+                },
+                "gsx$介紹en": {
+                    "$t": ""
+                },
+                "gsx$網址": {
+                    "$t": "https://www.stu.edu.tw/"
+                },
+                "gsx$照片": {
+                    "$t": "SHU-TE.png"
+                },
+                "gsx$窗口": {
+                    "$t": ""
+                },
+                "gsx$remarks": {
+                    "$t": ""
+                }
+            }
+        ]
+    }
+}

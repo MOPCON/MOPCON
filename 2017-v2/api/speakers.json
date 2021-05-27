@@ -1,0 +1,3495 @@
+{
+    "version": "1.0",
+    "encoding": "UTF-8",
+    "feed": {
+        "xmlns": "http://www.w3.org/2005/Atom",
+        "xmlns$openSearch": "http://a9.com/-/spec/opensearchrss/1.0/",
+        "xmlns$gsx": "http://schemas.google.com/spreadsheets/2006/extended",
+        "id": {
+            "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values"
+        },
+        "updated": {
+            "$t": "2018-01-10T02:01:33.110Z"
+        },
+        "category": [
+            {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+            }
+        ],
+        "title": {
+            "type": "text",
+            "$t": "講者資料"
+        },
+        "link": [
+            {
+                "rel": "alternate",
+                "type": "application/atom+xml",
+                "href": "https://docs.google.com/spreadsheets/d/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/pubhtml"
+            },
+            {
+                "rel": "http://schemas.google.com/g/2005#feed",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values"
+            },
+            {
+                "rel": "http://schemas.google.com/g/2005#post",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values"
+            },
+            {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values?alt\u003djson"
+            }
+        ],
+        "author": [
+            {
+                "name": {
+                    "$t": "mkidyt"
+                },
+                "email": {
+                    "$t": "mkidyt@mopcon.org"
+                }
+            }
+        ],
+        "openSearch$totalResults": {
+            "$t": "35"
+        },
+        "openSearch$startIndex": {
+            "$t": "1"
+        },
+        "entry": [
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cokwr"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "1"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: Ramiro Corbetta, 姓名en: Ramiro Corbetta, 類別: Game \u0026 Eng., 職稱: Professor and Director of Game Design at Long Island University Post, 個人介紹: Ramiro Corbetta 助理教授，目前擔任美國紐約長島大學數位遊戲設計系的系主任。Ramiro 是一位遊戲開發者並身兼教職，在遊戲產業擁有超過十年的開發經驗。他曾參與開發數十款遊戲，包括贏得「Independent Games Festival」首獎的 Glow Artisa ，微軟 Win8 接龍遊戲，iPhone 遊戲 Dots and TwoDots，其中，最知名的是共同開發打造，且獲選為「IndieCade Festival」年度遊戲獎的 Playstation 遊戲 Sportsfriends。, 個人介紹en: Professor Ramiro Corbetta is a game developer and educator who has worked on games such as Independent Games Festival winner Glow Artisan, Microsoft Solitaire for Windows 8, and Dots. He is best known for the IndieCade Festival winner Sportsfriends., 照片: ramirocorbetta.jpg, linkedin: https://www.linkedin.com/in/ramiro-corbetta-a758374/ , 演講主題: Human Videogame Interaction, 演講主題en: Human Videogame Interaction, 演講摘要: 電腦出現之前，遊戲可算是一種社交互動，但電玩在 20 世紀末的興起使得遊戲轉變成單人活動。現代電玩要如何凝聚人群？我們該如何設計遊戲和軟體如同建構一種社交經驗？, 演講摘要en: Before computers, playing games was almost always a form of social interaction, but the rise of digital games in the latter part of the 20th century allowed them to become solitary activities.\nHow have modern videogames helped bring people together?  And how can we design games and software as social experiences?, 議程編號: 17"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cokwr"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "1"
+                },
+                "gsx$姓名": {
+                    "$t": "Ramiro Corbetta"
+                },
+                "gsx$姓名en": {
+                    "$t": "Ramiro Corbetta"
+                },
+                "gsx$類別": {
+                    "$t": "Game \u0026 Eng."
+                },
+                "gsx$職稱": {
+                    "$t": "Professor and Director of Game Design at Long Island University Post"
+                },
+                "gsx$個人介紹": {
+                    "$t": "Ramiro Corbetta 助理教授，目前擔任美國紐約長島大學數位遊戲設計系的系主任。Ramiro 是一位遊戲開發者並身兼教職，在遊戲產業擁有超過十年的開發經驗。他曾參與開發數十款遊戲，包括贏得「Independent Games Festival」首獎的 Glow Artisa ，微軟 Win8 接龍遊戲，iPhone 遊戲 Dots and TwoDots，其中，最知名的是共同開發打造，且獲選為「IndieCade Festival」年度遊戲獎的 Playstation 遊戲 Sportsfriends。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Professor Ramiro Corbetta is a game developer and educator who has worked on games such as Independent Games Festival winner Glow Artisan, Microsoft Solitaire for Windows 8, and Dots. He is best known for the IndieCade Festival winner Sportsfriends."
+                },
+                "gsx$照片": {
+                    "$t": "ramirocorbetta.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": "https://www.linkedin.com/in/ramiro-corbetta-a758374/ "
+                },
+                "gsx$演講主題": {
+                    "$t": "Human Videogame Interaction"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Human Videogame Interaction"
+                },
+                "gsx$演講摘要": {
+                    "$t": "電腦出現之前，遊戲可算是一種社交互動，但電玩在 20 世紀末的興起使得遊戲轉變成單人活動。現代電玩要如何凝聚人群？我們該如何設計遊戲和軟體如同建構一種社交經驗？"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "Before computers, playing games was almost always a form of social interaction, but the rise of digital games in the latter part of the 20th century allowed them to become solitary activities.\nHow have modern videogames helped bring people together?  And how can we design games and software as social experiences?"
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "17"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cpzh4"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "6"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 黃敬群(jserv), 姓名en: Jim (jserv) Huang, 類別: Blockchain, 職稱: 助理教授, 個人介紹: 網上慣用 \"jserv\" 代稱，任教於成功大學，專注作業系統、編譯器，和虛擬機等領域。曾任台灣聯發科、台達電、富士康，和工業技術研究院的技術顧問，並長期投入開源貢獻。, 個人介紹en: Jim Huang, known as \"jserv\", is assistant professor at National Cheng Kung University in Taiwan where he teaches courses on operating system, compiler, and virtual machine. He served as technical advisor for Foxconn, Delta, and Mediatek., 照片: jservhuang.jpg, facebook: https://fb.me/microjserv, 演講主題: 透過區塊鏈打造行動化數位證書, 演講主題en: Proof-of-Existence Infrastructure with Blockchain, 演講摘要: 區塊鏈被視為在網際網路之後，改變人類數位生活的關鍵技術，其中存在證明（proof-of-existence）則是區塊鏈的一項應用，發揮去中心化和不可篡改的特性。本議程探討如何透過移動裝置和各種運算節點的協同運作，打造以區塊鏈為基礎的存在證明基礎建設，並實際投入數位證書、證照，和鑑識等應用。, 演講摘要en: Blockchain was viewed as the essential skill that changes humankind's digital life after the invention of the Internet. One of its application is proof-of-existence with the property of decentralization and irreversibility. The topic discusses how to build up the fundamental structure of proof-of-existence based on blockchain through mobile devices operating with many nodes and to apply it to digital certificate and identification., 議程編號: 18"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cpzh4"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "6"
+                },
+                "gsx$姓名": {
+                    "$t": "黃敬群(jserv)"
+                },
+                "gsx$姓名en": {
+                    "$t": "Jim (jserv) Huang"
+                },
+                "gsx$類別": {
+                    "$t": "Blockchain"
+                },
+                "gsx$職稱": {
+                    "$t": "助理教授"
+                },
+                "gsx$個人介紹": {
+                    "$t": "網上慣用 \"jserv\" 代稱，任教於成功大學，專注作業系統、編譯器，和虛擬機等領域。曾任台灣聯發科、台達電、富士康，和工業技術研究院的技術顧問，並長期投入開源貢獻。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Jim Huang, known as \"jserv\", is assistant professor at National Cheng Kung University in Taiwan where he teaches courses on operating system, compiler, and virtual machine. He served as technical advisor for Foxconn, Delta, and Mediatek."
+                },
+                "gsx$照片": {
+                    "$t": "jservhuang.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": "https://fb.me/microjserv"
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "透過區塊鏈打造行動化數位證書"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Proof-of-Existence Infrastructure with Blockchain"
+                },
+                "gsx$演講摘要": {
+                    "$t": "區塊鏈被視為在網際網路之後，改變人類數位生活的關鍵技術，其中存在證明（proof-of-existence）則是區塊鏈的一項應用，發揮去中心化和不可篡改的特性。本議程探討如何透過移動裝置和各種運算節點的協同運作，打造以區塊鏈為基礎的存在證明基礎建設，並實際投入數位證書、證照，和鑑識等應用。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "Blockchain was viewed as the essential skill that changes humankind's digital life after the invention of the Internet. One of its application is proof-of-existence with the property of decentralization and irreversibility. The topic discusses how to build up the fundamental structure of proof-of-existence based on blockchain through mobile devices operating with many nodes and to apply it to digital certificate and identification."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "18"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cre1l"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "3"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 翟本喬, 姓名en: Ben Jai, 類別: Cloud, 職稱: 和沛移動總經理, 個人介紹: 曾任貝爾實驗室研究員、Google 平台架構師。創立和沛科技、科沛移動。努力耕耘臺灣軟體創新創業環境，積極投入法規及產業文化革新。, 個人介紹en: Ben Jai is the founder of Hope Bay Mobile.  He was Google's Server Platform Architect, and worked at Bell Labs as a researcher.  He is devoted to renovating the business culture and regulatory environment for Taiwan's software industry., 照片: benjai.jpg, 演講主題: Tera - 無限容量、無限想像, 演講主題en: Tera - a Storage System with Unlimited Capacity, 演講摘要: 對使用者來說，儲存容量是一個功能參數，而不是功能本身。使用者要的是資料存得好、拿得到，而不是在乎本地或雲端的儲存容量有多大、網路有多快。Tera 的理念是資料的 hyperconnectivity，也就是說所有資料儲存透過網路融為一體，使用者不用去擔心資料存在本地或雲端、網路是否有連線或有多快。Tera 首先藉由本地和雲端儲存的無縫連結，排除了第一個問題：所有的程式自動看到本地和雲端一體的儲存空間，而不用再去區分；再來藉由人工智慧調校過的本地快取，預測使用者將會需要哪些資料，而把它們保存在本地，以減少網路存取量以及延遲。\nTera 是和沛團隊過去五年重要的研發成果。它讓 Linux 電腦可以掛載 HCFS (Hopebay Cloud Filesystem)，使本地儲存空間看來跟雲端一樣大。本地儲存變成快取，讓存取效能不會受到網路延遲的影響。後端可以使用 Google Drive, SWIFT, AWS S3 等雲端儲存服務。目前 Tera 可以用在 Android 4.4 - 8.0 的手機上。, 演講摘要en: Tera utilizes cloud storage services (Google Drive, SWIFT, AWS S3) and allows Linux-based computers to mount HCFS (Hopebay Cloud Filesystem) to make local storage look as big as the cloud.  Th local storage becomes a cache and eliminates the delay from accessing the cloud.\nTera is currently available on Android 4.4-7.1., 議程編號: 34"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cre1l"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "3"
+                },
+                "gsx$姓名": {
+                    "$t": "翟本喬"
+                },
+                "gsx$姓名en": {
+                    "$t": "Ben Jai"
+                },
+                "gsx$類別": {
+                    "$t": "Cloud"
+                },
+                "gsx$職稱": {
+                    "$t": "和沛移動總經理"
+                },
+                "gsx$個人介紹": {
+                    "$t": "曾任貝爾實驗室研究員、Google 平台架構師。創立和沛科技、科沛移動。努力耕耘臺灣軟體創新創業環境，積極投入法規及產業文化革新。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Ben Jai is the founder of Hope Bay Mobile.  He was Google's Server Platform Architect, and worked at Bell Labs as a researcher.  He is devoted to renovating the business culture and regulatory environment for Taiwan's software industry."
+                },
+                "gsx$照片": {
+                    "$t": "benjai.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "Tera - 無限容量、無限想像"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Tera - a Storage System with Unlimited Capacity"
+                },
+                "gsx$演講摘要": {
+                    "$t": "對使用者來說，儲存容量是一個功能參數，而不是功能本身。使用者要的是資料存得好、拿得到，而不是在乎本地或雲端的儲存容量有多大、網路有多快。Tera 的理念是資料的 hyperconnectivity，也就是說所有資料儲存透過網路融為一體，使用者不用去擔心資料存在本地或雲端、網路是否有連線或有多快。Tera 首先藉由本地和雲端儲存的無縫連結，排除了第一個問題：所有的程式自動看到本地和雲端一體的儲存空間，而不用再去區分；再來藉由人工智慧調校過的本地快取，預測使用者將會需要哪些資料，而把它們保存在本地，以減少網路存取量以及延遲。\nTera 是和沛團隊過去五年重要的研發成果。它讓 Linux 電腦可以掛載 HCFS (Hopebay Cloud Filesystem)，使本地儲存空間看來跟雲端一樣大。本地儲存變成快取，讓存取效能不會受到網路延遲的影響。後端可以使用 Google Drive, SWIFT, AWS S3 等雲端儲存服務。目前 Tera 可以用在 Android 4.4 - 8.0 的手機上。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "Tera utilizes cloud storage services (Google Drive, SWIFT, AWS S3) and allows Linux-based computers to mount HCFS (Hopebay Cloud Filesystem) to make local storage look as big as the cloud.  Th local storage becomes a cache and eliminates the delay from accessing the cloud.\nTera is currently available on Android 4.4-7.1."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "34"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/chk2m"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "4"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 田哲禹(James Tien), 姓名en: James Tien, 類別: Cloud, 職稱: 台灣區經理, Google Cloud (Head of Taiwan, Google Cloud), 個人介紹: 現職 Google Cloud 台灣區經理。2012 年開始接觸雲端服務，有幸見證科技發展上的重要轉變，隨著許多企業開始利用雲端服務，加速創新，擴充商業版圖到全球各地。喜歡技術快速迭代與進步，也喜歡藝術帶來的感動，最喜歡的 APP 是 Spotify。, 個人介紹en: Started his career in cloud service in 2012, James has witnessed the critical change in technology when enterprises started utilizing cloud services to boost innovation. He loves the fast-pace iteration of technology and the power of art., 照片: jamestien.jpg, 演講主題: Innovate with New Technologies on Google Cloud, 演講主題en: Innovate with New Technologies on Google Cloud, 演講摘要: 不管是 SRE (網站可靠性工程)、CRE (顧客可靠性工程)或是雲端營運等等，都是維持 Google Cloud 的運作、規模與效能的重要議題。在這場議程當中，Google 將與大家分享他們如何建構內部的流程去持續改善可靠性。我們亦將討論最佳的實作方式以減少平均偵測時間與平均恢復時間，以及如何應用 SRE 原則在你的組織當中運作。, 演講摘要en: From Site Reliability Engineering(SRE) to Customer Reliability Engineering CRE) and Cloud Ops, there's a lot involved in keeping Google Cloud running, scaling and performing. In this session, Google will give you a close look into the internal procedures we use to continually improve reliability, also discuss best practices for interacting with Google to reduce mean-time-to-detect and mean-time-to-recovery, and talk about how you can apply SRE principles to your organisation., 議程編號: 1, slide: https://drive.google.com/file/d/0B3X5bLgCa9auazNfQWNrLXBxYjQ/view, 禁止錄影: 禁止錄影"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/chk2m"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "4"
+                },
+                "gsx$姓名": {
+                    "$t": "田哲禹(James Tien)"
+                },
+                "gsx$姓名en": {
+                    "$t": "James Tien"
+                },
+                "gsx$類別": {
+                    "$t": "Cloud"
+                },
+                "gsx$職稱": {
+                    "$t": "台灣區經理, Google Cloud (Head of Taiwan, Google Cloud)"
+                },
+                "gsx$個人介紹": {
+                    "$t": "現職 Google Cloud 台灣區經理。2012 年開始接觸雲端服務，有幸見證科技發展上的重要轉變，隨著許多企業開始利用雲端服務，加速創新，擴充商業版圖到全球各地。喜歡技術快速迭代與進步，也喜歡藝術帶來的感動，最喜歡的 APP 是 Spotify。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Started his career in cloud service in 2012, James has witnessed the critical change in technology when enterprises started utilizing cloud services to boost innovation. He loves the fast-pace iteration of technology and the power of art."
+                },
+                "gsx$照片": {
+                    "$t": "jamestien.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "Innovate with New Technologies on Google Cloud"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Innovate with New Technologies on Google Cloud"
+                },
+                "gsx$演講摘要": {
+                    "$t": "不管是 SRE (網站可靠性工程)、CRE (顧客可靠性工程)或是雲端營運等等，都是維持 Google Cloud 的運作、規模與效能的重要議題。在這場議程當中，Google 將與大家分享他們如何建構內部的流程去持續改善可靠性。我們亦將討論最佳的實作方式以減少平均偵測時間與平均恢復時間，以及如何應用 SRE 原則在你的組織當中運作。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "From Site Reliability Engineering(SRE) to Customer Reliability Engineering CRE) and Cloud Ops, there's a lot involved in keeping Google Cloud running, scaling and performing. In this session, Google will give you a close look into the internal procedures we use to continually improve reliability, also discuss best practices for interacting with Google to reduce mean-time-to-detect and mean-time-to-recovery, and talk about how you can apply SRE principles to your organisation."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "1"
+                },
+                "gsx$slide": {
+                    "$t": "https://drive.google.com/file/d/0B3X5bLgCa9auazNfQWNrLXBxYjQ/view"
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": "禁止錄影"
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/ciyn3"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "14"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 黃宇軒, 姓名en: Yu-Hsuan, Huang, 類別: VR, 職稱: 主治醫師 / 資訊工程博士候選人, 個人介紹: 白天是穿梭於門診與開刀房的眼科醫師，晚上打開電腦，變身成在實驗室進行創新研發的開發者與自造者。兩年前帶領台大資工團隊開發出世界第一套立體視覺擴增實境顯微鏡系統，讓醫師能在安全的狀態下，密集地進行精細的顯微手術訓練，以便在未來造福更多的病患。, 個人介紹en: During the daytime, Yu-Hsuan is an ophthalmologist, and after work he becomes a developer and maker. Two years ago, he and team Scope+ developed the first system in the world: A Stereoscopic Video See Through \u2028 Augmented Reality Microscope., 照片: yushhuang.jpg, 演講主題: 一星期、一個月、一年，擴增實境手術訓練系統的開發之路, 演講主題en: Day by Day, the Road of Developing AR Surgerical Training System, 演講摘要: 擴增實境的市場在 ARKit 發表後正式引爆，電影中酷炫的人機介面，還有各種專業領域上的智慧輔助系統，彷彿都已在不遠處向我們招手。眾多可能的應用中，醫療領域由於其危險、昂貴且罕見的特性而有最大的想像空間，但也因為極高的進入門檻，讓許多開發者望之卻步，減緩了發展的速度。透過本次演講，黃醫師將以其帶領開發的擴增實境手術訓練系統為例，與大家分享他跨領域合作、軟硬體整合以及從學術展覽走向臨床實驗的經驗，幫助對醫療有興趣的開發者踏出第一步。, 演講摘要en: AR market has been blown up after the release of ARkit. The intelligent assistance system in all kinds of professional area seem to be not too far from us. Among them, clinical field has most imaginations since its danger, expensiveness, and rareness. Dr.Huang will use his Augmented Reality Training System as an example to share his experience in cooperation across the disciplines, software-hardware integration, and experience from academic to clinical practice. , 議程編號: 19"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/ciyn3"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "14"
+                },
+                "gsx$姓名": {
+                    "$t": "黃宇軒"
+                },
+                "gsx$姓名en": {
+                    "$t": "Yu-Hsuan, Huang"
+                },
+                "gsx$類別": {
+                    "$t": "VR"
+                },
+                "gsx$職稱": {
+                    "$t": "主治醫師 / 資訊工程博士候選人"
+                },
+                "gsx$個人介紹": {
+                    "$t": "白天是穿梭於門診與開刀房的眼科醫師，晚上打開電腦，變身成在實驗室進行創新研發的開發者與自造者。兩年前帶領台大資工團隊開發出世界第一套立體視覺擴增實境顯微鏡系統，讓醫師能在安全的狀態下，密集地進行精細的顯微手術訓練，以便在未來造福更多的病患。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "During the daytime, Yu-Hsuan is an ophthalmologist, and after work he becomes a developer and maker. Two years ago, he and team Scope+ developed the first system in the world: A Stereoscopic Video See Through \u2028 Augmented Reality Microscope."
+                },
+                "gsx$照片": {
+                    "$t": "yushhuang.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "一星期、一個月、一年，擴增實境手術訓練系統的開發之路"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Day by Day, the Road of Developing AR Surgerical Training System"
+                },
+                "gsx$演講摘要": {
+                    "$t": "擴增實境的市場在 ARKit 發表後正式引爆，電影中酷炫的人機介面，還有各種專業領域上的智慧輔助系統，彷彿都已在不遠處向我們招手。眾多可能的應用中，醫療領域由於其危險、昂貴且罕見的特性而有最大的想像空間，但也因為極高的進入門檻，讓許多開發者望之卻步，減緩了發展的速度。透過本次演講，黃醫師將以其帶領開發的擴增實境手術訓練系統為例，與大家分享他跨領域合作、軟硬體整合以及從學術展覽走向臨床實驗的經驗，幫助對醫療有興趣的開發者踏出第一步。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "AR market has been blown up after the release of ARkit. The intelligent assistance system in all kinds of professional area seem to be not too far from us. Among them, clinical field has most imaginations since its danger, expensiveness, and rareness. Dr.Huang will use his Augmented Reality Training System as an example to share his experience in cooperation across the disciplines, software-hardware integration, and experience from academic to clinical practice. "
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "19"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/ckd7g"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "2"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: Akane Lee, 姓名en: Akane Lee, 類別: UI/UX, 職稱: UI Designer, 個人介紹: 嫁給 RD 的 UI Designer, 個人介紹en: An UI Designer Married to a Research Developer., 照片: akanelee.jpg, facebook: https://fb.me/uiux.akane, 演講主題: 做產品不是軍備競賽！, 演講主題en: Product Making, Not Just Arms Race, 演講摘要: 「別人有的我們家也要有，所以這個功能一定要做！」\n「如果因為我們沒做這個功能，所以用戶都跑去別人家了你說要怎麼辦！」\n使用者研究不是競品分析，如果把競品分析當成使用者研究，只會因為擔心輸給競爭對手而不停增加產品新功能。功能數量多寡和使用者幾乎無關，更不能代表產品好不好用。 , 演講摘要en: User research doesn't mean product feature competitive analysis. If you take product feature competitive analysis as user research, then you will only continuously adding new functions on the product just because worrying about losing to its competitors. The number of functions is nothing to with the users as well as the product's utility., 議程編號: 6, 禁止錄影: 禁止錄影"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/ckd7g"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "2"
+                },
+                "gsx$姓名": {
+                    "$t": "Akane Lee"
+                },
+                "gsx$姓名en": {
+                    "$t": "Akane Lee"
+                },
+                "gsx$類別": {
+                    "$t": "UI/UX"
+                },
+                "gsx$職稱": {
+                    "$t": "UI Designer"
+                },
+                "gsx$個人介紹": {
+                    "$t": "嫁給 RD 的 UI Designer"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "An UI Designer Married to a Research Developer."
+                },
+                "gsx$照片": {
+                    "$t": "akanelee.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": "https://fb.me/uiux.akane"
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "做產品不是軍備競賽！"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Product Making, Not Just Arms Race"
+                },
+                "gsx$演講摘要": {
+                    "$t": "「別人有的我們家也要有，所以這個功能一定要做！」\n「如果因為我們沒做這個功能，所以用戶都跑去別人家了你說要怎麼辦！」\n使用者研究不是競品分析，如果把競品分析當成使用者研究，只會因為擔心輸給競爭對手而不停增加產品新功能。功能數量多寡和使用者幾乎無關，更不能代表產品好不好用。 "
+                },
+                "gsx$演講摘要en": {
+                    "$t": "User research doesn't mean product feature competitive analysis. If you take product feature competitive analysis as user research, then you will only continuously adding new functions on the product just because worrying about losing to its competitors. The number of functions is nothing to with the users as well as the product's utility."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "6"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": "禁止錄影"
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/clrrx"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "7"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 魏銘信(Ivan Wei), 姓名en: Ivan Wei, 類別: UI/UX, 職稱: Product Director, 個人介紹: 獵豹移動億級用戶的 App \"Security Master\" 產品總監，在移動互聯網及消費性電子產品行業累積超過十年經驗，兼具產品設計、用戶體驗及視覺設計專長，並多次獲得 iF 與 Red Dot Design Award 國際獎項肯定。, 個人介紹en: Ivan, product director of Security Master (Cheetah Mobile), is an experienced product and UX design expert in mobile internet and consumer electronics. In addition, he has been awarded and recognized globally by iF and Red Dot Design Award., 照片: lvanwei.jpg, 演講主題: 體驗升維，破框思考, 演講主題en: Think out of box from UX, 演講摘要: 這世界唯一不變的就是變化，科技、人群、需求、市場在變化，也隨時都有競品出現。就算是佔有一席之地的老產品，除了面臨外界的挑戰之外，也在糾結著從既有的產品核心價值去挖掘用戶需求；或是突破原有的框架，思考新的產品定位及用戶場景，找到新的用戶增量來源。互聯網特別推崇一句話，叫「擁抱變化」，這次要分享的是老產品如何從產品打法、流量思維、用戶體驗這些不同的角度，在變化中提昇產品競爭力！, 演講摘要en: A mature App was challenged by the rapid change of technology, people, demand, market, and competitors. “Embrace change” is essential to mobile internet. I will share how to elevate competitiveness and energy for a mature App through the change driven by top-down strategy, acquisition, and UX., 議程編號: 9, 禁止錄影: 禁止錄影"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/clrrx"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "7"
+                },
+                "gsx$姓名": {
+                    "$t": "魏銘信(Ivan Wei)"
+                },
+                "gsx$姓名en": {
+                    "$t": "Ivan Wei"
+                },
+                "gsx$類別": {
+                    "$t": "UI/UX"
+                },
+                "gsx$職稱": {
+                    "$t": "Product Director"
+                },
+                "gsx$個人介紹": {
+                    "$t": "獵豹移動億級用戶的 App \"Security Master\" 產品總監，在移動互聯網及消費性電子產品行業累積超過十年經驗，兼具產品設計、用戶體驗及視覺設計專長，並多次獲得 iF 與 Red Dot Design Award 國際獎項肯定。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Ivan, product director of Security Master (Cheetah Mobile), is an experienced product and UX design expert in mobile internet and consumer electronics. In addition, he has been awarded and recognized globally by iF and Red Dot Design Award."
+                },
+                "gsx$照片": {
+                    "$t": "lvanwei.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "體驗升維，破框思考"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Think out of box from UX"
+                },
+                "gsx$演講摘要": {
+                    "$t": "這世界唯一不變的就是變化，科技、人群、需求、市場在變化，也隨時都有競品出現。就算是佔有一席之地的老產品，除了面臨外界的挑戰之外，也在糾結著從既有的產品核心價值去挖掘用戶需求；或是突破原有的框架，思考新的產品定位及用戶場景，找到新的用戶增量來源。互聯網特別推崇一句話，叫「擁抱變化」，這次要分享的是老產品如何從產品打法、流量思維、用戶體驗這些不同的角度，在變化中提昇產品競爭力！"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "A mature App was challenged by the rapid change of technology, people, demand, market, and competitors. “Embrace change” is essential to mobile internet. I will share how to elevate competitiveness and energy for a mature App through the change driven by top-down strategy, acquisition, and UX."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "9"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": "禁止錄影"
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cyevm"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "8"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: Ngôo Hê-bí, 姓名en: Shiami Wu, 類別: Mobile App, 個人介紹: App Khai-huat-tsiá / Tsū-iû Kang-tsok-tsiá / GDG Ko-hiông Tsoo-tsit-jîn / Huî-á Tshòng-tsok-tsiá / Tâi-gí Lāu-su, 個人介紹en: App Developer / Freelancer / GDG Kaohsiung Organizer / Ceramic Artist / Tâi-gí Teacher, 照片: shiamiwu.jpg, 演講主題: Android 上時行 ê 架構設計, 演講主題en: Modern Android Client Architecture, 演講摘要: 這幾冬 tī Android ê 開發社群內，有提出誠濟 ê 架構設計 kap ke-si，Google mā 有出家己 ê 見本、指引、kap 工具，咱就來講欲按怎用 tsia ê 物件。（Retrofit, RxJava, RxAndroid, RxLifecycle, Data Binding, Realm, Official Architecture Components）, 演講摘要en: There are many techniques about architecture introduced into Android development communities, also Google has announced its official blueprint samples last year, and guidelines, components for Android architecture in Google I/O this year. This session will talk about how to build up an app with those techniques and libraries., 議程編號: 15, slide: https://drive.google.com/open?id\u003d0B5Bxck8GpmYkaG5RWGtWbmhuOHc, 禁止錄影: 禁止錄影"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cyevm"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "8"
+                },
+                "gsx$姓名": {
+                    "$t": "Ngôo Hê-bí"
+                },
+                "gsx$姓名en": {
+                    "$t": "Shiami Wu"
+                },
+                "gsx$類別": {
+                    "$t": "Mobile App"
+                },
+                "gsx$職稱": {
+                    "$t": ""
+                },
+                "gsx$個人介紹": {
+                    "$t": "App Khai-huat-tsiá / Tsū-iû Kang-tsok-tsiá / GDG Ko-hiông Tsoo-tsit-jîn / Huî-á Tshòng-tsok-tsiá / Tâi-gí Lāu-su"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "App Developer / Freelancer / GDG Kaohsiung Organizer / Ceramic Artist / Tâi-gí Teacher"
+                },
+                "gsx$照片": {
+                    "$t": "shiamiwu.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "Android 上時行 ê 架構設計"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Modern Android Client Architecture"
+                },
+                "gsx$演講摘要": {
+                    "$t": "這幾冬 tī Android ê 開發社群內，有提出誠濟 ê 架構設計 kap ke-si，Google mā 有出家己 ê 見本、指引、kap 工具，咱就來講欲按怎用 tsia ê 物件。（Retrofit, RxJava, RxAndroid, RxLifecycle, Data Binding, Realm, Official Architecture Components）"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "There are many techniques about architecture introduced into Android development communities, also Google has announced its official blueprint samples last year, and guidelines, components for Android architecture in Google I/O this year. This session will talk about how to build up an app with those techniques and libraries."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "15"
+                },
+                "gsx$slide": {
+                    "$t": "https://drive.google.com/open?id\u003d0B5Bxck8GpmYkaG5RWGtWbmhuOHc"
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": "禁止錄影"
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cztg3"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "9"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 簡信昌, 姓名en: Hsin-Chan Chien, 類別: Front-end, 職稱: Evangelist, 個人介紹: H.C., 曾經協助舉辦 2003 P3P，2004-2005 YAPC::Taipei, 2006-2014 OSDC.tw 以及 2014 g0v summit., 個人介紹en: The organizer of the OSDC.tw (Open Source Developers' Conference) from 2006 to 2014 and g0v summit 2014., 照片: daishaoisord.jpg, 演講主題: React.js 或 Vue.js，新聞網站的前端選擇, 演講主題en: React.js, Vue.js. Our choice for the news site., 演講摘要: 從報導者開始，我就嘗試使用 React.js + Redux 進行網站前端頁面的開發。並且將他們完全 open source，離開報導者後進入鏡傳媒，我們重新思索 React.js + Redux 的架構是否適用於新聞網站的開發，最後我們全面改用了 Vue.js，這其中的考量與結果。, 演講摘要en: In Mirror media, we had the React + Redux for the web site presentation in the beginning. After few months, I think maybe we can make it be easier to maintain and develop. It's not a perfect answer, but it might be worth to discuss why the Vue.js is the final solution for us., 議程編號: 29, slide: https://drive.google.com/open?id\u003d0B_zbnz8b9XIkRWl6T0I5S0U4czg"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cztg3"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "9"
+                },
+                "gsx$姓名": {
+                    "$t": "簡信昌"
+                },
+                "gsx$姓名en": {
+                    "$t": "Hsin-Chan Chien"
+                },
+                "gsx$類別": {
+                    "$t": "Front-end"
+                },
+                "gsx$職稱": {
+                    "$t": "Evangelist"
+                },
+                "gsx$個人介紹": {
+                    "$t": "H.C., 曾經協助舉辦 2003 P3P，2004-2005 YAPC::Taipei, 2006-2014 OSDC.tw 以及 2014 g0v summit."
+                },
+                "gsx$個人介紹en": {
+                    "$t": "The organizer of the OSDC.tw (Open Source Developers' Conference) from 2006 to 2014 and g0v summit 2014."
+                },
+                "gsx$照片": {
+                    "$t": "daishaoisord.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "React.js 或 Vue.js，新聞網站的前端選擇"
+                },
+                "gsx$演講主題en": {
+                    "$t": "React.js, Vue.js. Our choice for the news site."
+                },
+                "gsx$演講摘要": {
+                    "$t": "從報導者開始，我就嘗試使用 React.js + Redux 進行網站前端頁面的開發。並且將他們完全 open source，離開報導者後進入鏡傳媒，我們重新思索 React.js + Redux 的架構是否適用於新聞網站的開發，最後我們全面改用了 Vue.js，這其中的考量與結果。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "In Mirror media, we had the React + Redux for the web site presentation in the beginning. After few months, I think maybe we can make it be easier to maintain and develop. It's not a perfect answer, but it might be worth to discuss why the Vue.js is the final solution for us."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "29"
+                },
+                "gsx$slide": {
+                    "$t": "https://drive.google.com/open?id\u003d0B_zbnz8b9XIkRWl6T0I5S0U4czg"
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/d180g"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "10"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 錢逢祥(Fred Chien), 姓名en: Fred Chien, 類別: Front-end, 職稱: Hackathon Taiwan Founder, 個人介紹: 開放原始碼開發者，曾為 LXDE 核心開發者，也喜愛公開貢獻各種開發成果或心得於網路上。也是一個打不死的創業者，參與許多團隊與創業計畫。過去曾協助各種社群活動，並成立黑客松台灣以推廣黑客松文化，也協助企業組織推動內部創新革命和開放分享精神。, 個人介紹en: Co-founder of some startups and open source developer and LXDE core developer, who love to contribute, share and assist for community. Created Hackathon Taiwan for making innovation cultures and elevate enterprises in the past years., 照片: fredchien.jpg, 演講主題: Brig：用愛釋放你的 UI 開發能量！, 演講主題en: Brig: Way to release power of love for UI development, 演講摘要: 缺一張皮嗎？那就用 Node.js 和 Qt 打造你酷炫的跨平台應用程式吧！如今像 Tesla 這樣的新科技產品，全面採用觸控介面、打造虛擬的控制面板，其 UI 設計讓人如此神暈目眩，你可知道其 UI 就是用 Qt 技術所打造出來的呢？\n\n但有多少人懂 C/C++ 這樣硬梆梆的語言，又能有效率地打造出變化萬千的應用程式呢？Brig 專案帶來一個機會，讓你可以用 Node.js 來整合 Qt 的使用者介面技術！, 演講摘要en: Let's write your fantastic cross-platform application with Node.js and Qt!\n\nYou may wonder how does Tesla make glamorous graphical user interface in products. It's Qt! However, writing application in C/C++ for Qt is not easy for developers. Now, Brig makes it possible to integrate Qt user interface technologies into Node.js., 議程編號: 20, slide: https://drive.google.com/open?id\u003d0B5Bxck8GpmYkNHJaVjkwUVNYTXM"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/d180g"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "10"
+                },
+                "gsx$姓名": {
+                    "$t": "錢逢祥(Fred Chien)"
+                },
+                "gsx$姓名en": {
+                    "$t": "Fred Chien"
+                },
+                "gsx$類別": {
+                    "$t": "Front-end"
+                },
+                "gsx$職稱": {
+                    "$t": "Hackathon Taiwan Founder"
+                },
+                "gsx$個人介紹": {
+                    "$t": "開放原始碼開發者，曾為 LXDE 核心開發者，也喜愛公開貢獻各種開發成果或心得於網路上。也是一個打不死的創業者，參與許多團隊與創業計畫。過去曾協助各種社群活動，並成立黑客松台灣以推廣黑客松文化，也協助企業組織推動內部創新革命和開放分享精神。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Co-founder of some startups and open source developer and LXDE core developer, who love to contribute, share and assist for community. Created Hackathon Taiwan for making innovation cultures and elevate enterprises in the past years."
+                },
+                "gsx$照片": {
+                    "$t": "fredchien.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "Brig：用愛釋放你的 UI 開發能量！"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Brig: Way to release power of love for UI development"
+                },
+                "gsx$演講摘要": {
+                    "$t": "缺一張皮嗎？那就用 Node.js 和 Qt 打造你酷炫的跨平台應用程式吧！如今像 Tesla 這樣的新科技產品，全面採用觸控介面、打造虛擬的控制面板，其 UI 設計讓人如此神暈目眩，你可知道其 UI 就是用 Qt 技術所打造出來的呢？\n\n但有多少人懂 C/C++ 這樣硬梆梆的語言，又能有效率地打造出變化萬千的應用程式呢？Brig 專案帶來一個機會，讓你可以用 Node.js 來整合 Qt 的使用者介面技術！"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "Let's write your fantastic cross-platform application with Node.js and Qt!\n\nYou may wonder how does Tesla make glamorous graphical user interface in products. It's Qt! However, writing application in C/C++ for Qt is not easy for developers. Now, Brig makes it possible to integrate Qt user interface technologies into Node.js."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "20"
+                },
+                "gsx$slide": {
+                    "$t": "https://drive.google.com/open?id\u003d0B5Bxck8GpmYkNHJaVjkwUVNYTXM"
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/d2mkx"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "21"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 宋志峰(Anistar), 姓名en: Anistar, 類別: Mobile App, 職稱: Senior Engineer Manager, 個人介紹: 目前服務於雅虎奇摩，負責 Yahoo iOS APP 開發，專注在軟體架構與開發，熱愛分享經驗。具備 10 年以上專案開發經驗，7 年講師資歷，軟體 Magic Shutter 曾獲得 NewYork Times 推薦最佳前十大攝影軟體。, 個人介紹en: Anistar works in Yahoo, focusing on iOS App and framework development. With more than 10 years of experience in development and  7 years as a instructor, his project Magic Shutter was reported as one of 10 best photography apps by NY Times., 照片: anistarsung.jpg, facebook: https://fb.me/anistarsung, 演講主題: 相機 iOS App 開發祕辛 x 活用 CameraKit, 演講主題en: Development Secret of iOS Camera App and Usage of CameraKit, 演講摘要: AppDevKit 是專注 iOS App 的 Open Source 開發者套件，提供 180 個以上功能；2017新增 CameraKit 讓開發者只需要短短的幾行程式碼就能快速的建立屬於自己的客製化相機服務。\n將分享開發 Camera 的辛苦談與眉角，並展示如何用 CameraKit 來快速完成相機功能與即時臉部追蹤運用。, 演講摘要en: AppDevKit is an open source development kit with more than 180 features especially for iOS App. In 2017 Camerakit was released to help developers for establishing their own customized photographing services easily. We'll talk about the development process of Camera app, and demo how to use CameraKit to finish camera functions and face-tracking quickly., 議程編號: 21, slide: https://www.slideshare.net/anistarsung/mopcon2017-appdevkit-x-camerakit"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/d2mkx"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "21"
+                },
+                "gsx$姓名": {
+                    "$t": "宋志峰(Anistar)"
+                },
+                "gsx$姓名en": {
+                    "$t": "Anistar"
+                },
+                "gsx$類別": {
+                    "$t": "Mobile App"
+                },
+                "gsx$職稱": {
+                    "$t": "Senior Engineer Manager"
+                },
+                "gsx$個人介紹": {
+                    "$t": "目前服務於雅虎奇摩，負責 Yahoo iOS APP 開發，專注在軟體架構與開發，熱愛分享經驗。具備 10 年以上專案開發經驗，7 年講師資歷，軟體 Magic Shutter 曾獲得 NewYork Times 推薦最佳前十大攝影軟體。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Anistar works in Yahoo, focusing on iOS App and framework development. With more than 10 years of experience in development and  7 years as a instructor, his project Magic Shutter was reported as one of 10 best photography apps by NY Times."
+                },
+                "gsx$照片": {
+                    "$t": "anistarsung.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": "https://fb.me/anistarsung"
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "相機 iOS App 開發祕辛 x 活用 CameraKit"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Development Secret of iOS Camera App and Usage of CameraKit"
+                },
+                "gsx$演講摘要": {
+                    "$t": "AppDevKit 是專注 iOS App 的 Open Source 開發者套件，提供 180 個以上功能；2017新增 CameraKit 讓開發者只需要短短的幾行程式碼就能快速的建立屬於自己的客製化相機服務。\n將分享開發 Camera 的辛苦談與眉角，並展示如何用 CameraKit 來快速完成相機功能與即時臉部追蹤運用。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "AppDevKit is an open source development kit with more than 180 features especially for iOS App. In 2017 Camerakit was released to help developers for establishing their own customized photographing services easily. We'll talk about the development process of Camera app, and demo how to use CameraKit to finish camera functions and face-tracking quickly."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "21"
+                },
+                "gsx$slide": {
+                    "$t": "https://www.slideshare.net/anistarsung/mopcon2017-appdevkit-x-camerakit"
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cssly"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "12"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 古宗禎(Denny Ku), 姓名en: Denny Ku, 類別: Front-end, 職稱: Software engineer, 個人介紹: 以前是前端工程師，現在是 JavaScript 的奴隸跟 Lisp 愛好者。, 個人介紹en: False positive front-end engineer, writing JavaScript but thinking of  lisp., 照片: dennyku.jpg, 演講主題: 以客戶端優先的角度來思考 Bot, 演講主題en: Building bot service as a client first product, 演講摘要: 1. 為什麼 Client First 的思維對產品重要\n2. 過去軟體架構中常見的 \"Client\" 簡介（以 Web 近幾年的演變為例）\n3. Bot 已死（見 https://chatbot.fail）\n4. Bot 萬歲（跨裝置的優勢）\n5. 以 Client First 的思維來設計 Bot Service 獲得的好處以及限制\n  - Messaging \"API\"（LINE）\n  - Messenger \"Platform\"（Facebook）\n6. 總結, 演講摘要en: 1. Why thinking in client first does matter for building product?\n2. Quick introduction to client\n3. Bot is dead\n4. Bot is alive\n5. What are the main limitations and benefit while thinking in client first?\n6. Conclusion, 議程編號: 22"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cssly"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "12"
+                },
+                "gsx$姓名": {
+                    "$t": "古宗禎(Denny Ku)"
+                },
+                "gsx$姓名en": {
+                    "$t": "Denny Ku"
+                },
+                "gsx$類別": {
+                    "$t": "Front-end"
+                },
+                "gsx$職稱": {
+                    "$t": "Software engineer"
+                },
+                "gsx$個人介紹": {
+                    "$t": "以前是前端工程師，現在是 JavaScript 的奴隸跟 Lisp 愛好者。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "False positive front-end engineer, writing JavaScript but thinking of  lisp."
+                },
+                "gsx$照片": {
+                    "$t": "dennyku.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "以客戶端優先的角度來思考 Bot"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Building bot service as a client first product"
+                },
+                "gsx$演講摘要": {
+                    "$t": "1. 為什麼 Client First 的思維對產品重要\n2. 過去軟體架構中常見的 \"Client\" 簡介（以 Web 近幾年的演變為例）\n3. Bot 已死（見 https://chatbot.fail）\n4. Bot 萬歲（跨裝置的優勢）\n5. 以 Client First 的思維來設計 Bot Service 獲得的好處以及限制\n  - Messaging \"API\"（LINE）\n  - Messenger \"Platform\"（Facebook）\n6. 總結"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "1. Why thinking in client first does matter for building product?\n2. Quick introduction to client\n3. Bot is dead\n4. Bot is alive\n5. What are the main limitations and benefit while thinking in client first?\n6. Conclusion"
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "22"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cu76f"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "13"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 謝耀輝(JOHN SIE), 姓名en: JOHN SIE, 類別: Operation, 職稱: CEO, 個人介紹: Accupass 創辦人 CEO，2011 年打造「活動通 Accupass」獲《經理人雜誌》第四屆台灣百大 MVP CEO。2012 年赴大陸打造「活動行」，今年完成 Recruit、UrWork、騰訊的 A+ 輪數億融資，現為亞洲最大活動 SaaS 平台。, 個人介紹en: CEO/Founder of Accupass, started in 2011 and was one of top 100 MVP CEO reported by MANAGERoday. In 2012, it had raised billions New Taiwan Dollars  in A+round fundraising in China. Now Accupass is the biggest event SaaS platform in Asia.\r\n, 照片: johnsie.jpg, 演講主題: 聊聊你不知道的兩岸創業及產品運營那些事, 演講主題en: Something You Don’t Know about Cross-Strait Entrepreneurship, 演講摘要: 分享個人於兩岸創業，從第一行程式碼開始寫到千萬用戶平台的心路歷程，經過研發、產品、運營、行銷的歷練，走了千百條彎路的經驗談，並且分析現在全球網路創業趨勢及個人觀點, 演講摘要en: Sharing personal experience of the cross-strait business that from writing the first line of code to establishing the platform with millions of users. The story will be about research and development, product, operation, marketing experiences. In the end, it will analyze the current trends of global entrepreneurial network and some personal views., 議程編號: 3"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cu76f"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "13"
+                },
+                "gsx$姓名": {
+                    "$t": "謝耀輝(JOHN SIE)"
+                },
+                "gsx$姓名en": {
+                    "$t": "JOHN SIE"
+                },
+                "gsx$類別": {
+                    "$t": "Operation"
+                },
+                "gsx$職稱": {
+                    "$t": "CEO"
+                },
+                "gsx$個人介紹": {
+                    "$t": "Accupass 創辦人 CEO，2011 年打造「活動通 Accupass」獲《經理人雜誌》第四屆台灣百大 MVP CEO。2012 年赴大陸打造「活動行」，今年完成 Recruit、UrWork、騰訊的 A+ 輪數億融資，現為亞洲最大活動 SaaS 平台。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "CEO/Founder of Accupass, started in 2011 and was one of top 100 MVP CEO reported by MANAGERoday. In 2012, it had raised billions New Taiwan Dollars  in A+round fundraising in China. Now Accupass is the biggest event SaaS platform in Asia.\r\n"
+                },
+                "gsx$照片": {
+                    "$t": "johnsie.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "聊聊你不知道的兩岸創業及產品運營那些事"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Something You Don’t Know about Cross-Strait Entrepreneurship"
+                },
+                "gsx$演講摘要": {
+                    "$t": "分享個人於兩岸創業，從第一行程式碼開始寫到千萬用戶平台的心路歷程，經過研發、產品、運營、行銷的歷練，走了千百條彎路的經驗談，並且分析現在全球網路創業趨勢及個人觀點"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "Sharing personal experience of the cross-strait business that from writing the first line of code to establishing the platform with millions of users. The story will be about research and development, product, operation, marketing experiences. In the end, it will analyze the current trends of global entrepreneurial network and some personal views."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "3"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cvlqs"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "5"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 劉憲錡(Toby Liu), 姓名en: Toby Liu, 類別: Machine Learning, 職稱: 研究生, 個人介紹: Toby 是智庫驅動發起之資料英雄計畫參與者之一，同時是清大資應所碩士生，領域涵蓋資料探勘、情緒分析等。研究之餘，他還是個開源社群貢獻者，參與社群包括 COSCUP、MozTW、中央大學網路開源社等。, 個人介紹en: Toby is a participant in D4SG.org initiated by DSP. He is also a graduate student in ISA of NTHU, engagin in Data Mining and Emotion analytics. Aside from research, he is an active OSS contributer in COSCUP, MozTw.org, and NCUNOS., 照片: tobyliu.jpg, 演講主題: 公私協力模式－以資料英雄計畫「高雄火災風險地圖 2.0」為例, 演講主題en: Kaohsiung Map of Fire Risk Assessments 2.0 powered by D4SG, 演講摘要: 「高雄火災風險地圖 2.0」係由智庫驅動與高雄市政府消防局共同推動之資料英雄計畫，本計劃透過資料科學找出火災關鍵因子，進而在消防資源有限的情況下優化巡視家訪建物之效率。過程中我們利用 BalanceCascade 等方法處理非平衡學習，並透過數個小的隨機森林模型預測建物之火災發生機率、以及藉由深度學習模型預測建物如發生火災之預測損失。, 演講摘要en: Kaohsiung Map of Fire Risk Assessments 2.0 is developed by D4SG and Kaohsiung City Fire Bureau. This project finds out the key factors of fire incidences through data sciences to optimize the visits to residence buildings with limited fire service resource. We use BalanceCascde to deal with imbalanced learning, several small random forest models to predict the incidence rate of fire, and deep learning models to predict the estimated loss of the fire in residence buildings. , 議程編號: 31"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cvlqs"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "5"
+                },
+                "gsx$姓名": {
+                    "$t": "劉憲錡(Toby Liu)"
+                },
+                "gsx$姓名en": {
+                    "$t": "Toby Liu"
+                },
+                "gsx$類別": {
+                    "$t": "Machine Learning"
+                },
+                "gsx$職稱": {
+                    "$t": "研究生"
+                },
+                "gsx$個人介紹": {
+                    "$t": "Toby 是智庫驅動發起之資料英雄計畫參與者之一，同時是清大資應所碩士生，領域涵蓋資料探勘、情緒分析等。研究之餘，他還是個開源社群貢獻者，參與社群包括 COSCUP、MozTW、中央大學網路開源社等。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Toby is a participant in D4SG.org initiated by DSP. He is also a graduate student in ISA of NTHU, engagin in Data Mining and Emotion analytics. Aside from research, he is an active OSS contributer in COSCUP, MozTw.org, and NCUNOS."
+                },
+                "gsx$照片": {
+                    "$t": "tobyliu.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "公私協力模式－以資料英雄計畫「高雄火災風險地圖 2.0」為例"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Kaohsiung Map of Fire Risk Assessments 2.0 powered by D4SG"
+                },
+                "gsx$演講摘要": {
+                    "$t": "「高雄火災風險地圖 2.0」係由智庫驅動與高雄市政府消防局共同推動之資料英雄計畫，本計劃透過資料科學找出火災關鍵因子，進而在消防資源有限的情況下優化巡視家訪建物之效率。過程中我們利用 BalanceCascade 等方法處理非平衡學習，並透過數個小的隨機森林模型預測建物之火災發生機率、以及藉由深度學習模型預測建物如發生火災之預測損失。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "Kaohsiung Map of Fire Risk Assessments 2.0 is developed by D4SG and Kaohsiung City Fire Bureau. This project finds out the key factors of fire incidences through data sciences to optimize the visits to residence buildings with limited fire service resource. We use BalanceCascde to deal with imbalanced learning, several small random forest models to predict the incidence rate of fire, and deep learning models to predict the estimated loss of the fire in residence buildings. "
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "31"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cx0b9"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "15"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 吳柏毅 (Apple Boy), 姓名en: Bo-Yi Wu, 類別: Mobile App, 職稱: 工程師, 個人介紹: 聯發科技後端架構工程師，喜歡嘗試任何 DevOps 工具來改善團隊合作模式，省下更多時間來嘗試及學習新技術。長期貢獻於 Open Source 專案，熱愛開發程式，目前專注於 Go 語言發展，維護數個 Go 語言開源專案。, 個人介紹en: Bo-Yi works in MediaTek Inc. as a back-end structure engineer. He likes trying DevOps tools to improve teamwork to save more time for experimenting and learning new technical skills. He works a lot on Go programming language development., 照片: boyiwu.jpg, 演講主題: 用 Go 語言打造輕量級 Push Notification 服務, 演講主題en: A simple push notification server written in Go., 演講摘要: Gorush 是一套用 Go 語言所撰寫的輕量級 Push Notification 服務，除了可以輕鬆架設伺服器外，還讓 Mobile 開發者或測試人員輕鬆使用 Command line 發送測試訊息給 App。本議程會介紹 Gorush 架構設計及使用方式，為什麼選用 Go 語言，以及其中的 Go 開發技巧與經驗，及如何透過 Drone 來自動測試發佈版本。有在寫手機 App 的開發者或撰寫發送訊息的後端工程師一定不能錯過此議程。, 演講摘要en: Gorush is a suite of Push Notification service, which helps programmer not only easily build servers, but also use Command line sending test message to App. This presentation will introduce the operation and framework design of Gorush. The presentation will talk about why choosing Go, the development skills and experience, and how to automatically release version. Back-end engineers that develop mobile phone App or text messaging could not miss this talk!, 議程編號: 14, slide: https://drive.google.com/open?id\u003d0B5Bxck8GpmYkVF9wTWZsX2tCalU"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/cx0b9"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "15"
+                },
+                "gsx$姓名": {
+                    "$t": "吳柏毅 (Apple Boy)"
+                },
+                "gsx$姓名en": {
+                    "$t": "Bo-Yi Wu"
+                },
+                "gsx$類別": {
+                    "$t": "Mobile App"
+                },
+                "gsx$職稱": {
+                    "$t": "工程師"
+                },
+                "gsx$個人介紹": {
+                    "$t": "聯發科技後端架構工程師，喜歡嘗試任何 DevOps 工具來改善團隊合作模式，省下更多時間來嘗試及學習新技術。長期貢獻於 Open Source 專案，熱愛開發程式，目前專注於 Go 語言發展，維護數個 Go 語言開源專案。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Bo-Yi works in MediaTek Inc. as a back-end structure engineer. He likes trying DevOps tools to improve teamwork to save more time for experimenting and learning new technical skills. He works a lot on Go programming language development."
+                },
+                "gsx$照片": {
+                    "$t": "boyiwu.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "用 Go 語言打造輕量級 Push Notification 服務"
+                },
+                "gsx$演講主題en": {
+                    "$t": "A simple push notification server written in Go."
+                },
+                "gsx$演講摘要": {
+                    "$t": "Gorush 是一套用 Go 語言所撰寫的輕量級 Push Notification 服務，除了可以輕鬆架設伺服器外，還讓 Mobile 開發者或測試人員輕鬆使用 Command line 發送測試訊息給 App。本議程會介紹 Gorush 架構設計及使用方式，為什麼選用 Go 語言，以及其中的 Go 開發技巧與經驗，及如何透過 Drone 來自動測試發佈版本。有在寫手機 App 的開發者或撰寫發送訊息的後端工程師一定不能錯過此議程。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "Gorush is a suite of Push Notification service, which helps programmer not only easily build servers, but also use Command line sending test message to App. This presentation will introduce the operation and framework design of Gorush. The presentation will talk about why choosing Go, the development skills and experience, and how to automatically release version. Back-end engineers that develop mobile phone App or text messaging could not miss this talk!"
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "14"
+                },
+                "gsx$slide": {
+                    "$t": "https://drive.google.com/open?id\u003d0B5Bxck8GpmYkVF9wTWZsX2tCalU"
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/d9ney"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "16"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 吳政賢(OA), 姓名en: OA, 類別: Front-end, 職稱: 全端工程師, 個人介紹: 我是 OA，是一名網頁工程師，我喜歡開發有趣的網頁作品，同時熱愛鄉土文化，對我最開心的作品莫過於將手上的技術發揮在家鄉的土地上。, 個人介紹en: I am OA, a web engineer. I like to develop interesting web pages and I also love Taiwanese culture. The happiest thing to me is to apply my technical skills in projects that is associated with my homeland. , 照片: oawu.jpg, github: https://github.com/comdan66, 演講主題: 在 Google 地圖上大喊：「我上新聞了！」, 演講主題en: Shouting out on Google Map, I am in the News!, 演講摘要: 前端地圖應用能做出哪些有趣的作品？用地圖實作為例，來分享在 Google Firebase 與 Amazon S3 雲端平台上的開發經驗，並聊聊在 Firebase 上實作 LiveMaps 的優缺點，以及在 Amazon S3 上開發 WeatherMaps 時遇到的心得。, 演講摘要en: Talking about the funny thing we can create using LiveMaps on Firebase. Using map project as an example, to share the development experience on Amazon S3, the pros and cons of building LiveMaps on Firebase, and the experience of developing WeatherMaps on Amazon S3., 議程編號: 4, slide: https://drive.google.com/file/d/1hz5BryMmr-mRw5Qq-SO0ghE_DFbV99Rn/view"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/d9ney"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "16"
+                },
+                "gsx$姓名": {
+                    "$t": "吳政賢(OA)"
+                },
+                "gsx$姓名en": {
+                    "$t": "OA"
+                },
+                "gsx$類別": {
+                    "$t": "Front-end"
+                },
+                "gsx$職稱": {
+                    "$t": "全端工程師"
+                },
+                "gsx$個人介紹": {
+                    "$t": "我是 OA，是一名網頁工程師，我喜歡開發有趣的網頁作品，同時熱愛鄉土文化，對我最開心的作品莫過於將手上的技術發揮在家鄉的土地上。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "I am OA, a web engineer. I like to develop interesting web pages and I also love Taiwanese culture. The happiest thing to me is to apply my technical skills in projects that is associated with my homeland. "
+                },
+                "gsx$照片": {
+                    "$t": "oawu.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": "https://github.com/comdan66"
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "在 Google 地圖上大喊：「我上新聞了！」"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Shouting out on Google Map, I am in the News!"
+                },
+                "gsx$演講摘要": {
+                    "$t": "前端地圖應用能做出哪些有趣的作品？用地圖實作為例，來分享在 Google Firebase 與 Amazon S3 雲端平台上的開發經驗，並聊聊在 Firebase 上實作 LiveMaps 的優缺點，以及在 Amazon S3 上開發 WeatherMaps 時遇到的心得。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "Talking about the funny thing we can create using LiveMaps on Firebase. Using map project as an example, to share the development experience on Amazon S3, the pros and cons of building LiveMaps on Firebase, and the experience of developing WeatherMaps on Amazon S3."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "4"
+                },
+                "gsx$slide": {
+                    "$t": "https://drive.google.com/file/d/1hz5BryMmr-mRw5Qq-SO0ghE_DFbV99Rn/view"
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/db1zf"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "17"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 吳哲宇, 姓名en: Wu Che Yu, 類別: UI/UX, 職稱: 前端工程師 / 設計師, 個人介紹: 創立墨雨設計，為設計與網頁雙棲的工程師，致力結合動態精神於網頁中，以程式創作動畫與特效，執行展會、捷運、教育單位等網站製作。\n在 Hahow 開設動畫互動網頁程式/特效入門，嘗試以設計整合程式專案導向教學，引領 4500 位學生探索更多可能性。, 個人介紹en: Start up Monoame Design, Che-Yu works both in designing and web development. He has dedicated to animation programming and taught on Hahow, trying to provide combined design and programming project-oriented course for 4500 students.\n\n, 照片: majer.jpg, 演講主題: 以 Vue / GSAP / D3 為核心的網頁視覺動態整合與架構設計, 演講主題en: Animation web page and framework design using Vue/GSAP/d3, 演講摘要: 網頁視覺設計與程式開發時，因應不同互動需求，需在各個框架間整合與架構，以資料驅動內容與動態。\n在本次分享中，將會討論開發上遇到的案例，從視覺設計到網頁開發，整合 Vue-cli / GSAP / D3 等框架，和以Vuex 為使用者輸入狀態中樞，調控多頁面網頁動態的方式。, 演講摘要en: The visual design and program development of web page have to be integrated under different frameworks and structures due to different needs of interaction on website. This talk will have case discussions from visual design and web development, integrated with Vue-cli/GSAP/D3 and Vuex to modify and control multipage animations. , 議程編號: 26, slide: https://drive.google.com/file/d/1BBiXBHIfK2eRhUeYecDLdeltFWL1HtvO/view"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/db1zf"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "17"
+                },
+                "gsx$姓名": {
+                    "$t": "吳哲宇"
+                },
+                "gsx$姓名en": {
+                    "$t": "Wu Che Yu"
+                },
+                "gsx$類別": {
+                    "$t": "UI/UX"
+                },
+                "gsx$職稱": {
+                    "$t": "前端工程師 / 設計師"
+                },
+                "gsx$個人介紹": {
+                    "$t": "創立墨雨設計，為設計與網頁雙棲的工程師，致力結合動態精神於網頁中，以程式創作動畫與特效，執行展會、捷運、教育單位等網站製作。\n在 Hahow 開設動畫互動網頁程式/特效入門，嘗試以設計整合程式專案導向教學，引領 4500 位學生探索更多可能性。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Start up Monoame Design, Che-Yu works both in designing and web development. He has dedicated to animation programming and taught on Hahow, trying to provide combined design and programming project-oriented course for 4500 students.\n\n"
+                },
+                "gsx$照片": {
+                    "$t": "majer.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "以 Vue / GSAP / D3 為核心的網頁視覺動態整合與架構設計"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Animation web page and framework design using Vue/GSAP/d3"
+                },
+                "gsx$演講摘要": {
+                    "$t": "網頁視覺設計與程式開發時，因應不同互動需求，需在各個框架間整合與架構，以資料驅動內容與動態。\n在本次分享中，將會討論開發上遇到的案例，從視覺設計到網頁開發，整合 Vue-cli / GSAP / D3 等框架，和以Vuex 為使用者輸入狀態中樞，調控多頁面網頁動態的方式。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "The visual design and program development of web page have to be integrated under different frameworks and structures due to different needs of interaction on website. This talk will have case discussions from visual design and web development, integrated with Vue-cli/GSAP/D3 and Vuex to modify and control multipage animations. "
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "26"
+                },
+                "gsx$slide": {
+                    "$t": "https://drive.google.com/file/d/1BBiXBHIfK2eRhUeYecDLdeltFWL1HtvO/view"
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dcgjs"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "18"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 王銘德, 姓名en: Ming-der Wang, 類別: Blockchain, 職稱: DevOps 顧問, 個人介紹: 以太坊熱愛者, 個人介紹en: Ethereum enthusiast, 照片: mingderwang.jpg, 演講主題: 區塊鏈是什麼？－從程式設計師角度來看, 演講主題en: What is Blockchains? - from Developers’ Point of View, 演講摘要: 我會以一個軟體開發者的角度來介紹什麼是區塊鏈。區塊鏈可以讓我們在沒有中間人或認證單位的情況下，對某些資料或狀態得到一個共識。特別是以太坊，它可以讓我們在區塊鏈上執行程式，我們稱它為 “智能合約”。最後我會演示，如何利用 Javascript 程式，讀取區塊鏈裡面的資訊。甚至於寫一個簡單的智能合約，來說明如何開發 Dapp 分散式應用程式。, 演講摘要en: I will explain what a blockchain is from the developers’ point of view in the talk. A blockchain can be treated as a distributed ledger which provides a consensus between different parties without a central control. Especially on Ethereum, we can execute programs on it. Therefore, I will do a demo on smart contract at the end., 議程編號: 12"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dcgjs"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "18"
+                },
+                "gsx$姓名": {
+                    "$t": "王銘德"
+                },
+                "gsx$姓名en": {
+                    "$t": "Ming-der Wang"
+                },
+                "gsx$類別": {
+                    "$t": "Blockchain"
+                },
+                "gsx$職稱": {
+                    "$t": "DevOps 顧問"
+                },
+                "gsx$個人介紹": {
+                    "$t": "以太坊熱愛者"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Ethereum enthusiast"
+                },
+                "gsx$照片": {
+                    "$t": "mingderwang.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "區塊鏈是什麼？－從程式設計師角度來看"
+                },
+                "gsx$演講主題en": {
+                    "$t": "What is Blockchains? - from Developers’ Point of View"
+                },
+                "gsx$演講摘要": {
+                    "$t": "我會以一個軟體開發者的角度來介紹什麼是區塊鏈。區塊鏈可以讓我們在沒有中間人或認證單位的情況下，對某些資料或狀態得到一個共識。特別是以太坊，它可以讓我們在區塊鏈上執行程式，我們稱它為 “智能合約”。最後我會演示，如何利用 Javascript 程式，讀取區塊鏈裡面的資訊。甚至於寫一個簡單的智能合約，來說明如何開發 Dapp 分散式應用程式。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "I will explain what a blockchain is from the developers’ point of view in the talk. A blockchain can be treated as a distributed ledger which provides a consensus between different parties without a central control. Especially on Ethereum, we can execute programs on it. Therefore, I will do a demo on smart contract at the end."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "12"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/ddv49"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "19"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 王志清(Taien Wang), 姓名en: Taien Wang, 類別: DevOps, 職稱: 前遠時數位科技股份有限公司技術總監, 個人介紹: 早期經歷資安顧問、全端工程師及創業等。2012 年加入時間軸科技經歷跨國公司合作、併購、團隊建立與重整等，於遠傳併購後擔任技術總監，負責團隊管理，規劃與實踐公司核心產品與技術架構。曾在資安、創新、雲端、網路與廣告技術等面向獲得肯定。, 個人介紹en: Taien had worked as a cyber-security consultant, full stack engineer, and startupper. He joined  Hiiir Inc. in 2012, and had confronted with amalgamation. Now in Far EasTone Telecommunications Co., he serves as the technical director., 照片: taienwang.jpg, 演講主題: 百人團隊敏捷轉型暨持續性整合與交付實踐, 演講主題en: Agile Transformation and CI/CD of a Team with a Hundred People, 演講摘要: 時間軸於合併後不到一年在 2013 年交付 friDay 購物，之後每年交付 1-2 個新平台，期間歷經無數次大小改版。團隊正面迎戰各種挑戰，漂亮的轉型建立自我成長與管理的穩定敏捷團隊，並在中間實踐穩定與彈性的架構，在商業與技術間平衡。, 演講摘要en: After mergers and acquisitions, Hiiir took less than one year to develop friDay shopping platform in 2013. And developing 1 or 2 platforms each year  with numerous times of revision. The team faces up to many challenges and perfectly transformed to an agile team with good stability and self-management. They had found the balance between  between technical and business needs, and the balance between stability and flexibility of the structure for implementation., 議程編號: 7, 禁止錄影: 禁止錄影"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/ddv49"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "19"
+                },
+                "gsx$姓名": {
+                    "$t": "王志清(Taien Wang)"
+                },
+                "gsx$姓名en": {
+                    "$t": "Taien Wang"
+                },
+                "gsx$類別": {
+                    "$t": "DevOps"
+                },
+                "gsx$職稱": {
+                    "$t": "前遠時數位科技股份有限公司技術總監"
+                },
+                "gsx$個人介紹": {
+                    "$t": "早期經歷資安顧問、全端工程師及創業等。2012 年加入時間軸科技經歷跨國公司合作、併購、團隊建立與重整等，於遠傳併購後擔任技術總監，負責團隊管理，規劃與實踐公司核心產品與技術架構。曾在資安、創新、雲端、網路與廣告技術等面向獲得肯定。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Taien had worked as a cyber-security consultant, full stack engineer, and startupper. He joined  Hiiir Inc. in 2012, and had confronted with amalgamation. Now in Far EasTone Telecommunications Co., he serves as the technical director."
+                },
+                "gsx$照片": {
+                    "$t": "taienwang.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "百人團隊敏捷轉型暨持續性整合與交付實踐"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Agile Transformation and CI/CD of a Team with a Hundred People"
+                },
+                "gsx$演講摘要": {
+                    "$t": "時間軸於合併後不到一年在 2013 年交付 friDay 購物，之後每年交付 1-2 個新平台，期間歷經無數次大小改版。團隊正面迎戰各種挑戰，漂亮的轉型建立自我成長與管理的穩定敏捷團隊，並在中間實踐穩定與彈性的架構，在商業與技術間平衡。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "After mergers and acquisitions, Hiiir took less than one year to develop friDay shopping platform in 2013. And developing 1 or 2 platforms each year  with numerous times of revision. The team faces up to many challenges and perfectly transformed to an agile team with good stability and self-management. They had found the balance between  between technical and business needs, and the balance between stability and flexibility of the structure for implementation."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "7"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": "禁止錄影"
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/d415a"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "20"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: Herman Wu, 姓名en: Herman Wu, 類別: Machine Learning, 職稱: Technical Evangelist , 個人介紹: A developer. Working as a technical evangelist in Microsoft., 個人介紹en: A developer. Working as a technical evangelist in Microsoft., 照片: zobeidewu.jpg, 演講主題: 如何運用 VoTT 及 CNTK 實作影片物件辨識, 演講主題en: How to use VoTT and CNTK to implement video object detection, 演講摘要: 透過實例介紹如何運用開源的 VoTT 工具標示影片中的物件，並透過 CNTK 訓練物件辨識深度學習模型，完成一套影像物件分析及辨識系統。, 演講摘要en: In this talk we will introduce and demo how to leverage open source VoTT tools and CNTK (Microsoft Cognitive Toolkit) to training a deep learning object detection model , and use it to detect objects in video. , 議程編號: 10"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/d415a"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "20"
+                },
+                "gsx$姓名": {
+                    "$t": "Herman Wu"
+                },
+                "gsx$姓名en": {
+                    "$t": "Herman Wu"
+                },
+                "gsx$類別": {
+                    "$t": "Machine Learning"
+                },
+                "gsx$職稱": {
+                    "$t": "Technical Evangelist "
+                },
+                "gsx$個人介紹": {
+                    "$t": "A developer. Working as a technical evangelist in Microsoft."
+                },
+                "gsx$個人介紹en": {
+                    "$t": "A developer. Working as a technical evangelist in Microsoft."
+                },
+                "gsx$照片": {
+                    "$t": "zobeidewu.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "如何運用 VoTT 及 CNTK 實作影片物件辨識"
+                },
+                "gsx$演講主題en": {
+                    "$t": "How to use VoTT and CNTK to implement video object detection"
+                },
+                "gsx$演講摘要": {
+                    "$t": "透過實例介紹如何運用開源的 VoTT 工具標示影片中的物件，並透過 CNTK 訓練物件辨識深度學習模型，完成一套影像物件分析及辨識系統。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "In this talk we will introduce and demo how to leverage open source VoTT tools and CNTK (Microsoft Cognitive Toolkit) to training a deep learning object detection model , and use it to detect objects in video. "
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "10"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/d5fpr"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "11"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: Rayon Hung, 姓名en: Rayon Hung, 類別: UI/UX, 職稱: Designer, 個人介紹: 職業生涯大部分於新創公司及網路產業服務，期望產品設計思考如何解決使用者痛點，進而增進用戶心中價值。歷經 3 人到 60 人的新創規模，喜歡以自我學習為團隊做最有價值的轉換。\r\n, 個人介紹en: In my career so far, I’ve worked as a product guy in several startups and I always tries my best to solve the pain of users to improve the value of user experience. I love self-learning and transfer these knowledge., 照片: rayonhung.jpg, website: https://www.behance.net/rayonhung, linkedin: https://www.linkedin.com/in/rayon-hung-53a63b63/, 演講主題: 當介面捨去螢幕，設計師的想像與挑戰, 演講主題en: User Interface without \"interface\", 演講摘要: 未來虛擬實境 / 擴增實境的應用、無介面音頻和人工智能崛起，當萬物網絡串連下，從平面跨越空間與時間，產品設計師跳脫螢幕之外，將面對不同挑戰與想像。, 演講摘要en: When VR, AR, and audio service arrive in IOT (The Internet Of Things) world with the transformation from 2D to 3D, product designers are now facing a different challenge and imagination in future., 議程編號: 16"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/d5fpr"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "11"
+                },
+                "gsx$姓名": {
+                    "$t": "Rayon Hung"
+                },
+                "gsx$姓名en": {
+                    "$t": "Rayon Hung"
+                },
+                "gsx$類別": {
+                    "$t": "UI/UX"
+                },
+                "gsx$職稱": {
+                    "$t": "Designer"
+                },
+                "gsx$個人介紹": {
+                    "$t": "職業生涯大部分於新創公司及網路產業服務，期望產品設計思考如何解決使用者痛點，進而增進用戶心中價值。歷經 3 人到 60 人的新創規模，喜歡以自我學習為團隊做最有價值的轉換。\r\n"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "In my career so far, I’ve worked as a product guy in several startups and I always tries my best to solve the pain of users to improve the value of user experience. I love self-learning and transfer these knowledge."
+                },
+                "gsx$照片": {
+                    "$t": "rayonhung.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": "https://www.behance.net/rayonhung"
+                },
+                "gsx$linkedin": {
+                    "$t": "https://www.linkedin.com/in/rayon-hung-53a63b63/"
+                },
+                "gsx$演講主題": {
+                    "$t": "當介面捨去螢幕，設計師的想像與挑戰"
+                },
+                "gsx$演講主題en": {
+                    "$t": "User Interface without \"interface\""
+                },
+                "gsx$演講摘要": {
+                    "$t": "未來虛擬實境 / 擴增實境的應用、無介面音頻和人工智能崛起，當萬物網絡串連下，從平面跨越空間與時間，產品設計師跳脫螢幕之外，將面對不同挑戰與想像。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "When VR, AR, and audio service arrive in IOT (The Internet Of Things) world with the transformation from 2D to 3D, product designers are now facing a different challenge and imagination in future."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "16"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/d6ua4"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "22"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 李健榮(Simen), 姓名en: Simen, 類別: IoT, 職稱: 總監, 個人介紹: Simen 過去曾在竹科當過工程師、後來跑去教書，現在又回到業界做一些 IoT 相關的事。他過去的興趣在 RF 收發機和鎖相迴路等研究，現在則變成了 Node.js 的大粉絲。他目前仍然持續在嵌入式系統、工業機器網路與 Web 前/後端的領域努力學習之中。, 個人介紹en: Simen was work in Hsinchu Science Park. Later he became a teacher, and now works on IoT stuff in the industry. He is a big fan of Nod.js, and is now continuously learning embedded system, industry networking, and full stack web development., 照片: simenli.jpg, facebook: https://fb.me/chienjung.li.7, 演講主題: IoT 夢遊仙境, 演講主題en: Wonderland of the Internet of Things, 演講摘要: 自從接觸到 IoT 後，身為一個硬體人的我開始覺得，沒有軟體思維真的是萬萬不行。我和 IoT 的緣分，最早是從學習 ZigBee 開始，而後我又發現光是會寫晶片韌體，真的是萬萬不行。後來，我遇到了 Node.js，試著用它來寫 ZigBee 驅動程式，在完成的那一天我又驚覺萬萬不行了。隨後，開啟了我學習 Web 前後端的道路。一頭栽進軟體領域，直到今天我還是像個嬰兒般，走得跌跌撞撞。我希望在這場演講介紹一點熱門的 IoT 通訊協定，再穿插一點我的學習感想，邀請大家在這 50 分鐘裡，和我一起夢遊仙境。, 演講摘要en: Since I started learning IoT, as a hardware person, I think nothing can't be done without thinking from software perspective. As early as I learned ZigBee I knew IoT, and then I found that only firmware is not enough. Later, as I finished writing a ZigBee device driver using Node.js, I again found that it's not enough. After that I stepped on the way learning full stack web development. I hope to introduce some popular IoT communication protocols and my learning experience. , 議程編號: 33"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/d6ua4"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "22"
+                },
+                "gsx$姓名": {
+                    "$t": "李健榮(Simen)"
+                },
+                "gsx$姓名en": {
+                    "$t": "Simen"
+                },
+                "gsx$類別": {
+                    "$t": "IoT"
+                },
+                "gsx$職稱": {
+                    "$t": "總監"
+                },
+                "gsx$個人介紹": {
+                    "$t": "Simen 過去曾在竹科當過工程師、後來跑去教書，現在又回到業界做一些 IoT 相關的事。他過去的興趣在 RF 收發機和鎖相迴路等研究，現在則變成了 Node.js 的大粉絲。他目前仍然持續在嵌入式系統、工業機器網路與 Web 前/後端的領域努力學習之中。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Simen was work in Hsinchu Science Park. Later he became a teacher, and now works on IoT stuff in the industry. He is a big fan of Nod.js, and is now continuously learning embedded system, industry networking, and full stack web development."
+                },
+                "gsx$照片": {
+                    "$t": "simenli.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": "https://fb.me/chienjung.li.7"
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "IoT 夢遊仙境"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Wonderland of the Internet of Things"
+                },
+                "gsx$演講摘要": {
+                    "$t": "自從接觸到 IoT 後，身為一個硬體人的我開始覺得，沒有軟體思維真的是萬萬不行。我和 IoT 的緣分，最早是從學習 ZigBee 開始，而後我又發現光是會寫晶片韌體，真的是萬萬不行。後來，我遇到了 Node.js，試著用它來寫 ZigBee 驅動程式，在完成的那一天我又驚覺萬萬不行了。隨後，開啟了我學習 Web 前後端的道路。一頭栽進軟體領域，直到今天我還是像個嬰兒般，走得跌跌撞撞。我希望在這場演講介紹一點熱門的 IoT 通訊協定，再穿插一點我的學習感想，邀請大家在這 50 分鐘裡，和我一起夢遊仙境。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "Since I started learning IoT, as a hardware person, I think nothing can't be done without thinking from software perspective. As early as I learned ZigBee I knew IoT, and then I found that only firmware is not enough. Later, as I finished writing a ZigBee device driver using Node.js, I again found that it's not enough. After that I stepped on the way learning full stack web development. I hope to introduce some popular IoT communication protocols and my learning experience. "
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "33"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/d88ul"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "23"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 張維元, 姓名en: Wei-Yuan Chang , 類別: Machine Learning, 個人介紹: 剛畢業的社會新鮮人，主要研究領域為巨量資料之實務分析應用。略懂一點網站前後端開發技術，並且學過資料探勘與機器學習的皮毛。目前是一個在想像與實踐之間追逐著夢想的菜鳥工程師。, 個人介紹en: A fresh graduate, mainly working on big data and applied data analysis with some skills of frontend and backend web development. Now he is a junior engineer chasing the dream swinging back and forth between imagination and implementation. , 照片: changweiyuan.jpg, 演講主題: 跨界的資料英雄專案－「到院前心肺休止」（OHCA）風險地圖, 演講主題en: Cross-Disciplinary Hero Project - Risk map of OHCA, 演講摘要: 為期四個月的資料英雄（D4SG）計畫，我們結合政府工作者、醫學領域專家以及資料技術人的跨域合作。在「到院前心肺休止」（OHCA）風險地圖這個題目中，利用高雄在地的急診資料與公開的開放資料集（空氣/溫度/人口）。根據「熱區辨識」、「危險因子分析」、「緊急醫療優化」三個角度，引入資料科學的方法論，對歷年資料進行分析，為緊急救護與醫療界提供不同的觀點。本次的演講將談到，一個跨界的資料專案該如何進行，過程中遇到了哪些問題，最終可以產出怎樣的效應。, 演講摘要en: During this 4-month project (Data for Social Good,D4SG), we worked with government, clinical experts, and data programmers. We used available data of emergency care and weather and demographic data and adopted the methodology of data sciences, from 3 approaches including \"hot zone identification\", \"risk factor analysis\", and \"optimization of emergency care,\" to provide different perspectives about emergency care and clinical practice., 議程編號: 13"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/d88ul"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "23"
+                },
+                "gsx$姓名": {
+                    "$t": "張維元"
+                },
+                "gsx$姓名en": {
+                    "$t": "Wei-Yuan Chang "
+                },
+                "gsx$類別": {
+                    "$t": "Machine Learning"
+                },
+                "gsx$職稱": {
+                    "$t": ""
+                },
+                "gsx$個人介紹": {
+                    "$t": "剛畢業的社會新鮮人，主要研究領域為巨量資料之實務分析應用。略懂一點網站前後端開發技術，並且學過資料探勘與機器學習的皮毛。目前是一個在想像與實踐之間追逐著夢想的菜鳥工程師。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "A fresh graduate, mainly working on big data and applied data analysis with some skills of frontend and backend web development. Now he is a junior engineer chasing the dream swinging back and forth between imagination and implementation. "
+                },
+                "gsx$照片": {
+                    "$t": "changweiyuan.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "跨界的資料英雄專案－「到院前心肺休止」（OHCA）風險地圖"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Cross-Disciplinary Hero Project - Risk map of OHCA"
+                },
+                "gsx$演講摘要": {
+                    "$t": "為期四個月的資料英雄（D4SG）計畫，我們結合政府工作者、醫學領域專家以及資料技術人的跨域合作。在「到院前心肺休止」（OHCA）風險地圖這個題目中，利用高雄在地的急診資料與公開的開放資料集（空氣/溫度/人口）。根據「熱區辨識」、「危險因子分析」、「緊急醫療優化」三個角度，引入資料科學的方法論，對歷年資料進行分析，為緊急救護與醫療界提供不同的觀點。本次的演講將談到，一個跨界的資料專案該如何進行，過程中遇到了哪些問題，最終可以產出怎樣的效應。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "During this 4-month project (Data for Social Good,D4SG), we worked with government, clinical experts, and data programmers. We used available data of emergency care and weather and demographic data and adopted the methodology of data sciences, from 3 approaches including \"hot zone identification\", \"risk factor analysis\", and \"optimization of emergency care,\" to provide different perspectives about emergency care and clinical practice."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "13"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dkvya"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "24"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 穆道聖, 姓名en: Daosheng Mu, 類別: VR, 職稱: Sr. Software Engineer, 個人介紹: 美商謀智（Mozilla）工程師，WebVR 開發者，遊戲業逃兵, 個人介紹en: Before joining Mozilla, he has worked on a cross-platform 3D graphics engine.\nRecently, he has been working on Firefox's graphics and WebGL support and is now a member of Mozilla's WebVR team., 照片: daoshengmu.jpg, facebook: https://fb.me/daoshengmu0803, 演講主題: WebVR - 迎向跨平台 VR 內容開發, 演講主題en: WebVR - Building cross-platform VR content into the open web, 演講摘要: 身為第一個支援 WebVR 的瀏覽器 - Firefox 的開發成員，Mozilla VR 團隊致力於不斷創新，將虛擬實境的應用帶入開放網際網路，讓上億的使用者能在瀏覽器中迎向虛擬實境的全新紀元，擁抱真正的跨平台虛擬實境享受。在這次演講，講者將介紹 WebVR API，以及解說如何打造跨不同平台瀏覽器的虛擬實境應用。, 演講摘要en: On the Mozilla VR team, engineers and designers are working to bring virtual reality to the Open Web, enabling anyone with a web browser to create and surf VR worlds. The hope is that the ubiquity of browsers and the Web will open VR far beyond native VR platforms, to billions of new users., 議程編號: 24, slide: https://docs.google.com/presentation/d/1NLG06mU617n4Z2xzzEfkDQUOiqvFVXoW-JIO_QhmUfI/edit#slide\u003did.g27c577dfd8_0_98"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dkvya"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "24"
+                },
+                "gsx$姓名": {
+                    "$t": "穆道聖"
+                },
+                "gsx$姓名en": {
+                    "$t": "Daosheng Mu"
+                },
+                "gsx$類別": {
+                    "$t": "VR"
+                },
+                "gsx$職稱": {
+                    "$t": "Sr. Software Engineer"
+                },
+                "gsx$個人介紹": {
+                    "$t": "美商謀智（Mozilla）工程師，WebVR 開發者，遊戲業逃兵"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Before joining Mozilla, he has worked on a cross-platform 3D graphics engine.\nRecently, he has been working on Firefox's graphics and WebGL support and is now a member of Mozilla's WebVR team."
+                },
+                "gsx$照片": {
+                    "$t": "daoshengmu.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": "https://fb.me/daoshengmu0803"
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "WebVR - 迎向跨平台 VR 內容開發"
+                },
+                "gsx$演講主題en": {
+                    "$t": "WebVR - Building cross-platform VR content into the open web"
+                },
+                "gsx$演講摘要": {
+                    "$t": "身為第一個支援 WebVR 的瀏覽器 - Firefox 的開發成員，Mozilla VR 團隊致力於不斷創新，將虛擬實境的應用帶入開放網際網路，讓上億的使用者能在瀏覽器中迎向虛擬實境的全新紀元，擁抱真正的跨平台虛擬實境享受。在這次演講，講者將介紹 WebVR API，以及解說如何打造跨不同平台瀏覽器的虛擬實境應用。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "On the Mozilla VR team, engineers and designers are working to bring virtual reality to the Open Web, enabling anyone with a web browser to create and surf VR worlds. The hope is that the ubiquity of browsers and the Web will open VR far beyond native VR platforms, to billions of new users."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "24"
+                },
+                "gsx$slide": {
+                    "$t": "https://docs.google.com/presentation/d/1NLG06mU617n4Z2xzzEfkDQUOiqvFVXoW-JIO_QhmUfI/edit#slide\u003did.g27c577dfd8_0_98"
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dmair"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "25"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 陳幸延, 姓名en: Hsing-Yen Chen, 類別: IoT, 職稱: 農夫與自由軟體工程師, 個人介紹: 從兩年多前進入農業領域，進行生態農業與低碳農耕，並受到 Open Source Ecology 社群啓發，希望能將自由軟體精神發揮到農耕生活中，幫助我們孕育更多生命體，與加深人與人的連結。, 個人介紹en: John started exploring agricultural industry, working on ecological and low carbon agriculture. Inspired by Open Source Ecology community, he hopes to apply the spirit to cultivate more creatures and strengthen connections between people. , 照片: chenhsingyen.jpg, 演講主題: 阿龜微氣候天眼通－田間感測器與資料科學, 演講主題en: AgriWeather - Agricultural Sensors in the Field and Data Science, 演講摘要: 「阿龜微氣候天眼通」（AgriWeather）以物聯網技術與資料科學技術，結合在地青小農，共同發展整合數據、監測、分析與專家知識的農業微氣候分析應用，打造「農業微氣候系統工具」。, 演講摘要en: AgriWeather was developed by using loT and data science skills. AgriWeather is an application of agricultural microclimate analysis. As an angricultural microclimate system tool, it was developed and integrated with data, monitoring, analysis and expert knowledge., 議程編號: 30, slide: https://drive.google.com/file/d/1bVBOJ0J7SgexP204Fd7GNhDFPAD09jDU/view?usp\u003dsharing"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dmair"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "25"
+                },
+                "gsx$姓名": {
+                    "$t": "陳幸延"
+                },
+                "gsx$姓名en": {
+                    "$t": "Hsing-Yen Chen"
+                },
+                "gsx$類別": {
+                    "$t": "IoT"
+                },
+                "gsx$職稱": {
+                    "$t": "農夫與自由軟體工程師"
+                },
+                "gsx$個人介紹": {
+                    "$t": "從兩年多前進入農業領域，進行生態農業與低碳農耕，並受到 Open Source Ecology 社群啓發，希望能將自由軟體精神發揮到農耕生活中，幫助我們孕育更多生命體，與加深人與人的連結。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "John started exploring agricultural industry, working on ecological and low carbon agriculture. Inspired by Open Source Ecology community, he hopes to apply the spirit to cultivate more creatures and strengthen connections between people. "
+                },
+                "gsx$照片": {
+                    "$t": "chenhsingyen.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "阿龜微氣候天眼通－田間感測器與資料科學"
+                },
+                "gsx$演講主題en": {
+                    "$t": "AgriWeather - Agricultural Sensors in the Field and Data Science"
+                },
+                "gsx$演講摘要": {
+                    "$t": "「阿龜微氣候天眼通」（AgriWeather）以物聯網技術與資料科學技術，結合在地青小農，共同發展整合數據、監測、分析與專家知識的農業微氣候分析應用，打造「農業微氣候系統工具」。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "AgriWeather was developed by using loT and data science skills. AgriWeather is an application of agricultural microclimate analysis. As an angricultural microclimate system tool, it was developed and integrated with data, monitoring, analysis and expert knowledge."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "30"
+                },
+                "gsx$slide": {
+                    "$t": "https://drive.google.com/file/d/1bVBOJ0J7SgexP204Fd7GNhDFPAD09jDU/view?usp\u003dsharing"
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dnp34"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "26"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 曾冠諭, 姓名en: Kuan-Yu Tseng, 類別: Mobile App \u0026 Eng, 職稱: Software Engineer, 個人介紹: 高雄人，現任 Facebook 軟體工程師，擁有四年 Android 開發經驗，開發過 Facebook 我的收藏、地圖、定位以及 Instagram Direct 訊息功能。熱衷於研究如何寫出有效率、可讀及可維護的程式架構。, 個人介紹en: Facebook Software Engineer, 4-year Android experience. Developed Facebook Saved, Maps, Location Infra, and Instagram Direct features. Excited at figuring out how to write effective, readable, maintainable code architecture., 照片: kuanyutseng.jpg, 演講主題: 如何寫出有效率、好讀、可維護的 Java / Android 程式, 演講主題en: Performant, Readable, Maintainable Java / Android Code, 演講摘要: 在軟體公司工作最痛苦的一件事情就是看到前人留下來的程式碼像本天書——看也看不懂、改也改不動，跑起來卻健步如飛，不僅一切正常，甚至連重構後的程式都跑得不如舊程式順暢。這個 Session 就是要討論有哪些技巧及心法可以避免寫出這樣難讀、難懂也難維護的程式，不僅可用於改善自己的程式品質，也適用於 Code Review 時給別人建議。, 演講摘要en: In a software company, the most annoying thing is to read or modify the code left by someone that is overly complicated. What makes it worse is that such code is usually unbeatable compared with any new rewritten code. This session is to discuss the methodology to avoid writing such complex, unreadable, unmaintainable code., 議程編號: 2, slide: https://drive.google.com/file/d/0B3X5bLgCa9auRFNzVUxmR052dVk/view"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dnp34"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "26"
+                },
+                "gsx$姓名": {
+                    "$t": "曾冠諭"
+                },
+                "gsx$姓名en": {
+                    "$t": "Kuan-Yu Tseng"
+                },
+                "gsx$類別": {
+                    "$t": "Mobile App \u0026 Eng"
+                },
+                "gsx$職稱": {
+                    "$t": "Software Engineer"
+                },
+                "gsx$個人介紹": {
+                    "$t": "高雄人，現任 Facebook 軟體工程師，擁有四年 Android 開發經驗，開發過 Facebook 我的收藏、地圖、定位以及 Instagram Direct 訊息功能。熱衷於研究如何寫出有效率、可讀及可維護的程式架構。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Facebook Software Engineer, 4-year Android experience. Developed Facebook Saved, Maps, Location Infra, and Instagram Direct features. Excited at figuring out how to write effective, readable, maintainable code architecture."
+                },
+                "gsx$照片": {
+                    "$t": "kuanyutseng.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "如何寫出有效率、好讀、可維護的 Java / Android 程式"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Performant, Readable, Maintainable Java / Android Code"
+                },
+                "gsx$演講摘要": {
+                    "$t": "在軟體公司工作最痛苦的一件事情就是看到前人留下來的程式碼像本天書——看也看不懂、改也改不動，跑起來卻健步如飛，不僅一切正常，甚至連重構後的程式都跑得不如舊程式順暢。這個 Session 就是要討論有哪些技巧及心法可以避免寫出這樣難讀、難懂也難維護的程式，不僅可用於改善自己的程式品質，也適用於 Code Review 時給別人建議。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "In a software company, the most annoying thing is to read or modify the code left by someone that is overly complicated. What makes it worse is that such code is usually unbeatable compared with any new rewritten code. This session is to discuss the methodology to avoid writing such complex, unreadable, unmaintainable code."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "2"
+                },
+                "gsx$slide": {
+                    "$t": "https://drive.google.com/file/d/0B3X5bLgCa9auRFNzVUxmR052dVk/view"
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dp3nl"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "27"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 張宗彥(OXXO), 姓名en: OXXO, 類別: IoT, 職稱: Webduino 設計總監 / Webduino Creativen Director, 個人介紹: 學習過物理和多媒體，擔任過設計師和工程師，喜好跨領域的整合創新，專精視覺設計及網頁前端技術，腦中常駐各種奇怪創意，目前是 OXXO.STUDIO 部落格作者和 Webduino 設計總監。, 個人介紹en: I have studied physics and multimedia, and also have worked as a designer and front-end engineer.\nI have expertise in visual design and web front-end technology, now I'm an author of OXXO.STUDIO Blog, and a creative director of Webduino., 照片: oxxo.jpg, 演講主題: 用 Webduino 玩創意 - APP x Web x IoT, 演講主題en: Play with Webduino - APP x Web x IoT, 演講摘要: 一直以來，Webduino 都以玩轉物聯網為樂，隨著行動裝置、瀏覽器與各種技術的進步，越來越多的想法都能在彈指間實現，短短三四十分鐘的議程，Webduino 將帶大家敞洋 App x Web x IoT 的創意大海，體驗好玩又有 freestyle 的精彩應用。, 演講摘要en: In the past, Webduino has been an expert in IoT.\nWith the progress of mobile devices, browsers and various technologies, more and more ideas can be done easily.\nJust 40 minutes, Webduino will take you to experience \"App x Web x IoT\", and let you feel Webduino is funny and awesome., 議程編號: 25"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dp3nl"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "27"
+                },
+                "gsx$姓名": {
+                    "$t": "張宗彥(OXXO)"
+                },
+                "gsx$姓名en": {
+                    "$t": "OXXO"
+                },
+                "gsx$類別": {
+                    "$t": "IoT"
+                },
+                "gsx$職稱": {
+                    "$t": "Webduino 設計總監 / Webduino Creativen Director"
+                },
+                "gsx$個人介紹": {
+                    "$t": "學習過物理和多媒體，擔任過設計師和工程師，喜好跨領域的整合創新，專精視覺設計及網頁前端技術，腦中常駐各種奇怪創意，目前是 OXXO.STUDIO 部落格作者和 Webduino 設計總監。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "I have studied physics and multimedia, and also have worked as a designer and front-end engineer.\nI have expertise in visual design and web front-end technology, now I'm an author of OXXO.STUDIO Blog, and a creative director of Webduino."
+                },
+                "gsx$照片": {
+                    "$t": "oxxo.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "用 Webduino 玩創意 - APP x Web x IoT"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Play with Webduino - APP x Web x IoT"
+                },
+                "gsx$演講摘要": {
+                    "$t": "一直以來，Webduino 都以玩轉物聯網為樂，隨著行動裝置、瀏覽器與各種技術的進步，越來越多的想法都能在彈指間實現，短短三四十分鐘的議程，Webduino 將帶大家敞洋 App x Web x IoT 的創意大海，體驗好玩又有 freestyle 的精彩應用。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "In the past, Webduino has been an expert in IoT.\nWith the progress of mobile devices, browsers and various technologies, more and more ideas can be done easily.\nJust 40 minutes, Webduino will take you to experience \"App x Web x IoT\", and let you feel Webduino is funny and awesome."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "25"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/df9om"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "28"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 侯貞泰, 姓名en: Chen-Tai Hou, 類別: Data Science, 個人介紹: 喜歡前端技術、資料分析、資料視覺化，希望用程式解決生活中的大小問題。現熱衷於共享單車的相關議題。, 個人介紹en: Like frontend, data analysis, and data visualization. Hope to use the program to solve the problem in our life. Now I am interested in bike sharing related issues., 照片: chentaihou.jpg, facebook: https://facebook.com/ctxhou\r\n, github: https://github.com/ctxhou, 演講主題: 共享單車視覺化, 演講主題en: Bike Visualization, 演講摘要: 共享單車視覺化（https://www.visualization.bike）致力於將各城市的共享單車資料轉換成易懂的視覺化呈現，至今分析了來自美國、台灣、英國、挪威等各城市數千萬筆的資料。我將會分享製作此網站的發想過程及所面臨的挑戰。, 演講摘要en: Bike Visualization aims to transform raw data of bike sharing into readable, usable, and aesthetic ways of information visualization. There are tens of millions of data from the US, Taiwan, the UK, Norway, etc, being analyzed so far. In this session, I will share the journey of creating this website and the challenges I faced., 議程編號: 27, slide: https://drive.google.com/open?id\u003d1NouNClNDTGPxM13Ofhe_3PwnZ0I8xS_p"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/df9om"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "28"
+                },
+                "gsx$姓名": {
+                    "$t": "侯貞泰"
+                },
+                "gsx$姓名en": {
+                    "$t": "Chen-Tai Hou"
+                },
+                "gsx$類別": {
+                    "$t": "Data Science"
+                },
+                "gsx$職稱": {
+                    "$t": ""
+                },
+                "gsx$個人介紹": {
+                    "$t": "喜歡前端技術、資料分析、資料視覺化，希望用程式解決生活中的大小問題。現熱衷於共享單車的相關議題。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Like frontend, data analysis, and data visualization. Hope to use the program to solve the problem in our life. Now I am interested in bike sharing related issues."
+                },
+                "gsx$照片": {
+                    "$t": "chentaihou.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": "https://facebook.com/ctxhou\r\n"
+                },
+                "gsx$github": {
+                    "$t": "https://github.com/ctxhou"
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "共享單車視覺化"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Bike Visualization"
+                },
+                "gsx$演講摘要": {
+                    "$t": "共享單車視覺化（https://www.visualization.bike）致力於將各城市的共享單車資料轉換成易懂的視覺化呈現，至今分析了來自美國、台灣、英國、挪威等各城市數千萬筆的資料。我將會分享製作此網站的發想過程及所面臨的挑戰。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "Bike Visualization aims to transform raw data of bike sharing into readable, usable, and aesthetic ways of information visualization. There are tens of millions of data from the US, Taiwan, the UK, Norway, etc, being analyzed so far. In this session, I will share the journey of creating this website and the challenges I faced."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "27"
+                },
+                "gsx$slide": {
+                    "$t": "https://drive.google.com/open?id\u003d1NouNClNDTGPxM13Ofhe_3PwnZ0I8xS_p"
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dgo93"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "29"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 吳貴融(KJ Wu), 姓名en: KJ Wu, 類別: AI, 職稱: Google Cloud, Customer Engineering Lead, 個人介紹: KJ 是台灣 Google 雲端團隊的第一位 Team member，協助不同規模的企業規劃雲端策略以及採用雲端解決方案。KJ 擁有多年雲端架構設計與開發的經驗，曾擔任過多項技術開發和管理團隊角色，尤其專注於企業用戶雲端環境轉移與遊戲/網路產業。, 個人介紹en: KJ is the first member of cloud team in Taiwan, planning cloud solutions for businesses. He has several years of experience in cloud framework development, and specialized in cloud data transfer services, gaming, and internet industry., 照片: kjwu.jpg, 演講主題: 在 Google Cloud Platform 探索 AI 和機器學習的世界, 演講主題en: Explore AI \u0026 Machine Learning world inside Google Cloud Platform, 演講摘要: Google Cloud 一直以來走在尖端的機器學習技術最前線，在機器學習的領域中，電腦視覺 (Computer vision)、預測模型 (predictive modeling)、自然語言處理 (natural language understanding)，以及語音辨識 (speech recognition) 等都開始被業界廣泛應用。在這個議程，你將學習到如何應用機器學習和Tensorflow來開發你專屬的應用。, 演講摘要en: Google Cloud is at the forefront of developing cutting-edge machine learning technology. Computer vision, predictive modeling, natural language understanding and speech recognition are among the most popular business use cases of machine learning. In this session, you'll learn how to leverage machine learning and Tensorflow for your own applications., 議程編號: 32, 禁止錄影: 禁止錄影"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dgo93"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "29"
+                },
+                "gsx$姓名": {
+                    "$t": "吳貴融(KJ Wu)"
+                },
+                "gsx$姓名en": {
+                    "$t": "KJ Wu"
+                },
+                "gsx$類別": {
+                    "$t": "AI"
+                },
+                "gsx$職稱": {
+                    "$t": "Google Cloud, Customer Engineering Lead"
+                },
+                "gsx$個人介紹": {
+                    "$t": "KJ 是台灣 Google 雲端團隊的第一位 Team member，協助不同規模的企業規劃雲端策略以及採用雲端解決方案。KJ 擁有多年雲端架構設計與開發的經驗，曾擔任過多項技術開發和管理團隊角色，尤其專注於企業用戶雲端環境轉移與遊戲/網路產業。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "KJ is the first member of cloud team in Taiwan, planning cloud solutions for businesses. He has several years of experience in cloud framework development, and specialized in cloud data transfer services, gaming, and internet industry."
+                },
+                "gsx$照片": {
+                    "$t": "kjwu.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "在 Google Cloud Platform 探索 AI 和機器學習的世界"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Explore AI \u0026 Machine Learning world inside Google Cloud Platform"
+                },
+                "gsx$演講摘要": {
+                    "$t": "Google Cloud 一直以來走在尖端的機器學習技術最前線，在機器學習的領域中，電腦視覺 (Computer vision)、預測模型 (predictive modeling)、自然語言處理 (natural language understanding)，以及語音辨識 (speech recognition) 等都開始被業界廣泛應用。在這個議程，你將學習到如何應用機器學習和Tensorflow來開發你專屬的應用。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "Google Cloud is at the forefront of developing cutting-edge machine learning technology. Computer vision, predictive modeling, natural language understanding and speech recognition are among the most popular business use cases of machine learning. In this session, you'll learn how to leverage machine learning and Tensorflow for your own applications."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "32"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": "禁止錄影"
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/di2tg"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "30"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 林書平(Harry Lin), 姓名en: Harry Lin, 類別: AI, 職稱: Google Cloud, Customer Engineering Lead, 個人介紹: Harry 目前為 Google Cloud 團隊的客戶工程與技術負責人。加入 Google 前，曾任安全工程研發，軟體工程和雲端架構團隊管理角色。過去曾帶領多個網路安全工程團隊為企業開發網絡安全，協助高科技、媒體、金融等多元產業建立安全及敏捷的雲端解決方案。, 個人介紹en: Harry had led several technical teams and been responsible for security engineering, software engineering and cloud architecture. He has helped companies in various industries to establish high performance, secure and agile cloud solutions., 照片: harrylin.jpg, 演講主題: 在 Google Cloud Platform 探索 AI 和機器學習的世界, 演講主題en: Explore AI \u0026 Machine Learning world inside Google Cloud Platform, 演講摘要: Google Cloud 一直以來走在尖端的機器學習技術最前線，在機器學習的領域中，電腦視覺(Computer vision)、預測模型(predictive modeling)、自然語言處理(natural language understanding)，以及語音辨識(speech recognition)等都開始被業界廣泛應用。在這個議程，你將學習到如何應用機器學習和Tensorflow來開發你專屬的應用。, 演講摘要en: Google Cloud is at the forefront of developing cutting-edge machine learning technology. Computer vision, predictive modeling, natural language understanding and speech recognition are among the most popular business use cases of machine learning. In this session, you'll learn how to leverage machine learning and Tensorflow for your own applications., 議程編號: 32, 合併講者照片: harrylin_kjwu.jpg, 禁止錄影: 禁止錄影"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/di2tg"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "30"
+                },
+                "gsx$姓名": {
+                    "$t": "林書平(Harry Lin)"
+                },
+                "gsx$姓名en": {
+                    "$t": "Harry Lin"
+                },
+                "gsx$類別": {
+                    "$t": "AI"
+                },
+                "gsx$職稱": {
+                    "$t": "Google Cloud, Customer Engineering Lead"
+                },
+                "gsx$個人介紹": {
+                    "$t": "Harry 目前為 Google Cloud 團隊的客戶工程與技術負責人。加入 Google 前，曾任安全工程研發，軟體工程和雲端架構團隊管理角色。過去曾帶領多個網路安全工程團隊為企業開發網絡安全，協助高科技、媒體、金融等多元產業建立安全及敏捷的雲端解決方案。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Harry had led several technical teams and been responsible for security engineering, software engineering and cloud architecture. He has helped companies in various industries to establish high performance, secure and agile cloud solutions."
+                },
+                "gsx$照片": {
+                    "$t": "harrylin.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "在 Google Cloud Platform 探索 AI 和機器學習的世界"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Explore AI \u0026 Machine Learning world inside Google Cloud Platform"
+                },
+                "gsx$演講摘要": {
+                    "$t": "Google Cloud 一直以來走在尖端的機器學習技術最前線，在機器學習的領域中，電腦視覺(Computer vision)、預測模型(predictive modeling)、自然語言處理(natural language understanding)，以及語音辨識(speech recognition)等都開始被業界廣泛應用。在這個議程，你將學習到如何應用機器學習和Tensorflow來開發你專屬的應用。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "Google Cloud is at the forefront of developing cutting-edge machine learning technology. Computer vision, predictive modeling, natural language understanding and speech recognition are among the most popular business use cases of machine learning. In this session, you'll learn how to leverage machine learning and Tensorflow for your own applications."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "32"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": "harrylin_kjwu.jpg"
+                },
+                "gsx$禁止錄影": {
+                    "$t": "禁止錄影"
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/djhdx"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "31"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: Jersey Su, 姓名en: Jersey Su, 類別: Automation, 個人介紹: 任職於 KKStream。新手爸爸，熱愛軟體測試技術。致力於自動化測試開發，熟悉 Calabash、Selenium 和 Cucumber, 個人介紹en: A novice dad who works in KKStream, loves software testing technology, and is committed to automated test development and familiar with Calabash, Selenium and Cucumber., 照片: jerseysu.jpg, 演講主題: Automation from specification by example to reality, 演講主題en: Automation from specification by example to reality, 演講摘要: 現今軟體發佈週期越來越短，但軟體的品質一直是我們面臨最大的挑戰，因此實例化需求幫助我們釐清了許多問題，它也是一個可執行的文件，並可以結合自動化測試，藉此提升軟體的品質，因此，本次分享不會有太高深的技術說明，更多的會是分享我們實行實例化需求的經驗談，希望各位聽眾們藉此能有更多的收穫。, 演講摘要en: Release cycle is getting shorter, and the quality of products has always been the biggest challenge. Specification by Example can be an executable document combined with automated testing to raise the quality, help us to clarify many problems., 議程編號: 23, slide: https://drive.google.com/open?id\u003d0B5Bxck8GpmYkSEFNb1hTNW9fbWM"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/djhdx"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "31"
+                },
+                "gsx$姓名": {
+                    "$t": "Jersey Su"
+                },
+                "gsx$姓名en": {
+                    "$t": "Jersey Su"
+                },
+                "gsx$類別": {
+                    "$t": "Automation"
+                },
+                "gsx$職稱": {
+                    "$t": ""
+                },
+                "gsx$個人介紹": {
+                    "$t": "任職於 KKStream。新手爸爸，熱愛軟體測試技術。致力於自動化測試開發，熟悉 Calabash、Selenium 和 Cucumber"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "A novice dad who works in KKStream, loves software testing technology, and is committed to automated test development and familiar with Calabash, Selenium and Cucumber."
+                },
+                "gsx$照片": {
+                    "$t": "jerseysu.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "Automation from specification by example to reality"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Automation from specification by example to reality"
+                },
+                "gsx$演講摘要": {
+                    "$t": "現今軟體發佈週期越來越短，但軟體的品質一直是我們面臨最大的挑戰，因此實例化需求幫助我們釐清了許多問題，它也是一個可執行的文件，並可以結合自動化測試，藉此提升軟體的品質，因此，本次分享不會有太高深的技術說明，更多的會是分享我們實行實例化需求的經驗談，希望各位聽眾們藉此能有更多的收穫。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "Release cycle is getting shorter, and the quality of products has always been the biggest challenge. Specification by Example can be an executable document combined with automated testing to raise the quality, help us to clarify many problems."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "23"
+                },
+                "gsx$slide": {
+                    "$t": "https://drive.google.com/open?id\u003d0B5Bxck8GpmYkSEFNb1hTNW9fbWM"
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dw4je"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "32"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 楊維中(Zonble), 姓名en: zonble, 類別: Automation, 個人介紹: KKBOX 的 iOS 工程師, 個人介紹en: iOS Engineer in KKBOX, 照片: zonble.jpg, 演講主題: 透過客製 Sketch Plug-in 開發改善產品設計流程, 演講主題en: Improve the design process by customized Sketch Plug-in, 演講摘要: UI 設計是產品開發過程中的重要一環，但是在實務上，有太多與設計工作相關，但不應該由設計師負責、反而讓設計師分心的工作。我們嘗試改進設計師使用的工具，讓原本需要人力的工作自動化，解放設計師的生產力。, 演講摘要en: UI design is an important part of product development, but in reality, there are too much irrelevant work that distracts designers. We try to improve the tools and automate works for designers to leverage the productivity of designers. , 議程編號: 5, slide: https://drive.google.com/open?id\u003d0B5Bxck8GpmYkWU9ER0ZzZDRRNzA"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dw4je"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "32"
+                },
+                "gsx$姓名": {
+                    "$t": "楊維中(Zonble)"
+                },
+                "gsx$姓名en": {
+                    "$t": "zonble"
+                },
+                "gsx$類別": {
+                    "$t": "Automation"
+                },
+                "gsx$職稱": {
+                    "$t": ""
+                },
+                "gsx$個人介紹": {
+                    "$t": "KKBOX 的 iOS 工程師"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "iOS Engineer in KKBOX"
+                },
+                "gsx$照片": {
+                    "$t": "zonble.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "透過客製 Sketch Plug-in 開發改善產品設計流程"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Improve the design process by customized Sketch Plug-in"
+                },
+                "gsx$演講摘要": {
+                    "$t": "UI 設計是產品開發過程中的重要一環，但是在實務上，有太多與設計工作相關，但不應該由設計師負責、反而讓設計師分心的工作。我們嘗試改進設計師使用的工具，讓原本需要人力的工作自動化，解放設計師的生產力。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "UI design is an important part of product development, but in reality, there are too much irrelevant work that distracts designers. We try to improve the tools and automate works for designers to leverage the productivity of designers. "
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "5"
+                },
+                "gsx$slide": {
+                    "$t": "https://drive.google.com/open?id\u003d0B5Bxck8GpmYkWU9ER0ZzZDRRNzA"
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dxj3v"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "33"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: Kaba Su, 姓名en: Kaba Su, 類別: UI/UX, 職稱: Oath 亞太設計中心(Yahoo) 設計經理, 個人介紹: 喜歡研究人、熱愛解決問題以及透過設計與技術創造一個對兩個兒子更好的世界。目前帶領 Oath 台灣的媒體產品設計團隊，專注於將產品設計的文化帶入組織，讓設計能成為開發與產品的重要夥伴。, 個人介紹en: Kaba is interested in studying various aspects of humans, solving problems and creating a better world for his two children. He currently leads the media product design team of Oath Taiwan, focusing on promote the culture of product design., 照片: kabasu.jpg, 演講主題: 產品設計團隊的價值與挑戰, 演講主題en: Values and Challenges of a Product Design Team, 演講摘要: 當 UX/UI 人人都可以發表一些想法的時候，設計團隊該如何定位自己，將自己提升到策略的層次並且發揮價值呢？當我們說著設計很重要，但是我們要如何成為一個以設計為中心的企業？這次分享將以行動產品設計的實際案例來談談產品設計團隊的日常、價值與挑戰。, 演講摘要en: How to define a design team when UX/UI is talked by everyone? We say design is important, but how to become a design-oriented enterprise? I will discuss challenges and values of a product design team using mobile product design cases., 議程編號: 28, 禁止錄影: 禁止錄影"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dxj3v"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "33"
+                },
+                "gsx$姓名": {
+                    "$t": "Kaba Su"
+                },
+                "gsx$姓名en": {
+                    "$t": "Kaba Su"
+                },
+                "gsx$類別": {
+                    "$t": "UI/UX"
+                },
+                "gsx$職稱": {
+                    "$t": "Oath 亞太設計中心(Yahoo) 設計經理"
+                },
+                "gsx$個人介紹": {
+                    "$t": "喜歡研究人、熱愛解決問題以及透過設計與技術創造一個對兩個兒子更好的世界。目前帶領 Oath 台灣的媒體產品設計團隊，專注於將產品設計的文化帶入組織，讓設計能成為開發與產品的重要夥伴。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Kaba is interested in studying various aspects of humans, solving problems and creating a better world for his two children. He currently leads the media product design team of Oath Taiwan, focusing on promote the culture of product design."
+                },
+                "gsx$照片": {
+                    "$t": "kabasu.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "產品設計團隊的價值與挑戰"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Values and Challenges of a Product Design Team"
+                },
+                "gsx$演講摘要": {
+                    "$t": "當 UX/UI 人人都可以發表一些想法的時候，設計團隊該如何定位自己，將自己提升到策略的層次並且發揮價值呢？當我們說著設計很重要，但是我們要如何成為一個以設計為中心的企業？這次分享將以行動產品設計的實際案例來談談產品設計團隊的日常、價值與挑戰。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "How to define a design team when UX/UI is talked by everyone? We say design is important, but how to become a design-oriented enterprise? I will discuss challenges and values of a product design team using mobile product design cases."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "28"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": "禁止錄影"
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dyxo8"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "34"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 謝洪恩(Pahud Hsieh), 姓名en: Pahud Hsieh, 類別: IoT/AI, 職稱: 解決方案架構師/Solutions Architect, 個人介紹: 謝洪恩，AWS 解決方案架構師，同時也是 Serverless 與 Container 專家，曾協助許多客戶在 AWS 上部署大規模的 Serverless 與 Container 應用，在加入 AWS 之前在新創團隊擔任架構師帶領團隊投入 AWS 構建全球物聯網應用。, 個人介紹en: Pahud Hsieh - AWS Solutions Architect.  He is not only severless and container expert in AWS but also helped many customers to develop global applications based on modern cloud architecture., 照片: pahudhsieh.jpg, 演講主題: AWS IoT 與 AI 應用, 演講主題en: IoT and AI on AWS, 演講摘要: AWS IoT 是一個為物聯網應用而設計的服務，他讓每位開發者輕鬆安全地將裝置連線至雲端， 並且可靠地擴展到數十億個裝置以及數兆則訊息。本次演講將探討 AWS IoT 與 AI 人工智慧的結合與應用，並且探索許多案例與實際開發的做法。, 演講摘要en: AWS IoT is a managed service designed for Internet of Things and helps to easily and securely connect devices to the cloud. It is capable of extending its connectivity with billions of devices and trillions of messages. This session will discuss the integration of AWS IoT and AI and how to build applications with them., 議程編號: 11, 禁止錄影: 禁止錄影"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/dyxo8"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "34"
+                },
+                "gsx$姓名": {
+                    "$t": "謝洪恩(Pahud Hsieh)"
+                },
+                "gsx$姓名en": {
+                    "$t": "Pahud Hsieh"
+                },
+                "gsx$類別": {
+                    "$t": "IoT/AI"
+                },
+                "gsx$職稱": {
+                    "$t": "解決方案架構師/Solutions Architect"
+                },
+                "gsx$個人介紹": {
+                    "$t": "謝洪恩，AWS 解決方案架構師，同時也是 Serverless 與 Container 專家，曾協助許多客戶在 AWS 上部署大規模的 Serverless 與 Container 應用，在加入 AWS 之前在新創團隊擔任架構師帶領團隊投入 AWS 構建全球物聯網應用。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "Pahud Hsieh - AWS Solutions Architect.  He is not only severless and container expert in AWS but also helped many customers to develop global applications based on modern cloud architecture."
+                },
+                "gsx$照片": {
+                    "$t": "pahudhsieh.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "AWS IoT 與 AI 應用"
+                },
+                "gsx$演講主題en": {
+                    "$t": "IoT and AI on AWS"
+                },
+                "gsx$演講摘要": {
+                    "$t": "AWS IoT 是一個為物聯網應用而設計的服務，他讓每位開發者輕鬆安全地將裝置連線至雲端， 並且可靠地擴展到數十億個裝置以及數兆則訊息。本次演講將探討 AWS IoT 與 AI 人工智慧的結合與應用，並且探索許多案例與實際開發的做法。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": "AWS IoT is a managed service designed for Internet of Things and helps to easily and securely connect devices to the cloud. It is capable of extending its connectivity with billions of devices and trillions of messages. This session will discuss the integration of AWS IoT and AI and how to build applications with them."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "11"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": "禁止錄影"
+                }
+            },
+            {
+                "id": {
+                    "$t": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/e0c8p"
+                },
+                "updated": {
+                    "$t": "2018-01-10T02:01:33.110Z"
+                },
+                "category": [
+                    {
+                        "scheme": "http://schemas.google.com/spreadsheets/2006",
+                        "term": "http://schemas.google.com/spreadsheets/2006#list"
+                    }
+                ],
+                "title": {
+                    "type": "text",
+                    "$t": "35"
+                },
+                "content": {
+                    "type": "text",
+                    "$t": "姓名: 陳建宏, 姓名en: Kelvin Chen, 類別: Cloud, 職稱: 高級架構師/ Senior Architects, 個人介紹: 捕夢網數位科技 高級架構師，熟悉雲端運算技術 \u0026 雲端未來發展，喜歡將客戶問題當成自己問題聯手打造最佳解決方案。, 個人介紹en: PUMO Digital Technology, Senior Architects\nExpertise: Cloud Computing \u0026 Future Development, always regarding the problem of the client as my own problem., 照片: kelvinchen.jpg, 演講主題: 雲端！從客戶出發, 演講主題en: Cloud！Start from client, 演講摘要: 如何讓開發者專心開發，一丁點都不需要擔心系統與硬體架構問題，與你一起打造最佳解決方案。, 演講摘要en:  Let the developers focus on the developing working. They do not need to worry about system and hardware architecture issues. We cowork with the client to provide the best solution for the client., 議程編號: 8"
+                },
+                "link": [
+                    {
+                        "rel": "self",
+                        "type": "application/atom+xml",
+                        "href": "https://spreadsheets.google.com/feeds/list/1uIN3ztZeBYAliu0tq2_GoQT4Ublly7EMPs2BvIjl_Es/1/public/values/e0c8p"
+                    }
+                ],
+                "gsx$講者編號": {
+                    "$t": "35"
+                },
+                "gsx$姓名": {
+                    "$t": "陳建宏"
+                },
+                "gsx$姓名en": {
+                    "$t": "Kelvin Chen"
+                },
+                "gsx$類別": {
+                    "$t": "Cloud"
+                },
+                "gsx$職稱": {
+                    "$t": "高級架構師/ Senior Architects"
+                },
+                "gsx$個人介紹": {
+                    "$t": "捕夢網數位科技 高級架構師，熟悉雲端運算技術 \u0026 雲端未來發展，喜歡將客戶問題當成自己問題聯手打造最佳解決方案。"
+                },
+                "gsx$個人介紹en": {
+                    "$t": "PUMO Digital Technology, Senior Architects\nExpertise: Cloud Computing \u0026 Future Development, always regarding the problem of the client as my own problem."
+                },
+                "gsx$照片": {
+                    "$t": "kelvinchen.jpg"
+                },
+                "gsx$檔名": {
+                    "$t": ""
+                },
+                "gsx$facebook": {
+                    "$t": ""
+                },
+                "gsx$github": {
+                    "$t": ""
+                },
+                "gsx$blog": {
+                    "$t": ""
+                },
+                "gsx$website": {
+                    "$t": ""
+                },
+                "gsx$linkedin": {
+                    "$t": ""
+                },
+                "gsx$演講主題": {
+                    "$t": "雲端！從客戶出發"
+                },
+                "gsx$演講主題en": {
+                    "$t": "Cloud！Start from client"
+                },
+                "gsx$演講摘要": {
+                    "$t": "如何讓開發者專心開發，一丁點都不需要擔心系統與硬體架構問題，與你一起打造最佳解決方案。"
+                },
+                "gsx$演講摘要en": {
+                    "$t": " Let the developers focus on the developing working. They do not need to worry about system and hardware architecture issues. We cowork with the client to provide the best solution for the client."
+                },
+                "gsx$字數全形240": {
+                    "$t": ""
+                },
+                "gsx$議程編號": {
+                    "$t": "8"
+                },
+                "gsx$slide": {
+                    "$t": ""
+                },
+                "gsx$合併講者照片": {
+                    "$t": ""
+                },
+                "gsx$禁止錄影": {
+                    "$t": ""
+                }
+            }
+        ]
+    }
+}
