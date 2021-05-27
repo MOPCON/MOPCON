@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    name="viewport">
+  <meta name="author" content="MOPCON">
+  <meta name="keywords" content="南部, 濁水溪以南, 研討會, 行動, 科技, 社群, 開發者, android, ios, iphone
+app, 人工智慧, 機器學習, 物聯網, iot, cloud, 雲端, 大數據">
+  <link rel="canonical" href="https://mopcon.org/2017/speakerDetail.html?speaker=6" />
+
+  <meta content="行動科技年會 2017 | Mobile / Open / Platform Conference" property="og:site_name">
+  <meta content="http://mopcon.org/2017/speakerDetail.html?speaker=6" property="og:url">
+  <meta content="講者 黃敬群(jserv) - 行動科技年會 2017 | Mobile / Open / Platform Conference" property="og:title">
+  <meta name="description"
+    content="透過區塊鏈打造行動化數位證書 - 區塊鏈被視為在網際網路之後，改變人類數位生活的關鍵技術，其中存在證明（proof-of-existence）則是區塊鏈的一項應用，發揮去中心化和不可篡改的特性。本議程探討如何透過移動裝置和各種運算節點的協同運作，打造以區塊鏈為基礎的存在證明基礎建設，並實際投入數位證書、證照，和鑑識等應用。"
+    property="og:description">
+  <meta content="http://mopcon.org/2017/images/speaker/jservhuang.jpg" property="og:image">
+  <!-- <meta content="https://2017.mopcon.org/images/mopcon2017_large.png" property="og:image"> -->
+  <meta content="200" property="og:image:width">
+  <meta content="200" property="og:image:height">
+  <meta content="website" property="og:type">
+  <title></title>
+  <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  <!-- styles -->
+  <link href="stylesheets/all.css?v=1562551570" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/2017/images/favicon.ico">
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '149507615542184');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=149507615542184&ev=PageView&noscript=1" /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+</head>
+
+<body>
+  <div class="wrapper zh">
+    <!-- nav -->
+    <nav class="navbar">
+      <div class="navbar-header">
+        <a href="/index.html" class="navbar-brand">
+          <h1>行動科技年會 MOPCON 2017</h1>
+          <img src="images/nav-logo.svg" width="50px" alt="Mopcon logo">
+        </a>
+        <button class="navbar-toggle" data-toggle="collapse">
+          <span class="fa fa-bars"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="schedule.html">議程</a></li>
+          <li><a href="schedule_unconf.html">交流場次</a></li>
+          <li><a href="speaker.html">講者</a></li>
+          <li><a href="sponsor.html">贊助</a></li>
+          <li><a href="community.html">主辦社群</a></li>
+          <li><a href="member.html">志工組織</a></li>
+          <li><a href="apps.html">Apps</a></li>
+          <li><a href="https://goo.gl/zxRWD9" target="_blank">共筆記錄</a></li>
+          <li><a href="https://gitter.im/MOPCON/mopcon-chat" target="_blank">Gitter 聊天室</a></li>
+          <li><a href="ticket.html">購票資訊</a></li>
+          <li><a href="https://mopcon.blogspot.tw/" target="_blank">部落格</a></li>
+          <!-- <li><a href="https://goo.gl/BvkJa1" target="_blank">社群攤位申請</a></li> -->
+        </ul>
+        <ul class="navbar-right">
+          <li class="nav-lang">
+            <a href="#" class="btn btn-default is-active" onClick="switchLanguage('zh')">中</a>
+            <a href="#" class="btn btn-default" onClick="switchLanguage('en')">EN</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- header  -->
+    <section class="pageHead">
+      <img src="images/headPage-speakers.svg" alt="講者標題圖片">
+    </section>
+    <!-- sponsor -->
+    <section class="speakerDetail container">
+      <div class="content-radius clearfix">
+        <div class="row" id="speakerZhProfile">
+        </div>
+        <br>
+        <h3>講者介紹</h3>
+        <p id="speakerZhIntro"></p>
+        <!--FB-->
+        <a class="speakerFb" href="#" target="_blank"><i class="icon icon-fb"></i></a>
+        <!--Github-->
+        <a class="speakerGithub" href="#" target="_blank"><i class="icon icon-github"></i></a>
+        <!--Linkedin-->
+        <a class="speakerLinkedin" href="#" target="_blank"><i class="icon icon-linkedin"></i></a>
+        <!--Website-->
+        <a class="speakerWebsite" href="#" target="_blank"><i class="icon icon-link"></i></a>
+
+        <br>
+        <h3>議程介紹</h3>
+        <p id="speakerZhSummary">
+        </p>
+        <!-- <br>
+          <h3>其他項目</h3>
+          <p>Other xxx ooo ...</p> -->
+        <br>
+        <a href="speaker.html" class="btn btn-primary align-table">
+          回列表頁
+        </a>
+
+      </div>
+    </section>
+    <!-- footer -->
+    <footer class="footer container text-center">
+      <a href="/cdn-cgi/l/email-protection#d1b2bebfa5b0b2a591bcbea1b2bebfffbea3b6">
+        <div class="footer_contactUs">
+          Contact
+          <br>
+          Us
+        </div>
+        <div class="footer_mail">
+          <img src="images/footer-mail.svg" alt="">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </a>
+      <div class="footer_logo">
+        <img src="images/footer-logo.svg" alt="">
+      </div>
+      <ul class="footer_nav">
+        <li class="nav-history dropdown">
+          <ul class="dropdown-menu">
+            <li><a href="https://mopcon.org/2016/" target="_blank">2016</a></li>
+            <li><a href="https://mopcon.org/2015/" target="_blank">2015</a></li>
+            <li><a href="https://mopcon.org/2014/" target="_blank">2014</a></li>
+            <li><a href="https://mopcon.org/2013/" target="_blank">2013</a></li>
+            <li><a href="https://mopcon.org/2012/" target="_blank">2012</a></li>
+          </ul>
+          <a class="btn btn-select dropdown-toggle" data-toggle="dropdown">歷年 MOPCON
+            <span class="fa fa-chevron-up"></span>
+          </a>
+        </li>
+        <li class="nav-community">
+          <a href="https://www.facebook.com/mopcon/?fref=ts" class="fa fa-facebook-square fa-2x" target="_blank"
+            title="MOPCON 粉絲團"></a>
+          <a href="https://www.flickr.com/photos/mopcon/albums/" target="_blank" class="fa fa-flickr fa-2x"
+            title="flickr"></a>
+          <a href="https://twitter.com/mopcon" class="fa fa-twitter-square fa-2x" target="_blank"
+            title="MOPCON twitter"></a>
+        </li>
+      </ul>
+
+    </footer>
+
+    <a href="https://goo.gl/nKf2AR" target="_blank" class="floater">
+      <div class="floater_pic"></div>
+      <div class="floater_content"> 大地遊戲
+        <i class="fa fa-chevron-right"></i>
+      </div>
+    </a>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  </div>
+  <div class="wrapper en">
+    <!-- nav -->
+    <nav class="navbar">
+      <div class="navbar-header">
+        <a href="/index.html" class="navbar-brand">
+          <h1>行動科技年會 MOPCON 2017</h1>
+          <img src="images/nav-logo.svg" width="50px" alt="Mopcon logo">
+        </a>
+        <button class="navbar-toggle" data-toggle="collapse">
+          <span class="fa fa-bars"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="schedule_unconf.html">Unconf</a></li>
+          <li><a href="speaker.html">Speakers</a></li>
+          <li><a href="sponsor.html">Sponsors</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="member.html">Member</a></li>
+          <li><a href="apps.html">Apps</a></li>
+          <li><a href="https://goo.gl/zxRWD9" target="_blank">HackMD</a></li>
+          <li><a href="https://gitter.im/MOPCON/mopcon-chat" target="_blank">Gitter</a></li>
+          <li><a href="ticket.html">Ticket</a></li>
+          <li><a href="https://mopcon.blogspot.tw/" target="_blank">Blog</a></li>
+          <!-- <li><a href="https://goo.gl/BvkJa1" target="_blank">Stalls</a></li> -->
+        </ul>
+        <ul class="navbar-right">
+          <li class="nav-lang">
+            <a href="#" class="btn btn-default" onClick="switchLanguage('zh')">中</a>
+            <a href="#" class="btn btn-default is-active" onClick="switchLanguage('en')">EN</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- header  -->
+    <section class="pageHead">
+      <img src="images/headPage-speakers.svg" alt="講者標題圖片">
+    </section>
+    <!-- sponsor -->
+    <section class="speakerDetail container">
+      <div class="content-radius clearfix">
+        <div class="row" id="speakerEnProfile"></div>
+        <br>
+        <h3>Speaker introduction</h3>
+        <p id="speakerEnIntro"></p>
+        <!--FB-->
+        <a class="speakerFb" target="_blank" href="#"><i class="icon icon-fb"></i></a>
+        <!--Github-->
+        <a class="speakerGithub" target="_blank" href="#"><i class="icon icon-github"></i></a>
+        <!--Linkedin-->
+        <a class="speakerLinkedin" target="_blank" href="#"><i class="icon icon-linkedin"></i></a>
+        <!--Website-->
+        <a class="speakerWebsite" target="_blank" href="#"><i class="icon icon-link"></i></a>
+
+
+
+
+        <br>
+        <h3>Schedule introduction</h3>
+        <p id="speakerEnSummary"></p>
+        <!-- <br>
+            <h3>其他項目</h3>
+            <p>Other xxx ooo ...</p> -->
+        <br>
+        <a href="speaker.html?&lang=en" class="btn btn-primary align-table">
+          Back to list page
+        </a>
+
+      </div>
+    </section>
+    <!-- footer -->
+    <footer class="footer container text-center">
+      <a href="/cdn-cgi/l/email-protection#f1929e9f85909285b19c9e81929e9fdf9e8396">
+        <div class="footer_contactUs">
+          Contact
+          <br>
+          Us
+        </div>
+        <div class="footer_mail">
+          <img src="images/footer-mail.svg" alt="">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </a>
+      <div class="footer_logo">
+        <img src="images/footer-logo.svg" alt="">
+      </div>
+      <ul class="footer_nav">
+        <li class="nav-history dropdown">
+          <ul class="dropdown-menu">
+            <li><a href="https://mopcon.org/2016/" target="_blank">2016</a></li>
+            <li><a href="https://mopcon.org/2015/" target="_blank">2015</a></li>
+            <li><a href="https://mopcon.org/2014/" target="_blank">2014</a></li>
+            <li><a href="https://mopcon.org/2013/" target="_blank">2013</a></li>
+            <li><a href="https://mopcon.org/2012/" target="_blank">2012</a></li>
+          </ul>
+          <a class="btn btn-select dropdown-toggle" data-toggle="dropdown">Past MOPCON
+            <span class="fa fa-chevron-up"></span>
+          </a>
+        </li>
+        <li class="nav-community">
+          <a href="https://www.facebook.com/mopcon/?fref=ts" class="fa fa-facebook-square fa-2x" target="_blank"
+            title="MOPCON 粉絲團"></a>
+          <a href="https://www.flickr.com/photos/mopcon/albums/" target="_blank" class="fa fa-flickr fa-2x"
+            title="flickr"></a>
+          <a href="https://twitter.com/mopcon" class="fa fa-twitter-square fa-2x" target="_blank"
+            title="MOPCON twitter"></a>
+        </li>
+      </ul>
+
+    </footer>
+
+    <a href="https://goo.gl/nKf2AR" target="_blank" class="floater">
+      <div class="floater_pic"></div>
+      <div class="floater_content"> 大地遊戲
+        <i class="fa fa-chevron-right"></i>
+      </div>
+    </a>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  </div>
+</body>
+<script src="javascripts/vendor.js?v=1504445235" type="text/javascript"></script>
+<script src="javascripts/all.js?v=1504445235" type="text/javascript"></script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34651129-1']);
+  _gaq.push(['_setDomainName', 'mopcon.org']);
+  _gaq.push(['_trackPageview']);
+  (function () {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  let params = new URLSearchParams(document.location.search.substring(1));
+  let name = params.get("lang");
+  let speakerId = params.get("speaker");
+
+  if (name == 'en') {
+    document.querySelector('.zh').remove();
+    fetch("./api/speakers.json")
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        let speakerData = data["feed"]["entry"][speakerId]
+        let speakerEnProfile = document.querySelector('#speakerEnProfile');
+        let speakerEnIntro = document.querySelector('#speakerEnIntro');
+        let speakerFb = document.querySelector('.speakerFb');
+        let speakerGithub = document.querySelector('.speakerGithub');
+        let speakerLinkedin = document.querySelector('.speakerLinkedin');
+        let speakerWebsite = document.querySelector('.speakerWebsite');
+        let speakerEnSummary = document.querySelector('#speakerEnSummary');
+        document.title = `講者 ${speakerData["gsx$姓名en"]["$t"]} - MOPCON 2017 | Mobile / Open / Platform Conference`
+        speakerEnProfile.innerHTML = `<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 vcenter">
+        <div class="pic pic-cycle" style="background-image:url(./images/speaker/${speakerData["gsx$照片"]["$t"]});"></div>
+        </div><div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 vcenter">
+          <h2 class="name">
+            ${speakerData["gsx$姓名en"]["$t"]}
+            
+            <br />
+            
+            <span style="font-size: 16px;color: #999;">- ${speakerData["gsx$職稱"]["$t"]}</span>
+            
+            </h2>
+            <br />
+            
+            <span class="subjectTag">${speakerData["gsx$類別"]["$t"]}</span>
+            <h4>${speakerData["gsx$演講主題en"]["$t"]}</h4>`
+        speakerEnIntro.innerHTML = `${speakerData["gsx$個人介紹en"]["$t"]}`;
+        if (speakerData["gsx$facebook"]["$t"] == "") {
+          speakerFb.remove()
+        } else {
+          speakerFb.href = speakerData["gsx$facebook"]["$t"]
+        };
+        if (speakerData["gsx$github"]["$t"] == "") {
+          speakerGithub.remove()
+        } else {
+          speakerGithub.href = speakerData["gsx$github"]["$t"]
+        };
+        if (speakerData["gsx$linkedin"]["$t"] == "") {
+          speakerLinkedin.remove()
+        } else {
+          speakerLinkedin.href = speakerData["gsx$linkedin"]["$t"]
+        };
+        if (speakerData["gsx$website"]["$t"] == "") {
+          speakerWebsite.remove()
+        } else {
+          speakerWebsite.href = speakerData["gsx$website"]["$t"]
+        };
+        speakerEnSummary.innerHTML = `${speakerData["gsx$演講摘要en"]["$t"]}`;
+
+      })
+  } else {
+    document.querySelector('.en').remove();
+    fetch("./api/speakers.json")
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        let speakerData = data["feed"]["entry"][speakerId]
+        let speakerZhProfile = document.querySelector('#speakerZhProfile');
+        let speakerZhIntro = document.querySelector('#speakerZhIntro');
+        let speakerFb = document.querySelector('.speakerFb');
+        let speakerGithub = document.querySelector('.speakerGithub');
+        let speakerLinkedin = document.querySelector('.speakerLinkedin');
+        let speakerWebsite = document.querySelector('.speakerWebsite');
+        let speakerZhSummary = document.querySelector('#speakerZhSummary');
+        document.title = `講者 ${speakerData["gsx$姓名"]["$t"]} - MOPCON 2017 | Mobile / Open / Platform Conference`
+        speakerZhProfile.innerHTML = `<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 vcenter">
+              <div class="pic pic-cycle" style="background-image:url(./images/speaker/${speakerData["gsx$照片"]["$t"]});"></div>
+              </div><div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 vcenter">
+                <h2 class="name">
+                  ${speakerData["gsx$姓名"]["$t"]}
+                  
+                  <br />
+                  
+                  <span style="font-size: 16px;color: #999;">- ${speakerData["gsx$職稱"]["$t"]}</span>
+                  
+                  </h2>
+                  <br />
+                  
+                  <span class="subjectTag">${speakerData["gsx$類別"]["$t"]}</span>
+                  <h4>${speakerData["gsx$演講主題"]["$t"]}</h4>`
+        speakerZhIntro.innerHTML = `${speakerData["gsx$個人介紹"]["$t"]}`;
+        if (speakerData["gsx$facebook"]["$t"] == "") {
+          speakerFb.remove()
+        } else {
+          speakerFb.href = speakerData["gsx$facebook"]["$t"]
+        };
+        if (speakerData["gsx$github"]["$t"] == "") {
+          speakerGithub.remove()
+        } else {
+          speakerGithub.href = speakerData["gsx$github"]["$t"]
+        };
+        if (speakerData["gsx$linkedin"]["$t"] == "") {
+          speakerLinkedin.remove()
+        } else {
+          speakerLinkedin.href = speakerData["gsx$linkedin"]["$t"]
+        };
+        if (speakerData["gsx$website"]["$t"] == "") {
+          speakerWebsite.remove()
+        } else {
+          speakerWebsite.href = speakerData["gsx$website"]["$t"]
+        };
+        speakerZhSummary.innerHTML = `${speakerData["gsx$演講摘要"]["$t"]}`;
+
+      })
+  }
+
+  function switchLanguage(lang) {
+    window.location = `speakerDetail.html?speaker=${speakerId}&lang=${lang}`;
+  }
+</script>
+
+</html>
