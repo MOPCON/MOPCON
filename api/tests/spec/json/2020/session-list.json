@@ -1,0 +1,209 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "主要議程表 API",
+  "description": "提供主要議程表資訊的 API",
+  "required": [
+    "success",
+    "message",
+    "data"
+  ],
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Request 是否成功"
+    },
+    "message": {
+      "type": "string",
+      "description": "訊息"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "link_slide",
+          "topic",
+          "topic_e",
+          "summary",
+          "summary_e",
+          "community_partner",
+          "is_keynote",
+          "is_online",
+          "recordable",
+          "level",
+          "started_at",
+          "ended_at",
+          "room",
+          "floor",
+          "sponsor_id",
+          "tags",
+          "session_id",
+          "speakers"
+        ],
+        "items": {
+          "type": "object",
+          "link_slide":{
+            "type": "string",
+            "description": "幻燈片連結"
+          },
+          "topic":{
+            "type": "string",
+            "description": "議程名稱"
+          },
+          "topic_e":{
+            "type": "string",
+            "description": "議程英文名稱"
+          },
+          "summary":{
+            "type": "string",
+            "description": "議程簡介中文"
+          },
+          "summary_e":{
+            "type": "string",
+            "description": "議程簡介英文"
+          },
+          "community_partner":{
+            "type": "string",
+            "description": "合作社群"
+          },
+          "is_keynote":{
+            "type": "boolean",
+            "description": "是否為 keynote 議程"
+          },
+          "is_online":{
+            "type": "boolean",
+            "description": "是否為遠距議程"
+          },
+          "recordable":{
+            "type": "boolean",
+            "description": "是否提供錄影"
+          },
+          "level":{
+            "type": "string",
+            "description": "議程難易度"
+          },
+          "started_at":{
+            "type": "integer",
+            "description": "議程開始時間，單位為秒"
+          },
+          "ended_at":{
+            "type": "integer",
+            "description": "議程結束時間，單位為秒"
+          },
+          "room":{
+            "type": "string",
+            "description": "議程廳"
+          },
+          "floor":{
+            "type": "string",
+            "description": "樓層"
+          },
+          "sponsor_id":{
+            "type": "integer",
+            "description": "贊助商編號，如果不是贊助商講者則為 0"
+          },
+          "tags":{
+            "type": "array",
+            "description": "議程標籤",
+            "required": [
+              "color",
+              "name"
+            ],
+            "items": {
+              "type": "object",
+              "color":{
+                "type": "object",
+                "description": "標籤色碼",
+                "required": [
+                  "web",
+                  "mobile"
+                ],
+                "items": {
+                  "web": {
+                    "type": "string",
+                    "description": "web Tag 使用的色碼"
+                  },
+                  "mobile": {
+                    "type": "string",
+                    "description": "mobile Tag 使用的色碼"
+                  }
+                }
+              },
+              "name":{
+                "type": "string",
+                "description": "標籤名稱"
+              }
+            }
+          },
+          "session_id":{
+            "type": "integer",
+            "description": "議程編號"
+          },
+          "speakers":{
+            "type": "array",
+            "description": "講師鎮列",
+            "required": [
+              "name",
+              "name_e",
+              "speaker_id",
+              "company",
+              "company_e",
+              "job_title",
+              "job_title_e",
+              "img"
+            ],
+            "items": {
+              "type": "object",
+              "name":{
+                "type": "string",
+                "description": "講師中文名稱"
+              },
+              "name_e":{
+                "type": "string",
+                "description": "講師英文名稱"
+              },
+              "speaker_id":{
+                "type": "integer",
+                "description": "講者 ID"
+              },
+              "company":{
+                "type": "string",
+                "description": "公司中文名稱"
+              },
+              "company_e":{
+                "type": "string",
+                "description": "公司英文名稱"
+              },
+              "job_title":{
+                "type": "string",
+                "description": "職位中文名稱"
+              },
+              "job_title_e":{
+                "type": "string",
+                "description": "職位英文名稱"
+              },
+              "img":{
+                "type": "array",
+                "description": "講者圖片",
+                "required": [
+                  "web",
+                  "mobile"
+                ],
+                "items": {
+                  "web": {
+                    "type": "string",
+                    "description": "網頁版使用"
+                  },
+                  "mobile": {
+                    "type": "string",
+                    "description": "手機版使用"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
