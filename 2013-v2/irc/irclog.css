@@ -1,0 +1,145 @@
+/* @override http://mopcon.org/2013/irc/irclog.css */
+
+/* Alternative 1: text */
+
+.irclog {
+	font: medium/1.5 "Courier New", Courier, mono;
+}
+.irclog p { margin: 2px 0; }
+
+
+/* Alternative 2: table */
+
+table.irclog {
+    width: 100%;
+}
+th.nick {
+    color: #ffffff;
+    padding: 1px 2px;
+}
+td.text {
+    width: 100%;
+    background: #eeeeee;
+}
+td.action {
+    background: #eeeeee;
+}
+
+/* Search box  */
+
+div.searchbox {
+    float: right;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+div.searchbox input#searchtext {
+    border: 1px solid gray;
+    padding: 2px 4px;
+}
+div.searchbox input#searchtext:hover {
+    border: 1px solid #869abf;
+}
+div.searchbox input#searchbutton {
+    color: gray;
+    background: white;
+    border: 1px solid gray;
+    font-weight: bold;
+    padding: 1px 4px 2px 4px;
+    margin-left: 0.3ex;
+}
+div.searchbox input#searchbutton:hover {
+    color: #134D73;
+    border: 1px solid #869abf;
+}
+
+/* Search results */
+
+ul.searchresults table {
+    margin: 0.5ex 0 1ex 0.5ex;
+}
+
+/* Common rules */
+
+body {
+    color: black;
+    background: white;
+}
+
+h1 {
+    color: #134d73;
+    margin: 0.5em 8em 0.5em 0;
+}
+
+a {
+    color: #869ABF;
+}
+a:visited {
+    color: purple;
+}
+a:active, a:hover {
+    color: #B22222;
+}
+
+.navigation {
+    margin: 1em 0em;
+}
+.navigation a, .navigation span {
+    margin-right: 1em;
+}
+
+a.time, a.time:visited {
+    text-decoration: none;
+    color: #8888cc;
+}
+a.time:active, a.time:hover {
+    text-decoration: none;
+    color: #9999dd;
+}
+a.time:before { content: "["; }
+a.time:after { content: "]"; }
+
+.nick { font-weight: bold; }
+
+.part { color: #c0c0c0;
+	display: none;
+}
+.join { color: #c0c0c0; }
+.servermsg { color: #009900; }
+.nickchange { color: #c0c0c0; }
+.action { color: #c0c0c0; }
+.other { color: #c0c0c0;
+	display: none;
+}
+
+/* Make boring messages small */
+.part, .join, .servermsg, .nickchange, .other { 
+	font-size: smaller;
+}
+td.part + td, td.join + td, td.servermsg + td, td.nickchange + td,
+td.other + td { font-size: smaller; text-align: right; }
+
+
+div.generatedby {
+    margin-top: 1em;
+    font-size: small;
+    color: #888888;
+	display: none;
+}
+div.generatedby a:link {
+    color: #8888cc;
+    text-decoration: none;
+    border-bottom: 1px dotted #8888cc;
+}
+div.generatedby a:visited {
+    color: #cc88cc;
+    text-decoration: none;
+    border-bottom: 1px dotted #cc88cc;
+}
+div.generatedby a:active,
+div.generatedby a:hover {
+    color: #ff8888;
+    text-decoration: none;
+    border-bottom: 1px dotted #ff8888;
+}

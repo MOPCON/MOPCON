@@ -1,0 +1,6 @@
+@media (max-width: 767px) {
+	.data-cell {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}

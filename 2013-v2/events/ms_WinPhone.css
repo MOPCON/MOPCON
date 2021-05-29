@@ -1,0 +1,563 @@
+@charset "big5";
+@import url("reset.css");
+
+body {
+	background-color: #31353b;
+	font-family: "微軟正黑體";
+}
+#TOP_LOGO {
+	width: 950px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#HEADER {
+	background-image: url(top.png);
+	background-repeat: no-repeat;
+	height: 428px;
+	width: 950px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#TD {
+	background-image: url(td_top.png);
+	background-repeat: no-repeat;
+	height: 428px;
+	width: 950px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#CONTENT {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 20px;
+	padding-right: 25px;
+	padding-bottom: 30px;
+	padding-left: 25px;
+	background-color: #FFF;
+}
+
+a { 
+	color: #009999;
+	text-decoration: none; 
+}
+
+a:hover{ 
+	color: #FF7777;
+	text-decoration: none; 
+}
+
+
+#HEADER h1 {
+	font-size: 15px;
+	line-height: 35px;
+	text-indent: -9999px;
+}
+#TD h1 {
+	font-size: 15px;
+	line-height: 35px;
+	text-indent: -9999px;
+}
+#LINK {
+	font-size: 12px;
+	width: 950px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	text-align: right;
+	color: #8e8e8e;
+	font-family: "微軟正黑體";
+}
+#LINK a {
+	color: #8e8e8e;
+	text-decoration: none;
+}
+
+
+#CONTENT h1 {
+	font-family: "微軟正黑體";
+	font-size: 24px;
+	font-weight: bold;
+	color: #333;
+	line-height: 1.5;
+}
+#CONTENT h2 {
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	color: #000;
+	line-height: 1.75;
+}
+#CONTENT p {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	line-height: 1.2;
+	padding: 0 18px;
+}
+#CONTENT #RULE  ul{
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+#CONTENT #RULE ul li{
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	line-height: 1.65;
+	list-style-type: decimal;
+	margin-left: 22px;
+	color: #000;
+	margin-bottom: 2px;
+}
+#CONTENT #RULE ul #TOPIC li{
+	font-size: 15px;
+	color: #333;
+	list-style-type: disc;
+	margin-top: 3px;
+}
+#CONTENT #RULE ul#ATTENTION li{
+	font-size: 15px;
+	color: #333;
+}
+#CONTENT #RULE ul ol{
+	font-family: "微軟正黑體";
+	font-size: 13px;
+	line-height: 1.7;
+	margin-left: 12px;
+}
+#CONTENT #RULE ul#PRIVATE li{
+	font-family: "微軟正黑體";
+	font-size: 13px;
+	color: #333;
+	line-height: 1.5;
+	list-style-type: none;
+}
+#PARTNER {
+	margin-top: 30px;
+
+}
+
+#PARTNER ul li{
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	color: #333;
+	list-style-type: none;
+	margin-left: 0px;
+	padding-left: 0px;
+	line-height: 43px;
+	padding-top: 5px;
+	margin-top: 0px;
+	padding-bottom: 5px;
+}
+#HEADER ul {
+	padding-left: 6px;
+	padding-top: 349px;
+}
+
+#HEADER ul li {
+	float: left;
+	margin-right: 2px;
+	margin-left: 2px;
+}
+#HEADER ul li a {
+	font-family: "微軟正黑體";
+	font-size: 17px;
+	text-decoration: none;
+	line-height: 37px;
+	color: #baacc1;
+	display: block;
+	padding: 4px 0 3px;
+	outline:none;
+}
+#HEADER ul li a:hover {
+	color: #F5C813;
+	background-color: #9664a9;
+}
+#HEADER ul li#NOW a{
+	font-weight: bold;
+	background-color: #FFF;
+	padding: 4px 0 3px;
+	color: #9664a9;
+}
+
+#TD ul {
+	padding-left: 6px;
+	padding-top: 349px;
+}
+
+#TD ul li {
+	float: left;
+	margin-right: 2px;
+	margin-left: 2px;
+}
+#TD ul li a {
+	font-family: "微軟正黑體";
+	font-size: 17px;
+	text-decoration: none;
+	line-height: 37px;
+	color: #baacc1;
+	display: block;
+	padding: 4px 0 3px;
+	outline:none;
+}
+#TD ul li a:hover {
+	color: #F5C813;
+	background-color: #9664a9;
+}
+#TD ul li#NOW a{
+	font-weight: bold;
+	background-color: #FFF;
+	padding: 4px 0 3px;
+	color: #9664a9;
+}
+
+#INDEX_ZONE {
+	width: 850px;
+	min-height: 500px;
+}
+
+#INDEX_ZONE p {
+	padding: 0 10px 0 40px;
+	margin-bottom: 7px;
+}
+#INDEX_ZONE #TITLE {
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	line-height: 33px;
+	background-image: url(icon_title.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+	padding-left: 35px;
+	color: #727171;
+}
+#INDEX_ZONE #TIME {
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	line-height: 33px;
+	background-image: url(icon_time.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+	padding-left: 35px;
+	color: #727171;
+}
+#INDEX_ZONE #RULE {
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	line-height: 33px;
+	background-image: url(icon_rule.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+	padding-left: 35px;
+	color: #727171;
+}
+#INDEX_ZONE #RACE {
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	line-height: 36px;
+	background-image: url(icon_race.png) ;
+	background-position: left top;
+	background-repeat: no-repeat;
+	padding-left: 35px;
+	color: #727171;
+}
+#INDEX_ZONE #RACE_1 h3{
+	font-family: "微軟正黑體";
+	color: #FFF;
+	font-size: 26px;
+	font-weight: bold;
+	line-height: 1.25;
+	background-color: #f4b400;
+	padding: 4px 10px 2px;
+}
+#INDEX_ZONE #RACE_1 {
+	width: 440px;
+	float:left;
+	padding: 10px;
+	margin: 7px 0 10px 37px;
+	margin-top: 7px;
+}
+
+#RACE_1 p {
+	font-family: "微軟正黑體";
+	color: #666;
+	padding: 0px;
+	font-size: 16px;
+	line-height: 1.5;
+	padding: 3px 10px;
+
+}
+#INDEX_ZONE #GIFT {
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	line-height: 33px;
+	background-image: url(icon_gift.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+	padding-left: 35px;
+	color: #727171;
+}
+#INDEX_ZONE #GIFT_1 h3 {
+	font-family: "微軟正黑體";
+	color: #FFF;
+	font-size: 16px;
+	display: block;
+	font-weight: bold;
+	background-color: #9e72b2;
+	margin-left: 37px;
+	margin-right: 7px;
+	padding: 3px 10px;
+	line-height: 1.35;
+	margin-bottom: 3px;
+	margin-top: 10px;
+}
+
+#INDEX_ZONE #GIFT_1 p {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	padding-left: 37px;
+	line-height: 1.5;
+	}
+	
+#REGISTER h2 {
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	background-image: url(icon_file.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	display: block;
+	line-height: 43px;
+	padding-left: 37px;
+	color: #727171;
+}
+#REGISTER h4 {
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	
+	background-position: left center;
+	background-repeat: no-repeat;
+	display: block;
+	line-height: 43px;
+	padding-left: 37px;
+}
+#REGISTER h3  {
+	font-family: "微軟正黑體";
+	color: #FFF;
+	background-color: #F25022;
+	width: 100px;
+	background-image: url(icon_uplaod-w.png);
+	background-repeat: no-repeat;
+	background-position: 75px;
+	padding-top: 7px;
+	padding-right: 7px;
+	padding-bottom: 7px;
+	padding-left: 7px;
+	font-size: 16px;
+	line-height: 30px;
+	display: block;
+}
+#REGISTER a h3 {
+	color: #FFF;
+	width: 100px;
+	padding-top: 7px;
+	padding-right: 7px;
+	padding-bottom: 7px;
+	padding-left: 7px;
+	text-decoration: none;
+}
+
+#UPLOAD p a {
+	color: #F25022;
+}
+
+
+#REGISTER h2 a {
+	text-decoration: none;
+	color: #727171;
+}
+#REGISTER h4 a {
+	text-decoration: none;
+	color: #727171;
+}
+#UPLOAD  {
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+#UPLOAD h2 {
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	background-image: url(icon_uplaod.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	display: block;
+	line-height: 43px;
+	padding-left: 37px;
+	color: #727171;
+	overflow: hidden;
+}
+#UPLOAD #ACCOUNT {
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	line-height: 1.5;
+	padding: 25px;
+	margin-left: 37px;
+	text-align: center;
+	width: 350px;
+	background-color: #7fba00;
+	color: #FFF;
+	margin-right: 10px;
+	float: left;
+}
+#UPLOAD a #ACCOUNT {
+	color: #FFF;
+	text-decoration: none;
+}
+#UPLOAD a:hover #ACCOUNT {
+	color: #FFF;
+	text-decoration: none;
+	background-color: #89bf15;
+}
+
+#UPLOAD #ACCOUNT_NO {
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	line-height: 1.5;
+	padding: 25px;
+	margin-left: 15px;
+	text-align: center;
+	width: 350px;
+	background-color: #00a4ef;
+	color: #FFF;
+	margin-right: 37px;
+	float: right;
+}
+
+
+#UPLOAD a #ACCOUNT_NO {
+	color: #FFF;
+	text-decoration: none;
+}
+#UPLOAD a:hover #ACCOUNT_NO {
+	color: #FFF;
+	text-decoration: none;
+	background-color: #2cb5f3;
+}
+#RULE h2 {
+	font-family: "微軟正黑體";
+	font-size: 20px;
+	background-image: url(icon_rule.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	display: block;
+	line-height: 45px;
+	padding-left: 37px;
+	color: #AA00AA;
+}
+#RULE h3 {
+	font-family: "微軟正黑體";
+	font-size: 18px;
+	line-height: 1.5;
+	padding-left: 20px;
+	margin-top: 7px;
+}
+#RULE #GIFT {
+	background-image: url(icon_gift.png);
+}
+#RULE #POINT {
+	background-image: url(icon_point.png);
+}
+#UPLOAD #IMPORTANT {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	margin-top: 15px;
+}
+#IMPORTANT li {
+	font-family: "微軟正黑體";
+	font-size: 15px;
+	margin-left: 20px;
+	padding-left: 20px;
+	margin-right: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
+#IMPORTANT li.a1 {
+	font-family: "微軟正黑體";
+	font-size: 13px;
+	margin-left: 20px;
+	padding-left: 20px;
+	margin-right: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+}
+#COPY {
+	background-color: #DDDD00;
+	font-size: 10px;
+}
+.hili1{
+	color:#906;
+	}
+
+.hili2{
+	color:#F30;
+	}
+	
+.a01 {
+	font-family: "微軟正黑體";
+	color: #FFF;
+	font-size: 16px;
+	display: block;
+	font-weight: bold;
+	text-indent:20px; 
+	background: #9e72b2 url(icon_index_01.png) no-repeat 8px;
+	padding: 5px 10px;
+	line-height: 1.35;
+	margin: 10px 8px 10px 37px;
+}
+
+.a02 {
+	font-family: "微軟正黑體";
+	color: #FFF;
+	font-size: 16px;
+	display: block;
+	font-weight: bold;
+	text-indent:20px; 
+	background: #9e72b2 url(icon_index_03.png) no-repeat 8px;
+	padding: 5px 10px;
+	line-height: 1.35;
+	margin: 10px 8px 10px 37px;
+}
+
+.a03 {
+	font-family: "微軟正黑體";
+	color: #FFF;
+	font-size: 16px;
+	display: block;
+	font-weight: bold;
+	text-indent:20px; 
+	background: #9e72b2 url(icon_index_05.png) no-repeat 8px;
+	padding: 5px 10px;
+	line-height: 1.35;
+	margin: 10px 8px 10px 37px;
+}
+.box{
+	width: 150px;
+	height: 140px;
+	padding: 35px 10px 0;
+	margin: 0 23px 0 0;
+	background: #009fe5 url(award_icon.png) no-repeat 12px 8px;
+}
+.out{
+	width: 150px;
+	height: 140px;
+	padding: 35px 10px 0;
+	margin: 0 23px 0 0;
+	background: #BBBBBB url(award_icon.png) no-repeat 12px 8px;
+}
+.freequest{
+	width: 150px;
+	height: 140px;
+	padding: 35px 10px 0;
+	margin: 0 23px 0 0;
+	background: #5533DD url(award_icon.png) no-repeat 12px 8px;
+}
