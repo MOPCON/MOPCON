@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="263px" height="190px" viewBox="0 0 263 190" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8053) - http://www.bohemiancoding.com/sketch -->
+    <title>index-section-map-text</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="index-section-map-text" sketch:type="MSArtboardGroup" font-weight="normal" fill="#CCCCCC">
+            <g id="第-+-三-+-次" sketch:type="MSLayerGroup" transform="translate(3.000000, -1.000000)" font-size="50" font-family="Songti TC">
+                <text id="第" sketch:type="MSTextLayer">
+                    <tspan x="0" y="53">第</tspan>
+                </text>
+                <text id="三" sketch:type="MSTextLayer">
+                    <tspan x="0" y="110">三</tspan>
+                </text>
+                <text id="次" sketch:type="MSTextLayer">
+                    <tspan x="0" y="170">次</tspan>
+                </text>
+            </g>
+            <text id="MOPCON" sketch:type="MSTextLayer" font-family="Georgia" font-size="42">
+                <tspan x="71" y="172">MOPCON</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
