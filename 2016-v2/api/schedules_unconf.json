@@ -1,0 +1,153 @@
+{
+  "day1_schedule": [
+    {
+      "time": "08: 30",
+      "name": "報到"
+    },
+    {
+      "time": "09: 00",
+      "name": "開幕"
+    },
+    {
+      "time": "10: 00",
+      "name": "歡迎當天會眾報名",
+      "topic": "MOPCON 2016 Unconference"
+
+    },
+    {
+      "time": "10: 30",
+      "name": "Hawk",
+      "topic": "Golang能做什麼呢？來高雄Golang社群聊聊吧！"
+
+    },
+    {
+      "time": "11: 00",
+      "name": "Marty",
+      "topic": "Webduino Workshop - 對不起，哥實作一個物聯網 App 真的只要 30分鐘<br/>（體驗即送 Smart 開發版）"
+    },
+    {
+      "time": "11: 30",
+      "name": "Daniel Yeh",
+      "topic": "一致性的網頁 App 開發架構"
+    },
+    {
+      "time": "12: 00",
+      "name": "午餐"
+    },
+    {
+      "time": "13: 00",
+      "name": "Sponsor Talk",
+      "topic": "主廳（R1）/ 全廳聯播"
+    },
+    {
+      "time": "13: 45",
+      "name": "Phil Huang",
+      "topic": "Quick Introduction of CORD & Mobile-CORD"
+    },
+    {
+      "time": "14: 15",
+      "name": "Shawn",
+      "topic": "Sap anywhere - Next deb package for all Linwx"
+    },
+    {
+      "time": "14: 45",
+      "name": "下午茶"
+    },
+    {
+      "time": "15: 15",
+      "name": "Marty",
+      "topic": "Webduino Workshop - 對不起，哥實作一個物聯網 App 真的只要 30分鐘<br/>（體驗即送 Smart 開發版）"
+    },
+    {
+      "time": "15: 45",
+      "name": "黃婉貞",
+      "topic": "一個使用者體驗部門都在做什麼"
+    },
+    {
+      "time": "16: 15",
+      "name": "Derek Hsu",
+      "topic": "用Graylog 2.0快速打造行動後台紀錄、分析、警報一次完成"
+    },
+    {
+      "time": "16: 45",
+      "name": "歡迎當天會眾報名",
+      "topic": "MOPCON 2016 Unconference"
+    },
+    {
+      "time": "18: 00",
+      "name": "結束第一天交流場次"
+    },
+    {
+      "time": "18: 30",
+      "name": "講者晚宴"
+    }
+  ],
+
+  "day2_schedule": [
+    {
+      "time": "08: 30",
+      "name": "報到"
+    },
+    {
+      "time": "09: 00",
+      "name": "Announcement"
+    },
+    {
+      "time": "10: 00",
+      "name": "Elvis Lin",
+      "topic": "用 Firebase 建立跨平台的聊天軟體"
+    },
+    {
+      "time": "10: 30",
+      "name": "Elvis Lin",
+      "topic": "Android MVP 架構簡介"
+    },
+    {
+      "time": "11: 00",
+      "name": "Marty",
+      "topic": "Webduino Workshop - 對不起，哥實作一個物聯網 App 真的只要 30分鐘<br/>（體驗即送 Smart 開發版）"
+    },
+    {
+      "time": "11: 30",
+      "name": "王凡（James Wang）",
+      "topic": "Power Bl and Power Bl embedded"
+    },
+    {
+      "time": "12: 00",
+      "name": "午餐"
+    },
+    {
+      "time": "13: 15",
+      "name": "Hawk",
+      "topic": "Golang能做什麼呢？來高雄Golang社群聊聊吧！"
+    },
+    {
+      "time": "13: 45",
+      "name": "王凡（James Wang）",
+      "topic": "如何用 Xamarin 開發跨平台行動應用"
+    },
+    {
+      "time": "14: 15",
+      "name": "王凡（James Wang）",
+      "topic": "如何用 Xamarin 開發跨平台行動應用"
+    },
+    {
+      "time": "14: 45",
+      "name": "下午茶"
+    },
+    {
+      "time": "15: 15",
+      "name": "Marty",
+      "topic": "Webduino Workshop - 對不起，哥實作一個物聯網 App 真的只要 30分鐘<br/>（體驗即送 Smart 開發版）"
+    },
+    {
+      "time": "15: 45",
+      "name": "Takuma",
+      "topic": "Line Developer day2016 Google Dev Fest 2016 Jcconf 資源整理 FCM D2D"
+    },
+    {
+      "time": "17: 00",
+      "name": "閉幕"
+    }
+  ]
+}
