@@ -1,0 +1,76 @@
+{% extends 'main.twig' %}
+
+{% block content %}
+<header class="header text-center relative">
+  <div class="planet-logo"></div>
+  <div class="header-block">
+    <div class="header-logo">
+      <img 
+        src="images/article/mopcon-logo.png"
+        srcset="images/article/mopcon-logo@2x.png 2x,
+                images/article/mopcon-logo@3x.png 3x"
+        alt="mopcon"
+        class="img-responsive center-block common-idx mbxl">
+      <img
+        src="images/schedule/s-c-h-e-d-u-l-e_unconf.png"
+        srcset="images/schedule/s-c-h-e-d-u-l-e_unconf@2x.png 2x, 
+                images/schedule/s-c-h-e-d-u-l-e_unconf@3x.png 3x"
+        alt="Unconference schedule"
+        class="img-responsive center-block common-idx">
+    </div>
+  </div>
+</header>
+<div class="container-md">
+  <ul class="relative schedule-nav">
+    <li class="schedule-day" id="day_one_title">
+      <h3>DAY 1</h3>
+      <h4>10/29 (六)</h4>
+    </li>
+    <li class="schedule-day active" id="day_two_title">
+      <h3>DAY 2</h3>
+      <h4>10/30 (日)</h4>
+    </li>
+  </ul>
+</div>
+<div class="container-md">
+  <div class="card">
+    <div class="multi-planet">
+      <ul class="schedule-block" id="day_one_schedule" style="display: none;">
+        {% for item in schedules.day1_schedule %}
+        <li class="schedule-li">
+          <div class="schedule-event">
+            <div class="time">{{ item.time }}</div>
+            <div class="info">
+              <h3>{{ item.name }}</h3>
+
+              <ul class="schedule-sub-info">
+                <li>{{ item.topic | raw }}</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+
+
+      <ul class="schedule-block" id="day_two_schedule">
+        {% for item in schedules.day2_schedule %}
+        <li class="schedule-li">
+          <div class="schedule-event">
+            <div class="time">{{ item.time }}</div>
+            <div class="info">
+              <h3>{{ item.name }}</h3>
+
+              <ul class="schedule-sub-info">
+                <li>{{ item.topic | raw }}</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

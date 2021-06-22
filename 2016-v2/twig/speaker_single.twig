@@ -1,0 +1,66 @@
+{% extends 'main.twig' %}
+
+{% block content %}
+<header class="header text-center relative">
+    <div class="planet-logo"></div>
+    <div class="header-block">
+        <div class="header-logo">
+            <img
+                src="images/article/home-landing-logo.png"
+                srcset="images/article/home-landing-logo@2x.png 2x,
+                        images/article/home-landing-logo@3x.png 3x"
+                alt="mopcon2016"
+                class="img-responsive center-block common-idx">
+        </div>
+    </div>
+</header>
+
+<div class="container-md">
+    <div class="card">
+        <div class="multi-planet">
+            <div class=" card-speaker-title">
+                <h3>講者陣容</h3>
+                <h4>Speakers</h4>
+                <hr class="speaker-hr">
+            </div>
+
+            <h3 class="card-head card-gray mbxl-impot">
+                <a href="#">{{ speakers.name }}</a>
+            </h3>
+            <div class="card-body nopadding">
+                <div class="row detail-gray nopadding">
+                    <div class="col-sm-5 nopadding">
+                        <img src="images/speaker/{{ speakers.image }}" alt="" class="img-responsive">
+                    </div>
+                    <div class="col-sm-7 nopadding speakerInfo">
+                        <div class="detail">
+                            <p>
+                                {{ speakers.info | raw }}
+                            </p>
+
+                            <ul class="socialNetworkLink">
+                                {% if speakers.facebook and speakers.facebook != "" %}
+                                <li><a href="{{ speakers.facebook }}" target="_blank">Facebook</a></li>
+                                {% endif %}
+
+                                {% if speakers.github and speakers.github != "" %}
+                                <li><a href="{{ speakers.github }}" target="_blank">Github</a></li>
+                                {% endif %}
+
+                                {% if speakers.blog and speakers.blog != "" %}
+                                <li><a href="{{ speakers.blog }}" target="_blank">Blog</a></li>
+                                {% endif %}
+
+                                {% if speakers.website and speakers.website != "" %}
+                                <li><a href="{{ speakers.website }}" target="_blank">Website</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-bottom"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

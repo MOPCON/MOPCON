@@ -1,0 +1,66 @@
+{% extends 'main.twig' %}
+
+{% block content %}
+    <header class="header text-center relative">
+        <div class="planet-logo"></div>
+        <div class="header-block">
+            <div class="header-logo">
+                <img
+                    src="images/article/home-landing-logo.png"
+                    srcset="images/article/home-landing-logo@2x.png 2x,
+                            images/article/home-landing-logo@3x.png 3x"
+                    alt="mopcon2016"
+                    class="img-responsive center-block common-idx">
+            </div>
+        </div>
+    </header>
+
+    <div class="container-md">
+        <div class="card">
+            <div class="multi-planet">
+                <div class=" card-speaker-title">
+                    <h3>主辦社群</h3>
+                    <h4>Organizing Communities</h4>
+                    <hr class="speaker-hr">
+                </div>
+
+                <h3 class="card-head card-gray mbxl-impot">
+                    <a href="#">{{ community.name }}</a>
+                </h3>
+                <div class="card-body nopadding">
+                    <div class="row detail-gray nopadding">
+                        <div class="col-sm-5 nopadding">
+                            <img src="images/community/{{ community.image }}" alt="" class="img-responsive">
+                        </div>
+                        <div class="col-sm-7 nopadding speakerInfo">
+                            <div class="detail">
+                                <p>
+                                    {{ community.info | raw }}
+                                </p>
+
+                                <ul class="socialNetworkLink">
+                                    {% if community.facebook and community.facebook != "" %}
+                                        <li><a href="{{ community.facebook }}" target="_blank">Facebook</a></li>
+                                    {% endif %}
+
+                                    {% if community.github and community.github != "" %}
+                                        <li><a href="{{ community.github }}" target="_blank">Github</a></li>
+                                    {% endif %}
+
+                                    {% if community.blog and community.blog != "" %}
+                                        <li><a href="{{ community.blog }}" target="_blank">Blog</a></li>
+                                    {% endif %}
+
+                                    {% if community.website and community.website != "" %}
+                                        <li><a href="{{ community.website }}" target="_blank">Website</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-bottom"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

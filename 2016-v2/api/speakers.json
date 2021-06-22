@@ -1,0 +1,208 @@
+[
+  {
+    "name": "宋志峰（Anistar）",
+    "info": "目前現職服務於雅虎奇摩，負責帶領超級商城與拍賣 APP 開發，<br/>專注在專案軟體架構規劃與開發，熱愛分享自己的經驗。<br/>具備 10 年以上的專案開發經驗，<br/>7 年的專業講師資歷，<br/>開發的 Magic Shutter 曾獲得 NewYork Times 推薦最佳前十大攝影軟體推薦。",
+    "image": "anistar.jpg",
+    "facebook": "http://fb.me/anistarsung"
+  },
+  {
+    "name": "Akane Lee",
+    "info": "嫁給 RD 的 UI Designer。",
+    "image": "akane_lee.jpg",
+    "facebook": "http://fb.me/uiux.akane",
+    "blog": "http://akanelee.me"
+  },
+  {
+    "name": "陳坤助（KNY）",
+    "info": "中華民國 App 跨界交流協會 理事長<br/>台灣防災產業協會 常務理事／地震災害防制委員會 主委<br/>開放資料聯盟 副會長／App應用召集人<br/>交通部／經濟部／環保署 政府資料開放諮詢小組 委員<br/>AppDC 台灣 App 開發者社群 共同發起人",
+    "image": "kny.jpg",
+    "facebook": "http://fb.me/KNYChen",
+    "website": "http://kny.cc"
+  },
+  {
+    "name": "吳仁弘（Rick Wu）",
+    "info": "三竹資訊出包工程師 <br/>透過不斷的出包來攝取經驗值<br/>對於買書有莫名的熱愛<br/>專長是與別人交流書單<br/>在網路上撰寫部落格，來達到誤人子弟的效果（？）",
+    "image": "rick_wu.jpg",
+    "facebook": "https://www.facebook.com/rick.wu.12?fref=ts"
+  },
+  {
+    "name": "貝克菜",
+    "info": "國外獨資一間健康食品品牌，台灣擁有兩間合夥品牌公司跟獨資一間系統公司，專長是幫助新創公司優化，成長，行銷跟自動化。",
+    "image": "tony_tsai.jpg",
+    "website": "http://tonytsai.com/"
+  },
+  {
+    "name": "吳承翰",
+    "info": "我喜歡好的產品，也開發好的產品；我寫的不是程式，是理想。",
+    "image": "max_wu.jpg",
+    "facebook": "http://fb.me/TakeHackMD",
+    "github": "https://github.com/hackmdio/hackmd/",
+    "website": "https://hackmd.io/"
+  },
+  {
+    "name": "董福興（Bobby Tung）",
+    "info": "在台灣推動 EPUB 3 電子書格式與數位出版改革，目前為大塊文化與台灣漫讀（BookWalker Taiwan）的顧問。2013年起參與 W3C 活動，為中文排版需求（CLREQ）的編輯與邀請專家。希望能夠改善中文電子書與 Web 內容的排版表現，保留傳統並提高使用者閱讀體驗。",
+    "image": "bobby_tung.jpg",
+    "facebook": "http://fb.me/Bobbytung"
+  },
+  {
+    "name": "古宗禎（Denny Ku）",
+    "info": "喜歡前端、Serverless，最近也迷上了自然語言處理。 I'm a false positive front-end engineer.",
+    "image": "denny_ku.jpeg",
+    "github": "https://github.com/abalone0204",
+    "blog": "http://abalone0204.github.io/",
+    "linkin": "https://tw.linkedin.com/in/denny-ku-a9a21396/zh-tw"
+  },
+  {
+    "name": "魏銘信（Ivan Wei）",
+    "info": "在移動互聯網與消費性電子產業，從事用戶體驗設計多年，具有軟體與硬體產品開發的豐富經驗；也曾得過 iF 與 Red Dot 等設計大獎，目前在獵豹移動負責用戶量破億的 Android App「CM Security」介面設計。",
+    "image": "ivanwei.jpg",
+    "facebook": "http://fb.me/ivangraphic",
+    "blog": "https://medium.com/@ivangraphic",
+    "linkin": "https://tw.linkedin.com/in/ivangraphic"
+  },
+  {
+    "name": "鄭鈞隆（Chris Jeng）",
+    "info": "目前任職於 PayEasy，五年經驗的 Android 開發者，目前熱衷研究各種跨平台技術的無限可能，業餘時間也致力於將技術回饋社會的想法，開發找廁所 App，造福行動不便者找廁所無障礙。",
+    "image": "chris_jeng.jpg",
+    "facebook": "http://fb.me/chris.cheng.31",
+    "github": "https://github.com/ULei",
+    "blog": "https://millenniummeetonce.blogspot.tw/",
+    "website": "https://play.google.com/store/apps/details?id=tw.com.bluemoon.findbenso&hl=zh_TW"
+  },
+  {
+    "name": "吳以尋",
+    "info": "遊戲製作人、作曲家以及軟體工程師，任職於臺灣遊戲開發商希娜科藝，目前身兼遊戲製作人與執行長的工作，代表作為《境界之詩》。<br/>畢業於國立東華大學資訊工程研究所，於四年前碩士班研究所畢業的時候，創設遊戲開發公司希娜科藝。",
+    "image": "wu_yi_syun.jpg",
+    "facebook": "http://fb.me/ludwig.i.wu"
+  },
+  {
+    "name": "王銓彰",
+    "info": "王銓彰於虛擬實境與擴增實境領域研發超過 10 年以上，同時也是動畫及遊戲開發業界的風雲人物。他曾研發多套遊戲引擎，是動新聞快速動畫製作技術的發明者，深耕之路上更有和產官學各界合作的豐富經驗。",
+    "image": "wang_cyuan_jhang.jpeg",
+    "facebook": "http://fb.me/chuanchang.wang"
+  },
+  {
+    "name": "樊立勳（John Fan）",
+    "info": "John is cofounder/CEO of PicCollage, a photo app with 100+ million downloads. He attended Princeton University and Stanford University (Ph.D. EE). He previously worked for a wireless startup that was acquired by Qualcomm.",
+    "image": "john_fan.png"
+  },
+  {
+    "name": "王景弘（TonyQ）",
+    "info": "資深網站系統工程師，致力於用資訊系統再造既有流程。",
+    "image": "tonyq.jpg",
+    "facebook": "http://fb.me/tonylovejava",
+    "website": "https://www.facebook.com/groups/javascript.tw/?fref=ts"
+  },
+  {
+    "name": "蔡一郎（Yi-Lang Tsai）",
+    "info": "目前為台灣安全聯盟理事長，並服務於國家高速網路與計算中心，亦為 The Honeynet<br/>Project 台灣分會負責人、TWCSIRT 團隊負責人，熟悉資訊安全領域技術，涵蓋系統安全、網路安全、管理制度、資訊探勘與數位鑑識等領域，目前已有 34 本電腦資訊圖書著作。",
+    "image": "tsai_yi_lang.jpg",
+    "blog": "http://blog.yilang.org/"
+  },
+  {
+    "name": "周益鑫（James Chou）",
+    "info": "大三就半路出家的創業者，充滿著改變世界的熱情，2014 年開創 Colorgy 品牌，希望翻轉校園、創造年輕人的產品。主要負責帶領團隊規劃未來方向跟營運策略，專注在如何讓使用者愛上我們，熱愛聊天、與人分享交流。希望瞭解更多故事來填滿對世界的求知慾！",
+    "image": "james_chou.jpg",
+    "facebook": "http://fb.me/yishin.chou.5"
+  },
+  {
+    "name": "Kuro Hsu",
+    "info": "現職前端工程師，五倍紅寶石兼任講師，長期專注網頁前端標準技術。<br/>Vue.js 愛好者，曾多次參與前端社群分享心得，期望透過技術也能在傳統產業掀起不同的新浪潮。",
+    "image": "kuro_hsu.png",
+    "facebook": "http://fb.me/kurotanshi",
+    "blog": "http://kuro.tw/"
+  },
+  {
+    "name": "羅志達（Kelvin Lo）",
+    "info": "作為一個 Unity 原廠講師，Kelvin 致力於將 Unity 開發技術有效的傳達給開發者。待過遊戲研發 13 年，同時也是個資深玩家的他，認為台灣開發者最大問題並非技術，更多是需要出來交流。他很樂意協助台灣開發者，在遇到問題除了 Google 之外，能有更多管道解決。",
+    "image": "kelvin_lo.jpg",
+    "facebook": "http://fb.me/dada.artist"
+  },
+  {
+    "name": "李卿澄（qcl）",
+    "info": "玉樹臨風，風度翩翩又喜歡吃喝的 Yahoo Mobile App Engineer。參與過多個 Yahoo Mobile App 的開發。日常除了寫 App 外，對自然語言處理、前端、瀏覽器插件等技術亦稍有涉略。最近正在研究如果吃了無敵星星之後該如何不照正常的路數玩遊戲。",
+    "image": "qcl.jpg",
+    "facebook": "http://fb.me/qingchengli.tw",
+    "github": "https://github.com/qcl"
+  },
+  {
+    "name": "劉于遜（Davidd Liu）",
+    "info": "劉于遜於 2011 年創立歐酷網路，2013 年推出 CHOCOLABS 致力於優質 App 研發及推廣，累積超過 29 支冠軍作品，達到 800 萬次下載及每月 200 萬活躍使用者；目前公司主打影劇產品並推出自製戲劇，經營影音平台欲成為台灣新媒體力量；也盼將模式複製到東南亞市場達到品牌全球化。",
+    "image": "davidd.jpg",
+    "facebook": "http://fb.me/DAVIDD0629"
+  },
+  {
+    "name": "翟本喬（Ben Jai）",
+    "info": "紐約大學電腦科學博士，曾任職貝爾實驗室與 Google，之後創立台達電子雲端技術中心，2013 年帶領資訊菁英成立和沛科技，提供企業完整的雲端解決方案，2016 年成立和沛移動，開創使用者完美的雲端服務行動體驗。",
+    "image": "ben_jai.jpg",
+    "facebook": "http://fb.me/ben.jai",
+    "linkin": "https://tw.linkedin.com/in/ben-jai-41b94b9"
+  },
+  {
+    "name": "謝京蓓（Cori Shieh）",
+    "info": "Cori 是台灣 VR/AR 產業前瞻推手，產業人稱「VR 教母」。2016 年 Cori 推動「TAVAR 台灣虛擬及擴增實境產業協會」成立，目前擔任協會秘書長，致力推動產業生態圈發展。Cori 也創辦喜杰思互動科技公司，專注連結台灣與中國、矽谷行業資源，協助台灣業者走向國際。",
+    "image": "cori_shieh.jpg",
+    "facebook": "https://www.facebook.com/cori.shieh?fref=ts"
+  },
+  {
+    "name": "簡信昌（H.C. Chien）",
+    "info": "OSDC.tw 2006-2014，開放原始碼愛好者。現正進行媒體 open source 實驗。",
+    "image": "h_c_chien.jpg"
+  },
+  {
+    "name": "Nevin Chen",
+    "info": "爸爸, 碼農 熱愛 Mobile 開發",
+    "image": "nevin_chen.jpg"
+  },
+  {
+    "name": "jessechen",
+    "info": "設計師出身，後來主要從事 web 方面工作。進入 KKSTREAM 之後開始開發 yapi.js，但仍無法忘情於做出終端用戶能夠直接使用的東西，於是決定加入新產品 KKTV web client 的開發工作。",
+    "image": "jessechen.jpg"
+  },
+  {
+    "name": "下野 健二（Kenji Shimono）",
+    "info": "I belong to the Tokaido Linux User Group in Japan. I'm hacking the ARM Linux in the user point of view.",
+    "image": "kenji_shimono.jpg"
+  },
+  {
+    "name": "張書源（John Chang）",
+    "info": "John Chang 目前擔任 AWS Technology Evangelist，對於雲端服務架構以及商務應用發展具有多年實務經驗，曾經擔任架構師、全球雲端合作戰略官、企業應用顧問以及講師。專注在雲端服務 以及與企業應用程式整合的相關技術，以及與技術社群的合作。",
+    "image": "john_chang.jpg"
+  },
+  {
+    "name": "張書源（John Chang）",
+    "info": "John Chang 目前擔任 AWS Technology Evangelist，對於雲端服務架構以及商務應用發展具有多年實務經驗，曾經擔任架構師、全球雲端合作戰略官、企業應用顧問以及講師。專注在雲端服務 以及與企業應用程式整合的相關技術，以及與技術社群的合作。",
+    "image": "john_chang.jpg"
+  },
+  {
+    "name": "Gaod",
+    "info": "在 KKBOX 專職打雜，負責 backend infrastructure 的設計及維運。",
+    "image": "gaod.jpg"
+  },
+  {
+    "name": "梁文耀",
+    "info": "台灣大學資訊工程博士，曾任大學教授、鴻海創新數位系統事業群資深處長等職務，現為和沛移動技術長，專長涵蓋 Embedded Linux（Android & Firefox OS），及平行與分散式系統，具有技術觀察力與實際規劃力，是台灣開源軟體與 Linux、Android、Firefox OS 等作業系統核心技術的先驅者。",
+    "image": "wen_yao_liang.jpg"
+  },
+  {
+    "name": "趙永弘",
+    "info": "擔任捕夢網數位科技 CTO 技術長。熟悉雲端運算技術 & 雲端未來發展，破除企業對於雲端不實的幻夢，以穩健踏實的方式，輔導眾多企業從傳統 IT 躍升雲端未來。在企業 IT 轉變與成長的過程，扮演了在背後提供了許多技術及硬體奧援的角色。",
+    "image": "pumo.jpg"
+  },
+  {
+    "name": "林昱宏（Jeff Lin）",
+    "info": "目前在 YAHOO 擔任 Mobile App Engineer，曾參與超級商城開發、協助拍賣、購物中心的 iOS App 上線。喜歡用程式玩出更多有趣的 UI 和效果。",
+    "image": "jeff_lin.jpg"
+  },
+  {
+    "name": "佐藤 一憲（Kazunori Sato）",
+    "info": "Kaz Sato is Staff Developer Advocate at Cloud Platform team, Google Inc. He leads the developer advocacy team for Machine Learning and Data Analytics products and gives talks at many major events like Google I/O 2016.",
+    "image": "kazunori_sato.png"
+  },
+  {
+    "name": "鈴木 拓生（Takuo Suzuki）",
+    "info": "Takuo Suzuki is Developer Relations Program Manager at Google Inc. He has a keen focus on Material Design. He further engages in UX reviews of apps and further facilitates various design sprints.",
+    "image": "takuo_suzuki.jpg"
+  }
+]

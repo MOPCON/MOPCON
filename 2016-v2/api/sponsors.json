@@ -1,0 +1,114 @@
+{
+    "TonyStark":[
+        {
+        "name": "和沛移動",
+        "image": "hopebay_tech.png",
+        "link": "http://tera.mobi/"
+        }
+    ],
+    "BruceWayne":[
+        {
+            "name": "捕夢網",
+            "image": "pumo.png",
+            "link": "http://www.pumo.com.tw/"
+        },
+        {
+            "name": "AWS",
+            "image": "aws.png",
+            "link": "https://aws.amazon.com/tw/"
+        },
+        {
+            "name": "KKBOX",
+            "image": "kkbox.png",
+            "link": "https://www.kkbox.com/tw/tc/index.html"
+        },
+        {
+            "name": "Yahoo",
+            "image": "yahoo.png",
+            "link": "https://tw.yahoo.com/"
+        }
+    ],
+     "KSG":[
+        {
+            "name": "高雄市經濟發展局",
+            "image": "KSG.jpg",
+            "link": "http://edbkcg.kcg.gov.tw/style/front001/bexfront.php"
+        }
+    ],
+    "Hacker":[
+        {
+            "name": "慶奇科技",
+            "image": "webduino.png",
+            "link": "https://webduino.io/"
+        },
+        {
+            "name": "Microsoft",
+            "image": "Microsoft.jpg",
+            "link": "https://www.microsoft.com/zh-tw/"
+        }
+    ],
+    "Developer":[
+        {
+            "name": "點子科技",
+            "image": "unnamed.png",
+            "link": "https://itunes.apple.com/tw/app/shou-ji-yi-sheng-phone-doctor/id565111904?l=zh"
+        },
+        {
+            "name": "高誠資訊",
+            "image": "coimotion.png",
+            "link": "http://tw.coimotion.com/"
+        },
+        {
+            "name": "誠義資訊",
+            "image": "Checkin.png",
+            "link": "http://checkinplus.net/"
+        },
+        {
+            "name": "銘圃資訊",
+            "image": "ming_pu.png",
+            "link": "http://www.sekonicmp.co/"
+        },
+        {
+            "name": "乃師實業",
+            "image": "niceStudio.jpg",
+            "link": "https://17bake.cc/"
+        },
+        {
+            "name": "驣星軟體",
+            "image": "attenzionestar.png",
+            "link": "http://www.attenzionestar.com.tw/"
+        },
+        {
+            "name": "塩旅社",
+            "image": "hotel_yam.png",
+            "link": "http://hotelyam.cc/"
+        },
+        {
+            "name": "Hiiir",
+            "image": "Hiiir.png",
+            "link": "http://www.hiiir.com/"
+        },
+        {
+            "name": "祐生研究基金會",
+            "image": "archilife.png",
+            "link": "http://www.archilife.org/"
+        }
+    ],
+    "SpecialThank":[
+        {
+            "name": "KKTIX",
+            "image": "KKTIX.png",
+            "link": "https://kktix.com/"
+        },
+        {
+            "name": "攝護線",
+            "image": "SFD.png",
+            "link": "https://www.facebook.com/ShotForDemocracy"
+        },
+        {
+            "name": "樹德科技大學",
+            "image": "SHU-TE.png",
+            "link": "http://www.stu.edu.tw/"
+        }
+    ]
+}

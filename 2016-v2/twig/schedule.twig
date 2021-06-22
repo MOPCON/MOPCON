@@ -1,0 +1,167 @@
+{% extends 'main.twig' %}
+
+{% block content %}
+<header class="header text-center relative">
+  <div class="planet-logo"></div>
+  <div class="header-block">
+    <div class="header-logo">
+      <img 
+        src="images/article/mopcon-logo.png"
+        srcset="images/article/mopcon-logo@2x.png 2x, images/article/mopcon-logo@3x.png 3x"
+        alt="mopcon"
+        class="img-responsive center-block common-idx mbxl">
+      <img
+        src="images/schedule/s-c-h-e-d-u-l-e.png"
+        srcset="images/schedule/s-c-h-e-d-u-l-e@2x.png 2x, images/schedule/s-c-h-e-d-u-l-e@3x.png 3x"
+        alt="schedule"
+        class="img-responsive center-block common-idx">
+    </div>
+
+  </div>
+</header>
+<div class="container-md">
+  <ul class="relative schedule-nav">
+    <li class="schedule-day" id="day_one_title">
+      <h3>DAY 1</h3>
+      <h4>10/29 (六)</h4>
+    </li>
+    <li class="schedule-day active" id="day_two_title">
+      <h3>DAY 2</h3>
+      <h4>10/30 (日)</h4>
+    </li>
+  </ul>
+</div>
+<div class="container-md">
+  <div class="card">
+    <div class="multi-planet">
+      <ul class="schedule-block" id="day_one_schedule"  style="display: none;">
+      {% for item in schedules.day1_schedule %}
+        <li class="schedule-li">
+          <div class="schedule-event">
+            <div class="time">{{ item.time }}</div>
+            <div class="info">
+              <h3>{{ item.name }}</h3>
+              
+              {% if item.topic and item.topic != "" %}
+              <ul class="schedule-sub-info">
+                <li class="topic">{{ item.topic }}</li>
+                <li class="toggle-icon schedule-on"></li>
+                <li class="room">{{ item.room }}</li>
+                {% if item.onVideoRecord %}
+                  <li class="onVideoRecord"></li>
+                {% endif %}
+              </ul>
+              {% endif %}
+            </div>
+          </div>
+          {% if item.topic and item.topic != "" %}
+          <div class="schedule-detail">
+            <div class="row">
+              <div class="col-sm-3">
+                <img src="images/speaker/{{ item.image }}" class="img-responsive mbxl">
+              </div>
+              <div class="col-sm-9 speakerInfo">
+                <h4 class="schedule-detail-title">議題介紹</h4>
+                <p>{{ item.summary | raw }}</p>
+                <div class="schedule-link">
+                  <ul class="socialNetworkLink">
+                    {% if item.hackmd and item.hackmd != "" %}
+                      <li><a href="{{ item.hackmd }}" target="_blank">Hackmd</a></li>
+                    {% endif %}
+                    {% if item.slideshow and item.slideshow != "" %}
+                      <li><a href="{{ item.slideshow }}" target="_blank"><img class="mrs" src="images/schedule/slideshow.png" alt="簡報icon">Slideshow</a></li>
+                    {% endif %}
+                  </ul>
+                </div>
+                <h4 class="schedule-detail-title">講者介紹</h4>
+                <p>{{ item.info | raw }}</p>
+                <ul class="socialNetworkLink">
+                  {% if item.facebook and item.facebook != "" %}
+                    <li><a href="{{ item.facebook }}" target="_blank">Facebook</a></li>
+                  {% endif %}
+                  {% if item.github and item.github != "" %}
+                    <li><a href="{{ item.github }}" target="_blank">Github</a></li>
+                  {% endif %}
+                  {% if item.blog and item.blog != "" %}
+                    <li><a href="{{ item.blog }}" target="_blank">Blog</a></li>
+                  {% endif %}
+                  {% if item.website and item.website != "" %}
+                    <li><a href="{{ item.website }}" target="_blank">Website</a></li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+
+
+      <ul class="schedule-block" id="day_two_schedule">
+        {% for item in schedules.day2_schedule %}
+        <li class="schedule-li">
+          <div class="schedule-event">
+            <div class="time">{{ item.time }}</div>
+            <div class="info">
+              <h3>{{ item.name }}</h3>
+              
+              {% if item.topic and item.topic != "" %}
+              <ul class="schedule-sub-info">
+                <li class="topic">{{ item.topic }}</li>
+                <li class="toggle-icon schedule-on"></li>
+                <li class="room">{{ item.room }}</li>
+                {% if item.onVideoRecord %}
+                  <li class="onVideoRecord"></li>
+                {% endif %}
+              </ul>
+              {% endif %}
+            </div>
+          </div>
+          {% if item.topic and item.topic != "" %}
+          <div class="schedule-detail">
+            <div class="row">
+              <div class="col-sm-3">
+                <img src="images/speaker/{{ item.image }}" class="img-responsive mbxl">
+              </div>
+              <div class="col-sm-9 speakerInfo">
+                <h4 class="schedule-detail-title">議題介紹</h4>
+                <p>{{ item.summary | raw}}</p>
+                <div class="schedule-link">
+                  <ul class="socialNetworkLink">
+                    {% if item.hackmd and item.hackmd != "" %}
+                      <li><a href="{{ item.hackmd }}" target="_blank">Hackmd</a></li>
+                    {% endif %}
+                    {% if item.slideshow and item.slideshow != "" %}
+                      <li><a href="{{ item.slideshow }}" target="_blank"><img class="mrs" src="images/schedule/slideshow.png" alt="簡報icon">Slideshow</a></li>
+                    {% endif %}
+                  </ul>
+                </div>
+                <h4 class="schedule-detail-title">講者介紹</h4>
+                <p>{{ item.info | raw}}</p>
+                <ul class="socialNetworkLink">
+                  {% if item.facebook and item.facebook != "" %}
+                    <li><a href="{{ item.facebook }}" target="_blank">Facebook</a></li>
+                  {% endif %}
+                  {% if item.github and item.github != "" %}
+                    <li><a href="{{ item.github }}" target="_blank">Github</a></li>
+                  {% endif %}
+                  {% if item.blog and item.blog != "" %}
+                    <li><a href="{{ item.blog }}" target="_blank">Blog</a></li>
+                  {% endif %}
+                  {% if item.website and item.website != "" %}
+                    <li><a href="{{ item.website }}" target="_blank">Website</a></li>
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

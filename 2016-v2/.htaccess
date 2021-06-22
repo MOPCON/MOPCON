@@ -1,0 +1,3 @@
+RewriteEngine On
+Redirect 301 "/2016/schedule.html" "/2016/schedule.php"
+Redirect 301 "/2016/schedule_unconf.html" "/2016/schedule_unconf.php"

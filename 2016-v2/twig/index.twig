@@ -1,0 +1,217 @@
+{% extends 'main.twig' %}
+
+{% block content %}
+<header class="header text-center relative">
+    <div class="planet-logo"></div>
+    <div class="header-block">
+        <div class="header-logo">
+            <img
+                src="images/article/home-landing-logo.png"
+                srcset="images/article/home-landing-logo@2x.png 2x,
+                        images/article/home-landing-logo@3x.png 3x"
+                alt="mopcon2016"
+                class="img-responsive center-block common-idx">
+        </div>
+        {% for data in index.headerBtn %}
+        <div class="header-event">
+            <a class="btn cfp-link" target="{{ data.target }}" href="{{ data.href }}">{{ data.text }}</a>
+        </div>
+        {% endfor %}       
+    </div>
+   
+</header>
+
+<div class="relative clearfix">
+    <div class="about">
+        <h3 class="topic-title text-white text-center">
+
+            ABOUT
+        </h3>
+        <div class="about-info">
+            <div class="card">
+                <div class="card-body">
+                    {% for data in index.list %}
+                        <h3 class="card-head comma">
+                            {{ data.header }}
+                        </h3>
+                        <p>{{ data.desc | raw }}</p>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+        </div>
+        <div class="about-body">
+            <div class="col-xs-12 bg-gray relative bg-slash" style="background-image: url(https://c5.staticflickr.com/6/5748/22759546156_a2f19cfda7_k.jpg);">
+                
+            </div>
+            <div class="clearfix"></div>
+
+            <div>
+                <div class="col-xs-6 bg-gray relative bg-slash" style="background-image: url(https://c3.staticflickr.com/1/654/22616722290_2e049185b6_k.jpg)"></div>
+                <div class="col-xs-6 bg-gray relative bg-slash" style="background-image: url(https://c3.staticflickr.com/6/5718/22386646898_2fc0660ce5_z.jpg)"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="map">
+    <div id="map-canvas" class="miner-mg" style="min-height: 500px"></div>
+    <div class="map-info col-md-4">
+        <div class="card">
+            {% for data in location.list %}
+                <div class="card-body">
+                    <h3 class="card-head comma">
+                        {{ data.header }}
+                    </h3>
+                    {{ data.desc | raw }}
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<div class="relative clearfix mbxl">
+    <div class="speaker">
+        <h3 class="topic-title text-white text-center mbxl">
+            SPEAKER
+        </h3> 
+        <div class="container-md clearfix">
+            <ul class="sepeak-slider">
+                {% for id, data in speakers %}
+                    <li>
+                        <div class="speaker-info">
+                            <img src="images/speaker/{{ data.image }}" alt="" height="480" class="img-responsive">
+                            <div class="mask">
+                                <div>
+                                    {{ data.info | raw }}
+                                </div> 
+                            </div>    
+                        </div>
+                        <div class="speaker-name">
+                            <a href="javascript:void(0);">
+                                {{ data.name }}
+                            </a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="relative clearfix mbxl">
+    <div class="sponsor container">
+        <h3 class="topic-title text-white text-center mbxl">
+            SPONSOR
+        </h3> 
+        <div class="card container-md p0 clearfix">
+        {% for type, groupData in sponsors %}
+            {% if type == 'TonyStark' and groupData!='' %}
+                <div class="sponsor-title">Tony Stark</div>
+                <div class="row">
+                    <div class="col-sm-offset-2 col-sm-8">
+                    {% for data in groupData %}
+                        <a href="{{ data.link }}" target="_blank">
+                            <img src="images/sponsor/TonyStark/{{ data.image }}" alt="{{ data.name }}" title="{{ data.name }}">
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if type == 'BruceWayne' and groupData!='' %}
+                <div class="sponsor-title">Bruce Wayne</div>
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-10">
+                    {% for data in groupData %}
+                        <a href="{{ data.link }}" target="_blank">
+                            <img class="col-sm-6" src="images/sponsor/BruceWayne/{{ data.image }}" alt="{{ data.name }}" title="{{ data.name }}">
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if type == 'KSG' and groupData!='' %}
+                <div class="sponsor-title">感謝高雄市經濟發展局獎勵會議展覽活動計畫贊助</div>
+                <div class="row">
+                    <div class="col-sm-offset-3 col-sm-6">
+                    {% for data in groupData %}
+                        <a href="{{ data.link }}" target="_blank">
+                            <img src="images/sponsor/SpecialThank/{{ data.image }}" alt="{{ data.name }}" title="{{ data.name }}">
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if type == 'Hacker' and groupData!='' %}
+                <div class="sponsor-title">Hacker</div>
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-10">
+                    {% for data in groupData %}
+                        <a href="{{ data.link }}" target="_blank">
+                            <img class="col-sm-4 col-xs-6" src="images/sponsor/Hacker/{{ data.image }}" alt="{{ data.name }}" title="{{ data.name }}">
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if type == 'Developer' and groupData!='' %}
+                <div class="sponsor-title mbxl">Developer</div>
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-10">
+                    {% for data in groupData %}
+                        <a href="{{ data.link }}" target="_blank">
+                            <img class="col-sm-3 col-xs-6" src="images/sponsor/Developer/{{ data.image }}" alt="{{ data.name }}" title="{{ data.name }}">
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if type == 'SpecialThank' and groupData!='' %}
+                <div class="sponsor-title mbxl">特別感謝</div>
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-10">
+                    {% for data in groupData %}
+                        <a href="{{ data.link }}" target="_blank">
+                            <img class="col-sm-3 col-xs-6" src="images/sponsor/SpecialThank/{{ data.image }}" alt="{{ data.name }}" title="{{ data.name }}">
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        </div>  
+    </div>
+</div> 
+
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWLJ01IXDDFp4w3JH4iMQdAlxTaLTERow">
+</script>
+<script type="text/javascript">
+function initialize() {
+  var myLatlng = new google.maps.LatLng({{ map.lat }},{{ map.lng }});
+  var mapOptions = {
+    zoom: {{ map.zoom }},
+    center: myLatlng,
+    draggable: false,
+    scrollwheel: false
+  }
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: "{{ location.icck|e('js') }}"
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+{% endblock %}
+
+{% block footer %}
+    {% for data in index.footerBtn %}
+        <a class="btn cfp-link" target="{{ data.target }}" href="{{ data.href }}">{{ data.text }}</a>
+    {% endfor %}
+
+{% endblock %}
