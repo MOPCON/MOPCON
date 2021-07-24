@@ -1,0 +1,42 @@
+{
+    "general": {
+        "name": "General",
+        "info": "<strong style='text-decoration: underline'>Not include</strong> Lunch box and provide afternoon desserts.",
+        "sale_time": "Avaliable for sale 09/18~10/22"
+    },
+    "student": {
+        "name": "Student",
+        "info": "Offer afternoon dessert. <strong style='text-decoration: underline'>Not include</strong> Lunch box.",
+        "sale_time": "Avaliable for sale 09/11~10/20"
+    },
+    "vipa": {
+        "name": "Premium",
+        "info": "Lunch box and afternoon desserts are included for both days, MOPCON exclusive suveniors, Priority ticketchecking lane.",
+        "sale_time": "Avaliable for sale 09/04~10/22"
+    },
+    "vipb": {
+        "name": "Premium+",
+        "info": "Lunch box and afternoon desserts are included for both days, MOPCON exclusive suveniors, Arm cushion, Priority ticketchecking lane, 2018 Devil Night (for one person only).",
+        "sale_time": "Avaliable for sale 09/04~10/22"
+    },
+    "devel": {
+        "name": "Devel Night",
+        "info": "2018 Devil Night. (11/03 evening)",
+        "sale_time": "Avaliable for sale 10/01~10/27"
+    },
+    "edsupport": {
+        "name": "Educational Support - Just for student",
+        "info": "Special thanks to the educational support from principal of Hex School, Wei-Jie, who sponsors students to participate in MOPCON and encourages them to be inspired in community events.<br>This is a <strong style='text-decoration: underline'>student only</strong> ticket. Offer afternoon dessert. <strong style='text-decoration: underline'>Not include</strong> Lunch box.",
+        "sale_time": ""
+    },
+    "sale_not_started": "Sale Not Started",
+    "buy_now": "Buy now",
+    "sold_out": "Sold out",
+    "note": "Attentions",
+    "up": "Up",
+    "free": "Free",
+    "sale_period": "Avaliable for sale",
+    "quota": "Quota",
+    "people": "",
+    "dollar": ""
+}

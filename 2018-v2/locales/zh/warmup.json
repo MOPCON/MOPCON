@@ -1,0 +1,96 @@
+{
+  "schedule": [
+      {
+        "time": "09: 00",
+        "name": "報到"
+      },
+      {
+        "time": "09: 30",
+        "name": "開幕 / 點心時間"
+      },
+      {
+        "time": "10: 00",
+        "name": "王銘德",
+        "info": "只是小小一個區塊鏈的愛好者",
+        "job": "軟體工程師",
+        "company": "",
+        "topic": "區塊鏈遊戲開發與思索",
+        "summary": "我並不是一個遊戲開發工程師，但想藉由這個主題，跟遊戲業者或獨立遊戲開發商，來探討區塊鏈會對遊戲界帶來什麼樣的可能。例如，為何小遊戲只能靠廣告賺錢？為何我的遊戲寶物不能自由交易？這場演講只是拋磚引玉，讓大家一起來思索…",
+        "image": "/2018/assets/images/warm-up/ming-de.jpg",
+        "facebook": "",
+        "linkin": "",
+        "slideshow":  ""
+      },
+      {
+        "time": "10:45",
+        "name": "休息"
+      },
+      {
+        "time": "11:00",
+        "name": "黃俊毓",
+        "info": "BiiLabs 軟體工程師，區塊鏈議題愛好者",
+        "job": "軟體工程師",
+        "company": "BiiLabs",
+        "topic": "用區塊鏈解決真實世界的問題",
+        "summary": "In terms of IoT, the bigger issue is volume and whether the financial system is going to be ready to accept this as devices start to charge for services at a micro-level. With IOTA, you can ensure the fulfillment of the smallest tasks in the unified network; turning off the tap in the bathroom, sticking on a tag, or at least blowing away a speck of dust. This session will cover the considerations of adopting IoT and cryptocurrencies along with feasible approaches to accelerate the whole transactions, which shape the machine economy by building a portfolio of companies that literally meet the needs of machines.",
+        "image": "/2018/assets/images/warm-up/yillkid.jpg",
+        "facebook": "",
+        "linkin": "",
+        "slideshow":  ""
+      },
+      {
+        "time": "11:45",
+        "name": "午餐時間"
+      },
+      {
+        "time": "13:00",
+        "name": "黃士晉(朱西西)",
+        "info": "2017年成立微進科技有限公司。致力於發展區塊鏈擴容技術與分散式系統，透過鏈下技術提升使用者體驗，並且系統仍保持隱私與透明的特性就像在鏈上一樣。",
+        "job": "CEO",
+        "company": "微進科技有限公司",
+        "topic": "區塊鏈 DApp 製作 - 做一個區塊鏈詐騙遊戲",
+        "summary": "2018是區塊鏈遊戲成長爆發的一年，當玩家發現到區塊鏈應用與ICO的夢逐漸不可行與破沫化後，他們開始轉移目光至一個新興的行業：DApp遊戲。此暖身場將帶您於 45 分鐘內實作出一個區塊鏈遊戲Fomo3D，透過大方向的講解讓您了解區塊鏈遊戲的架構，組成方式，以及遊玩DApp要注意的事項。Dapp因為區塊鏈高度透明的特性，導致許多遊戲都把Fomo化來成為賣點，邀請您來玩玩這個有趣且弔詭的遊戲！",
+        "image": "/2018/assets/images/warm-up/superdcc.png",
+        "facebook": "",
+        "linkin": "",
+        "slideshow":  ""
+      },
+      {
+        "time": "13:45",
+        "name": "休息"
+      },
+      {
+        "time": "14:00",
+        "name": "畢瑄易 ericpi",
+        "info": "高雄土生土長的軟體工程師，為求溫飽北漂台北、北京，2012 返鄉高雄，曾參與 Feature Phone Games、KKBOX Back-end、一起聽等專案開發/維運。現任 KKBOX 開放平台協作營運部經理，一邊向硬體公司推銷自家音樂物聯網整合方案，一邊傳教 Open API & Open Source Project。",
+        "job": "Open Platform Cooperation Dep. Manager",
+        "company": "KKBOX",
+        "topic": "從消費者轉向開發者 - 談談 KKBOX 的開放 API 之路",
+        "summary": "在 MOPCON 2017 發表 KKBOX Open API 迄今即將滿一年，這個以音樂資料集為基礎的開放專案於營運、推廣等開發者面向業務，與過去消費型網路服務的經驗極為不同！這場議程就來分享這一年營運心得，也談談對於開發者產品的觀察。",
+        "image": "/2018/assets/images/warm-up/ericpi.jpg",
+        "facebook": "",
+        "linkin": "",
+        "slideshow":  ""
+      },
+      {
+        "time": "14:45",
+        "name": "點心時間"
+      },{
+        "time": "15:45",
+        "name": "白勝文",
+        "info": "國中開始寫程式、高中開始蹺課寫程式僥倖考上大學，畢業後不知道要做什麼，就賴在學校念到博士第一份工作混了10年，直到公司收掉才離開第二份工作混了4年，因為太閒受不了而離開這把年紀只剩下一張嘴，特別珍惜有code可以寫的日子",
+        "job": "CTO",
+        "company": "Webduino 慶奇科技",
+        "topic": "物聯網、大數據、人工智慧、邊緣運算，很難嗎？",
+        "summary": "資訊產業日新月異，不斷出現的新名詞讓許多技術人員產生【名詞恐慌】，似乎沒跟上就會失去競爭力，產品沒用上這些新技術就賣不出去。講者以公司的一個專案為例，說明用戶需求才是王道，一旦滿足了用戶的需求，回過頭來看，就會發現你已經學會並實際應用了這些新技術。",
+        "image": "/2018/assets/images/warm-up/seven_bai.jpg",
+        "facebook": "",
+        "linkin": "",
+        "slideshow":  ""
+      },
+      {
+        "time": "16:30-17:00",
+        "name": "閉幕"
+      }
+    ]
+}

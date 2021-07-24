@@ -1,0 +1,22 @@
+{% extends 'layouts/main.twig' %} {% block content %}
+<div class="score">
+    <div class="d-flex flex-column align-items-center">
+        <div class="d-block">
+            <div class="show-text mb-md-5 d-flex justify-content-center">你是</div>
+            <div class="show-lv-text mb-md-5 d-flex justify-content-center">{{ score.title }}</div>
+            <div class="show-lv-img mb-md-5 mb-3" style="background-image: url('/2018/assets/images/score/{{ score.picture }}.png')"></div>
+            <div class="show-ability-img mb-5" style="background-image: url('/2018/assets/images/score/lv{{ score.level }}-value.png')"></div>
+            <div class="show-comment-img mb-3">
+                {{ score.description | raw }}
+            </div>
+           
+            <div class="d-flex justify-content-center">
+                <div class="share-social" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://mopcon.org/2018/{{ og_url }}'),'facebook-share-dialog','width=626,height=436'); return false;"></div>
+            </div>
+            <div class="text-center">
+                <a href="/2018/event.php" class="btn btn-link btn-lg">回活動首頁</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

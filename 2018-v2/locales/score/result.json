@@ -1,0 +1,39 @@
+[
+	{
+        "level": 1,
+        "title": "小萌新",
+        "description": "風中嫩草, IT 界新手專區<br/>Oh～萌萌是我的權利, 關於這些題目在問什麼？倫家真的不知道嘛",
+        "picture": "new-picture",
+        "og_image": "FB_Bud.png",
+        "og_title": "我是小萌新玩家",
+        "og_description": "風中嫩草！科技界新手區, 口頭禪是「我萌我驕傲」, 想知道更多？快來看看"
+    },
+    {
+        "level": 2,
+        "title": "老屁股",
+        "description": "待在 IT 界有一段時間，持續吸取大地精華，<br/>目標只有一個！成為骨灰級的角色。<br/>座右銘是「滴水穿石，不是力量大，而是功夫深」",
+        "picture": "old-picture",
+        "og_image": "FB_Flower.png",
+        "og_title": "我是老屁股玩家",
+        "og_description": "在 IT 界持續吸取大地精華，目標只有一個！那就是成為骨灰級玩家, 想知道更多？快來看看"
+    },
+    {
+        "level": 3,
+        "title": "骨灰級",
+        "description": "愛 IT 成痴，過於痴迷而感到自豪,<br/>什麼 Bug 都難不倒我！<br/>「不是很狂，只有最狂」這就是我的座右銘",
+        "picture": "planet-picture",
+        "og_image": "FB_Planet.png",
+        "og_title": "我是骨灰級玩家",
+        "og_description": "愛 IT 成痴，過於痴迷而感到自豪！「不是很狂，只有更狂」這就是我的座右銘, 想知道更多？快來看看"
+    },
+    {
+        "level": 4,
+        "title": "大BOSS",
+        "description": "元老級人物，太神了因此被拿來供奉參拜，<br/>據說摸了我以後, Debug 能力會瞬間翻倍成長,<br/>口頭禪是「想當年我也年輕瘋狂過...」",
+        "picture": "oldertree-picture",
+        "og_image": "FB_Tree.png",
+        "og_title": "我是大 Boss 玩家",
+        "og_description": "太神了因此被拿來供奉參拜，據說摸了我以後, Debug 能力會瞬間翻倍成長, 想知道更多？快來看看"
+	}
+	
+]

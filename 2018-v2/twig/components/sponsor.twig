@@ -1,0 +1,442 @@
+{% extends 'layouts/main.twig' %} {% block content %}
+    <h2 class="page-title text-center mt-5 mb-5">SPONSOR</h2>
+    <hr>
+    <div class="container">
+        {#<div class="sponsor-container mt-5">
+            <div class="position-relative">
+                <div class="level-info">
+                    Tony Stark
+                </div>
+            </div>
+            <div class="row">
+            {% for sponsor in sponsors %}
+            {% if sponsor['type'] == 'Tony Stark' %}
+            <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#modal-{{sponsor.id}}" style="cursor:pointer;">
+                <img class="img-fluid" src="{{sponsor.logo}}" alt="" srcset="">
+            </div>
+            <div class="modal fade"  id="modal-{{ sponsor.id }}" tabindex="-1" role="dialog" aria-labelledby="speakerModalLabel" aria-hidden="true">
+            <div class="modal-dialog speaker-modal" role="document">
+              <div class="modal-content">
+                <button type="button" class="speaker-close close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="modal-body">
+                  <div class="d-flex flex-column align-items-center">
+                    <div class="d-flex justify-content-around speaker-modal-info">
+                      <img class="my-3 border-0" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}">
+                      <div class="d-flex flex-column mt-5">
+                        <h5>{{ sponsor.name }}</h5>
+
+                      </div>
+                    </div>
+                    <div class="speaker-zh-detail pt-3 mx-sm-5 border-top border-primary">
+                        {{sponsor.info }}
+                    </div>
+                   {% if sponsor['website'] != '' %}
+                    <a href="{{sponsor.website}}" target="_blank" class="speaker-modal-btn mt-5 mb-3">
+                      <button>官方網站</button>
+                    </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            {% endif %}
+            {% endfor %}
+            </div>
+        </div>#}
+        <div class="sponsor-container mt-5">
+            <div class="position-relative">
+                <div class="level-info">
+                    Bruce Wayne
+                </div>
+            </div>
+            <div class="row">
+                {% for sponsor in sponsors %}
+                    {% if sponsor['type'] == 'Bruce Wayne' %}
+                        <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#modal-{{ sponsor.id }}"
+                             style="cursor:pointer;">
+                            <img class="img-fluid" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" srcset="">
+                        </div>
+                        <div class="modal fade" id="modal-{{ sponsor.id }}" tabindex="-1" role="dialog"
+                             aria-labelledby="speakerModalLabel" aria-hidden="true">
+                            <div class="modal-dialog speaker-modal" role="document">
+                                <div class="modal-content">
+                                    <button type="button" class="speaker-close close" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <div class="modal-body">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="d-flex justify-content-around speaker-modal-info">
+                                                <img class="my-3 border-0" src="{{ sponsor.logo }}"
+                                                     alt="{{ sponsor.name }}">
+                                                <div class="d-flex flex-column mt-5">
+                                                    <h5>{{ sponsor.name }}</h5>
+
+                                                </div>
+                                            </div>
+                                            <div class="speaker-zh-detail pt-3 mx-sm-5 border-top border-primary">
+                                                {{ sponsor.info }}
+                                            </div>
+                                            {% if sponsor['website'] != '' %}
+                                                <a href="{{ sponsor.website }}" target="_blank"
+                                                   class="speaker-modal-btn mt-5 mb-3">
+                                                    <button>官方網站</button>
+                                                </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="sponsor-container mt-5">
+            <div class="position-relative">
+                <div class="level-info">
+                    Hacker
+                </div>
+            </div>
+            <div class="row">
+                {% for sponsor in sponsors %}
+                    {% if sponsor['type'] == 'Hacker' %}
+                        <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#modal-{{ sponsor.id }}"
+                             style="cursor:pointer;">
+                            <img class="img-fluid" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" srcset="">
+                        </div>
+                        <div class="modal fade" id="modal-{{ sponsor.id }}" tabindex="-1" role="dialog"
+                             aria-labelledby="speakerModalLabel" aria-hidden="true">
+                            <div class="modal-dialog speaker-modal" role="document">
+                                <div class="modal-content">
+                                    <button type="button" class="speaker-close close" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <div class="modal-body">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="d-flex justify-content-around speaker-modal-info">
+                                                <img class="my-3 border-0" src="{{ sponsor.logo }}"
+                                                     alt="{{ sponsor.name }}">
+                                                <div class="d-flex flex-column mt-5">
+                                                    <h5>{{ sponsor.name }}</h5>
+
+                                                </div>
+                                            </div>
+                                            <div class="speaker-zh-detail pt-3 mx-sm-5 border-top border-primary">
+                                                {{ sponsor.info }}
+                                            </div>
+                                            {% if sponsor['website'] != '' %}
+                                                <a href="{{ sponsor.website }}" target="_blank"
+                                                   class="speaker-modal-btn mt-5 mb-3">
+                                                    <button>官方網站</button>
+                                                </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="sponsor-container mt-5">
+            <div class="position-relative">
+                <div class="level-info">
+                    Geek
+                </div>
+            </div>
+            <div class="row">
+                {% for sponsor in sponsors %}
+                    {% if sponsor['type'] == 'Geek' %}
+                        <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#modal-{{ sponsor.id }}"
+                             style="cursor:pointer;">
+                            <img class="img-fluid" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" srcset="">
+                        </div>
+                        <div class="modal fade" id="modal-{{ sponsor.id }}" tabindex="-1" role="dialog"
+                             aria-labelledby="speakerModalLabel" aria-hidden="true">
+                            <div class="modal-dialog speaker-modal" role="document">
+                                <div class="modal-content">
+                                    <button type="button" class="speaker-close close" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <div class="modal-body">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="d-flex justify-content-around speaker-modal-info">
+                                                <img class="my-3 border-0" src="{{ sponsor.logo }}"
+                                                     alt="{{ sponsor.name }}">
+                                                <div class="d-flex flex-column mt-5">
+                                                    <h5>{{ sponsor.name }}</h5>
+
+                                                </div>
+                                            </div>
+                                            <div class="speaker-zh-detail pt-3 mx-sm-5 border-top border-primary">
+                                                {{ sponsor.info }}
+                                            </div>
+                                            {% if sponsor['website'] != '' %}
+                                                <a href="{{ sponsor.website }}" target="_blank"
+                                                   class="speaker-modal-btn mt-5 mb-3">
+                                                    <button>官方網站</button>
+                                                </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="sponsor-container mt-5">
+            <div class="position-relative">
+                <div class="level-info">
+                    Developer
+                </div>
+            </div>
+            <div class="row">
+                {% for sponsor in sponsors %}
+                    {% if sponsor['type'] == 'Developer' %}
+                        <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#modal-{{ sponsor.id }}"
+                             style="cursor:pointer;">
+                            <img class="img-fluid" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" srcset="">
+                        </div>
+                        <div class="modal fade" id="modal-{{ sponsor.id }}" tabindex="-1" role="dialog"
+                             aria-labelledby="speakerModalLabel" aria-hidden="true">
+                            <div class="modal-dialog speaker-modal" role="document">
+                                <div class="modal-content">
+                                    <button type="button" class="speaker-close close" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <div class="modal-body">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="d-flex justify-content-around speaker-modal-info">
+                                                <img class="my-3 border-0" src="{{ sponsor.logo }}"
+                                                     alt="{{ sponsor.name }}">
+                                                <div class="d-flex flex-column mt-5">
+                                                    <h5>{{ sponsor.name }}</h5>
+
+                                                </div>
+                                            </div>
+                                            <div class="speaker-zh-detail pt-3 mx-sm-5 border-top border-primary">
+                                                {{ sponsor.info }}
+                                            </div>
+                                            {% if sponsor['website'] != '' %}
+                                                <a href="{{ sponsor.website }}" target="_blank"
+                                                   class="speaker-modal-btn mt-5 mb-3">
+                                                    <button>官方網站</button>
+                                                </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="sponsor-container mt-5">
+            <div class="position-relative">
+                <div class="level-info">
+                    教育贊助
+                </div>
+            </div>
+            <div class="row">
+                {% for sponsor in sponsors %}
+                    {% if sponsor['type'] == '教育贊助' %}
+                        <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#modal-{{ sponsor.id }}"
+                             style="cursor:pointer;">
+                            <img class="img-fluid mb-2" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" srcset="">
+                            <h5 class="text-center">{{ sponsor.name }}</h5>
+                        </div>
+                        <div class="modal fade" id="modal-{{ sponsor.id }}" tabindex="-1" role="dialog"
+                             aria-labelledby="speakerModalLabel" aria-hidden="true">
+                            <div class="modal-dialog speaker-modal" role="document">
+                                <div class="modal-content">
+                                    <button type="button" class="speaker-close close" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <div class="modal-body">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="d-flex justify-content-around speaker-modal-info">
+                                                <img class="my-3 border-0" src="{{ sponsor.logo }}"
+                                                     alt="{{ sponsor.name }}">
+                                                <div class="d-flex flex-column mt-5">
+                                                    <h5>{{ sponsor.name }}</h5>
+
+                                                </div>
+                                            </div>
+                                            <div class="speaker-zh-detail pt-3 mx-sm-5 border-top border-primary">
+                                                {{ sponsor.info }}
+                                            </div>
+                                            {% if sponsor['website'] != '' %}
+                                                <a href="{{ sponsor.website }}" target="_blank"
+                                                   class="speaker-modal-btn mt-5 mb-3">
+                                                    <button>官方網站</button>
+                                                </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="sponsor-container mt-5">
+            <div class="position-relative">
+                <div class="level-info">
+                    特別感謝
+                </div>
+            </div>
+            <div class="row">
+                {% for sponsor in sponsors %}
+                    {% if sponsor['type'] == '特別感謝' %}
+                        <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#modal-{{ sponsor.id }}"
+                             style="cursor:pointer;">
+                            <img class="img-fluid" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" srcset="">
+                        </div>
+                        <div class="modal fade" id="modal-{{ sponsor.id }}" tabindex="-1" role="dialog"
+                             aria-labelledby="speakerModalLabel" aria-hidden="true">
+                            <div class="modal-dialog speaker-modal" role="document">
+                                <div class="modal-content">
+                                    <button type="button" class="speaker-close close" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <div class="modal-body">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="d-flex justify-content-around speaker-modal-info">
+                                                <img class="my-3 border-0" src="{{ sponsor.logo }}"
+                                                     alt="{{ sponsor.name }}">
+                                                <div class="d-flex flex-column mt-5">
+                                                    <h5>{{ sponsor.name }}</h5>
+
+                                                </div>
+                                            </div>
+                                            <div class="speaker-zh-detail pt-3 mx-sm-5 border-top border-primary">
+                                                {{ sponsor.info }}
+                                            </div>
+                                            {% if sponsor['website'] != '' %}
+                                                <a href="{{ sponsor.website }}" target="_blank"
+                                                   class="speaker-modal-btn mt-5 mb-3">
+                                                    <button>官方網站</button>
+                                                </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="sponsor-container mt-5">
+            <div class="position-relative">
+                <div class="level-info">
+                    協辦單位
+                </div>
+            </div>
+            <div class="row">
+                {% for sponsor in sponsors %}
+                    {% if sponsor['type'] == '協辦單位' %}
+                        <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#modal-{{ sponsor.id }}"
+                             style="cursor:pointer;">
+                            <img class="img-fluid" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" srcset="">
+                        </div>
+                        <div class="modal fade" id="modal-{{ sponsor.id }}" tabindex="-1" role="dialog"
+                             aria-labelledby="speakerModalLabel" aria-hidden="true">
+                            <div class="modal-dialog speaker-modal" role="document">
+                                <div class="modal-content">
+                                    <button type="button" class="speaker-close close" data-dismiss="modal"
+                                            aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <div class="modal-body">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="d-flex justify-content-around speaker-modal-info">
+                                                <img class="my-3 border-0" src="{{ sponsor.logo }}"
+                                                     alt="{{ sponsor.name }}">
+                                                <div class="d-flex flex-column mt-5">
+                                                    <h5>{{ sponsor.name }}</h5>
+
+                                                </div>
+                                            </div>
+                                            <div class="speaker-zh-detail pt-3 mx-sm-5 border-top border-primary">
+                                                {{ sponsor.info }}
+                                            </div>
+                                            {% if sponsor['website'] != '' %}
+                                                <a href="{{ sponsor.website }}" target="_blank"
+                                                   class="speaker-modal-btn mt-5 mb-3">
+                                                    <button>官方網站</button>
+                                                </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="sponsor-container mt-5">
+            <div class="position-relative">
+                <div class="level-info" style="!important;width: 700px;">
+                    高雄市經濟發展局獎勵會議展覽活動計畫贊助
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6" data-toggle="modal" data-target="#modal-999"
+                     style="cursor:pointer;">
+                    <img class="img-fluid" src="https://mopcon.org/2016/images/sponsor/SpecialThank/KSG.jpg" alt="高雄市經濟發展局" srcset="">
+                </div>
+                <div class="modal fade" id="modal-999" tabindex="-1" role="dialog"
+                     aria-labelledby="speakerModalLabel" aria-hidden="true">
+                    <div class="modal-dialog speaker-modal" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="speaker-close close" data-dismiss="modal"
+                                    aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div class="modal-body">
+                                <div class="d-flex flex-column align-items-center">
+                                    <div class="d-flex justify-content-around speaker-modal-info">
+                                        <img class="my-3 border-0" src="https://mopcon.org/2016/images/sponsor/SpecialThank/KSG.jpg"
+                                             alt="高雄市經濟發展局">
+                                        <div class="d-flex flex-column mt-5">
+                                            <h5>高雄市經濟發展局</h5>
+                                        </div>
+                                    </div>
+                                    <div class="speaker-zh-detail pt-3 mx-sm-5 border-top border-primary">
+                                    </div>
+                                    <a href="https://edbkcg.kcg.gov.tw/style/front001/bexfront.php" target="_blank"
+                                       class="speaker-modal-btn mt-5 mb-3">
+                                        <button>官方網站</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if id != '' %}
+        <script>
+            $(function () {
+                $('#modal-' +{{ id }}).modal('show');
+            })
+        </script>
+    {% endif %}
+{% endblock %}

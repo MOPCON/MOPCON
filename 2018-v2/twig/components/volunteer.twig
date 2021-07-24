@@ -1,0 +1,54 @@
+{% extends 'layouts/main.twig' %} {% block content %}
+<div class="container">
+    <h2 class="page-title text-center mt-5 mb-5">VOLUNTEER</h2>
+    <div class="row">
+    {% for volunteer in volunteers %}
+        <div class="col-md-4 col-12 mb-3">
+            <div class="m-box h-100 p-md-3 p-2 text-center">
+                <div class="row">
+                    <div class="col-md-12 col-6 mb-md-4 justify-content-center align-self-center">
+                        <img class="img-fluid mx-auto" src="./assets/images/volunteer/icon_{{volunteer.id}}.jpg" alt="" srcset="">
+
+                    </div>
+                    <div class="col-md-12 col-6">
+                        <h4 class="mb-md-4">{{volunteer.groupname}}</h4>
+                        <p class="d-none d-md-block">{{volunteer.info}}</p>
+                        <button class="speaker-btn mt-4 mb-3" data-toggle="modal" data-target="#volunteerModal-{{volunteer.id}}">成員名單</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal fade" id="volunteerModal-{{volunteer.id}}" tabindex="-1" role="dialog" aria-labelledby="volunteerModalLabel" aria-hidden="true">
+            <div class="modal-dialog speaker-modal" role="document">
+                <div class="modal-content">
+                    <button type="button" class="speaker-close close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal-body">
+                        <div class="d-flex flex-column">
+                            <h3 class="text-center mx-5 mt-3 mb-3">
+                                {{volunteer.groupname}}
+                            </h3>
+                            <div class="speaker-zh-detail mx-5 mb-4">
+                                <h5>詳細介紹</h5>
+                                {{volunteer.info}}
+                            </div>
+                            <div class="speaker-zh-detail mx-5">
+                                <h5>成員名單</h5>
+                                {% if volunteer.id == "11" %}
+                                <a target="_blank" href="https://mopcon.org/1d478c2b5b2560c9415b8ca9da92bd6e.html" title="sh!..">Puck</a>、UnciaX、idfer、Angus、竣翔、千又、Vivian、小楊、lina、Mico、楊宗核、江佩珊、球球、森喵、毛豆、松鼠、Straw、奶茶、葉子、大六、鄧仲恩、Kuma、Kayong、企鵝、Trista、Elvis、Wei、Gary、Bear、Melody、大眼、林宏儒、朱家瑢、黃小雯、樊紹萱、鹹魚、Yiz、阿祥、璟彤。
+                                {% else %}
+                                {{volunteer.memberlist}}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

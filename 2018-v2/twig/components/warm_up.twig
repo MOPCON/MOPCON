@@ -1,0 +1,179 @@
+{% extends 'layouts/warmupLayout.twig' %} {% block content %}
+
+<div class="panel">
+    <div class="warm-up row d-flex align-items-center flex-column">
+        <div class="warm-up-info col-sm-6" data-div-name="#second">
+            <h4 class="page-title">暖身場是什麼？</h4>
+            <p>
+                MOPCON 創立至今已達七年之久，從 2012 到現在，堅持濁水溪以南這句話... 我們堅持了七年，有了您才有今天的 MOPCON ，就在今年，我們決定有個番外活動，「 MOPCON 暖身場」就這樣誕生了！
+            </p>
+            <p>
+                MOPCON 暖身場，抓著 2018 年全球當今火紅的三大產業趨勢 IoT(Internet of Things) 、 Blockchain 、 AI(Artificial Intelligence) ，隨著科技的進步這些技術也越來越成熟，想知道如何將它套入您的產品嗎？想要輕鬆了解這些技術嗎？那千萬不可以錯過 MOPCON 暖身場。
+            </p>
+        </div>
+        <div class="warm-up-people col-sm-6">
+            <h4 class="page-title">活動特色</h4>
+            <div class="row">
+		<div class="col-sm-3 people text-center">
+                    <i class="fas fa-user-graduate"></i>
+                    <h5>超強講師陣容</h5>
+                    <span>
+                        邀請社群與企業專家分享如何看這產業趨勢
+                    </span>
+                </div>
+                <div class="col-sm-3 people text-center">
+                    <i class="fas fa-users"></i>
+                    <h5>超近距離交流</h5>
+                    <span>
+                        小班授課，可以更近距離與講師交流
+                    </span>
+                </div>
+                <div class="col-sm-3 people text-center">
+                    <i class="fas fa-utensils"></i>
+                    <h5>聽到飽吃到飽</h5>
+                    <span>
+                	提供早點、下午茶點，除了滿足您的聽覺也滿足您的味蕾
+                    </span>
+                </div>
+                <div class="col-sm-3 people text-center">
+                    <i class="fas fa-link"></i>
+                    <h5>區塊鏈之夜</h5>
+                    <span>
+                        限量免費區塊鏈之夜門票<br/><a href="https://www.accupass.com/event/1810110319173293479710" target="_blank">報名請往這邊</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel">
+    <div class="warm-up row d-flex align-items-center flex-column">
+        <div class="warm-up-schedule col-sm-6" data-div-name="#three">
+            <h4 class="page-title">時刻表</h4>
+            <div class="table">
+                <div class="row table-title">
+                    <div class="col-sm-4 text-center">
+                        時間
+                    </div>
+                    <div class="col-sm-8 text-center">
+                        活動
+                    </div>
+                </div>
+                {% for item in l10n.warmup.schedule %}
+                {% if item.topic %}
+                <div class="row conf">
+                    <div class="col-sm-4 text-center">
+                        {{ item.time }}
+                    </div>
+                    <div style="cursor:pointer;" class="col-sm-8 text-center" data-toggle="modal" data-target="#modal-{{ loop.index }}">
+                        <!-- <span class="tag">Blockchain</span> -->
+                        <h6>{{ item.name }}</h6>
+                        <span>{{ item.topic }}</span>
+                    </div>
+                </div>
+                
+                {% else %}
+                <div class="row break">
+                    <div class="col-sm-4 text-center">
+                        {{ item.time }}
+                    </div>
+                    <div class="col-sm-8 text-center">
+                        {{ item.name }}
+                    </div>
+                </div> 
+                {% endif%}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% for item in l10n.warmup.schedule %}
+    {% if item.topic %}
+    <div class="modal fade" id="modal-{{ loop.index }}" tabindex="-1" role="dialog" aria-labelledby="speakerModalLabel"
+                        aria-hidden="true">
+        <div class="modal-dialog speaker-modal" role="document">
+            <div class="modal-content">
+                <button type="button" class="speaker-close close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="modal-body">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="d-flex speaker-modal-info px-sm-4">
+                        <img class="my-3 rounded-circle mr-3" src="{{ item.image|default('/2018/assets/images/speaker/blank_speaker.jpg') }}" alt="{{ speaker.name }}">
+                            <div class="d-flex flex-column mt-5">
+                                <h4>{{ item.name }}</h4>
+                                <span>{{ item.company }}</span>
+                                <span>{{ item.job }}</span>
+                            </div>
+                        </div>
+                            <div class="speaker-zh-detail px-sm-4">
+                            {{ item.info }}
+                        </div>
+                        <div class="speaker-eng-detail px-sm-4 mt-3 pt-3 mb-4 border-top border-primary">
+                        {{ item.topic }}
+                        </div>
+                        <div class="speaker-zh-detail px-sm-4">
+                            {{ item.summary }}
+                        </div>
+                        {#<div class="speaker-modal-btn mt-5 mb-3">
+                            <button>共筆</button>
+                            <button>Slide</button>
+                        </div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif%}
+{% endfor %}
+<div class="panel" style="margin-bottom:8rem;">
+    <div class="warm-up row d-flex align-items-center flex-column">
+        <div class="warm-up-ticket" data-div-name="#four">
+            <h4 class="page-title">售票資訊</h4>
+            <div class="ticket-item type1 row mb-4">
+                <div class="ticket-type  d-flex flex-column align-items-start">
+                    <div class="name">一般票</div>
+                </div>
+                <div class="ticket-content flex-auto">
+                    <h4>NT$ 250 元</h4>
+                    <p>
+                        暖身場一般票。
+                    </p>
+                    <div class="ticket-tool">
+                        <a href="https://mopcon.kktix.cc/events/warm-up-2018" target="_blank" class="btn btn-ticket" title="Buy ticket">
+                            立即購票
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="main-conf-ticket">
+                <h5>來個充實的週末吧，MOPCON 2018 歡迎您！</h5>
+                <a class="btn btn-ticket" href="/2018/ticket.php">MOPCON 2018 立即購票</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel">
+    <div class="warm-up ">
+        
+        <h4 class="page-title">共同主辦單位</h4>
+       
+    </div>
+    <div class="d-flex justify-content-center">
+            
+            <div class="col-offset-4 col-md-3">
+                <a href="https://mopcon.org" target="_blank">
+                    <img class="" src="assets/images/mopcon2018_large.jpg">
+                </a>
+            </div>
+            
+            <div class="col-md-3">
+                <a href="https://www.asvda.org/chi/index.aspx" target="_blank">
+                    <img class="" src="assets/images/sponsor/ASVDA.jpg">
+                </a>
+            </div>
+            
+            
+        </div>
+</div>
+{% endblock %}

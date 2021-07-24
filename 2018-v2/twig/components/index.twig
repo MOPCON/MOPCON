@@ -1,0 +1,99 @@
+{% extends 'layouts/main.twig' %} {% block content %}
+<!-- APEC -->
+<header class="header">
+    <div class="row justify-content-center particles">
+        <div class="owl-carousel banner-carousel col-8">
+            <div class="item banner-info">
+                <img id="logo" src="assets/images/logo@2x.png"/>
+                <h2 class="banner-text">
+                    11/3-4
+                    <br/>
+                    高雄國際會議中心
+                </h2>
+            </div>
+        </div>
+     
+    </div>
+
+    <!-- <div class="row mt-4">
+            <div class="col-md-4 offset-md-4 d-flex justify-content-center">
+                <div style="width:400px;height:150px;" class="example" data-date="2018-11-03 09:00"></div>
+            </div>
+    </div> -->
+       
+    <!-- <div class="row">
+        <div class="btn col-md-4 col-lg-2 m-auto">
+            <a href="ticket.php" class="btn btn-primary btn-lg">馬上去搶票</a>
+        </div>
+    </div> -->
+    <div class="row">
+        <div class="col-lg-1 col-sm-3 arrow mb-lg-5">
+                <a href="#arrow-go" class="arrow-go"><i class="fas fa-angle-down"></i></a>
+        </div>
+    </div>
+</header>
+<div class="panel bottom">
+    <!-- <div class="row mb-5">
+        <div class="col-12 text-center">
+            <a href="https://drive.google.com/file/d/1VPucvh8MyBBIqHPrMNHcjQGOBrV3Q48r/view" target="_blank" class="btn btn-primary btn-lg" title="CFS document">{{ l10n.common.donateUs }}</a>
+        </div>
+    </div> -->
+    <div class="row">
+    <div class="offset-md-3 col-md-6 col-12">
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/b0dirfw0ypo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+<script>
+    // var config = {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":450}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":5,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"bounce","attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"repulse"},"onclick":{"enable":false,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true,"config_demo":{"hide_card":false,"background_color":"#b61924","background_image":"","background_position":"50% 50%","background_repeat":"no-repeat","background_size":"cover"}},
+    // isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
+    // if($(window).width() > 640 || !isMobile ) {
+    //   particlesJS('particlesLeft', config);
+    //   particlesJS('particlesLeft2', config);
+    //   particlesJS('particlesRight', config);
+    //   particlesJS('particlesRight2', config);
+    // }
+    $('.banner-carousel').owlCarousel({
+		loop: true,
+		nav: false,
+		autoplay: true,
+		margin: 10,
+		responsiveClass: true,
+		autoplayHoverPause: true,
+		responsive: {
+			0: {
+				items: 1,
+			},
+			576: {
+				items: 1,
+			},
+			768: {
+				items: 1,
+				dots: true,
+			},
+			1200: {
+				items: 1,
+				dots: true,
+			}
+		}
+    })
+   
+
+        // $(".example").TimeCircles({
+        //     start: true,
+        //     animation_interval: "ticks",
+        //     direction: "Counter-clockwise",
+        //     number_size: 0.32,
+        //     // bg_width: 0.5,
+        //     // fg_width: 0.05,
+        //     circle_bg_color: "#FFFFFF",
+        //     time: {
+        //         Days: { color: "#010135" },
+        //         Hours: { color: "#010135" },
+        //         Minutes: { color: "#010135" },
+        //         Seconds: { show: false }
+        //     }
+        // });
+</script>
+{% endblock %}

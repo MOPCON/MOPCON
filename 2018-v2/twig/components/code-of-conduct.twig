@@ -1,0 +1,33 @@
+{% extends 'layouts/main.twig' %} {% block content %}
+<div class="container-fluid mt-md-5 mt-3 mb-3">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="paper">
+                <div class="paper-title">
+                    <h2 class="main-title text-center">
+                        {{ main.pagetitle }}
+                    </h2>
+                </div>
+                <div class="paper-content mb-4">
+                    {{ body.code_of_conduct | raw }}
+                </div>
+                <div class="paper-footer text-center">
+                    <a href="/" class="btn btn-link btn-lg">
+                        回首頁
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // 暫時這樣寫 but not good
+    window.lang = "{{ lang }}";
+    var btn_link = {
+        "en": "Home",
+        "zh": "回首頁"
+    }
+
+    $('.btn-link').text(btn_link[lang]);
+</script>
+{% endblock %}
