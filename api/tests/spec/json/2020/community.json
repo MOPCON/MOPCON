@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "社群清單 API",
+  "description": "提供社群資訊的 API",
+  "required": [
+    "success",
+    "message",
+    "data"
+  ],
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Request 是否成功"
+    },
+    "message": {
+      "type": "string",
+      "description": "訊息"
+    },
+    "data": {
+      "type": "object",
+      "items": {
+        "required": [
+          "community",
+          "participant"
+        ],
+        "properties": {
+          "community": {
+            "type": "array",
+            "description": "主辦社群清單"
+          },
+          "participant": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "name",
+                "name_e",
+                "photo"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "主辦社群 ID"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "中文社群名稱"
+                },
+                "name_e": {
+                  "type": "string",
+                  "description": "英文社群名稱"
+                },
+                "photo": {
+                  "type": "string",
+                  "description": "icon 圖片"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
