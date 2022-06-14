@@ -13,8 +13,8 @@ class BaseNewsController extends Controller
     private $columns = ['id', 'date', 'title', 'description', 'link'];
     public function __construct()
     {
-        $url = "https://spreadsheets.google.com/feeds/list/" . env($this->year . '_SHEET_KEY') . "/" . env($this->year . '_NEWS_ID') . "/public/values?alt=json";
-        $this->rawMap = $this->mapSheetData(json_decode($this->getSheetData($url), true));
+        $url = "https://sheets.googleapis.com/v4/spreadsheets/" . env($this->year . '_NEWS_ID') . "/values/sheet1?alt=json&key=" . env('SHEET_API_KEY');
+        $this->rawMap = $this->mapSheetData(json_decode($this->getSheetData($url), true)['values']);
     }
     /**
      * 取得 APP news API data
@@ -22,15 +22,15 @@ class BaseNewsController extends Controller
      */
     public function index()
     {
-        return $this->returnSuccess('Success.', array_values($this->rawMap));
+        return $this->returnSuccess('Success.', $this->rawMap);
     }
     public function show($id)
     {
-        if (!is_numeric($id)) {
+        if ($id < 1 || !is_numeric($id)) {
             return $this->returnError('Bad request');
         }
-        if (isset($this->rawMap[$id])) {
-            return $this->returnSuccess('Success.', $this->rawMap[$id]);
+        if (isset($this->rawMap[$id - 1])) {
+            return $this->returnSuccess('Success.', $this->rawMap[$id - 1]);
         }
         return $this->returnNotFoundError();
     }
@@ -73,20 +73,18 @@ class BaseNewsController extends Controller
     private function mapSheetData(array $rawArr): array
     {
         $result = [];
-        if (!isset($rawArr['feed']['entry'])) {
-            return $result;
-        }
-        array_walk($rawArr['feed']['entry'], function ($subset) use (&$result) {
-            $id = $subset['gsx$id']['$t'];
-            $subset['gsx$date']['$t'] = strtotime($subset['gsx$date']['$t'] . '+08:00');
-            $subset['gsx$id']['$t'] = (int)($subset['gsx$id']['$t']);
+        for ($i = 1; $i < count($rawArr); $i++) {
             $temp = [];
-            foreach ($this->columns as $key => $column) {
-                $temp[$column] = $subset["gsx$$column"]['$t'];
+            for ($j = 0; $j < count($rawArr[0]); $j++) {
+                if ($rawArr[0][$j] == "date") {
+                    $temp[$rawArr[0][$j]] = strtotime($rawArr[$i][$j]);
+                } else {
+                    $temp[$rawArr[0][$j]] = $rawArr[$i][$j];
+                }
             }
-            $result[$id] = $temp;
-        });
-        krsort($result);
+            array_push($result, $temp);
+        }
+        
         return $result;
     }
 }
