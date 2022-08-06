@@ -1,0 +1,53 @@
+{
+  "title": "志願者資訊 API",
+  "description": "提供志願者資訊的 API",
+  "required": [
+    "success",
+    "message",
+    "data"
+  ],
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Request 是否成功"
+    },
+    "message": {
+      "type": "string",
+      "description": "訊息"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "required": [
+          "name",
+          "name_e",
+          "photo",
+          "introduction",
+          "members"
+        ]
+      },
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "志願者中文名稱"
+        },
+        "name_e": {
+          "type": "string",
+          "description": "志願者英文名稱"
+        },
+        "photo": {
+          "type": "string",
+          "description": "志願者圖片"
+        },
+        "introduction": {
+          "type": "string",
+          "description": "志願者英文介紹"
+        },
+        "members": {
+          "type": "array",
+          "description": "志願者成員"
+        }
+      }
+    }
+  }
+}
