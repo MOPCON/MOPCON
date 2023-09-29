@@ -3,15 +3,15 @@
     "start": "9:15 - 10:00",
     "agenda": [
       {
-        "title": "數位發展部導入自然人憑證無密碼驗證與零信任",
-        "tab": ["#Security"],
-        "name": "周詳",
+        "title": "敬請期待",
+        "tab": ["敬請期待"],
+        "name": "敬請期待",
         "location": ""
       },
       {
         "title": "飛龍在天：無人飛行載具和軟體開發的新契機",
         "tab": ["#Mobile Technologies"],
-        "name": "黃敬群",
+        "name": "Drone Jserv",
         "location": ""
       }
     ],
@@ -29,9 +29,9 @@
         "location": ""
       },
       {
-        "title": "議程名稱-3",
-        "tab": ["#"],
-        "name": "Nickle",
+        "title": "敬請期待",
+        "tab": ["敬請期待"],
+        "name": "敬請期待",
         "location": ""
       }
     ],
@@ -42,15 +42,15 @@
     "start": "11:15 - 12:00",
     "agenda": [
       {
-        "title": "Data Lineage: The Secret Weapon to Maintaining ML/DL Models. / 資料血緣: 營運機器/深度學習模型的秘密武器",
-        "tab": ["#Machine Learning/AI"],
-        "name": "游騰林",
+        "title": "敬請期待",
+        "tab": ["敬請期待"],
+        "name": "敬請期待",
         "location": ""
       },
       {
-        "title": "War story: Implementing a modular phone call subsystem in AOSP",
-        "tab": ["#Mobile Technologies"],
-        "name": "Wig Cheng",
+        "title": "",
+        "tab": [""],
+        "name": "",
         "location": ""
       }
     ],
@@ -67,9 +67,9 @@
         "location": ""
       },
       {
-        "title": "跨界駕馭：Kotlin Multiplatform x 電動輔助自行車SDK開放的技術革命",
-        "tab": ["#Mobile Technologies"],
-        "name": "Kyle",
+        "title": "敬請期待",
+        "tab": ["敬請期待"],
+        "name": "敬請期待",
         "location": ""
       }
     ],
@@ -99,7 +99,7 @@
     "start": "15:30 - 16:15",
     "agenda": [
       {
-        "title": "Kimoji：Kimoji：使用 On-device LLM 實作心情日記的智能撰稿系統",
+        "title": "Kimoji：使用 On-device LLM 實作心情日記的智能撰稿系統",
         "tab": ["#Machine Learning/AI"],
         "name": "John Lu",
         "location": ""
@@ -118,9 +118,9 @@
     "start": "16:30 - 17:15",
     "agenda": [
       {
-        "title": "Lightning Talk",
-        "tab": ["", ""],
-        "name": "講者",
+        "title": "敬請期待",
+        "tab": ["敬請期待"],
+        "name": "敬請期待",
         "location": ""
       },
       {

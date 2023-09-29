@@ -190,7 +190,7 @@
     "name": "Wig Cheng",
     "jobTitle": "Android OS engineering manager",
     "hashTag": ["#Mobile Technologies"],
-    "introduce": "Open Source的愛好者, 沉浸在AOSP與Linux Kernel的世界. 目前在IEI集團擔任Android OS Manager",
+    "introduce": "一個Embedded Linux/Android BSP做了10多年的RD, 依然覺得自己很菜, 興趣是參與open source的開發",
     "agendaTopicName": "War story: Implementing a modular phone call subsystem in AOSP",
     "introductionToTheAgenda": "本議程的故事是描述作者在剛報到就要接手離職前人留下未完成的安卓系統案子, 在硬體不能修改, 軟體不知道有多少地雷, 開發時間非常有限的狀態下如何克服困難實作客戶要的4G/5G語音通話功能並順利出貨.\n\n一般AOSP的語音通話功能都是經由底層聲卡串接到硬體抽象層(HAL), 再往上串到framework給APK調用.但此案例的HAL已經被改的很亂, 在不動原本架構前提下, 作者想出一個利用tinyalsa在Android runtime (ART) 階段實作一個全新又簡易的語音子系統(背景跑daemon的方式), 也誤打誤撞實現了多聲卡隨意串接與AI語音功能導入在這個子系統. 除了會分享此語音子系統的架構外, 還會分享底層聲卡driver的移植與如何解決硬體方面遇到的問題, 全方面的分析希望能拋磚引玉, 讓在此行奮鬥的工程師有一個新的方式可以快速驗證4G/5G聲卡的硬體設計是否正確,與更好的解題思維.",
     "targetAudience": "",
@@ -310,7 +310,7 @@
     "jobTitle": "全曜財經資訊股份有限公司/資深軟體設計工程師",
     "hashTag": ["#Machine Learning/AI"],
     "introduce": "John 是「全曜財經」的 Android Group Lead，目前負責開發工程團隊的核心組件。他深受挑戰的驅使，並對於打破傳統的思維和行為方式成就滿懷。 具有三年的 Modern Android Development (MAD) 開發經驗，他致力於結合簡潔架構和流程設計，以構建高效且穩定的應用程式。",
-    "agendaTopicName": "Kimoji：Kimoji：使用 On-device LLM 實作心情日記的智能撰稿系統",
+    "agendaTopicName": "Kimoji：使用 On-device LLM 實作心情日記的智能撰稿系統",
     "introductionToTheAgenda": "LLM 的存儲空間非常大，並且通常需要大量的計算能力才能運行。 這意味著它們通常部署在雲端，並且由於行動裝置上的計算能力有限，因此對於 On-Device Machine Learning (ODML) 來說相當具有挑戰性。本次演講的目的是幫助開發者了解 LLM 運行在現代 Android 裝置上，可以達到什麼以及如何實現。 為此，我們將實作一款心情日記 App：Kimoji 中的智能撰稿系統。本次演講對於了解 On-Device Machine Learning 的實作非常有幫助，開發者可以很簡單地使用 KerasNLP 和 TensorFlow Lite 將 LLM 運行在 Android 裝置上。",
     "targetAudience": "",
     "priorKnowledge": "",
@@ -320,7 +320,7 @@
     "gitHub": "",
     "twitter": "",
     "website": "",
-    "Img": "/assets/images/SpeakerImg/speaker.png"
+    "Img": "/assets/images/SpeakerImg/John Lu.PNG"
   },
   {
     "name": "Sam Tu",
