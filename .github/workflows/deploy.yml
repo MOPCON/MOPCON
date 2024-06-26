@@ -1,0 +1,56 @@
+name: 部署到 DigitalOcean
+on:
+  push:
+    branches: 
+        - develop
+        - deploy
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码仓库
+        uses: actions/checkout@v3
+      
+      - name: 设置 Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      
+      - name: 安装依赖项
+        run: npm install
+      
+      - name: 构建应用程序
+        run: npm run build
+      
+      - name: 设置 SSH 密钥
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+            token: ${{ secrets.DIGITALOCEANTOKEN }}
+
+      - name: 获取 Droplet IP 地址
+        id: get-droplet-ip
+        run: |
+          DROPLET_IP=$(doctl compute droplet list --format PublicIPv4 --no-header --tag-name my-droplet-tag)
+          echo "Droplet IP 地址: $DROPLET_IP"
+          echo "::set-output name=droplet_ip::$DROPLET_IP"
+      
+      - name: 將應用程序文件複製到 Droplet (develop)
+        if: github.ref == 'refs/heads/develop'
+        run: |
+            scp -o StrictHostKeyChecking=no -r 2024/* ${{ steps.get-droplet-ip.outputs.droplet_ip }}:/var/www/mopcon-dev/2024
+  
+      - name: 將應用程序文件複製到 Droplet (deploy)
+        if: github.ref == 'refs/heads/deploy'
+        run: |
+            scp -o StrictHostKeyChecking=no -r 2024/* ${{ steps.get-droplet-ip.outputs.droplet_ip }}:/var/www/mopcon/2024
+        
+      - name: 重启 Droplet 上的 Nginx 服务
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ steps.get-droplet-ip.outputs.droplet_ip }} sudo systemctl restart nginx
