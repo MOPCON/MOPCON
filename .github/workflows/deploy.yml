@@ -4,6 +4,7 @@ on:
     branches: 
         - develop
         - deploy
+        - test-actions
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -42,7 +43,7 @@ jobs:
           echo "::set-output name=droplet_ip::$DROPLET_IP"
       
       - name: 將應用程序文件複製到 Droplet (develop)
-        if: github.ref == 'refs/heads/develop'
+        if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/test-actions'
         run: |
             scp -o StrictHostKeyChecking=no -r 2024/* ${{ steps.get-droplet-ip.outputs.droplet_ip }}:/var/www/mopcon-dev/2024
   
