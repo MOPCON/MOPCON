@@ -1,18 +1,17 @@
-name: 部署到 DigitalOcean
+name: Deploy to DigitalOcean
 on:
   push:
     branches: 
         - develop
         - deploy
-        - test-actions
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: 检出代码仓库
+      - name: Checkout
         uses: actions/checkout@v4
       
-      - name: 设置 Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -29,7 +28,7 @@ jobs:
         with:
           token: ${{ secrets.DIGITALOCEANTOKEN }}
       
-      - name: 获取 Droplet IP 地址
+      - name: Get Droplet IP
         id: get-droplet-ip
         run: |
           DROPLET_IP=$(doctl compute droplet list --format PublicIPv4 --no-header --tag-name website)
@@ -37,7 +36,7 @@ jobs:
             echo "Error: No Droplet IP found. Please check if the Droplet is correctly tagged and has a public IP."
             exit 1
           fi
-          echo "Droplet IP 地址: $DROPLET_IP"
+          echo "Droplet IP: $DROPLET_IP"
           echo "droplet_ip=$DROPLET_IP" >> $GITHUB_ENV
       
       - name: Setup SSH
@@ -46,11 +45,11 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ env.droplet_ip }} >> ~/.ssh/known_hosts
-        
+
       # TODO: 目前只有html檔,正式開發後可能需要修改來源資料夾
-      - name: 將應用程序文件複製到 Droplet
+      - name: rsync to Droplet
         run: |
-          if [ "${GITHUB_REF}" == "refs/heads/develop" ] || [ "${GITHUB_REF}" == "refs/heads/test-actions" ]; then
+          if [ "${GITHUB_REF}" == "refs/heads/develop" ]; then
             TARGET_DIR="/var/www/mopcon-dev/2024"
           elif [ "${GITHUB_REF}" == "refs/heads/deploy" ]; then
             TARGET_DIR="/var/www/mopcon/2024"
@@ -59,8 +58,8 @@ jobs:
             exit 1
           fi
           ssh -o StrictHostKeyChecking=no root@${{ env.droplet_ip }} "mkdir -p ${TARGET_DIR}"
-          scp -o StrictHostKeyChecking=no -r 2024/* root@${{ env.droplet_ip }}:${TARGET_DIR}
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" 2024/ root@${{ env.droplet_ip }}:${TARGET_DIR}
         
-      - name: 重启 Droplet 上的 Nginx 服务
+      - name: Restart Nginx
         run: |
           ssh -o StrictHostKeyChecking=no root@${{ env.droplet_ip }} sudo systemctl restart nginx
