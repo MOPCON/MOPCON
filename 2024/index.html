@@ -103,11 +103,26 @@
       crossorigin="anonymous"
     />
     <style type="text/css">
-      .c-nav-bg-color {
-        background-color: rgba(43, 56, 60, 1);
+      :root {
+        --navbar-height: 90px;
       }
-      .c-bg-color {
-        background-color: rgba(37, 78, 125, 1);
+      .navbar {
+        height: var(--navbar-height);
+        align-items: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+      }
+      .jumbotron {
+        height: calc(100dvh - var(--navbar-height));
+        padding: 1rem;
+        margin-inline: auto;
+        width: min(90vw, 1440px);
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
       }
     </style>
   </head>
@@ -128,7 +143,7 @@
   </script>
 
   <body>
-    <nav class="navbar navbar-dark bg-dark p-3 fixed-top">
+    <nav class="navbar bg-body-tertiary border-bottom">
       <div class="container-fluid">
         <a class="navbar-brand" href="./index.html">
           <img
@@ -196,16 +211,14 @@
         </ul>
       </div>
     </nav>
-    <section class="px-3 p-5 vh-100 d-flex align-items-center">
-      <div class="container">
-        <img
-          class="img-fluid"
-          src="./images/jumbotron.jpg"
-          alt="2024MOPCON"
-          height="1512"
-          width="2688"
-        />
-      </div>
+    <section class="jumbotron d-flex align-items-center">
+      <img
+        class="img-fluid"
+        src="./images/jumbotron.jpg"
+        alt="2024MOPCON"
+        height="1512"
+        width="2688"
+      />
     </section>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
