@@ -105,6 +105,7 @@
     <style type="text/css">
       :root {
         --navbar-height: 90px;
+        --bs-primary: #364757;
       }
       .navbar {
         height: var(--navbar-height);
@@ -113,11 +114,28 @@
         top: 0;
         left: 0;
       }
+      .btn-primary {
+        --bs-btn-color: #fff;
+        --bs-btn-bg: var(--bs-primary);
+        --bs-btn-border-color: var(--bs-primary);
+        --bs-btn-hover-bg: #273644;
+        --bs-btn-hover-border-color: #364757;
+        --bs-btn-active-bg: #364757;
+        --bs-btn-active-border-color: #364757;
+        --bs-btn-disabled-bg: var(--bs-primary);
+        --bs-btn-disabled-border-color: var(--bs-primary);
+      }
       .jumbotron {
-        height: calc(100dvh - var(--navbar-height));
-        padding: 1rem;
+        height: calc(95dvh - var(--navbar-height));
+        padding: clamp(1rem, 1rem + 3vw, 2.5rem);
+        padding-top: 0;
         margin-inline: auto;
         width: min(90vw, 1440px);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         img {
           height: 100%;
           width: 100%;
@@ -211,7 +229,7 @@
         </ul>
       </div>
     </nav>
-    <section class="jumbotron d-flex align-items-center">
+    <section class="jumbotron">
       <img
         class="img-fluid"
         src="./images/jumbotron.jpg"
@@ -219,6 +237,13 @@
         height="1512"
         width="2688"
       />
+      <a
+        class="btn btn-primary btn-lg px-5"
+        href="https://mopcon.kktix.cc/events/mopcon-2024-cfp"
+        target="_blank"
+        rel="noreferrer noopener"
+        >議程徵稿</a
+      >
     </section>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
