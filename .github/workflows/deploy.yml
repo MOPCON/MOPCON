@@ -17,12 +17,11 @@ jobs:
         with:
           node-version: '20'
       
-      # TODO: 確認2024是否需要build
-      # - name: build
-        # run: |
-          # cd 2024
-          # npm install
-          # npm run build
+      - name: Build project
+        run: |
+          cd 2024
+          npm install
+          npm run build
 
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
@@ -47,19 +46,18 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ env.droplet_ip }} >> ~/.ssh/known_hosts
 
-      # TODO: 目前只有html檔,正式開發後可能需要修改來源資料夾
-      - name: rsync to Droplet
+      - name: Deploy to Droplet
         run: |
-          if [ "${GITHUB_REF}" == "refs/heads/develop" ]; then
+          if [ "${GITHUB_REF}" == "refs/heads/develop" ] || [ "${GITHUB_REF}" == "refs/heads/test-actions" ]; then
             TARGET_DIR="/var/www/mopcon-dev/2024"
-          elif [ "${GITHUB_REF}" == "refs/heads/deploy" ] || [ "${GITHUB_REF}" == "refs/heads/test-actions" ]; then
+          elif [ "${GITHUB_REF}" == "refs/heads/deploy" ]; then
             TARGET_DIR="/var/www/mopcon/2024"
           else
             echo "No valid branch for deployment"
             exit 1
           fi
           ssh -o StrictHostKeyChecking=no root@${{ env.droplet_ip }} "mkdir -p ${TARGET_DIR}"
-          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" 2024/ root@${{ env.droplet_ip }}:${TARGET_DIR}
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" 2024/out/ root@${{ env.droplet_ip }}:${TARGET_DIR}
         
       - name: Restart Nginx
         run: |
