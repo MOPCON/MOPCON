@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply rounded-xl text-center px-5 py-3 font-bold;
+  }
+  .btn-primary {
+    @apply text-white border bg-gradient-to-r from-secondary to-light-green transition-all duration-300 hover:border-secondary hover:text-secondary  hover:from-secondary/[.3] hover:to-secondary/[.3];
+  }
+  .btn-secondary {
+    @apply text-secondary border border-secondary bg-white duration-300 hover:bg-secondary/[.3];
+  }
+  .paragraph {
+    @apply text-N800/80 leading-6;
+  }
+  .block-title {
+    @apply font-bold text-[39px] text-darkest-green;
+  }
+}
+
+/* @layer svg {
+  .path-line {
+    stroke-dasharray: 800, 800;
+    stroke-dashoffset: 800;
+    animation: path 5s linear infinite;
+  }
+
+  @keyframes path {
+    50% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: -800;
+    }
+  }
+} */
