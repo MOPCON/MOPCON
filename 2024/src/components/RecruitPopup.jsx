@@ -231,7 +231,7 @@ const RecruitPopup = () => {
         )}
       </AnimatePresence>
       <button
-        className="fixed bottom-5 right-5 w-[82px] h-[82px] rounded-[50%] flex items-center justify-center bg-navy-blue z-10"
+        className="fixed bottom-5 right-5 w-[80px] h-[80px] rounded-[50%] flex items-center justify-center bg-navy-blue z-10"
         onClick={openPopup}
         aria-label="Open Popup"
       >

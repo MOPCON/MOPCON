@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="my-10 pt-8">
       <FooterSvg className={"hidden mob:block w-full"} />
       <MobileFooterSvg className={"block mob:hidden w-full"} />
-      <div className="w-[min(84%,1204px)] mx-auto grid grid-cols-2 mt-14 mb-4">
+      <div className="w-[min(92%,1204px)] mx-auto gap-4 grid grid-cols-2 mt-14 mb-4">
         <div>
           <h5 className="mb-4 text-black font-bold">聯絡我們</h5>
           <a href="mailto:contact@mopcon.org">contact@mopcon.org</a>
