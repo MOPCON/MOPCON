@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
+import { getImageSrc } from "../util/getImageSrc";
 
 const SwiperCard = ({ img, title }) => {
   return (
@@ -21,7 +22,7 @@ const SwiperCard = ({ img, title }) => {
         <div className="overflow-hidden rounded-[50%] border border-white/60">
           <Image
             className="h-full object-contain"
-            src="/assets/img/swiper-default.webp"
+            src={getImageSrc("/img/swiper-default.webp")}
             width={32}
             height={32}
             alt={title}

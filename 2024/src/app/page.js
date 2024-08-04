@@ -8,6 +8,7 @@ import {
   LightRail,
   ExternalLink,
 } from "@/components/icons/icons";
+import { getImageSrc } from "@/components/util/getImageSrc";
 
 const SponsorSwiper = dynamic(() => import("@/components/ui/SponsorSwiper"));
 
@@ -66,7 +67,7 @@ export default function Home() {
           <div className="flex items-center justify-center rounded-2xl overflow-clip w-[min(50%,522px)] flex-shrink-0">
             <Image
               className="object-cover w-full h-full max-w-full"
-              src="/assets/img/2023-mopcon.webp"
+              src={getImageSrc("/img/2023-mopcon.webp")}
               width={522}
               height={380}
               alt="MOPCON 活動照片"
@@ -129,7 +130,7 @@ export default function Home() {
         <div className="w-full rounded-3xl overflow-hidden border-2 border-secondary">
           <Image
             className="object-cover w-full h-full max-w-full"
-            src="/assets/img/Exhibition-Center.webp"
+            src={getImageSrc("/img/Exhibition-Center.webp")}
             width={1204}
             height={629}
             alt="高雄展覽館"
