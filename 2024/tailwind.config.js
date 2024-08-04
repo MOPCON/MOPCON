@@ -19,8 +19,9 @@ module.exports = {
         cream: "#E9E3D7",
       },
       screens: {
-        mob: "810px",
-        pad: "1200px",
+        mob: "576px",
+        tablet: "810px",
+        laptop: "1200px",
         desk: "1440px",
       },
     },

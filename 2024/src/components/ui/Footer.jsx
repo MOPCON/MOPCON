@@ -1,11 +1,12 @@
-import FooterSvg from "./FooterSvg";
+import { FooterSvg, MobileFooterSvg } from "./FooterSvg";
 import { BsFacebook, BsTwitterX, BsTelegram } from "react-icons/bs";
 import { RiInstagramFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
     <footer className="my-10 pt-8">
-      <FooterSvg />
+      <FooterSvg className={"hidden mob:block w-full"} />
+      <MobileFooterSvg className={"block mob:hidden w-full"} />
       <div className="w-[min(84%,1204px)] mx-auto grid grid-cols-2 mt-14 mb-4">
         <div>
           <h5 className="mb-4 text-black font-bold">聯絡我們</h5>

@@ -20,11 +20,11 @@
   }
 }
 
-/* @layer svg {
+@layer svg {
   .path-line {
-    stroke-dasharray: 800, 800;
-    stroke-dashoffset: 800;
-    animation: path 5s linear infinite;
+    stroke-dasharray: var(--path-length), var(--path-length);
+    stroke-dashoffset: var(--path-length);
+    animation: path var(--s) linear infinite;
   }
 
   @keyframes path {
@@ -32,7 +32,7 @@
       stroke-dashoffset: 0;
     }
     100% {
-      stroke-dashoffset: -800;
+      stroke-dashoffset: var(--n-path-length);
     }
   }
-} */
+}

@@ -1,44 +1,24 @@
+"use client";
 import React, { Fragment } from "react";
-import Link from "next/link";
-import Logo from "./Logo";
-
-const links = [
-  { path: "/", label: "首頁" },
-  { path: "/community", label: "主辦社群" },
-  //   { path: "/", label: "議程介紹" },
-  //   { path: "/speaker", label: "講者陣容" },
-  //   { path: "/sponsor", label: "贊助夥伴" },
-  //   { path: "/ticket", label: "票種介紹" },
-  //   { path: "/", label: "共筆文件" },
-  //   { path: "/time-machine", label: "時光機" },
-];
+import dynamic from "next/dynamic";
+const NavDesktop = dynamic(() => import("../NavDesktop"));
+const NavMobile = dynamic(() => import("../NavMobile"));
 
 const Header = () => {
   return (
     <Fragment>
-      <header className="bg-white h-[82px] flex items-center justify-center sticky top-0 left-0 z-50">
-        <div className="flex items-center justify-between w-[min(84%,1204px)]">
-          <Link href="/" aria-label="Home">
-            <Logo />
-          </Link>
-
-          <nav className="flex items-center gap-8">
-            {links.map((link, i) => (
-              <Link
-                key={i}
-                href={link.path}
-                className="px-2 py-1 font-medium text-N800"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+      <header className="bg-white h-[52px] tablet:h-[82px] flex items-center justify-center sticky top-0 left-0 z-50">
+        <div className="tablet:flex items-center justify-between w-[min(84%,1204px)] hidden">
+          <NavDesktop />
+        </div>
+        <div className="flex tablet:hidden w-[84%]">
+          <NavMobile />
         </div>
         <div className="w-full h-[2px] absolute bottom-0 left-0 bg-gradient-to-r from-yellow to-light-green"></div>
       </header>
       <div className="h-[50px] flex">
         <svg
-          className="mt-auto translate-x-full"
+          className="mt-auto mr-[2rem] ml-auto tablet:ml-[10rem]"
           width="256"
           height="30"
           viewBox="0 0 256 30"

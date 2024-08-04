@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import { Noto_Sans_TC } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
+import RecruitPopup from "@/components/RecruitPopup";
 import Header from "@/components/ui/Header";
 
 const Footer = dynamic(() => import("@/components/ui/Footer"), {
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
     <html lang="zh-Hant">
       <body className={`${notoSans.className} bg-white overflow-x-hidden`}>
         <Header />
+        <RecruitPopup />
         <main>{children}</main>
         <Footer />
       </body>
