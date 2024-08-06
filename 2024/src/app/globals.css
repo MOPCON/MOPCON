@@ -25,6 +25,7 @@
     stroke-dasharray: var(--path-length), var(--path-length);
     stroke-dashoffset: var(--path-length);
     animation: path var(--s) linear infinite;
+    animation-delay: var(--d);
   }
 
   @keyframes path {

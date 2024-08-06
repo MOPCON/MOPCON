@@ -38,7 +38,7 @@ const Card = ({ icon, title, content }) => {
 export default function Home() {
   return (
     <Fragment>
-      <section className="w-[min(90%,860px)] mx-auto h-[calc(100vh-102px)] tablet:h-[calc(100vh-132px)] flex flex-col gap-5 justify-center items-center py-12">
+      <section className="w-[min(90%,860px)] mx-auto min-h-[calc(100dvh-102px)] tablet:min-h-[calc(100dvh-132px)] flex flex-col gap-5 justify-center items-center py-12">
         <h1 className="font-bold text-5xl text-darkest-green text-center">
           MOPCON x INSPIRATION
         </h1>
