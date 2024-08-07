@@ -212,10 +212,10 @@ export default function Home() {
           Google Map
         </a>
       </section>
-      <section className="pt-16 pb-20 mb-32">
+      {/* <section className="pt-16 pb-20 mb-32">
         <h4 className="block-title text-center mb-12">贊助夥伴</h4>
         <SponsorSwiper />
-      </section>
+      </section> */}
     </Fragment>
   );
 }
