@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const links = [
   { path: "/", label: "首頁" },
-  { path: "/community", label: "主辦社群" },
+  // { path: "/community", label: "主辦社群" },
   // { path: "/", label: "議程介紹" },
   // { path: "/speaker", label: "講者陣容" },
   // { path: "/sponsor", label: "贊助夥伴" },

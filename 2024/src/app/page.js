@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Image from "next/image";
+import { Link } from "next/link";
 import dynamic from "next/dynamic";
 import {
   Bus,
@@ -58,8 +59,22 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-col mob:flex-row w-full mob:w-fit items-center gap-3 mt-10">
-          <button className="btn btn-primary w-full">前往購票</button>
-          <button className="btn btn-secondary w-full">大會議程</button>
+          <a
+            href="https://mopcon.kktix.cc/events/mopcon-2024-cfp"
+            className="btn btn-primary w-full"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            前往投稿
+          </a>
+          <a
+            href="https://mopcon.kktix.cc/events/mopcon-2024-cfr"
+            className="btn btn-secondary w-full"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            推薦講者
+          </a>
         </div>
       </section>
       <section className="w-[min(90%,1204px)] mx-auto py-16">
@@ -135,8 +150,22 @@ export default function Home() {
             高雄市前鎮區成功二路39號
           </p>
           <div className="flex flex-col mob:flex-row w-full mx-auto mob:w-fit items-center gap-3 mt-4">
-            <button className="btn btn-primary w-full">場地資訊</button>
-            <button className="btn btn-secondary w-full">場館地圖</button>
+            <a
+              href="https://www.kecc.com.tw/traffic"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary w-full"
+            >
+              場地資訊
+            </a>
+            <a
+              href="https://www.kecc.com.tw/rental-venue"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary w-full"
+            >
+              場館地圖
+            </a>
           </div>
         </div>
         <div className="w-full rounded-3xl overflow-hidden border-2 border-secondary">

@@ -28,7 +28,11 @@ const NavMobile = () => {
       <Link href="/" aria-label="Home">
         <MobileLogo />
       </Link>
-      <button className="ms-auto px-2" onClick={toggleNav}>
+      <button
+        className="ms-auto px-2"
+        onClick={toggleNav}
+        aria-label="Menu-Open"
+      >
         <LuMenu className="text-2xl" />
       </button>
       <motion.div
@@ -37,7 +41,11 @@ const NavMobile = () => {
         }`}
         animate={showNav ? "open" : "closed"}
       >
-        <button className="absolute top-5 right-5 p-4" onClick={toggleNav}>
+        <button
+          className="absolute top-5 right-5 p-4"
+          onClick={toggleNav}
+          aria-label="Menu-Close"
+        >
           <IoClose className="text-2xl text-white" />
         </button>
         <motion.div
