@@ -1,22 +1,31 @@
 name: Deploy to DigitalOcean
 on:
   push:
-    branches: 
-        - develop
-        - deploy
-        - test-actions
+    branches:
+      - develop
+      - deploy
+
+  pull_request:
+    branches:
+      - develop
+      - deploy
+    types:
+      - opened
+      - synchronize
+      - reopened
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      
+          node-version: "20"
+
       - name: Build project
         run: |
           cd 2024
@@ -27,7 +36,7 @@ jobs:
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEANTOKEN }}
-      
+
       - name: Get Droplet IP
         id: get-droplet-ip
         run: |
@@ -38,7 +47,7 @@ jobs:
           fi
           echo "Droplet IP: $DROPLET_IP"
           echo "droplet_ip=$DROPLET_IP" >> $GITHUB_ENV
-      
+
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
@@ -48,7 +57,7 @@ jobs:
 
       - name: Deploy to Droplet
         run: |
-          if [ "${GITHUB_REF}" == "refs/heads/develop" ] || [ "${GITHUB_REF}" == "refs/heads/test-actions" ]; then
+          if [ "${GITHUB_REF}" == "refs/heads/develop" ]; then
             TARGET_DIR="/var/www/mopcon-dev/2024"
           elif [ "${GITHUB_REF}" == "refs/heads/deploy" ]; then
             TARGET_DIR="/var/www/mopcon/2024"
@@ -58,7 +67,7 @@ jobs:
           fi
           ssh -o StrictHostKeyChecking=no root@${{ env.droplet_ip }} "mkdir -p ${TARGET_DIR}"
           rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" 2024/out/ root@${{ env.droplet_ip }}:${TARGET_DIR}
-        
+
       - name: Restart Nginx
         run: |
           ssh -o StrictHostKeyChecking=no root@${{ env.droplet_ip }} sudo systemctl restart nginx
