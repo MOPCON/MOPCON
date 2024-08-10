@@ -50,44 +50,44 @@ const Venue = () => {
         </div>
       </div>
       <AnimatePresence>
-        {activeImage === "info" && (
-          <motion.div
-            key="info"
-            className="w-full rounded-3xl overflow-hidden border-2 border-secondary"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={animate}
-            transition={{ duration: 0.5 }}
-          >
-            <Image
-              className="object-cover w-full h-full max-w-full"
-              src={getImageSrc("/img/Exhibition-Center.webp")}
-              width={1204}
-              height={629}
-              alt="高雄展覽館場地資訊"
-            />
-          </motion.div>
-        )}
-        {activeImage === "map" && (
-          <motion.div
-            key="map"
-            className="w-full rounded-3xl overflow-hidden border-2 border-secondary"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={animate}
-            transition={{ duration: 0.5 }}
-          >
-            <Image
-              className="object-cover w-full h-full max-w-full"
-              src={getImageSrc("/img/Exhibition-Center-2.webp")}
-              width={1204}
-              height={629}
-              alt="高雄展覽館地圖"
-            />
-          </motion.div>
-        )}
+        <div className="w-full rounded-3xl overflow-hidden border-2 border-secondary">
+          {activeImage === "info" && (
+            <motion.div
+              key="info"
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              variants={animate}
+              transition={{ duration: 0.5 }}
+            >
+              <Image
+                className="object-cover w-full h-full max-w-full"
+                src={getImageSrc("/img/Exhibition-Center.webp")}
+                width={1204}
+                height={629}
+                alt="高雄展覽館場地資訊"
+              />
+            </motion.div>
+          )}
+          {activeImage === "map" && (
+            <motion.div
+              key="map"
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              variants={animate}
+              transition={{ duration: 0.5 }}
+            >
+              <Image
+                className="object-cover w-full h-full max-w-full"
+                src={getImageSrc("/img/Exhibition-Center-2.webp")}
+                width={1204}
+                height={629}
+                alt="高雄展覽館地圖"
+              />
+            </motion.div>
+          )}
+        </div>
       </AnimatePresence>
     </section>
   );
