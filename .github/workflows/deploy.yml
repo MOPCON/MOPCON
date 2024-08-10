@@ -1,33 +1,37 @@
 name: Deploy to DigitalOcean
 on:
-  push:
-    branches: 
-        - develop
-        - deploy
+  pull_request:
+    branches:
+      - develop
+      - deploy
+    types:
+      - opened
+      - synchronize
+      - reopened
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      
-      # TODO: 確認2024是否需要build
-      # - name: build
-        # run: |
-          # cd 2024
-          # npm install
-          # npm run build
+          node-version: "20"
+
+      - name: Build project
+        run: |
+          cd 2024
+          npm install
+          npm run build
 
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEANTOKEN }}
-      
+
       - name: Get Droplet IP
         id: get-droplet-ip
         run: |
@@ -38,7 +42,7 @@ jobs:
           fi
           echo "Droplet IP: $DROPLET_IP"
           echo "droplet_ip=$DROPLET_IP" >> $GITHUB_ENV
-      
+
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
@@ -46,20 +50,19 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ env.droplet_ip }} >> ~/.ssh/known_hosts
 
-      # TODO: 目前只有html檔,正式開發後可能需要修改來源資料夾
-      - name: rsync to Droplet
+      - name: Deploy to Droplet
         run: |
-          if [ "${GITHUB_REF}" == "refs/heads/develop" ]; then
+          if [ "${GITHUB_BASE_REF}" == "develop" ]; then
             TARGET_DIR="/var/www/mopcon-dev/2024"
-          elif [ "${GITHUB_REF}" == "refs/heads/deploy" ]; then
+          elif [ "${GITHUB_BASE_REF}" == "deploy" ]; then
             TARGET_DIR="/var/www/mopcon/2024"
           else
             echo "No valid branch for deployment"
             exit 1
           fi
           ssh -o StrictHostKeyChecking=no root@${{ env.droplet_ip }} "mkdir -p ${TARGET_DIR}"
-          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" 2024/ root@${{ env.droplet_ip }}:${TARGET_DIR}
-        
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" 2024/out/ root@${{ env.droplet_ip }}:${TARGET_DIR}
+
       - name: Restart Nginx
         run: |
           ssh -o StrictHostKeyChecking=no root@${{ env.droplet_ip }} sudo systemctl restart nginx
