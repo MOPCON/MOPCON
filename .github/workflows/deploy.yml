@@ -57,9 +57,9 @@ jobs:
 
       - name: Deploy to Droplet
         run: |
-          if [ "${GITHUB_REF}" == "refs/heads/develop" ]; then
+          if [ "${GITHUB_BASE_REF}" == "develop" ]; then
             TARGET_DIR="/var/www/mopcon-dev/2024"
-          elif [ "${GITHUB_REF}" == "refs/heads/deploy" ]; then
+          elif [ "${GITHUB_BASE_REF}" == "deploy" ]; then
             TARGET_DIR="/var/www/mopcon/2024"
           else
             echo "No valid branch for deployment"
