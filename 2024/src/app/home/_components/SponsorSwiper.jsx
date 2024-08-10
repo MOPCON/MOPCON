@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
-import { getImageSrc } from "../util/getImageSrc";
+import { getImageSrc } from "@/components/util/getImageSrc";
 
 const SwiperCard = ({ img, title }) => {
   return (
