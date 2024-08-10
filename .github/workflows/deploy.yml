@@ -1,10 +1,5 @@
 name: Deploy to DigitalOcean
 on:
-  push:
-    branches:
-      - develop
-      - deploy
-
   pull_request:
     branches:
       - develop
