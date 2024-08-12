@@ -59,7 +59,7 @@ jobs:
       - name: Deploy to Droplet
         run: |
           ssh -o StrictHostKeyChecking=no root@${{ env.droplet_ip }} "mkdir -p ${{ inputs.target_dir }}"
-          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" ${{ inputs.deploy_dir }}/ root@${{ env.droplet_ip }}:${{ inputs.target_dir }}
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" ${{ inputs.deploy_dir }}/out/ root@${{ env.droplet_ip }}:${{ inputs.target_dir }}
 
       - name: Restart Nginx
         run: |
