@@ -1,13 +1,19 @@
-name: Deploy to DigitalOcean
+name: Deploy Job
+
 on:
-  pull_request:
-    branches:
-      - develop
-      - deploy
-    types:
-      - opened
-      - synchronize
-      - reopened
+  workflow_call:
+    inputs:
+      deploy_dir:
+        required: true
+        type: string
+      target_dir:
+        required: true
+        type: string
+    secrets:
+      DIGITALOCEANTOKEN:
+        required: true
+      SSH_PRIVATE_KEY:
+        required: true
 
 jobs:
   build_and_deploy:
@@ -23,7 +29,7 @@ jobs:
 
       - name: Build project
         run: |
-          cd 2024
+          cd ${{ inputs.deploy_dir }}
           npm install
           npm run build
 
@@ -52,16 +58,8 @@ jobs:
 
       - name: Deploy to Droplet
         run: |
-          if [ "${GITHUB_BASE_REF}" == "develop" ]; then
-            TARGET_DIR="/var/www/mopcon-dev/2024"
-          elif [ "${GITHUB_BASE_REF}" == "deploy" ]; then
-            TARGET_DIR="/var/www/mopcon/2024"
-          else
-            echo "No valid branch for deployment"
-            exit 1
-          fi
-          ssh -o StrictHostKeyChecking=no root@${{ env.droplet_ip }} "mkdir -p ${TARGET_DIR}"
-          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" 2024/out/ root@${{ env.droplet_ip }}:${TARGET_DIR}
+          ssh -o StrictHostKeyChecking=no root@${{ env.droplet_ip }} "mkdir -p ${{ inputs.target_dir }}"
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" ${{ inputs.deploy_dir }}/out/ root@${{ env.droplet_ip }}:${{ inputs.target_dir }}
 
       - name: Restart Nginx
         run: |

@@ -1,0 +1,16 @@
+name: Deploy to Production Environment
+
+on:
+  push:
+    branches:
+      - deploy
+
+jobs:
+  call-deploy-job:
+    uses: ./.github/workflows/deploy-job.yml
+    with:
+      deploy_dir: "2024"
+      target_dir: "/var/www/mopcon/2024"
+    secrets:
+      DIGITALOCEANTOKEN: ${{ secrets.DIGITALOCEANTOKEN }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
