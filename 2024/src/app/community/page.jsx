@@ -1,5 +1,10 @@
-const Community = () => {
-  return <div>Community</div>;
-};
+// export const metadata = {
+//   title: "主辦社群",
+//   description: "...",
+// };
 
-export default Community;
+// const Community = () => {
+//   return <div></div>;
+// };
+
+// export default Community;
