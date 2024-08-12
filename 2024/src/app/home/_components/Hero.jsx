@@ -21,7 +21,7 @@ const Hero = () => {
       </div>
       <div className="flex flex-col mob:flex-row w-full mob:w-fit items-center gap-3 mt-10">
         <a
-          href="https://mopcon.kktix.cc/events/mopcon-2024-cfp"
+          href="https://mopcon.kktix.cc/events/mopcon-2024-cfp-playoff"
           className="btn btn-primary w-full"
           rel="noopener noreferrer"
           target="_blank"
