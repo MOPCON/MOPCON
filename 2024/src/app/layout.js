@@ -25,6 +25,7 @@ export default function RootLayout({ children }) {
       <body className={`${notoSans.className} bg-white overflow-x-hidden`}>
         <Header />
         <RecruitPopupButton />
+        <div id="modal-root"></div>
         <main>{children}</main>
         <Footer />
       </body>

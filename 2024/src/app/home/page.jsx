@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
-import Hero from "./_components/Hero";
-import About from "./_components/About";
-import Venue from "./_components/Venue";
-import Transportation from "./_components/Transportation";
+import Hero from "./_ui/Hero";
+import About from "./_ui/About";
+import Venue from "./_ui/Venue";
+import Transportation from "./_ui/Transportation";
 
 const Home = () => {
   return (

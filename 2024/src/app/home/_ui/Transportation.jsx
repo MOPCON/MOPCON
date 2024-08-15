@@ -1,10 +1,4 @@
-import {
-  Bus,
-  MRT,
-  HSR,
-  LightRail,
-  ExternalLink,
-} from "@/app/home/_components/icons";
+import { Bus, MRT, HSR, LightRail, ExternalLink } from "@/app/home/_ui/icons";
 
 const Card = ({ icon, title, content }) => {
   const iconMapping = {
