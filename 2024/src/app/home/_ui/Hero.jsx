@@ -8,12 +8,12 @@ const Hero = () => {
         Oct.26-27 高雄展覽館 Kaohsiung Exhibition Center
       </h2>
       <div className="mob:w-full tablet:w-10/12 mx-auto">
-        <p className="paragraph mb-5">
+        <p className="text-N800/80 leading-6 mb-5">
           晶片與算力成為現代科技工業的原物料，資料成為新世代科技的石油，推動 LLM
           與各種 Generative AI 算力發展到現在，證明了 Software-Defined
           將成為各種核心技術的關鍵字。而行動聯網技術搭配了日漸強大的邊緣運算，也讓二十世紀科幻電影場景逐漸在我們眼前實現，在這個萬般皆運算，所有物品都聯網的世代，所有未來的想像越來越寬廣。
         </p>
-        <p className="paragraph">
+        <p className="text-N800/80 leading-6">
           無論受到既有人類技術引發的靈感、科幻電影的啟發又或是 Generative AI
           鼓舞的點子，MOPCON 2024 選擇以 Inspiration
           為年度議題，讓我們一起尋找未來行動科技的敲門磚。

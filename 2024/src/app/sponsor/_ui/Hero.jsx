@@ -10,7 +10,7 @@ const Hero = () => {
           <br />
           有您們才能成就 MOPCON
         </h1>
-        <p className="paragraph mt-10">
+        <p className="text-N800/80 leading-6 mt-10">
           MOPCON
           目前已是南台灣最大技術社群研討會，成立宗旨為連結產業與資訊工程技術，以培養更多資訊科技人才，推動高雄產業創新發展，而沒有夥伴們的支持，這個願景就不可能成真！謝謝這
           10

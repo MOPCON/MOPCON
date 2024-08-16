@@ -16,7 +16,7 @@ const About = () => {
           />
         </div>
         <div className="mb-5 laptop:mb-0 col-start-1 row-start-1 laptop:col-span-3 laptop:col-start-4">
-          <h2 className="block-title text-center text-[31px] tablet:text-[39px]">
+          <h2 className="font-bold text-darkest-green text-center text-[31px] tablet:text-[39px]">
             關於 MOPCON
           </h2>
           <h3 className="font-medium mt-5 text-xl gap-2 laptop:gap-0 text-black underline decoration-1 underline-offset-4 text-center flex justify-center flex-col laptop:flex-row">
@@ -28,13 +28,13 @@ const About = () => {
           </h3>
         </div>
         <div className="col-start-1 mt-5 laptop:mt-0 row-start-4 laptop:col-span-3 laptop:row-span-2 laptop:col-start-4 laptop:row-start-2">
-          <p className="paragraph">
+          <p className="text-N800/80 leading-6">
             MOPCON（Mobile Open Platform Conference）再度來襲！從 2012
             年開始，我們已經度過 11 個年頭，從 160 人的小型聚會，逐漸成為 1000
             人以上的科技盛宴！MOPCON 集結了獨立開發者、軟體工程師、UI/UX
             設計師、軟體資料科學家、自造者、專業經理人、創業家、相關科系學生等多元背景，在這裡，我們一同探索科技的無限可能，互相啟發、互動交流。
           </p>
-          <p className="paragraph  mt-5">
+          <p className="text-N800/80 leading-6 mt-5">
             MOPCON
             不僅是一場盛會，更是多元資訊技術交流的港口！這裡匯聚了來自不同背景和領域的專業人士，共同分享經驗和知識，拓寬視野，激發創意。2024
             年，我們將以「Inspiration」為主題，深入探討前沿技術的實際應用與跨界整合，從

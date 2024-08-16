@@ -18,7 +18,7 @@ const Card = ({ icon, title, content }) => {
         )}
         {title}
       </div>
-      <p className="paragraph">{content}</p>
+      <p className="text-N800/80 leading-6">{content}</p>
     </div>
   );
 };
@@ -26,7 +26,9 @@ const Card = ({ icon, title, content }) => {
 const Transportation = () => {
   return (
     <section className="w-[min(84%,1204px)] mx-auto py-24 mb-10">
-      <h4 className="block-title text-center">交通方式</h4>
+      <h4 className="font-bold text-[39px] text-darkest-green text-center">
+        交通方式
+      </h4>
       <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6 my-10 tablet:mt-14 tablet:mb-20">
         <Card
           icon="bus"

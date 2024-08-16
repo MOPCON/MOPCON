@@ -12,12 +12,6 @@
   .btn-secondary {
     @apply text-secondary border border-secondary bg-white duration-300 hover:bg-secondary/[.3];
   }
-  .paragraph {
-    @apply text-N800/80 leading-6;
-  }
-  .block-title {
-    @apply font-bold text-[39px] text-darkest-green;
-  }
 }
 
 @layer svg {

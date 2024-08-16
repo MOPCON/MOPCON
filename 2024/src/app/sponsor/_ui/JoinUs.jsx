@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import { Speaker, Matchmaking, Brand, Leaf } from "./icons";
@@ -22,7 +21,9 @@ const Card = ({ icon, title, content }) => {
 const JoinUs = () => {
   return (
     <section className="w-[min(90%,1204px)] mx-auto py-16 mb-20">
-      <h2 className="block-title mb-5 text-center">想加入我們嗎？</h2>
+      <h2 className="font-bold text-[39px] text-darkest-green mb-5 text-center">
+        想加入我們嗎？
+      </h2>
       <p className="font-medium mt-5 text-xl text-black underline decoration-1 underline-offset-4 text-center mb-20">
         想了解成為贊助夥伴會有什麼樣的優勢嗎？
       </p>

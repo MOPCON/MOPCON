@@ -12,11 +12,7 @@ const SponsorCard = ({ ...sponsorData }) => {
   const [showModal, setShowModal] = useState(false);
   function handleClick() {
     setShowModal(!showModal);
-    if (!showModal) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = showModal ? "auto" : "hidden";
   }
 
   return (

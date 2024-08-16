@@ -24,8 +24,10 @@ const Venue = () => {
   return (
     <section className="w-[min(90%,1204px)] mx-auto flex flex-col items-center justify-center gap-8 laptop:gap-[4rem] py-24">
       <div className="flex flex-col gap-4 w-full">
-        <h4 className="block-title text-center">會場</h4>
-        <p className="paragraph text-center leading-7">
+        <h4 className="font-bold text-[39px] text-darkest-green text-center">
+          會場
+        </h4>
+        <p className="text-N800/80 leading-6 text-center leading-7">
           高雄展覽館 Kaohsiung Exhibition Center
           <br />
           高雄市前鎮區成功二路39號

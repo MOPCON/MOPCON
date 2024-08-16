@@ -9,11 +9,7 @@ const RecruitPopup = () => {
 
   function openPopup() {
     setShowPopup(!showPopup);
-    if (!showPopup) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = showPopup ? "auto" : "hidden";
   }
 
   return (
