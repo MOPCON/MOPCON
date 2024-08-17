@@ -21,7 +21,7 @@ const SponsorCard = ({ ...sponsorData }) => {
         className="rounded-[20px] cursor-pointer h-[260px] p-[3px] flex flex-col items-center justify-center hover:bg-[linear-gradient(-80deg,_#9CBC43_50%,_#4C766D)]"
         onClick={handleClick}
       >
-        <div className="bg-white rounded-[calc(20px-3px)] flex flex-col items-center justify-center w-full h-full">
+        <div className="bg-white rounded-[calc(20px-3px)] flex flex-col gap-4 items-center justify-center w-full h-full p-4">
           <div className="overflow-hidden rounded-[50%] border border-white/60">
             <Image
               className="h-full object-contain"

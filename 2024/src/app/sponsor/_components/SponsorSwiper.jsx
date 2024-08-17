@@ -13,7 +13,7 @@ import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 
 const SwiperCard = ({ img }) => {
   return (
-    <div className="overflow-clip bg-secondary rounded-[40px] w-[min(100%,800px)] h-[400px] flex items-center justify-center">
+    <div className="overflow-clip bg-secondary rounded-2xl tablet:rounded-[40px] w-[min(100%,800px)] h-[230px] tablet:h-[400px] flex items-center justify-center">
       <Image
         src="/assets/img/swiper-default.webp"
         width={120}
@@ -33,16 +33,17 @@ const SponsorSwiper = () => {
         loopAdditionalSlides={2}
         centeredSlides={true}
         effect={"creative"}
-        speed={400}
+        speed={440}
         loop={true}
         navigation={{
           nextEl: `.sponsor-next`,
           prevEl: `.sponsor-prev`,
         }}
-        autoplay={{
-          delay: 2000,
-          disableOnInteraction: false,
-        }}
+        breakpointsBase="container"
+        // autoplay={{
+        //   delay: 2000,
+        //   disableOnInteraction: false,
+        // }}
         pagination={{
           el: ".sponsor-pagination",
           clickable: true,
@@ -57,12 +58,11 @@ const SponsorSwiper = () => {
           },
         }}
         modules={[Navigation, EffectCreative, Pagination, Autoplay]}
-        // breakpoints={{
-        //   768: {
-        //     slidesPerView: "2",
-        //   },
-        // }}
-        width={800}
+        breakpoints={{
+          730: {
+            slidesPerView: "2",
+          },
+        }}
         creativeEffect={{
           limitProgress: 2,
           prev: {
@@ -73,7 +73,6 @@ const SponsorSwiper = () => {
             translate: [-180, 0, -180],
             scale: 0.9,
           },
-          shadowPerProgress: 3,
         }}
       >
         {Array(8)
@@ -87,7 +86,7 @@ const SponsorSwiper = () => {
       <div className="flex items-center gap-2 justify-center mt-6">
         <button
           type="button"
-          className="swiper-button-prev sponsor-prev text-2xl text-[#364758] p-4"
+          className="swiper-button-prev sponsor-prev text-2xl text-[#364758] p-4 hidden tablet:inline-block"
           aria-label="Previous Slide"
         >
           <IoArrowBack />
@@ -95,7 +94,7 @@ const SponsorSwiper = () => {
         <div className="swiper-pagination sponsor-pagination flex items-center gap-2"></div>
         <button
           type="button"
-          className="swiper-button-next sponsor-next text-2xl text-[#364758] p-4"
+          className="swiper-button-next sponsor-next text-2xl text-[#364758] p-4 hidden tablet:inline-block"
           aria-label="Next Slide"
         >
           <IoArrowForward />

@@ -26,7 +26,7 @@ const Modal = ({ sponsorData, onClose }) => {
   return (
     <BasicModal className="w-[min(95%,800px)] h-auto" onClose={onClose}>
       <div
-        className="rounded-[calc(54px-3px)] bg-white h-full w-full relative pt-10 px-20 pb-[60px]"
+        className="rounded-[calc(54px-3px)] bg-white h-full w-full relative pt-10 px-8 tablet:px-20 pb-[60px]"
         onClick={handleContentClick}
       >
         <div className="max-h-[600px] overflow-y-auto">

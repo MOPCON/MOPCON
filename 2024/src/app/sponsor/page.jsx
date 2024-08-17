@@ -16,8 +16,8 @@ const SponsorPage = async () => {
   return (
     <Fragment>
       <Hero />
-      <section className="py-16 w-[min(90%,1204px)] mx-auto">
-        <h2 className="font-bold text-darkest-green text-center text-[39px] mb-[4rem]">
+      <section className="pt-16 w-[min(90%,1204px)] mx-auto">
+        <h2 className="font-bold text-darkest-green text-center text-[31px] tablet:text-[39px] mb-[4rem]">
           2024 年度贊助夥伴
         </h2>
         {/* TODO: 等贊助商資訊再拿資料渲染出來 */}
