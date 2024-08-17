@@ -17,7 +17,7 @@ const Hero = () => {
           年來每一位夥伴的加入，和我們一起凝聚南臺灣的人才和知識，共同成長、學習！
         </p>
       </div>
-      <div className="w-[min(90%,860px)] tablet:w-full mx-auto py-10 tablet:[mask-image:linear-gradient(90deg,_transparent_0%,_#fff_20%,_#fff_80%,_transparent_100%)]">
+      <div className="w-[min(90%,860px)] tablet:w-full mx-auto py-10 tablet:[mask-image:linear-gradient(90deg,_transparent_0%,_#fff_30%,_#fff_70%,_transparent_100%)]">
         <SponsorSwiper />
       </div>
     </section>
