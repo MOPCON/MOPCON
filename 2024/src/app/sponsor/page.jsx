@@ -3,8 +3,8 @@ import AnnualSponsor from "./_ui/AnnualSponsor";
 import { Fragment } from "react";
 import SponsorCard from "./_components/SponsorCard";
 import JoinUs from "./_ui/JoinUs";
-import { getData } from "@/components/util/getData";
 import RecruitPartner from "./_ui/RecruitPartner";
+import SponsorData from "@/components/data/data.json";
 
 export const metadata = {
   title: "贊助夥伴",
@@ -12,8 +12,6 @@ export const metadata = {
 };
 
 const SponsorPage = async () => {
-  const SponsorData = await getData();
-
   return (
     <Fragment>
       <Hero />
