@@ -21,11 +21,11 @@ const Card = ({ icon, title, content }) => {
 const JoinUs = () => {
   return (
     <section className="w-[min(100%,1204px)] mx-auto py-8 tablet:py-16 mb-20">
-      <div className="max-w-[90%] mx-auto">
+      <div className="max-w-[90%] mx-auto flex flex-col items-center">
         <h2 className="font-bold text-[31px] tablet:text-[39px] text-darkest-green mb-5 text-center">
           想加入我們嗎？
         </h2>
-        <p className="font-medium mt-5 text-lg tablet:text-xl text-black underline decoration-1 underline-offset-4 tablet:text-center mb-10 tablet:mb-20">
+        <p className="font-medium text-lg tablet:text-xl text-black underline decoration-1 underline-offset-4 mb-10 tablet:mb-20">
           想了解成為贊助夥伴會有什麼樣的優勢嗎？
         </p>
       </div>

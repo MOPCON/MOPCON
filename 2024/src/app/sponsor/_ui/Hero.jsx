@@ -1,5 +1,14 @@
-import React from "react";
-import SponsorSwiper from "../_components/SponsorSwiper";
+import dynamic from "next/dynamic";
+const SponsorSwiper = dynamic(() => import("../_components/SponsorSwiper"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-[200px] tablet:h-auto tablet:w-3/4 flex mx-auto animate-pulse relative">
+      <div className="tablet:h-96 hidden tablet:block mx-auto rounded-3xl w-3/5 bg-cream relative z-[2]"></div>
+      <div className="tablet:h-72 hidden tablet:block mx-auto rounded-3xl w-3/4 bg-cream z-[1] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"></div>
+      <div className="h-full tablet:h-64 mx-auto rounded-3xl w-5/6 bg-cream absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"></div>
+    </div>
+  ),
+});
 
 const Hero = () => {
   return (
@@ -17,7 +26,7 @@ const Hero = () => {
           年來每一位夥伴的加入，和我們一起凝聚南臺灣的人才和知識，共同成長、學習！
         </p>
       </div>
-      <div className="w-[min(90%,860px)] tablet:w-full mx-auto py-10 tablet:[mask-image:linear-gradient(90deg,_transparent_0%,_#fff_30%,_#fff_70%,_transparent_100%)]">
+      <div className="w-[min(90%,860px)] h-[350px] tablet:h-[560px] tablet:w-full mx-auto py-10 tablet:[mask-image:linear-gradient(90deg,_transparent_0%,_#fff_30%,_#fff_70%,_transparent_100%)]">
         <SponsorSwiper />
       </div>
     </section>
