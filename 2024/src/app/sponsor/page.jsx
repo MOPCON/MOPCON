@@ -11,7 +11,7 @@ export const metadata = {
   description: "2024 年度的 MOPCON 贊助夥伴。",
 };
 
-const SponsorPage = async () => {
+const SponsorPage = () => {
   return (
     <Fragment>
       <Hero />
