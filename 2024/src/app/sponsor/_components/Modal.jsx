@@ -24,9 +24,12 @@ const Modal = ({ sponsorData, onClose }) => {
   };
 
   return (
-    <BasicModal className="w-[min(95%,800px)] h-auto" onClose={onClose}>
+    <BasicModal
+      className="w-[min(95%,800px)] rounded-3xl mob:rounded-[54px] h-auto"
+      onClose={onClose}
+    >
       <div
-        className="rounded-[calc(54px-3px)] bg-white h-full w-full relative pt-10 px-8 tablet:px-20 pb-[60px]"
+        className="rounded-[calc(24px-3px)] mob:rounded-[calc(54px-3px)] bg-white h-full w-full relative pt-10 px-8 mob:px-20 pb-[60px]"
         onClick={handleContentClick}
       >
         <div className="max-h-[600px] overflow-y-auto">
@@ -39,8 +42,8 @@ const Modal = ({ sponsorData, onClose }) => {
             <IoClose className="text-xl text-secondary" />
           </button>
           <div className="flex flex-col gap-10">
-            <div>
-              <div className="flex gap-3 items-center w-fit mb-3">
+            <div className="flex flex-col items-center mob:block">
+              <div className="flex gap-3 flex-col mob:flex-row items-center w-fit mb-3">
                 <div className="size-20 flex items-center justify-center">
                   <SponsorImage src={sponsorData.img} alt={sponsorData.name} />
                 </div>
@@ -82,7 +85,7 @@ const Modal = ({ sponsorData, onClose }) => {
                   </h3>
                   <SpeakerLeaf />
                 </div>
-                <div className="flex items-center justify-between gap-10">
+                <div className="flex items-center flex-col mob:flex-row justify-between gap-5 mob:gap-10">
                   <div className="size-20 flex items-center justify-center">
                     <SponsorImage
                       src={sponsorData.img}

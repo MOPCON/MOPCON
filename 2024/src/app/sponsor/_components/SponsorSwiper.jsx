@@ -10,12 +10,13 @@ import {
 import Image from "next/image";
 import "swiper/css";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
+import { getImageSrc } from "@/components/util/getImageSrc";
 
 const SwiperCard = ({ img }) => {
   return (
     <div className="overflow-clip bg-secondary rounded-2xl tablet:rounded-[40px] w-[min(100%,800px)] h-[230px] tablet:h-[400px] flex items-center justify-center">
       <Image
-        src="/assets/img/swiper-default.webp"
+        src={getImageSrc("/img/swiper-default.webp")}
         width={120}
         height={120}
         alt="sponsor"

@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import SponsorCard from "./_components/SponsorCard";
 import JoinUs from "./_ui/JoinUs";
 import { getData } from "@/components/util/getData";
+import RecruitPartner from "./_ui/RecruitPartner";
 
 export const metadata = {
   title: "贊助夥伴",
@@ -16,6 +17,7 @@ const SponsorPage = async () => {
   return (
     <Fragment>
       <Hero />
+      <JoinUs />
       <section className="pt-16 w-[min(90%,1204px)] mx-auto">
         <h2 className="font-bold text-darkest-green text-center text-[31px] tablet:text-[39px] mb-[4rem]">
           2024 年度贊助夥伴
@@ -29,7 +31,7 @@ const SponsorPage = async () => {
           </AnnualSponsor>
         ))}
       </section>
-      <JoinUs />
+      <RecruitPartner />
     </Fragment>
   );
 };

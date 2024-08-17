@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
-import { Speaker, Matchmaking, Brand, Leaf } from "./icons";
+import { Speaker, Matchmaking, Brand } from "./icons";
 
 const Card = ({ icon, title, content }) => {
   return (
@@ -12,7 +12,7 @@ const Card = ({ icon, title, content }) => {
         <h4 className="font-medium text-white text-lg leading-7 tablet:mb-1">
           {title}
         </h4>
-        <p className="text-white/70 leading-6 line-clamp-2">{content}</p>
+        <p className="text-white/70 leading-6">{content}</p>
       </div>
     </div>
   );
@@ -55,19 +55,10 @@ const JoinUs = () => {
         <Image
           width={500}
           height={500}
-          src={getImageSrc("/sponsor/join-us-bg.png")}
+          src={getImageSrc("/sponsor/join-us-bg.webp")}
           alt="bg-img"
-          className="absolute w-10/12 h-full object-cover bottom-0 left-0 translate-y-[25%] [mask-image:linear-gradient(25deg,_#fff_-50%,_transparent_70%)] pointer-events-none"
+          className="absolute w-10/12 h-full object-cover bottom-0 left-0 translate-y-[25%] [mask-image:linear-gradient(25deg,_#fff_-50%,_transparent_70%)] pointer-events-none brightness-0 invert"
         />
-      </div>
-      <div className="max-w-[90%] tablet:max-w-[530px] mx-auto flex flex-col justify-center items-center">
-        <p className="mb-5 tablet:text-center text-N800">
-          謝謝你願意成為全台最大行動科技領域社群研討會的參與者及貢獻者之一！
-        </p>
-        <button className="btn btn-primary flex items-center gap-3 group">
-          <Leaf className="stroke-white group-hover:stroke-secondary" />
-          我要贊助
-        </button>
       </div>
     </section>
   );
