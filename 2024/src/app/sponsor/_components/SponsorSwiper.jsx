@@ -60,7 +60,7 @@ const SponsorSwiper = () => {
         modules={[Navigation, EffectCreative, Pagination, Autoplay]}
         breakpoints={{
           730: {
-            slidesPerView: "2",
+            slidesPerView: "2.5",
           },
         }}
         creativeEffect={{
