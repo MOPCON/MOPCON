@@ -2,7 +2,7 @@
 import { ExternalLink } from "@/app/home/_ui/icons";
 import dynamic from "next/dynamic";
 const Card = dynamic(() => import("./TransCard"), { ssr: false });
-import { LayoutGroup } from "framer-motion";
+import { LayoutGroup, LayoutGroupContext } from "framer-motion";
 
 const cardContents = [
   {
@@ -38,7 +38,7 @@ const Transportation = () => {
         交通方式
       </h4>
       <LayoutGroup id="transportation">
-        <div className="grid grid-cols-1 tablet:grid-cols-2 my-10 gap-6 tablet:mt-14 tablet:mb-20">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 my-10 tablet:mt-14 tablet:mb-20">
           {cardContents.map(({ icon, title, content, id }) => (
             <Card
               icon={icon}
