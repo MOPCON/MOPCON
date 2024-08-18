@@ -2,7 +2,8 @@
 import { ExternalLink } from "@/app/home/_ui/icons";
 import dynamic from "next/dynamic";
 const Card = dynamic(() => import("./TransCard"), { ssr: false });
-import { LayoutGroup, LayoutGroupContext } from "framer-motion";
+import { LayoutGroup } from "framer-motion";
+import { useState } from "react";
 
 const cardContents = [
   {
@@ -32,24 +33,29 @@ const cardContents = [
 ];
 
 const Transportation = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   return (
     <section className="w-[min(84%,1204px)] mx-auto py-24 mb-10">
       <h4 className="font-bold text-[39px] text-darkest-green text-center">
         交通方式
       </h4>
-      <LayoutGroup id="transportation">
-        <div className="grid grid-cols-1 tablet:grid-cols-2 my-10 tablet:mt-14 tablet:mb-20">
-          {cardContents.map(({ icon, title, content, id }) => (
-            <Card
-              icon={icon}
-              title={title}
-              content={content}
-              idx={id}
-              key={id}
-            />
-          ))}
-        </div>
-      </LayoutGroup>
+      <div
+        className="grid grid-cols-1 tablet:grid-cols-2 my-10 gap-6 tablet:mt-14 tablet:mb-20"
+        onMouseLeave={() => setHoveredIndex(null)}
+      >
+        {cardContents.map(({ icon, title, content, id }) => (
+          <Card
+            icon={icon}
+            title={title}
+            content={content}
+            idx={id}
+            key={id}
+            onHover={() => setHoveredIndex(id)}
+            isHovered={hoveredIndex === id}
+          />
+        ))}
+      </div>
       <a
         className="btn btn-primary rounded-full border-2 group flex items-center gap-2 w-fit mx-auto text-xl"
         href="https://goo.gl/maps/KERub4DGSAztf57c7"

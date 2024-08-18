@@ -8,8 +8,7 @@ const SponsorModal = dynamic(() => import("./Modal"), {
   ssr: false,
 });
 
-const SponsorCard = ({ ...sponsorData }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+const SponsorCard = ({ onHover, isHovered, ...sponsorData }) => {
   const [showModal, setShowModal] = useState(false);
   function handleClick() {
     setShowModal(!showModal);
@@ -21,8 +20,7 @@ const SponsorCard = ({ ...sponsorData }) => {
       <div
         className="rounded-[20px] cursor-pointer h-[260px] p-[3px] flex flex-col items-center justify-center relative"
         onClick={handleClick}
-        onMouseEnter={() => setHoveredIndex(sponsorData.id)}
-        onMouseLeave={() => setHoveredIndex(null)}
+        onMouseEnter={() => onHover(sponsorData.id)}
       >
         <div className="flex flex-col gap-4 items-center justify-center w-full h-full p-4 relative z-[1]">
           <div className="overflow-hidden rounded-[50%] border border-white/60">
@@ -39,11 +37,11 @@ const SponsorCard = ({ ...sponsorData }) => {
           </span>
         </div>
         <AnimatePresence>
-          {sponsorData.id === hoveredIndex && (
+          {isHovered && (
             <motion.div
               className="absolute p-[3px] rounded-[20px] inset-0 w-full h-full bg-[linear-gradient(-80deg,_#9CBC43_50%,_#4C766D)] block "
               layoutId="animated-bg"
-              layout="position"
+              layout="true"
               initial={{ opacity: 0 }}
               animate={{
                 opacity: 1,
