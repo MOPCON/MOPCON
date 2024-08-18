@@ -51,6 +51,9 @@ const SponsorCard = ({ ...sponsorData }) => {
               exit={{
                 opacity: 0,
               }}
+              transition={{
+                layout: { duration: 0.5, type: "spring" },
+              }}
             >
               <div className="rounded-[calc(20px-3px)] w-full h-full bg-white" />
             </motion.div>

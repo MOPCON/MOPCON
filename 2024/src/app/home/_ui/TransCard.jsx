@@ -32,6 +32,9 @@ const Card = ({ icon, title, content, idx }) => {
             exit={{
               opacity: 0,
             }}
+            transition={{
+              layout: { duration: 0.8, type: "spring" },
+            }}
           />
         )}
       </AnimatePresence>
