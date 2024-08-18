@@ -14,12 +14,12 @@ const Card = ({ icon, title, content, idx }) => {
   const IconComponent = iconMapping[icon.toLowerCase()];
 
   return (
-    <div className="py-3 px-0 tablet:px-3">
-      <div
-        className="group w-full h-full block rounded-xl px-5 py-4 relative"
-        onMouseEnter={() => setHoveredIndex(idx)}
-        onMouseLeave={() => setHoveredIndex(null)}
-      >
+    <div
+      className="py-3 px-0 tablet:px-3"
+      onMouseEnter={() => setHoveredIndex(idx)}
+      onMouseLeave={() => setHoveredIndex(null)}
+    >
+      <div className="group w-full h-full block rounded-xl px-5 py-4 relative">
         <AnimatePresence>
           {idx === hoveredIndex && (
             <motion.div
