@@ -37,7 +37,7 @@ const Transportation = () => {
       <h4 className="font-bold text-[39px] text-darkest-green text-center">
         交通方式
       </h4>
-      <LayoutGroup>
+      <LayoutGroup id="transportation">
         <div className="grid grid-cols-1 tablet:grid-cols-2 my-10 gap-6 tablet:mt-14 tablet:mb-20">
           {cardContents.map(({ icon, title, content, id }) => (
             <Card

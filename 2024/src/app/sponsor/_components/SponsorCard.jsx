@@ -42,7 +42,7 @@ const SponsorCard = ({ ...sponsorData }) => {
           {sponsorData.id === hoveredIndex && (
             <motion.div
               className="absolute p-[3px] rounded-[20px] inset-0 w-full h-full bg-[linear-gradient(-80deg,_#9CBC43_50%,_#4C766D)] block "
-              layoutId="border"
+              layoutId="animated-bg"
               layout="position"
               initial={{ opacity: 0 }}
               animate={{

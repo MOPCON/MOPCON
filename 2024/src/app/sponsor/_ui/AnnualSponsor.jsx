@@ -22,7 +22,7 @@ const AnnualSponsor = () => {
         2024 年度贊助夥伴
       </h2>
       {/* TODO: 等贊助商資訊再拿資料渲染出來 */}
-      <LayoutGroup>
+      <LayoutGroup id="sponsors">
         {SponsorData?.sponsors.map((item, index) => (
           <AnnualSponsorBlock key={index} title={item.level}>
             {item.companies?.map((sponsor, index) => (
