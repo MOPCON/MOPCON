@@ -1,27 +1,35 @@
-import { Bus, MRT, HSR, LightRail, ExternalLink } from "@/app/home/_ui/icons";
+"use client";
+import { ExternalLink } from "@/app/home/_ui/icons";
+import dynamic from "next/dynamic";
+const Card = dynamic(() => import("./TransCard"), { ssr: false });
+import { LayoutGroup } from "framer-motion";
 
-const Card = ({ icon, title, content }) => {
-  const iconMapping = {
-    bus: Bus,
-    mrt: MRT,
-    hsr: HSR,
-    lightrail: LightRail,
-  };
-
-  const IconComponent = iconMapping[icon.toLowerCase()];
-
-  return (
-    <div className="group w-full border border-transparent rounded-xl px-5 py-4 transition-all duration-300 hover:border-secondary hover:shadow-[0_2px_6px_0_rgba(156,188,67,0.3),0_13px_12px_0_rgba(156,188,67,0.05),0_24px_15px_0_rgba(156,188,67,0.05),0_40px_16px_0_rgba(156,188,67,0.05),0_62px_17px_0_rgba(156,188,67,0.05)]">
-      <div className="font-bold text-lg text-black flex items-center gap-2 transition-colors duration-300 group-hover:text-secondary">
-        {IconComponent && (
-          <IconComponent className="stroke-black group-hover:stroke-secondary transition-colors duration-300" />
-        )}
-        {title}
-      </div>
-      <p className="text-N800/80 leading-6">{content}</p>
-    </div>
-  );
-};
+const cardContents = [
+  {
+    id: 0,
+    icon: "bus",
+    title: "公車 Bus",
+    content: "搭乘紅21、紅22、168環狀東幹線至高雄展覽館站",
+  },
+  {
+    id: 1,
+    icon: "hsr",
+    title: "高鐵 HSR",
+    content: "從左營高鐵站搭乘捷運紅線至三多商圈站",
+  },
+  {
+    id: 2,
+    icon: "mrt",
+    title: "捷運 MRT",
+    content: "至三多商圈站步行約10分鐘即可抵達",
+  },
+  {
+    id: 3,
+    icon: "lightRail",
+    title: "輕鐵 Light Rail",
+    content: "搭乘捷運紅線至三多商圈站",
+  },
+];
 
 const Transportation = () => {
   return (
@@ -29,28 +37,19 @@ const Transportation = () => {
       <h4 className="font-bold text-[39px] text-darkest-green text-center">
         交通方式
       </h4>
-      <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6 my-10 tablet:mt-14 tablet:mb-20">
-        <Card
-          icon="bus"
-          title="公車 Bus"
-          content="搭乘紅21、紅22、168環狀東幹線至高雄展覽館站"
-        />
-        <Card
-          icon="hsr"
-          title="高鐵 HSR"
-          content="從左營高鐵站搭乘捷運紅線至三多商圈站"
-        />
-        <Card
-          icon="mrt"
-          title="捷運 MRT"
-          content="至三多商圈站步行約10分鐘即可抵達"
-        />
-        <Card
-          icon="lightRail"
-          title="輕軌 Light Rail"
-          content="至軟體園區站步行約5分鐘即可抵達"
-        />
-      </div>
+      <LayoutGroup>
+        <div className="grid grid-cols-1 tablet:grid-cols-2 my-10 gap-6 tablet:mt-14 tablet:mb-20">
+          {cardContents.map(({ icon, title, content, id }) => (
+            <Card
+              icon={icon}
+              title={title}
+              content={content}
+              idx={id}
+              key={id}
+            />
+          ))}
+        </div>
+      </LayoutGroup>
       <a
         className="btn btn-primary rounded-full border-2 group flex items-center gap-2 w-fit mx-auto text-xl"
         href="https://goo.gl/maps/KERub4DGSAztf57c7"

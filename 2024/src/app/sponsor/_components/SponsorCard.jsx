@@ -2,13 +2,14 @@
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import { useState, Fragment } from "react";
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 const SponsorModal = dynamic(() => import("./Modal"), {
   ssr: false,
 });
 
 const SponsorCard = ({ ...sponsorData }) => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   const [showModal, setShowModal] = useState(false);
   function handleClick() {
     setShowModal(!showModal);
@@ -18,10 +19,12 @@ const SponsorCard = ({ ...sponsorData }) => {
   return (
     <Fragment>
       <div
-        className="rounded-[20px] cursor-pointer h-[260px] p-[3px] flex flex-col items-center justify-center hover:bg-[linear-gradient(-80deg,_#9CBC43_50%,_#4C766D)]"
+        className="rounded-[20px] cursor-pointer h-[260px] p-[3px] flex flex-col items-center justify-center relative"
         onClick={handleClick}
+        onMouseEnter={() => setHoveredIndex(sponsorData.id)}
+        onMouseLeave={() => setHoveredIndex(null)}
       >
-        <div className="bg-white rounded-[calc(20px-3px)] flex flex-col gap-4 items-center justify-center w-full h-full p-4">
+        <div className="flex flex-col gap-4 items-center justify-center w-full h-full p-4 relative z-[1]">
           <div className="overflow-hidden rounded-[50%] border border-white/60">
             <Image
               className="h-full object-contain"
@@ -35,6 +38,24 @@ const SponsorCard = ({ ...sponsorData }) => {
             {sponsorData.name}
           </span>
         </div>
+        <AnimatePresence>
+          {sponsorData.id === hoveredIndex && (
+            <motion.div
+              className="absolute p-[3px] rounded-[20px] inset-0 w-full h-full bg-[linear-gradient(-80deg,_#9CBC43_50%,_#4C766D)] block "
+              layoutId="border"
+              layout="position"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+              }}
+              exit={{
+                opacity: 0,
+              }}
+            >
+              <div className="rounded-[calc(20px-3px)] w-full h-full bg-white" />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
       <AnimatePresence>
         {showModal && (

@@ -27,7 +27,7 @@ const Venue = () => {
         <h4 className="font-bold text-[39px] text-darkest-green text-center">
           會場
         </h4>
-        <p className="text-N800/80 leading-6 text-center leading-7">
+        <p className="text-N800/80 leading-6 text-center">
           高雄展覽館 Kaohsiung Exhibition Center
           <br />
           高雄市前鎮區成功二路39號
