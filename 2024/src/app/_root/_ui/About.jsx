@@ -16,9 +16,7 @@ const About = () => {
           />
         </div>
         <div className="mb-5 laptop:mb-0 col-start-1 row-start-1 laptop:col-span-3 laptop:col-start-4">
-          <h2 className="font-bold text-darkest-green text-center text-[31px] tablet:text-[39px]">
-            關於 MOPCON
-          </h2>
+          <h2 className="block-title">關於 MOPCON</h2>
           <h3 className="font-medium mt-5 text-xl gap-2 laptop:gap-0 text-black underline decoration-1 underline-offset-4 text-center flex justify-center flex-col laptop:flex-row">
             <span>聚集知識與人才</span>
             <span className="hidden laptop:inline-block">X</span>{" "}

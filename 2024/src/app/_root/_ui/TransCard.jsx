@@ -1,5 +1,5 @@
 "use client";
-import { Bus, MRT, HSR, LightRail } from "@/app/home/_ui/icons";
+import { Bus, MRT, HSR, LightRail } from "./icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 const Card = ({ icon, title, content, idx, onHover, isHovered }) => {

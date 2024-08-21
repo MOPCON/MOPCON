@@ -12,6 +12,9 @@
   .btn-secondary {
     @apply text-secondary border border-secondary bg-white duration-300 hover:bg-secondary/[.3];
   }
+  .block-title {
+    @apply font-bold text-darkest-green text-center text-[31px] tablet:text-[39px];
+  }
 }
 
 @layer svg {

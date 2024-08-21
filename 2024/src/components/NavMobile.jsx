@@ -36,7 +36,7 @@ const NavMobile = () => {
         <LuMenu className="text-2xl" />
       </button>
       <motion.div
-        className={`fixed top-0 duration-300 h-screen w-screen bg-[linear-gradient(152deg,_#4D766E_42%,_#364758)] z-50 right-0 flex flex-col justify-center items-center ${
+        className={`fixed top-0 duration-300 h-dvh w-screen bg-[linear-gradient(152deg,_#4D766E_42%,_#364758)] z-50 right-0 flex flex-col justify-center items-center ${
           showNav ? "translate-x-0" : "translate-x-full"
         }`}
         animate={showNav ? "open" : "closed"}
