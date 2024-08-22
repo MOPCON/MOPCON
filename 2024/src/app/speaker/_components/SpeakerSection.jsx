@@ -4,10 +4,17 @@ import Button from "./Button";
 import Data from "@/components/data/data.json";
 import SpeakerCard from "./SpeakerCard";
 import { motion, AnimatePresence } from "framer-motion";
+import SpeakerModal from "./SpeakerModal";
 
 const SpeakerSection = () => {
   const [tags, setTags] = useState([]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [selectedSpeakerModal, setSelectedSpeakerModal] = useState(null);
+
+  const handleSpeaker = (speaker) => {
+    setSelectedSpeakerModal(speaker);
+    document.body.style.overflow = "hidden";
+  };
 
   const handleTag = (tag) => {
     if (tags.map((item) => item.id).includes(tag.id)) {
@@ -17,7 +24,7 @@ const SpeakerSection = () => {
     }
   };
 
-  const selectedSpeaker = Data.speakers.filter((speaker) =>
+  const selectedTypeSpeaker = Data.speakers.filter((speaker) =>
     tags.every((tag) =>
       speaker.tags.some((speakerTag) => speakerTag.id === tag.id)
     )
@@ -42,7 +49,7 @@ const SpeakerSection = () => {
         onMouseLeave={() => setHoveredIndex(null)}
       >
         <AnimatePresence>
-          {selectedSpeaker.map((speaker) => (
+          {selectedTypeSpeaker.map((speaker) => (
             <motion.div
               key={speaker.speakerId}
               initial={{ opacity: 0, y: 20 }}
@@ -55,11 +62,24 @@ const SpeakerSection = () => {
                 {...speaker}
                 onHover={() => setHoveredIndex(speaker.speakerId)}
                 isHovered={hoveredIndex === speaker.speakerId}
+                handleClick={() => handleSpeaker(speaker)}
               />
             </motion.div>
           ))}
         </AnimatePresence>
       </div>
+
+      <AnimatePresence>
+        {selectedSpeakerModal && (
+          <SpeakerModal
+            {...selectedSpeakerModal}
+            onClose={() => {
+              setSelectedSpeakerModal(null);
+              document.body.style.overflow = "auto";
+            }}
+          />
+        )}
+      </AnimatePresence>
     </Fragment>
   );
 };

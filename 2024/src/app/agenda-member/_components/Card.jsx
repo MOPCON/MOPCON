@@ -2,9 +2,10 @@
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 
-const Card = ({ isHovered, onHover, handleClick, ...agendaMember }) => {
+import SocialLinks from "./SocialLinks";
+
+const MemberCard = ({ isHovered, onHover, handleClick, ...props }) => {
   return (
     <div
       className="rounded-[20px] cursor-pointer h-[400px] p-[3px] flex flex-col items-center justify-center relative"
@@ -18,17 +19,17 @@ const Card = ({ isHovered, onHover, handleClick, ...agendaMember }) => {
             src={getImageSrc("/img/swiper-default.webp")}
             width={120}
             height={120}
-            alt={agendaMember.name}
+            alt={props.name}
           />
         </div>
-        <h5 className="text-center font-bold text-N800 text-xl before:inset-0 before:absolute">
-          {agendaMember.name}
+        <h5 className="text-center font-bold text-N800 text-xl">
+          {props.name}
         </h5>
         <span className="text-center text-N800 mb-6 block">
-          {agendaMember.company}/{agendaMember.jobTitle}
+          {props.company}/{props.jobTitle}
         </span>
         <div className="flex flex-wrap gap-3 items-center">
-          <Link className="bg-secondary rounded-[50%] w-7 h-7 text-white flex items-center justify-center"></Link>
+          <SocialLinks speaker={props} />
         </div>
       </div>
       <AnimatePresence>
@@ -56,4 +57,4 @@ const Card = ({ isHovered, onHover, handleClick, ...agendaMember }) => {
   );
 };
 
-export default Card;
+export default MemberCard;

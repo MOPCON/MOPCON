@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-
+import MemberSection from "./_components/MemberSection";
 const Page = () => {
   return (
     <Fragment>
@@ -20,6 +20,7 @@ const Page = () => {
         <h3 className="block-title mb-[60px]">
           一探 <span className="text-light-green">議程智囊團隊</span>
         </h3>
+        <MemberSection />
       </section>
     </Fragment>
   );

@@ -1,9 +1,8 @@
 "use client";
 import { Bus, MRT, HSR, LightRail } from "./icons";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+
 const Card = ({ icon, title, content, idx, onHover, isHovered }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
   const iconMapping = {
     bus: Bus,
     mrt: MRT,
