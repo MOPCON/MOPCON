@@ -7,6 +7,7 @@ const links = [
   // { path: "/community", label: "主辦社群" },
   // { path: "/", label: "議程介紹" },
   { path: "/speaker", label: "講者陣容" },
+  { path: "/agenda-member", label: "議程委員" },
   { path: "/sponsor", label: "贊助夥伴" },
   // { path: "/ticket", label: "票種介紹" },
   // { path: "/", label: "共筆文件" },

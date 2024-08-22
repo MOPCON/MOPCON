@@ -2,8 +2,9 @@
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
-const SpeakerCard = ({ isHovered, onHover, handleClick, ...speakerData }) => {
+const Card = ({ isHovered, onHover, handleClick, ...agendaMember }) => {
   return (
     <div
       className="rounded-[20px] cursor-pointer h-[400px] p-[3px] flex flex-col items-center justify-center relative"
@@ -17,24 +18,17 @@ const SpeakerCard = ({ isHovered, onHover, handleClick, ...speakerData }) => {
             src={getImageSrc("/img/swiper-default.webp")}
             width={120}
             height={120}
-            alt={speakerData.name}
+            alt={agendaMember.name}
           />
         </div>
         <h5 className="text-center font-bold text-N800 text-xl before:inset-0 before:absolute">
-          {speakerData.name}
+          {agendaMember.name}
         </h5>
         <span className="text-center text-N800 mb-6 block">
-          {speakerData.company}/{speakerData.jobTitle}
+          {agendaMember.company}/{agendaMember.jobTitle}
         </span>
         <div className="flex flex-wrap gap-3 items-center">
-          {speakerData.tags.map((tag) => (
-            <span
-              key={tag.id}
-              className="text-secondary border-2 border-secondary px-3 py-1 rounded-full"
-            >
-              {tag.name}
-            </span>
-          ))}
+          <Link className="bg-secondary rounded-[50%] w-7 h-7 text-white flex items-center justify-center"></Link>
         </div>
       </div>
       <AnimatePresence>
@@ -62,4 +56,4 @@ const SpeakerCard = ({ isHovered, onHover, handleClick, ...speakerData }) => {
   );
 };
 
-export default SpeakerCard;
+export default Card;

@@ -1,4 +1,17 @@
 {
+  "agendaMember": [
+    {
+      "name": "講者名",
+      "memberId": 0,
+      "company": "公司",
+      "jobTitle": "職稱",
+      "bio": "",
+      "img": "/images/speakers/114.png",
+      "communityPartner": "",
+      "level": "Basic",
+      "social": [{ "id": 1, "name": "Mobile App" }]
+    }
+  ],
   "speakerTags": [
     {
       "id": 1,

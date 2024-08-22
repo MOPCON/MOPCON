@@ -31,6 +31,7 @@ const SpeakerSection = () => {
             key={item.id}
             onClick={() => handleTag(item)}
             isSelected={tags.map((item) => item.id).includes(item.id)}
+            {...item}
           >
             {item.name}
           </Button>
