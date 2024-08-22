@@ -11,7 +11,7 @@
   ],
   "speakers": [
     {
-      "name": "",
+      "name": "講者名",
       "speakerId": 0,
       "company": "company",
       "jobTitle": "jobTitle",
@@ -40,7 +40,7 @@
       "sessionId": 2021001
     },
     {
-      "name": "",
+      "name": "講者名",
       "speakerId": 1,
       "company": "company",
       "jobTitle": "jobTitle",

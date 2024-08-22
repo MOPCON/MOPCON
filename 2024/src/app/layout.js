@@ -19,7 +19,7 @@ const isProduction = process.env.NODE_ENV === "production";
 
 export const metadata = siteMetaData;
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, modal }) {
   return (
     <html lang="zh-Hant">
       <body className={`${notoSans.className} bg-white overflow-x-hidden`}>
@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
         <RecruitPopupButton />
         <div id="modal-root"></div>
         <main>{children}</main>
+        {modal}
         <Footer />
       </body>
       {isProduction && <GoogleTagManager gaId="G-P6ZH7TZG2D" />}

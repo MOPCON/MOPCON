@@ -17,14 +17,11 @@ const SpeakerSection = () => {
     }
   };
 
-  const selectedSpeaker = Data.speakers.filter((speaker) => {
-    if (tags.length === 0) {
-      return Data.speakers;
-    }
-    return tags.every((tag) =>
-      speaker.tags.map((speakerTag) => speakerTag.id).includes(tag.id)
-    );
-  });
+  const selectedSpeaker = Data.speakers.filter((speaker) =>
+    tags.every((tag) =>
+      speaker.tags.some((speakerTag) => speakerTag.id === tag.id)
+    )
+  );
 
   return (
     <Fragment>

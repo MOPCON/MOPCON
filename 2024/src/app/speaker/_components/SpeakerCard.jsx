@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const SpeakerCard = ({ isHovered, onHover, handleClick, ...speakerData }) => {
   return (
@@ -20,9 +21,13 @@ const SpeakerCard = ({ isHovered, onHover, handleClick, ...speakerData }) => {
             alt={speakerData.name}
           />
         </div>
-        <h6 className="text-center font-bold text-N800 text-xl">
+        <Link
+          className="text-center font-bold text-N800 text-xl before:inset-0 before:absolute"
+          href={`/speaker/${speakerData.speakerId}`}
+          passHref
+        >
           {speakerData.name}
-        </h6>
+        </Link>
         <span className="text-center text-N800 mb-6 block">
           {speakerData.company}/{speakerData.jobTitle}
         </span>
