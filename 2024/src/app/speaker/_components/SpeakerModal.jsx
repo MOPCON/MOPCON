@@ -1,4 +1,4 @@
-import BasicModal from "@/components/ui/BasicModal";
+import { BasicModal, ModalBody, CloseButton } from "@/components/ui/BasicModal";
 import { IoClose } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa";
 import { GoGlobe } from "react-icons/go";
@@ -14,16 +14,13 @@ const SpeakerModal = ({ onClose, ...props }) => {
       onClose={onClose}
       className="w-[min(95%,800px)] rounded-3xl mob:rounded-[54px] h-auto"
     >
-      <div className="rounded-[calc(24px-3px)] mob:rounded-[calc(54px-3px)] bg-white h-full w-full relative pt-10 px-8 mob:px-14 tablet:px-20 pb-[60px]">
+      <ModalBody
+        className={
+          "rounded-[calc(24px-3px)] mob:rounded-[calc(54px-3px)] pt-10 px-8 mob:px-14 tablet:px-20 pb-[60px]"
+        }
+      >
+        <CloseButton onClose={onClose} iconClass={"text-xl text-secondary"} />
         <div className="max-h-[calc(100dvh-200px)] overflow-y-auto">
-          <button
-            className="absolute -translate-x-6 translate-y-6 top-0 right-0 p-3"
-            onClick={onClose}
-            type="button"
-            aria-label="Modal-Close"
-          >
-            <IoClose className="text-xl text-secondary" />
-          </button>
           <div className="flex flex-col items-center mob:block mb-10">
             <div className="flex gap-3 flex-col mob:flex-row items-center w-fit mb-3">
               <div className="size-20 rounded-[50%] overflow-clip flex items-center justify-center">
@@ -129,8 +126,8 @@ const SpeakerModal = ({ onClose, ...props }) => {
               加入行事曆
             </button>
           </div>
-        </div>
-      </div>
+        </div>{" "}
+      </ModalBody>
     </BasicModal>
   );
 };

@@ -1,11 +1,18 @@
 import { WhiteLogo } from "./ui/Logo";
-import { IoClose } from "react-icons/io5";
-import BasicModal from "./ui/BasicModal";
+import { BasicModal, ModalBody, CloseButton } from "./ui/BasicModal";
 
 const RecruitPopupModal = ({ onClose }) => {
   return (
     <BasicModal onClose={onClose}>
-      <div className="w-full h-full bg-gradient-to-b from-[#4D766E] to-[#364758] rounded-[calc(54px-3px)] flex flex-col items-center justify-center relative overflow-hidden">
+      <ModalBody
+        className={
+          "bg-gradient-to-b from-[#4D766E] to-[#364758] rounded-[calc(54px-3px)] flex flex-col items-center justify-center overflow-hidden"
+        }
+      >
+        <CloseButton
+          onClose={onClose}
+          className={"-translate-x-8 translate-y-8"}
+        />
         <svg
           width="81"
           height="600"
@@ -71,13 +78,6 @@ const RecruitPopupModal = ({ onClose }) => {
             </linearGradient>
           </defs>
         </svg>
-        <button
-          className="absolute -translate-x-8 translate-y-8 top-0 right-0 p-3"
-          onClick={onClose}
-          aria-label="Close"
-        >
-          <IoClose className="text-2xl text-white" />
-        </button>
         <WhiteLogo className="mb-8 z-10 w-[min(85%,400px)]" />
         <div className="flex items-center flex-col tablet:flex-row justify-between gap-4 tablet:gap-8 text-white z-10">
           <div>2024</div>
@@ -186,7 +186,7 @@ const RecruitPopupModal = ({ onClose }) => {
             </linearGradient>
           </defs>
         </svg>
-      </div>
+      </ModalBody>
     </BasicModal>
   );
 };

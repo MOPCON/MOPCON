@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { createPortal } from "react-dom";
+import { IoClose } from "react-icons/io5";
 
 const backdropVariants = {
   open: {
@@ -32,6 +33,36 @@ const modalVariants = {
     },
   },
 };
+
+const CloseButton = ({ onClose, className, iconClass }) => {
+  return (
+    <button
+      onClick={onClose}
+      className={twMerge(
+        "absolute -translate-x-6 translate-y-6 top-0 right-0 p-3",
+        className
+      )}
+      type="button"
+      aria-label="Close"
+    >
+      <IoClose className={twMerge("text-2xl text-white", iconClass)} />
+    </button>
+  );
+};
+
+const ModalBody = ({ children, className }) => {
+  const handleContentClick = (event) => {
+    event.stopPropagation();
+  };
+  return (
+    <div
+      className={twMerge("bg-white h-full w-full relative", className)}
+      onClick={handleContentClick}
+    >
+      {children}
+    </div>
+  );
+};
 const BasicModal = ({ children, onClose, className }) => {
   return createPortal(
     <motion.div
@@ -59,4 +90,4 @@ const BasicModal = ({ children, onClose, className }) => {
   );
 };
 
-export default BasicModal;
+export { ModalBody, BasicModal, CloseButton };

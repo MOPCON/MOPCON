@@ -7,9 +7,16 @@ import MemberCard from "./Card";
 const MemberSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   return (
-    <div
+    <motion.div
       className="grid grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] gap-8"
       onMouseLeave={() => setHoveredIndex(null)}
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
+      }}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
     >
       {Data.agendaMember.map((item, i) => (
         <MemberCard
@@ -20,7 +27,7 @@ const MemberSection = () => {
           {...item}
         />
       ))}
-    </div>
+    </motion.div>
   );
 };
 

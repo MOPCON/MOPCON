@@ -1,5 +1,4 @@
-import BasicModal from "@/components/ui/BasicModal";
-import { IoClose } from "react-icons/io5";
+import { BasicModal, ModalBody, CloseButton } from "@/components/ui/BasicModal";
 import { FaFacebook } from "react-icons/fa";
 import { GrLocation } from "react-icons/gr";
 import { GoGlobe } from "react-icons/go";
@@ -8,28 +7,14 @@ import ModalImage from "@/components/ModalImage";
 import { GreenLeaf, OrangeLeaf } from "@/components/ui/ModalLeaf";
 
 const Modal = ({ sponsorData, onClose }) => {
-  const handleContentClick = (event) => {
-    event.stopPropagation();
-  };
-
   return (
     <BasicModal
       className="w-[min(95%,800px)] rounded-3xl mob:rounded-[54px] h-auto"
       onClose={onClose}
     >
-      <div
-        className="rounded-[calc(24px-3px)] mob:rounded-[calc(54px-3px)] bg-white h-full w-full relative pt-10 px-8 mob:px-14 tablet:px-20 pb-[60px]"
-        onClick={handleContentClick}
-      >
+      <ModalBody className="rounded-[calc(24px-3px)] mob:rounded-[calc(54px-3px)] pt-10 px-8 mob:px-14 tablet:px-20 pb-[60px]">
+        <CloseButton iconClass={"text-xl text-secondary"} onClose={onClose} />
         <div className="max-h-[600px] overflow-y-auto">
-          <button
-            className="absolute -translate-x-6 translate-y-6 top-0 right-0 p-3"
-            onClick={onClose}
-            type="button"
-            aria-label="Modal-Close"
-          >
-            <IoClose className="text-xl text-secondary" />
-          </button>
           <div className="flex flex-col gap-10">
             <div className="flex flex-col items-center mob:block">
               <div className="flex gap-3 flex-col mob:flex-row items-center w-fit mb-3">
@@ -99,7 +84,7 @@ const Modal = ({ sponsorData, onClose }) => {
             )}
           </div>
         </div>
-      </div>
+      </ModalBody>
     </BasicModal>
   );
 };

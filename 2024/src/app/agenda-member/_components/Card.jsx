@@ -7,10 +7,16 @@ import SocialLinks from "./SocialLinks";
 
 const MemberCard = ({ isHovered, onHover, handleClick, ...props }) => {
   return (
-    <div
+    <motion.div
       className="rounded-[20px] cursor-pointer h-[400px] p-[3px] flex flex-col items-center justify-center relative"
       onClick={handleClick}
       onMouseEnter={onHover}
+      variants={{
+        hidden: { opacity: 0, y: 25 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      exit={{ opacity: 1, y: 25 }}
+      transition={{ type: "spring" }}
     >
       <div className="flex flex-col gap-4 items-center justify-center w-full h-full p-4 relative z-[1]">
         <div className="overflow-hidden rounded-[50%] border border-white/60">
@@ -53,7 +59,7 @@ const MemberCard = ({ isHovered, onHover, handleClick, ...props }) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };
 
