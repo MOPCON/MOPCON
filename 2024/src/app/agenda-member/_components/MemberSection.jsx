@@ -1,7 +1,7 @@
 "use client";
-import { useState, Fragment } from "react";
+import { useState } from "react";
 import Data from "@/components/data/data.json";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import MemberCard from "./Card";
 
 const MemberSection = () => {
@@ -12,7 +12,7 @@ const MemberSection = () => {
       onMouseLeave={() => setHoveredIndex(null)}
       variants={{
         hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
+        visible: { opacity: 1, transition: { staggerChildren: 0.06 } },
       }}
       initial="hidden"
       animate="visible"

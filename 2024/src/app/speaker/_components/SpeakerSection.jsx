@@ -35,7 +35,16 @@ const SpeakerSection = () => {
 
   return (
     <Fragment>
-      <div className="flex items-center flex-wrap justify-center gap-3 mb-[60px]">
+      <motion.div
+        className="flex items-center flex-wrap justify-center gap-3 mb-[60px]"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
+        }}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+      >
         {Data.speakerTags.map((item, i) => (
           <Button
             key={item.id}
@@ -46,7 +55,7 @@ const SpeakerSection = () => {
             {item.name}
           </Button>
         ))}
-      </div>
+      </motion.div>
       <div
         className="grid grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] gap-8"
         onMouseLeave={() => setHoveredIndex(null)}
