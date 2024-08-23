@@ -1,10 +1,11 @@
 "use client";
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useMemo } from "react";
 import Button from "./Button";
 import Data from "@/components/data/data.json";
 import SpeakerCard from "./SpeakerCard";
 import { motion, AnimatePresence } from "framer-motion";
-import SpeakerModal from "./SpeakerModal";
+import dynamic from "next/dynamic";
+const SpeakerModal = dynamic(() => import("./SpeakerModal"), { ssr: false });
 
 const SpeakerSection = () => {
   const [tags, setTags] = useState([]);
@@ -24,11 +25,13 @@ const SpeakerSection = () => {
     }
   };
 
-  const selectedTypeSpeaker = Data.speakers.filter((speaker) =>
-    tags.every((tag) =>
-      speaker.tags.some((speakerTag) => speakerTag.id === tag.id)
-    )
-  );
+  const selectedTypeSpeaker = useMemo(() => {
+    return Data.speakers.filter((speaker) =>
+      tags.every((tag) =>
+        speaker.tags.some((speakerTag) => speakerTag.id === tag.id)
+      )
+    );
+  }, [tags]);
 
   return (
     <Fragment>
@@ -68,7 +71,6 @@ const SpeakerSection = () => {
           ))}
         </AnimatePresence>
       </div>
-
       <AnimatePresence>
         {selectedSpeakerModal && (
           <SpeakerModal

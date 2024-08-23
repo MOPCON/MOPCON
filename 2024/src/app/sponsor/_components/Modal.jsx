@@ -1,22 +1,11 @@
 import BasicModal from "@/components/ui/BasicModal";
-import Image from "next/image";
 import { IoClose } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa";
 import { GrLocation } from "react-icons/gr";
 import { GoGlobe } from "react-icons/go";
 import { FiCalendar } from "react-icons/fi";
-import { AboutLeaf, SpeakerLeaf } from "../_ui/icons";
-import { getImageSrc } from "@/components/util/getImageSrc";
-
-const SponsorImage = ({ src, alt }) => (
-  <Image
-    src={getImageSrc(src || "/img/swiper-default.webp")}
-    alt={alt}
-    height={80}
-    width={80}
-    className="object-contain w-full h-full"
-  />
-);
+import ModalImage from "@/components/ModalImage";
+import { GreenLeaf, OrangeLeaf } from "@/components/ui/ModalLeaf";
 
 const Modal = ({ sponsorData, onClose }) => {
   const handleContentClick = (event) => {
@@ -29,7 +18,7 @@ const Modal = ({ sponsorData, onClose }) => {
       onClose={onClose}
     >
       <div
-        className="rounded-[calc(24px-3px)] mob:rounded-[calc(54px-3px)] bg-white h-full w-full relative pt-10 px-8 mob:px-20 pb-[60px]"
+        className="rounded-[calc(24px-3px)] mob:rounded-[calc(54px-3px)] bg-white h-full w-full relative pt-10 px-8 mob:px-14 tablet:px-20 pb-[60px]"
         onClick={handleContentClick}
       >
         <div className="max-h-[600px] overflow-y-auto">
@@ -45,7 +34,7 @@ const Modal = ({ sponsorData, onClose }) => {
             <div className="flex flex-col items-center mob:block">
               <div className="flex gap-3 flex-col mob:flex-row items-center w-fit mb-3">
                 <div className="size-20 flex items-center justify-center">
-                  <SponsorImage src={sponsorData.img} alt={sponsorData.name} />
+                  <ModalImage src={sponsorData.img} alt={sponsorData.name} />
                 </div>
                 <h4 className="font-bold text-[#343844]">{sponsorData.name}</h4>
               </div>
@@ -71,7 +60,7 @@ const Modal = ({ sponsorData, onClose }) => {
             <article>
               <div className="flex items-center gap-2 mb-4">
                 <h3 className="text-N800/80 font-medium leading-6">關於我們</h3>
-                <AboutLeaf />
+                <OrangeLeaf />
               </div>
               <p className="text-N800/80 leading-6">
                 {sponsorData.description}
@@ -83,14 +72,11 @@ const Modal = ({ sponsorData, onClose }) => {
                   <h3 className="text-N800/80 font-medium leading-6">
                     相關講者資訊
                   </h3>
-                  <SpeakerLeaf />
+                  <GreenLeaf />
                 </div>
                 <div className="flex items-center flex-col mob:flex-row justify-between gap-5 mob:gap-10">
                   <div className="size-20 flex items-center justify-center">
-                    <SponsorImage
-                      src={sponsorData.img}
-                      alt={sponsorData.name}
-                    />
+                    <ModalImage src={sponsorData.img} alt={sponsorData.name} />
                   </div>
                   <div className="flex flex-col justify-evenly flex-auto gap-2">
                     <h4 className="font-bold text-N800/80 leading-6">姓名</h4>

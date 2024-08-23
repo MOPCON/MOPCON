@@ -1,25 +1,21 @@
 "use client";
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
-import { useState, Fragment } from "react";
+import { Fragment } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 const SponsorModal = dynamic(() => import("./Modal"), {
   ssr: false,
 });
 
-const SponsorCard = ({ onHover, isHovered, ...sponsorData }) => {
-  const [showModal, setShowModal] = useState(false);
-  function handleClick() {
-    setShowModal(!showModal);
-    document.body.style.overflow = showModal ? "auto" : "hidden";
-  }
-
+const SponsorCard = ({ onHover, isHovered, onClick, ...sponsorData }) => {
   return (
     <Fragment>
       <div
         className="rounded-[20px] cursor-pointer h-[260px] p-[3px] flex flex-col items-center justify-center relative"
-        onClick={handleClick}
+        onClick={() => {
+          onClick(sponsorData.id);
+        }}
         onMouseEnter={() => onHover(sponsorData.id)}
       >
         <div className="flex flex-col gap-4 items-center justify-center w-full h-full p-4 relative z-[1]">
@@ -58,15 +54,6 @@ const SponsorCard = ({ onHover, isHovered, ...sponsorData }) => {
           )}
         </AnimatePresence>
       </div>
-      <AnimatePresence>
-        {showModal && (
-          <SponsorModal
-            sponsorId={sponsorData.id}
-            onClose={handleClick}
-            sponsorData={sponsorData}
-          />
-        )}
-      </AnimatePresence>
     </Fragment>
   );
 };

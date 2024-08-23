@@ -36,12 +36,12 @@
       "speakerId": 0,
       "company": "company",
       "jobTitle": "jobTitle",
-      "bio": "",
-      "img": "/images/speakers/114.png",
+      "bio": "介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹介紹",
+      "img": "",
       "linkFb": "",
       "linkGithub": "",
       "linkTwitter": "",
-      "topic": "",
+      "topic": "議程主題",
       "summary": "",
       "communityPartner": "",
       "isKeynote": true,
@@ -49,9 +49,9 @@
       "recordable": true,
       "level": "Basic",
       "tags": [{ "id": 1, "name": "Mobile App" }],
-      "target": "",
-      "priorKnowledge": "",
-      "expectedGain": "",
+      "target": "目標會眾",
+      "priorKnowledge": "先備知識，先備知識，先備知識，先備知識，先備知識，先備知識",
+      "expectedGain": "會眾預期收穫會眾預期收穫會眾預期收穫會眾預期收穫會眾預期收穫會眾預期收穫會眾預期收穫會眾預期收穫會眾預期收穫會眾預期收穫",
       "started_at": 1634951700,
       "ended_at": 1634954400,
       "room": "R1",
@@ -66,11 +66,11 @@
       "company": "company",
       "jobTitle": "jobTitle",
       "bio": "",
-      "img": "/images/speakers/114.png",
+      "img": "",
       "linkFb": "",
       "linkGithub": "",
       "linkTwitter": "",
-      "topic": "",
+      "topic": "議程主題",
       "summary": "",
       "communityPartner": "",
       "isKeynote": false,
@@ -98,11 +98,11 @@
       "company": "公司",
       "jobTitle": "職稱",
       "bio": "",
-      "img": "/images/speakers/114.png",
+      "img": "",
       "linkFb": "",
       "linkGithub": "",
       "linkTwitter": "",
-      "topic": "",
+      "topic": "議程主題",
       "summary": "",
       "communityPartner": "",
       "isKeynote": true,
@@ -126,6 +126,8 @@
     {
       "level": "宇宙級",
       "levelId": 1,
+      "isGradient": false,
+      "fill": "#F79022",
       "companies": [
         {
           "id": 1,
@@ -138,6 +140,8 @@
     {
       "level": "銀河級",
       "levelId": 2,
+      "isGradient": false,
+      "fill": "#FCEB75",
       "companies": [
         {
           "id": 2,
@@ -166,6 +170,8 @@
     {
       "level": "恆星級",
       "levelId": 3,
+      "isGradient": false,
+      "fill": "#9CBC43",
       "companies": [
         {
           "id": 5,
@@ -178,6 +184,8 @@
     {
       "level": "行星級",
       "levelId": 4,
+      "isGradient": false,
+      "fill": "#4C766D",
       "companies": [
         {
           "id": 6,
@@ -190,10 +198,26 @@
     {
       "level": "彗星級",
       "levelId": 5,
+      "isGradient": false,
+      "fill": "#E9E3D7",
       "companies": [
         {
           "id": 7,
           "name": "贊助商-7",
+          "img": "",
+          "description": "內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增。"
+        }
+      ]
+    },
+    {
+      "level": "教育及法人合作夥伴",
+      "levelId": 6,
+      "isGradient": true,
+      "fill": null,
+      "companies": [
+        {
+          "id": 8,
+          "name": "贊助商-8",
           "img": "",
           "description": "內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增。"
         }
