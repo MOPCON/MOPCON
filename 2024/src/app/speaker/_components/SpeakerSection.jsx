@@ -5,17 +5,13 @@ import Data from "@/components/data/data.json";
 import SpeakerCard from "./SpeakerCard";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
+import { useModal } from "@/components/hook/useModal";
 const SpeakerModal = dynamic(() => import("./SpeakerModal"), { ssr: false });
 
 const SpeakerSection = () => {
   const [tags, setTags] = useState([]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [selectedSpeakerModal, setSelectedSpeakerModal] = useState(null);
-
-  const handleSpeaker = (speaker) => {
-    setSelectedSpeakerModal(speaker);
-    document.body.style.overflow = "hidden";
-  };
+  const speakerModal = useModal();
 
   const handleTag = (tag) => {
     if (tags.map((item) => item.id).includes(tag.id)) {
@@ -74,20 +70,17 @@ const SpeakerSection = () => {
                 {...speaker}
                 onHover={() => setHoveredIndex(speaker.speakerId)}
                 isHovered={hoveredIndex === speaker.speakerId}
-                handleClick={() => handleSpeaker(speaker)}
+                handleClick={() => speakerModal.openModal(speaker)}
               />
             </motion.div>
           ))}
         </AnimatePresence>
       </div>
       <AnimatePresence>
-        {selectedSpeakerModal && (
+        {speakerModal.content && speakerModal.isOpen && (
           <SpeakerModal
-            {...selectedSpeakerModal}
-            onClose={() => {
-              setSelectedSpeakerModal(null);
-              document.body.style.overflow = "auto";
-            }}
+            {...speakerModal.content}
+            onClose={() => speakerModal.closeModal()}
           />
         )}
       </AnimatePresence>

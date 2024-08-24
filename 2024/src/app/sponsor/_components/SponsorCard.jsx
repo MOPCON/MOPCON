@@ -18,7 +18,7 @@ const SponsorCard = ({ onHover, isHovered, onClick, ...sponsorData }) => {
         }}
         onMouseEnter={() => onHover(sponsorData.id)}
       >
-        <div className="flex flex-col gap-4 items-center justify-center w-full h-full p-4 relative z-[1]">
+        <div className="flex flex-col gap-4 items-center justify-center size-full p-4 relative z-[1]">
           <div className="overflow-hidden rounded-[50%] border border-white/60">
             <Image
               className="h-full object-contain"
@@ -35,7 +35,7 @@ const SponsorCard = ({ onHover, isHovered, onClick, ...sponsorData }) => {
         <AnimatePresence>
           {isHovered && (
             <motion.div
-              className="absolute p-[3px] rounded-[20px] inset-0 w-full h-full bg-[linear-gradient(-80deg,_#9CBC43_50%,_#4C766D)] block "
+              className="absolute p-[3px] rounded-[20px] inset-0 size-full bg-[linear-gradient(-80deg,_#9CBC43_50%,_#4C766D)] block "
               layoutId="animated-bg"
               layout="true"
               initial={{ opacity: 0 }}
@@ -49,7 +49,7 @@ const SponsorCard = ({ onHover, isHovered, onClick, ...sponsorData }) => {
                 layout: { duration: 0.5, type: "spring" },
               }}
             >
-              <div className="rounded-[calc(20px-3px)] w-full h-full bg-white" />
+              <div className="rounded-[calc(20px-3px)] size-full bg-white" />
             </motion.div>
           )}
         </AnimatePresence>

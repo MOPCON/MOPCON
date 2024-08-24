@@ -1,8 +1,8 @@
 import { FiMail } from "react-icons/fi";
-import { FaThreads, FaXTwitter, FaFacebook } from "react-icons/fa6";
-import { IoLogoGithub } from "react-icons/io5";
+import { FaThreads, FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 import { FaceBook, Github } from "./Icons";
+import { twMerge } from "tailwind-merge";
 
 const socialIcons = {
   email: FiMail,
@@ -12,7 +12,7 @@ const socialIcons = {
   github: Github,
 };
 
-const SocialLink = ({ icon: Icon, href, type }) => {
+const SocialLink = ({ icon: Icon, href, type, className, iconClass }) => {
   const handleContentClick = (event) => {
     event.stopPropagation();
   };
@@ -20,19 +20,22 @@ const SocialLink = ({ icon: Icon, href, type }) => {
   return (
     <Link
       href={href}
-      className={`rounded-[50%] w-7 h-7 text-white flex items-center justify-center ${
-        type === "fb" || type === "github" ? "" : "bg-secondary"
-      }`}
+      className={twMerge(
+        `rounded-[50%] size-7 text-white flex items-center justify-center ${
+          type === "fb" || type === "github" ? "" : "bg-secondary"
+        }`,
+        className
+      )}
       onClick={handleContentClick}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Icon />
+      <Icon className={iconClass} />
     </Link>
   );
 };
 
-const SocialLinks = ({ speaker }) => {
+const SocialLinks = ({ speaker, className, iconClass }) => {
   const socialLinks = [
     { type: "email", url: `mailto:${speaker.email}` },
     { type: "threads", url: speaker.threads },
@@ -51,6 +54,8 @@ const SocialLinks = ({ speaker }) => {
               icon={socialIcons[type]}
               href={url}
               type={type}
+              className={className}
+              iconClass={iconClass}
             />
           )
       )}

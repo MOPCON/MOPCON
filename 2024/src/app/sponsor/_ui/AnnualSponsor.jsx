@@ -4,6 +4,7 @@ import SponsorData from "@/components/data/data.json";
 import { useState } from "react";
 import { SponsorLeaf } from "./icons";
 import { AnimatePresence } from "framer-motion";
+import { useModal } from "@/components/hook/useModal";
 import dynamic from "next/dynamic";
 const SponsorModal = dynamic(() => import("../_components/Modal"), {
   ssr: false,
@@ -24,17 +25,7 @@ const AnnualSponsorBlock = ({ title, children, onHoverLeave, ...props }) => {
 
 const AnnualSponsor = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [selectSponsor, setSelectSponsor] = useState(null);
-
-  const handleSponsor = (sponsor) => {
-    setSelectSponsor(sponsor);
-    document.body.style.overflow = "hidden";
-  };
-
-  const handleSponsorClose = () => {
-    setSelectSponsor(null);
-    document.body.style.overflow = "auto";
-  };
+  const sponsorModal = useModal();
 
   return (
     <section className="pt-16 w-[min(90%,1204px)] mx-auto">
@@ -52,17 +43,16 @@ const AnnualSponsor = () => {
               {...sponsor}
               onHover={() => setHoveredIndex(sponsor.id)}
               isHovered={hoveredIndex === sponsor.id}
-              onClick={() => handleSponsor(sponsor)}
+              onClick={() => sponsorModal.openModal(sponsor)}
             />
           ))}
         </AnnualSponsorBlock>
       ))}
       <AnimatePresence>
-        {selectSponsor && (
+        {sponsorModal.content && sponsorModal.isOpen && (
           <SponsorModal
-            sponsorId={selectSponsor.id}
-            onClose={handleSponsorClose}
-            sponsorData={selectSponsor}
+            onClose={() => sponsorModal.closeModal()}
+            sponsorData={sponsorModal.content}
           />
         )}
       </AnimatePresence>

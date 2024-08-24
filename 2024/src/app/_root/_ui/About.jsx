@@ -8,7 +8,7 @@ const About = () => {
       <article className="grid grid-cols-1 laptop:grid-cols-6 laptop:grid-rows-5 gap-y-5 gap-x-10 laptop:gap-x-20">
         <div className="flex items-center justify-center rounded-2xl overflow-clip flex-shrink-0 col-start-1 row-start-2 laptop:col-span-3 laptop:row-span-3">
           <Image
-            className="object-cover w-full h-full max-w-full"
+            className="object-cover size-full max-w-full"
             src={getImageSrc("/img/2023-mopcon.webp")}
             width={522}
             height={380}

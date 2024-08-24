@@ -1,10 +1,21 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import { Speaker, Matchmaking, Brand } from "./icons";
 
 const Card = ({ icon, title, content }) => {
   return (
-    <div className="flex gap-3 rounded-2xl p-2 pr-4 border border-white/20 bg-white/20 backdrop-blur-sm w-full relative z-[1]">
+    <motion.div
+      className="flex gap-3 rounded-2xl p-2 pr-4 border border-white/20 bg-white/20 backdrop-blur-sm w-full relative z-[1]"
+      variants={{
+        hidden: { opacity: 0, y: 25 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+      }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <div className="flex items-center justify-center flex-shrink-0 bg-white/5 rounded-xl p-3 backdrop-blur-sm basis-[84px] min-h-[84px]">
         {icon}
       </div>
@@ -14,7 +25,7 @@ const Card = ({ icon, title, content }) => {
         </h4>
         <p className="text-white/70 leading-6">{content}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -32,7 +43,16 @@ const JoinUs = () => {
           <h3 className="text-white font-bold text-2xl tablet:text-[31px] flex flex-col gap-3 tablet:block">
             加入我們，<span>最實質的收穫是...</span>
           </h3>
-          <div className="grid grid-cols-1 grid-flow-row auto-rows-max gap-5 pb-6 tablet:pb-0">
+          <motion.div
+            className="grid grid-cols-1 grid-flow-row auto-rows-max gap-5 pb-6 tablet:pb-0"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+            }}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
             <Card
               icon={<Brand />}
               title="品牌曝光"
@@ -48,7 +68,7 @@ const JoinUs = () => {
               title="徵才媒合"
               content="接觸大量相關領域的高品質人才，大幅提升市場開發及徵才的效率及成功率。"
             />
-          </div>
+          </motion.div>
         </div>
         <Image
           width={500}

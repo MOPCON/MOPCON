@@ -1,5 +1,4 @@
 import { BasicModal, ModalBody, CloseButton } from "@/components/ui/BasicModal";
-import { IoClose } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa";
 import { GoGlobe } from "react-icons/go";
 import ModalImage from "@/components/ModalImage";
@@ -23,7 +22,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
         <div className="max-h-[calc(100dvh-200px)] overflow-y-auto">
           <div className="flex flex-col items-center mob:block mb-10">
             <div className="flex gap-3 flex-col mob:flex-row items-center w-fit mb-3">
-              <div className="size-20 rounded-[50%] overflow-clip flex items-center justify-center">
+              <div className="size-[120px] rounded-[50%] overflow-clip flex items-center justify-center">
                 <ModalImage src={props.img} alt={props.name} />
               </div>
               <div>
@@ -36,14 +35,14 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center justify-evenly w-20">
+            <div className="flex items-center justify-evenly w-[120px]">
               <a
                 href="#"
                 rel="noreferrer noopener"
                 target="_blank"
                 className="text-secondary"
               >
-                <GoGlobe aria-label="Visit website" />
+                <GoGlobe className="text-xl" aria-label="Visit website" />
               </a>
               <a
                 href="#"
@@ -51,7 +50,10 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 target="_blank"
                 className="text-secondary"
               >
-                <FaFacebook aria-label="Visit Facebook page" />
+                <FaFacebook
+                  className="text-xl"
+                  aria-label="Visit Facebook page"
+                />
               </a>
             </div>
           </div>

@@ -14,13 +14,13 @@ const Card = ({ icon, title, content, idx, onHover, isHovered }) => {
 
   return (
     <div
-      className="group w-full h-full block rounded-xl px-5 py-4 relative"
+      className="group size-full block rounded-xl px-5 py-4 relative"
       onMouseEnter={() => onHover(idx)}
     >
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            className="absolute inset-0 w-full h-full border border-secondary block rounded-xl shadow-[0_2px_6px_0_rgba(156,188,67,0.3),0_13px_12px_0_rgba(156,188,67,0.05),0_24px_15px_0_rgba(156,188,67,0.05),0_40px_16px_0_rgba(156,188,67,0.05),0_62px_17px_0_rgba(156,188,67,0.05)]"
+            className="absolute inset-0 size-full border border-secondary block rounded-xl shadow-[0_2px_6px_0_rgba(156,188,67,0.3),0_13px_12px_0_rgba(156,188,67,0.05),0_24px_15px_0_rgba(156,188,67,0.05),0_40px_16px_0_rgba(156,188,67,0.05),0_62px_17px_0_rgba(156,188,67,0.05)]"
             layoutId="border"
             layout="position"
             initial={{ opacity: 0 }}

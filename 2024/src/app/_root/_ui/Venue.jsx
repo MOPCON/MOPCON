@@ -61,7 +61,7 @@ const Venue = () => {
               transition={{ duration: 0.5 }}
             >
               <Image
-                className="object-cover w-full h-full max-w-full"
+                className="object-cover size-full max-w-full"
                 src={getImageSrc("/img/Exhibition-Center.webp")}
                 width={1204}
                 height={629}
@@ -79,7 +79,7 @@ const Venue = () => {
               transition={{ duration: 0.5 }}
             >
               <Image
-                className="object-cover w-full h-full max-w-full"
+                className="object-cover size-full max-w-full"
                 src={getImageSrc("/img/Exhibition-Center-2.webp")}
                 width={1204}
                 height={629}

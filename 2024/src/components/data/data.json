@@ -25,9 +25,9 @@
       "communityPartner": "",
       "level": "Basic",
       "email": "email",
-      "threads": "https://www.threads.net/",
-      "x": "linkTwitter",
-      "fb": "https://www.facebook.com/",
+      "threads": "",
+      "x": "",
+      "fb": "",
       "github": "https://github.com/"
     },
     {
@@ -40,8 +40,8 @@
       "communityPartner": "",
       "level": "Basic",
       "email": "email",
-      "threads": "https://www.threads.net/",
-      "x": "linkTwitter",
+      "threads": "",
+      "x": "",
       "fb": "https://www.facebook.com/",
       "github": "https://github.com/"
     }
@@ -82,13 +82,13 @@
       "target": "目標會眾",
       "priorKnowledge": "先備知識，先備知識，先備知識，先備知識，先備知識，先備知識",
       "expectedGain": "會眾預期收穫會眾預期收穫會眾預期收穫會眾預期收穫會眾預期收穫會眾預期收穫會眾預期收穫會眾預期收穫會眾預期收穫會眾預期收穫",
-      "started_at": 1634951700,
-      "ended_at": 1634954400,
+      "startedAt": 1634951700,
+      "endedAt": 1634954400,
       "room": "R1",
       "floor": "",
       "sponsorId": 0,
       "sponsorInfo": [],
-      "sessionId": 2021001
+      "sessionId": 2024001
     },
     {
       "name": "講者名-2",
@@ -114,13 +114,13 @@
       "target": "",
       "priorKnowledge": "",
       "expectedGain": "",
-      "started_at": 1634951700,
-      "ended_at": 1634954400,
+      "startedAt": 1634951700,
+      "endedAt": 1634954400,
       "room": "R2",
       "floor": "",
       "sponsorId": 2,
       "sponsorInfo": [],
-      "sessionId": 2021001
+      "sessionId": 2024002
     },
     {
       "name": "講者名-3",
@@ -143,13 +143,13 @@
       "target": "",
       "priorKnowledge": "",
       "expectedGain": "",
-      "started_at": 1634951700,
-      "ended_at": 1634954400,
+      "startedAt": 1634951700,
+      "endedAt": 1634954400,
       "room": "R1",
       "floor": "",
       "sponsorId": 0,
       "sponsorInfo": [],
-      "sessionId": 2021001
+      "sessionId": 2024003
     }
   ],
   "sponsors": [
