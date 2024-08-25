@@ -1,5 +1,12 @@
 import { Fragment } from "react";
 import MemberSection from "./_components/MemberSection";
+
+export const metadata = {
+  title: "議程委員",
+  description:
+    " 「世界樹」象徵技術在時間的養分中不斷壯大，並且蓬勃發展。我們的議程委員來自各個技術領域，他們如同世界樹的守護者，精心策劃與安排每一場議程，確保參與者能夠汲取到最豐富的知識與靈感！",
+};
+
 const Page = () => {
   return (
     <Fragment>

@@ -66,7 +66,7 @@ const ModalBody = ({ children, className }) => {
 const BasicModal = ({ children, onClose, className }) => {
   return createPortal(
     <motion.div
-      className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[60] flex items-center justify-center w-dvw h-dvh bg-[#0E2219B2]/70"
+      className="fixed inset-0 z-[60] flex items-center justify-center w-dvw h-dvh bg-[#0E2219B2]/70"
       onClick={onClose}
       variants={backdropVariants}
       initial="closed"
