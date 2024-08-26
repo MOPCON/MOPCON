@@ -8,7 +8,6 @@ import dynamic from "next/dynamic";
 import { useModal } from "@/components/hook/useModal";
 const SpeakerModal = dynamic(() => import("./SpeakerModal"), { ssr: false });
 import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense } from "react";
 
 const SpeakerSection = () => {
   const [tags, setTags] = useState([]);
@@ -89,14 +88,12 @@ const SpeakerSection = () => {
               transition={{ duration: 0.3 }}
               layout
             >
-              <Suspense>
-                <SpeakerCard
-                  {...speaker}
-                  onHover={() => setHoveredIndex(speaker.speakerId)}
-                  isHovered={hoveredIndex === speaker.speakerId}
-                  handleClick={() => handlerCardClick(speaker)}
-                />
-              </Suspense>
+              <SpeakerCard
+                {...speaker}
+                onHover={() => setHoveredIndex(speaker.speakerId)}
+                isHovered={hoveredIndex === speaker.speakerId}
+                handleClick={() => handlerCardClick(speaker)}
+              />
             </motion.div>
           ))}
         </AnimatePresence>

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import SpeakerSection from "./_components/SpeakerSection";
+import SpeakerSuspense from "./_components/SpeakerSuspense";
 
 export const metadata = {
   title: "講者陣容",
@@ -29,7 +29,7 @@ const Speaker = () => {
         <h3 className="block-title mb-[60px]">
           開箱 <span className="text-light-green">高手陣容</span>
         </h3>
-        <SpeakerSection />
+        <SpeakerSuspense />
       </section>
     </Fragment>
   );
