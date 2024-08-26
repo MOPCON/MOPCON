@@ -2,12 +2,11 @@
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import { motion, AnimatePresence } from "framer-motion";
-
-const SpeakerCard = ({ isHovered, onHover, handleClick, ...speakerData }) => {
+import Link from "next/link";
+const SpeakerCard = ({ isHovered, onHover, ...speakerData }) => {
   return (
     <div
       className="rounded-[20px] cursor-pointer min-h-[400px] h-full p-[3px] flex flex-col items-center justify-center relative"
-      onClick={handleClick}
       onMouseEnter={onHover}
     >
       <div className="flex flex-col gap-4 items-center justify-center w-full h-full p-4 relative z-[1]">
@@ -21,7 +20,12 @@ const SpeakerCard = ({ isHovered, onHover, handleClick, ...speakerData }) => {
           />
         </div>
         <h5 className="text-center font-bold text-N800 text-xl before:inset-0 before:absolute">
-          {speakerData.name}
+          <Link
+            href={`/speaker/${speakerData.speakerId}`}
+            className="before:inset-0 before:absolute z-[1]"
+          >
+            {speakerData.name}
+          </Link>
         </h5>
         <span className="text-center text-N800 mb-6 block">
           {speakerData.company}/{speakerData.jobTitle}

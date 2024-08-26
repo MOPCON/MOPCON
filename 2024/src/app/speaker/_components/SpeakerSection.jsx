@@ -70,7 +70,7 @@ const SpeakerSection = () => {
                 {...speaker}
                 onHover={() => setHoveredIndex(speaker.speakerId)}
                 isHovered={hoveredIndex === speaker.speakerId}
-                handleClick={() => speakerModal.openModal(speaker)}
+                // handleClick={() => speakerModal.openModal(speaker)}
               />
             </motion.div>
           ))}
