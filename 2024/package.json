@@ -16,7 +16,6 @@
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
     "swiper": "^11.1.9",
-    "next-static-utils": "^1.0.4",
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {

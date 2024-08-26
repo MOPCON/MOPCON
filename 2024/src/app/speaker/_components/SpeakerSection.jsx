@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, Fragment, useMemo } from "react";
+import React, { useState, Fragment, useMemo, useEffect } from "react";
 import Button from "./Button";
 import Data from "@/components/data/data.json";
 import SpeakerCard from "./SpeakerCard";
@@ -7,11 +7,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useModal } from "@/components/hook/useModal";
 const SpeakerModal = dynamic(() => import("./SpeakerModal"), { ssr: false });
+import { useRouter, useSearchParams } from "next/navigation";
 
 const SpeakerSection = () => {
   const [tags, setTags] = useState([]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const speakerModal = useModal();
+  const router = useRouter();
+  const pathname = useSearchParams();
 
   const handleTag = (tag) => {
     if (tags.map((item) => item.id).includes(tag.id)) {
@@ -20,6 +23,25 @@ const SpeakerSection = () => {
       setTags([...tags, { ...tag }]);
     }
   };
+
+  useEffect(() => {
+    if (pathname.get("id")) {
+      const id = pathname.get("id");
+      const speaker = Data.speakers.find(
+        (speaker) => String(speaker.sessionId) === id
+      );
+      if (!speaker) return;
+      speakerModal.openModal(speaker);
+    }
+    return () => {
+      speakerModal.closeModal();
+    };
+  }, [pathname]);
+
+  function handlerCardClick(speaker) {
+    speakerModal.openModal(speaker);
+    router.push(`/speaker/?id=${speaker.sessionId}`, { scroll: false });
+  }
 
   const selectedTypeSpeaker = useMemo(() => {
     return Data.speakers.filter((speaker) =>
@@ -70,7 +92,7 @@ const SpeakerSection = () => {
                 {...speaker}
                 onHover={() => setHoveredIndex(speaker.speakerId)}
                 isHovered={hoveredIndex === speaker.speakerId}
-                // handleClick={() => speakerModal.openModal(speaker)}
+                handleClick={() => handlerCardClick(speaker)}
               />
             </motion.div>
           ))}
