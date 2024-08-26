@@ -7,7 +7,10 @@ import { FiCalendar } from "react-icons/fi";
 import { GreenLeaf, OrangeLeaf } from "@/components/ui/ModalLeaf";
 import { FiShare2 } from "react-icons/fi";
 import { LuCalendarCheck } from "react-icons/lu";
+import { useJsonParse } from "@/components/hook/useJsonParse";
 const SpeakerModal = ({ onClose, ...props }) => {
+  const summary = useJsonParse(props.summary);
+  const bio = useJsonParse(props.bio);
   return (
     <BasicModal
       onClose={onClose}
@@ -63,7 +66,9 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 <h3 className="text-N800/80 font-medium leading-6">介紹</h3>
                 <OrangeLeaf />
               </div>
-              <p className="text-N800/80 leading-6">{props.bio}</p>
+              <div className="text-N800/80 leading-6 flex flex-col gap-2">
+                {bio}
+              </div>
             </section>
             <section>
               <div className="flex items-center gap-2 mb-4">
@@ -87,7 +92,9 @@ const SpeakerModal = ({ onClose, ...props }) => {
                   </div>
                 </div>
               </div>
-              <p className="text-N800/80 leading-6 mb-4">{props.summary}</p>
+              <div className="text-N800/80 leading-6 mb-4 flex flex-col gap-2">
+                {summary}
+              </div>
               <div className="flex items-center justify-center mob:justify-normal gap-3 flex-wrap">
                 {props.tags.map((item) => (
                   <span
