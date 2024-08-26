@@ -6,12 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 const SpeakerCard = ({ isHovered, onHover, handleClick, ...speakerData }) => {
   return (
     <div
-      className="rounded-[20px] cursor-pointer h-[400px] p-[3px] flex flex-col items-center justify-center relative"
+      className="rounded-[20px] cursor-pointer min-h-[400px] h-full p-[3px] flex flex-col items-center justify-center relative"
       onClick={handleClick}
       onMouseEnter={onHover}
     >
       <div className="flex flex-col gap-4 items-center justify-center w-full h-full p-4 relative z-[1]">
-        <div className="overflow-hidden rounded-[50%] border border-white/60">
+        <div className="overflow-hidden rounded-[50%] border border-white/60 shrink-0">
           <Image
             className="h-full object-contain"
             src={getImageSrc("/img/swiper-default.webp")}
@@ -26,7 +26,7 @@ const SpeakerCard = ({ isHovered, onHover, handleClick, ...speakerData }) => {
         <span className="text-center text-N800 mb-6 block">
           {speakerData.company}/{speakerData.jobTitle}
         </span>
-        <div className="flex flex-wrap gap-3 items-center">
+        <div className="flex flex-wrap gap-3 items-center justify-center">
           {speakerData.tags.map((tag) => (
             <span
               key={tag.id}

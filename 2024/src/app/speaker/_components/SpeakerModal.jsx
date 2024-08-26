@@ -87,7 +87,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
                   </div>
                 </div>
               </div>
-              <p className="text-N800/80 leading-6 mb-4">{props.bio}</p>
+              <p className="text-N800/80 leading-6 mb-4">{props.summary}</p>
               <div className="flex items-center justify-center mob:justify-normal gap-3 flex-wrap">
                 {props.tags.map((item) => (
                   <span
