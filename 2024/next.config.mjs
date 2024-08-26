@@ -8,10 +8,6 @@ const nextConfig = {
     unoptimized: true,
   },
   output: "export",
-  experimental: {
-    missingSuspenseWithCSRBailout: false,
-  },
 };
-return nextConfig;
 
 export default nextConfig;
