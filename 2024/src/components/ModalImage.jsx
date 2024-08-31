@@ -6,7 +6,7 @@ const ModalImage = ({ src, alt }) => (
     alt={alt}
     height={80}
     width={80}
-    className="object-contain size-full"
+    className="object-cover size-full"
   />
 );
 

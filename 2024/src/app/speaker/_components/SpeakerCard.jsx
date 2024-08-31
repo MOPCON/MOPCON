@@ -2,8 +2,6 @@
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
 const SpeakerCard = ({ isHovered, onHover, handleClick, ...speakerData }) => {
   return (
     <div
@@ -12,10 +10,10 @@ const SpeakerCard = ({ isHovered, onHover, handleClick, ...speakerData }) => {
       onMouseEnter={onHover}
     >
       <div className="flex flex-col gap-4 items-center justify-center w-full h-full p-4 relative z-[1]">
-        <div className="overflow-hidden rounded-[50%] border border-white/60 shrink-0">
+        <div className="overflow-hidden size-[120px] rounded-[50%] border border-white/60 shrink-0">
           <Image
-            className="h-full object-contain"
-            src={getImageSrc("/img/swiper-default.webp")}
+            className="h-full w-full object-cover"
+            src={getImageSrc(speakerData.img || "/img/swiper-default.webp")}
             width={120}
             height={120}
             alt={speakerData.name}

@@ -132,9 +132,9 @@ export const Instagram = ({ className }) => {
           y2="2.01785"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFD600" />
-          <stop offset="0.5" stop-color="#FF0100" />
-          <stop offset="1" stop-color="#D800B9" />
+          <stop stopColor="#FFD600" />
+          <stop offset="0.5" stopColor="#FF0100" />
+          <stop offset="1" stopColor="#D800B9" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_2464_2897"
@@ -144,9 +144,9 @@ export const Instagram = ({ className }) => {
           y2="6.87263"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFD600" />
-          <stop offset="0.5" stop-color="#FF0100" />
-          <stop offset="1" stop-color="#D800B9" />
+          <stop stopColor="#FFD600" />
+          <stop offset="0.5" stopColor="#FF0100" />
+          <stop offset="1" stopColor="#D800B9" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_2464_2897"
@@ -156,9 +156,9 @@ export const Instagram = ({ className }) => {
           y2="4.3957"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFD600" />
-          <stop offset="0.5" stop-color="#FF0100" />
-          <stop offset="1" stop-color="#D800B9" />
+          <stop stopColor="#FFD600" />
+          <stop offset="0.5" stopColor="#FF0100" />
+          <stop offset="1" stopColor="#D800B9" />
         </linearGradient>
       </defs>
     </svg>

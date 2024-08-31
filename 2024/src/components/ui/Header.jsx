@@ -6,15 +6,15 @@ const NavMobile = dynamic(() => import("../NavMobile"));
 import useSticky from "../hook/useSticky";
 
 const Header = () => {
-  const { sticky, isStickyVisible } = useSticky();
+  const { sticky } = useSticky();
 
   return (
     <Fragment>
       <header
         id="header"
         className={`h-[52px] tablet:h-[82px] flex items-center justify-center sticky top-0 left-0 transition-all duration-200 ${
-          sticky ? "fixed top-0 left-0 -translate-y-full z-50 opcacity-0" : ""
-        } ${isStickyVisible ? "translate-y-0 opacity-100 bg-navy-blue" : ""}`}
+          sticky ? "fixed top-0 left-0 z-50 bg-navy-blue" : "bg-white"
+        }`}
       >
         <div className="tablet:flex items-center justify-between w-[min(84%,1204px)] hidden">
           <NavDesktop isSticky={sticky} />

@@ -20,9 +20,9 @@ const About = () => {
               <path
                 d="M4 9H60M60 9L55.4813 5M60 9L55.4813 13"
                 stroke="#AEBECF"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>
@@ -35,16 +35,26 @@ const About = () => {
             放大科技創新力
           </h3>
         </div>
-        <div className="flex items-center justify-center rounded-2xl overflow-clip flex-shrink-0">
+        <div className="relative">
+          <div className="flex items-center justify-center rounded-2xl overflow-clip flex-shrink-0 shadow-[10px_10px_50px_0px_rgba(0,0,0,0.15)]">
+            <Image
+              className="object-cover size-full max-w-full"
+              src={getImageSrc("/img/2023-mopcon.webp")}
+              width={522}
+              height={380}
+              alt="MOPCON 活動照片"
+            />
+          </div>
           <Image
-            className="object-cover size-full max-w-full"
-            src={getImageSrc("/img/2023-mopcon.webp")}
-            width={522}
-            height={380}
-            alt="MOPCON 活動照片"
+            className="absolute right-0 bottom-0 translate-x-1/3 translate-y-1/3 pointer-events-none -z-10"
+            src={getImageSrc("/img/Dot02.svg")}
+            alt="bg-dots"
+            aria-hidden="true"
+            width={192}
+            height={90}
           />
         </div>
-        <div className="grid grid-cols-3 gap-5 laptop:mt-20">
+        <div className="grid grid-cols-3 gap-5 mt-10 laptop:mt-20">
           <h4 className="flex items-center justify-center flex-col font-bold text-[#161C2D]/70">
             <span className="text-2xl">持續舉辦</span>
             <span className="text-[40px] laptop:text-[80px] text-[#161C2D]">
@@ -67,7 +77,28 @@ const About = () => {
             <span className="text-2xl">人以上</span>
           </h4>
         </div>
-        <div className="text-N800/80 text-lg mt-14 mb-5">
+        <div className="text-N800/80 text-lg mt-14 mb-5 relative">
+          <svg
+            width="100"
+            height="100"
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute top-0 left-0 -z-10 -translate-x-10 -translate-y-1/4"
+          >
+            <path
+              d="M100 60C100 82.0914 82.0914 100 60 100L0 100L5.24537e-06 40C7.17666e-06 17.9086 17.9086 -7.17666e-06 40 -5.24537e-06L100 0L100 60Z"
+              fill="#FEF3E2"
+            />
+          </svg>
+          <Image
+            className="absolute left-0 bottom-0 -translate-x-1/3 translate-y-1/3 pointer-events-none -z-10"
+            src={getImageSrc("/img/Dot01.svg")}
+            alt="bg-dots"
+            aria-hidden="true"
+            width={192}
+            height={90}
+          />
           <p className="mb-3">
             MOPCON 為熱愛「科技」的民間好手所自發的活動，今年邁入第 13
             年囉！從2012 年開始，每年吸引跨產業參加人數持續攀升，從

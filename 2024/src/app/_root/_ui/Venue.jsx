@@ -25,16 +25,16 @@ const Venue = () => {
             <path
               d="M4 9H60M60 9L55.4813 5M60 9L55.4813 13"
               stroke="#AEBECF"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
         <h4 className="block-title">會場資訊</h4>
       </div>
-      <div className="grid grid-cols-1 tablet:grid-cols-3 items-center gap-4 mb-20">
-        <div className="col-start-1 col-end-3 relative mb-12">
+      <div className="grid grid-cols-1 tablet:grid-cols-5 items-center gap-4 mb-20">
+        <div className="tablet:col-start-1 tablet:col-end-4 relative mb-12">
           <div className="w-10/12 rounded-3xl mx-auto overflow-hidden border-2 border-secondary">
             <Image
               className="object-cover size-full max-w-full"
@@ -58,10 +58,12 @@ const Venue = () => {
             }
           />
         </div>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 tablet:col-start-4 tablet:col-end-6">
           <div className="flex flex-col gap-4 font-medium">
             <span className="text-xl text-secondary">在哪裡呢？</span>
-            <span className="text-2xl text-N800">高雄市前鎮區成功二路39號</span>
+            <span className="text-2xl text-N800">
+              高雄展覽館 Kaohsiung Exhibition Center
+            </span>
           </div>
           <div className="flex flex-col gap-4 font-medium">
             <span className="text-xl text-secondary">地址</span>

@@ -40,9 +40,9 @@ export const Logo = ({ className }) => {
       />
       <path
         d="M120.547 19.5594V3.5117C120.547 2.25185 122.226 1.81967 122.834 2.92458L131.714 19.0742C132.321 20.1791 134.001 19.747 134.001 18.4871V2.4394"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
     </svg>
   );
