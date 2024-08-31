@@ -30,13 +30,15 @@ const About = () => {
             南台灣 <span className="text-light-green">最大行動科技年會</span>
           </h2>
           <h3 className="text-secondary text-2xl">
-            聚集知識與人才<span className="text-[#161C2D]">x</span>
-            南台灣最大行動科技年會<span className="text-[#161C2D]">x</span>
+            聚集知識與人才
+            <span className="text-[#161C2D] inline-block mx-2">x</span>
+            南台灣最大行動科技年會
+            <span className="text-[#161C2D] inline-block mx-2">x</span>
             放大科技創新力
           </h3>
         </div>
         <div className="relative">
-          <div className="flex items-center justify-center rounded-2xl overflow-clip flex-shrink-0 shadow-[10px_10px_50px_0px_rgba(0,0,0,0.15)]">
+          <div className="flex items-center justify-center rounded-[40px] overflow-clip flex-shrink-0 shadow-[10px_10px_50px_0px_rgba(0,0,0,0.15)]">
             <Image
               className="object-cover size-full max-w-full"
               src={getImageSrc("/img/2023-mopcon.webp")}

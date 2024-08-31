@@ -35,7 +35,7 @@ const Venue = () => {
       </div>
       <div className="grid grid-cols-1 tablet:grid-cols-5 items-center gap-4 mb-20">
         <div className="tablet:col-start-1 tablet:col-end-4 relative mb-12">
-          <div className="w-10/12 rounded-3xl mx-auto overflow-hidden border-2 border-secondary">
+          <div className="w-10/12 rounded-3xl mx-auto overflow-hidden shadow-[10px_10px_50px_0px_rgba(0,0,0,0.15)]">
             <Image
               className="object-cover size-full max-w-full"
               src={getImageSrc("/img/Exhibition-Center.webp")}

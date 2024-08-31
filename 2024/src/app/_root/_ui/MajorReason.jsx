@@ -46,44 +46,35 @@ const ReasonItem = ({ title, content, idx, titleNum }) => {
 
 export async function getStaticProps() {
   const now = new Date();
-  const targetDate = new Date("2024-10-26T23:59:59"); // 設置您的目標日期和時間
+  const targetDate = new Date("2024-10-26");
   const timeDiff = targetDate.getTime() - now.getTime();
-  const initialMinutesLeft = Math.ceil(timeDiff / (1000 * 60));
-
+  const initialDaysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24));
   return {
     props: {
-      initialMinutesLeft,
+      initialDaysLeft,
     },
-    revalidate: 60, // 每1分鐘重新生成頁面
+    revalidate: 86400,
   };
 }
 
-const MajorReason = ({ initialMinutesLeft }) => {
-  const [minutesLeft, setMinutesLeft] = useState(initialMinutesLeft);
+const MajorReason = ({ initialDaysLeft }) => {
+  const [daysLeft, setDaysLeft] = useState(initialDaysLeft);
 
   useEffect(() => {
-    const calculateMinutesLeft = () => {
+    const calculateDaysLeft = () => {
       const now = new Date();
-      const targetDate = new Date("2024-10-26T23:59:59"); // 設置您的目標日期和時間
+      const targetDate = new Date("2024-10-26");
       const timeDiff = targetDate.getTime() - now.getTime();
-      const minutesDiff = Math.ceil(timeDiff / (1000 * 60));
-      setMinutesLeft(minutesDiff);
+      const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+      setDaysLeft(daysDiff);
     };
 
-    calculateMinutesLeft(); // 立即執行一次
+    calculateDaysLeft();
 
-    const timer = setInterval(calculateMinutesLeft, 1000 * 60); // 每分鐘更新一次
+    const timer = setInterval(calculateDaysLeft, 1000 * 60 * 60);
 
-    return () => clearInterval(timer); // 清理定時器
+    return () => clearInterval(timer);
   }, []);
-
-  const formatTimeLeft = (minutes) => {
-    const days = Math.floor(minutes / (24 * 60));
-    const hours = Math.floor((minutes % (24 * 60)) / 60);
-    const mins = minutes % 60;
-
-    return `${days}天 ${hours}小時 ${mins}分鐘`;
-  };
 
   return (
     <section className="w-full py-16 relative bg-[#F4F7FA]">
@@ -93,7 +84,7 @@ const MajorReason = ({ initialMinutesLeft }) => {
         alt="bg dots"
         width={133}
         height={96}
-        className="absolute top-0 left-0 pointer-events-none translate-y-32"
+        className="absolute top-0 left-0 pointer-events-none translate-y-32 hidden tablet:block"
       />
       <div className="w-[min(90%,1062px)] mx-auto">
         <div className="flex items-center gap-3 text-[#AEBECF] mb-5">
@@ -129,10 +120,10 @@ const MajorReason = ({ initialMinutesLeft }) => {
             />
           ))}
         </div>
-        <div className="flex items-end pt-20 border-t border-[#E7E9ED]">
+        <div className="flex items-end pt-20 gap-y-4 border-t flex-wrap border-[#E7E9ED]">
           <div className="flex-grow">
             <h5 className="block-title text-secondary font-bold mb-3">
-              活動倒數 {formatTimeLeft(minutesLeft)} 天
+              活動倒數 {daysLeft} 天
             </h5>
             <h6 className="font-medium text-2xl text-[#161C2D]/70">
               還等什麼呢？趕快購票入場吧！

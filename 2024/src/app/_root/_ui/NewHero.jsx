@@ -32,8 +32,9 @@ const NewHero = () => {
             高雄展覽館 Kaohsiung Exhibition Center
           </h2>
           <h3 className="text-secondary text-2xl">
-            Generative AI<span className="text-[#161C2D]">x</span>
-            行動聯網<span className="text-[#161C2D]">x</span>
+            Generative AI
+            <span className="text-[#161C2D] inline-block mx-2">x</span>
+            行動聯網<span className="text-[#161C2D] inline-block mx-2">x</span>
             邊緣運算
           </h3>
         </div>

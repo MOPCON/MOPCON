@@ -12,8 +12,8 @@ const Header = () => {
     <Fragment>
       <header
         id="header"
-        className={`h-[52px] tablet:h-[82px] flex items-center justify-center sticky top-0 left-0 transition-all duration-200 ${
-          sticky ? "fixed top-0 left-0 z-50 bg-navy-blue" : "bg-white"
+        className={`h-[52px] tablet:h-[72px] w-full flex items-center justify-center z-50 top-0 left-0 transition-all duration-200 ${
+          sticky ? "fixed top-0 left-0 bg-navy-blue" : "bg-white relative"
         }`}
       >
         <div className="tablet:flex items-center justify-between w-[min(84%,1204px)] hidden">

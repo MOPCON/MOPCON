@@ -5,12 +5,12 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="w-full bg-navy-blue py-10">
-      <div className="w-[min(1062px,100%)] mx-auto grid grid-cols-1 tablet:grid-cols-2">
+      <div className="w-[min(90%,1062px)] mx-auto grid grid-cols-1 tablet:grid-cols-2 gap-y-3">
         <div className="text-white flex items-center gap-4">
           <span className="font-bold flex-shrink-0">聯絡我們</span>
           <Link href="mailto:contact@mopcon.org">contact@mopcon.org</Link>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex mob:items-center flex-col mob:flex-row gap-4">
           <span className="text-white font-bold flex-shrink-0">
             在這裡找到 #MOPCON
           </span>
