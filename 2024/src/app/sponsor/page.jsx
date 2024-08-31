@@ -3,6 +3,7 @@ import Hero from "./_ui/Hero";
 import JoinUs from "./_ui/JoinUs";
 import AnnualSponsor from "./_ui/AnnualSponsor";
 import RecruitPartner from "./_ui/RecruitPartner";
+import BePartner from "./_ui/BePartner";
 
 export const metadata = {
   title: "贊助夥伴",
@@ -14,6 +15,7 @@ const SponsorPage = () => {
   return (
     <Fragment>
       <Hero />
+      <BePartner />
       <JoinUs />
       <AnnualSponsor />
       <RecruitPartner />

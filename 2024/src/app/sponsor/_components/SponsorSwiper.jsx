@@ -62,7 +62,7 @@ const SponsorSwiper = () => {
         pagination={{
           el: ".sponsor-pagination",
           clickable: true,
-          bulletActiveClass: "size-3 bg-orange",
+          bulletActiveClass: "size-[10px] bg-orange",
           renderBullet: function (index, className) {
             return (
               '<span class="size-2 bg-cream flex-shrink-0 cursor-pointer rounded-[50%] transition-all duration-300 ' +
