@@ -1,16 +1,16 @@
 import React, { Fragment } from "react";
-import Hero from "./_root/_ui/Hero";
 import About from "./_root/_ui/About";
 import Venue from "./_root/_ui/Venue";
-import Transportation from "./_root/_ui/Transportation";
+import NewHero from "./_root/_ui/NewHero";
+import MajorReason from "./_root/_ui/MajorReason";
 
 export default function Home() {
   return (
     <Fragment>
-      <Hero />
+      <NewHero />
       <About />
       <Venue />
-      <Transportation />
+      <MajorReason />
     </Fragment>
   );
 }

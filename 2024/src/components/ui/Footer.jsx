@@ -1,55 +1,53 @@
-import { FooterSvg, MobileFooterSvg } from "./FooterSvg";
-import { BsFacebook, BsTwitterX, BsTelegram } from "react-icons/bs";
-import { RiInstagramFill } from "react-icons/ri";
+import { FaXTwitter, FaInstagram } from "react-icons/fa6";
+import { FaFacebookF, FaTelegramPlane } from "react-icons/fa";
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="my-10 pt-8">
-      <FooterSvg className={"hidden mob:block w-full"} />
-      <MobileFooterSvg className={"block mob:hidden w-full"} />
-      <div className="w-[min(92%,1204px)] mx-auto gap-4 grid grid-cols-2 mt-14 mb-4">
-        <div>
-          <h5 className="mb-4 text-black font-bold">聯絡我們</h5>
-          <a href="mailto:contact@mopcon.org">contact@mopcon.org</a>
+    <footer className="w-full bg-navy-blue py-10">
+      <div className="w-[min(1062px,100%)] mx-auto grid grid-cols-1 tablet:grid-cols-2">
+        <div className="text-white flex items-center gap-4">
+          <span className="font-bold flex-shrink-0">聯絡我們</span>
+          <Link href="mailto:contact@mopcon.org">contact@mopcon.org</Link>
         </div>
-        <div>
-          <h5 className="mb-4 text-black font-bold">在這裡找到 #MOPCON</h5>
-          <a
-            href="https://www.facebook.com/mopcon"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-N800 flex items-center gap-1"
-          >
-            <BsFacebook className="text-neutral-700" />
-            Facebook
-          </a>
-          <a
-            href="https://www.instagram.com/mopcon.tw"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-N800 flex items-center gap-1 mt-2"
-          >
-            <RiInstagramFill className="text-neutral-700" />
-            Instagram
-          </a>
-          <a
-            href="https://x.com/mopcon"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-N800 flex items-center gap-1 mt-2"
-          >
-            <BsTwitterX className="text-neutral-700" />
-            Twitter / X
-          </a>
-          <a
-            href="https://t.me/mopcon"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-N800 flex items-center gap-1 mt-2"
-          >
-            <BsTelegram className="text-neutral-700" />
-            Telegram
-          </a>
+        <div className="flex items-center gap-4">
+          <span className="text-white font-bold flex-shrink-0">
+            在這裡找到 #MOPCON
+          </span>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              className="rounded-md flex items-center justify-center size-6 bg-white/20 text-white text-sm"
+              href="https://www.facebook.com/mopcon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF />
+            </Link>
+            <Link
+              className="rounded-md flex items-center justify-center size-6 bg-white/20 text-white text-sm"
+              href="https://x.com/mopcon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaXTwitter />
+            </Link>
+            <Link
+              className="rounded-md flex items-center justify-center size-6 bg-white/20 text-white text-sm"
+              href="https://t.me/mopcon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTelegramPlane />
+            </Link>
+            <Link
+              className="rounded-md flex items-center justify-center size-6 bg-white/20 text-white text-sm"
+              href="https://www.instagram.com/mopcon.tw"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

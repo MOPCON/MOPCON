@@ -30,12 +30,14 @@ const variants = {
     },
   },
 };
-const Navigation = ({ toggleShowNav }) => {
+const Navigation = ({ toggleShowNav, isSticky }) => {
   return links.map((link, i) => (
     <motion.div variants={variants} key={i}>
       <Link
         href={link.path}
-        className="px-2 py-1 font-medium text-white tablet:text-N800"
+        className={`px-2 py-1 font-medium text-white ${
+          isSticky ? "text-white" : "tablet:text-N800"
+        }`}
         onClick={toggleShowNav}
       >
         {link.label}

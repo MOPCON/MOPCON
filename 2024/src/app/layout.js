@@ -8,7 +8,7 @@ import RecruitPopupButton from "@/components/RecruitPopupButton";
 
 const notoSans = Noto_Sans_TC({
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
+  weight: ["300", "400", "500", "700", "900"],
 });
 
 const isProduction = process.env.NODE_ENV === "production";
