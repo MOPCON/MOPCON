@@ -16,7 +16,7 @@ const variantsContainer = {
   },
 };
 
-const NavMobile = () => {
+const NavMobile = ({ isSticky }) => {
   const [showNav, setShowNav] = useState(false);
 
   const toggleNav = () => {
@@ -33,7 +33,7 @@ const NavMobile = () => {
         onClick={toggleNav}
         aria-label="Menu-Open"
       >
-        <LuMenu className="text-2xl" />
+        <LuMenu className={`text-2xl  ${isSticky ? "text-white" : ""}`} />
       </button>
       <motion.div
         className={`fixed top-0 duration-300 h-dvh w-screen bg-navy-blue z-50 right-0 flex flex-col justify-center items-center ${

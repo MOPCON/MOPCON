@@ -53,7 +53,7 @@ export async function getStaticProps() {
     props: {
       initialDaysLeft,
     },
-    revalidate: 86400,
+    revalidate: 43200,
   };
 }
 

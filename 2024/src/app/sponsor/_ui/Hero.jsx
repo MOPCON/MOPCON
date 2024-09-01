@@ -28,7 +28,7 @@ const Hero = () => {
         </h1>
         <p className="text-N800/80 leading-6 w-[min(100%,860px)] mx-auto">
           MOPCON 目前已是南台灣最大技術社群研討會，成立宗旨為
-          <span className="text-secondary relative">
+          <span className="text-secondary bg-highlight box-decoration-clone break-before-all">
             連結產業與資訊工程技術，以培養更多資訊科技人才，推動高雄產業創新發展
           </span>
           ，而沒有夥伴們的支持，這個願景就不可能成真！謝謝這 10+

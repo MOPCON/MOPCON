@@ -530,102 +530,76 @@
     {
       "level": "宇宙級",
       "levelId": 1,
+      "fill": "rgba(247, 144, 34, 0.3)",
+      "fillBgLight": "#FEF3E2",
+      "fillBg": "#F79022",
       "isGradient": false,
-      "fill": "#F79022",
-      "companies": [
-        {
-          "id": 1,
-          "name": "贊助商-1",
-          "img": "",
-          "description": "內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增。"
-        }
-      ]
+      "companies": []
     },
     {
       "level": "銀河級",
       "levelId": 2,
+      "fill": "rgba(252, 235, 117, 0.5)",
+      "fillBgLight": "#FFFCE7",
+      "fillBg": "#F8E038",
       "isGradient": false,
-      "fill": "#FCEB75",
-      "companies": [
-        {
-          "id": 2,
-          "name": "贊助商-2",
-          "img": "",
-          "description": "內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增。",
-          "speaker": {
-            "id": 1,
-            "name": "講者名"
-          }
-        },
-        {
-          "id": 3,
-          "name": "贊助商-3",
-          "img": "",
-          "description": "內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增。"
-        },
-        {
-          "id": 4,
-          "name": "贊助商-4",
-          "img": "",
-          "description": "內容待新增，內容待新增，內容待新增，內容待新增，內容待新增。"
-        }
-      ]
+      "companies": []
     },
     {
       "level": "恆星級",
       "levelId": 3,
+      "fill": "rgba(156, 188, 67, 0.3)",
+      "fillBgLight": "#F3F7E8",
+      "fillBg": "#9CBC43",
       "isGradient": false,
-      "fill": "#9CBC43",
       "companies": [
         {
           "id": 5,
-          "name": "贊助商-5",
-          "img": "",
-          "description": "內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增。"
+          "name": "新加坡商鈦坦科技",
+          "img": "/sponsor/2024005.webp",
+          "web": "https://www.titansoft.com/tw",
+          "fb": "https://www.facebook.com/TitansoftTW",
+          "description": "鈦坦科技是一間總部位於新加坡的軟體開發公司，主要的三大業務為 B2B 的線上軟體平台的開發與維護、代理敏捷專案管理工具 Jira 和企業知識內網 Confluence，以及提供敏捷開發的諮詢與顧問服務。身處快速變動的軟體產業，鈦坦採用敏捷開發，同時將敏捷思維注入公司文化，在多年導入及迭代下，開始【實行彈性工時】、【採用自主申請升遷】、【實踐薪資透明化】等，將敏捷思維落實於工作中。"
         }
       ]
     },
     {
       "level": "行星級",
       "levelId": 4,
+      "fill": "rgba(76, 118, 109, 0.3)",
+      "fillBgLight": "#E4F2F0",
+      "fillBg": "#599389",
       "isGradient": false,
-      "fill": "#4C766D",
       "companies": [
         {
           "id": 6,
-          "name": "贊助商-6",
-          "img": "",
-          "description": "內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增。"
+          "name": "可立可",
+          "img": "/sponsor/2024006.webp",
+          "height": 180,
+          "width": 39,
+          "web": "https://www.kkco.com.tw/",
+          "fb": "https://www.facebook.com/KlickKlackTaiwan/",
+          "description": "內容待新增"
         }
       ]
     },
     {
       "level": "彗星級",
       "levelId": 5,
+      "fill": "rgba(54, 71, 88, 0.3)",
+      "fillBgLight": "#E8EFFA",
+      "fillBg": "#556E85",
       "isGradient": false,
-      "fill": "#E9E3D7",
-      "companies": [
-        {
-          "id": 7,
-          "name": "贊助商-7",
-          "img": "",
-          "description": "內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增。"
-        }
-      ]
+      "companies": []
     },
     {
       "level": "教育及法人合作夥伴",
       "levelId": 6,
+      "fill": "rgba(233, 227, 215, 0.7)",
+      "fillBgLight": "",
+      "fillBg": "",
       "isGradient": true,
-      "fill": null,
-      "companies": [
-        {
-          "id": 8,
-          "name": "贊助商-8",
-          "img": "",
-          "description": "內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增，內容待新增。"
-        }
-      ]
+      "companies": []
     }
   ]
 }

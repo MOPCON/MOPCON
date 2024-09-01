@@ -19,27 +19,35 @@ const Modal = ({ sponsorData, onClose }) => {
             <div className="flex flex-col items-center mob:block">
               <div className="flex gap-3 flex-col mob:flex-row items-center w-fit mb-3">
                 <div className="size-20 flex items-center justify-center">
-                  <ModalImage src={sponsorData.img} alt={sponsorData.name} />
+                  <ModalImage
+                    src={sponsorData.img}
+                    alt={sponsorData.name}
+                    className="object-contain"
+                  />
                 </div>
                 <h4 className="font-bold text-[#343844]">{sponsorData.name}</h4>
               </div>
               <div className="flex items-center justify-evenly w-20">
-                <a
-                  href="#"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                  className="text-secondary"
-                >
-                  <GoGlobe aria-label="Visit website" />
-                </a>
-                <a
-                  href="#"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                  className="text-secondary"
-                >
-                  <FaFacebook aria-label="Visit Facebook page" />
-                </a>
+                {sponsorData.web && (
+                  <a
+                    href={sponsorData.web}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    className="text-secondary"
+                  >
+                    <GoGlobe aria-label="Visit website" />
+                  </a>
+                )}
+                {sponsorData.fb && (
+                  <a
+                    href={sponsorData.fb}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    className="text-secondary"
+                  >
+                    <FaFacebook aria-label="Visit Facebook page" />
+                  </a>
+                )}
               </div>
             </div>
             <article>

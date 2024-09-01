@@ -65,7 +65,7 @@ const JoinUs = () => {
         className="grid grid-cols-1 tablet:grid-cols-3 grid-flow-row auto-rows-max gap-5 pb-6 tablet:pb-0"
         variants={{
           hidden: { opacity: 0 },
-          visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+          visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
         }}
         initial="hidden"
         animate="visible"

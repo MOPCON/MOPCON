@@ -81,35 +81,20 @@ const Leaf = ({ className }) => {
   );
 };
 
-const SponsorLeaf = ({ className, isGradient, fill }) => {
+const SponsorLeaf = ({ className, fill }) => {
   return (
     <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
       <path
-        d="M3.10425 2.71154C1.03038 4.85696 -0.00437002 7.18228 1.4722e-05 9.68747L1.56103e-05 19.8486L0.151289 20L10.3782 20C13.4868 20 16.1636 18.4842 18.4084 15.4525C19.394 13.9368 19.9445 12.1793 20 10.3719L20 0.151502L19.8487 0.000139963L9.62184 0.000140857C7.39889 -0.0130211 5.22636 0.890776 3.10425 2.71154Z"
-        fill={`${isGradient ? "url(#paint0_linear_2407_7049)" : fill}`}
+        d="M27.0332 4.33846C30.3514 7.77114 32.007 11.4916 32 15.5L32 31.7578L31.7579 32L15.3949 32C10.4211 32 6.1383 29.5747 2.54651 24.724C0.969641 22.2989 0.0887739 19.4869 -1.45078e-06 16.595L-2.11918e-08 0.242403L0.242004 0.000223941L16.605 0.000225371C20.1618 -0.0208337 23.6378 1.42524 27.0332 4.33846Z"
+        fill={fill}
       />
-      {isGradient && (
-        <defs>
-          <linearGradient
-            id="paint0_linear_2407_7049"
-            x1="20"
-            y1="20"
-            x2="-2.6209"
-            y2="16.3807"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#9CBC43" />
-            <stop offset="0.8" stopColor="#4C766D" />
-          </linearGradient>
-        </defs>
-      )}
     </svg>
   );
 };

@@ -20,7 +20,7 @@ const Header = () => {
           <NavDesktop isSticky={sticky} />
         </div>
         <div className="flex tablet:hidden w-[84%]">
-          <NavMobile />
+          <NavMobile isSticky={sticky} />
         </div>
       </header>
     </Fragment>
