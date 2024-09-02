@@ -14,16 +14,16 @@ const SponsorSwiper = dynamic(() => import("../_components/SponsorSwiper"), {
 const Hero = () => {
   return (
     <HeroSection>
-      <div className="w-[min(90%,1280px)] mx-auto mb-8 tablet:mb-16">
-        <div className="flex items-center gap-4 justify-end font-bold text-sm text-[#AEBECF] mb-28">
+      <div className="w-[min(90%,1280px)] mx-auto mb-5 tablet:mb-16">
+        <div className="hidden tablet:flex items-center gap-4 justify-end font-bold text-sm text-[#AEBECF] mb-28">
           <span>$&#123;con&#125; with Inspiration</span>
           <div className="w-[2px] h-4 bg-[#AEBECF80]/50" />
           <span>2024</span>
           <div className="w-[2px] h-4 bg-[#AEBECF80]/50" />
           <span>mopcon.org</span>
         </div>
-        <h1 className="block-title text-center mb-10">
-          感謝{" "}
+        <h1 className="block-title tablet:text-center mb-6 mt-10 tablet:mt-0 tablet:mb-10 flex flex-col tablet:block">
+          <span>感謝 </span>
           <span className="text-light-green">所有支持 MOPCON 的贊助商</span>
         </h1>
         <p className="text-N800/80 leading-6 w-[min(100%,860px)] mx-auto">

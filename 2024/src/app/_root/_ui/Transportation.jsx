@@ -36,7 +36,9 @@ const cardContents = [
 const Transportation = () => {
   return (
     <section className="w-[min(100%,1062px)] mx-auto">
-      <h6 className="font-medium text-xl text-secondary mb-6">如何前往？</h6>
+      <h6 className="font-medium text-lg tablet:text-xl text-secondary mb-6">
+        如何前往？
+      </h6>
       <div className="grid grid-cols-1 tablet:grid-cols-2 gap-x-6 gap-y-8">
         {cardContents.map(({ icon, title, content, id, bgColor }) => (
           <Card

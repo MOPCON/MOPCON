@@ -5,13 +5,14 @@ import { SponsorLeaf } from "./icons";
 import { AnimatePresence } from "framer-motion";
 import { useModal } from "@/components/hook/useModal";
 import dynamic from "next/dynamic";
+import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 const SponsorModal = dynamic(() => import("../_components/Modal"), {
   ssr: false,
 });
 const AnnualSponsorBlock = ({ title, children, ...props }) => {
   return (
     <div className="mb-10 w-[min(90%,1280px)] mx-auto">
-      <h3 className="font-bold tablet:text-[31px] text-lg text-[#1C1F25] mb-6 relative z-[1] tablet:ms-28">
+      <h3 className="font-bold tablet:text-[32px] text-xl text-[#1C1F25] mb-6 relative z-[1] tablet:ms-28">
         <SponsorLeaf
           fill={props.fill}
           className="absolute left-0 bottom-0 -translate-x-1/3 translate-y-1/4 -z-10"
@@ -30,25 +31,8 @@ const AnnualSponsor = () => {
 
   return (
     <section className="pt-16 w-full">
-      <div className="max-w-[1062px] mx-auto">
-        <div className="flex items-center gap-3 text-[#AEBECF] mb-5">
-          年度贊助商
-          <svg
-            width="62"
-            height="18"
-            viewBox="0 0 62 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4 9H60M60 9L55.4813 5M60 9L55.4813 13"
-              stroke="#AEBECF"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
+      <div className="w-[min(90%,1062px)] mx-auto">
+        <BlockTitleArrow>年度贊助商</BlockTitleArrow>
         <h4 className="block-title mb-14">
           今年的 <span className="text-light-green">贊助夥伴們</span>
         </h4>

@@ -1,5 +1,6 @@
 import { getImageSrc } from "@/components/util/getImageSrc";
 import Image from "next/image";
+import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 const RecruitPartner = () => {
   return (
     <section className="w-full h-[610px] relative overflow-clip flex bg-[#F4F7FA]">
@@ -11,24 +12,7 @@ const RecruitPartner = () => {
         className="absolute w-full h-full max-w-7xl object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
       />
       <div className="w-[min(90%,628px)] m-auto relative z-[1]">
-        <div className="flex items-center gap-3 text-[#AEBECF] mb-5">
-          招募訊息
-          <svg
-            width="62"
-            height="18"
-            viewBox="0 0 62 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4 9H60M60 9L55.4813 5M60 9L55.4813 13"
-              stroke="#AEBECF"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
+        <BlockTitleArrow>招募訊息</BlockTitleArrow>
         <h4 className="block-title mb-10 text-center">
           贊助夥伴 <span className="text-light-green">招募</span>
         </h4>
@@ -41,10 +25,12 @@ const RecruitPartner = () => {
         >
           我要贊助
         </a>
-        <div className="text-secondary mb-1 text-xl font-medium text-center">
+        <div className="text-secondary mb-1 text-lg tablet:text-xl font-medium text-center">
           sponsor@mopcon.org
         </div>
-        <div className="text-N800 text-center">MOPCON 2024 贊助組 收</div>
+        <div className="text-N800 text-sm tablet:text-base text-center">
+          MOPCON 2024 贊助組 收
+        </div>
       </div>
     </section>
   );

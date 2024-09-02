@@ -10,7 +10,7 @@ const NewHero = () => {
   return (
     <HeroSection>
       <div className="w-[min(90%,1280px)] mx-auto tablet:ps-10">
-        <div className="flex items-center gap-4 justify-end font-bold text-sm text-[#AEBECF] mb-8">
+        <div className="hidden tablet:flex items-center gap-4 justify-end font-bold text-sm text-[#AEBECF] mb-8">
           <span>$&#123;con&#125; with Inspiration</span>
           <div className="w-[2px] h-4 bg-[#AEBECF80]/50" />
           <span>2024</span>
@@ -24,30 +24,30 @@ const NewHero = () => {
           alt="mopcon logo"
           className="max-w-full mb-10"
         />
-        <div className="mb-10 font-medium text-xl">
-          <p className="mb-2 text-[#6F7481]">
+        <div className="mb-10 font-medium">
+          <p className="mb-2 text-[#6F7481] tablet:text-xl">
             2024.10.26 (Sat.) - 2024.10.27 (Sun.)
           </p>
-          <h2 className="mb-6 text-2xl text-light-green">
+          <h2 className="mb-6 text-lg tablet:text-2xl text-light-green">
             高雄展覽館 Kaohsiung Exhibition Center
           </h2>
-          <h3 className="text-secondary text-2xl">
+          <h3 className="text-secondary text-lg tablet:text-2xl">
             Generative AI
             <span className="text-[#161C2D] inline-block mx-2">x</span>
             行動聯網<span className="text-[#161C2D] inline-block mx-2">x</span>
             邊緣運算
           </h3>
         </div>
-        <div className="flex items-center gap-y-3 gap-x-6 flex-wrap">
+        <div className="flex items-center gap-y-3 gap-4 tablet:gap-x-6 flex-wrap">
           <Link
-            className="w-48 flex items-center justify-center gap-3 rounded-xl bg-orange text-white font-bold h-12 px-8 hover:shadow-[0_0_20px_2px_rgba(247,_144,_34,_0.6),0_0_25px_3px_rgba(255,_255,_255,_0.25),inset_0_0_20px_0_rgba(255,_255,_255,_0.6)] transition-all duration-150"
+            className="w-40 tablet:w-48 flex items-center justify-center gap-3 rounded-xl bg-orange text-white font-bold h-12 px-8 hover:shadow-[0_0_20px_2px_rgba(247,_144,_34,_0.6),0_0_25px_3px_rgba(255,_255,_255,_0.25),inset_0_0_20px_0_rgba(255,_255,_255,_0.6)] transition-all duration-150"
             href="/tickets"
           >
             前往購票
             <FaArrowRight />
           </Link>
           <Link
-            className="w-48 bg-[#FEF3E2] text-orange font-bold rounded-xl h-12 px-8 flex items-center justify-center hover:shadow-[0_0_20px_2px_rgba(247,_144,_34,_0.6),0_0_25px_3px_rgba(255,_255,_255,_0.25),inset_0_0_20px_0_rgba(255,_255,_255,_0.6)] transition-all duration-150"
+            className="w-40 tablet:w-48 bg-[#FEF3E2] text-orange font-bold rounded-xl h-12 px-8 flex items-center justify-center hover:shadow-[0_0_20px_2px_rgba(247,_144,_34,_0.6),0_0_25px_3px_rgba(255,_255,_255,_0.25),inset_0_0_20px_0_rgba(255,_255,_255,_0.6)] transition-all duration-150"
             href="/tickets"
           >
             大會議程

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
+import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 
 const REASONS = [
   {
@@ -33,10 +34,10 @@ const ReasonItem = ({ title, content, idx, titleNum }) => {
   return (
     <div className="relative pb-20">
       <h6 className="mb-4 font-medium flex gap-2 w-fit items-baseline bg-gradient-to-r from-secondary to-light-green bg-clip-text text-transparent">
-        <span className="text-[40px]">{titleNum}</span>
-        <span className="text-2xl">{title}</span>
+        <span className="text-[32px] tablet:text-[40px]">{titleNum}</span>
+        <span className="text-lg tablet:text-2xl">{title}</span>
       </h6>
-      <p className="text-N800/80 text-lg">{content}</p>
+      <p className="text-N800/80  tablet:text-lg">{content}</p>
       <div className="absolute font-light bottom-0 right-0 text-[#AEBECF]/40 text-8xl">
         0{idx}
       </div>
@@ -87,29 +88,13 @@ const MajorReason = ({ initialDaysLeft }) => {
         className="absolute top-0 left-0 pointer-events-none translate-y-32 hidden tablet:block"
       />
       <div className="w-[min(90%,1062px)] mx-auto">
-        <div className="flex items-center gap-3 text-[#AEBECF] mb-5">
-          選擇我們
-          <svg
-            width="62"
-            height="18"
-            viewBox="0 0 62 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4 9H60M60 9L55.4813 5M60 9L55.4813 13"
-              stroke="#AEBECF"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
+        <BlockTitleArrow>選擇我們</BlockTitleArrow>
+
         <h4 className="block-title mb-12">
           三大不能錯過 <span className="text-light-green">MOPCON 2024</span>{" "}
           的理由
         </h4>
-        <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] justify-between gap-x-12 mb-20">
+        <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] justify-between gap-y-4 gap-x-12 mb-20">
           {REASONS.map((reason, idx) => (
             <ReasonItem
               key={reason.id}
@@ -125,7 +110,7 @@ const MajorReason = ({ initialDaysLeft }) => {
             <h5 className="block-title text-secondary font-bold mb-3">
               活動倒數 {daysLeft} 天
             </h5>
-            <h6 className="font-medium text-2xl text-[#161C2D]/70">
+            <h6 className="font-medium text-lg tablet:text-2xl text-[#161C2D]/70">
               還等什麼呢？趕快購票入場吧！
             </h6>
           </div>

@@ -70,12 +70,12 @@ const SponsorCard = ({ onClick, ...sponsorData }) => {
   return (
     <Fragment>
       <div
-        className="group rounded-3xl bg-white cursor-pointer h-56 flex flex-col items-center justify-center relative transition-all duration-300 hover:-translate-y-3 hover:shadow-[0_10px_30px_0_rgba(0,0,0,0.05)]"
+        className="tablet:group rounded-3xl bg-white cursor-pointer h-56 flex flex-col items-center justify-center relative transition-all duration-300 tablet:hover:-translate-y-3 tablet:hover:shadow-[0_10px_30px_0_rgba(0,0,0,0.05)]"
         onClick={() => {
           onClick(sponsorData.id);
         }}
       >
-        <div className="flex flex-col rounded-3xl gap-4 bg-white items-center justify-center size-full p-4 overflow-clip relative z-10">
+        <div className="flex flex-col rounded-3xl gap-4 bg-white items-center justify-center size-full p-4 overflow-clip relative z-[2]">
           <div className="h-36 w-48 overflow-clip flex items-center justify-center flex-grow">
             <Image
               className="h-full max-w-full object-contain object-center"

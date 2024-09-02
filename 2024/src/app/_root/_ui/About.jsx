@@ -1,35 +1,19 @@
 import React from "react";
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
+import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 
 const About = () => {
   return (
-    <section className="py-24 relative">
-      <div className="absolute top-0 left-0 w-full h-2/6 z-[-1] bg-[#F4F7FA]" />
+    <section className="py-12 tablet:py-24 relative">
+      <div className="absolute top-0 left-0 w-full h-96 tablet:h-2/6 z-[-1] bg-[#F4F7FA]" />
       <article className="w-[min(90%,1062px)] mx-auto ">
         <div className="mb-14">
-          <div className="flex items-center gap-3 text-[#AEBECF] mb-5">
-            關於 MOPCON
-            <svg
-              width="62"
-              height="18"
-              viewBox="0 0 62 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M4 9H60M60 9L55.4813 5M60 9L55.4813 13"
-                stroke="#AEBECF"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <h2 className="text-[40px] font-bold text-[#161C2D] mb-3">
+          <BlockTitleArrow>關於 MOPCON</BlockTitleArrow>
+          <h2 className="block-title text-[#161C2D] mb-3">
             南台灣 <span className="text-light-green">最大行動科技年會</span>
           </h2>
-          <h3 className="text-secondary text-2xl">
+          <h3 className="text-secondary text-lg tablet:text-2xl">
             聚集知識與人才
             <span className="text-[#161C2D] inline-block mx-2">x</span>
             南台灣最大行動科技年會
@@ -56,27 +40,27 @@ const About = () => {
             height={90}
           />
         </div>
-        <div className="grid grid-cols-3 gap-5 mt-10 laptop:mt-20">
+        <div className="grid grid-cols-1 tablet:grid-cols-3 gap-10 tablet:gap-5 mt-10 laptop:mt-20">
           <h4 className="flex items-center justify-center flex-col font-bold text-[#161C2D]/70">
-            <span className="text-2xl">持續舉辦</span>
-            <span className="text-[40px] laptop:text-[80px] text-[#161C2D]">
+            <span className="text-xl tablet:text-2xl">持續舉辦</span>
+            <span className="text-[64px] laptop:text-[80px] text-[#161C2D]">
               12
             </span>
-            <span className="text-2xl">年</span>
+            <span className="text-xl tablet:text-2xl">年</span>
           </h4>
           <h4 className="flex items-center justify-center flex-col font-bold text-[#161C2D]/70">
-            <span className="text-2xl">精彩議程</span>
-            <span className="text-[40px] laptop:text-[80px] text-[#161C2D]">
+            <span className="text-xl tablet:text-2xl">精彩議程</span>
+            <span className="text-[64px] laptop:text-[80px] text-[#161C2D]">
               30
             </span>
-            <span className="text-2xl">場以上</span>
+            <span className="text-xl tablet:text-2xl">場以上</span>
           </h4>
           <h4 className="flex items-center justify-center flex-col font-bold text-[#161C2D]/70">
-            <span className="text-2xl">熱情會眾</span>
-            <span className="text-[40px] laptop:text-[80px] text-[#161C2D]">
+            <span className="text-xl tablet:text-2xl">熱情會眾</span>
+            <span className="text-[64px] laptop:text-[80px] text-[#161C2D]">
               1000
             </span>
-            <span className="text-2xl">人以上</span>
+            <span className="text-xl tablet:text-2xl">人以上</span>
           </h4>
         </div>
         <div className="text-N800/80 text-lg mt-14 mb-5 relative">
@@ -86,7 +70,7 @@ const About = () => {
             viewBox="0 0 100 100"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-0 left-0 -z-10 -translate-x-10 -translate-y-1/4"
+            className="absolute top-0 left-0 -z-10 -translate-x-10 -translate-y-1/4 hidden tablet:block"
           >
             <path
               d="M100 60C100 82.0914 82.0914 100 60 100L0 100L5.24537e-06 40C7.17666e-06 17.9086 17.9086 -7.17666e-06 40 -5.24537e-06L100 0L100 60Z"
@@ -94,7 +78,7 @@ const About = () => {
             />
           </svg>
           <Image
-            className="absolute left-0 bottom-0 -translate-x-1/3 translate-y-1/3 pointer-events-none -z-10"
+            className="absolute left-0 bottom-0 -translate-x-1/3 translate-y-1/3 pointer-events-none -z-10 hidden tablet:block"
             src={getImageSrc("/img/Dot01.svg")}
             alt="bg-dots"
             aria-hidden="true"
@@ -114,7 +98,7 @@ const About = () => {
           </p>
           <p>準備好了嗎？讓我們一起在 MOPCON 2024 尋找未來世界的敲門磚吧！</p>
         </div>
-        <div className="text-xl font-black text-end text-orange/80 relative">
+        <div className="text-xl font-black text-end text-orange/80 relative hidden tablet:block">
           Inspiration, Rooted in $&#123;con&#125;
           <svg
             width="94"

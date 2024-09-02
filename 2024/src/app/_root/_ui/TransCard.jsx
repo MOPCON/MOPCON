@@ -19,9 +19,9 @@ const Card = ({ icon, title, content, bgColor }) => {
         >
           {IconComponent && <IconComponent />}
         </div>
-        <div className="text-2xl text-N800 flex-grow">
-          <h6 className="font-medium mb-2">{title}</h6>
-          <p className="text-lg">{content}</p>
+        <div className="text-N800 flex-grow">
+          <h6 className="text-lg tablet:text-2xl font-medium mb-2">{title}</h6>
+          <p className="text-base tablet:text-lg">{content}</p>
         </div>
       </div>
     </div>

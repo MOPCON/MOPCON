@@ -25,8 +25,14 @@ const NavMobile = ({ isSticky }) => {
 
   return (
     <>
-      <Link href="/" aria-label="Home">
-        <MobileLogo />
+      <Link
+        href="/"
+        className="flex items-center justify-center"
+        aria-label="Home"
+      >
+        <MobileLogo
+          className={isSticky ? "stroke-white" : "stroke-[#0E2219]"}
+        />
       </Link>
       <button
         className="ms-auto px-2"

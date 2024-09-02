@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Speaker, Matchmaking, Brand } from "./icons";
 import { twMerge } from "tailwind-merge";
+import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 
 const Card = ({ icon, title, content, className, shadow, border }) => {
   return (
@@ -26,10 +27,10 @@ const Card = ({ icon, title, content, className, shadow, border }) => {
             <div className="flex items-center justify-center size-32">
               {icon}
             </div>
-            <h4 className="font-medium text-[#1C1F25] text-2xl mb-3">
+            <h4 className="font-medium text-[#1C1F25] text-lg tablet:text-2xl mb-3">
               {title}
             </h4>
-            <p className="text-N800/70 text-lg">{content}</p>
+            <p className="text-N800/70 tablet:text-lg">{content}</p>
           </div>
         </div>
       </div>
@@ -40,29 +41,12 @@ const Card = ({ icon, title, content, className, shadow, border }) => {
 const JoinUs = () => {
   return (
     <section className="w-[min(90%,1204px)] mx-auto py-8 tablet:py-16 mb-20">
-      <div className="flex items-center gap-3 text-[#AEBECF] mb-5">
-        夥伴優勢
-        <svg
-          width="62"
-          height="18"
-          viewBox="0 0 62 18"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M4 9H60M60 9L55.4813 5M60 9L55.4813 13"
-            stroke="#AEBECF"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </div>
-      <h4 className="block-title mb-28">
+      <BlockTitleArrow>夥伴優勢</BlockTitleArrow>
+      <h4 className="block-title mb-14 tablet:mb-28">
         加入我們，<span className="text-light-green">最實質的收穫是...</span>
       </h4>
       <motion.div
-        className="grid grid-cols-1 tablet:grid-cols-3 grid-flow-row auto-rows-max gap-5 pb-6 tablet:pb-0"
+        className="grid grid-cols-1 tablet:grid-cols-3 grid-flow-row auto-rows-max gap-y-14 gap-5 pb-6 tablet:pb-0"
         variants={{
           hidden: { opacity: 0 },
           visible: { opacity: 1, transition: { staggerChildren: 0.3 } },

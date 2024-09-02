@@ -1,36 +1,20 @@
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
+import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 
 const BePartner = () => {
   return (
-    <section className="w-full py-16">
-      <div className="w-[min(90%,1062px)] mx-auto mb-28">
-        <div className="flex items-center gap-3 text-[#AEBECF] mb-5">
-          加入我們
-          <svg
-            width="62"
-            height="18"
-            viewBox="0 0 62 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4 9H60M60 9L55.4813 5M60 9L55.4813 13"
-              stroke="#AEBECF"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
+    <section className="w-full py-12 tablet:py-24">
+      <div className="w-[min(90%,1062px)] mx-auto mb-10 tablet:mb-28">
+        <BlockTitleArrow>加入我們</BlockTitleArrow>
         <h4 className="block-title mb-3">
           想成為 <span className="text-light-green">我們的夥伴嗎？</span>
         </h4>
-        <h5 className="text-secondary text-2xl">
+        <h5 className="text-secondary text-lg tablet:text-2xl">
           想了解加入贊助商，會遇到什麼樣的與會民眾嗎？
         </h5>
       </div>
-      <div className="grid grid-cols-1 tablet:grid-cols-2 w-[min(90%,1280px)] gap-4 mx-auto">
+      <div className="grid grid-cols-1 tablet:grid-cols-2 w-[min(90%,1280px)] gap-y-14 tablet:gap-4 mx-auto">
         <Image
           src={getImageSrc("/sponsor/be-partner-bg.webp")}
           alt="2023Sponsor"
@@ -39,7 +23,7 @@ const BePartner = () => {
           className="w-full h-full max-w-[560px] object-cover object-center"
         />
         <div>
-          <ul className="text-N800 opacity-80 font-medium text-xl mb-16">
+          <ul className="text-N800 opacity-80 font-medium text-lg tablet:text-xl mb-14 tablet:mb-16">
             <li className="mb-2">
               # 濁水溪以南<span className="text-orange">破千人研討會</span>
             </li>
