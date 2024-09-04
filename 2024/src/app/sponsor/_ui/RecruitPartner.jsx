@@ -20,7 +20,7 @@ const RecruitPartner = () => {
           如果您有意願支持我們，請寄信到我們的贊助信箱。謝謝你願意成為全台最大行動科技領域社群研討會的參與者及貢獻者之一！
         </p>
         <a
-          className="flex mx-auto w-48 items-center justify-center gap-3 mb-6 rounded-xl bg-orange text-white font-bold h-12 px-8 hover:shadow-[0_0_20px_2px_rgba(247,_144,_34,_0.6),0_0_25px_3px_rgba(255,_255,_255,_0.25),inset_0_0_20px_0_rgba(255,_255,_255,_0.6)] transition-all duration-150"
+          className="mx-auto w-48 btn btn-primary"
           href="mailto:sponsor@mopcon.org"
         >
           我要贊助

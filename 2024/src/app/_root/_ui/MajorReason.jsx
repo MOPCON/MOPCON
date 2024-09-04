@@ -115,8 +115,10 @@ const MajorReason = ({ initialDaysLeft }) => {
             </h6>
           </div>
           <Link
-            className="flex items-center justify-center gap-3 rounded-xl bg-orange text-white font-bold h-12 px-8 hover:shadow-[0_0_20px_2px_rgba(247,_144,_34,_0.6),0_0_25px_3px_rgba(255,_255,_255,_0.25),inset_0_0_20px_0_rgba(255,_255,_255,_0.6)] transition-all duration-150"
-            href="/tickets"
+            className="btn btn-primary"
+            href="https://mopcon.kktix.cc/events/2024-students"
+            target="_blank"
+            rel="noreferrer noopener"
           >
             前往購票
             <FaArrowRight />

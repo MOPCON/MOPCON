@@ -21,7 +21,7 @@ const cardContents = [
     id: 2,
     icon: "lightRail",
     title: "輕軌 Light Rail",
-    content: "搭乘捷運紅線至三多商圈站",
+    content: "至高雄展覽館站步行約7分鐘即可抵達",
     bgColor: "bg-[#E8EFFA]",
   },
   {

@@ -4,17 +4,27 @@ import { Speaker, Matchmaking, Brand } from "./icons";
 import { twMerge } from "tailwind-merge";
 import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 
-const Card = ({ icon, title, content, className, shadow, border }) => {
+const fadeInAnimation = {
+  initial: {
+    opacity: 0,
+    y: 30,
+  },
+  show: (index) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: index * 0.2, duration: 0.7 },
+  }),
+};
+
+const Card = ({ icon, title, content, className, shadow, border, index }) => {
   return (
     <motion.div
       className={`rounded-[32px] p-[2px] overflow-clip mx-auto max-w-[352px] ${border}`}
-      variants={{
-        hidden: { opacity: 0, y: 25 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-      }}
-      initial="hidden"
-      whileInView="visible"
+      variants={fadeInAnimation}
+      initial="initial"
+      whileInView="show"
       viewport={{ once: true }}
+      custom={index}
     >
       <div
         className={twMerge(
@@ -45,16 +55,7 @@ const JoinUs = () => {
       <h4 className="block-title mb-14 tablet:mb-28">
         加入我們，<span className="text-light-green">最實質的收穫是...</span>
       </h4>
-      <motion.div
-        className="grid grid-cols-1 tablet:grid-cols-3 grid-flow-row auto-rows-max gap-y-14 gap-5 pb-6 tablet:pb-0"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
-        }}
-        initial="hidden"
-        animate="visible"
-        exit="hidden"
-      >
+      <div className="grid grid-cols-1 tablet:grid-cols-3 grid-flow-row auto-rows-max gap-y-14 gap-5 pb-6 tablet:pb-0">
         <Card
           icon={<Brand />}
           title="促進徵才媒合"
@@ -62,6 +63,7 @@ const JoinUs = () => {
           className="bg-[linear-gradient(135deg,_#E8EFFA_50%,_#CBD9E5)]"
           shadow="shadow-[0_40px_80px_0_#AEBECF]"
           border="bg-[linear-gradient(135deg,_#FFF_30%,_#90A4B9)]"
+          index={0}
         />
         <Card
           icon={<Speaker />}
@@ -70,6 +72,7 @@ const JoinUs = () => {
           className="bg-[linear-gradient(135deg,_#E4F2F0_50%,_#BDDEDA)]"
           shadow="shadow-[0_40px_80px_0_#96CAC3]"
           border="bg-[linear-gradient(135deg,_#FFF_30%,_#74B4AB)]"
+          index={1}
         />
         <Card
           icon={<Matchmaking />}
@@ -78,8 +81,9 @@ const JoinUs = () => {
           className="bg-[linear-gradient(135deg,_#F3F7E8_50%,_#E1EBC5)]"
           shadow="shadow-[0_40px_80px_0_#CCDDA0]"
           border="bg-[linear-gradient(135deg,_#FFF_30%,_#BAD07C)]"
+          index={2}
         />
-      </motion.div>
+      </div>
     </section>
   );
 };

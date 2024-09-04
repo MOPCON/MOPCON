@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import Link from "next/link";
@@ -6,6 +6,7 @@ import { FaArrowRight, FaXTwitter } from "react-icons/fa6";
 import { FaFacebookF, FaTelegramPlane } from "react-icons/fa";
 import { Instagram } from "./icons";
 import HeroSection from "@/components/ui/HeroSection";
+import { motion } from "framer-motion";
 const NewHero = () => {
   return (
     <HeroSection>
@@ -40,16 +41,15 @@ const NewHero = () => {
         </div>
         <div className="flex items-center gap-y-3 gap-4 tablet:gap-x-6 flex-wrap">
           <Link
-            className="w-40 tablet:w-48 flex items-center justify-center gap-3 rounded-xl bg-orange text-white font-bold h-12 px-8 hover:shadow-[0_0_20px_2px_rgba(247,_144,_34,_0.6),0_0_25px_3px_rgba(255,_255,_255,_0.25),inset_0_0_20px_0_rgba(255,_255,_255,_0.6)] transition-all duration-150"
-            href="/tickets"
+            className="w-40 tablet:w-48 btn btn-primary"
+            href="https://mopcon.kktix.cc/events/2024-students"
+            target="_blank"
+            rel="noreferrer noopener"
           >
             前往購票
             <FaArrowRight />
           </Link>
-          <Link
-            className="w-40 tablet:w-48 bg-[#FEF3E2] text-orange font-bold rounded-xl h-12 px-8 flex items-center justify-center hover:shadow-[0_0_20px_2px_rgba(247,_144,_34,_0.6),0_0_25px_3px_rgba(255,_255,_255,_0.25),inset_0_0_20px_0_rgba(255,_255,_255,_0.6)] transition-all duration-150"
-            href="/tickets"
-          >
+          <Link className="w-40 tablet:w-48 btn btn-secondary" href="/tickets">
             大會議程
           </Link>
         </div>
@@ -58,7 +58,16 @@ const NewHero = () => {
             <div className="h-[2px] w-8 bg-[#AEBECF]" />
             在這裡找到 #MOPCON
           </div>
-          <div className="flex items-center gap-3">
+          <motion.div
+            className="flex items-center gap-3"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+            }}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
             <Link
               className="rounded-xl flex items-center justify-center size-14 bg-[rgba(24,_119,_242,_0.08)]"
               href="https://www.facebook.com/mopcon"
@@ -91,7 +100,7 @@ const NewHero = () => {
             >
               <Instagram />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </HeroSection>

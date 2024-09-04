@@ -4,16 +4,16 @@
 
 @layer components {
   .btn {
-    @apply rounded-xl text-center px-5 py-3 font-bold;
+    @apply flex items-center justify-center gap-3 rounded-xl font-bold h-12 px-8 transition-all duration-150;
   }
   .btn-primary {
-    @apply text-white border bg-gradient-to-r from-secondary to-light-green transition-all duration-300 hover:border-secondary hover:text-secondary  hover:from-secondary/[.3] hover:to-secondary/[.3];
+    @apply bg-orange text-white hover:shadow-[0_0_20px_2px_rgba(247,_144,_34,_0.6),0_0_25px_3px_rgba(255,_255,_255,_0.25),inset_0_0_20px_0_rgba(255,_255,_255,_0.6)];
   }
   .btn-secondary {
-    @apply text-secondary border border-secondary bg-white duration-300 hover:bg-secondary/[.3];
+    @apply bg-[#FEF3E2] text-orange hover:shadow-[0_0_20px_2px_rgba(247,_144,_34,_0.6),0_0_25px_3px_rgba(255,_255,_255,_0.25),inset_0_0_20px_0_rgba(255,_255,_255,_0.6)];
   }
   .block-title {
-    @apply font-bold text-[#161C2D] text-2xl tablet:text-[40px];
+    @apply font-bold text-[#161C2D] text-2xl tablet:text-[40px] leading-tight;
   }
 }
 

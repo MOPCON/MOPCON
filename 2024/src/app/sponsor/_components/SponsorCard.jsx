@@ -70,7 +70,7 @@ const SponsorCard = ({ onClick, ...sponsorData }) => {
   return (
     <Fragment>
       <div
-        className="tablet:group rounded-3xl bg-white cursor-pointer h-56 flex flex-col items-center justify-center relative transition-all duration-300 tablet:hover:-translate-y-3 tablet:hover:shadow-[0_10px_30px_0_rgba(0,0,0,0.05)]"
+        className="group rounded-3xl bg-white cursor-pointer h-56 flex flex-col items-center justify-center relative transition-all duration-300 tablet:hover:-translate-y-3 tablet:hover:shadow-[0_10px_30px_0_rgba(0,0,0,0.05)]"
         onClick={() => {
           onClick(sponsorData.id);
         }}
@@ -89,14 +89,14 @@ const SponsorCard = ({ onClick, ...sponsorData }) => {
             {sponsorData.name}
           </span>
           <SponsorLeaf
-            className="absolute bottom-0 right-0 translate-y-4 transition-opacity duration-200 opacity-0 group-hover:opacity-100"
+            className="absolute bottom-0 right-0 translate-y-4 transition-opacity duration-200 opacity-0 tablet:group-hover:opacity-100"
             fill={sponsorData.fillBgLight}
             isGradient={sponsorData.isGradient}
             mode="light"
           />
         </div>
         <SponsorLeaf
-          className="absolute bottom-0 right-0 translate-y-2 translate-x-2 transition-opacity duration-200 opacity-0 group-hover:opacity-100 -z-10"
+          className="absolute bottom-0 right-0 translate-y-2 translate-x-2 transition-opacity duration-200 opacity-0 tablet:group-hover:opacity-100 -z-10"
           fill={sponsorData.fillBg}
           isGradient={sponsorData.isGradient}
           mode="normal"
