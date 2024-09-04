@@ -1,6 +1,50 @@
 import Link from "next/link";
 
 const TicketCard = ({ ...props }) => {
+  const LinkButton = (props) => {
+    if (props.isSelling) {
+      if (props.isSellOut) {
+        return (
+          <div
+            className={`flex items-center justify-center rounded-xl px-9 h-12 bg-slate-400 font-bold ${
+              props.color
+            } ${[props.textColor]} pointer-events-none`}
+            aria-label={"已完售"}
+            title={"已完售"}
+          >
+            已完售
+          </div>
+        );
+      } else {
+        return (
+          <Link
+            className={`flex items-center justify-center rounded-xl px-9 h-12 bg-slate-400 font-bold ${
+              props.color
+            } ${[props.textColor]} ${props.hover}`}
+            href={props.link}
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label={"前往購票"}
+            title={"前往購票"}
+          >
+            前往購票
+          </Link>
+        );
+      }
+    } else {
+      return (
+        <div
+          className={`flex items-center justify-center rounded-xl px-9 h-12 bg-slate-400 font-bold
+                ${props.color} ${[props.textColor]} pointer-events-none`}
+          aria-label={"即將開售"}
+          title={"即將開售"}
+        >
+          即將開售
+        </div>
+      );
+    }
+  };
+
   return (
     <div
       className={`rounded-3xl p-0.5 shadow-[0_0_30px_rgba(0,0,0,0.05)] min-h-[280px] h-auto ${props.color}`}
@@ -19,19 +63,7 @@ const TicketCard = ({ ...props }) => {
             <span className="text-[40px] font-bold">{props.price}</span>
             <span className="text-2xl"> / 張</span>
           </div>
-          <Link
-            className={`flex items-center justify-center rounded-xl px-9 h-12 bg-slate-400 font-bold
-                ${props.color} ${[props.textColor]} ${
-              props.isSelling ? "" : "pointer-events-none"
-            }`}
-            href={props.link ? props.link : "#"}
-            rel="noopener noreferrer"
-            target="_blank"
-            aria-label={props.isSelling ? "前往購票" : "即將開售"}
-            title={props.isSelling ? "前往購票" : "即將開售"}
-          >
-            {props.isSelling ? "前往購票" : "即將開售"}
-          </Link>
+          <LinkButton {...props} />
         </div>
       </div>
     </div>

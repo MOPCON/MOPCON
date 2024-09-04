@@ -1,6 +1,7 @@
 import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 import TicketData from "@/components/data/data.json";
 import TicketCard from "../components/TicketCard";
+
 const StudentTicket = () => {
   const studentTicketList = TicketData.tickets.filter(
     (item) => item.isStudent === true
@@ -24,8 +25,9 @@ const StudentTicket = () => {
               <TicketCard
                 {...item}
                 key={item.id}
-                color={"bg-[linear-gradient(130deg,_#FEF3E2,_#FDCD87)]"}
+                color={"bg-gradient-to-r from-[#FEF3E2] to-[#FDCD87]"}
                 textColor={"text-orange"}
+                hover={"hover:from-orange hover:to-orange hover:text-white"}
               />
             );
           })}

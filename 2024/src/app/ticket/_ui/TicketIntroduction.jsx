@@ -24,13 +24,18 @@ const TicketIntroduction = () => {
                 key={item.id}
                 color={
                   item.id === 1 || item.id === 2
-                    ? "bg-[linear-gradient(130deg,_#E8EFFA,_#AEBECF)]"
-                    : "bg-[linear-gradient(130deg,_#E4F2F0,_#96CAC3)]"
+                    ? "bg-gradient-to-r from-[#E8EFFA] to-[#AEBECF]"
+                    : "bg-gradient-to-r from-[#E4F2F0] to-[#96CAC3]"
                 }
                 textColor={
                   item.id === 1 || item.id === 2
                     ? "text-[#556E85]"
                     : "text-[#53867C]"
+                }
+                hover={
+                  item.id === 1 || item.id === 2
+                    ? "hover:from-[#556E85] hover:to-[#556E85]"
+                    : "hover:from-[#53867C] hover:to-[#53867C]"
                 }
               />
             );
