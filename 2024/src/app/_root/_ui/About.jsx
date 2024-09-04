@@ -3,11 +3,23 @@ import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 
+const Introduction = ({ ...props }) => {
+  return (
+    <h4 className="flex items-center justify-center flex-col font-bold text-[#161C2D]/70">
+      <span className="text-xl tablet:text-2xl">{props.title}</span>
+      <span className="text-[64px] laptop:text-[80px] text-[#161C2D]">
+        {props.num}
+      </span>
+      <span className="text-xl tablet:text-2xl">{props.unit}</span>
+    </h4>
+  );
+};
+
 const About = () => {
   return (
     <section className="py-12 tablet:py-24 relative">
       <div className="absolute top-0 left-0 w-full h-96 tablet:h-2/6 z-[-1] bg-[#F4F7FA]" />
-      <article className="w-[min(90%,1062px)] mx-auto ">
+      <article className="w-[min(90%,1062px)] mx-auto">
         <div className="mb-14">
           <BlockTitleArrow>關於 MOPCON</BlockTitleArrow>
           <h2 className="block-title text-[#161C2D] mb-3">
@@ -41,27 +53,9 @@ const About = () => {
           />
         </div>
         <div className="grid grid-cols-1 tablet:grid-cols-3 gap-10 tablet:gap-5 mt-10 laptop:mt-20">
-          <h4 className="flex items-center justify-center flex-col font-bold text-[#161C2D]/70">
-            <span className="text-xl tablet:text-2xl">持續舉辦</span>
-            <span className="text-[64px] laptop:text-[80px] text-[#161C2D]">
-              12
-            </span>
-            <span className="text-xl tablet:text-2xl">年</span>
-          </h4>
-          <h4 className="flex items-center justify-center flex-col font-bold text-[#161C2D]/70">
-            <span className="text-xl tablet:text-2xl">精彩議程</span>
-            <span className="text-[64px] laptop:text-[80px] text-[#161C2D]">
-              30
-            </span>
-            <span className="text-xl tablet:text-2xl">場以上</span>
-          </h4>
-          <h4 className="flex items-center justify-center flex-col font-bold text-[#161C2D]/70">
-            <span className="text-xl tablet:text-2xl">熱情會眾</span>
-            <span className="text-[64px] laptop:text-[80px] text-[#161C2D]">
-              1000
-            </span>
-            <span className="text-xl tablet:text-2xl">人以上</span>
-          </h4>
+          <Introduction title="持續舉辦" num="12" unit="年" />
+          <Introduction title="精彩議程" num="30" unit="場以上" />
+          <Introduction title="熱情會眾" num="1000" unit="人以上" />
         </div>
         <div className="text-N800/80 text-lg mt-14 mb-5 relative">
           <svg

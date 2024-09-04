@@ -54,40 +54,6 @@
   ],
   "speakers": [
     {
-      "name": "講者名-keynote",
-      "speakerId": 1,
-      "company": "公司",
-      "jobTitle": "職稱",
-      "bio": "介紹",
-      "img": "",
-      "linkFb": "",
-      "linkGithub": "",
-      "linkTwitter": "",
-      "topic": "議程主題",
-      "summary": "",
-      "communityPartner": "",
-      "isKeynote": true,
-      "isOnline": false,
-      "recordable": true,
-      "level": "Basic",
-      "tags": [
-        { "id": 1, "name": "Mobile Technologies" },
-        { "id": 2, "name": "Cloud & Platform" },
-        { "id": 3, "name": "Product Design & Operations" },
-        { "id": 4, "name": "Technology Trends" }
-      ],
-      "target": "目標會眾",
-      "priorKnowledge": "先備知識",
-      "expectedGain": "會眾預期收穫",
-      "startedAt": 1634951700,
-      "endedAt": 1634954400,
-      "room": "R1",
-      "floor": "",
-      "sponsorId": 0,
-      "sponsorInfo": [],
-      "sessionId": 2024001
-    },
-    {
       "name": "許竣翔",
       "speakerId": 2,
       "company": "BlueX Trade ",
@@ -579,7 +545,7 @@
           "width": 39,
           "web": "https://www.kkco.com.tw/",
           "fb": "https://www.facebook.com/KlickKlackTaiwan/",
-          "description": "內容待新增"
+          "description": ""
         }
       ]
     },
@@ -653,6 +619,48 @@
       "isSelling": true,
       "isSellOut": false,
       "isStudent": true
+    }
+  ],
+  "community": [
+    {
+      "id": 1,
+      "name": "MOPCON",
+      "img": ""
+    },
+    {
+      "id": 2,
+      "name": "MOPCON",
+      "img": ""
+    },
+    {
+      "id": 3,
+      "name": "MOPCON",
+      "img": ""
+    },
+    {
+      "id": 4,
+      "name": "MOPCON",
+      "img": ""
+    },
+    {
+      "id": 5,
+      "name": "MOPCON",
+      "img": ""
+    },
+    {
+      "id": 6,
+      "name": "MOPCON",
+      "img": ""
+    },
+    {
+      "id": 7,
+      "name": "MOPCON",
+      "img": ""
+    },
+    {
+      "id": 8,
+      "name": "MOPCON",
+      "img": ""
     }
   ]
 }

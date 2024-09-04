@@ -85,11 +85,10 @@ const MajorReason = ({ initialDaysLeft }) => {
         alt="bg dots"
         width={133}
         height={96}
-        className="absolute top-0 left-0 pointer-events-none translate-y-32 hidden tablet:block"
+        className="absolute top-0 left-0 pointer-events-none translate-y-32 hidden laptop:block"
       />
       <div className="w-[min(90%,1062px)] mx-auto">
         <BlockTitleArrow>選擇我們</BlockTitleArrow>
-
         <h4 className="block-title mb-12">
           三大不能錯過 <span className="text-light-green">MOPCON 2024</span>{" "}
           的理由

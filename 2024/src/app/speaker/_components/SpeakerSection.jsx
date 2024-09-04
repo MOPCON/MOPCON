@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, Fragment, useMemo, useEffect } from "react";
-import Button from "./Button";
+import CategoryButton from "@/components/CategoryButton";
 import Data from "@/components/data/data.json";
 import SpeakerCard from "./SpeakerCard";
 import { motion, AnimatePresence } from "framer-motion";
@@ -64,14 +64,14 @@ const SpeakerSection = () => {
         exit="hidden"
       >
         {Data.speakerTags.map((item, i) => (
-          <Button
+          <CategoryButton
             key={item.id}
             onClick={() => handleTag(item)}
             isSelected={tags.map((item) => item.id).includes(item.id)}
             {...item}
           >
             {item.name}
-          </Button>
+          </CategoryButton>
         ))}
       </motion.div>
       <div

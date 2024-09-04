@@ -76,6 +76,7 @@ const NewHero = () => {
               href="https://www.facebook.com/mopcon"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Facebook"
             >
               <FaFacebookF className="text-[#1877F2] text-2xl" />
             </Link>
@@ -86,6 +87,7 @@ const NewHero = () => {
               href="https://x.com/mopcon"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="X"
             >
               <FaXTwitter className="text-2xl" />
             </Link>
@@ -96,6 +98,7 @@ const NewHero = () => {
               href="https://t.me/mopcon"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Telegram"
             >
               <FaTelegramPlane className="text-[#24A1DE] text-2xl" />
             </Link>
@@ -106,6 +109,7 @@ const NewHero = () => {
               href="https://www.instagram.com/mopcon.tw"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Instagram"
             >
               <Instagram />
             </Link>

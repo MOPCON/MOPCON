@@ -3,24 +3,15 @@ import HeroSection from "@/components/ui/HeroSection";
 const Hero = () => {
   return (
     <HeroSection>
-      <div className="w-[min(90%,1280px)] mx-auto mb-8 tablet:mb-16">
-        <div className="hidden tablet:flex items-center gap-4 justify-end font-bold text-sm text-[#AEBECF] mb-28">
-          <span>$&#123;con&#125; with Inspiration</span>
-          <div className="w-[2px] h-4 bg-[#AEBECF80]/50" />
-          <span>2024</span>
-          <div className="w-[2px] h-4 bg-[#AEBECF80]/50" />
-          <span>mopcon.org</span>
-        </div>
-        <h1 className="block-title text-center mb-10">
-          每一場都讓你收穫滿滿的
-          <span className="text-light-green">議程規劃</span>
-        </h1>
-        <div className="w-[min(100%,860px)] mx-auto text-N800/80 text-lg">
-          <p className="mb-3">
-            MOPCON
-            2024，將帶你探索技術之樹的每一條分枝，從基礎知識到前沿趨勢，無論你是哪一個分枝的探險者，都能在這裡找到屬於自己的知識之路，親身感受技術的脈動、在未來之林中開創屬於自己的方向。
-          </p>
-        </div>
+      <h1 className="block-title text-center mb-10">
+        每一場都讓你收穫滿滿的
+        <span className="text-light-green">議程規劃</span>
+      </h1>
+      <div className="w-[min(100%,860px)] mx-auto text-N800/80 text-lg">
+        <p className="mb-3">
+          MOPCON
+          2024，將帶你探索技術之樹的每一條分枝，從基礎知識到前沿趨勢，無論你是哪一個分枝的探險者，都能在這裡找到屬於自己的知識之路，親身感受技術的脈動、在未來之林中開創屬於自己的方向。
+        </p>
       </div>
     </HeroSection>
   );

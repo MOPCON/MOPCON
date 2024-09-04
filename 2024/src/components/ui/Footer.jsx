@@ -21,6 +21,7 @@ const Footer = () => {
                 href="https://www.facebook.com/mopcon"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook"
               >
                 <FaFacebookF />
               </Link>
@@ -29,6 +30,7 @@ const Footer = () => {
                 href="https://x.com/mopcon"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="X"
               >
                 <FaXTwitter />
               </Link>
@@ -37,6 +39,7 @@ const Footer = () => {
                 href="https://t.me/mopcon"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Telegram"
               >
                 <FaTelegramPlane />
               </Link>
@@ -45,6 +48,7 @@ const Footer = () => {
                 href="https://www.instagram.com/mopcon.tw"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
               >
                 <FaInstagram />
               </Link>

@@ -2,7 +2,7 @@
 import { FaCircleCheck } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
-const Button = ({ children, ...props }) => {
+const CategoryButton = ({ children, ...props }) => {
   return (
     <motion.button
       type="button"
@@ -24,4 +24,4 @@ const Button = ({ children, ...props }) => {
   );
 };
 
-export default Button;
+export default CategoryButton;

@@ -1,6 +1,6 @@
 const DaySwitchButton = () => {
   return (
-    <div className="flex text-xl font-medium w-fit mx-auto items-center justify-center over rounded-full bg-[#E8EFFA] text-N800 h-[70px]">
+    <div className="flex text-xl font-medium w-fit mx-auto items-center justify-center over rounded-full bg-[#E8EFFA] text-N800 h-[70px] tablet:mb-8 laptop:mb-16">
       <button
         className={`flex p-5 h-full items-center justify-center border-2 border-r border-[#90A4B9] rounded-l-full bg-[#90A4B9] text-white`}
       >
