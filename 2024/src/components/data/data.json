@@ -649,7 +649,8 @@
       "title": "學生票",
       "subTitle": "限量 200 個名額！",
       "price": "$300",
-      "isSelling": false,
+      "link": "https://mopcon.kktix.cc/events/2024-students",
+      "isSelling": true,
       "isSellOut": false,
       "isStudent": true
     }

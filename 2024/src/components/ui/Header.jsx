@@ -16,10 +16,10 @@ const Header = () => {
           sticky ? "fixed top-0 left-0 bg-navy-blue" : "bg-white relative"
         }`}
       >
-        <div className="tablet:flex items-center justify-between w-[min(84%,1204px)] hidden">
+        <div className="laptop:flex items-center justify-between w-[min(84%,1204px)] hidden">
           <NavDesktop isSticky={sticky} />
         </div>
-        <div className="flex tablet:hidden w-[84%]">
+        <div className="flex laptop:hidden w-[84%]">
           <NavMobile isSticky={sticky} />
         </div>
       </header>
