@@ -16,7 +16,7 @@ const variantsContainer = {
   },
 };
 
-const NavMobile = () => {
+const NavMobile = ({ isSticky }) => {
   const [showNav, setShowNav] = useState(false);
 
   const toggleNav = () => {
@@ -25,18 +25,24 @@ const NavMobile = () => {
 
   return (
     <>
-      <Link href="/" aria-label="Home">
-        <MobileLogo />
+      <Link
+        href="/"
+        className="flex items-center justify-center"
+        aria-label="Home"
+      >
+        <MobileLogo
+          className={isSticky ? "stroke-white" : "stroke-[#0E2219]"}
+        />
       </Link>
       <button
         className="ms-auto px-2"
         onClick={toggleNav}
         aria-label="Menu-Open"
       >
-        <LuMenu className="text-2xl" />
+        <LuMenu className={`text-2xl  ${isSticky ? "text-white" : ""}`} />
       </button>
       <motion.div
-        className={`fixed top-0 duration-300 h-screen w-screen bg-[linear-gradient(152deg,_#4D766E_42%,_#364758)] z-50 right-0 flex flex-col justify-center items-center ${
+        className={`fixed top-0 duration-300 h-dvh w-screen bg-navy-blue z-50 right-0 flex flex-col justify-center items-center ${
           showNav ? "translate-x-0" : "translate-x-full"
         }`}
         animate={showNav ? "open" : "closed"}

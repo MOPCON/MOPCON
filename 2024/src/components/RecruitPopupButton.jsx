@@ -9,11 +9,7 @@ const RecruitPopup = () => {
 
   function openPopup() {
     setShowPopup(!showPopup);
-    if (!showPopup) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = showPopup ? "auto" : "hidden";
   }
 
   return (
@@ -22,7 +18,7 @@ const RecruitPopup = () => {
         {showPopup && <RecruitPopupModal onClose={openPopup} />}
       </AnimatePresence>
       <button
-        className="fixed bottom-5 right-5 w-[80px] h-[80px] rounded-[50%] flex items-center justify-center bg-navy-blue z-10"
+        className="fixed bottom-5 right-5 size-20 rounded-[50%] flex items-center justify-center bg-navy-blue z-10"
         onClick={openPopup}
         aria-label="Open Popup"
       >

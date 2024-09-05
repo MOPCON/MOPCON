@@ -1,0 +1,504 @@
+[
+  {
+    "date": "10/26",
+    "period": [
+      {
+        "startedAt": "8:30",
+        "event": "報到 Registration",
+        "room": []
+      },
+      {
+        "startedAt": "9:00",
+        "event": "開幕 Opening",
+        "room": []
+      },
+      {
+        "startedAt": "9:15",
+        "event": "",
+        "room": [
+          {
+            "name": "",
+            "speakerId": 2,
+            "company": "",
+            "jobTitle": "",
+            "bio": "",
+            "img": "",
+            "linkFb": "",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "",
+            "summary": "",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [
+              { "id": 3, "name": "Product Design & Operations" },
+              { "id": 4, "name": "Technology Trends" }
+            ],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1634951700,
+            "room": "R2",
+            "floor": "",
+            "sessionId": 2024002
+          },
+          {
+            "name": "",
+            "speakerId": 2,
+            "company": "",
+            "jobTitle": "",
+            "bio": "",
+            "img": "",
+            "linkFb": "",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "",
+            "summary": "",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [
+              { "id": 3, "name": "Product Design & Operations" },
+              { "id": 4, "name": "Technology Trends" }
+            ],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1634951700,
+            "room": "R2",
+            "floor": "",
+            "sessionId": 2024002
+          }
+        ]
+      },
+      {
+        "startedAt": "10:00",
+        "event": "休息 Break",
+        "room": []
+      },
+      {
+        "startedAt": "10:15",
+        "event": "",
+        "room": [
+          {
+            "name": "",
+            "speakerId": 2,
+            "company": "",
+            "jobTitle": "",
+            "bio": "",
+            "img": "",
+            "linkFb": "",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "",
+            "summary": "",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [
+              { "id": 3, "name": "Product Design & Operations" },
+              { "id": 4, "name": "Technology Trends" }
+            ],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1634951700,
+            "room": "R2",
+            "floor": "",
+            "sessionId": 2024002
+          },
+          {
+            "name": "",
+            "speakerId": 2,
+            "company": "",
+            "jobTitle": "",
+            "bio": "",
+            "img": "",
+            "linkFb": "",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "",
+            "summary": "",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [
+              { "id": 3, "name": "Product Design & Operations" },
+              { "id": 4, "name": "Technology Trends" }
+            ],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1634951700,
+            "room": "R2",
+            "floor": "",
+            "sessionId": 2024002
+          }
+        ]
+      },
+      {
+        "startedAt": "11:00",
+        "event": "休息 Break",
+        "room": []
+      },
+      {
+        "startedAt": "11:15",
+        "event": "",
+        "room": [
+          {
+            "name": "",
+            "speakerId": 2,
+            "company": "",
+            "jobTitle": "",
+            "bio": "",
+            "img": "",
+            "linkFb": "",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "",
+            "summary": "",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [
+              { "id": 3, "name": "Product Design & Operations" },
+              { "id": 4, "name": "Technology Trends" }
+            ],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1634951700,
+            "room": "R2",
+            "floor": "",
+            "sessionId": 2024002
+          },
+          {
+            "name": "",
+            "speakerId": 2,
+            "company": "",
+            "jobTitle": "",
+            "bio": "",
+            "img": "",
+            "linkFb": "",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "",
+            "summary": "",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [
+              { "id": 3, "name": "Product Design & Operations" },
+              { "id": 4, "name": "Technology Trends" }
+            ],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1634951700,
+            "room": "R2",
+            "floor": "",
+            "sessionId": 2024002
+          }
+        ]
+      },
+      {
+        "startedAt": "11:00",
+        "event": "午餐 Lunch",
+        "room": []
+      },
+      {
+        "startedAt": "13:15",
+        "event": "",
+        "room": [
+          {
+            "name": "",
+            "speakerId": 2,
+            "company": "",
+            "jobTitle": "",
+            "bio": "",
+            "img": "",
+            "linkFb": "",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "",
+            "summary": "",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [
+              { "id": 3, "name": "Product Design & Operations" },
+              { "id": 4, "name": "Technology Trends" }
+            ],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1634951700,
+            "room": "R2",
+            "floor": "",
+            "sessionId": 2024002
+          },
+          {
+            "name": "",
+            "speakerId": 2,
+            "company": "",
+            "jobTitle": "",
+            "bio": "",
+            "img": "",
+            "linkFb": "",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "",
+            "summary": "",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [
+              { "id": 3, "name": "Product Design & Operations" },
+              { "id": 4, "name": "Technology Trends" }
+            ],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1634951700,
+            "room": "R2",
+            "floor": "",
+            "sessionId": 2024002
+          }
+        ]
+      },
+      {
+        "startedAt": "14:00",
+        "event": "休息 Break",
+        "room": []
+      },
+      {
+        "startedAt": "14:15",
+        "event": "",
+        "room": [
+          {
+            "name": "",
+            "speakerId": 2,
+            "company": "",
+            "jobTitle": "",
+            "bio": "",
+            "img": "",
+            "linkFb": "",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "",
+            "summary": "",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [
+              { "id": 3, "name": "Product Design & Operations" },
+              { "id": 4, "name": "Technology Trends" }
+            ],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1634951700,
+            "room": "R2",
+            "floor": "",
+            "sessionId": 2024002
+          },
+          {
+            "name": "",
+            "speakerId": 2,
+            "company": "",
+            "jobTitle": "",
+            "bio": "",
+            "img": "",
+            "linkFb": "",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "",
+            "summary": "",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [
+              { "id": 3, "name": "Product Design & Operations" },
+              { "id": 4, "name": "Technology Trends" }
+            ],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1634951700,
+            "room": "R2",
+            "floor": "",
+            "sessionId": 2024002
+          }
+        ]
+      },
+      {
+        "startedAt": "15:00",
+        "event": "下午茶交流 Afternoon Tea",
+        "room": []
+      },
+      {
+        "startedAt": "15:30",
+        "event": "",
+        "room": [
+          {
+            "name": "",
+            "speakerId": 2,
+            "company": "",
+            "jobTitle": "",
+            "bio": "",
+            "img": "",
+            "linkFb": "",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "",
+            "summary": "",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [
+              { "id": 3, "name": "Product Design & Operations" },
+              { "id": 4, "name": "Technology Trends" }
+            ],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1634951700,
+            "room": "R2",
+            "floor": "",
+            "sessionId": 2024002
+          },
+          {
+            "name": "",
+            "speakerId": 2,
+            "company": "",
+            "jobTitle": "",
+            "bio": "",
+            "img": "",
+            "linkFb": "",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "",
+            "summary": "",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [
+              { "id": 3, "name": "Product Design & Operations" },
+              { "id": 4, "name": "Technology Trends" }
+            ],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1634951700,
+            "room": "R2",
+            "floor": "",
+            "sessionId": 2024002
+          }
+        ]
+      },
+      {
+        "startedAt": "16:15",
+        "event": "休息 Break",
+        "room": []
+      },
+      {
+        "startedAt": "16:30",
+        "event": "",
+        "room": [
+          {
+            "name": "",
+            "speakerId": 2,
+            "company": "",
+            "jobTitle": "",
+            "bio": "",
+            "img": "",
+            "linkFb": "",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "",
+            "summary": "",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [
+              { "id": 3, "name": "Product Design & Operations" },
+              { "id": 4, "name": "Technology Trends" }
+            ],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1634951700,
+            "room": "R2",
+            "floor": "",
+            "sessionId": 2024002
+          },
+          {
+            "name": "",
+            "speakerId": 2,
+            "company": "",
+            "jobTitle": "",
+            "bio": "",
+            "img": "",
+            "linkFb": "",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "",
+            "summary": "",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [
+              { "id": 3, "name": "Product Design & Operations" },
+              { "id": 4, "name": "Technology Trends" }
+            ],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1634951700,
+            "room": "R2",
+            "floor": "",
+            "sessionId": 2024002
+          }
+        ]
+      },
+      {
+        "startedAt": "17:15",
+        "event": "END",
+        "room": []
+      }
+    ]
+  },
+  {
+    "date": "10/27",
+    "period": []
+  }
+]

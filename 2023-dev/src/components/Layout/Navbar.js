@@ -45,7 +45,7 @@ const Navbar = () => {
             </li>*/}
           </ul>
         )}
-        </li>
+      </li>
       <li className={classes.nav}>
         <Link to="/2023/speaker/" className={classes["nav-text"]}>
           講者陣容
