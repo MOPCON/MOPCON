@@ -4,20 +4,20 @@ const Schedule = ({ ...props }) => {
   return (
     <div className="max-w-[1200px]">
       {props[0].period.map((period, index) => (
-        <div className="flex items-start gap-6" key={index}>
-          <time className="text-N800 text-xl font-bold">
+        <div className="relative flex items-start gap-6" key={index}>
+          <time className="text-N800 tablet:text-lg laptop:text-xl font-bold absolute laptop:static bg-[#F4F7FA] pr-3 laptop:pr-0">
             {period.startedAt}
           </time>
           <div className="border-t-2 border-N800/20 flex justify-center py-5 px-2 flex-grow mt-3">
             {period.event && (
-              <span className="text-N800 text-xl font-bold">
+              <span className="text-N800 tablet:text-lg laptop:text-xl font-bold">
                 {period.event}
               </span>
             )}
             {period.room && period.room.length > 0 && (
-              <div className="grid laptop:grid-cols-2 gap-3 w-full">
+              <div className="grid laptop:grid-cols-2 gap-3 w-full mt-4 laptop:mt-0">
                 {period.room.map((room, index) => (
-                  <ScheduleCard key={room.speakerId} {...room} />
+                  <ScheduleCard key={index} {...room} />
                 ))}
               </div>
             )}

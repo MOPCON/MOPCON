@@ -22,7 +22,7 @@ const MemberCard = ({ isHovered, onHover, handleClick, ...props }) => {
         <div className="overflow-hidden rounded-[50%] border border-white/60">
           <Image
             className="h-full object-contain"
-            src={getImageSrc("/img/swiper-default.webp")}
+            src={getImageSrc(props.img || "/img/swiper-default.webp")}
             width={120}
             height={120}
             alt={props.name}
@@ -32,7 +32,8 @@ const MemberCard = ({ isHovered, onHover, handleClick, ...props }) => {
           {props.name}
         </h5>
         <span className="text-center text-N800 mb-6 block">
-          {props.company}/{props.jobTitle}
+          {props.company}
+          {props.jobTitle && <span>/{props.jobTitle}</span>}
         </span>
         <div className="flex flex-wrap gap-3 items-center">
           <SocialLinks speaker={props} />

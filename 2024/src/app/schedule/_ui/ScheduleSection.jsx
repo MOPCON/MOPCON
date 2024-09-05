@@ -13,6 +13,7 @@ import scheduleData from "@/components/data/schedule.json";
 const ScheduleSection = () => {
   const [tags, setTags] = useState([]);
   const [schedules, setSchedules] = useState([scheduleData[0]]);
+  const [activeDay, setActiveDay] = useState(0);
 
   const handleTag = (tag) => {
     if (tags.map((item) => item.id).includes(tag.id)) {
@@ -20,6 +21,11 @@ const ScheduleSection = () => {
     } else {
       setTags([...tags, { ...tag }]);
     }
+  };
+
+  const handleDay = (day) => {
+    setSchedules([scheduleData[day]]);
+    setActiveDay(day);
   };
 
   return (
@@ -37,7 +43,7 @@ const ScheduleSection = () => {
         <h4 className="block-title mb-10">精彩議程</h4>
       </div>
       <div className="w-[min(90%,1280px)] mx-auto">
-        <DaySwitchButton />
+        <DaySwitchButton handleDays={handleDay} activeDay={activeDay} />
         <motion.div
           className="flex items-center flex-wrap justify-center gap-3 mb-[60px]"
           variants={{

@@ -11,7 +11,9 @@ const ScheduleCard = ({ ...props }) => {
             待公布
           </span>
         </div>
-        <h5 className="text-lg font-medium text-N800 mb-10">待公布演講主題</h5>
+        <h5 className="laptop:text-lg font-medium text-N800 mb-10">
+          待公布演講主題
+        </h5>
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-3">
             <div className="size-10 rounded-full overflow-clip flex items-center justify-center flex-shrink-0">
@@ -23,7 +25,7 @@ const ScheduleCard = ({ ...props }) => {
                 className="object-contain size-full max-w-full"
               />
             </div>
-            <h6>待公布</h6>
+            <h6 className="text-sm tablet:text-base">待公布</h6>
           </div>
           <div className="flex items-center text-N800 gap-1">
             <svg
@@ -40,7 +42,7 @@ const ScheduleCard = ({ ...props }) => {
                 fill="#4B5162"
               />
             </svg>
-            <span>待公布</span>
+            <span className="text-sm tablet:text-base">待公布</span>
           </div>
         </div>
       </div>
