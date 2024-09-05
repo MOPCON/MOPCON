@@ -36,7 +36,7 @@ const Navigation = ({ toggleShowNav, isSticky }) => {
       <Link
         href={link.path}
         className={`px-2 py-1 font-medium text-white ${
-          isSticky ? "text-white" : "tablet:text-N800"
+          isSticky ? "text-white" : "laptop:text-N800"
         }`}
         onClick={toggleShowNav}
       >
