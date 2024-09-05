@@ -24,6 +24,9 @@ module.exports = {
         laptop: "1200px",
         desk: "1440px",
       },
+      backgroundImage: {
+        highlight: "linear-gradient(180deg, transparent 50%, #E4F2EF 51%)",
+      },
     },
   },
   plugins: [],

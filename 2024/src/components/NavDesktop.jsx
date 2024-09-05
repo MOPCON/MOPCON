@@ -3,14 +3,14 @@ import Link from "next/link";
 import { Logo } from "./ui/Logo";
 import Navigation from "./Navigation";
 
-const NavDesktop = () => {
+const NavDesktop = ({ isSticky }) => {
   return (
     <Fragment>
       <Link href="/" aria-label="Home">
-        <Logo />
+        <Logo className={isSticky ? "stroke-white" : "stroke-[#0E2219]"} />
       </Link>
       <nav className="flex items-center gap-8">
-        <Navigation />
+        <Navigation isSticky={isSticky} />
       </nav>
     </Fragment>
   );
