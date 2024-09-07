@@ -17,7 +17,7 @@ const TicketIntroduction = () => {
       </div>
       <div className="mx-auto w-[min(90%,1196px)]">
         <div className="grid grid-cols-1 mob:grid-cols-2 tablet:grid-cols-4 gap-4 justify-between">
-          {normalTicket.map((item) => {
+          {normalTicket.map((item, index) => {
             return (
               <TicketCard
                 {...item}
@@ -37,6 +37,7 @@ const TicketIntroduction = () => {
                     ? "hover:from-[#556E85] hover:to-[#556E85]"
                     : "hover:from-[#53867C] hover:to-[#53867C]"
                 }
+                index={index}
               />
             );
           })}
