@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import SpeakerSuspense from "./_components/SpeakerSuspense";
 import HeroSection from "@/components/ui/HeroSection";
 import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
+import { SectionTitle, SectionBlock } from "@/components/ui/SectionBlock";
 
 export const metadata = {
   title: "講者陣容",
@@ -30,13 +31,14 @@ const Speaker = () => {
           </p>
         </div>
       </HeroSection>
-      <section className="py-16 w-[min(90%,1204px)] mx-auto">
-        <BlockTitleArrow>講者介紹</BlockTitleArrow>
-        <h3 className="block-title mb-[60px]">
-          開箱 <span className="text-light-green">高手陣容</span>
-        </h3>
-        <SpeakerSuspense />
-      </section>
+      <SectionBlock>
+        <div className="w-[min(90%,1204px)] mx-auto">
+          <SectionTitle arrowTitle="講者介紹" className="mb-[60px]">
+            開箱 <span className="text-light-green">高手陣容</span>
+          </SectionTitle>
+          <SpeakerSuspense />
+        </div>
+      </SectionBlock>
     </Fragment>
   );
 };

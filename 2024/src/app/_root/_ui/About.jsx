@@ -2,25 +2,28 @@ import React from "react";
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import Introduction from "./Introduction";
-import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
+import {
+  SectionTitle,
+  SectionSubTitle,
+  SectionBlock,
+} from "@/components/ui/SectionBlock";
 
 const About = () => {
   return (
-    <section className="py-12 tablet:py-24 relative">
+    <SectionBlock>
       <div className="absolute top-0 left-0 w-full h-96 tablet:h-2/6 z-[-1] bg-[#F4F7FA]" />
       <article className="w-[min(90%,1062px)] mx-auto">
         <div className="mb-14">
-          <BlockTitleArrow>關於 MOPCON</BlockTitleArrow>
-          <h2 className="block-title text-[#161C2D] mb-3">
+          <SectionTitle arrowTitle="關於 MOPCON">
             南台灣 <span className="text-light-green">最大行動科技年會</span>
-          </h2>
-          <h3 className="text-secondary text-lg tablet:text-2xl">
+          </SectionTitle>
+          <SectionSubTitle>
             聚集知識與人才
             <span className="text-[#161C2D] inline-block mx-2">x</span>
             南台灣最大行動科技年會
             <span className="text-[#161C2D] inline-block mx-2">x</span>
             放大科技創新力
-          </h3>
+          </SectionSubTitle>
         </div>
         <div className="relative">
           <div className="flex items-center justify-center rounded-[40px] overflow-clip flex-shrink-0 shadow-[10px_10px_50px_0px_rgba(0,0,0,0.15)]">
@@ -101,7 +104,7 @@ const About = () => {
           </svg>
         </div>
       </article>
-    </section>
+    </SectionBlock>
   );
 };
 

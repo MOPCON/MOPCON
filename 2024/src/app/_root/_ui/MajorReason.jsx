@@ -7,6 +7,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 import { fadeInAnimation } from "@/components/util/animation";
 import { motion } from "framer-motion";
+import { SectionTitle, SectionBlock } from "@/components/ui/SectionBlock";
 
 const REASONS = [
   {
@@ -87,7 +88,7 @@ const MajorReason = ({ initialDaysLeft }) => {
   }, []);
 
   return (
-    <section className="w-full py-16 relative bg-[#F4F7FA]">
+    <SectionBlock className="bg-[#F4F7FA]">
       <Image
         src={getImageSrc("/bg-dots.svg")}
         aria-hidden="true"
@@ -97,11 +98,10 @@ const MajorReason = ({ initialDaysLeft }) => {
         className="absolute top-0 left-0 pointer-events-none translate-y-32 hidden laptop:block"
       />
       <div className="w-[min(90%,1062px)] mx-auto">
-        <BlockTitleArrow>選擇我們</BlockTitleArrow>
-        <h4 className="block-title mb-12">
+        <SectionTitle arrowTitle="選擇我們">
           三大不能錯過 <span className="text-light-green">MOPCON 2024</span>{" "}
           的理由
-        </h4>
+        </SectionTitle>
         <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] justify-between gap-y-4 gap-x-12 mb-20">
           {REASONS.map((reason, idx) => (
             <ReasonItem
@@ -134,7 +134,7 @@ const MajorReason = ({ initialDaysLeft }) => {
           </Link>
         </div>
       </div>
-    </section>
+    </SectionBlock>
   );
 };
 
