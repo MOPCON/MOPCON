@@ -5,6 +5,9 @@ import { getImageSrc } from "@/components/util/getImageSrc";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
+import { fadeInAnimation } from "@/components/util/animation";
+import { motion } from "framer-motion";
+import { SectionTitle, SectionBlock } from "@/components/ui/SectionBlock";
 
 const REASONS = [
   {
@@ -30,9 +33,16 @@ const REASONS = [
   },
 ];
 
-const ReasonItem = ({ title, content, idx, titleNum }) => {
+const ReasonItem = ({ title, content, idx, titleNum, index }) => {
   return (
-    <div className="relative pb-20">
+    <motion.div
+      className="relative pb-20"
+      variants={fadeInAnimation(0.3, 0.5)}
+      initial="initial"
+      whileInView="show"
+      viewport={{ once: true }}
+      custom={index}
+    >
       <h6 className="mb-4 font-medium flex gap-2 w-fit items-baseline bg-gradient-to-r from-secondary to-light-green bg-clip-text text-transparent">
         <span className="text-[32px] tablet:text-[40px]">{titleNum}</span>
         <span className="text-lg tablet:text-2xl">{title}</span>
@@ -41,7 +51,7 @@ const ReasonItem = ({ title, content, idx, titleNum }) => {
       <div className="absolute font-light bottom-0 right-0 text-[#AEBECF]/40 text-8xl">
         0{idx}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -78,7 +88,7 @@ const MajorReason = ({ initialDaysLeft }) => {
   }, []);
 
   return (
-    <section className="w-full py-16 relative bg-[#F4F7FA]">
+    <SectionBlock className="bg-[#F4F7FA]">
       <Image
         src={getImageSrc("/bg-dots.svg")}
         aria-hidden="true"
@@ -88,11 +98,10 @@ const MajorReason = ({ initialDaysLeft }) => {
         className="absolute top-0 left-0 pointer-events-none translate-y-32 hidden laptop:block"
       />
       <div className="w-[min(90%,1062px)] mx-auto">
-        <BlockTitleArrow>選擇我們</BlockTitleArrow>
-        <h4 className="block-title mb-12">
+        <SectionTitle arrowTitle="選擇我們">
           三大不能錯過 <span className="text-light-green">MOPCON 2024</span>{" "}
           的理由
-        </h4>
+        </SectionTitle>
         <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] justify-between gap-y-4 gap-x-12 mb-20">
           {REASONS.map((reason, idx) => (
             <ReasonItem
@@ -101,6 +110,7 @@ const MajorReason = ({ initialDaysLeft }) => {
               content={reason.content}
               idx={reason.id}
               titleNum={reason.titleNum}
+              index={idx}
             />
           ))}
         </div>
@@ -124,7 +134,7 @@ const MajorReason = ({ initialDaysLeft }) => {
           </Link>
         </div>
       </div>
-    </section>
+    </SectionBlock>
   );
 };
 

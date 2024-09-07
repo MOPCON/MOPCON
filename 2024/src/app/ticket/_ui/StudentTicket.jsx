@@ -20,7 +20,7 @@ const StudentTicket = () => {
       </div>
       <div className="mx-auto w-[min(90%,1196px)]">
         <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-4 justify-between">
-          {studentTicketList.map((item) => {
+          {studentTicketList.map((item, index) => {
             return (
               <TicketCard
                 {...item}
@@ -28,6 +28,7 @@ const StudentTicket = () => {
                 color={"bg-gradient-to-r from-[#FEF3E2] to-[#FDCD87]"}
                 textColor={"text-orange"}
                 hover={"hover:from-orange hover:to-orange hover:text-white"}
+                index={index}
               />
             );
           })}

@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
+import { fadeInAnimation } from "@/components/util/animation";
 const TicketCard = ({ ...props }) => {
   const LinkButton = (props) => {
     if (props.isSelling) {
@@ -46,8 +48,13 @@ const TicketCard = ({ ...props }) => {
   };
 
   return (
-    <div
+    <motion.div
       className={`rounded-3xl p-0.5 shadow-[0_0_30px_rgba(0,0,0,0.05)] min-h-[280px] h-auto ${props.color}`}
+      variants={fadeInAnimation()}
+      initial="initial"
+      whileInView="show"
+      viewport={{ once: true }}
+      custom={props.index}
     >
       <div className="size-full flex flex-col bg-white py-6 px-8 rounded-[calc(24px-2px)]">
         <div>
@@ -66,7 +73,7 @@ const TicketCard = ({ ...props }) => {
           <LinkButton {...props} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

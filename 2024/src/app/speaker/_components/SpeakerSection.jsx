@@ -11,7 +11,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 const SpeakerSection = () => {
   const [tags, setTags] = useState([]);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
   const speakerModal = useModal();
   const router = useRouter();
   const pathname = useSearchParams();
@@ -74,10 +73,7 @@ const SpeakerSection = () => {
           </CategoryButton>
         ))}
       </motion.div>
-      <div
-        className="grid grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] gap-8"
-        onMouseLeave={() => setHoveredIndex(null)}
-      >
+      <div className="grid grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] gap-8">
         <AnimatePresence>
           {selectedTypeSpeaker.map((speaker) => (
             <motion.div
@@ -90,8 +86,6 @@ const SpeakerSection = () => {
             >
               <SpeakerCard
                 {...speaker}
-                onHover={() => setHoveredIndex(speaker.speakerId)}
-                isHovered={hoveredIndex === speaker.speakerId}
                 handleClick={() => handlerCardClick(speaker)}
               />
             </motion.div>

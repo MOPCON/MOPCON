@@ -1,13 +1,18 @@
 "use client";
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
-import { motion, AnimatePresence } from "framer-motion";
-const SpeakerCard = ({ isHovered, onHover, handleClick, ...speakerData }) => {
+import { motion } from "framer-motion";
+const SpeakerCard = ({ handleClick, ...speakerData }) => {
   return (
-    <div
-      className="rounded-[20px] cursor-pointer min-h-[400px] h-full p-[3px] flex flex-col items-center justify-center relative"
+    <motion.div
+      className="rounded-[20px] cursor-pointer min-h-[400px] h-full p-[3px] flex flex-col items-center justify-center relative transition-all duration-300 hover:shadow-[0_10px_30px_0_rgba(0,0,0,0.05)]"
       onClick={handleClick}
-      onMouseEnter={onHover}
+      variants={{
+        hidden: { opacity: 0, y: 25 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      exit={{ opacity: 1 }}
+      transition={{ type: "spring", stiffness: 100 }}
     >
       <div className="flex flex-col gap-4 items-center justify-center w-full h-full p-4 relative z-[1]">
         <div className="overflow-hidden size-[120px] rounded-[50%] border border-white/60 shrink-0">
@@ -36,28 +41,7 @@ const SpeakerCard = ({ isHovered, onHover, handleClick, ...speakerData }) => {
           ))}
         </div>
       </div>
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            className="absolute p-[3px] rounded-[20px] inset-0 w-full h-full bg-[linear-gradient(-80deg,_#9CBC43_50%,_#4C766D)] block "
-            layoutId="animated-bg"
-            layout="true"
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-            }}
-            exit={{
-              opacity: 0,
-            }}
-            transition={{
-              layout: { duration: 0.5, type: "spring" },
-            }}
-          >
-            <div className="rounded-[calc(20px-3px)] w-full h-full bg-white" />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };
 

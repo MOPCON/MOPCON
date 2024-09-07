@@ -1,14 +1,14 @@
 "use client";
-import React, { useState, Fragment, useMemo, useEffect } from "react";
-import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
+import React, { useState } from "react";
 import DaySwitchButton from "../components/DaySwitchButton";
 import CategoryButton from "@/components/CategoryButton";
 import Data from "@/components/data/data.json";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import Schedule from "../components/Schedule";
 import scheduleData from "@/components/data/schedule.json";
+import { SectionTitle, SectionBlock } from "@/components/ui/SectionBlock";
 
 const ScheduleSection = () => {
   const [tags, setTags] = useState([]);
@@ -29,7 +29,7 @@ const ScheduleSection = () => {
   };
 
   return (
-    <section className="w-full py-12 tablet:py-24 relative bg-[#F4F7FA] overflow-clip">
+    <SectionBlock className="bg-[#F4F7FA]">
       <Image
         src={getImageSrc("/community/bg-wave.svg")}
         alt="behavioral-guidelines-bg"
@@ -39,8 +39,9 @@ const ScheduleSection = () => {
         aria-hidden="true"
       />
       <div className="w-[min(90%,1062px)] mx-auto">
-        <BlockTitleArrow>議程表</BlockTitleArrow>
-        <h4 className="block-title mb-10">精彩議程</h4>
+        <SectionTitle arrowTitle="議程表" className="mb-10">
+          精彩議程
+        </SectionTitle>
       </div>
       <div className="w-[min(90%,1280px)] mx-auto">
         <DaySwitchButton handleDays={handleDay} activeDay={activeDay} />
@@ -67,7 +68,7 @@ const ScheduleSection = () => {
         </motion.div>
         <Schedule {...schedules} />
       </div>
-    </section>
+    </SectionBlock>
   );
 };
 

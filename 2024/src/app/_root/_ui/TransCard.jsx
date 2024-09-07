@@ -1,7 +1,9 @@
 "use client";
 import { Bus, MRT, HSR, LightRail } from "./icons";
 
-const Card = ({ icon, title, content, bgColor }) => {
+import { motion } from "framer-motion";
+
+const Card = ({ icon, title, content, bgColor, index }) => {
   const iconMapping = {
     bus: Bus,
     mrt: MRT,
@@ -12,7 +14,24 @@ const Card = ({ icon, title, content, bgColor }) => {
   const IconComponent = iconMapping[icon.toLowerCase()];
 
   return (
-    <div className="size-full block rounded-xl">
+    <motion.div
+      className="size-full block rounded-xl"
+      variants={{
+        initial: {
+          opacity: 0,
+          y: 25,
+        },
+        show: (index) => ({
+          opacity: 1,
+          y: 0,
+          transition: { delay: index * 0.2, duration: 0.5 },
+        }),
+      }}
+      initial="initial"
+      whileInView="show"
+      viewport={{ once: true }}
+      custom={index}
+    >
       <div className="flex items-center gap-5">
         <div
           className={`flex-shrink-0 rounded-2xl size-[72px] flex items-center justify-center ${bgColor}`}
@@ -24,7 +43,7 @@ const Card = ({ icon, title, content, bgColor }) => {
           <p className="text-base tablet:text-lg">{content}</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
