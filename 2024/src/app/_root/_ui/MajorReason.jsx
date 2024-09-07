@@ -5,6 +5,8 @@ import { getImageSrc } from "@/components/util/getImageSrc";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
+import { fadeInAnimation } from "@/components/util/animation";
+import { motion } from "framer-motion";
 
 const REASONS = [
   {
@@ -30,9 +32,16 @@ const REASONS = [
   },
 ];
 
-const ReasonItem = ({ title, content, idx, titleNum }) => {
+const ReasonItem = ({ title, content, idx, titleNum, index }) => {
   return (
-    <div className="relative pb-20">
+    <motion.div
+      className="relative pb-20"
+      variants={fadeInAnimation(0.3, 0.5)}
+      initial="initial"
+      whileInView="show"
+      viewport={{ once: true }}
+      custom={index}
+    >
       <h6 className="mb-4 font-medium flex gap-2 w-fit items-baseline bg-gradient-to-r from-secondary to-light-green bg-clip-text text-transparent">
         <span className="text-[32px] tablet:text-[40px]">{titleNum}</span>
         <span className="text-lg tablet:text-2xl">{title}</span>
@@ -41,7 +50,7 @@ const ReasonItem = ({ title, content, idx, titleNum }) => {
       <div className="absolute font-light bottom-0 right-0 text-[#AEBECF]/40 text-8xl">
         0{idx}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -101,6 +110,7 @@ const MajorReason = ({ initialDaysLeft }) => {
               content={reason.content}
               idx={reason.id}
               titleNum={reason.titleNum}
+              index={idx}
             />
           ))}
         </div>

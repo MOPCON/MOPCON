@@ -40,13 +40,14 @@ const Transportation = () => {
         如何前往？
       </h6>
       <div className="grid grid-cols-1 tablet:grid-cols-2 gap-x-6 gap-y-8">
-        {cardContents.map(({ icon, title, content, id, bgColor }) => (
+        {cardContents.map(({ icon, title, content, id, bgColor }, index) => (
           <Card
             icon={icon}
             title={title}
             content={content}
             bgColor={bgColor}
             key={id}
+            index={index}
           />
         ))}
       </div>

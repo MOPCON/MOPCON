@@ -1,19 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
+import Introduction from "./Introduction";
 import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
-
-const Introduction = ({ ...props }) => {
-  return (
-    <h4 className="flex items-center justify-center flex-col font-bold text-[#161C2D]/70">
-      <span className="text-xl tablet:text-2xl">{props.title}</span>
-      <span className="text-[64px] laptop:text-[80px] text-[#161C2D]">
-        {props.num}
-      </span>
-      <span className="text-xl tablet:text-2xl">{props.unit}</span>
-    </h4>
-  );
-};
 
 const About = () => {
   return (
@@ -53,9 +42,9 @@ const About = () => {
           />
         </div>
         <div className="grid grid-cols-1 tablet:grid-cols-3 gap-10 tablet:gap-5 mt-10 laptop:mt-20">
-          <Introduction title="持續舉辦" num="12" unit="年" />
-          <Introduction title="精彩議程" num="30" unit="場以上" />
-          <Introduction title="熱情會眾" num="1000" unit="人以上" />
+          <Introduction title="持續舉辦" num="12" unit="年" index={0} />
+          <Introduction title="精彩議程" num="30" unit="場以上" index={1} />
+          <Introduction title="熱情會眾" num="1000" unit="人以上" index={2} />
         </div>
         <div className="text-N800/80 text-lg mt-14 mb-5 relative">
           <svg

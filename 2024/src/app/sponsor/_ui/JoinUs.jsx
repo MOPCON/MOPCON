@@ -3,24 +3,13 @@ import { motion } from "framer-motion";
 import { Speaker, Matchmaking, Brand } from "./icons";
 import { twMerge } from "tailwind-merge";
 import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
-
-const fadeInAnimation = {
-  initial: {
-    opacity: 0,
-    y: 30,
-  },
-  show: (index) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: index * 0.2, duration: 0.7 },
-  }),
-};
+import { fadeInAnimation } from "@/components/util/animation";
 
 const Card = ({ icon, title, content, className, shadow, border, index }) => {
   return (
     <motion.div
       className={`rounded-[32px] p-[2px] overflow-clip mx-auto max-w-[352px] ${border}`}
-      variants={fadeInAnimation}
+      variants={fadeInAnimation()}
       initial="initial"
       whileInView="show"
       viewport={{ once: true }}
