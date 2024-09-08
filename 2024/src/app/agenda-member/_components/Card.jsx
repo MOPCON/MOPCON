@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const MemberCard = ({ isHovered, onHover, handleClick, ...props }) => {
   return (
     <motion.div
-      className="rounded-[20px] cursor-pointer h-[400px] p-[3px] flex flex-col items-center justify-center relative transition-all duration-300 hover:shadow-[0_10px_30px_0_rgba(0,0,0,0.05)]"
+      className="rounded-[20px] cursor-pointer h-[400px] p-[3px] flex flex-col items-center justify-center relative transition-all duration-300 hover:shadow-[0_10px_30px_0_rgba(0,0,0,0.05)] hover:-translate-y-3"
       onClick={handleClick}
       variants={{
         hidden: { opacity: 0 },
