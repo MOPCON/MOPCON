@@ -106,24 +106,36 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 ))}
               </div>
             </section>
-            <section>
-              <h3 className="text-N800/80 font-medium leading-6 mb-4">
-                目標會眾
-              </h3>
-              <p className="text-N800/80 leading-6">{props.target}</p>
-            </section>
-            <section>
-              <h3 className="text-N800/80 font-medium leading-6 mb-4">
-                先備知識
-              </h3>
-              <p className="text-N800/80 leading-6">{props.priorKnowledge}</p>
-            </section>
-            <section>
-              <h3 className="text-N800/80 font-medium leading-6 mb-4">
-                會眾預期收穫
-              </h3>
-              <p className="text-N800/80 leading-6">{props.expectedGain}</p>
-            </section>
+            {props.target && (
+              <section>
+                <h3 className="text-N800/80 font-medium leading-6 mb-4">
+                  目標會眾
+                </h3>
+                <p className="text-N800/80 leading-6">
+                  {useJsonParse(props.target)}
+                </p>
+              </section>
+            )}
+            {props.priorKnowledge && (
+              <section>
+                <h3 className="text-N800/80 font-medium leading-6 mb-4">
+                  先備知識
+                </h3>
+                <p className="text-N800/80 leading-6">
+                  {useJsonParse(props.priorKnowledge)}
+                </p>
+              </section>
+            )}
+            {props.expectedGain && (
+              <section>
+                <h3 className="text-N800/80 font-medium leading-6 mb-4">
+                  會眾預期收穫
+                </h3>
+                <p className="text-N800/80 leading-6">
+                  {useJsonParse(props.expectedGain)}
+                </p>
+              </section>
+            )}
           </article>
           <div className="grid grid-cols-1 mob:grid-cols-2 gap-3">
             <button className="btn btn-primary flex items-center gap-2 justify-center">
@@ -135,7 +147,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
               加入行事曆
             </button>
           </div>
-        </div>{" "}
+        </div>
       </ModalBody>
     </BasicModal>
   );
