@@ -1,5 +1,5 @@
 import { BasicModal, ModalBody, CloseButton } from "@/components/ui/BasicModal";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaGithub } from "react-icons/fa";
 import { GoGlobe } from "react-icons/go";
 import ModalImage from "@/components/ModalImage";
 import { GrLocation } from "react-icons/gr";
@@ -9,8 +9,6 @@ import { FiShare2 } from "react-icons/fi";
 import { LuCalendarCheck } from "react-icons/lu";
 import { useJsonParse } from "@/components/hook/useJsonParse";
 const SpeakerModal = ({ onClose, ...props }) => {
-  const summary = useJsonParse(props.summary);
-  const bio = useJsonParse(props.bio);
   return (
     <BasicModal
       onClose={onClose}
@@ -22,7 +20,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
         }
       >
         <CloseButton onClose={onClose} iconClass={"text-xl text-secondary"} />
-        <div className="max-h-[calc(100dvh-200px)] overflow-y-auto">
+        <div className="max-h-[calc(100dvh-200px)] overflow-y-auto pb-4 px-3">
           <div className="flex flex-col items-center mob:block mb-10">
             <div className="flex gap-3 flex-col mob:flex-row items-center w-fit mb-3">
               <div className="size-[120px] rounded-[50%] overflow-clip flex items-center justify-center">
@@ -39,25 +37,55 @@ const SpeakerModal = ({ onClose, ...props }) => {
               </div>
             </div>
             <div className="flex items-center justify-evenly w-[120px]">
-              <a
-                href="#"
-                rel="noreferrer noopener"
-                target="_blank"
-                className="text-secondary"
-              >
-                <GoGlobe className="text-xl" aria-label="Visit website" />
-              </a>
-              <a
-                href="#"
-                rel="noreferrer noopener"
-                target="_blank"
-                className="text-secondary"
-              >
-                <FaFacebook
-                  className="text-xl"
-                  aria-label="Visit Facebook page"
-                />
-              </a>
+              {props.linkWeb && (
+                <a
+                  href={props.linkWeb}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                  className="text-secondary"
+                >
+                  <GoGlobe className="text-xl" aria-label="Visit website" />
+                </a>
+              )}
+              {props.linkLinkedin && (
+                <a
+                  href={props.linkLinkedin}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                  className="text-secondary"
+                >
+                  <FaLinkedin
+                    className="text-xl"
+                    aria-label="Visit LinkedIn page"
+                  />
+                </a>
+              )}
+              {props.linkGithub && (
+                <a
+                  href={props.linkGithub}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                  className="text-secondary"
+                >
+                  <FaGithub
+                    className="text-xl"
+                    aria-label="Visit GitHub page"
+                  />
+                </a>
+              )}
+              {props.linkFb && (
+                <a
+                  href={props.linkFb}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                  className="text-secondary"
+                >
+                  <FaFacebook
+                    className="text-xl"
+                    aria-label="Visit Facebook page"
+                  />
+                </a>
+              )}
             </div>
           </div>
           <article className="flex flex-col gap-10 mb-10">
@@ -67,7 +95,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 <OrangeLeaf />
               </div>
               <div className="text-N800/80 leading-6 flex flex-col gap-2">
-                {bio}
+                {useJsonParse(props.bio)}
               </div>
             </section>
             <section>
@@ -93,7 +121,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 </div>
               </div>
               <div className="text-N800/80 leading-6 mb-4 flex flex-col gap-2">
-                {summary}
+                {useJsonParse(props.summary)}
               </div>
               <div className="flex items-center justify-center mob:justify-normal gap-3 flex-wrap">
                 {props.tags.map((item) => (

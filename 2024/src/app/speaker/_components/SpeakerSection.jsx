@@ -41,6 +41,10 @@ const SpeakerSection = () => {
     speakerModal.openModal(speaker);
     router.push(`/speaker/?id=${speaker.sessionId}`, { scroll: false });
   }
+  function handlerModalClose() {
+    speakerModal.closeModal();
+    router.push("/speaker", { scroll: false });
+  }
 
   const selectedTypeSpeaker = useMemo(() => {
     return Data.speakers.filter((speaker) =>
@@ -96,7 +100,7 @@ const SpeakerSection = () => {
         {speakerModal.content && speakerModal.isOpen && (
           <SpeakerModal
             {...speakerModal.content}
-            onClose={() => speakerModal.closeModal()}
+            onClose={() => handlerModalClose()}
           />
         )}
       </AnimatePresence>
