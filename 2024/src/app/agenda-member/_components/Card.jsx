@@ -13,7 +13,7 @@ const MemberCard = ({ isHovered, onHover, handleClick, ...props }) => {
         visible: { opacity: 1 },
       }}
       exit={{ opacity: 1 }}
-      transition={{ type: "spring" }}
+      transition={{ type: "spring", duration: 0.8 }}
     >
       <div className="flex flex-col gap-4 items-center justify-center w-full h-full p-4 relative z-[1]">
         <div className="overflow-hidden rounded-[50%] border border-white/60">

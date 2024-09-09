@@ -2,9 +2,14 @@
 import { Fragment } from "react";
 import Data from "@/components/data/data.json";
 import { motion, AnimatePresence } from "framer-motion";
+import Loading from "@/components/ui/Loading";
+import dynamic from "next/dynamic";
 import MemberCard from "./Card";
-import MemberModal from "./Modal";
 import { useModal } from "@/components/hook/useModal";
+const MemberModal = dynamic(() => import("./Modal"), {
+  ssr: false,
+  loading: () => <Loading />,
+});
 
 const MemberSection = () => {
   const memberModal = useModal();
@@ -14,7 +19,7 @@ const MemberSection = () => {
         className="grid grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] gap-8"
         variants={{
           hidden: { opacity: 0 },
-          visible: { opacity: 1, transition: { staggerChildren: 0.05 } },
+          visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
         }}
         initial="hidden"
         animate="visible"

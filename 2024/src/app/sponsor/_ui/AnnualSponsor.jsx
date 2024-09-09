@@ -5,9 +5,11 @@ import { SponsorLeaf } from "./icons";
 import { AnimatePresence } from "framer-motion";
 import { useModal } from "@/components/hook/useModal";
 import dynamic from "next/dynamic";
+import Loading from "@/components/ui/Loading";
 import { SectionBlock, SectionTitle } from "@/components/ui/SectionBlock";
 const SponsorModal = dynamic(() => import("../_components/Modal"), {
   ssr: false,
+  loading: () => <Loading />,
 });
 const AnnualSponsorBlock = ({ title, children, ...props }) => {
   return (

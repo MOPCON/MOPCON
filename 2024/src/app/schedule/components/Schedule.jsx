@@ -8,7 +8,7 @@ const Schedule = ({ ...props }) => {
           <time className="text-N800 tablet:text-lg laptop:text-xl font-bold absolute laptop:static bg-[#F4F7FA] pr-3 laptop:pr-0">
             {period.startedAt}
           </time>
-          <div className="border-t-2 border-N800/20 flex justify-center py-5 px-2 flex-grow mt-3">
+          <div className="border-t-2 border-N800/20 flex justify-center py-5 laptop:px-2 flex-grow mt-3">
             {period.event && (
               <span className="text-N800 tablet:text-lg laptop:text-xl font-bold">
                 {period.event}

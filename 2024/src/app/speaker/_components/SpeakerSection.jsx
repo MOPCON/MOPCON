@@ -6,8 +6,12 @@ import SpeakerCard from "./SpeakerCard";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useModal } from "@/components/hook/useModal";
-const SpeakerModal = dynamic(() => import("./SpeakerModal"), { ssr: false });
 import { useRouter, useSearchParams } from "next/navigation";
+import Loading from "@/components/ui/Loading";
+const SpeakerModal = dynamic(() => import("./SpeakerModal"), {
+  ssr: false,
+  loading: () => <Loading />,
+});
 
 const SpeakerSection = () => {
   const [tags, setTags] = useState([]);
