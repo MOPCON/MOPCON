@@ -1,18 +1,21 @@
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
-import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
+import {
+  SectionBlock,
+  SectionTitle,
+  SectionSubTitle,
+} from "@/components/ui/SectionBlock";
 
 const BePartner = () => {
   return (
-    <section className="w-full py-12 tablet:py-24">
+    <SectionBlock>
       <div className="w-[min(90%,1062px)] mx-auto mb-10 tablet:mb-28">
-        <BlockTitleArrow>加入我們</BlockTitleArrow>
-        <h4 className="block-title mb-3">
+        <SectionTitle arrowTitle="加入我們" className="mb-3">
           想成為 <span className="text-light-green">我們的夥伴嗎？</span>
-        </h4>
-        <h5 className="text-secondary text-lg tablet:text-2xl">
+        </SectionTitle>
+        <SectionSubTitle>
           想了解加入贊助商，會遇到什麼樣的與會民眾嗎？
-        </h5>
+        </SectionSubTitle>
       </div>
       <div className="grid grid-cols-1 tablet:grid-cols-2 w-[min(90%,1280px)] gap-y-14 tablet:gap-4 mx-auto">
         <Image
@@ -64,7 +67,7 @@ const BePartner = () => {
           </div>
         </div>
       </div>
-    </section>
+    </SectionBlock>
   );
 };
 

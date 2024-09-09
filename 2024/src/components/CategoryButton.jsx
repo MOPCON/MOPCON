@@ -17,6 +17,7 @@ const CategoryButton = ({ children, ...props }) => {
       }}
       exit={{ opacity: 1 }}
       transition={{ type: "spring" }}
+      whileTap={{ scale: 0.9 }}
     >
       {props.isSelected && <FaCircleCheck className="text-secondary/60" />}
       {children}

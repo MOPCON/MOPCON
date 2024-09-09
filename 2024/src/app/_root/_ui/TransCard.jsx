@@ -24,7 +24,7 @@ const Card = ({ icon, title, content, bgColor, index }) => {
         show: (index) => ({
           opacity: 1,
           y: 0,
-          transition: { delay: index * 0.2, duration: 0.5 },
+          transition: { delay: index * 0.1, duration: 0.5 },
         }),
       }}
       initial="initial"
