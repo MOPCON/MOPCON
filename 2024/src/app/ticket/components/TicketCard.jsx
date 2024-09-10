@@ -50,7 +50,7 @@ const TicketCard = ({ ...props }) => {
   return (
     <motion.div
       className={`rounded-3xl p-0.5 shadow-[0_0_30px_rgba(0,0,0,0.05)] min-h-[280px] h-auto ${props.color}`}
-      variants={fadeInAnimation()}
+      variants={fadeInAnimation(0.1)}
       initial="initial"
       whileInView="show"
       viewport={{ once: true }}

@@ -3,8 +3,8 @@ import HeroSection from "@/components/ui/HeroSection";
 const Hero = () => {
   return (
     <HeroSection>
-      <h1 className="block-title text-center mb-10">
-        每一場都讓你收穫滿滿的
+      <h1 className="block-title mb-10 flex flex-col tablet:block tablet:text-center">
+        <span>每一場都讓你收穫滿滿的</span>
         <span className="text-light-green">議程規劃</span>
       </h1>
       <div className="w-[min(100%,860px)] mx-auto text-N800/80 text-lg">

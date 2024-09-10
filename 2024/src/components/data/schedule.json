@@ -3,86 +3,36 @@
     "date": "10/26",
     "period": [
       {
-        "startedAt": "8:30",
+        "startedAt": 1729902600,
+        "endAt": 1729904400,
         "event": "報到 Registration",
         "room": []
       },
       {
-        "startedAt": "9:00",
+        "startedAt": 1729904400,
+        "endAt": 1729905300,
         "event": "開幕 Opening",
         "room": []
       },
       {
-        "startedAt": "9:15",
+        "startedAt": 1729905300,
+        "endAt": 1729908000,
         "event": "",
         "room": [
           {
-            "name": "",
-            "speakerId": 2,
-            "company": "",
-            "jobTitle": "",
-            "bio": "",
-            "img": "",
-            "linkFb": "",
-            "linkGithub": "",
-            "linkTwitter": "",
-            "topic": "",
-            "summary": "",
-            "communityPartner": "",
-            "isKeynote": false,
-            "isOnline": false,
-            "recordable": true,
-            "level": "Basic",
-            "tags": [
-              { "id": 3, "name": "Product Design & Operations" },
-              { "id": 4, "name": "Technology Trends" }
-            ],
-            "target": "",
-            "priorKnowledge": "",
-            "expectedGain": "",
-            "startedAt": 1634951700,
-            "room": "R2",
-            "floor": "",
-            "sessionId": 2024002
-          },
-          {
-            "name": "",
-            "speakerId": 2,
-            "company": "",
-            "jobTitle": "",
-            "bio": "",
-            "img": "",
-            "linkFb": "",
-            "linkGithub": "",
-            "linkTwitter": "",
-            "topic": "",
-            "summary": "",
-            "communityPartner": "",
-            "isKeynote": false,
-            "isOnline": false,
-            "recordable": true,
-            "level": "Basic",
-            "tags": [
-              { "id": 3, "name": "Product Design & Operations" },
-              { "id": 4, "name": "Technology Trends" }
-            ],
-            "target": "",
-            "priorKnowledge": "",
-            "expectedGain": "",
-            "startedAt": 1634951700,
-            "room": "R2",
-            "floor": "",
-            "sessionId": 2024002
+            "isKeynote": true
           }
         ]
       },
       {
-        "startedAt": "10:00",
+        "startedAt": 1729908000,
+        "endAt": 1729908900,
         "event": "休息 Break",
         "room": []
       },
       {
-        "startedAt": "10:15",
+        "startedAt": 1729908900,
+        "endAt": 1729911600,
         "event": "",
         "room": [
           {
@@ -109,7 +59,8 @@
             "target": "",
             "priorKnowledge": "",
             "expectedGain": "",
-            "startedAt": 1634951700,
+            "startedAt": 1729908900,
+            "endAt": 1729911600,
             "room": "R2",
             "floor": "",
             "sessionId": 2024002
@@ -138,7 +89,8 @@
             "target": "",
             "priorKnowledge": "",
             "expectedGain": "",
-            "startedAt": 1634951700,
+            "startedAt": 1729908900,
+            "endAt": 1729911600,
             "room": "R2",
             "floor": "",
             "sessionId": 2024002
@@ -146,12 +98,14 @@
         ]
       },
       {
-        "startedAt": "11:00",
+        "startedAt": 1729911600,
+        "endAt": 1729912500,
         "event": "休息 Break",
         "room": []
       },
       {
-        "startedAt": "11:15",
+        "startedAt": 1729912500,
+        "endAt": 1729915200,
         "event": "",
         "room": [
           {
@@ -178,7 +132,8 @@
             "target": "",
             "priorKnowledge": "",
             "expectedGain": "",
-            "startedAt": 1634951700,
+            "startedAt": 1729912500,
+            "endAt": 1729915200,
             "room": "R2",
             "floor": "",
             "sessionId": 2024002
@@ -207,7 +162,8 @@
             "target": "",
             "priorKnowledge": "",
             "expectedGain": "",
-            "startedAt": 1634951700,
+            "startedAt": 1729912500,
+            "endAt": 1729915200,
             "room": "R2",
             "floor": "",
             "sessionId": 2024002
@@ -215,12 +171,14 @@
         ]
       },
       {
-        "startedAt": "11:00",
+        "startedAt": 1729915200,
+        "endAt": 1729919700,
         "event": "午餐 Lunch",
         "room": []
       },
       {
-        "startedAt": "13:15",
+        "startedAt": 1729919700,
+        "endAt": 1729922400,
         "event": "",
         "room": [
           {
@@ -247,7 +205,8 @@
             "target": "",
             "priorKnowledge": "",
             "expectedGain": "",
-            "startedAt": 1634951700,
+            "startedAt": 1729919700,
+            "endAt": 1729922400,
             "room": "R2",
             "floor": "",
             "sessionId": 2024002
@@ -276,7 +235,8 @@
             "target": "",
             "priorKnowledge": "",
             "expectedGain": "",
-            "startedAt": 1634951700,
+            "startedAt": 1729919700,
+            "endAt": 1729922400,
             "room": "R2",
             "floor": "",
             "sessionId": 2024002
@@ -284,12 +244,14 @@
         ]
       },
       {
-        "startedAt": "14:00",
+        "startedAt": 1729922400,
+        "endAt": 1729923300,
         "event": "休息 Break",
         "room": []
       },
       {
-        "startedAt": "14:15",
+        "startedAt": 1729923300,
+        "endAt": 1729926000,
         "event": "",
         "room": [
           {
@@ -316,7 +278,8 @@
             "target": "",
             "priorKnowledge": "",
             "expectedGain": "",
-            "startedAt": 1634951700,
+            "startedAt": 1729923300,
+            "endAt": 1729926000,
             "room": "R2",
             "floor": "",
             "sessionId": 2024002
@@ -345,7 +308,8 @@
             "target": "",
             "priorKnowledge": "",
             "expectedGain": "",
-            "startedAt": 1634951700,
+            "startedAt": 1729923300,
+            "endAt": 1729926000,
             "room": "R2",
             "floor": "",
             "sessionId": 2024002
@@ -353,12 +317,14 @@
         ]
       },
       {
-        "startedAt": "15:00",
+        "startedAt": 1729926000,
+        "endAt": 1729927800,
         "event": "下午茶交流 Afternoon Tea",
         "room": []
       },
       {
-        "startedAt": "15:30",
+        "startedAt": 1729927800,
+        "endAt": 1729930500,
         "event": "",
         "room": [
           {
@@ -385,7 +351,8 @@
             "target": "",
             "priorKnowledge": "",
             "expectedGain": "",
-            "startedAt": 1634951700,
+            "startedAt": 1729927800,
+            "endAt": 1729930500,
             "room": "R2",
             "floor": "",
             "sessionId": 2024002
@@ -414,7 +381,8 @@
             "target": "",
             "priorKnowledge": "",
             "expectedGain": "",
-            "startedAt": 1634951700,
+            "startedAt": 1729927800,
+            "endAt": 1729930500,
             "room": "R2",
             "floor": "",
             "sessionId": 2024002
@@ -422,12 +390,14 @@
         ]
       },
       {
-        "startedAt": "16:15",
+        "startedAt": 1729930500,
+        "endAt": 1729931400,
         "event": "休息 Break",
         "room": []
       },
       {
-        "startedAt": "16:30",
+        "startedAt": 1729931400,
+        "endAt": 1729934100,
         "event": "",
         "room": [
           {
@@ -454,7 +424,8 @@
             "target": "",
             "priorKnowledge": "",
             "expectedGain": "",
-            "startedAt": 1634951700,
+            "startedAt": 1729931400,
+            "endAt": 1729934100,
             "room": "R2",
             "floor": "",
             "sessionId": 2024002
@@ -483,7 +454,8 @@
             "target": "",
             "priorKnowledge": "",
             "expectedGain": "",
-            "startedAt": 1634951700,
+            "startedAt": 1729931400,
+            "endAt": 1729934100,
             "room": "R2",
             "floor": "",
             "sessionId": 2024002
@@ -491,7 +463,8 @@
         ]
       },
       {
-        "startedAt": "17:15",
+        "startedAt": 1729934100,
+        "endAt": 1729935000,
         "event": "END",
         "room": []
       }
@@ -499,6 +472,103 @@
   },
   {
     "date": "10/27",
-    "period": []
+    "period": [
+      {
+        "startedAt": 1729989000,
+        "endAt": 1729990800,
+        "event": "報到 Registration",
+        "room": []
+      },
+      {
+        "startedAt": 1729990800,
+        "endAt": 1729991700,
+        "event": "Second Opening",
+        "room": []
+      },
+      {
+        "startedAt": 1729991700,
+        "endAt": 1729994400,
+        "event": "",
+        "room": [{}, {}]
+      },
+      {
+        "startedAt": 1729994400,
+        "endAt": 1729995300,
+        "event": "休息 Break",
+        "room": []
+      },
+      {
+        "startedAt": 1729995300,
+        "endAt": 1729998000,
+        "event": "",
+        "room": [{}, {}]
+      },
+      {
+        "startedAt": 1729998000,
+        "endAt": 1729998900,
+        "event": "休息 Break",
+        "room": []
+      },
+      {
+        "startedAt": 1729998900,
+        "endAt": 1730001600,
+        "event": "",
+        "room": [{}, {}]
+      },
+      {
+        "startedAt": 1730001600,
+        "endAt": 1730006100,
+        "event": "午餐 Lunch",
+        "room": []
+      },
+      {
+        "startedAt": 1730006100,
+        "endAt": 1730008800,
+        "event": "",
+        "room": [{}, {}]
+      },
+      {
+        "startedAt": 1730008800,
+        "endAt": 1730009700,
+        "event": "休息 Break",
+        "room": []
+      },
+      {
+        "startedAt": 1730009700,
+        "endAt": 1730012400,
+        "event": "",
+        "room": [{}, {}]
+      },
+      {
+        "startedAt": 1730012400,
+        "endAt": 1730014200,
+        "event": "下午茶交流 Afternoon Tea",
+        "room": []
+      },
+      {
+        "startedAt": 1730014200,
+        "endAt": 1730016900,
+        "event": "",
+        "room": [{}]
+      },
+      {
+        "startedAt": 1730016900,
+        "endAt": 1730017800,
+        "event": "休息 Break",
+        "room": []
+      },
+      {
+        "startedAt": 1730017800,
+        "endAt": 1730020500,
+        "event": "Lightning Talk",
+        "room": []
+      },
+      {
+        "startedAt": 1730020500,
+        "endAt": 1730021400,
+        "event": "閉幕 Ending",
+        "room": []
+      }
+    ]
   }
 ]

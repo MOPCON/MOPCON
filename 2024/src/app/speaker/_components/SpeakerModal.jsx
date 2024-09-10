@@ -1,5 +1,6 @@
 import { BasicModal, ModalBody, CloseButton } from "@/components/ui/BasicModal";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { GoGlobe } from "react-icons/go";
 import ModalImage from "@/components/ModalImage";
 import { GrLocation } from "react-icons/gr";
@@ -8,9 +9,8 @@ import { GreenLeaf, OrangeLeaf } from "@/components/ui/ModalLeaf";
 import { FiShare2 } from "react-icons/fi";
 import { LuCalendarCheck } from "react-icons/lu";
 import { useJsonParse } from "@/components/hook/useJsonParse";
+
 const SpeakerModal = ({ onClose, ...props }) => {
-  const summary = useJsonParse(props.summary);
-  const bio = useJsonParse(props.bio);
   return (
     <BasicModal
       onClose={onClose}
@@ -22,7 +22,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
         }
       >
         <CloseButton onClose={onClose} iconClass={"text-xl text-secondary"} />
-        <div className="max-h-[calc(100dvh-200px)] overflow-y-auto">
+        <div className="max-h-[calc(100dvh-200px)] overflow-y-auto pb-4 px-3">
           <div className="flex flex-col items-center mob:block mb-10">
             <div className="flex gap-3 flex-col mob:flex-row items-center w-fit mb-3">
               <div className="size-[120px] rounded-[50%] overflow-clip flex items-center justify-center">
@@ -39,25 +39,65 @@ const SpeakerModal = ({ onClose, ...props }) => {
               </div>
             </div>
             <div className="flex items-center justify-evenly w-[120px]">
-              <a
-                href="#"
-                rel="noreferrer noopener"
-                target="_blank"
-                className="text-secondary"
-              >
-                <GoGlobe className="text-xl" aria-label="Visit website" />
-              </a>
-              <a
-                href="#"
-                rel="noreferrer noopener"
-                target="_blank"
-                className="text-secondary"
-              >
-                <FaFacebook
-                  className="text-xl"
-                  aria-label="Visit Facebook page"
-                />
-              </a>
+              {props.linkWeb && (
+                <a
+                  href={props.linkWeb}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                  className="text-secondary"
+                >
+                  <GoGlobe className="text-xl" aria-label="Visit website" />
+                </a>
+              )}
+              {props.linkLinkedin && (
+                <a
+                  href={props.linkLinkedin}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                  className="text-secondary"
+                >
+                  <FaLinkedin
+                    className="text-xl"
+                    aria-label="Visit LinkedIn page"
+                  />
+                </a>
+              )}
+              {props.linkGithub && (
+                <a
+                  href={props.linkGithub}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                  className="text-secondary"
+                >
+                  <FaGithub
+                    className="text-xl"
+                    aria-label="Visit GitHub page"
+                  />
+                </a>
+              )}
+              {props.linkTwitter && (
+                <a
+                  href={props.linkTwitter}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                  className="text-secondary"
+                >
+                  <FaXTwitter className="text-xl" aria-label="Visit X page" />
+                </a>
+              )}
+              {props.linkFb && (
+                <a
+                  href={props.linkFb}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                  className="text-secondary"
+                >
+                  <FaFacebook
+                    className="text-xl"
+                    aria-label="Visit Facebook page"
+                  />
+                </a>
+              )}
             </div>
           </div>
           <article className="flex flex-col gap-10 mb-10">
@@ -67,7 +107,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 <OrangeLeaf />
               </div>
               <div className="text-N800/80 leading-6 flex flex-col gap-2">
-                {bio}
+                {useJsonParse(props.bio)}
               </div>
             </section>
             <section>
@@ -93,7 +133,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 </div>
               </div>
               <div className="text-N800/80 leading-6 mb-4 flex flex-col gap-2">
-                {summary}
+                {useJsonParse(props.summary)}
               </div>
               <div className="flex items-center justify-center mob:justify-normal gap-3 flex-wrap">
                 {props.tags.map((item) => (
@@ -106,24 +146,36 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 ))}
               </div>
             </section>
-            <section>
-              <h3 className="text-N800/80 font-medium leading-6 mb-4">
-                目標會眾
-              </h3>
-              <p className="text-N800/80 leading-6">{props.target}</p>
-            </section>
-            <section>
-              <h3 className="text-N800/80 font-medium leading-6 mb-4">
-                先備知識
-              </h3>
-              <p className="text-N800/80 leading-6">{props.priorKnowledge}</p>
-            </section>
-            <section>
-              <h3 className="text-N800/80 font-medium leading-6 mb-4">
-                會眾預期收穫
-              </h3>
-              <p className="text-N800/80 leading-6">{props.expectedGain}</p>
-            </section>
+            {props.target && (
+              <section>
+                <h3 className="text-N800/80 font-medium leading-6 mb-4">
+                  目標會眾
+                </h3>
+                <p className="text-N800/80 leading-6">
+                  {useJsonParse(props.target)}
+                </p>
+              </section>
+            )}
+            {props.priorKnowledge && (
+              <section>
+                <h3 className="text-N800/80 font-medium leading-6 mb-4">
+                  先備知識
+                </h3>
+                <p className="text-N800/80 leading-6">
+                  {useJsonParse(props.priorKnowledge)}
+                </p>
+              </section>
+            )}
+            {props.expectedGain && (
+              <section>
+                <h3 className="text-N800/80 font-medium leading-6 mb-4">
+                  會眾預期收穫
+                </h3>
+                <p className="text-N800/80 leading-6">
+                  {useJsonParse(props.expectedGain)}
+                </p>
+              </section>
+            )}
           </article>
           <div className="grid grid-cols-1 mob:grid-cols-2 gap-3">
             <button className="btn btn-primary flex items-center gap-2 justify-center">
@@ -135,7 +187,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
               加入行事曆
             </button>
           </div>
-        </div>{" "}
+        </div>
       </ModalBody>
     </BasicModal>
   );

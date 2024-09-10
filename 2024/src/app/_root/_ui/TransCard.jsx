@@ -24,7 +24,7 @@ const Card = ({ icon, title, content, bgColor, index }) => {
         show: (index) => ({
           opacity: 1,
           y: 0,
-          transition: { delay: index * 0.2, duration: 0.5 },
+          transition: { delay: index * 0.1, duration: 0.5 },
         }),
       }}
       initial="initial"
@@ -39,7 +39,9 @@ const Card = ({ icon, title, content, bgColor, index }) => {
           {IconComponent && <IconComponent />}
         </div>
         <div className="text-N800 flex-grow">
-          <h6 className="text-lg tablet:text-2xl font-medium mb-2">{title}</h6>
+          <h6 className="text-lg tablet:text-xl laptop:text-2xl font-medium mb-2">
+            {title}
+          </h6>
           <p className="text-base tablet:text-lg">{content}</p>
         </div>
       </div>

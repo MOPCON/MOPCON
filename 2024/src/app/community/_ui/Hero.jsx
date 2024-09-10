@@ -18,8 +18,10 @@ const Hero = () => {
           2024
           都將為你提供豐富的內容和多樣的活動。我們希望促進南部地區的科技發展，並為在地社群帶來更多的機會與挑戰。
         </p>
-        <p className="text-secondary bg-highlight box-decoration-clone break-before-all w-fit">
-          MOPCON 志在打造出一座「高速資訊交流圈」！
+        <p className="text-secondary">
+          <span className="bg-highlight box-decoration-clone break-before-all w-fit">
+            MOPCON 志在打造出一座「高速資訊交流圈」！
+          </span>
         </p>
       </div>
     </HeroSection>

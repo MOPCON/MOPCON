@@ -1,6 +1,10 @@
-import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 import TicketData from "@/components/data/data.json";
 import TicketCard from "../components/TicketCard";
+import {
+  SectionBlock,
+  SectionTitle,
+  SectionSubTitle,
+} from "@/components/ui/SectionBlock";
 
 const StudentTicket = () => {
   const studentTicketList = TicketData.tickets.filter(
@@ -8,15 +12,14 @@ const StudentTicket = () => {
   );
 
   return (
-    <section className="w-full py-12 tablet:py-24 relative">
+    <SectionBlock>
       <div className="w-[min(90%,1062px)] mx-auto mb-10 tablet:mb-14 laptop:mb-20">
-        <BlockTitleArrow>STUDENT DISCOUNT</BlockTitleArrow>
-        <h4 className="block-title mb-3">
+        <SectionTitle arrowTitle="STUDENT DISCOUNT" className="mb-3">
           還是 <span className="text-light-green">學生</span> 嗎？
-        </h4>
-        <h5 className="text-secondary text-lg tablet:text-2xl">
+        </SectionTitle>
+        <SectionSubTitle>
           我們提供學生更優惠的價格，歡迎年輕學子一同參與盛會，和業界多多交流！
-        </h5>
+        </SectionSubTitle>
       </div>
       <div className="mx-auto w-[min(90%,1196px)]">
         <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 gap-4 justify-between">
@@ -34,7 +37,7 @@ const StudentTicket = () => {
           })}
         </div>
       </div>
-    </section>
+    </SectionBlock>
   );
 };
 

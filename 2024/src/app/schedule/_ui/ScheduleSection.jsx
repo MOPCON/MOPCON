@@ -35,7 +35,7 @@ const ScheduleSection = () => {
         alt="behavioral-guidelines-bg"
         width={1920}
         height={1080}
-        className="absolute w-full h-full object-cover left-1/2 top-0 -translate-x-1/2 translate-y-1/3 pointer-events-none"
+        className="absolute w-full object-cover left-1/2 top-0 -translate-x-1/2 translate-y-1/3 pointer-events-none"
         aria-hidden="true"
       />
       <div className="w-[min(90%,1062px)] mx-auto">

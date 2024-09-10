@@ -1,6 +1,6 @@
-import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 import TicketData from "@/components/data/data.json";
 import TicketCard from "../components/TicketCard";
+import { SectionBlock, SectionTitle } from "@/components/ui/SectionBlock";
 
 const TicketIntroduction = () => {
   const normalTicket = TicketData.tickets.filter(
@@ -8,12 +8,11 @@ const TicketIntroduction = () => {
   );
 
   return (
-    <section className="w-full py-12 tablet:pt-24 tablet:pb-12 relative">
+    <SectionBlock>
       <div className="w-[min(90%,1062px)] mx-auto">
-        <BlockTitleArrow>TICKETS</BlockTitleArrow>
-        <h4 className="block-title mb-10">
+        <SectionTitle arrowTitle="TICKETS" className="mb-10">
           票種 <span className="text-light-green">介紹</span>
-        </h4>
+        </SectionTitle>
       </div>
       <div className="mx-auto w-[min(90%,1196px)]">
         <div className="grid grid-cols-1 mob:grid-cols-2 tablet:grid-cols-4 gap-4 justify-between">
@@ -43,7 +42,7 @@ const TicketIntroduction = () => {
           })}
         </div>
       </div>
-    </section>
+    </SectionBlock>
   );
 };
 
