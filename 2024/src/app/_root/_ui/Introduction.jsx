@@ -6,7 +6,7 @@ const Introduction = ({ ...props }) => {
   return (
     <motion.h4
       className="flex items-center justify-center flex-col font-bold text-[#161C2D]/70"
-      variants={fadeInAnimation()}
+      variants={fadeInAnimation(0.1)}
       initial="initial"
       whileInView="show"
       viewport={{ once: true }}

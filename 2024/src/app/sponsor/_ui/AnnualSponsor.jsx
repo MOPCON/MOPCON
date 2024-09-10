@@ -5,9 +5,11 @@ import { SponsorLeaf } from "./icons";
 import { AnimatePresence } from "framer-motion";
 import { useModal } from "@/components/hook/useModal";
 import dynamic from "next/dynamic";
-import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
+import Loading from "@/components/ui/Loading";
+import { SectionBlock, SectionTitle } from "@/components/ui/SectionBlock";
 const SponsorModal = dynamic(() => import("../_components/Modal"), {
   ssr: false,
+  loading: () => <Loading />,
 });
 const AnnualSponsorBlock = ({ title, children, ...props }) => {
   return (
@@ -30,12 +32,11 @@ const AnnualSponsor = () => {
   const sponsorModal = useModal();
 
   return (
-    <section className="pt-16 w-full">
+    <SectionBlock>
       <div className="w-[min(90%,1062px)] mx-auto">
-        <BlockTitleArrow>年度贊助商</BlockTitleArrow>
-        <h4 className="block-title mb-14">
+        <SectionTitle arrowTitle="年度贊助商" className="mb-14">
           今年的 <span className="text-light-green">贊助夥伴們</span>
-        </h4>
+        </SectionTitle>
       </div>
       {SponsorData?.sponsors.map(
         (item, index) =>
@@ -60,7 +61,7 @@ const AnnualSponsor = () => {
           />
         )}
       </AnimatePresence>
-    </section>
+    </SectionBlock>
   );
 };
 

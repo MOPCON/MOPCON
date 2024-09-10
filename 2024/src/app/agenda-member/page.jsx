@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import MemberSection from "./_components/MemberSection";
 import HeroSection from "@/components/ui/HeroSection";
 import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
+import { SectionBlock, SectionTitle } from "@/components/ui/SectionBlock";
 
 export const metadata = {
   title: "議程委員",
@@ -28,11 +29,12 @@ const Page = () => {
           </p>
         </div>
       </HeroSection>
-      <section className="py-16 w-[min(90%,1204px)] mx-auto">
-        <BlockTitleArrow>議程委員</BlockTitleArrow>
-        <h3 className="block-title mb-[60px]">議程智囊團隊</h3>
-        <MemberSection />
-      </section>
+      <SectionBlock>
+        <div className="w-[min(90%,1204px)] mx-auto">
+          <SectionTitle arrowTitle="議程委員">議程智囊團隊</SectionTitle>
+          <MemberSection />
+        </div>
+      </SectionBlock>
     </Fragment>
   );
 };

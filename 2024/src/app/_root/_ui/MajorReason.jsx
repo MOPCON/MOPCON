@@ -37,7 +37,7 @@ const ReasonItem = ({ title, content, idx, titleNum, index }) => {
   return (
     <motion.div
       className="relative pb-20"
-      variants={fadeInAnimation(0.3, 0.5)}
+      variants={fadeInAnimation(0.1)}
       initial="initial"
       whileInView="show"
       viewport={{ once: true }}

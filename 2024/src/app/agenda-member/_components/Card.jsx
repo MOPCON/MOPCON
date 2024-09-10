@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 const MemberCard = ({ isHovered, onHover, handleClick, ...props }) => {
   return (
     <motion.div
-      className="rounded-[20px] cursor-pointer h-[400px] p-[3px] flex flex-col items-center justify-center relative transition-all duration-300 hover:shadow-[0_10px_30px_0_rgba(0,0,0,0.05)]"
+      className="rounded-[20px] cursor-pointer h-[400px] p-[3px] flex flex-col items-center justify-center relative transition-all duration-300 hover:shadow-[0_10px_30px_0_rgba(0,0,0,0.05)] hover:-translate-y-3"
       onClick={handleClick}
       variants={{
         hidden: { opacity: 0 },
         visible: { opacity: 1 },
       }}
       exit={{ opacity: 1 }}
-      transition={{ type: "spring" }}
+      transition={{ type: "spring", duration: 0.8 }}
     >
       <div className="flex flex-col gap-4 items-center justify-center w-full h-full p-4 relative z-[1]">
         <div className="overflow-hidden rounded-[50%] border border-white/60">

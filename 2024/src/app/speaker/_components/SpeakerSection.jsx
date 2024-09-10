@@ -6,8 +6,12 @@ import SpeakerCard from "./SpeakerCard";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useModal } from "@/components/hook/useModal";
-const SpeakerModal = dynamic(() => import("./SpeakerModal"), { ssr: false });
 import { useRouter, useSearchParams } from "next/navigation";
+import Loading from "@/components/ui/Loading";
+const SpeakerModal = dynamic(() => import("./SpeakerModal"), {
+  ssr: false,
+  loading: () => <Loading />,
+});
 
 const SpeakerSection = () => {
   const [tags, setTags] = useState([]);
@@ -40,6 +44,10 @@ const SpeakerSection = () => {
   function handlerCardClick(speaker) {
     speakerModal.openModal(speaker);
     router.push(`/speaker/?id=${speaker.sessionId}`, { scroll: false });
+  }
+  function handlerModalClose() {
+    speakerModal.closeModal();
+    router.push("/speaker", { scroll: false });
   }
 
   const selectedTypeSpeaker = useMemo(() => {
@@ -96,7 +104,7 @@ const SpeakerSection = () => {
         {speakerModal.content && speakerModal.isOpen && (
           <SpeakerModal
             {...speakerModal.content}
-            onClose={() => speakerModal.closeModal()}
+            onClose={() => handlerModalClose()}
           />
         )}
       </AnimatePresence>
