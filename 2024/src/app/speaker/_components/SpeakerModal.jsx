@@ -1,5 +1,6 @@
 import { BasicModal, ModalBody, CloseButton } from "@/components/ui/BasicModal";
 import { FaFacebook, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { GoGlobe } from "react-icons/go";
 import ModalImage from "@/components/ModalImage";
 import { GrLocation } from "react-icons/gr";
@@ -8,6 +9,7 @@ import { GreenLeaf, OrangeLeaf } from "@/components/ui/ModalLeaf";
 import { FiShare2 } from "react-icons/fi";
 import { LuCalendarCheck } from "react-icons/lu";
 import { useJsonParse } from "@/components/hook/useJsonParse";
+
 const SpeakerModal = ({ onClose, ...props }) => {
   return (
     <BasicModal
@@ -71,6 +73,16 @@ const SpeakerModal = ({ onClose, ...props }) => {
                     className="text-xl"
                     aria-label="Visit GitHub page"
                   />
+                </a>
+              )}
+              {props.linkTwitter && (
+                <a
+                  href={props.linkTwitter}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                  className="text-secondary"
+                >
+                  <FaXTwitter className="text-xl" aria-label="Visit X page" />
                 </a>
               )}
               {props.linkFb && (
