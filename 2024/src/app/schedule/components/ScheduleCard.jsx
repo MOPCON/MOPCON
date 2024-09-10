@@ -2,9 +2,13 @@ import React from "react";
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 
-const ScheduleCard = ({ ...props }) => {
+const ScheduleCard = ({ isKeynote, ...props }) => {
   return (
-    <div className="rounded-3xl p-0.5 bg-gradient-to-r from-[#E8EFFA] to-[#AEBECF] hover:from-[#E4F2F0] hover:to-[#96CAC3] shadow-[0_10px_30px_0_rgba(0,0,0,0.05)]">
+    <div
+      className={`rounded-3xl p-0.5 bg-gradient-to-r from-[#E8EFFA] to-[#AEBECF] hover:from-[#E4F2F0] hover:to-[#96CAC3] shadow-[0_10px_30px_0_rgba(0,0,0,0.05)] ${
+        isKeynote ? "col-span-2" : ""
+      }`}
+    >
       <div className="size-full rounded-[calc(24px-2px)] bg-white px-8 py-6">
         <div className="flex items-center flex-wrap gap-3 mb-4">
           <span className="rounded-full border-2 border-secondary text-secondary text-sm py-1 px-3">
