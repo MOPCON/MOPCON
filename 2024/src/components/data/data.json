@@ -970,44 +970,44 @@
   ],
   "community": [
     {
-      "id": 1,
-      "name": "MOPCON",
-      "img": ""
+      "title": "指導單位",
+      "organizations": [
+        {
+          "id": 1,
+          "name": "數發部數位產業署",
+          "img": ""
+        },
+        {
+          "id": 2,
+          "name": "高雄市經發局",
+          "img": ""
+        }
+      ]
     },
     {
-      "id": 2,
-      "name": "MOPCON",
-      "img": ""
-    },
-    {
-      "id": 3,
-      "name": "MOPCON",
-      "img": ""
-    },
-    {
-      "id": 4,
-      "name": "MOPCON",
-      "img": ""
-    },
-    {
-      "id": 5,
-      "name": "MOPCON",
-      "img": ""
-    },
-    {
-      "id": 6,
-      "name": "MOPCON",
-      "img": ""
-    },
-    {
-      "id": 7,
-      "name": "MOPCON",
-      "img": ""
-    },
-    {
-      "id": 8,
-      "name": "MOPCON",
-      "img": ""
+      "title": "執行單位",
+      "organizations": [
+        {
+          "id": 3,
+          "name": "KSDA",
+          "img": ""
+        },
+        {
+          "id": 4,
+          "name": "MOPCON 社群",
+          "img": ""
+        },
+        {
+          "id": 5,
+          "name": "臺灣產學策進會",
+          "img": ""
+        },
+        {
+          "id": 6,
+          "name": "台北市電腦公會",
+          "img": ""
+        }
+      ]
     }
   ]
 }
