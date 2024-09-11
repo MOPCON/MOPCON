@@ -1,17 +1,16 @@
 import React from "react";
 import Link from "next/link";
-import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
+import { SectionBlock, SectionTitle } from "@/components/ui/SectionBlock";
 
 const JoinTeam = () => {
   return (
-    <section className="w-full py-12 tablet:py-24">
+    <SectionBlock>
       <div className="w-[min(90%,1062px)] mx-auto mb-10 tablet:mb-28">
-        <BlockTitleArrow>志工行列</BlockTitleArrow>
-        <h4 className="block-title mb-10 tablet:mb-28">
+        <SectionTitle arrowTitle="志工行列" className="mb-10 tablet:mb-28">
           MOPCON <span className="text-light-green">志工團隊</span>
-        </h4>
+        </SectionTitle>
         <div className="grid grid-cols-1 tablet:grid-cols-2 gap-14">
           <div className="flex flex-col gap-10 w-[min(100%,410px)] mx-auto">
             <h5 className="text-[#1C1F25] text-xl tablet:text-[32px] font-medium mx-auto">
@@ -67,7 +66,7 @@ const JoinTeam = () => {
           </div>
         </div>
       </div>
-    </section>
+    </SectionBlock>
   );
 };
 

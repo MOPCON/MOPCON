@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FaArrowRight, FaXTwitter } from "react-icons/fa6";
 import { FaFacebookF, FaTelegramPlane } from "react-icons/fa";
 import { Instagram } from "./icons";
-import HeroSection from "@/components/ui/HeroSection";
+import { HeroSection } from "@/components/ui/HeroSection";
 import { motion } from "framer-motion";
 
 const fadeIn = {

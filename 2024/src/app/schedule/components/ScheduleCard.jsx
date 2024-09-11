@@ -1,13 +1,28 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
+import { motion } from "framer-motion";
+import clsx from "clsx";
+import { opacityAnimation } from "@/components/util/animation";
 
 const ScheduleCard = ({ isKeynote, ...props }) => {
   return (
-    <div
-      className={`rounded-3xl p-0.5 bg-gradient-to-r from-[#E8EFFA] to-[#AEBECF] hover:from-[#E4F2F0] hover:to-[#96CAC3] shadow-[0_10px_30px_0_rgba(0,0,0,0.05)] ${
-        isKeynote ? "col-span-2" : ""
-      }`}
+    <motion.div
+      className={clsx(
+        "rounded-3xl p-0.5 bg-gradient-to-r from-[#E8EFFA] to-[#AEBECF] hover:from-[#E4F2F0] hover:to-[#96CAC3] shadow-[0_10px_30px_0_rgba(0,0,0,0.05)]",
+        {
+          "col-span-2": isKeynote,
+          "laptop:col-start-1 laptop:row-start-1":
+            !isKeynote && props.room === "R1",
+          "laptop:col-start-2 laptop:row-start-1":
+            !isKeynote && props.room === "R2",
+        }
+      )}
+      variants={opacityAnimation(0.3)}
+      initial="initial"
+      whileInView="show"
+      viewport={{ once: true }}
     >
       <div className="size-full rounded-[calc(24px-2px)] bg-white px-8 py-6">
         <div className="flex items-center flex-wrap gap-3 mb-4">
@@ -50,7 +65,7 @@ const ScheduleCard = ({ isKeynote, ...props }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

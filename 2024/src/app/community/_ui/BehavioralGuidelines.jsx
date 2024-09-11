@@ -1,9 +1,9 @@
-import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import Image from "next/image";
+import { SectionBlock, SectionTitle } from "@/components/ui/SectionBlock";
 const BehavioralGuidelines = () => {
   return (
-    <section className="w-full py-12 tablet:py-24 relative bg-[#F4F7FA]">
+    <SectionBlock className="bg-[#F4F7FA]">
       <Image
         src={getImageSrc("/community/bg-wave.svg")}
         alt="behavioral-guidelines-bg"
@@ -13,10 +13,9 @@ const BehavioralGuidelines = () => {
         aria-hidden="true"
       />
       <div className="w-[min(90%,1062px)] mx-auto">
-        <BlockTitleArrow>BEHAVIORAL GUIDELINES</BlockTitleArrow>
-        <h4 className="block-title mb-10">
+        <SectionTitle arrowTitle="BEHAVIORAL GUIDELINES" className="mb-10">
           我們的 <span className="text-light-green">行為準則</span>
-        </h4>
+        </SectionTitle>
         <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4 tablet:gap-6">
           <div className="text-N800 tablet:text-lg flex flex-col gap-4">
             <p>
@@ -49,7 +48,7 @@ const BehavioralGuidelines = () => {
           </div>
         </div>
       </div>
-    </section>
+    </SectionBlock>
   );
 };
 
