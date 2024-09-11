@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, Fragment, useMemo, useEffect } from "react";
-import CategoryButton from "@/components/CategoryButton";
 import Data from "@/components/data/data.json";
 import SpeakerCard from "./SpeakerCard";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,6 +7,7 @@ import dynamic from "next/dynamic";
 import { useModal } from "@/components/hook/useModal";
 import { useRouter, useSearchParams } from "next/navigation";
 import Loading from "@/components/ui/Loading";
+import CategoryButtons from "@/components/CategoryButtons";
 const SpeakerModal = dynamic(() => import("./SpeakerModal"), {
   ssr: false,
   loading: () => <Loading />,
@@ -60,27 +60,7 @@ const SpeakerSection = () => {
 
   return (
     <Fragment>
-      <motion.div
-        className="flex items-center flex-wrap justify-center gap-3 mb-[60px]"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
-        }}
-        initial="hidden"
-        animate="visible"
-        exit="hidden"
-      >
-        {Data.speakerTags.map((item, i) => (
-          <CategoryButton
-            key={item.id}
-            onClick={() => handleTag(item)}
-            isSelected={tags.map((item) => item.id).includes(item.id)}
-            {...item}
-          >
-            {item.name}
-          </CategoryButton>
-        ))}
-      </motion.div>
+      <CategoryButtons handleTag={handleTag} tags={tags} />
       <div className="grid grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] gap-8">
         <AnimatePresence>
           {selectedTypeSpeaker.map((speaker) => (
