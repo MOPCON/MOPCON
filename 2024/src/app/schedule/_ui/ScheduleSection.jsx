@@ -9,11 +9,15 @@ import { getImageSrc } from "@/components/util/getImageSrc";
 import Schedule from "../components/Schedule";
 import scheduleData from "@/components/data/schedule.json";
 import { SectionTitle, SectionBlock } from "@/components/ui/SectionBlock";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const ScheduleSection = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const queryDay = Number(searchParams.get("days") || 0);
   const [tags, setTags] = useState([]);
-  const [schedules, setSchedules] = useState([scheduleData[0]]);
-  const [activeDay, setActiveDay] = useState(0);
+  const [schedules, setSchedules] = useState([scheduleData[queryDay || 0]]);
+  const [activeDay, setActiveDay] = useState(queryDay || 0);
 
   const handleTag = (tag) => {
     if (tags.map((item) => item.id).includes(tag.id)) {
@@ -23,9 +27,10 @@ const ScheduleSection = () => {
     }
   };
 
-  const handleDay = (day) => {
+  const handleDaySwitch = (day) => {
     setSchedules([scheduleData[day]]);
     setActiveDay(day);
+    router.push(`/schedule/?days=${day}`, { scroll: false });
   };
 
   return (
@@ -44,7 +49,7 @@ const ScheduleSection = () => {
         </SectionTitle>
       </div>
       <div className="w-[min(90%,1280px)] mx-auto">
-        <DaySwitchButton handleDays={handleDay} activeDay={activeDay} />
+        <DaySwitchButton handleDays={handleDaySwitch} activeDay={activeDay} />
         <motion.div
           className="flex items-center flex-wrap justify-center gap-3 mb-[60px]"
           variants={{

@@ -125,7 +125,7 @@ const MajorReason = ({ initialDaysLeft }) => {
           </div>
           <Link
             className="btn btn-primary"
-            href="https://mopcon.kktix.cc/events/2024-students"
+            href="https://mopcon.kktix.cc/events/mopcon-2024"
             target="_blank"
             rel="noreferrer noopener"
           >

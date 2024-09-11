@@ -41,7 +41,7 @@ const NewHero = () => {
       <div className="flex items-center gap-y-3 gap-4 tablet:gap-x-6 flex-wrap">
         <Link
           className="w-40 tablet:w-48 btn btn-primary"
-          href="https://mopcon.kktix.cc/events/2024-students"
+          href="https://mopcon.kktix.cc/events/mopcon-2024"
           target="_blank"
           rel="noreferrer noopener"
         >
