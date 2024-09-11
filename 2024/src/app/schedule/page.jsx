@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Hero from "./_ui/Hero";
 import ScheduleSection from "./_ui/ScheduleSection";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "主要議程",
@@ -11,7 +12,9 @@ const Page = () => {
   return (
     <Fragment>
       <Hero />
-      <ScheduleSection />
+      <Suspense>
+        <ScheduleSection />
+      </Suspense>
     </Fragment>
   );
 };
