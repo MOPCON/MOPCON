@@ -29,7 +29,7 @@ const Card = ({ ...props }) => {
               className="h-full max-w-full object-contain object-center"
               src={getImageSrc(props.img || "/Logo.svg")}
               width={180}
-              height={40}
+              height={80}
               alt={props.name}
             />
           </div>

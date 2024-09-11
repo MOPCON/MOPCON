@@ -922,7 +922,8 @@
       "title": "早鳥票",
       "subTitle": "",
       "price": "799",
-      "isSelling": false,
+      "link": "https://mopcon.kktix.cc/events/mopcon-2024",
+      "isSelling": true,
       "isSellOut": false,
       "isStudent": false
     },
@@ -932,6 +933,7 @@
       "title": "一般票",
       "subTitle": "",
       "price": "950",
+      "link": "https://mopcon.kktix.cc/events/mopcon-2024",
       "isSelling": false,
       "isSellOut": false,
       "isStudent": false
@@ -942,6 +944,7 @@
       "title": "VIP",
       "subTitle": "",
       "price": "2,000",
+      "link": "https://mopcon.kktix.cc/events/mopcon-2024",
       "isSelling": false,
       "isSellOut": false,
       "isStudent": false
@@ -952,6 +955,7 @@
       "title": "VVIP",
       "subTitle": "",
       "price": "3,500",
+      "link": "https://mopcon.kktix.cc/events/mopcon-2024",
       "isSelling": false,
       "isSellOut": false,
       "isStudent": false
@@ -975,7 +979,7 @@
         {
           "id": 1,
           "name": "數發部數位產業署",
-          "img": ""
+          "img": "/community/afd.webp"
         },
         {
           "id": 2,
@@ -990,22 +994,22 @@
         {
           "id": 3,
           "name": "KSDA",
-          "img": ""
+          "img": "/community/ksda.webp"
         },
         {
           "id": 4,
           "name": "MOPCON 社群",
-          "img": ""
+          "img": "/Logo.svg"
         },
         {
           "id": 5,
           "name": "臺灣產學策進會",
-          "img": ""
+          "img": "/community/taic.webp"
         },
         {
           "id": 6,
           "name": "台北市電腦公會",
-          "img": ""
+          "img": "/community/tca.webp"
         }
       ]
     }
