@@ -37,7 +37,7 @@ const DaySwitchButton = ({ handleDays, activeDay }) => {
         }`}
         onClick={() => handleDays(1)}
       >
-        <span className="relative z-[1]">10/26（日）</span>
+        <span className="relative z-[1]">10/27（日）</span>
         <AnimatePresence>
           {activeDay === 1 && (
             <motion.div
