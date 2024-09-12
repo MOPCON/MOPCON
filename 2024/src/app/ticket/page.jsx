@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import Hero from "./_ui/Hero";
 import TicketIntroduction from "./_ui/TicketIntroduction";
 import StudentTicket from "./_ui/StudentTicket";

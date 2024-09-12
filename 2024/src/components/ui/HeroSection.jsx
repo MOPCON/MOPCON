@@ -3,6 +3,24 @@ import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import { twMerge } from "tailwind-merge";
 
+const HeroTitle = ({ children, className }) => {
+  return (
+    <h1 className={twMerge("block-title mb-10", className)}>{children}</h1>
+  );
+};
+const HeroContent = ({ children, className }) => {
+  return (
+    <div
+      className={twMerge(
+        "w-[min(100%,860px)] mx-auto text-N800/80 text-lg",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+};
+
 const HeroSection = ({ children, ...props }) => {
   return (
     <Fragment>
@@ -40,4 +58,4 @@ const HeroSection = ({ children, ...props }) => {
   );
 };
 
-export default HeroSection;
+export { HeroSection, HeroTitle, HeroContent };

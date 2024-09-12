@@ -2,7 +2,11 @@
 import { Fragment, useState } from "react";
 import dynamic from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
-const RecruitPopupModal = dynamic(() => import("./RecruitPopupModal"));
+import Loading from "./ui/Loading";
+const RecruitPopupModal = dynamic(() => import("./RecruitPopupModal"), {
+  ssr: false,
+  loading: () => <Loading />,
+});
 
 const RecruitPopup = () => {
   const [showPopup, setShowPopup] = useState(false);

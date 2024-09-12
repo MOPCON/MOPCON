@@ -23,7 +23,7 @@ export default function RootLayout({ children, modal }) {
         <Header />
         <RecruitPopupButton />
         <div id="modal-root"></div>
-        <main className="overflow-x-hidden">{children}</main>
+        <>{children}</>
         {modal}
         <Footer />
       </body>

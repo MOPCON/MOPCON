@@ -20,7 +20,8 @@
         "event": "",
         "room": [
           {
-            "isKeynote": true
+            "isKeynote": true,
+            "room": "R1"
           }
         ]
       },
@@ -61,7 +62,7 @@
             "expectedGain": "",
             "startedAt": 1729908900,
             "endAt": 1729911600,
-            "room": "R2",
+            "room": "R1",
             "floor": "",
             "sessionId": 2024002
           },
@@ -134,7 +135,7 @@
             "expectedGain": "",
             "startedAt": 1729912500,
             "endAt": 1729915200,
-            "room": "R2",
+            "room": "R1",
             "floor": "",
             "sessionId": 2024002
           },
@@ -207,7 +208,7 @@
             "expectedGain": "",
             "startedAt": 1729919700,
             "endAt": 1729922400,
-            "room": "R2",
+            "room": "R1",
             "floor": "",
             "sessionId": 2024002
           },
@@ -280,7 +281,7 @@
             "expectedGain": "",
             "startedAt": 1729923300,
             "endAt": 1729926000,
-            "room": "R2",
+            "room": "R1",
             "floor": "",
             "sessionId": 2024002
           },
@@ -353,7 +354,7 @@
             "expectedGain": "",
             "startedAt": 1729927800,
             "endAt": 1729930500,
-            "room": "R2",
+            "room": "R1",
             "floor": "",
             "sessionId": 2024002
           },
@@ -426,7 +427,7 @@
             "expectedGain": "",
             "startedAt": 1729931400,
             "endAt": 1729934100,
-            "room": "R2",
+            "room": "R1",
             "floor": "",
             "sessionId": 2024002
           },
@@ -456,7 +457,7 @@
             "expectedGain": "",
             "startedAt": 1729931400,
             "endAt": 1729934100,
-            "room": "R2",
+            "room": "R1",
             "floor": "",
             "sessionId": 2024002
           }
@@ -513,7 +514,7 @@
         "startedAt": 1729998900,
         "endAt": 1730001600,
         "event": "",
-        "room": [{}, {}]
+        "room": [{}]
       },
       {
         "startedAt": 1730001600,
@@ -525,7 +526,7 @@
         "startedAt": 1730006100,
         "endAt": 1730008800,
         "event": "",
-        "room": [{}, {}]
+        "room": [{ "room": "R2" }]
       },
       {
         "startedAt": 1730008800,
@@ -549,7 +550,7 @@
         "startedAt": 1730014200,
         "endAt": 1730016900,
         "event": "",
-        "room": [{}]
+        "room": [{ "room": "R2" }]
       },
       {
         "startedAt": 1730016900,

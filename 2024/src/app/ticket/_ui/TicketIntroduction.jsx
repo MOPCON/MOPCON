@@ -33,8 +33,8 @@ const TicketIntroduction = () => {
                 }
                 hover={
                   item.id === 1 || item.id === 2
-                    ? "hover:from-[#556E85] hover:to-[#556E85]"
-                    : "hover:from-[#53867C] hover:to-[#53867C]"
+                    ? "hover:from-[#556E85] hover:to-[#556E85] hover:text-white"
+                    : "hover:from-[#53867C] hover:to-[#53867C] hover:text-white"
                 }
                 index={index}
               />
