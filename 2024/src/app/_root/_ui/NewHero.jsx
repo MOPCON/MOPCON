@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FaArrowRight, FaXTwitter } from "react-icons/fa6";
 import { FaFacebookF, FaTelegramPlane } from "react-icons/fa";
 import { Instagram } from "./icons";
-import HeroSection from "@/components/ui/HeroSection";
+import { HeroSection } from "@/components/ui/HeroSection";
 import { motion } from "framer-motion";
 
 const fadeIn = {
@@ -41,7 +41,7 @@ const NewHero = () => {
       <div className="flex items-center gap-y-3 gap-4 tablet:gap-x-6 flex-wrap">
         <Link
           className="w-40 tablet:w-48 btn btn-primary"
-          href="https://mopcon.kktix.cc/events/2024-students"
+          href="https://mopcon.kktix.cc/events/mopcon-2024"
           target="_blank"
           rel="noreferrer noopener"
         >
