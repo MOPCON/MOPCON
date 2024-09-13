@@ -3,7 +3,7 @@ import SponsorCard from "../_components/SponsorCard";
 import SponsorData from "@/components/data/data.json";
 import { SponsorLeaf } from "./icons";
 import { AnimatePresence } from "framer-motion";
-import { useModal } from "@/components/hook/useModal";
+import { useModal } from "@/hooks/useModal";
 import dynamic from "next/dynamic";
 import Loading from "@/components/ui/Loading";
 import { SectionBlock, SectionTitle } from "@/components/ui/SectionBlock";

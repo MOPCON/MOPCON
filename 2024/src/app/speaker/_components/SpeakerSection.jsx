@@ -4,7 +4,7 @@ import Data from "@/components/data/data.json";
 import SpeakerCard from "./SpeakerCard";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
-import { useModal } from "@/components/hook/useModal";
+import { useModal } from "@/hooks/useModal";
 import { useRouter, useSearchParams } from "next/navigation";
 import Loading from "@/components/ui/Loading";
 import CategoryButtons from "@/components/CategoryButtons";

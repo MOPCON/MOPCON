@@ -1,5 +1,12 @@
+import { useToast } from "@/components/hooks/use-toast";
 import { BasicModal, ModalBody, CloseButton } from "@/components/ui/BasicModal";
-import { FaFacebook, FaLinkedin, FaGithub } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaLinkedin,
+  FaGithub,
+  FaLine,
+  FaCopy,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { GoGlobe } from "react-icons/go";
 import ModalImage from "@/components/ModalImage";
@@ -8,9 +15,38 @@ import { FiCalendar } from "react-icons/fi";
 import { GreenLeaf, OrangeLeaf } from "@/components/ui/ModalLeaf";
 import { FiShare2 } from "react-icons/fi";
 import { LuCalendarCheck } from "react-icons/lu";
-import { useJsonParse } from "@/components/hook/useJsonParse";
+import { useJsonParse } from "@/components/hooks/useJsonParse";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  FacebookShareButton,
+  LineShareButton,
+  TwitterShareButton,
+} from "react-share";
 
 const SpeakerModal = ({ onClose, ...props }) => {
+  const { toast } = useToast();
+  const handleCopyUrl = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      toast({
+        title: "已成功複製網址",
+        description: props.topic,
+      });
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "複製成功",
+        description: "複製當前網址失敗",
+        variant: "destructive",
+      });
+    }
+  };
+
   return (
     <BasicModal
       onClose={onClose}
@@ -178,10 +214,61 @@ const SpeakerModal = ({ onClose, ...props }) => {
             )}
           </article>
           <div className="grid grid-cols-1 mob:grid-cols-2 gap-3">
-            <button className="btn btn-primary flex items-center gap-2 justify-center">
-              <FiShare2 />
-              分享議程
-            </button>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="btn btn-primary flex items-center gap-2 justify-center">
+                <FiShare2 />
+                分享議程
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="z-[70]">
+                <DropdownMenuItem className="p-0">
+                  <button
+                    className="w-full hover:bg-slate-100 p-2 rounded flex items-center gap-1 text-N800"
+                    onClick={handleCopyUrl}
+                    aria-label="Copy URL"
+                  >
+                    <FaCopy />
+                    複製連結
+                  </button>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="p-0">
+                  <FacebookShareButton
+                    url={`https://mopcon.org/2024/speaker/?id=${props.sessionId}`}
+                    title={`${props.topic} | MOPCON 2024`}
+                    hashtag={`#MOPCON2024 #${props.topic} #${props.name}`}
+                    quote={`${props.topic} | MOPCON 2024`}
+                  >
+                    <div className="w-full hover:bg-slate-100 p-2 rounded flex items-center gap-1 text-N800">
+                      <FaFacebook />
+                      分享至 Facebook
+                    </div>
+                  </FacebookShareButton>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="p-0">
+                  <LineShareButton
+                    className="w-full"
+                    url={`https://mopcon.org/2024/speaker/?id=${props.sessionId}`}
+                  >
+                    <div className="w-full hover:bg-slate-100 p-2 rounded flex items-center gap-1 text-N800">
+                      <FaLine />
+                      分享至 Line
+                    </div>
+                  </LineShareButton>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="p-0">
+                  <TwitterShareButton
+                    url={`https://mopcon.org/2024/speaker/?id=${props.sessionId}`}
+                    title={`${props.topic} | MOPCON 2024`}
+                    hashtags={["MOPCON2024", props.name]}
+                    className="w-full"
+                  >
+                    <div className="w-full hover:bg-slate-100 p-2 rounded flex items-center gap-1 text-N800">
+                      <FaXTwitter />
+                      分享至 X
+                    </div>
+                  </TwitterShareButton>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <button className="btn btn-secondary flex items-center gap-2 justify-center">
               <LuCalendarCheck />
               加入行事曆
