@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import { motion } from "framer-motion";
+
 const SpeakerCard = ({ handleClick, ...speakerData }) => {
   return (
     <motion.div
@@ -28,7 +29,8 @@ const SpeakerCard = ({ handleClick, ...speakerData }) => {
           {speakerData.name}
         </h5>
         <span className="text-center text-N800 mb-6 block">
-          {speakerData.company}/{speakerData.jobTitle}
+          {speakerData.company && `${speakerData.company}/`}
+          {speakerData.jobTitle}
         </span>
         <div className="flex flex-wrap gap-3 items-center justify-center">
           {speakerData.tags.map((tag) => (

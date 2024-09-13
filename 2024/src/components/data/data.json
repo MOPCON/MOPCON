@@ -173,7 +173,8 @@
     { "id": 1, "name": "Mobile Technologies" },
     { "id": 2, "name": "Cloud & Platform" },
     { "id": 3, "name": "Product Design & Operations" },
-    { "id": 4, "name": "Technology Trends" }
+    { "id": 4, "name": "Technology Trends" },
+    { "id": 5, "name": "UI/UX" }
   ],
   "speakers": [
     {
@@ -837,6 +838,37 @@
       "sponsorId": 0,
       "sponsorInfo": [],
       "sessionId": 2024021
+    },
+    {
+      "name": "Akane Lee",
+      "speakerId": 22,
+      "company": "",
+      "jobTitle": "嫁給 RD 的 UI Designer",
+      "bio": "HI！我是 Akane Lee，「嫁給 RD 的 UI Designer」 Blog 作者。\n如果設計師能和工程師順利合作，那麼老公也就能準時下班了吧。\n因此努力推廣 UI/UX 設計方面的知識、技術，並分享自己在專案開發上踩過的各種坑與心得。",
+      "img": "/speakers/2024022.webp",
+      "linkWeb": "",
+      "linkLinkedin": "",
+      "linkFb": "https://www.facebook.com/uiux.akane",
+      "linkGithub": "",
+      "linkTwitter": "",
+      "topic": "沒靈感的設計師找 AI 幫忙有用嗎？",
+      "summary": "當設計師沒了靈感，總不能瞪著螢幕發呆吧？ 跑去和 AI 聊天能不能快點讓我想到好點子？ AI 這麼聰明，肯定能幫我搞定工作，要是哪天我被 AI 取代了怎麼辦？",
+      "communityPartner": "",
+      "isKeynote": true,
+      "isOnline": false,
+      "recordable": true,
+      "level": "Basic",
+      "tags": [{ "id": 5, "name": "UI/UX" }],
+      "target": "",
+      "priorKnowledge": "",
+      "expectedGain": "",
+      "startedAt": 1634951700,
+      "endedAt": 1634954400,
+      "room": "R1",
+      "floor": "",
+      "sponsorId": 0,
+      "sponsorInfo": [],
+      "sessionId": 2024022
     }
   ],
   "sponsors": [
