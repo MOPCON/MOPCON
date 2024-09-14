@@ -16,7 +16,7 @@ const ScheduleCard = ({ isKeynote, ...props }) => {
           "laptop:col-start-1 laptop:row-start-1":
             !isKeynote && props.room === 1,
           "laptop:col-start-2 laptop:row-start-1":
-            !isKeynote && (props.room === 2 || props.speakerId === 16),
+            !isKeynote && props.room === 2,
         }
       )}
       layout
@@ -53,6 +53,23 @@ const ScheduleCard = ({ isKeynote, ...props }) => {
               />
             </div>
             <h6 className="text-sm tablet:text-base">{props.name}</h6>
+            {props.coSpeaker &&
+              props.coSpeaker.map((speaker) => (
+                <>
+                  <div className="size-10 rounded-full overflow-clip flex items-center justify-center flex-shrink-0">
+                    <Image
+                      src={getImageSrc(
+                        speaker.img || "/img/swiper-default.webp"
+                      )}
+                      width={40}
+                      height={40}
+                      alt={speaker.name}
+                      className="object-cover size-full max-w-full"
+                    />
+                  </div>
+                  <h6 className="text-sm tablet:text-base">{speaker.name}</h6>
+                </>
+              ))}
           </div>
           <div className="flex items-center text-N800 gap-1">
             <svg

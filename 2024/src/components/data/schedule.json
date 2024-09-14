@@ -492,6 +492,37 @@
             "sponsorId": 0,
             "sponsorInfo": [],
             "sessionId": 2024019
+          },
+          {
+            "name": "Mark Chang",
+            "speakerId": 23,
+            "company": "",
+            "jobTitle": "Research Scientist",
+            "bio": "Mark Chang is a Research Scientist at MediaTek Research, specializing in reinforcement learning theory and its applications in electronic design automation.\nPreviously, he worked at DeepQ on medical AI applications.\nHe received his master's degree from the Graduate Institute of Electronics Engineering at National Taiwan University, and he is currently pursuing his PhD degree in the Graduate Institute of Communication Engineering at National Taiwan University, advised by Professor Pei-Yuan Wu.",
+            "img": "/speakers/2024023.webp",
+            "linkWeb": "",
+            "linkLinkedin": "",
+            "linkFb": "https://www.facebook.com/ckmarkoh.chang",
+            "linkGithub": "",
+            "linkTwitter": "",
+            "topic": "Exploring the Theoretical Foundations of Deep Learning",
+            "summary": "Recent breakthroughs in deep learning have propelled a myriad of groundbreaking applications that were once inconceivable. However, the development of these applications often relies heavily on trial-and-error approaches, lacking robust theoretical foundations. Despite ongoing efforts to advance the theoretical understanding of these applications, progress on the theoretical side still lags behind practical applications.\nThis presentation aims to elucidate the theoretical underpinnings of deep learning across three key dimensions: how to optimize loss functions, how to generalize by using the training dataset, and how to find the optimal policy in bandits and reinforcement learning. Additionally, this talk will highlight the publications MediaTek Research in these areas.\nBesides, we will introduce some recent works on theoretical explanation of chain-of-thought reasoning for LLMs. By bridging theory and practice, this presentation seeks to foster a deeper appreciation for the essential role of theoretical research in understanding deep learning methodologies. ",
+            "communityPartner": "",
+            "isKeynote": false,
+            "isOnline": false,
+            "recordable": true,
+            "level": "Basic",
+            "tags": [{ "id": 4, "name": "Technology Trends" }],
+            "target": "",
+            "priorKnowledge": "",
+            "expectedGain": "",
+            "startedAt": 1729931400,
+            "endAt": 1729934100,
+            "room": 2,
+            "floor": "",
+            "sponsorId": 0,
+            "sponsorInfo": [],
+            "sessionId": 2024023
           }
         ]
       },
@@ -879,42 +910,21 @@
             "floor": "",
             "sponsorId": 0,
             "sponsorInfo": [],
-            "sessionId": 2024015
-          },
-          {
-            "name": "Conan",
-            "speakerId": 16,
-            "company": "Gronext 可羅涅斯特股份有限公司",
-            "jobTitle": "Senior Engineer",
-            "bio": "林家諄(Conan) 在東京台商擔任 IT engineer aka 社畜，協助處理大大小小的機房與企業網路維運、cloud native 與資訊安全相關維運管理。也參與過線路組，並樂於幫助社群處理大大小小網路架構與安全性問題。於本次 Topic 中提供網路架構與服務設計。",
-            "img": "/speakers/2024016.webp",
-            "linkWeb": "http://me.conan.site/",
-            "linkLinkedin": "",
-            "linkFb": "",
-            "linkGithub": "",
-            "linkTwitter": "",
-            "topic": "緘默的黑歷史：開源技術照亮網路中的隱藏威脅 - 終端設備的資訊安全",
-            "summary": "在我們享受行動及 IoT 設備帶給我們的便利時，隱藏的數位威脅是否悄悄伺機而動？這些小型設備可能礙於效能問題，不適合於終端上安裝防護軟體，導致沒有能力偵測成為網絡攻擊的目標。\n我們將搭建一套網路架構，搭配開源工具揭開這些被忽視的網絡威脅。\n我們將展示各種如何協同運用，從流量捕獲偵測到基本的阻擋，提升你的網路安全。\n本議程您將能理解如何運用開源工具來監控和保護您的網絡，防止那些不易察覺的威脅演變成災難。",
-            "communityPartner": "",
-            "isKeynote": false,
-            "isOnline": false,
-            "recordable": true,
-            "level": "Basic",
-            "tags": [
-              { "id": 1, "name": "Mobile Technologies" },
-              { "id": 2, "name": "Cloud & Platform" },
-              { "id": 4, "name": "Technology Trends" }
-            ],
-            "target": "想改善終端設備或IoT設備安全",
-            "priorKnowledge": "如有基本網路知識者佳",
-            "expectedGain": "了解如何搭建起網路監控環境，使用開源軟體提升網路安全",
-            "startedAt": 1730014200,
-            "endAt": 1730016900,
-            "room": 1,
-            "floor": "",
-            "sponsorId": 0,
-            "sponsorInfo": [],
-            "sessionId": 2024016
+            "sessionId": 2024015,
+            "coSpeaker": [
+              {
+                "name": "Conan",
+                "img": "/speakers/2024016.webp",
+                "company": "Gronext 可羅涅斯特股份有限公司",
+                "jobTitle": "Senior Engineer",
+                "bio": "林家諄(Conan) 在東京台商擔任 IT engineer aka 社畜，協助處理大大小小的機房與企業網路維運、cloud native 與資訊安全相關維運管理。也參與過線路組，並樂於幫助社群處理大大小小網路架構與安全性問題。於本次 Topic 中提供網路架構與服務設計。",
+                "linkWeb": "http://me.conan.site/",
+                "linkLinkedin": "",
+                "linkFb": "",
+                "linkGithub": "",
+                "linkTwitter": ""
+              }
+            ]
           }
         ]
       },

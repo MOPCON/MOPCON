@@ -2,10 +2,9 @@ import { useToast } from "@/components/hooks/use-toast";
 import { BasicModal, ModalBody, CloseButton } from "@/components/ui/BasicModal";
 import { FaFacebook, FaLine, FaCopy } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import ModalImage from "@/components/ModalImage";
 import { GrLocation } from "react-icons/gr";
 import { FiCalendar } from "react-icons/fi";
-import { GreenLeaf, OrangeLeaf } from "@/components/ui/ModalLeaf";
+import { GreenLeaf } from "@/components/ui/ModalLeaf";
 import { FiShare2 } from "react-icons/fi";
 import { useJsonParse } from "@/components/hooks/useJsonParse";
 import GoogleCalendarButton from "@/components/GoogleCalendarButton";
@@ -21,7 +20,8 @@ import {
   TwitterShareButton,
 } from "react-share";
 import { convertTimestampIntl } from "@/components/util/convertTimestampIntl";
-import SocialLinks from "./SocialLink";
+
+import SpeakerInformation from "../_ui/SpeakerInformation";
 
 const SpeakerModal = ({ onClose, ...props }) => {
   const { toast } = useToast();
@@ -59,39 +59,12 @@ const SpeakerModal = ({ onClose, ...props }) => {
       >
         <CloseButton onClose={onClose} iconClass={"text-xl text-secondary"} />
         <div className="max-h-[calc(100dvh-200px)] overflow-y-auto pb-4 px-3">
-          <div className="flex flex-col items-center mob:block mb-10">
-            <div className="flex gap-3 flex-col mob:flex-row items-center w-fit mb-3">
-              <div className="size-[120px] rounded-[50%] overflow-clip flex items-center justify-center">
-                <ModalImage src={props.img} alt={props.name} />
-              </div>
-              <div>
-                <h4 className="font-bold text-[#343844] mb-2">{props.name}</h4>
-                <div className="flex flex-col items-center mob:items-start">
-                  <span className="text-N800 font-medium">{props.company}</span>
-                  <span className="text-N800 font-medium">
-                    {props.jobTitle}
-                  </span>
-                </div>
-              </div>
-            </div>
-            <SocialLinks
-              linkWeb={props.linkWeb}
-              linkLinkedin={props.linkLinkedin}
-              linkGithub={props.linkGithub}
-              linkTwitter={props.linkTwitter}
-              linkFb={props.linkFb}
-            />
-          </div>
+          <SpeakerInformation key={props.id} {...props} />
+          {props.coSpeaker &&
+            props.coSpeaker.map((item) => (
+              <SpeakerInformation key={item.id} {...item} />
+            ))}
           <article className="flex flex-col gap-10 mb-10">
-            <section>
-              <div className="flex items-center gap-2 mb-4">
-                <h3 className="text-N800/80 font-medium leading-6">介紹</h3>
-                <OrangeLeaf />
-              </div>
-              <div className="text-N800/80 leading-6 flex flex-col gap-2">
-                {useJsonParse(props.bio)}
-              </div>
-            </section>
             <section>
               <div className="flex items-center gap-2 mb-4">
                 <h3 className="text-N800/80 font-medium leading-6">議程主題</h3>
