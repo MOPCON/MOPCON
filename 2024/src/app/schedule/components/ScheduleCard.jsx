@@ -19,7 +19,7 @@ const ScheduleCard = ({ isKeynote, ...props }) => {
             !isKeynote && (props.room === 2 || props.speakerId === 16),
         }
       )}
-      {...props}
+      onClick={() => props.onClick()}
       variants={opacityAnimation(0.3)}
       initial="initial"
       whileInView="show"

@@ -1,14 +1,7 @@
 import { useToast } from "@/components/hooks/use-toast";
 import { BasicModal, ModalBody, CloseButton } from "@/components/ui/BasicModal";
-import {
-  FaFacebook,
-  FaLinkedin,
-  FaGithub,
-  FaLine,
-  FaCopy,
-} from "react-icons/fa";
+import { FaFacebook, FaLine, FaCopy } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { GoGlobe } from "react-icons/go";
 import ModalImage from "@/components/ModalImage";
 import { GrLocation } from "react-icons/gr";
 import { FiCalendar } from "react-icons/fi";
@@ -189,6 +182,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
                     title={`${props.topic} | MOPCON 2024`}
                     hashtag={`#MOPCON2024 #${props.topic} #${props.name}`}
                     quote={`${props.topic} | MOPCON 2024`}
+                    className="w-full !block"
                   >
                     <div className="w-full hover:bg-slate-100 p-2 rounded flex items-center gap-1 text-N800">
                       <FaFacebook />
@@ -197,7 +191,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
                   </FacebookShareButton>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="p-0">
-                  <LineShareButton className="w-full" url={url}>
+                  <LineShareButton className="w-full !block" url={url}>
                     <div className="w-full hover:bg-slate-100 p-2 rounded flex items-center gap-1 text-N800">
                       <FaLine />
                       分享至 Line
@@ -209,7 +203,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
                     url={url}
                     title={`${props.topic} | MOPCON 2024`}
                     hashtags={["MOPCON2024", props.name]}
-                    className="w-full"
+                    className="w-full !block"
                   >
                     <div className="w-full hover:bg-slate-100 p-2 rounded flex items-center gap-1 text-N800">
                       <FaXTwitter />
