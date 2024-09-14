@@ -8,23 +8,21 @@ import { useModal } from "@/components/hooks/useModal";
 import { useRouter, useSearchParams } from "next/navigation";
 import Loading from "@/components/ui/Loading";
 import CategoryButtons from "@/components/CategoryButtons";
+import useSelectedTag from "@/components/hooks/useSelectedTag";
+
 const SpeakerModal = dynamic(() => import("./SpeakerModal"), {
   ssr: false,
   loading: () => <Loading />,
 });
 
 const SpeakerSection = () => {
-  const [tags, setTags] = useState([]);
+  const { tags, handleTag } = useSelectedTag();
   const speakerModal = useModal();
   const router = useRouter();
   const pathname = useSearchParams();
 
-  const handleTag = (tag) => {
-    if (tags.map((item) => item.id).includes(tag.id)) {
-      setTags(tags.filter((item) => item.id !== tag.id));
-    } else {
-      setTags([...tags, { ...tag }]);
-    }
+  const selectedTags = (tag) => {
+    handleTag(tag);
   };
 
   useEffect(() => {
@@ -60,7 +58,7 @@ const SpeakerSection = () => {
 
   return (
     <Fragment>
-      <CategoryButtons handleTag={handleTag} tags={tags} />
+      <CategoryButtons handleTag={selectedTags} tags={tags} />
       <div className="grid grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] gap-8">
         <AnimatePresence>
           {selectedTypeSpeaker.map((speaker) => (
