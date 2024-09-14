@@ -1,7 +1,21 @@
+"use client";
 import ScheduleCard from "./ScheduleCard";
 import { convertTimestampIntl } from "@/components/util/convertTimestampIntl";
+import { useModal } from "@/components/hooks/useModal";
+import { useRouter, useSearchParams } from "next/navigation";
+import { AnimatePresence } from "framer-motion";
+import SpeakerModal from "@/app/speaker/_components/SpeakerModal";
 
 const Schedule = ({ ...props }) => {
+  const speakerModal = useModal();
+
+  function handlerCardClick(speaker) {
+    speakerModal.openModal(speaker);
+  }
+  function handlerModalClose() {
+    speakerModal.closeModal();
+  }
+
   return (
     <div className="max-w-[1200px]">
       {props[0].period.map((period, index) => (
@@ -25,6 +39,7 @@ const Schedule = ({ ...props }) => {
                     key={index}
                     isKeynote={speaker.isKeynote}
                     {...speaker}
+                    onClick={() => handlerCardClick(speaker)}
                   />
                 ))}
               </div>
@@ -32,6 +47,14 @@ const Schedule = ({ ...props }) => {
           </div>
         </div>
       ))}
+      <AnimatePresence>
+        {speakerModal.content && speakerModal.isOpen && (
+          <SpeakerModal
+            {...speakerModal.content}
+            onClose={() => handlerModalClose()}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };

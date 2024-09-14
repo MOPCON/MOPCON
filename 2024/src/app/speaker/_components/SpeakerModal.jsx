@@ -14,8 +14,8 @@ import { GrLocation } from "react-icons/gr";
 import { FiCalendar } from "react-icons/fi";
 import { GreenLeaf, OrangeLeaf } from "@/components/ui/ModalLeaf";
 import { FiShare2 } from "react-icons/fi";
-import { LuCalendarCheck } from "react-icons/lu";
 import { useJsonParse } from "@/components/hooks/useJsonParse";
+import GoogleCalendarButton from "@/components/GoogleCalendarButton";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,12 +27,19 @@ import {
   LineShareButton,
   TwitterShareButton,
 } from "react-share";
+import { convertTimestampIntl } from "@/components/util/convertTimestampIntl";
+import SocialLinks from "./SocialLink";
 
 const SpeakerModal = ({ onClose, ...props }) => {
   const { toast } = useToast();
+  const url = `https://mopcon.org/2024/speaker/?id=${props.sessionId}`;
+  const dateTime = convertTimestampIntl(props.startedAt, {
+    month: "long",
+    day: "numeric",
+  });
   const handleCopyUrl = async () => {
     try {
-      await navigator.clipboard.writeText(window.location.href);
+      await navigator.clipboard.writeText(url);
       toast({
         title: "已成功複製網址",
         description: props.topic,
@@ -74,67 +81,13 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center justify-evenly w-[120px]">
-              {props.linkWeb && (
-                <a
-                  href={props.linkWeb}
-                  rel="noreferrer noopener"
-                  target="_blank"
-                  className="text-secondary"
-                >
-                  <GoGlobe className="text-xl" aria-label="Visit website" />
-                </a>
-              )}
-              {props.linkLinkedin && (
-                <a
-                  href={props.linkLinkedin}
-                  rel="noreferrer noopener"
-                  target="_blank"
-                  className="text-secondary"
-                >
-                  <FaLinkedin
-                    className="text-xl"
-                    aria-label="Visit LinkedIn page"
-                  />
-                </a>
-              )}
-              {props.linkGithub && (
-                <a
-                  href={props.linkGithub}
-                  rel="noreferrer noopener"
-                  target="_blank"
-                  className="text-secondary"
-                >
-                  <FaGithub
-                    className="text-xl"
-                    aria-label="Visit GitHub page"
-                  />
-                </a>
-              )}
-              {props.linkTwitter && (
-                <a
-                  href={props.linkTwitter}
-                  rel="noreferrer noopener"
-                  target="_blank"
-                  className="text-secondary"
-                >
-                  <FaXTwitter className="text-xl" aria-label="Visit X page" />
-                </a>
-              )}
-              {props.linkFb && (
-                <a
-                  href={props.linkFb}
-                  rel="noreferrer noopener"
-                  target="_blank"
-                  className="text-secondary"
-                >
-                  <FaFacebook
-                    className="text-xl"
-                    aria-label="Visit Facebook page"
-                  />
-                </a>
-              )}
-            </div>
+            <SocialLinks
+              linkWeb={props.linkWeb}
+              linkLinkedin={props.linkLinkedin}
+              linkGithub={props.linkGithub}
+              linkTwitter={props.linkTwitter}
+              linkFb={props.linkFb}
+            />
           </div>
           <article className="flex flex-col gap-10 mb-10">
             <section>
@@ -158,13 +111,13 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 <div className="flex items-center tablet:justify-end gap-6">
                   <div className="flex items-center gap-2">
                     <FiCalendar className="text-secondary" />
-                    <time className="text-N800/80" dateTime="2024-10-26">
-                      日期，時間
+                    <time className="text-N800/80" dateTime={dateTime}>
+                      {dateTime}
                     </time>
                   </div>
                   <div className="flex items-center gap-2">
                     <GrLocation className="text-secondary" />
-                    <span className="text-N800/80">棟（樓）</span>
+                    <span className="text-N800/80">R{props.room}</span>
                   </div>
                 </div>
               </div>
@@ -232,7 +185,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 </DropdownMenuItem>
                 <DropdownMenuItem className="p-0">
                   <FacebookShareButton
-                    url={`https://mopcon.org/2024/speaker/?id=${props.sessionId}`}
+                    url={url}
                     title={`${props.topic} | MOPCON 2024`}
                     hashtag={`#MOPCON2024 #${props.topic} #${props.name}`}
                     quote={`${props.topic} | MOPCON 2024`}
@@ -244,10 +197,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
                   </FacebookShareButton>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="p-0">
-                  <LineShareButton
-                    className="w-full"
-                    url={`https://mopcon.org/2024/speaker/?id=${props.sessionId}`}
-                  >
+                  <LineShareButton className="w-full" url={url}>
                     <div className="w-full hover:bg-slate-100 p-2 rounded flex items-center gap-1 text-N800">
                       <FaLine />
                       分享至 Line
@@ -256,7 +206,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 </DropdownMenuItem>
                 <DropdownMenuItem className="p-0">
                   <TwitterShareButton
-                    url={`https://mopcon.org/2024/speaker/?id=${props.sessionId}`}
+                    url={url}
                     title={`${props.topic} | MOPCON 2024`}
                     hashtags={["MOPCON2024", props.name]}
                     className="w-full"
@@ -269,10 +219,7 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <button className="btn btn-secondary flex items-center gap-2 justify-center">
-              <LuCalendarCheck />
-              加入行事曆
-            </button>
+            <GoogleCalendarButton event={props} />
           </div>
         </div>
       </ModalBody>

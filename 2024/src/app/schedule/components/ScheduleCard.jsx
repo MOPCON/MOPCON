@@ -10,41 +10,47 @@ const ScheduleCard = ({ isKeynote, ...props }) => {
   return (
     <motion.div
       className={clsx(
-        "rounded-3xl p-0.5 bg-gradient-to-r from-[#E8EFFA] to-[#AEBECF] hover:from-[#E4F2F0] hover:to-[#96CAC3] shadow-[0_10px_30px_0_rgba(0,0,0,0.05)]",
+        "rounded-3xl p-0.5 bg-gradient-to-r from-[#E8EFFA] to-[#AEBECF] hover:from-[#E4F2F0] hover:to-[#96CAC3] shadow-[0_10px_30px_0_rgba(0,0,0,0.05)] cursor-pointer",
         {
           "col-span-2": isKeynote,
           "laptop:col-start-1 laptop:row-start-1":
-            !isKeynote && props.room === "R1",
+            !isKeynote && props.room === 1,
           "laptop:col-start-2 laptop:row-start-1":
-            !isKeynote && props.room === "R2",
+            !isKeynote && (props.room === 2 || props.speakerId === 16),
         }
       )}
+      {...props}
       variants={opacityAnimation(0.3)}
       initial="initial"
       whileInView="show"
       viewport={{ once: true }}
     >
-      <div className="size-full rounded-[calc(24px-2px)] bg-white px-8 py-6">
+      <div className="size-full rounded-[calc(24px-2px)] bg-white px-8 py-6 flex flex-col">
         <div className="flex items-center flex-wrap gap-3 mb-4">
-          <span className="rounded-full border-2 border-secondary text-secondary text-sm py-1 px-3">
-            待公布
-          </span>
+          {props.tags?.map((tag) => (
+            <span
+              key={tag.id}
+              className="text-secondary border-2 border-secondary px-3 py-1 rounded-full"
+            >
+              {tag.name}
+            </span>
+          ))}
         </div>
         <h5 className="laptop:text-lg font-medium text-N800 mb-10">
-          待公布演講主題
+          {props.topic}
         </h5>
-        <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center justify-between gap-2 mt-auto">
           <div className="flex items-center gap-3">
             <div className="size-10 rounded-full overflow-clip flex items-center justify-center flex-shrink-0">
               <Image
-                src={getImageSrc("/img/swiper-default.webp")}
+                src={getImageSrc(props.img || "/img/swiper-default.webp")}
                 width={40}
                 height={40}
-                alt="講者照片"
-                className="object-contain size-full max-w-full"
+                alt={props.name}
+                className="object-cover size-full max-w-full"
               />
             </div>
-            <h6 className="text-sm tablet:text-base">待公布</h6>
+            <h6 className="text-sm tablet:text-base">{props.name}</h6>
           </div>
           <div className="flex items-center text-N800 gap-1">
             <svg
@@ -61,7 +67,7 @@ const ScheduleCard = ({ isKeynote, ...props }) => {
                 fill="#4B5162"
               />
             </svg>
-            <span className="text-sm tablet:text-base">待公布</span>
+            <span className="text-sm tablet:text-base">R{props.room}</span>
           </div>
         </div>
       </div>

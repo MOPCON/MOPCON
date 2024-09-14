@@ -1,5 +1,6 @@
-export function convertTimestampIntl(timestamp, locale = "zh-TW") {
+export function convertTimestampIntl(timestamp, option, locale = "zh-TW") {
   return new Intl.DateTimeFormat(locale, {
+    ...option,
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,
