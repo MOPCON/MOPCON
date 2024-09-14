@@ -22,6 +22,7 @@ const ScheduleCard = ({ isKeynote, ...props }) => {
       onClick={() => props.onClick()}
       variants={opacityAnimation(0.3)}
       initial="initial"
+      exit="initial"
       whileInView="show"
       viewport={{ once: true }}
     >

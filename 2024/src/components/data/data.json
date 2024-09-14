@@ -173,8 +173,7 @@
     { "id": 1, "name": "Mobile Technologies" },
     { "id": 2, "name": "Cloud & Platform" },
     { "id": 3, "name": "Product Design & Operations" },
-    { "id": 4, "name": "Technology Trends" },
-    { "id": 5, "name": "UI/UX" }
+    { "id": 4, "name": "Technology Trends" }
   ],
   "speakers": [
     {
@@ -858,7 +857,7 @@
       "isOnline": false,
       "recordable": true,
       "level": "Basic",
-      "tags": [{ "id": 5, "name": "UI/UX" }],
+      "tags": [{ "id": 3, "name": "Product Design & Operations" }],
       "target": "",
       "priorKnowledge": "",
       "expectedGain": "",

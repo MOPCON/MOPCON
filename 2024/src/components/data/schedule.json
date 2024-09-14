@@ -324,7 +324,7 @@
             "isOnline": false,
             "recordable": true,
             "level": "Basic",
-            "tags": [{ "id": 5, "name": "UI/UX" }],
+            "tags": [{ "id": 3, "name": "Product Design & Operations" }],
             "target": "",
             "priorKnowledge": "",
             "expectedGain": "",

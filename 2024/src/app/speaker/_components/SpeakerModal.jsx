@@ -133,9 +133,9 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 <h3 className="text-N800/80 font-medium leading-6 mb-4">
                   目標會眾
                 </h3>
-                <p className="text-N800/80 leading-6">
+                <div className="text-N800/80 leading-6">
                   {useJsonParse(props.target)}
-                </p>
+                </div>
               </section>
             )}
             {props.priorKnowledge && (
@@ -143,9 +143,9 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 <h3 className="text-N800/80 font-medium leading-6 mb-4">
                   先備知識
                 </h3>
-                <p className="text-N800/80 leading-6">
+                <div className="text-N800/80 leading-6">
                   {useJsonParse(props.priorKnowledge)}
-                </p>
+                </div>
               </section>
             )}
             {props.expectedGain && (
@@ -153,9 +153,9 @@ const SpeakerModal = ({ onClose, ...props }) => {
                 <h3 className="text-N800/80 font-medium leading-6 mb-4">
                   會眾預期收穫
                 </h3>
-                <p className="text-N800/80 leading-6">
+                <div className="text-N800/80 leading-6">
                   {useJsonParse(props.expectedGain)}
-                </p>
+                </div>
               </section>
             )}
           </article>

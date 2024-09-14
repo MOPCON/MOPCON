@@ -2,7 +2,6 @@
 import ScheduleCard from "./ScheduleCard";
 import { convertTimestampIntl } from "@/components/util/convertTimestampIntl";
 import { useModal } from "@/components/hooks/useModal";
-import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 import SpeakerModal from "@/app/speaker/_components/SpeakerModal";
 
@@ -34,14 +33,16 @@ const Schedule = ({ ...props }) => {
             )}
             {period.room && period.room.length > 0 && (
               <div className="grid laptop:grid-cols-2 gap-3 w-full mt-4 laptop:mt-0">
-                {period.room.map((speaker, index) => (
-                  <ScheduleCard
-                    key={index}
-                    isKeynote={speaker.isKeynote}
-                    {...speaker}
-                    onClick={() => handlerCardClick(speaker)}
-                  />
-                ))}
+                <AnimatePresence>
+                  {period.room.map((speaker, index) => (
+                    <ScheduleCard
+                      key={index}
+                      isKeynote={speaker.isKeynote}
+                      {...speaker}
+                      onClick={() => handlerCardClick(speaker)}
+                    />
+                  ))}
+                </AnimatePresence>
               </div>
             )}
           </div>
