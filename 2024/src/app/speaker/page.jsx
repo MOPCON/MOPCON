@@ -6,6 +6,7 @@ import {
   HeroContent,
 } from "@/components/ui/HeroSection";
 import { SectionTitle, SectionBlock } from "@/components/ui/SectionBlock";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata = {
   title: "講者陣容",
@@ -42,6 +43,7 @@ const Speaker = () => {
           <SpeakerSuspense />
         </div>
       </SectionBlock>
+      <Toaster />
     </Fragment>
   );
 };

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Loading from "@/components/ui/Loading";
 import dynamic from "next/dynamic";
 import MemberCard from "./Card";
-import { useModal } from "@/components/hook/useModal";
+import { useModal } from "@/components/hooks/useModal";
 const MemberModal = dynamic(() => import("./Modal"), {
   ssr: false,
   loading: () => <Loading />,

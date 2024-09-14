@@ -5,6 +5,8 @@ import { SectionTitle, SectionBlock } from "@/components/ui/SectionBlock";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import Image from "next/image";
 import { Suspense } from "react";
+import { Toaster } from "@/components/ui/toaster";
+
 export const metadata = {
   title: "主要議程",
   description:
@@ -32,6 +34,7 @@ const Page = () => {
           <ScheduleSection />
         </Suspense>
       </SectionBlock>
+      <Toaster />
     </Fragment>
   );
 };
