@@ -1,4 +1,3 @@
-import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 import Data from "@/components/data/data.json";
 import Card from "../components/Card";
 import { SectionBlock, SectionTitle } from "@/components/ui/SectionBlock";
@@ -10,8 +9,8 @@ const JoinCommunity = () => {
   return (
     <SectionBlock>
       <div className="w-[min(90%,1062px)] mx-auto">
-        <SectionTitle arrowTitle="社群組織" className="mb-14">
-          MOPCON <span className="text-light-green">參與社群</span>
+        <SectionTitle arrowTitle="ORGANIZER" className="mb-14">
+          主辦單位
         </SectionTitle>
       </div>
       {Data.community.map((item, index) => (

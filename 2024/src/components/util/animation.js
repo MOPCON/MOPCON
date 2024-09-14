@@ -16,9 +16,11 @@ export const opacityAnimation = (duration = 0.5) => {
   return {
     initial: {
       opacity: 0,
+      visibility: "hidden",
     },
     show: {
       opacity: 1,
+      visibility: "visible",
       transition: { duration: duration },
     },
   };

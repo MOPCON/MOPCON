@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import dynamic from "next/dynamic";
 const NavDesktop = dynamic(() => import("../NavDesktop"));
 const NavMobile = dynamic(() => import("../NavMobile"));
-import useSticky from "../hook/useSticky";
+import useSticky from "../hooks/useSticky";
 
 const Header = () => {
   const { sticky } = useSticky();
