@@ -24,9 +24,9 @@ const Card = ({ ...props }) => {
     <Fragment>
       <div className="group rounded-3xl bg-white cursor-pointer h-56 flex flex-col items-center justify-center relative transition-all duration-300 tablet:hover:-translate-y-3 tablet:hover:shadow-[0_10px_30px_0_rgba(0,0,0,0.05)]">
         <div className="flex flex-col rounded-3xl gap-4 bg-white items-center justify-center size-full p-4 overflow-clip relative z-[2]">
-          <div className="h-36 w-56 overflow-clip flex items-center justify-center flex-grow">
+          <div className="h-24 w-56 overflow-clip flex items-center justify-center">
             <Image
-              className="h-full max-w-full w-full object-contain object-center"
+              className="h-full max-w-full w-full object-contain"
               src={getImageSrc(props.img || "/Logo.svg")}
               width={180}
               height={80}

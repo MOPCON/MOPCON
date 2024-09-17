@@ -49,10 +49,12 @@ const SpeakerSection = () => {
   }
 
   const selectedTypeSpeaker = useMemo(() => {
-    return Data.speakers.filter((speaker) =>
-      tags.every((tag) =>
-        speaker.tags.some((speakerTag) => speakerTag.id === tag.id)
-      )
+    return Data.speakers.filter(
+      (speaker) =>
+        tags.length === 0 ||
+        speaker.tags.some((speakerTag) =>
+          tags.some((tag) => tag.id === speakerTag.id)
+        )
     );
   }, [tags]);
 

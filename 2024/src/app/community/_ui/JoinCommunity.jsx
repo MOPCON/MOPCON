@@ -14,8 +14,8 @@ const JoinCommunity = () => {
         </SectionTitle>
       </div>
       {Data.community.map((item, index) => (
-        <div className="w-[min(90%,1280px)] mx-auto">
-          <h3 className="font-bold tablet:text-[32px] text-xl text-[#1C1F25] mb-6 tablet:ms-28">
+        <div className="w-[min(90%,1280px)] mx-auto" key={index}>
+          <h3 className="font-bold text-xl tablet:text-2xl laptop:text-[32px] text-[#1C1F25] mb-6 tablet:ms-14 laptop:ms-28">
             {item.title}
           </h3>
           <div className="grid grid-cols-[repeat(auto-fill,_minmax(290px,_1fr))] gap-6 py-6 mb-10">
