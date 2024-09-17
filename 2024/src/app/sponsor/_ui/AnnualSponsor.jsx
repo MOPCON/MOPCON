@@ -14,7 +14,7 @@ const SponsorModal = dynamic(() => import("../_components/Modal"), {
 const AnnualSponsorBlock = ({ title, children, ...props }) => {
   return (
     <div className="mb-10 w-[min(90%,1280px)] mx-auto">
-      <h3 className="font-bold text-xl tablet:text-2xl laptop:text-[32px] text-[#1C1F25] mb-6 tablet:ms-14 laptop:ms-28">
+      <h3 className="font-bold text-xl tablet:text-2xl laptop:text-[32px] text-[#1C1F25] mb-6 tablet:ms-14 laptop:ms-28 relative">
         <SponsorLeaf
           fill={props.fill}
           className="absolute left-0 bottom-0 -translate-x-1/3 translate-y-1/4 -z-10"
