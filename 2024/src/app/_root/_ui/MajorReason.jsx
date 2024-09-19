@@ -4,7 +4,6 @@ import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
-import BlockTitleArrow from "@/components/ui/BlockTitleArrow";
 import { fadeInAnimation } from "@/components/util/animation";
 import { motion } from "framer-motion";
 import { SectionTitle, SectionBlock } from "@/components/ui/SectionBlock";
@@ -57,9 +56,21 @@ const ReasonItem = ({ title, content, idx, titleNum, index }) => {
 
 export async function getStaticProps() {
   const now = new Date();
-  const targetDate = new Date("2024-10-26");
-  const timeDiff = targetDate.getTime() - now.getTime();
-  const initialDaysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24));
+  const startDate = new Date("2024-10-26");
+  const endDate = new Date("2024-10-27");
+  endDate.setHours(23, 59, 59, 999);
+
+  let initialDaysLeft;
+
+  if (now >= startDate && now <= endDate) {
+    initialDaysLeft = 0;
+  } else if (now < startDate) {
+    const timeDiff = startDate.getTime() - now.getTime();
+    initialDaysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24));
+  } else {
+    initialDaysLeft = -1;
+  }
+
   return {
     props: {
       initialDaysLeft,
@@ -74,10 +85,19 @@ const MajorReason = ({ initialDaysLeft }) => {
   useEffect(() => {
     const calculateDaysLeft = () => {
       const now = new Date();
-      const targetDate = new Date("2024-10-26");
-      const timeDiff = targetDate.getTime() - now.getTime();
-      const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-      setDaysLeft(daysDiff);
+      const startDate = new Date("2024-10-26");
+      const endDate = new Date("2024-10-27");
+      endDate.setHours(23, 59, 59, 999);
+
+      if (now >= startDate && now <= endDate) {
+        setDaysLeft(0);
+      } else if (now < startDate) {
+        const timeDiff = startDate.getTime() - now.getTime();
+        const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        setDaysLeft(daysDiff);
+      } else {
+        setDaysLeft(-1);
+      }
     };
 
     calculateDaysLeft();
@@ -87,6 +107,19 @@ const MajorReason = ({ initialDaysLeft }) => {
     return () => clearInterval(timer);
   }, []);
 
+  let countdownMessage;
+  switch (true) {
+    case daysLeft === 0:
+      countdownMessage = "活動就在今天！不要錯過！";
+      break;
+    case daysLeft < 0:
+      countdownMessage = "活動已經結束囉！我們明年再見！";
+      break;
+    default:
+      countdownMessage = `活動倒數 ${daysLeft} 天`;
+      break;
+  }
+
   return (
     <SectionBlock className="bg-[#F4F7FA]">
       <Image
@@ -95,7 +128,7 @@ const MajorReason = ({ initialDaysLeft }) => {
         alt="bg dots"
         width={133}
         height={96}
-        className="absolute top-0 left-0 pointer-events-none translate-y-32 hidden laptop:block"
+        className="absolute top-0 left-0 pointer-events-none translate-y-32 hidden desk:block"
       />
       <div className="w-[min(90%,1062px)] mx-auto">
         <SectionTitle arrowTitle="選擇我們">
@@ -117,7 +150,7 @@ const MajorReason = ({ initialDaysLeft }) => {
         <div className="flex items-end pt-20 gap-y-4 border-t flex-wrap border-[#E7E9ED]">
           <div className="flex-grow">
             <h5 className="block-title text-secondary font-bold mb-3">
-              活動倒數 {daysLeft} 天
+              {countdownMessage}
             </h5>
             <h6 className="font-medium text-lg tablet:text-2xl text-[#161C2D]/70">
               還等什麼呢？趕快購票入場吧！
