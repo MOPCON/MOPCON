@@ -986,7 +986,7 @@
       "price": "799",
       "link": "https://mopcon.kktix.cc/events/mopcon-2024",
       "isSelling": true,
-      "isSellOut": false,
+      "isSellOut": true,
       "isStudent": false
     },
     {
@@ -996,7 +996,7 @@
       "subTitle": "",
       "price": "950",
       "link": "https://mopcon.kktix.cc/events/mopcon-2024",
-      "isSelling": false,
+      "isSelling": true,
       "isSellOut": false,
       "isStudent": false
     },
@@ -1030,7 +1030,7 @@
       "price": "$300",
       "link": "https://mopcon.kktix.cc/events/2024-students",
       "isSelling": true,
-      "isSellOut": false,
+      "isSellOut": true,
       "isStudent": true
     }
   ],

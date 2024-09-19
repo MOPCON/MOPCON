@@ -11,10 +11,10 @@ const TicketCard = ({ ...props }) => {
             className={`flex items-center justify-center rounded-xl px-9 h-12 bg-slate-400 font-bold ${
               props.color
             } ${[props.textColor]} pointer-events-none`}
-            aria-label={"已完售"}
-            title={"已完售"}
+            aria-label={"結束販售"}
+            title={"結束販售"}
           >
-            已完售
+            結束販售
           </div>
         );
       } else {
