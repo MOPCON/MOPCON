@@ -929,12 +929,20 @@
       "isGradient": false,
       "companies": [
         {
-          "id": 5,
+          "id": 1,
           "name": "新加坡商鈦坦科技",
-          "img": "/sponsor/2024005.webp",
+          "img": "/sponsor/titansoft.webp",
           "web": "https://www.titansoft.com/tw",
           "fb": "https://www.facebook.com/TitansoftTW",
           "description": "鈦坦科技是一間總部位於新加坡的軟體開發公司，主要的三大業務為 B2B 的線上軟體平台的開發與維護、代理敏捷專案管理工具 Jira 和企業知識內網 Confluence，以及提供敏捷開發的諮詢與顧問服務。身處快速變動的軟體產業，鈦坦採用敏捷開發，同時將敏捷思維注入公司文化，在多年導入及迭代下，開始【實行彈性工時】、【採用自主申請升遷】、【實踐薪資透明化】等，將敏捷思維落實於工作中。"
+        },
+        {
+          "id": 2,
+          "name": "捕夢網",
+          "img": "/sponsor/pumo.webp",
+          "web": "https://www.pumo.com.tw/",
+          "fb": "https://www.facebook.com/pumonetwork/?locale=zh_TW",
+          "description": ""
         }
       ]
     },
@@ -947,9 +955,9 @@
       "isGradient": false,
       "companies": [
         {
-          "id": 6,
+          "id": 1,
           "name": "可立可",
-          "img": "/sponsor/2024006.webp",
+          "img": "/sponsor/kkco.webp",
           "height": 180,
           "width": 39,
           "web": "https://www.kkco.com.tw/",
