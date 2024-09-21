@@ -607,11 +607,11 @@
       "sessionId": 2024014
     },
     {
-      "name": "Elliott Tseng",
+      "name": "曾厚荃",
       "speakerId": 15,
       "company": "Gronext 可羅涅斯特股份有限公司",
       "jobTitle": "RD 研發工程師",
-      "bio": "現職為研發工程師，日常不僅寫寫前後端，也解決著機房中大大小小突發狀況。曾在中華電信IoT大平台創意應用大賽中拿下季軍，在參與新型態資安暑期課程中（AIS3）讓我感受到資安領域的複雜和刺激，這些經驗也促使我一頭栽進了博大精深的網路坑，開始進行網路維運和資訊網路安全的探索，希望能結合自身技能，打出一串漂亮的組合技。\n在本次主題中，負責部分前端開發及資料流整合。",
+      "bio": "曾厚荃 (Elliott ) 現職為研發工程師，日常不僅寫寫前後端，也解決著機房中大大小小突發狀況。曾在中華電信IoT大平台創意應用大賽中拿下季軍，在參與新型態資安暑期課程中（AIS3）讓我感受到資安領域的複雜和刺激，這些經驗也促使我一頭栽進了博大精深的網路坑，開始進行網路維運和資訊網路安全的探索，希望能結合自身技能，打出一串漂亮的組合技。\n在本次主題中，負責部分前端開發及資料流整合。",
       "img": "/speakers/2024015.webp",
       "linkWeb": "https://stackoverflow.com/users/17214949/tsenghc",
       "linkLinkedin": "https://www.linkedin.com/in/houchuan-t-4071b2176",
@@ -644,7 +644,7 @@
     {
       "name": "Conan",
       "speakerId": 16,
-      "company": "Gronext 可羅涅斯特股份有限公司",
+      "company": "MediaTek Inc",
       "jobTitle": "Senior Engineer",
       "bio": "林家諄(Conan) 在東京台商擔任 IT engineer aka 社畜，協助處理大大小小的機房與企業網路維運、cloud native 與資訊安全相關維運管理。也參與過線路組，並樂於幫助社群處理大大小小網路架構與安全性問題。於本次 Topic 中提供網路架構與服務設計。",
       "img": "/speakers/2024016.webp",
@@ -1040,7 +1040,7 @@
       "organizations": [
         {
           "id": 1,
-          "name": "數發部數位產業署",
+          "name": "數位發展部數位產業署",
           "img": "/community/afd.webp"
         },
         {
@@ -1072,6 +1072,16 @@
           "id": 6,
           "name": "台北市電腦公會",
           "img": "/community/tca.webp"
+        }
+      ]
+    },
+    {
+      "title": "法人夥伴",
+      "organizations": [
+        {
+          "id": 7,
+          "name": "開放文化基金會",
+          "img": "/community/ocf.webp"
         }
       ]
     }
