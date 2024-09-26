@@ -12,7 +12,7 @@ const Page = () => {
   return (
     <Fragment>
       <Hero />
-      {/* <TimeMachineBlock /> */}
+      <TimeMachineBlock />
     </Fragment>
   );
 };

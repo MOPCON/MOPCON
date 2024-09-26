@@ -1,7 +1,7 @@
 "use client";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation } from "swiper/modules";
+// import "swiper/css";
 import { SectionBlock, SectionTitle } from "@/components/ui/SectionBlock";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import Image from "next/image";
@@ -41,7 +41,7 @@ const TimeMachineBlock = () => {
             <TimeMachineCard key={timeContent.year} data={timeContent} />
           </AnimatePresence>
           <div className="relative tablet:w-1/2 tablet:mx-auto p-2 mb-8 [mask-image:linear-gradient(90deg,_transparent_0%,_#fff_30%,_#fff_70%,_transparent_100%)] tablet:[mask-image:none]">
-            <Swiper
+            {/* <Swiper
               ref={swiperRef}
               slidesPerView={5}
               centeredSlides={true}
@@ -78,7 +78,7 @@ const TimeMachineBlock = () => {
                   )}
                 </SwiperSlide>
               ))}
-            </Swiper>
+            </Swiper> */}
             <button
               type="button"
               className="swiper-button-prev time-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full p-4 hidden tablet:inline-block"
