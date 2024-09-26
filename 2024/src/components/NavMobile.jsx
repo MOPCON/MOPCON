@@ -42,7 +42,7 @@ const NavMobile = ({ isSticky }) => {
         <LuMenu className={`text-2xl  ${isSticky ? "text-white" : ""}`} />
       </button>
       <motion.div
-        className={`fixed top-0 duration-300 h-dvh w-screen bg-navy-blue z-50 right-0 flex flex-col justify-center items-center ${
+        className={`fixed top-0 duration-500 ease-in-out h-dvh w-screen bg-navy-blue z-50 right-0 flex flex-col justify-center items-center ${
           showNav ? "translate-x-0" : "translate-x-full"
         }`}
         animate={showNav ? "open" : "closed"}
