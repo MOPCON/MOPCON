@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Hero from "./_ui/Hero";
-// import TimeMachineBlock from "./_ui/TimeMachineBlock";
+import TimeMachineBlock from "./_ui/TimeMachineBlock";
 import { SectionBlock, SectionTitle } from "@/components/ui/SectionBlock";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import Image from "next/image";
@@ -28,7 +28,7 @@ const Page = () => {
           <SectionTitle arrowTitle="HISTORY" className="mb-20">
             歷年 MOPCON
           </SectionTitle>
-          {/* <TimeMachineBlock /> */}
+          <TimeMachineBlock />
         </div>
       </SectionBlock>
     </Fragment>
