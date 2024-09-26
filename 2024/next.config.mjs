@@ -8,6 +8,7 @@ const nextConfig = {
     unoptimized: true,
   },
   output: "export",
+  experimental: { esmExternals: "loose" },
 };
 
 export default nextConfig;
