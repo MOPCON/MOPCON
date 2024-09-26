@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Hero from "./_ui/Hero";
-import TimeMachineBlock from "./_ui/TimeMachineBlock";
-import { SectionBlock } from "@/components/ui/SectionBlock";
+// import TimeMachineBlock from "./_ui/TimeMachineBlock";
+import { SectionBlock, SectionTitle } from "@/components/ui/SectionBlock";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import Image from "next/image";
 
@@ -24,7 +24,12 @@ const Page = () => {
           className="absolute -z-10 w-full object-cover left-1/2 top-0 -translate-x-1/2 translate-y-1/3 pointer-events-none"
           aria-hidden="true"
         />
-        <TimeMachineBlock />
+        <div className="w-[min(90%,1062px)] mx-auto mb-10 tablet:mb-14 laptop:mb-20">
+          <SectionTitle arrowTitle="HISTORY" className="mb-20">
+            歷年 MOPCON
+          </SectionTitle>
+          {/* <TimeMachineBlock /> */}
+        </div>
       </SectionBlock>
     </Fragment>
   );
