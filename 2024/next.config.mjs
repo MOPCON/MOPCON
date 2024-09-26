@@ -8,14 +8,6 @@ const nextConfig = {
     unoptimized: true,
   },
   output: "export",
-  webpack(config) {
-    return {
-      ...config,
-      optimization: {
-        minimize: false,
-      },
-    };
-  },
 };
 
 export default nextConfig;

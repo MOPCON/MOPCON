@@ -1,33 +1,34 @@
 "use client";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import TimeMachineCard from "../_components/TimeMachineCard";
 import { ArrowRight, ArrowLeft } from "./SwiperArrow";
-import timeMachineData from "@/components/data/timeMachine.json";
-import { useState, useRef, Fragment } from "react";
+import Data from "@/components/data/timeMachine.json";
+import { useState, Fragment } from "react";
 import { AnimatePresence } from "framer-motion";
+import dynamic from "next/dynamic";
+import { SwiperSlide } from "swiper/react";
+
+const Swiper = dynamic(() => import("swiper/react").then((mod) => mod.Swiper), {
+  ssr: false,
+});
 
 const TimeMachineBlock = () => {
-  const [timeContent, setTimeContent] = useState(timeMachineData[0]);
-  const swiperRef = useRef(null);
+  const [timeContent, setTimeContent] = useState(null);
   const swiperChangeHandler = (swiper) => {
-    setTimeContent(timeMachineData[swiper.realIndex]);
+    setTimeContent(Data[swiper.realIndex]);
   };
-  const handleSlideClick = (index) => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideToLoop(index);
-    }
-  };
+
   return (
     <Fragment>
       <div className="flex flex-col-reverse tablet:flex-col">
         <AnimatePresence mode="wait">
-          <TimeMachineCard key={timeContent.year} data={timeContent} />
+          {timeContent && (
+            <TimeMachineCard key={timeContent.year} data={timeContent} />
+          )}
         </AnimatePresence>
         <div className="relative tablet:w-1/2 tablet:mx-auto p-2 mb-8 [mask-image:linear-gradient(90deg,_transparent_0%,_#fff_30%,_#fff_70%,_transparent_100%)] tablet:[mask-image:none]">
           <Swiper
-            ref={swiperRef}
             slidesPerView={5}
             centeredSlides={true}
             speed={440}
@@ -36,15 +37,18 @@ const TimeMachineBlock = () => {
               nextEl: `.time-next`,
               prevEl: `.time-prev`,
             }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
             onSlideChange={(swiper) => {
               swiperChangeHandler(swiper);
             }}
             breakpointsBase="container"
             spaceBetween={24}
-            modules={[Navigation]}
-            on={{}}
+            modules={[Navigation, Autoplay]}
           >
-            {timeMachineData.map((item, index) => (
+            {Data.map((item, index) => (
               <SwiperSlide
                 className="!flex my-auto"
                 key={index}
