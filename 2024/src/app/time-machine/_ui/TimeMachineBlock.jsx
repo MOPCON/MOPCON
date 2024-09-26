@@ -1,11 +1,11 @@
 "use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
 import { SectionBlock, SectionTitle } from "@/components/ui/SectionBlock";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import Image from "next/image";
 import TimeMachineCard from "../_components/TimeMachineCard";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
 import { ArrowRight, ArrowLeft } from "./SwiperArrow";
 import timeMachineData from "@/components/data/timeMachine.json";
 import { useState, useRef } from "react";
