@@ -1,6 +1,9 @@
 import { Fragment } from "react";
 import Hero from "./_ui/Hero";
 import TimeMachineBlock from "./_ui/TimeMachineBlock";
+import { SectionBlock } from "@/components/ui/SectionBlock";
+import { getImageSrc } from "@/components/util/getImageSrc";
+import Image from "next/image";
 
 export const metadata = {
   title: "時光機",
@@ -12,7 +15,17 @@ const Page = () => {
   return (
     <Fragment>
       <Hero />
-      <TimeMachineBlock />
+      <SectionBlock className="relative bg-[#F4F7FA]">
+        <Image
+          src={getImageSrc("/community/bg-wave.svg")}
+          alt="behavioral-guidelines-bg"
+          width={1920}
+          height={1080}
+          className="absolute -z-10 w-full object-cover left-1/2 top-0 -translate-x-1/2 translate-y-1/3 pointer-events-none"
+          aria-hidden="true"
+        />
+        <TimeMachineBlock />
+      </SectionBlock>
     </Fragment>
   );
 };
