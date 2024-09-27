@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { getImageSrc } from "@/components/util/getImageSrc";
 import { motion } from "framer-motion";
+import clsx from "clsx";
 
 const SpeakerCard = ({ handleClick, ...speakerData }) => {
   return (

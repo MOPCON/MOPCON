@@ -722,7 +722,7 @@
       "topic": "Trends in Machine Learning for Unmanned Aerial Vehicle Applications",
       "summary": "烏俄戰爭改變了現代戰爭的型態，成為人類歷史上首次大量使用無人機的戰爭。在戰場上，無人機的應用可分為偵察型與攻擊型兩大類。\n在本次演講中，講者將介紹無人機的基本原理，並探討機器學習在無人機領域的應用與發展。",
       "communityPartner": "",
-      "isKeynote": false,
+      "isKeynote": true,
       "isOnline": false,
       "recordable": true,
       "level": "Basic",
@@ -730,9 +730,9 @@
       "target": "",
       "priorKnowledge": "",
       "expectedGain": "",
-      "startedAt": 1634951800,
-      "endedAt": 1634954400,
-      "room": 2,
+      "startedAt": 1729905300,
+      "endAt": 1729908000,
+      "room": 1,
       "floor": "",
       "sponsorId": 0,
       "sponsorInfo": [],
@@ -973,6 +973,14 @@
           "img": "/sponsor/pumo.webp",
           "web": "https://www.pumo.com.tw/",
           "fb": "https://www.facebook.com/pumonetwork/?locale=zh_TW",
+          "description": ""
+        },
+        {
+          "id": 3,
+          "name": "國泰金控",
+          "img": "/sponsor/cathayholdings.webp",
+          "web": "",
+          "fb": "",
           "description": ""
         }
       ]
