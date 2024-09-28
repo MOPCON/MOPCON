@@ -1,0 +1,98 @@
+[
+  {
+    "year": 2023,
+    "title": "Implementation x Crossover",
+    "subtitle": "MOPCON 2023 年精神意涵 \"Implementation X Crossover\"",
+    "content": "2023 年以 Implementation & Crossover 為主題，深入探討前沿技術的實際應用與跨界整合 ，從 AI 到跨平台、行動應用到雲服務，讓我們一起揮灑創意，共同塑造科技未來的精彩！",
+    "href": "https://mopcon.org/2023/",
+    "image": "/img/2023-mopcon.webp"
+  },
+  {
+    "year": 2022,
+    "title": "Next Giant Conf",
+    "subtitle": "MOPCON 2022 年精神意涵 \"Next Giant Conf\"",
+    "content": "2022 年以 Web3 x Mobile、Brand-able UI/UX、Cross platform 為主軸，展現「行動產品科技」對開發者、設計師、企業家的強大價值。透過來自各種產業的夥伴，分享不同領域的技術與實務經驗，帶來更多創新想法，帶入發展新觀點，共同為行動服務締造無限可能。",
+    "href": "https://mopcon.org/2022/",
+    "image": "/time-machine/2022.webp"
+  },
+  {
+    "year": 2021,
+    "title": "Mobile x AIoT",
+    "subtitle": "MOPCON 2021 年精神意涵 \"Growing with you\"",
+    "content": "時逢第十周年，主題聚焦 Mobile 與 AIoT，以與您一同成長的心情，締造最多老朋友、新同學線上見面實績！",
+    "href": "https://mopcon.org/2021/",
+    "image": "/time-machine/2021.webp"
+  },
+  {
+    "year": 2020,
+    "title": "社會參與、遠距職場、數位轉型",
+    "subtitle": "MOPCON 2020 年精神意涵 \"${con} With Us !\"",
+    "content": "在面臨全球疫情與產業巨變的 2020 年，我們站在 What MOPCON can help？的角度，以「社會參與」、「數位轉型」與「遠距職場」為三大主軸，搭配行動科技的核心理念，完成南部科技產業交流的知識盛會！",
+    "href": "https://mopcon.org/2020/",
+    "image": "/time-machine/2020.webp"
+  },
+  {
+    "year": 2019,
+    "title": "人工智慧、量化投資",
+    "subtitle": "MOPCON 2019 年精神意涵 \"here, we  ${con }\"",
+    "content": "2019 年以討論度夯的人工智慧與量化投資為主題，加上歷年受大家歡迎的 Startup、Mobile App、IoT、跨平台程式開發、UI/UX、Agile 等，重要的是還與在地社群合作，共同舉辦討論工程師職涯和敏捷實踐的 Panel ，開啟每年舉辦 Panel 討論的傳統。",
+    "href": "https://mopcon.org/2019/",
+    "image": "/time-machine/2019.webp"
+  },
+  {
+    "year": 2018,
+    "title": "IoT、AI、Blockchain",
+    "subtitle": "MOPCON 2018 年精神意涵 \"Connect Everything－互聯、互動、整合\"",
+    "content": "2018 年議程除了熱門的 Mobile App、AR/VR、UI/UX，也關注不斷擴大發展的 IoT、AI、Blockchain 多樣技術，當年也解鎖首次在大會前舉辦的暖身場及區塊鏈之夜成就，與業界專家及夥伴們一起探討連接無處不在的世界，有什麼樣的新課題、實現智慧未來！",
+    "href": "https://mopcon.org/2018/",
+    "image": "/time-machine/2018.webp"
+  },
+  {
+    "year": 2017,
+    "title": "聊天機器人、數據分析、機器學習",
+    "subtitle": "MOPCON 2017 年精神意涵 \"Hyperconnectivity － 互聯、互動、智慧\"",
+    "content": "2017 年的 MOPCON，感受到 Web 3.0 挾物聯網與雲端運算崛起，除了快速增長的線上服務與智慧裝置之外，Big Data、AI 與 Virtual Reality 的出現也正劇烈快速的影響人與人、人與機器間的互動方式。因此，MOPCON 決定重新思考 \"Mobile Open Platform\" 的內涵，更廣泛地涵蓋聊天機器人、穿戴式裝置、物聯網的應用、數據分析及機器學習、VR 虛擬實境、AR 擴增實境等相關議題，帶領與會者探討更⾼度連結的未來世界。",
+    "href": "https://mopcon.org/2017/",
+    "image": "/time-machine/2017.webp"
+  },
+  {
+    "year": 2016,
+    "title": "VR 虛擬實境、AR 擴增實境、物聯網",
+    "subtitle": "MOPCON 2016 年精神意涵 \"Connect Everything\"",
+    "content": "MOPCON 2016 以精確表達出在這個資料為王的時代，「軟應用」與「硬載體」正在把每個人納入數據洪流之中，行動科技將是獲取使用者資料的最後一哩。議程重心除行動開發技術、服務營運、數位內容三大主軸之外，將更廣泛涵蓋雲端運算、穿戴應用、VR 虛擬實境、AR 擴增實境、物聯網應用與基於 HTML5 的可攜式跨裝置應用等相關議題，以真實運作的案例，向與會者做第一手的探討與分享，促進更多優秀開發者項目的成熟與發展。",
+    "href": "https://mopcon.org/2016/",
+    "image": "/time-machine/2016.webp"
+  },
+  {
+    "year": 2015,
+    "title": "數位內容、穿戴應用、健康照護",
+    "subtitle": "MOPCON 2015 年精神意涵 \"Connect\"",
+    "content": "迎接萬物聯網、資料為王的新世紀，MOPCON 2015 回歸人類關係互聯的社群連結，建構屬於濁水溪以南的科技饗宴。MOPCON 2015年度正名為「行動科技年會」，議程重心除行動開發技術、服務營運、雲端服務三大主軸之外，將更廣泛涵蓋數位內容、穿戴應用、健康照護、家庭自動化與使用者經驗設計等各類行動科技相關議題。在這個軟體正吞食世界，掌握資料為王的時代，行動應用科技是貼近使用者資訊收集的最後一里，不論是全面入侵的智慧手機、平板電腦，乃至於正夯的穿戴科技、舖天蓋地滲入的 IoT 裝置，積極克服加工瓶頸的智慧型紡織品，這一切勾勒被資料流貫穿的未來願景。",
+    "href": "https://mopcon.org/2015/",
+    "image": "/time-machine/2015.webp"
+  },
+  {
+    "year": 2014,
+    "title": "穿戴式裝置、運動健康照護、家庭自動化",
+    "subtitle": "MOPCON 2014 年精神意涵沿用 \"I code, I spread, I connect\"",
+    "content": "2014 年的議程涵蓋 App 開發、雲端服務、數位內容、創新營運四大主軸外，WWDC、Google I/O 兩大年度盛事聚焦的海量資料、穿戴式裝置、運動健康照護、家庭自動化、TV / 高畫質內容、簡化設計和開發流程等。當年度 800 張票和 189 張票分別在 68 分鐘內和 36 分鐘內被橫掃一空，刷新售票及出席紀錄，奠定千人研討會的亮眼成績！",
+    "href": "https://mopcon.org/2014/",
+    "image": "/time-machine/2014.webp"
+  },
+  {
+    "year": 2013,
+    "title": "電子商務、數位內容、商業服務",
+    "subtitle": "MOPCON 2013 年精神意涵 \"I code, I spread, I connect\"",
+    "content": "2013 年以營運、開發、數位內容等三大行動應用實務議題為主軸，行動應用成為媒體追逐之寵兒，從電子商務、數位內容、商業服務、消費應用無不積極行動相關領域發展。MOPCON 2013 年 正式移至 ICCK 高雄國際會議中心舉行，四百五十張張門票在四個半小時被掠奪殆盡，刷新南台灣科技研討會報名最快紀錄！現場參與人數高達近五百名，樹立南台灣科技研討會之新里程碑；同時 App 便利屋、APPGuru、Punapp 等媒體報導給予活動正面評價，亦獲得聯合報、經濟日報、自立晚報、聯合新聞網主流媒體報導。",
+    "href": "https://mopcon.org/2013/",
+    "image": "/time-machine/2013.webp"
+  },
+  {
+    "year": 2012,
+    "title": "電子票券",
+    "subtitle": "",
+    "content": "2012 年為 MOPCON 啟動年，定位為針對移動通訊領域結合實際的產業面與工程研發(平台工具、後台服務、移動應用)的探討，藉由年度固定聚會持續專注這個領域, 培養台灣移動式領域人才，促使更多人投入這個領域發展，並增加廠商的能見度與第三方各種合作機會。MOPCON 2012 年議程主軸為「電子票劵」，此議題之應用因近年手機硬體相機、NFC，軟體如雲端服務、QR code 等技術發展逐漸成形，以期發酵引發產業中新應用。",
+    "href": "https://mopcon.org/2012/",
+    "image": "/time-machine/2012.webp"
+  }
+]

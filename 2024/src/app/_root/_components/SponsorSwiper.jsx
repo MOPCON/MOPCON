@@ -4,60 +4,50 @@ import "swiper/css";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { getImageSrc } from "@/components/util/getImageSrc";
+import Data from "@/components/data/data.json";
 
-const SwiperCard = ({ img, title }) => {
+const SwiperCard = ({ img, name }) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 w-[240px] h-[154px] rounded-[20px] border border-[#B6BCCD]">
-      {img ? (
-        <div className="w-[100px] h-1/2 flex items-center justify-center">
-          <Image
-            className="h-full object-contain"
-            src={img}
-            width={100}
-            height={100}
-            alt={title}
-          />
-        </div>
-      ) : (
-        <div className="overflow-hidden rounded-[50%] border border-white/60">
-          <Image
-            className="h-full object-contain"
-            src={getImageSrc("/img/swiper-default.webp")}
-            width={32}
-            height={32}
-            alt={title}
-          />
-        </div>
-      )}
-      <span className="text-center font-bold text-[#343844]">{title}</span>
+    <div className="flex items-center justify-center gap-4 w-36 h-20 m-auto overflow-clip bg-inherit">
+      <Image
+        src={getImageSrc(img || "/img/swiper-default.webp")}
+        width={120}
+        height={60}
+        alt={name || "2024Sponsor"}
+        className="object-contain w-full h-full"
+      />
     </div>
   );
 };
 const SponsorSwiper = () => {
+  const allCompanies = Data.sponsors.reduce((acc, sponsor) => {
+    return acc.concat(sponsor.companies);
+  }, []);
   return (
-    <Swiper
-      spaceBetween={24}
-      slidesPerView="auto"
-      loop={true}
-      autoplay={{
-        delay: 0,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      }}
-      modules={[Autoplay]}
-      speed="8000"
-      style={{
-        "--swiper-wrapper-transition-timing-function": "linear",
-      }}
-    >
-      {Array(18)
-        .fill()
-        .map((item, index) => (
-          <SwiperSlide key={index} className="max-w-[240px]">
-            <SwiperCard title={`贊助商名稱-${index + 1}`} />
+    <div className="py-8 bg-[#F4F7FA]">
+      <Swiper
+        spaceBetween={48}
+        slidesPerView="auto"
+        loopAdditionalSlides={10}
+        loop={true}
+        autoplay={{
+          delay: 0,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        modules={[Autoplay]}
+        speed="10000"
+        style={{
+          "--swiper-wrapper-transition-timing-function": "linear",
+        }}
+      >
+        {allCompanies.map((item, index) => (
+          <SwiperSlide key={index} className="max-w-40 flex">
+            <SwiperCard {...item} />
           </SwiperSlide>
         ))}
-    </Swiper>
+      </Swiper>
+    </div>
   );
 };
 

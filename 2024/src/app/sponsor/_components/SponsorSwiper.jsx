@@ -64,12 +64,7 @@ const SponsorSwiper = () => {
           clickable: true,
           bulletActiveClass: "size-[10px] bg-orange",
           renderBullet: function (index, className) {
-            return (
-              '<span class="size-2 bg-cream flex-shrink-0 cursor-pointer rounded-[50%] transition-all duration-300 ' +
-              className +
-              '">' +
-              "</span>"
-            );
+            return `<span class="size-2 bg-cream flex-shrink-0 cursor-pointer rounded-[50%] transition-all duration-300 ${className}"></span>`;
           },
         }}
         modules={[Navigation, EffectCreative, Pagination, Autoplay]}

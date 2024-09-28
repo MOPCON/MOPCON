@@ -11,7 +11,7 @@ const links = [
   { path: "/sponsor", label: "贊助夥伴" },
   { path: "/ticket", label: "票種介紹" },
   { path: "https://hackmd.io/@mopcon/rylQQG9N6A/", label: "共筆文件" },
-  // { path: "/time-machine", label: "時光機" },
+  { path: "/time-machine", label: "時光機" },
 ];
 
 const variants = {

@@ -9,7 +9,7 @@ const NavDesktop = ({ isSticky }) => {
       <Link href="/" aria-label="Home">
         <Logo className={isSticky ? "stroke-white" : "stroke-[#0E2219]"} />
       </Link>
-      <nav className="flex items-center gap-8">
+      <nav className="flex items-center laptop:gap-4 desktop:gap-8">
         <Navigation isSticky={isSticky} />
       </nav>
     </Fragment>
