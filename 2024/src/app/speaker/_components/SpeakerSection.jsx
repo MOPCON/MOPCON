@@ -9,6 +9,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Loading from "@/components/ui/Loading";
 import CategoryButtons from "@/components/CategoryButtons";
 import useSelectedTag from "@/components/hooks/useSelectedTag";
+import clsx from "clsx";
 
 const SpeakerModal = dynamic(() => import("./SpeakerModal"), {
   ssr: false,
@@ -61,7 +62,7 @@ const SpeakerSection = () => {
   return (
     <Fragment>
       <CategoryButtons handleTag={selectedTags} tags={tags} />
-      <div className="grid grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] gap-8">
+      <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-8">
         <AnimatePresence>
           {selectedTypeSpeaker.map((speaker) => (
             <motion.div
@@ -71,6 +72,11 @@ const SpeakerSection = () => {
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.3 }}
               layout
+              className={`${
+                speaker.isKeynote
+                  ? "-order-1 col-span-1 tablet:col-span-2 laptop:col-span-3"
+                  : null
+              }`}
             >
               <SpeakerCard
                 {...speaker}

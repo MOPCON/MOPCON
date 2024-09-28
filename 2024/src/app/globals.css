@@ -15,6 +15,12 @@
   .block-title {
     @apply font-bold text-[#161C2D] text-2xl tablet:text-[40px] leading-tight;
   }
+  .time-machine-text.active {
+    @apply text-[#1C1F25] text-2xl;
+  }
+  .time-machine-text {
+    @apply text-N800/80 text-lg;
+  }
 }
 
 @layer svg {
