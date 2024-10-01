@@ -644,9 +644,9 @@
     {
       "name": "Conan",
       "speakerId": 16,
-      "company": "MediaTek Inc",
+      "company": "",
       "jobTitle": "Senior Engineer",
-      "bio": "林家諄(Conan) 在東京台商擔任 IT engineer aka 社畜，協助處理大大小小的機房與企業網路維運、cloud native 與資訊安全相關維運管理。也參與過線路組，並樂於幫助社群處理大大小小網路架構與安全性問題。於本次 Topic 中提供網路架構與服務設計。",
+      "bio": "林家諄(Conan) 擔任 IT engineer aka 社畜，協助處理大大小小的機房與企業網路維運、cloud native 與資訊安全相關維運管理。也參與過線路組，並樂於幫助社群處理大大小小網路架構與安全性問題。於本次 Topic 中提供網路架構與服務設計。",
       "img": "/speakers/2024016.webp",
       "linkWeb": "http://me.conan.site/",
       "linkLinkedin": "",
@@ -997,8 +997,6 @@
           "id": 1,
           "name": "可立可",
           "img": "/sponsor/kkco.webp",
-          "height": 180,
-          "width": 39,
           "web": "https://www.kkco.com.tw/",
           "fb": "https://www.facebook.com/KlickKlackTaiwan/",
           "description": "可立可專注於提供企業資訊顧問服務，協助客戶推動數位轉型。包括靈活的網路解決方案、提高團隊效率的協作工具，以及資安與合規管理，可立可致力於協助企業解決技術挑戰、提升營運效能，並滿足最新的法規要求，讓企業更有效應對各種資訊需求，實現持續成長與發展。"
@@ -1012,7 +1010,40 @@
       "fillBgLight": "#E8EFFA",
       "fillBg": "#556E85",
       "isGradient": false,
-      "companies": []
+      "companies": [
+        {
+          "id": 1,
+          "name": "易發票",
+          "img": "/sponsor/ezreceipt.webp",
+          "web": "https://www.ezreceipt.cc/",
+          "fb": "https://www.facebook.com/ezreceipt.cc",
+          "description": ""
+        },
+        {
+          "id": 2,
+          "name": "白帽犀牛",
+          "img": "/sponsor/whrhino.webp",
+          "web": "https://www.whrhino.com/index.html",
+          "fb": "",
+          "description": ""
+        },
+        {
+          "id": 3,
+          "name": "小微笑遊戲",
+          "img": "",
+          "web": "",
+          "fb": "",
+          "description": ""
+        },
+        {
+          "id": 4,
+          "name": "咪卡創意",
+          "img": "/sponsor/micareproduction.webp",
+          "web": "https://www.micareproduction.tw/",
+          "fb": "https://www.facebook.com/MicareProduction",
+          "description": ""
+        }
+      ]
     },
     {
       "level": "教育及法人合作夥伴",
@@ -1021,7 +1052,16 @@
       "fillBgLight": "",
       "fillBg": "",
       "isGradient": true,
-      "companies": []
+      "companies": [
+        {
+          "id": 1,
+          "name": "國家實驗研究院",
+          "img": "/sponsor/narlabs.webp",
+          "web": "https://www.narlabs.org.tw/",
+          "fb": "",
+          "description": ""
+        }
+      ]
     }
   ],
   "tickets": [
@@ -1119,6 +1159,11 @@
           "id": 6,
           "name": "台北市電腦公會",
           "img": "/community/tca.webp"
+        },
+        {
+          "id": 7,
+          "name": "高雄大港創艦新基地",
+          "img": "/community/megabay.webp"
         }
       ]
     },
