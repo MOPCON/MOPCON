@@ -1159,11 +1159,21 @@
           "id": 6,
           "name": "台北市電腦公會",
           "img": "/community/tca.webp"
-        },
+        }
+      ]
+    },
+    {
+      "title": "合作夥伴",
+      "organizations": [
         {
-          "id": 7,
+          "id": 1,
           "name": "高雄大港創艦新基地",
           "img": "/community/megabay.webp"
+        },
+        {
+          "id": 2,
+          "name": "Creww Taiwan",
+          "img": "/community/creww.webp"
         }
       ]
     },
