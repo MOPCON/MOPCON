@@ -763,7 +763,7 @@
             "speakerId": 10,
             "company": "Zeabur",
             "jobTitle": "Backend Intern",
-            "bio": "目前是大三學生、Zeabur 實習後端工程師、GDSC NKUST 的 Core team member。\n活躍在各大社群，並偶爾參與開放原始碼貢獻。\n目前專職 Go 後端開發，負責維護各種軟體的打包 (zbpack) 和後端微服務系統的維護與開發。",
+            "bio": "目前是大三學生、Zeabur 實習後端工程師、GDSC NKUST 的 Core team member。\n活躍在各大社群，並偶爾參與開放原始碼貢獻。\n目前專職 Go 後端開發，也負責實作各種軟體服務的打包機制 (zbpack)。",
             "img": "/speakers/2024010.webp",
             "linkWeb": "https://pan93.com",
             "linkLinkedin": "",
