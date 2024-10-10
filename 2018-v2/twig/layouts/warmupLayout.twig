@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+  <meta name="author" content="MOPCON">
+	<meta name="keywords" content="南部, 濁水溪以南, 研討會, 行動, 科技, 社群, 開發者, android, ios, iphone
+app, 人工智慧, 機器學習, 物聯網, iot, cloud, 雲端, 大數據">
+  <link rel="canonical" href="https://mopcon.org/2018/{{ og_url }}" />
+
+  <meta content="行動科技年會 2018 | Mobile / Open / Platform Conference" property="og:site_name">
+  <meta content="https://mopcon.org/2018/{{ og_url }}" property="og:url">
+  <meta content="{{ og_title }}" property="og:title">
+  <meta name="description" content="{{ og_description }}" property="og:description">
+  <meta content="{{ og_image }}" property="og:image">
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/2018/assets/images/favicon.ico">
+  <meta content="200" property="og:image:width" >
+  <meta content="200" property="og:image:height" >
+  <meta content="website" property="og:type">
+  <title>{{ main.pagetitle }}</title>
+  <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
+    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '149507615542184');
+      fbq('track', 'PageView');
+    </script>
+    <!-- Facebook Pixel Code2 -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1737216009848076');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1737216009848076&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=149507615542184&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+
+  <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link rel="stylesheet" type="text/css" href="{{ baseUrl('assets/css/all.css') }}">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ baseUrl('assets/js/plugin/jquery.scrollify.js') }}"></script>
+  <script type="text/javascript" src="{{ baseUrl('assets/js/plugin/particles.min.js') }}"></script>
+  <script type="text/javascript" src="{{ baseUrl('assets/js/bootstrap.bundle.min.js') }}"></script>
+
+</head>
+
+<body>
+<!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+      <script>
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      </script>
+<div class="panel">
+    <nav class="navbar warm-up navbar-expand-lg navbar-dark" data-div-name="first">
+        <a class="navbar-brand" href="/2018/warm-up.php">
+            <img src="assets/images/white-logo.png" alt="" srcset="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li id="warm-up-link" class="nav-item dropdown">
+                    <a class="nav-link warm-up-toggle">
+                        暖身場
+                    </a>
+                </li>
+                <li id="timetable-link" class="nav-item dropdown">
+                    <a class="nav-link warm-up-toggle">
+                        時刻表
+                    </a>
+                </li>
+                <li id="ticket-link" class="nav-item dropdown">
+                    <a class="nav-link warm-up-toggle">
+                        售票
+                    </a>
+                </li>
+		<li class="nav-item dropdown">
+                    <a class="nav-link warm-up-toggle" target="_blank" href="https://hackmd.io/c/mopcon-2018-warm-up">
+                        共筆筆記
+                    </a>
+                </li>
+                <li id="spthank-link" class="nav-item dropdown">
+                    <a class="nav-link warm-up-toggle">
+                        主辦單位
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link warm-up-toggle" href="/">
+                        MOPCON2018
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link warm-up-toggle" href="https://photos.app.goo.gl/Hs29GBBasjfAzZLBA" target="_blank">
+                        暖身場活動照片
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="w-100 ele-bg">
+        <div class="warm-up banner-box row d-flex align-items-center flex-column">
+            <div class="banner d-flex flex-column align-items-center">
+                <img src="./assets/images/warm-up/logo-visual.png" class="logo">
+                <img src="./assets/images/warm-up/mopcon.png" class="title">
+                <h4>11/02 Dakuo高雄市數位內容創意中心</h4>
+                <a target="_blank" href="https://goo.gl/maps/tBY3rAb4RpA2"><i class="fa fa-map"></i>地圖</a>
+            </div>
+            <div id="warm-arrow-go" class="arrow-go">
+                <img src="./assets/images/warm-up/arrows.png" srcset="">
+            </div>
+            <span class="ticket-info">購票資訊</span>
+        </div>
+        <img src="./assets/images/warm-up/ele-1.png" class="ele ele-1">
+        <img src="./assets/images/warm-up/ele-2.png" class="ele ele-2">
+        <img src="./assets/images/warm-up/ele-4.png" class="ele ele-4">
+    </div>
+</div>
+
+  {% block content %} {% endblock %}
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container">
+        <div class="col-lg-4 footer-logo">
+            <div class="logo-img">
+                <img src="/2018/assets/images/footerlogo.png" class="img-fluid">
+            </div>
+        </div>
+        <div class="mb-4">
+            <div class="col-lg-6 col-md-3 m-auto contact">
+                    <a href="mailto:contact@mopcon.org" class="contact-btn">{{ l10n.common.contactUs }}</a>
+            </div>
+        </div>
+        <div class="row">
+    <div class="col-lg-8 offset-lg-2 col-12">
+        <div class="footer-social">
+
+            <div>
+                <a href="https://www.facebook.com/mopcon/?fref=ts" target="_blank">
+                  <img src="/2018/assets/images/social/fb.svg" alt="facebook">
+                </a>
+            </div>
+
+            <div>
+              <a href="https://www.flickr.com/photos/mopcon/albums/" target="_blank">
+                <img src="/2018/assets/images/social/flickr-logo-of-two-dots.svg" alt="flickr">
+              </a>
+            </div>
+
+            <div>
+            <a href="https://twitter.com/mopcon" target="_blank">
+              <img src="/2018/assets/images/social/twitter-logo-silhouette.svg" alt="twitter">
+            </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-12">
+      <p class="text-center">Copyright © 2018 Mobile Open Platform Conference.
+				<a id="COC" href="code-of-conduct.php">{{ l10n.codeOfConduct.title }}</a>
+      </p>
+    </div>
+</div>
+    </div>
+</footer>
+<div id="back-to-top" title="Back to top" class="">
+    <i class="top-arrow-icon"></i>
+</div>
+</body>
+<script>
+
+    $(function () {
+    $.scrollify({
+        section: ".panel",
+        // sectionName: false,
+        setHeights: false,
+        scrollSpeed: 1100,
+        overflowScroll: true,
+    });
+
+    $(window).scroll(function () {
+        const scrollVal = $(this).scrollTop();
+        if (scrollVal > 300){
+            $("#back-to-top").addClass('show-top-arrow');
+        } else {
+            $("#back-to-top").removeClass('show-top-arrow');
+        }
+    });
+
+    $.scrollify.disable();
+
+    $("#warm-up-link").click(function(){
+        warmupScrollify("#2");
+    });
+
+    $("#timetable-link").click(function(){
+        warmupScrollify("#3");
+    });
+
+    $("#ticket-link").click(function(){
+        warmupScrollify("#4");
+    });
+
+    $("#spthank-link").click(function(){
+        warmupScrollify("#5");
+    });
+
+    $("#warm-arrow-go").click(function(){
+        warmupScrollify("#4");
+    });
+
+    $("#back-to-top").click(function(){
+        warmupScrollify("#1");
+    });
+
+    function warmupScrollify(target) {
+        $.scrollify.enable();
+        $.scrollify.move(target);
+        $.scrollify.disable();
+    }
+});
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34651129-1']);
+  _gaq.push(['_setDomainName', 'mopcon.org']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</html>

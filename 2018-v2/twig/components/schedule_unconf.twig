@@ -1,0 +1,103 @@
+{% extends 'layouts/main.twig' %} {% block content %}
+<div class="schedule d-flex flex-column align-items-center">
+    <h2 class="page-title text-center mt-5 mb-5">UNCONFERENCE</h2>
+    <span class="date d-flex justify-content-center">
+        <button type="button" class="tabs day01 active">11/03</button>
+        <button type="button" class="tabs day02">11/04</button>
+    </span>
+    <h5 data-toggle="modal" data-target="#modal-map">{{ l10n.common.unconf_location }}</h5>
+    <div class="container day01">
+            <div class="row title">
+                <div class="col-lg-3">11/03</div>
+                <div class="col-lg-9">Unconference(3F)</div>
+               
+            </div>
+            {% for item in schedules_day1 %}
+            
+                {% if item.type == 'topic' %}
+                    <div class="row sponsorTalk item px-0 px-lg-3">
+                {% else %}
+                    <div class="row break item px-0 px-lg-3">
+                {% endif %}
+                <div class="col-lg-3 speechTime">{{item['duration']}}</div>
+
+                    <div class="col-lg-9 speechContent">
+                        <div >
+                        {% if item.topic != "" %}
+                            <div class="speaker">{{ item['speaker'] }}</div>
+                            <p class="detail" >{{ item.topic }}</p>
+                        {% else %}
+                            <a target="_blank" href="https://goo.gl/forms/cvIip2k0vsxP1kuE2">開放報名中 Register now!</a>
+                        {% endif %}
+                        </div>
+                   
+                    </div>
+                    
+             
+            </div>
+
+        {% endfor %}
+           
+    </div>
+    <div class="container day02">
+            <div class="row title">
+                <div class="col-lg-3">11/04</div>
+                <div class="col-lg-9">Unconference(3F)</div>
+            </div>
+            {% for item in schedules_day2 %}
+            {% if item.type == 'topic' %}
+                    <div class="row sponsorTalk item px-0 px-lg-3">
+                {% else %}
+                    <div class="row break item px-0 px-lg-3">
+                {% endif %}
+                <div class="col-lg-3 speechTime">{{item['duration']}}</div>
+                    <div class="col-lg-9 speechContent">
+                        <div >
+                            {% if item.topic != "" %}
+                                <div class="speaker">{{ item['speaker'] }}</div>
+                                <p class="detail" >{{ item.topic }}</p>
+                            {% else %}
+                                <a target="_blank" href="https://goo.gl/forms/cvIip2k0vsxP1kuE2">開放報名中 Register now!</a>
+                            {% endif %}
+                        </div>
+                   
+                    </div>
+            </div>
+
+        {% endfor %}
+</div>
+</div>
+<div class="modal fade" id="modal-map" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">{{ l10n.common.unconf_location }}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <img class="img-responsive" src="/2018/assets/images/mopcon_3F_map.png" alt="">
+        </div>
+        </div>
+    </div>
+</div>
+<script>
+$(function () {
+    $('.tabs.day01').on('click', function () {
+        $(this).addClass('active');
+        $('.tabs.day02').removeClass('active');
+        $('.container.day01').show();
+        $('.container.day02').hide();
+    })
+
+    $('.tabs.day02').on('click', function () {
+        $(this).addClass('active');
+        $('.tabs.day01').removeClass('active');
+        $('.container.day02').show();
+        $('.container.day01').hide();
+    })
+  
+})
+</script>
+{% endblock %}

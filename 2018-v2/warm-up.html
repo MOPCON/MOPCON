@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+        name="viewport">
+    <meta name="author" content="MOPCON">
+    <meta name="keywords" content="南部, 濁水溪以南, 研討會, 行動, 科技, 社群, 開發者, android, ios, iphone
+app, 人工智慧, 機器學習, 物聯網, iot, cloud, 雲端, 大數據">
+    <link rel="canonical" href="https://mopcon.org/2018/warm-up.php" />
+
+    <meta content="行動科技年會 2018 | Mobile / Open / Platform Conference" property="og:site_name">
+    <meta content="https://mopcon.org/2018/warm-up.php" property="og:url">
+    <meta content="行動科技年會 2018 | Mobile / Open / Platform Conference" property="og:title">
+    <meta name="description" content="濁水溪以南最強大行動科技研討會，2018 11/03-11/04!" property="og:description">
+    <meta content="https://mopcon.org/2018/assets/images/mopcon2018_large.jpg" property="og:image">
+    <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="assets/images/favicon.ico">
+    <meta content="200" property="og:image:width">
+    <meta content="200" property="og:image:height">
+    <meta content="website" property="og:type">
+    <title>行動科技年會 2018 | Mobile / Open / Platform Conference</title>
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '149507615542184');
+        fbq('track', 'PageView');
+    </script>
+    <!-- Facebook Pixel Code2 -->
+    <script>
+        ! function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1737216009848076');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1737216009848076&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=149507615542184&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/all.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugin/jquery.scrollify.js"></script>
+    <script type="text/javascript" src="assets/js/plugin/particles.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+    <div class="wrapper zh" id="particles-js">
+        <!-- 中文部分 -->
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <div class="panel">
+            <nav class="navbar warm-up navbar-expand-lg navbar-dark" data-div-name="first">
+                <a class="navbar-brand" href="warm-up.html">
+                    <img src="assets/images/white-logo.png" alt="" srcset="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li id="warm-up-link" class="nav-item dropdown">
+                            <a class="nav-link warm-up-toggle">
+                                暖身場
+                            </a>
+                        </li>
+                        <li id="timetable-link" class="nav-item dropdown">
+                            <a class="nav-link warm-up-toggle">
+                                時刻表
+                            </a>
+                        </li>
+                        <li id="ticket-link" class="nav-item dropdown">
+                            <a class="nav-link warm-up-toggle">
+                                售票
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link warm-up-toggle" target="_blank"
+                                href="https://hackmd.io/c/mopcon-2018-warm-up">
+                                共筆筆記
+                            </a>
+                        </li>
+                        <li id="spthank-link" class="nav-item dropdown">
+                            <a class="nav-link warm-up-toggle">
+                                主辦單位
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link warm-up-toggle" href="/">
+                                MOPCON2018
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link warm-up-toggle" href="https://photos.app.goo.gl/Hs29GBBasjfAzZLBA"
+                                target="_blank">
+                                暖身場活動照片
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="w-100 ele-bg">
+                <div class="warm-up banner-box row d-flex align-items-center flex-column">
+                    <div class="banner d-flex flex-column align-items-center">
+                        <img src="./assets/images/warm-up/logo-visual.png" class="logo">
+                        <img src="./assets/images/warm-up/mopcon.png" class="title">
+                        <h4>11/02 Dakuo高雄市數位內容創意中心</h4>
+                        <a target="_blank" href="https://goo.gl/maps/tBY3rAb4RpA2"><i class="fa fa-map"></i>地圖</a>
+                    </div>
+                    <div id="warm-arrow-go" class="arrow-go">
+                        <img src="./assets/images/warm-up/arrows.png" srcset="">
+                    </div>
+                    <span class="ticket-info">購票資訊</span>
+                </div>
+                <img src="./assets/images/warm-up/ele-1.png" class="ele ele-1">
+                <img src="./assets/images/warm-up/ele-2.png" class="ele ele-2">
+                <img src="./assets/images/warm-up/ele-4.png" class="ele ele-4">
+            </div>
+        </div>
+
+
+        <div class="panel">
+            <div class="warm-up row d-flex align-items-center flex-column">
+                <div class="warm-up-info col-sm-6" data-div-name="#second">
+                    <h4 class="page-title">暖身場是什麼？</h4>
+                    <p>
+                        MOPCON 創立至今已達七年之久，從 2012 到現在，堅持濁水溪以南這句話... 我們堅持了七年，有了您才有今天的 MOPCON ，就在今年，我們決定有個番外活動，「 MOPCON
+                        暖身場」就這樣誕生了！
+                    </p>
+                    <p>
+                        MOPCON 暖身場，抓著 2018 年全球當今火紅的三大產業趨勢 IoT(Internet of Things) 、 Blockchain 、 AI(Artificial
+                        Intelligence)
+                        ，隨著科技的進步這些技術也越來越成熟，想知道如何將它套入您的產品嗎？想要輕鬆了解這些技術嗎？那千萬不可以錯過 MOPCON 暖身場。
+                    </p>
+                </div>
+                <div class="warm-up-people col-sm-6">
+                    <h4 class="page-title">活動特色</h4>
+                    <div class="row">
+                        <div class="col-sm-3 people text-center">
+                            <i class="fas fa-user-graduate"></i>
+                            <h5>超強講師陣容</h5>
+                            <span>
+                                邀請社群與企業專家分享如何看這產業趨勢
+                            </span>
+                        </div>
+                        <div class="col-sm-3 people text-center">
+                            <i class="fas fa-users"></i>
+                            <h5>超近距離交流</h5>
+                            <span>
+                                小班授課，可以更近距離與講師交流
+                            </span>
+                        </div>
+                        <div class="col-sm-3 people text-center">
+                            <i class="fas fa-utensils"></i>
+                            <h5>聽到飽吃到飽</h5>
+                            <span>
+                                提供早點、下午茶點，除了滿足您的聽覺也滿足您的味蕾
+                            </span>
+                        </div>
+                        <div class="col-sm-3 people text-center">
+                            <i class="fas fa-link"></i>
+                            <h5>區塊鏈之夜</h5>
+                            <span>
+                                限量免費區塊鏈之夜門票<br /><a href="https://www.accupass.com/event/1810110319173293479710"
+                                    target="_blank">報名請往這邊</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="warm-up row d-flex align-items-center flex-column">
+                <div class="warm-up-schedule col-sm-6" data-div-name="#three">
+                    <h4 class="page-title">時刻表</h4>
+                    <div class="table">
+                        <div class="row table-title">
+                            <div class="col-sm-4 text-center">
+                                時間
+                            </div>
+                            <div class="col-sm-8 text-center">
+                                活動
+                            </div>
+                        </div>
+                        <div class="row break">
+                            <div class="col-sm-4 text-center">
+                                09: 00
+                            </div>
+                            <div class="col-sm-8 text-center">
+                                報到
+                            </div>
+                        </div>
+                        <div class="row break">
+                            <div class="col-sm-4 text-center">
+                                09: 30
+                            </div>
+                            <div class="col-sm-8 text-center">
+                                開幕 / 點心時間
+                            </div>
+                        </div>
+                        <div class="row conf">
+                            <div class="col-sm-4 text-center">
+                                10: 00
+                            </div>
+                            <div style="cursor:pointer;" class="col-sm-8 text-center" data-toggle="modal"
+                                data-target="#modal-3">
+                                <!-- <span class="tag">Blockchain</span> -->
+                                <h6>王銘德</h6>
+                                <span>區塊鏈遊戲開發與思索</span>
+                            </div>
+                        </div>
+
+                        <div class="row break">
+                            <div class="col-sm-4 text-center">
+                                10:45
+                            </div>
+                            <div class="col-sm-8 text-center">
+                                休息
+                            </div>
+                        </div>
+                        <div class="row conf">
+                            <div class="col-sm-4 text-center">
+                                11:00
+                            </div>
+                            <div style="cursor:pointer;" class="col-sm-8 text-center" data-toggle="modal"
+                                data-target="#modal-5">
+                                <!-- <span class="tag">Blockchain</span> -->
+                                <h6>黃俊毓</h6>
+                                <span>用區塊鏈解決真實世界的問題</span>
+                            </div>
+                        </div>
+
+                        <div class="row break">
+                            <div class="col-sm-4 text-center">
+                                11:45
+                            </div>
+                            <div class="col-sm-8 text-center">
+                                午餐時間
+                            </div>
+                        </div>
+                        <div class="row conf">
+                            <div class="col-sm-4 text-center">
+                                13:00
+                            </div>
+                            <div style="cursor:pointer;" class="col-sm-8 text-center" data-toggle="modal"
+                                data-target="#modal-7">
+                                <!-- <span class="tag">Blockchain</span> -->
+                                <h6>黃士晉(朱西西)</h6>
+                                <span>區塊鏈 DApp 製作 - 做一個區塊鏈詐騙遊戲</span>
+                            </div>
+                        </div>
+
+                        <div class="row break">
+                            <div class="col-sm-4 text-center">
+                                13:45
+                            </div>
+                            <div class="col-sm-8 text-center">
+                                休息
+                            </div>
+                        </div>
+                        <div class="row conf">
+                            <div class="col-sm-4 text-center">
+                                14:00
+                            </div>
+                            <div style="cursor:pointer;" class="col-sm-8 text-center" data-toggle="modal"
+                                data-target="#modal-9">
+                                <!-- <span class="tag">Blockchain</span> -->
+                                <h6>畢瑄易 ericpi</h6>
+                                <span>從消費者轉向開發者 - 談談 KKBOX 的開放 API 之路</span>
+                            </div>
+                        </div>
+
+                        <div class="row break">
+                            <div class="col-sm-4 text-center">
+                                14:45
+                            </div>
+                            <div class="col-sm-8 text-center">
+                                點心時間
+                            </div>
+                        </div>
+                        <div class="row conf">
+                            <div class="col-sm-4 text-center">
+                                15:45
+                            </div>
+                            <div style="cursor:pointer;" class="col-sm-8 text-center" data-toggle="modal"
+                                data-target="#modal-11">
+                                <!-- <span class="tag">Blockchain</span> -->
+                                <h6>白勝文</h6>
+                                <span>物聯網、大數據、人工智慧、邊緣運算，很難嗎？</span>
+                            </div>
+                        </div>
+
+                        <div class="row break">
+                            <div class="col-sm-4 text-center">
+                                16:30-17:00
+                            </div>
+                            <div class="col-sm-8 text-center">
+                                閉幕
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal-3" tabindex="-1" role="dialog" aria-labelledby="speakerModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog speaker-modal" role="document">
+                <div class="modal-content">
+                    <button type="button" class="speaker-close close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal-body">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="d-flex speaker-modal-info px-sm-4">
+                                <img class="my-3 rounded-circle mr-3" src="assets/images/warm-up/ming-de.jpg" alt="">
+                                <div class="d-flex flex-column mt-5">
+                                    <h4>王銘德</h4>
+                                    <span></span>
+                                    <span>軟體工程師</span>
+                                </div>
+                            </div>
+                            <div class="speaker-zh-detail px-sm-4">
+                                只是小小一個區塊鏈的愛好者
+                            </div>
+                            <div class="speaker-eng-detail px-sm-4 mt-3 pt-3 mb-4 border-top border-primary">
+                                區塊鏈遊戲開發與思索
+                            </div>
+                            <div class="speaker-zh-detail px-sm-4">
+                                我並不是一個遊戲開發工程師，但想藉由這個主題，跟遊戲業者或獨立遊戲開發商，來探討區塊鏈會對遊戲界帶來什麼樣的可能。例如，為何小遊戲只能靠廣告賺錢？為何我的遊戲寶物不能自由交易？這場演講只是拋磚引玉，讓大家一起來思索…
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal-5" tabindex="-1" role="dialog" aria-labelledby="speakerModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog speaker-modal" role="document">
+                <div class="modal-content">
+                    <button type="button" class="speaker-close close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal-body">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="d-flex speaker-modal-info px-sm-4">
+                                <img class="my-3 rounded-circle mr-3" src="assets/images/warm-up/yillkid.jpg" alt="">
+                                <div class="d-flex flex-column mt-5">
+                                    <h4>黃俊毓</h4>
+                                    <span>BiiLabs</span>
+                                    <span>軟體工程師</span>
+                                </div>
+                            </div>
+                            <div class="speaker-zh-detail px-sm-4">
+                                BiiLabs 軟體工程師，區塊鏈議題愛好者
+                            </div>
+                            <div class="speaker-eng-detail px-sm-4 mt-3 pt-3 mb-4 border-top border-primary">
+                                用區塊鏈解決真實世界的問題
+                            </div>
+                            <div class="speaker-zh-detail px-sm-4">
+                                In terms of IoT, the bigger issue is volume and whether the financial system is going to
+                                be
+                                ready to accept this as devices start to charge for services at a micro-level. With
+                                IOTA,
+                                you can ensure the fulfillment of the smallest tasks in the unified network; turning off
+                                the
+                                tap in the bathroom, sticking on a tag, or at least blowing away a speck of dust. This
+                                session will cover the considerations of adopting IoT and cryptocurrencies along with
+                                feasible approaches to accelerate the whole transactions, which shape the machine
+                                economy by
+                                building a portfolio of companies that literally meet the needs of machines.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal-7" tabindex="-1" role="dialog" aria-labelledby="speakerModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog speaker-modal" role="document">
+                <div class="modal-content">
+                    <button type="button" class="speaker-close close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal-body">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="d-flex speaker-modal-info px-sm-4">
+                                <img class="my-3 rounded-circle mr-3" src="assets/images/warm-up/superdcc.png" alt="">
+                                <div class="d-flex flex-column mt-5">
+                                    <h4>黃士晉(朱西西)</h4>
+                                    <span>微進科技有限公司</span>
+                                    <span>CEO</span>
+                                </div>
+                            </div>
+                            <div class="speaker-zh-detail px-sm-4">
+                                2017年成立微進科技有限公司。致力於發展區塊鏈擴容技術與分散式系統，透過鏈下技術提升使用者體驗，並且系統仍保持隱私與透明的特性就像在鏈上一樣。
+                            </div>
+                            <div class="speaker-eng-detail px-sm-4 mt-3 pt-3 mb-4 border-top border-primary">
+                                區塊鏈 DApp 製作 - 做一個區塊鏈詐騙遊戲
+                            </div>
+                            <div class="speaker-zh-detail px-sm-4">
+                                2018是區塊鏈遊戲成長爆發的一年，當玩家發現到區塊鏈應用與ICO的夢逐漸不可行與破沫化後，他們開始轉移目光至一個新興的行業：DApp遊戲。此暖身場將帶您於 45
+                                分鐘內實作出一個區塊鏈遊戲Fomo3D，透過大方向的講解讓您了解區塊鏈遊戲的架構，組成方式，以及遊玩DApp要注意的事項。Dapp因為區塊鏈高度透明的特性，導致許多遊戲都把Fomo化來成為賣點，邀請您來玩玩這個有趣且弔詭的遊戲！
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal-9" tabindex="-1" role="dialog" aria-labelledby="speakerModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog speaker-modal" role="document">
+                <div class="modal-content">
+                    <button type="button" class="speaker-close close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal-body">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="d-flex speaker-modal-info px-sm-4">
+                                <img class="my-3 rounded-circle mr-3" src="assets/images/warm-up/ericpi.jpg" alt="">
+                                <div class="d-flex flex-column mt-5">
+                                    <h4>畢瑄易 ericpi</h4>
+                                    <span>KKBOX</span>
+                                    <span>Open Platform Cooperation Dep. Manager</span>
+                                </div>
+                            </div>
+                            <div class="speaker-zh-detail px-sm-4">
+                                高雄土生土長的軟體工程師，為求溫飽北漂台北、北京，2012 返鄉高雄，曾參與 Feature Phone Games、KKBOX Back-end、一起聽等專案開發/維運。現任
+                                KKBOX 開放平台協作營運部經理，一邊向硬體公司推銷自家音樂物聯網整合方案，一邊傳教 Open API &amp; Open Source Project。
+                            </div>
+                            <div class="speaker-eng-detail px-sm-4 mt-3 pt-3 mb-4 border-top border-primary">
+                                從消費者轉向開發者 - 談談 KKBOX 的開放 API 之路
+                            </div>
+                            <div class="speaker-zh-detail px-sm-4">
+                                在 MOPCON 2017 發表 KKBOX Open API
+                                迄今即將滿一年，這個以音樂資料集為基礎的開放專案於營運、推廣等開發者面向業務，與過去消費型網路服務的經驗極為不同！這場議程就來分享這一年營運心得，也談談對於開發者產品的觀察。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal-11" tabindex="-1" role="dialog" aria-labelledby="speakerModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog speaker-modal" role="document">
+                <div class="modal-content">
+                    <button type="button" class="speaker-close close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal-body">
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="d-flex speaker-modal-info px-sm-4">
+                                <img class="my-3 rounded-circle mr-3" src="assets/images/warm-up/seven_bai.jpg" alt="">
+                                <div class="d-flex flex-column mt-5">
+                                    <h4>白勝文</h4>
+                                    <span>Webduino 慶奇科技</span>
+                                    <span>CTO</span>
+                                </div>
+                            </div>
+                            <div class="speaker-zh-detail px-sm-4">
+                                國中開始寫程式、高中開始蹺課寫程式僥倖考上大學，畢業後不知道要做什麼，就賴在學校念到博士第一份工作混了10年，直到公司收掉才離開第二份工作混了4年，因為太閒受不了而離開這把年紀只剩下一張嘴，特別珍惜有code可以寫的日子
+                            </div>
+                            <div class="speaker-eng-detail px-sm-4 mt-3 pt-3 mb-4 border-top border-primary">
+                                物聯網、大數據、人工智慧、邊緣運算，很難嗎？
+                            </div>
+                            <div class="speaker-zh-detail px-sm-4">
+                                資訊產業日新月異，不斷出現的新名詞讓許多技術人員產生【名詞恐慌】，似乎沒跟上就會失去競爭力，產品沒用上這些新技術就賣不出去。講者以公司的一個專案為例，說明用戶需求才是王道，一旦滿足了用戶的需求，回過頭來看，就會發現你已經學會並實際應用了這些新技術。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel" style="margin-bottom:8rem;">
+            <div class="warm-up row d-flex align-items-center flex-column">
+                <div class="warm-up-ticket" data-div-name="#four">
+                    <h4 class="page-title">售票資訊</h4>
+                    <div class="ticket-item type1 row mb-4">
+                        <div class="ticket-type  d-flex flex-column align-items-start">
+                            <div class="name">一般票</div>
+                        </div>
+                        <div class="ticket-content flex-auto">
+                            <h4>NT$ 250 元</h4>
+                            <p>
+                                暖身場一般票。
+                            </p>
+                            <div class="ticket-tool">
+                                <a href="https://mopcon.kktix.cc/events/warm-up-2018" target="_blank"
+                                    class="btn btn-ticket" title="Buy ticket">
+                                    立即購票
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-conf-ticket">
+                        <h5>來個充實的週末吧，MOPCON 2018 歡迎您！</h5>
+                        <a class="btn btn-ticket" href="ticket.html">MOPCON 2018 立即購票</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="warm-up ">
+
+                <h4 class="page-title">共同主辦單位</h4>
+
+            </div>
+            <div class="d-flex justify-content-center">
+
+                <div class="col-offset-4 col-md-3">
+                    <a href="https://mopcon.org" target="_blank">
+                        <img class="" src="assets/images/mopcon2018_large.jpg">
+                    </a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href="https://www.asvda.org/chi/index.aspx" target="_blank">
+                        <img class="" src="assets/images/sponsor/ASVDA.jpg">
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="col-lg-4 footer-logo">
+                    <div class="logo-img">
+                        <img src="assets/images/footerlogo.png" class="img-fluid">
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="col-lg-6 col-md-3 m-auto contact">
+                        <a href="/cdn-cgi/l/email-protection#5a3935342e3b392e1a37352a3935347435283d"
+                            class="contact-btn">聯絡我們</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 col-12">
+                        <div class="footer-social">
+
+                            <div>
+                                <a href="https://www.facebook.com/mopcon/?fref=ts" target="_blank">
+                                    <img src="assets/images/social/fb.svg" alt="facebook">
+                                </a>
+                            </div>
+
+                            <div>
+                                <a href="https://www.flickr.com/photos/mopcon/albums/" target="_blank">
+                                    <img src="assets/images/social/flickr-logo-of-two-dots.svg" alt="flickr">
+                                </a>
+                            </div>
+
+                            <div>
+                                <a href="https://twitter.com/mopcon" target="_blank">
+                                    <img src="assets/images/social/twitter-logo-silhouette.svg" alt="twitter">
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <p class="text-center">Copyright © 2018 Mobile Open Platform Conference.
+                            <a id="COC" href="code-of-conduct.html">行動準則</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div id="back-to-top" title="Back to top" class="">
+            <i class="top-arrow-icon"></i>
+        </div>
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    </div>
+    <div class="wrapper en" id="particles-js">
+        <!--英文部分 -->
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <div class="panel">
+            <nav class="navbar warm-up navbar-expand-lg navbar-dark" data-div-name="first">
+                <a class="navbar-brand" href="warm-up.html">
+                    <img src="assets/images/white-logo.png" alt="" srcset="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li id="warm-up-link" class="nav-item dropdown">
+                            <a class="nav-link warm-up-toggle">
+                                暖身場
+                            </a>
+                        </li>
+                        <li id="timetable-link" class="nav-item dropdown">
+                            <a class="nav-link warm-up-toggle">
+                                時刻表
+                            </a>
+                        </li>
+                        <li id="ticket-link" class="nav-item dropdown">
+                            <a class="nav-link warm-up-toggle">
+                                售票
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link warm-up-toggle" target="_blank"
+                                href="https://hackmd.io/c/mopcon-2018-warm-up">
+                                共筆筆記
+                            </a>
+                        </li>
+                        <li id="spthank-link" class="nav-item dropdown">
+                            <a class="nav-link warm-up-toggle">
+                                主辦單位
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link warm-up-toggle" href="/">
+                                MOPCON2018
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link warm-up-toggle" href="https://photos.app.goo.gl/Hs29GBBasjfAzZLBA"
+                                target="_blank">
+                                暖身場活動照片
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="w-100 ele-bg">
+                <div class="warm-up banner-box row d-flex align-items-center flex-column">
+                    <div class="banner d-flex flex-column align-items-center">
+                        <img src="./assets/images/warm-up/logo-visual.png" class="logo">
+                        <img src="./assets/images/warm-up/mopcon.png" class="title">
+                        <h4>11/02 Dakuo高雄市數位內容創意中心</h4>
+                        <a target="_blank" href="https://goo.gl/maps/tBY3rAb4RpA2"><i class="fa fa-map"></i>地圖</a>
+                    </div>
+                    <div id="warm-arrow-go" class="arrow-go">
+                        <img src="./assets/images/warm-up/arrows.png" srcset="">
+                    </div>
+                    <span class="ticket-info">購票資訊</span>
+                </div>
+                <img src="./assets/images/warm-up/ele-1.png" class="ele ele-1">
+                <img src="./assets/images/warm-up/ele-2.png" class="ele ele-2">
+                <img src="./assets/images/warm-up/ele-4.png" class="ele ele-4">
+            </div>
+        </div>
+
+
+        <div class="panel">
+            <div class="warm-up row d-flex align-items-center flex-column">
+                <div class="warm-up-info col-sm-6" data-div-name="#second">
+                    <h4 class="page-title">暖身場是什麼？</h4>
+                    <p>
+                        MOPCON 創立至今已達七年之久，從 2012 到現在，堅持濁水溪以南這句話... 我們堅持了七年，有了您才有今天的 MOPCON ，就在今年，我們決定有個番外活動，「 MOPCON
+                        暖身場」就這樣誕生了！
+                    </p>
+                    <p>
+                        MOPCON 暖身場，抓著 2018 年全球當今火紅的三大產業趨勢 IoT(Internet of Things) 、 Blockchain 、 AI(Artificial
+                        Intelligence) ，隨著科技的進步這些技術也越來越成熟，想知道如何將它套入您的產品嗎？想要輕鬆了解這些技術嗎？那千萬不可以錯過 MOPCON 暖身場。
+                    </p>
+                </div>
+                <div class="warm-up-people col-sm-6">
+                    <h4 class="page-title">活動特色</h4>
+                    <div class="row">
+                        <div class="col-sm-3 people text-center">
+                            <i class="fas fa-user-graduate"></i>
+                            <h5>超強講師陣容</h5>
+                            <span>
+                                邀請社群與企業專家分享如何看這產業趨勢
+                            </span>
+                        </div>
+                        <div class="col-sm-3 people text-center">
+                            <i class="fas fa-users"></i>
+                            <h5>超近距離交流</h5>
+                            <span>
+                                小班授課，可以更近距離與講師交流
+                            </span>
+                        </div>
+                        <div class="col-sm-3 people text-center">
+                            <i class="fas fa-utensils"></i>
+                            <h5>聽到飽吃到飽</h5>
+                            <span>
+                                提供早點、下午茶點，除了滿足您的聽覺也滿足您的味蕾
+                            </span>
+                        </div>
+                        <div class="col-sm-3 people text-center">
+                            <i class="fas fa-link"></i>
+                            <h5>區塊鏈之夜</h5>
+                            <span>
+                                限量免費區塊鏈之夜門票<br /><a href="https://www.accupass.com/event/1810110319173293479710"
+                                    target="_blank">報名請往這邊</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="warm-up row d-flex align-items-center flex-column">
+                <div class="warm-up-schedule col-sm-6" data-div-name="#three">
+                    <h4 class="page-title">時刻表</h4>
+                    <div class="table">
+                        <div class="row table-title">
+                            <div class="col-sm-4 text-center">
+                                時間
+                            </div>
+                            <div class="col-sm-8 text-center">
+                                活動
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel" style="margin-bottom:8rem;">
+            <div class="warm-up row d-flex align-items-center flex-column">
+                <div class="warm-up-ticket" data-div-name="#four">
+                    <h4 class="page-title">售票資訊</h4>
+                    <div class="ticket-item type1 row mb-4">
+                        <div class="ticket-type  d-flex flex-column align-items-start">
+                            <div class="name">一般票</div>
+                        </div>
+                        <div class="ticket-content flex-auto">
+                            <h4>NT$ 250 元</h4>
+                            <p>
+                                暖身場一般票。
+                            </p>
+                            <div class="ticket-tool">
+                                <a href="https://mopcon.kktix.cc/events/warm-up-2018" target="_blank"
+                                    class="btn btn-ticket" title="Buy ticket">
+                                    立即購票
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-conf-ticket">
+                        <h5>來個充實的週末吧，MOPCON 2018 歡迎您！</h5>
+                        <a class="btn btn-ticket" href="ticket.html">MOPCON 2018 立即購票</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="warm-up ">
+
+                <h4 class="page-title">共同主辦單位</h4>
+
+            </div>
+            <div class="d-flex justify-content-center">
+
+                <div class="col-offset-4 col-md-3">
+                    <a href="https://mopcon.org" target="_blank">
+                        <img class="" src="assets/images/mopcon2018_large.jpg">
+                    </a>
+                </div>
+
+                <div class="col-md-3">
+                    <a href="https://www.asvda.org/chi/index.aspx" target="_blank">
+                        <img class="" src="assets/images/sponsor/ASVDA.jpg">
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="col-lg-4 footer-logo">
+                    <div class="logo-img">
+                        <img src="assets/images/footerlogo.png" class="img-fluid">
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <div class="col-lg-6 col-md-3 m-auto contact">
+                        <a href="/cdn-cgi/l/email-protection#d3b0bcbda7b2b0a793bebca3b0bcbdfdbca1b4"
+                            class="contact-btn">Contact Us</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 col-12">
+                        <div class="footer-social">
+
+                            <div>
+                                <a href="https://www.facebook.com/mopcon/?fref=ts" target="_blank">
+                                    <img src="assets/images/social/fb.svg" alt="facebook">
+                                </a>
+                            </div>
+
+                            <div>
+                                <a href="https://www.flickr.com/photos/mopcon/albums/" target="_blank">
+                                    <img src="assets/images/social/flickr-logo-of-two-dots.svg" alt="flickr">
+                                </a>
+                            </div>
+
+                            <div>
+                                <a href="https://twitter.com/mopcon" target="_blank">
+                                    <img src="assets/images/social/twitter-logo-silhouette.svg" alt="twitter">
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <p class="text-center">Copyright © 2018 Mobile Open Platform Conference.
+                            <a id="COC" href="code-of-conduct.html">Code of Conduct</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div id="back-to-top" title="Back to top" class="">
+            <i class="top-arrow-icon"></i>
+        </div>
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    </div>
+</body>
+<script>
+    $(function () {
+        $.scrollify({
+            section: ".panel",
+            // sectionName: false,
+            setHeights: false,
+            scrollSpeed: 1100,
+            overflowScroll: true,
+        });
+
+        $(window).scroll(function () {
+            const scrollVal = $(this).scrollTop();
+            if (scrollVal > 300) {
+                $("#back-to-top").addClass('show-top-arrow');
+            } else {
+                $("#back-to-top").removeClass('show-top-arrow');
+            }
+        });
+
+        $.scrollify.disable();
+
+        $("#warm-up-link").click(function () {
+            warmupScrollify("#2");
+        });
+
+        $("#timetable-link").click(function () {
+            warmupScrollify("#3");
+        });
+
+        $("#ticket-link").click(function () {
+            warmupScrollify("#4");
+        });
+
+        $("#spthank-link").click(function () {
+            warmupScrollify("#5");
+        });
+
+        $("#warm-arrow-go").click(function () {
+            warmupScrollify("#4");
+        });
+
+        $("#back-to-top").click(function () {
+            warmupScrollify("#1");
+        });
+
+        function warmupScrollify(target) {
+            $.scrollify.enable();
+            $.scrollify.move(target);
+            $.scrollify.disable();
+        }
+    });
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34651129-1']);
+    _gaq.push(['_setDomainName', 'mopcon.org']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+            '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<script type="text/javascript">
+    let params = new URLSearchParams(document.location.search.substring(1));
+    let name = params.get("lang");
+    console.log(name)
+    if (name == "en") {
+        document.querySelector('.zh').remove();
+    } else {
+        document.querySelector('.en').remove();
+    }
+</script>
+
+</html>

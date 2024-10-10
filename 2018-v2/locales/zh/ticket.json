@@ -1,0 +1,42 @@
+{
+    "general": {
+        "name": "一般票",
+        "info": "<strong style='text-decoration: underline'>不包含</strong>兩日餐盒、含午茶點心",
+        "sale_time": "期間限定販售 09/18~10/22"
+    },
+    "student": {
+        "name": "學生票",
+        "info": "<strong style='text-decoration: underline'>不包含</strong>兩日餐盒、含午茶點心",
+        "sale_time": "期間限定販售 09/11~10/20"
+    },
+    "vipa": {
+        "name": "豪華獨享票",
+        "info": "包含兩日餐盒、午茶點心、MOPCON 2018 獨家紀念品、快速通關",
+        "sale_time": "期間限定販售 09/04~10/22"
+    },
+    "vipb": {
+        "name": "尊爵不凡票",
+        "info": "包含兩日餐盒、午茶點心、MOPCON 2018 獨家紀念品、快速通關、獨家設計方型抱枕、講者晚宴乙客",
+        "sale_time": "期間限定販售 09/04~10/22"
+    },
+    "devel": {
+        "name": "講者晚宴票",
+        "info": "講者晚宴乙客(11/03 晚上)",
+        "sale_time": "期間限定販售 10/01~10/27"
+    },
+    "edsupport": {
+        "name": "教育贊助 - 學生限定",
+        "info": "特別感謝六角學院 / 校長洧杰贊助支持年輕學子參與 MOPCON ，鼓勵資訊教育紮根並學習新知與分享的社群精神。<br>此票種僅限<strong style='text-decoration: underline'>學生購買</strong>，購買限制同「學生票」，<strong style='text-decoration: underline'>不包含</strong>兩日餐盒、含午茶點心",
+        "sale_time": ""
+    },
+    "sale_not_started": "尚未開賣",
+    "buy_now": "立即購票",
+    "note": "購票須知",
+    "sold_out": "售票結束",
+    "up": "起",
+    "free": "免費",
+    "sale_period": "期間限定販售",
+    "quota": "限量",
+    "people": "名",
+    "dollar": "元"
+}

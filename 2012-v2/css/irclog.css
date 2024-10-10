@@ -1,0 +1,25 @@
+body {
+  font-family: 'ABeeZee', sans-serif;
+}
+
+.loginfo {
+  font-size: 10px;
+  color: #bababa;
+  text-align: right;
+  padding-right: 150px;
+}
+
+.logtext .time {
+  text-align: right;
+}
+
+.logtext .action {
+  color: #d3d3d3;
+}
+
+.name {
+  font-family: 'Titillium Web', sans-serif;
+  font-style: italic;
+  color: #932092;
+  padding-right: 5px;
+}

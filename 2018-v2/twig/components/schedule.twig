@@ -1,0 +1,205 @@
+{% extends 'layouts/main.twig' %} {% block content %}
+<div class="schedule d-flex flex-column align-items-center">
+    <h2 class="page-title text-center mt-5 mb-5">SCHEDULE</h2>
+    <span class="date d-flex justify-content-center">
+        <button type="button" class="tabs day01 active">11/03</button>
+        <button type="button" class="tabs day02">11/04</button>
+    </span>
+    <h5>{{ lang == 'zh'? '點擊議程標題可觀看詳細介紹': 'Click schedule topic to see detail'}}</h5>
+   
+    <div class="container day01">
+            <div class="row title">
+                <div class="col-lg-3">11/03</div>
+                <div class="col-lg-3">R1(3F一廳)</div>
+                <div class="col-lg-3">R2(4F二廳)</div>
+                <div class="col-lg-3">R3(4F三廳)</div>
+            </div>
+            {% for item in schedules_day1 %}
+                {% if item['agendas'][0].type == 'topic' %}
+                    <div class="row speechTalk item px-0 px-lg-3">
+                {% else %}
+                    <div class="row break item px-0 px-lg-3">
+                {% endif %}
+                <div class="col-lg-3 speechTime">{{item['duration']}}</div>
+
+            {% for key, content in item['agendas'] %}
+                {% if content.type == 'topic' %}
+                    {% if item['agendas']|length >2 %}
+                    <div class="col-lg-3 speechContent">
+                    {% else %}
+                    <div class="col-lg-9 speechContent">
+                    {% endif %}
+                        {% if content.schedule_info %}
+                        <div style="cursor:pointer;" data-toggle="modal" data-target="#modal-{{ content.schedule_id }}">
+                        {% else %}
+                        <div>
+                        {% endif %}
+                            {% if content.category != '' %}
+                                <div class="tag pr-sm-0 pr-4">
+                                    {% set cates = content.category|split(',') %}
+                                    {% for cate in cates %}
+                                        <span>{{cate}}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <div class="speaker">{{lang == 'zh'? content.name:content.name_en}}</div>
+                            <p class="detail" >{{ lang == 'zh'? content.schedule_topic :content.schedule_topic_en }}</p>
+                            <div class="serviceTag">
+                            {% if content.video_record == 'Yes' %}
+                                <img width="30" height="30" src="/2018/assets/images/icon-no-filming.svg?v=2018" alt="禁止錄影">
+                            {% endif %}
+                            </div>
+                        </div>
+                        <div class="modal fade" id="modal-{{ content.schedule_id }}" tabindex="-1" role="dialog" aria-labelledby="speakerModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog speaker-modal" role="document">
+        <div class="modal-content">
+            <button type="button" class="speaker-close close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="d-flex speaker-modal-info px-sm-4">
+                        <img class="my-3 rounded-circle mr-3" src="{{ content.picture|default('/2018/assets/images/speaker/mopcon-girl.jpg') }}" alt="{{ content.name }}">
+                        <div class="d-flex flex-column mt-5 text-left">
+                            <h4>{{ lang == 'zh'? content.name:content.name_en }}</h4>
+                            <span>{{ content.company }}</span>
+                            <span>{{ content.job }}</span>
+                        </div>
+                    </div>
+
+                    <div class="speaker-eng-detail px-sm-4 mt-3 pt-3 mb-4 border-top border-primary">
+                        {{ lang == 'zh'? content.schedule_topic:content.schedule_topic_en }}
+                    </div>
+                    <div class="speaker-zh-detail px-sm-4">
+                        {{ lang == 'zh'? content.schedule_info:content.schedule_info_en }}
+                    </div>
+                    
+                    {#<div class="speaker-modal-btn mt-5 mb-3">
+                        <button>共筆</button>
+                        <button>Slide</button>
+                    </div>#}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                    </div>
+                    
+                {% else %}
+                    <div class="col-lg-9">{{content.schedule_topic}}</div>
+                {% endif %}
+                
+            {% endfor %}
+            </div>
+
+        {% endfor %}
+           
+    </div>
+    <div class="container day02">
+            <div class="row title">
+                <div class="col-lg-3">11/04</div>
+                <div class="col-lg-3">R1(3F一廳)</div>
+                <div class="col-lg-3">R2(4F二廳)</div>
+                <div class="col-lg-3">R3(4F三廳)</div>
+            </div>
+            {% for item in schedules_day2 %}
+                {% if item['agendas'][0].type == 'topic' %}
+                    <div class="row speechTalk item px-0 px-lg-3">
+                {% else %}
+                    <div class="row break item px-0 px-lg-3">
+                {% endif %}
+                <div class="col-lg-3 speechTime">{{item['duration']}}</div>
+
+                     {% for key, content in item['agendas'] %}
+                {% if content.type == 'topic' %}
+                    {% if item['agendas']|length >2 %}
+                    <div class="col-lg-3 speechContent">
+                    {% else %}
+                    <div class="col-lg-9 speechContent">
+                    {% endif %}
+                        {% if content.schedule_info %}
+                        <div style="cursor:pointer;" data-toggle="modal" data-target="#modal-{{ content.schedule_id }}">
+                        {% else %}
+                        <div>
+                        {% endif %}
+                            {% if content.category != '' %}
+                                <div class="tag pr-sm-0 pr-4">
+                                    {% set cates = content.category|split(',') %}
+                                    {% for cate in cates %}
+                                        <span>{{cate}}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <div class="speaker">{{lang == 'zh'? content.name:content.name_en}}</div>
+                            <p class="detail" >{{ lang == 'zh'? content.schedule_topic :content.schedule_topic_en }}</p>
+                            <div class="serviceTag">
+                            {% if content.video_record == 'Yes' %}
+                                <img width="30" height="30" src="/2018/assets/images/icon-no-filming.svg?v=2018" alt="禁止錄影">
+                            {% endif %}
+                            </div>
+                        </div>
+                        <div class="modal fade" id="modal-{{ content.schedule_id }}" tabindex="-1" role="dialog" aria-labelledby="speakerModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog speaker-modal" role="document">
+        <div class="modal-content">
+            <button type="button" class="speaker-close close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <div class="d-flex flex-column align-items-center">
+                    <div class="d-flex speaker-modal-info px-sm-4">
+                        <img class="my-3 rounded-circle mr-3" src="{{ content.picture|default('/2018/assets/images/speaker/mopcon-girl.jpg') }}" alt="{{ content.name }}">
+                        <div class="d-flex flex-column mt-5 text-left">
+                            <h4>{{ lang == 'zh'? content.name:content.name_en }}</h4>
+                            <span>{{ content.company }}</span>
+                            <span>{{ content.job }}</span>
+                        </div>
+                    </div>
+
+                    <div class="speaker-eng-detail px-sm-4 mt-3 pt-3 mb-4 border-top border-primary">
+                        {{ lang == 'zh'? content.schedule_topic:content.schedule_topic_en }}
+                    </div>
+                    <div class="speaker-zh-detail px-sm-4">
+                        {{ lang == 'zh'? content.schedule_info:content.schedule_info_en }}
+                    </div>
+                   
+                    {#<div class="speaker-modal-btn mt-5 mb-3">
+                        <button>共筆</button>
+                        <button>Slide</button>
+                    </div>#}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                    </div>
+                    
+                {% else %}
+                    <div class="col-lg-9">{{content.schedule_topic}}</div>
+                {% endif %}
+                
+            {% endfor %}
+            </div>
+
+        {% endfor %}
+</div>
+<script>
+$(function () {
+
+    $('.tabs.day01').on('click', function () {
+        $(this).addClass('active');
+        $('.tabs.day02').removeClass('active');
+        $('.container.day01').show();
+        $('.container.day02').hide();
+    })
+
+    $('.tabs.day02').on('click', function () {
+        $(this).addClass('active');
+        $('.tabs.day01').removeClass('active');
+        $('.container.day02').show();
+        $('.container.day01').hide();
+    })
+})
+</script>
+{% endblock %}

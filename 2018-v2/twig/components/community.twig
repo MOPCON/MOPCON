@@ -1,0 +1,52 @@
+{% extends 'layouts/main.twig' %} {% block content %}
+<h2 class="page-title text-center mt-5 mb-5">SPEAKER</h2>
+    <div class="container">
+
+      <div class="d-flex flex-wrap justify-content-around">
+    {% for community in communitys %}
+
+        <div class="speaker-info d-flex align-items-center flex-column p-3">
+          <img class="img-fluid mb-2" src="{{ community.logo }}" alt="" srcset="">
+          <h5 class="text-center">{{ community.title }}</h5>
+          
+          
+          <button class="speaker-btn mt-4 mb-3" data-toggle="modal" data-target="#modal-{{ community.id }}">{{ lang == 'zh'? "詳細介紹" : "More" }}</button>
+        </div>
+
+      <div class="modal fade"  id="modal-{{ community.id }}" tabindex="-1" role="dialog" aria-labelledby="speakerModalLabel" aria-hidden="true">
+        <div class="modal-dialog speaker-modal" role="document">
+          <div class="modal-content">
+            <button type="button" class="speaker-close close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+              <div class="d-flex flex-column align-items-center">
+                <div class="d-flex speaker-modal-info px-sm-4">
+                
+                  <img class="my-3 mr-3" src="{{ community.logo }}" alt="{{ community.title }}">
+                  <div class="d-flex flex-column mt-4">
+                    <h5 class="mb-4">{{ community.title }}</h5>
+                    <p>
+                    {% if community.facebook != "" %}
+                        <a href="{{community.facebook}}" target="_blank">Facebook</a>
+                    {% endif %}
+                    
+                    {% if community.other_links != "" %}
+                        / <a href="{{community.other_links}}" target="_blank">相關連結</a>
+                    {% endif %}
+                    </p>
+                  </div>
+                </div>
+                <div class="speaker-zh-detail px-sm-4">
+                    {{ lang == 'zh'? community.info:community.info_en }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    {% endfor %}
+    </div>
+  </div>
+{% endblock %}

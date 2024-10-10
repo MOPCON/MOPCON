@@ -1,0 +1,113 @@
+{% extends 'main.twig' %}
+
+{% block content %}
+<header class="header text-center relative">
+	<div class="planet-logo"></div>
+	<div class="header-block">
+		<div class="header-logo">
+            <img
+                src="images/article/home-landing-logo.png"
+                srcset="images/article/home-landing-logo@2x.png 2x,
+                        images/article/home-landing-logo@3x.png 3x"
+                alt="mopcon2016"
+                class="img-responsive center-block common-idx">
+		</div>
+	</div>
+</header>
+<div class="container-md">
+	<div class="card">
+		<div class="multi-planet">
+			<div class=" card-speaker-title">
+				<h3>強力贊助</h3>
+				<h4>Sponsor</h4>
+				<hr class="speaker-hr">
+			</div>
+			<div class="card container-md p0 clearfix">
+                
+        {% for type, groupData in sponsors %}
+            {% if type == 'TonyStark' and groupData!='' %}
+                <div class="sponsor-title">Tony Stark</div>
+                <div class="row">
+                    <div class="col-sm-offset-2 col-sm-8">
+                    {% for data in groupData %}
+                        <a href="{{ data.link }}" target="_blank">
+                            <img src="images/sponsor/TonyStark/{{ data.image }}" alt="{{ data.name }}" title="{{ data.name }}">
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if type == 'BruceWayne' and groupData!='' %}
+                <div class="sponsor-title">Bruce Wayne</div>
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-10">
+                    {% for data in groupData %}
+                        <a href="{{ data.link }}" target="_blank">
+                            <img class="col-sm-6" src="images/sponsor/BruceWayne/{{ data.image }}" alt="{{ data.name }}" title="{{ data.name }}">
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if type == 'KSG' and groupData!='' %}
+                <div class="sponsor-title">感謝高雄市經濟發展局獎勵會議展覽活動計畫贊助</div>
+                <div class="row">
+                    <div class="col-sm-offset-3 col-sm-6">
+                    {% for data in groupData %}
+                        <a href="{{ data.link }}" target="_blank">
+                            <img src="images/sponsor/SpecialThank/{{ data.image }}" alt="{{ data.name }}" title="{{ data.name }}">
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if type == 'Hacker' and groupData!='' %}
+                <div class="sponsor-title">Hacker</div>
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-10">
+                    {% for data in groupData %}
+                        <a href="{{ data.link }}" target="_blank">
+                            <img class="col-sm-4 col-xs-6" src="images/sponsor/Hacker/{{ data.image }}" alt="{{ data.name }}" title="{{ data.name }}"> 
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if type == 'Developer' and groupData!='' %}
+                <div class="sponsor-title mbxl">Developer</div>
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-10">
+                    {% for data in groupData %}
+                        <a href="{{ data.link }}" target="_blank">
+                            <img class="col-sm-3 col-xs-6" src="images/sponsor/Developer/{{ data.image }}" alt="{{ data.name }}" title="{{ data.name }}">
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if type == 'SpecialThank' and groupData!='' %}
+                <div class="sponsor-title mbxl">特別感謝</div>
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-10">
+                    {% for data in groupData %}
+                        <a href="{{ data.link }}" target="_blank">
+                            <img class="col-sm-3 col-xs-6" src="images/sponsor/SpecialThank/{{ data.image }}" alt="{{ data.name }}" title="{{ data.name }}">
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="sponsor-title">感謝高雄市經濟發展局獎勵會議展覽活動計畫贊助</div>
+        <div class="row">
+            <div class="col-sm-offset-3 col-sm-6">
+                <img class="img-responsive"  src="images/sponsor/SpecialThank/KSG.jpg" alt="高雄市經濟發展局">
+            </div>
+        </div>
+        </div> 
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+

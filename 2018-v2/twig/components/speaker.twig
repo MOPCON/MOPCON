@@ -1,0 +1,81 @@
+{% extends 'layouts/main.twig' %} {% block content %}
+    <h2 class="page-title text-center mt-5 mb-5">SPEAKER</h2>
+    <div class="container">
+
+      <div class="d-flex flex-wrap justify-content-around">
+    {% for speaker in speakers %}
+    {%if speaker.speaker_id != "" %}
+
+        <div class="speaker-info d-flex align-items-center flex-column">
+          <img class="rounded-circle my-3 mr-3" src="{{ speaker.picture|default('/2018/assets/images/speaker/blank_speaker.jpg') }}" alt="" srcset="">
+          <h5>{{ lang == 'zh'? speaker.name:speaker.name_en }}</h5>
+          <span class="text-center">{{ speaker.company }}</span>
+          <span class="text-center">{{ speaker.job }}</span>
+          
+          <button class="speaker-btn mt-4 mb-3" data-toggle="modal" data-target="#modal-{{ speaker.speaker_id }}">{{ lang == 'zh'? "詳細介紹" : "More" }}</button>
+        </div>
+
+      <div class="modal fade"  id="modal-{{ speaker.speaker_id }}" tabindex="-1" role="dialog" aria-labelledby="speakerModalLabel" aria-hidden="true">
+        <div class="modal-dialog speaker-modal" role="document">
+          <div class="modal-content">
+            <button type="button" class="speaker-close close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+              <div class="d-flex flex-column align-items-center">
+                <div class="d-flex speaker-modal-info px-sm-4">
+                
+                  <img class="my-3 rounded-circle mr-3" src="{{ speaker.picture|default('/2018/assets/images/speaker/blank_speaker.jpg') }}" alt="{{ speaker.name }}">
+                  <div class="d-flex flex-column mt-5">
+                    <h5>{{ lang == 'zh'? speaker.name:speaker.name_en }}</h5>
+                    <span>{{ speaker.company }}</span>
+                    <span>{{ speaker.job }}</span>
+                  </div>
+                </div>
+                <div class="speaker-zh-detail px-sm-4">
+                    {{ lang == 'zh'? speaker.info:speaker.info_en }}
+                </div>
+                <div class="speaker-eng-detail px-sm-4 mt-3 pt-3 mb-4 border-top border-primary">
+                   {{ lang == 'zh'? speaker.schedule_topic:speaker.schedule_topic_en }}
+                </div>
+                <div class="speaker-zh-detail px-sm-4">
+                    {{ lang == 'zh'? speaker.schedule_info: speaker.schedule_info_en }}
+                </div>
+                <div class="input-group my-3">
+                  <input type="text" class="form-control" id="text{{ speaker.speaker_id }}" value="mopcon.org/2018/speaker.php?id={{ speaker.speaker_id }}">
+                  <div class="input-group-append">
+                    <button type="button"  class="copylink btn btn-primary" data-clipboard-target="#text{{ speaker.speaker_id }}">複製講者連結</button>
+                  </div>
+                </div>
+                {#<div class="speaker-modal-btn mt-5 mb-3">
+                  <button>共筆</button>
+                  <button>Slide</button>
+                </div>#}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    {% endif %}
+    {% endfor %}
+    </div>
+  </div>
+<script>
+
+
+  
+ {% if id != '' %}
+
+  $('#modal-'+{{id}}).modal('show');
+  {% endif %}
+$(function(){
+  $(".modal").on("shown.bs.modal", function() {
+      var clipboard = new ClipboardJS('.copylink');
+      console.log(clipboard);
+  })
+});
+
+</script>
+
+{% endblock %}

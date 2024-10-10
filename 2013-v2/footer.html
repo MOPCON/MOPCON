@@ -1,0 +1,28 @@
+<div class="copyright">Copyright &copy; 2013 Mobile Open Platform Conference. Designed by KSDG, CocoaHeads Kaohsiung, MOSUT, KIMU, KaLUG</div>
+<script type="text/javascript">
+$(".agenda-title").each(function(){
+  var $this = $(this);
+  $this.find('a').on('click', function(e){e.stopPropagation();}); // 避免連結點擊被 toggle 吃掉
+  var $parent = $this.parent();
+  $this.toggle(function(e){
+    $parent.addClass("on").removeClass("off");
+    e.preventDefault();
+  },function(e){
+    $parent.addClass("off").removeClass("on");
+    e.preventDefault();
+  });
+});
+</script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-34651129-1']);
+_gaq.push(['_setDomainName', 'mopcon.org']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+//ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>

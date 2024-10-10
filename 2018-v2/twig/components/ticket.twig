@@ -1,0 +1,128 @@
+{% extends 'layouts/main.twig' %} {% block content %}
+<h2 class="page-title mt-5 mb-5 text-center">TICKET</h2>
+
+<div class="container">
+    <div class="col-12">
+        <div class="ticket-item type1 row mb-4">
+            <div class="ticket-type  d-flex flex-md-column align-items-md-start">
+                <div class="name">{{ l10n.ticket.general.name }}</div>
+            </div>
+            <div class="ticket-content flex-auto">
+                <h4>NT$ 600 {{ l10n.ticket.dollar }}</h4>
+                <p>
+                    {{ l10n.ticket.general.info | raw }}<br>
+                    <span class="text-danger">{{ l10n.ticket.sale_period }} 09/17~10/31</span>
+                </p>
+                <div class="ticket-tool">
+                    <a href="#"  class="btn btn-ticket" title="Buy ticket">
+                        {{ l10n.ticket.sold_out }}
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <!--<div class="ticket-item type1 row mb-4">
+            <div class="ticket-type  d-flex flex-md-column align-items-md-start">
+                <div class="name">{{ l10n.ticket.student.name }}</div>
+            </div>
+            <div class="ticket-content flex-auto">
+                <h4>{{ l10n.ticket.free }}</h4>
+                <p>
+                    {{ l10n.ticket.student.info | raw }}<br>
+                    <span class="text-danger">{{ l10n.ticket.sale_period }} 09/10~09/13</span>
+                </p>
+                <div class="ticket-tool">
+                    <p class="text-danger mb-0 text-right d-md-block">{{ l10n.ticket.quota }}：200{{ l10n.ticket.people }}</p>
+                    <a class="btn btn-ticket" title="Buy ticket">
+                        {{ l10n.ticket.sold_out }}
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="ticket-item type1 row mb-4">
+            <div class="ticket-type  d-flex flex-md-column align-items-md-start">
+                <div class="name">{{ l10n.ticket.edsupport.name }}</div>
+            </div>
+            <div class="ticket-content flex-auto">
+                <h4>{{ l10n.ticket.free }}</h4>
+                <p>
+                    {{ l10n.ticket.edsupport.info | raw }}<br>
+                    <span class="text-danger">{{ l10n.ticket.sale_period }} 09/30~10/02</span>
+                </p>
+                <div class="ticket-tool">
+                    <p class="text-danger mb-0 text-right d-md-block">{{ l10n.ticket.quota }}：76{{ l10n.ticket.people }}</p>
+                    <a href="https://kktix.com/events/2018-registration-student/registrations/new" target="_blank" class="btn btn-ticket" title="Buy ticket">
+                        {{ l10n.ticket.sold_out }}
+                    </a>
+                </div>
+            </div>
+        </div>-->
+        <div class="ticket-item type2 row mb-4">
+            <div class="d-flex ticket-type flex-md-column align-items-md-start">
+                <div class="robbon-wrap">
+                    <div class="ticket-ribbon">TOP</div>
+                </div>
+                <div class="name">{{ l10n.ticket.vipa.name }}</div>
+            </div>
+            <div class="ticket-content flex-auto">
+                <h4>NT$ 2000 {{ l10n.ticket.dollar }}</h4>
+                <p>
+                    {{ l10n.ticket.vipa.info }}<br>
+                    <span class="text-danger">{{ l10n.ticket.sale_period }} 09/03~10/26</span>
+                </p>
+                <div class="ticket-tool">
+                    <p class="text-danger mb-0 text-right d-md-block">{{ l10n.ticket.quota }}：30{{ l10n.ticket.people }}</p>
+                    <a class="btn btn-ticket" title="Buy ticket">
+                        {{ l10n.ticket.sold_out }}
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="ticket-item type3 row mb-4">
+            <div class="ticket-type d-flex flex-md-column align-items-md-start">
+                <div class="robbon-wrap">
+                    <div class="ticket-ribbon">Limited</div>
+                </div>
+                <div class="name">{{ l10n.ticket.vipb.name }}</div>
+            </div>
+            <div class="ticket-content flex-auto">
+                <h4>NT$ 4000 {{ l10n.ticket.dollar }}</h4>
+                <p>
+                    {{ l10n.ticket.vipb.info }}<br>
+                    <span class="text-danger">{{ l10n.ticket.sale_period }} 09/03~10/26</span>
+                </p>
+                <div class="ticket-tool">
+                    <p class="text-danger mb-0 text-right d-md-block">{{ l10n.ticket.quota }}：20{{ l10n.ticket.people }}</p>
+                    <a class="btn btn-ticket" title="Buy ticket">
+                        {{ l10n.ticket.sold_out }}
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        {# <div class="ticket-item type2 row mb-4">
+            <div class="ticket-type d-flex flex-md-column align-items-md-start">
+                <div class="name">{{ l10n.ticket.devel.name }}</div>
+            </div>
+            <div class="ticket-content flex-auto">
+                <h4>NT$ 1000 {{ l10n.ticket.dollar }}</h4>
+                <p>
+                    {{ l10n.ticket.devel.info }}
+                    <br>
+                    <span class="text-danger">{{ l10n.ticket.sale_period }} 10/01~11/02</span>
+                </p>
+                <div class="ticket-tool">
+                    <!--<p class="text-danger mb-0 text-right d-md-block">{{ l10n.ticket.buy_now }}：200名</p>-->
+                    <a href="javascript:void(0);" target="_blank" class="btn btn-ticket" title="Buy ticket">
+                        {{ l10n.ticket.buy_now }}
+                    </a>
+
+                </div>
+            </div>
+
+        </div> #}
+    </div>
+</div>
+{% endblock %}
