@@ -77,7 +77,7 @@ const SponsorCard = ({ onClick, ...sponsorData }) => {
       >
         <div className="flex flex-col rounded-3xl gap-4 bg-white items-center justify-center size-full p-4 overflow-clip relative z-[2]">
           {sponsorData.img ? (
-            <div className="h-36 w-48 overflow-clip flex items-center justify-center flex-grow">
+            <div className="h-28 w-48 overflow-clip flex items-center justify-center flex-grow">
               <Image
                 className="h-full max-w-full object-contain object-center"
                 src={getImageSrc(sponsorData.img || "/img/swiper-default.webp")}
@@ -87,7 +87,7 @@ const SponsorCard = ({ onClick, ...sponsorData }) => {
               />
             </div>
           ) : null}
-          <span className="text-center font-medium text-xl text-[#1C1F25] relative z-10">
+          <span className="text-center font-medium text-xl text-[#1C1F25] relative z-10 max-w-[8em]">
             {sponsorData.name}
           </span>
           <SponsorLeaf
