@@ -5,6 +5,7 @@ import { GoGlobe } from "react-icons/go";
 import { FiCalendar } from "react-icons/fi";
 import ModalImage from "@/components/ModalImage";
 import { GreenLeaf, OrangeLeaf } from "@/components/ui/ModalLeaf";
+import { useJsonParse } from "@/components/hooks/useJsonParse";
 
 const Modal = ({ sponsorData, onClose }) => {
   return (
@@ -56,7 +57,7 @@ const Modal = ({ sponsorData, onClose }) => {
                 <OrangeLeaf />
               </div>
               <p className="text-N800/80 leading-6">
-                {sponsorData.description}
+                {useJsonParse(sponsorData.description)}
               </p>
             </article>
             {sponsorData.speaker && (
