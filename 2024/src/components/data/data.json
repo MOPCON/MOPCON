@@ -1194,8 +1194,8 @@
       "title": "VIP",
       "subTitle": "",
       "price": "2,000",
-      "link": "https://mopcon.kktix.cc/events/mopcon-2024",
-      "isSelling": false,
+      "link": "https://mopcon.kktix.cc/events/mopcon-2024-personal-sponsor",
+      "isSelling": true,
       "isSellOut": false,
       "isStudent": false
     },
@@ -1205,8 +1205,8 @@
       "title": "VVIP",
       "subTitle": "",
       "price": "3,500",
-      "link": "https://mopcon.kktix.cc/events/mopcon-2024",
-      "isSelling": false,
+      "link": "https://mopcon.kktix.cc/events/mopcon-2024-personal-sponsor",
+      "isSelling": true,
       "isSellOut": false,
       "isStudent": false
     },

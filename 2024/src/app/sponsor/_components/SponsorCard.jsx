@@ -87,7 +87,7 @@ const SponsorCard = ({ onClick, ...sponsorData }) => {
               />
             </div>
           ) : null}
-          <span className="text-center font-medium text-xl text-[#1C1F25]">
+          <span className="text-center font-medium text-xl text-[#1C1F25] relative z-10">
             {sponsorData.name}
           </span>
           <SponsorLeaf
