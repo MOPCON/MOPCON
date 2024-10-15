@@ -1093,6 +1093,14 @@
           "web": "https://www.kkco.com.tw/",
           "fb": "https://www.facebook.com/KlickKlackTaiwan/",
           "description": "可立可專注於提供企業資訊顧問服務，協助客戶推動數位轉型。包括靈活的網路解決方案、提高團隊效率的協作工具，以及資安與合規管理，可立可致力於協助企業解決技術挑戰、提升營運效能，並滿足最新的法規要求，讓企業更有效應對各種資訊需求，實現持續成長與發展。"
+        },
+        {
+          "id": 2,
+          "name": "台灣積體電路製造股份有限公司",
+          "img": "/sponsor/tsmc.webp",
+          "web": "https://www.tsmc.com/chinese",
+          "fb": "",
+          "description": "國泰金控以成為亞洲最佳金融機構為目標，除了在國內市場穩居領導地位，對外亦持續積極地朝亞太地區拓點，藉由打造區域平台的核心策略以提供客戶整合性的金融服務。同時也致力於推動集團數位轉型，以數據驅動、突破創新為理念，協助集團各子公司打跨界金融，一步到位的金融服務。\n近年來國泰金控積極投入大量資源，建構大數據基礎建設並且導入新技術，整合集團資源，提供創新體驗及服務，以數據驅動金融科技創新，提供有感、有效的客戶數位體驗，致力成為亞洲數位生態圈及科技金融領頭羊。"
         }
       ]
     },
@@ -1186,8 +1194,8 @@
       "title": "VIP",
       "subTitle": "",
       "price": "2,000",
-      "link": "https://mopcon.kktix.cc/events/mopcon-2024",
-      "isSelling": false,
+      "link": "https://mopcon.kktix.cc/events/mopcon-2024-personal-sponsor",
+      "isSelling": true,
       "isSellOut": false,
       "isStudent": false
     },
@@ -1197,8 +1205,8 @@
       "title": "VVIP",
       "subTitle": "",
       "price": "3,500",
-      "link": "https://mopcon.kktix.cc/events/mopcon-2024",
-      "isSelling": false,
+      "link": "https://mopcon.kktix.cc/events/mopcon-2024-personal-sponsor",
+      "isSelling": true,
       "isSellOut": false,
       "isStudent": false
     },
