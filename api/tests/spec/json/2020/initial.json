@@ -1,0 +1,54 @@
+{
+  "title": "Server 資訊 API",
+  "description": "Server API",
+  "required": [
+    "success",
+    "message",
+    "data"
+  ],
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Request 是否成功"
+    },
+    "message": {
+      "type": "string",
+      "description": "訊息"
+    },
+    "data": {
+      "type": "object",
+      "items": {
+        "type": "array",
+        "required": [
+          "api_server",
+          "enable_game"
+        ]
+      },
+      "properties": {
+        "api_server": {
+          "type": "object",
+          "items": {
+            "required": [
+              "mopcon",
+              "game"
+            ],
+            "items": {
+              "mopcon": {
+                "type": "string",
+                "description": "mopcon server"
+              },
+              "game": {
+                "type": "string",
+                "description": "game server"
+              }
+            }
+          }
+        },
+        "enable_game": {
+          "type": "boolean",
+          "description": "是否開放遊戲"
+        }
+      }
+    }
+  }
+}
