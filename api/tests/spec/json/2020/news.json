@@ -1,0 +1,54 @@
+{
+  "title": "News 資訊 API",
+  "description": "News API",
+  "required": [
+    "success",
+    "message",
+    "data"
+  ],
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Request 是否成功"
+    },
+    "message": {
+      "type": "string",
+      "description": "訊息"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "date",
+          "title",
+          "description",
+          "link"
+        ]
+      },
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "news id"
+        },
+        "date": {
+          "type": "integer",
+          "description": "news 時間戳"
+        },
+        "title": {
+          "type": "string",
+          "description": "news 標題"
+        },
+        "description": {
+          "type": "string",
+          "description": "news 內容與描述"
+        },
+        "link": {
+          "type": "string",
+          "description": "news 連結"
+        }
+      }
+    }
+  }
+}

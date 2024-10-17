@@ -1,5 +1,9 @@
 <?php
 
+namespace Tests\App\Http\Controllers\Test2019;
+
+use TestCase;
+
 use AspectMock\Test as test;
 
 class NewsControllerTest extends TestCase
@@ -11,7 +15,7 @@ class NewsControllerTest extends TestCase
         $dummyGoogleSheet = '{"feed": {"entry": [{ "gsx$id": { "$t": "1" }, "gsx$date": { "$t": "2018/10/20 9:00" }, "gsx$title": { "$t": "Telegram 聊天頻道上線嚕" }, "gsx$description": { "$t": "歡迎大家一起加入聊天！！" }, "gsx$link": { "$t": "tg://resolve?domain=mopcon" } }]}}';
         test::double('App\Http\Controllers\Year2019\NewsController', ['getSheetData' => $dummyGoogleSheet]);
     }
-    
+
     public function testAllNews()
     {
         $response = $this->call('GET', '/api/2019/news');
