@@ -1,0 +1,213 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "交流場次 API",
+  "description": "交流場次資訊的 API",
+  "required": [
+    "success",
+    "message",
+    "data"
+  ],
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Request 是否成功"
+    },
+    "message": {
+      "type": "string",
+      "description": "訊息"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "date",
+          "period"
+        ],
+        "properties": {
+          "date": {
+            "type": "integer"
+          },
+          "period": {
+            "type": "array",
+            "description": "交流場次相關資訊",
+            "items": {
+              "type": "object",
+              "required": [
+                "isBroadCast",
+                "started_at",
+                "ended_at",
+                "event",
+                "room"
+              ],
+              "items": {
+                "isBroadCast": {
+                  "type": "boolean",
+                  "description": "是否為聯播議程"
+                },
+                "started_at": {
+                  "type": "integer",
+                  "description": "本議程區間開始時間，單位為秒"
+                },
+                "ended_at": {
+                  "type": "integer",
+                  "description": "本議程區間結束時間，單位為秒"
+                },
+                "event": {
+                  "type": "string",
+                  "description": "議程區塊名稱，通常用來顯示無議程表示"
+                },
+                "room": {
+                  "type": "array",
+                  "description": "議程廳",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "summary",
+                      "summary_e",
+                      "is_keynote",
+                      "room",
+                      "floor",
+                      "tags",
+                      "recordable",
+                      "level",
+                      "sponsor_id",
+                      "topic",
+                      "topic_e",
+                      "session_id",
+                      "started_at",
+                      "ended_at",
+                      "speakers"
+                    ],
+                    "properties": {
+                      "summary": {
+                        "type": "string",
+                        "description": "議程簡介中文"
+                      },
+                      "summary_e": {
+                        "type": "string",
+                        "description": "議程簡介英文"
+                      },
+                      "is_keynote": {
+                        "type": "boolean",
+                        "description": "是否為 keynote 議程"
+                      },
+                      "room": {
+                        "type": "string",
+                        "description": "議程廳"
+                      },
+                      "floor": {
+                        "type": "string",
+                        "description": "樓層"
+                      },
+                      "tags": {
+                        "type": "array",
+                        "description": "議程標籤"
+                      },
+                      "recordable": {
+                        "type": "boolean",
+                        "description": "是否提供錄影"
+                      },
+                      "level": {
+                        "type": "string",
+                        "description": "議程難易度"
+                      },
+                      "sponsor_id": {
+                        "type": "integer",
+                        "description": "贊助商編號，如果不是贊助商講者則為"
+                      },
+                      "topic": {
+                        "type": "string",
+                        "description": "議程名稱"
+                      },
+                      "topic_e": {
+                        "type": "string",
+                        "description": "議程英文名稱"
+                      },
+                      "session_id": {
+                        "type": "integer",
+                        "description": "議程編號"
+                      },
+                      "started_at": {
+                        "type": "integer",
+                        "description": "議程開始時間，單位為秒"
+                      },
+                      "ended_at": {
+                        "type": "integer",
+                        "description": "議程結束時間，單位為秒"
+                      },
+                      "speakers": {
+                        "type": "array",
+                        "description": "講師陣列，在交流場次僅有一位講者",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "name",
+                            "name_e",
+                            "speaker_id",
+                            "company",
+                            "company_e",
+                            "job_title",
+                            "job_title_e",
+                            "img"
+                          ],
+                          "items": {
+                            "name": {
+                              "type": "string",
+                              "description": "講師中文名稱"
+                            },
+                            "name_e": {
+                              "type": "string",
+                              "description": "講師英文名稱"
+                            },
+                            "speaker_id": {
+                              "type": "integer",
+                              "description": "講者 ID"
+                            },
+                            "company": {
+                              "type": "string",
+                              "description": "公司中文名稱"
+                            },
+                            "company_e": {
+                              "type": "string",
+                              "description": "公司英文名稱"
+                            },
+                            "job_title": {
+                              "type": "string",
+                              "description": "職位中文名稱"
+                            },
+                            "job_title_e": {
+                              "type": "string",
+                              "description": "職位英文名稱"
+                            },
+                            "img": {
+                              "type": "array",
+                              "required": [
+                                "web",
+                                "mobile"
+                              ],
+                              "items": {
+                                "web": {
+                                  "type": "string",
+                                  "description": "網頁版使用"
+                                },
+                                "mobile": {
+                                  "type": "string",
+                                  "description": "手機版使用"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
