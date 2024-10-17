@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "贊助商資訊 API",
+  "description": "提供贊助商資訊的 API",
+  "required": [
+    "success",
+    "message",
+    "data"
+  ],
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Request 是否成功"
+    },
+    "message": {
+      "type": "string",
+      "description": "訊息"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "name_e",
+          "data"
+        ]
+      },
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "贊助商中文名稱"
+        },
+        "name_e": {
+          "type": "string",
+          "description": "贊助商英文名稱"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "logo_path",
+              "name",
+              "name_e",
+              "sponsor_id",
+              "about_us",
+              "about_us_e",
+              "facebook_url",
+              "official_website",
+              "sponsor_type",
+              "career_information",
+              "speaker_information"
+            ]
+          },
+          "properties": {
+            "logo_path": {
+              "type": "string",
+              "description": "贊助商 LOGO url"
+            },
+            "name": {
+              "type": "string",
+              "description": "贊助商中文名稱"
+            },
+            "name_e": {
+              "type": "string",
+              "description": "贊助商英文名稱"
+            },
+            "sponsor_id": {
+              "type": "integer",
+              "description": "贊助商編號，每個贊助商一定會有一個唯一的編號"
+            },
+            "about_us": {
+              "type": "string",
+              "description": "贊助商介紹，如果沒有填寫則為空字串"
+            },
+            "about_us_e": {
+              "type": "string",
+              "description": "贊助商英文介紹，如果沒有填寫則為空字串"
+            },
+            "facebook_url": {
+              "type": "string",
+              "description": "贊助商 facebook 連結，如果沒有填寫則為空字串"
+            },
+            "official_website": {
+              "type": "string",
+              "description": "贊助商官方網站連結，如果沒有填寫則為空字串"
+            },
+            "sponsor_type": {
+              "type": "string",
+              "description": "贊助商類型"
+            },
+            "career_information": {
+              "type": "string",
+              "description": "贊助商徵才資訊連結，如果沒有填寫則為空字串"
+            },
+            "speaker_information": {
+              "type": "array",
+              "description": "贊助商講師資訊"
+            }
+          }
+        }
+      }
+    }
+  }
+}
