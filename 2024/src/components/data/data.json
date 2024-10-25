@@ -1149,6 +1149,14 @@
           "web": "https://www.micareproduction.tw/",
           "fb": "https://www.facebook.com/MicareProduction",
           "description": ""
+        },
+        {
+          "id": 5,
+          "name": "祐生研究基金會",
+          "img": "/sponsor/archilife.svg",
+          "web": "",
+          "fb": "",
+          "description": ""
         }
       ]
     },
@@ -1165,6 +1173,14 @@
           "name": "國家實驗研究院",
           "img": "/sponsor/narlabs.webp",
           "web": "https://www.narlabs.org.tw/",
+          "fb": "",
+          "description": ""
+        },
+        {
+          "id": 2,
+          "name": "六角學院",
+          "img": "/sponsor/hexschool.webp",
+          "web": "",
           "fb": "",
           "description": ""
         }
