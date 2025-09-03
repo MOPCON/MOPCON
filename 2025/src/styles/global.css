@@ -1,1 +1,17 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Mantou Sans';
+  src: url('../assets/fonts/MantouSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@theme {
+  --font-family-spaceGrotesk: 'Space Grotesk', sans-serif;
+
+  --breakpoint-mobile: 390px;
+  --breakpoint-tablet: 391px;
+  --breakpoint-desktop: 1441px;
+  --color-grey-400: #314158;
+}
