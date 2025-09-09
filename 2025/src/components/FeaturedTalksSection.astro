@@ -1,32 +1,184 @@
 ---
 // Featured Talks Section Component
-import StarIcon from '../assets/star.svg?raw';
+import StarIcon from "../assets/star.svg?raw";
 ---
 
 <section class="relative overflow-hidden bg-[var(--bg-dark)] px-8 py-16">
   <div class="mx-auto max-w-4xl">
-    <div class="flex items-center gap-3 mb-6">
+    <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-6">
       <div>
         <span
-          class="inline-flex items-center rounded-full bg-[#314158] px-3 py-1 text-xl text-white"
+          class="inline-flex items-center rounded-full bg-[#314158] px-3 py-1 text-[1.25rem] sm:text-xl text-white"
         >
-          <span class="mr-2 w-5 h-5" set:html={StarIcon}></span>
+          <span class="mr-2 w-5 h-5" set:html={StarIcon} />
           專題演講
         </span>
       </div>
 
-      <p class="text-white/90 text-xl">
-        45 分鐘 <span class="text-gray-200">(含問題及 Q&A)，並需要符合以下主題：</span>
+      <p class="text-white/90 text-base sm:text-xl">
+        45 分鐘 <span class="text-gray-200"
+          >(含問題及 Q&A)，並需要符合以下主題：</span
+        >
       </p>
     </div>
-    <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <!-- Mobile Carousel -->
+    <div class="block md:hidden">
+      <div class="carousel-container relative overflow-hidden">
+        <div
+          class="carousel-track flex transition-transform duration-300 ease-in-out"
+        >
+          <!-- Card 1: On-Device AI Technologies -->
+          <div class="carousel-slide w-full flex-shrink-0 px-2">
+            <div class="featured-talk-card">
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: var(--title-purple);"
+              >
+                On-Device AI Technologies
+              </h3>
+              <div class="star-icon">
+                <span class="w-12 h-12 text-black" set:html={StarIcon} />
+              </div>
+              <p class="text-gray-700 leading-relaxed">
+                探討各地端設備 (如手機、手錶、IoT 設備) 上執行 AI
+                應用的相關技術，包括本地大型語言模型 (Local
+                LLM)、邊緣AI框架、神經網絡硬體優化
+                (NPU)、優化型輕量級模型等，類似 Apple Intelligence 的實作方式。
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Mobile & Edge AI Hardware Platforms -->
+          <div class="carousel-slide w-full flex-shrink-0 px-2">
+            <div class="featured-talk-card">
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: var(--title-purple);"
+              >
+                Mobile & Edge AI Hardware Platforms
+              </h3>
+              <div class="star-icon">
+                <span class="w-12 h-12 text-black" set:html={StarIcon} />
+              </div>
+              <p class="text-gray-700 leading-relaxed">
+                涵蓋支援 AI 的硬體平台，如 Android、iOS、VR/AR
+                裝置、MCU、嵌入式系統 (如 Raspberry
+                Pi、Arduino、ESP32)、機器人、無人機/無人載具等，涵蓋硬體整合與效能優化的技術。
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Performance & Resource Optimization -->
+          <div class="carousel-slide w-full flex-shrink-0 px-2">
+            <div class="featured-talk-card">
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: var(--title-purple);"
+              >
+                Performance & Resource Optimization
+              </h3>
+              <div class="star-icon">
+                <span class="w-12 h-12 text-black" set:html={StarIcon} />
+              </div>
+              <p class="text-gray-700 leading-relaxed">
+                聚焦於提升效能與資源優化處理，包括硬體加速技術、功耗與記憶體優化、模型壓縮與量化效能，跨平台部署的
+                Edge Cloud 間協調機制。
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4: Privacy-Preserving AI -->
+          <div class="carousel-slide w-full flex-shrink-0 px-2">
+            <div class="featured-talk-card">
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: var(--title-purple);"
+              >
+                Privacy-Preserving AI
+              </h3>
+              <div class="star-icon">
+                <span class="w-12 h-12 text-black" set:html={StarIcon} />
+              </div>
+              <p class="text-gray-700 leading-relaxed">
+                討論本地 AI
+                如何確保隱私和資料安全，包括聯邦學習、本地推理處理、AI
+                隱私保護策略，以及保護用戶資料安全的實務設計。
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5: Real-world AI Applications -->
+          <div class="carousel-slide w-full flex-shrink-0 px-2">
+            <div class="featured-talk-card">
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: var(--title-purple);"
+              >
+                Real-world AI Applications
+              </h3>
+              <div class="star-icon">
+                <span class="w-12 h-12 text-black" set:html={StarIcon} />
+              </div>
+              <p class="text-gray-700 leading-relaxed">
+                實例探討 AI
+                在實際應用的應用，涵蓋語言助手、個人化推薦、自然語言處理、生活解題、行為感知應用、生產系統等實務案例。
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 6: Product Design & Operations -->
+          <div class="carousel-slide w-full flex-shrink-0 px-2">
+            <div class="featured-talk-card">
+              <h3
+                class="text-xl font-bold mb-4"
+                style="color: var(--title-purple);"
+              >
+                Product Design & Operations
+              </h3>
+              <div class="star-icon">
+                <span class="w-12 h-12 text-black" set:html={StarIcon} />
+              </div>
+              <p class="text-gray-700 leading-relaxed">
+                涵蓋 UI/UX
+                設計、專案管理、產品生命週期管理、適配市場的設計思維，或其他協助在部份的設計實踐工作。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Indicators -->
+      <div class="flex justify-center mt-6 space-x-2">
+        <button
+          class="carousel-dot w-3 h-3 rounded-full bg-white/30 transition-all duration-200"
+          data-slide="0"></button>
+        <button
+          class="carousel-dot w-3 h-3 rounded-full bg-white/30 transition-all duration-200"
+          data-slide="1"></button>
+        <button
+          class="carousel-dot w-3 h-3 rounded-full bg-white/30 transition-all duration-200"
+          data-slide="2"></button>
+        <button
+          class="carousel-dot w-3 h-3 rounded-full bg-white/30 transition-all duration-200"
+          data-slide="3"></button>
+        <button
+          class="carousel-dot w-3 h-3 rounded-full bg-white/30 transition-all duration-200"
+          data-slide="4"></button>
+        <button
+          class="carousel-dot w-3 h-3 rounded-full bg-white/30 transition-all duration-200"
+          data-slide="5"></button>
+      </div>
+    </div>
+
+    <!-- Desktop Grid -->
+    <div class="hidden md:grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <!-- Card 1: On-Device AI Technologies -->
       <div class="featured-talk-card">
         <h3 class="text-xl font-bold mb-4" style="color: var(--title-purple);">
           On-Device AI Technologies
         </h3>
         <div class="star-icon">
-          <span class="w-12 h-12 text-black" set:html={StarIcon}></span>
+          <span class="w-12 h-12 text-black" set:html={StarIcon} />
         </div>
         <p class="text-gray-700 leading-relaxed">
           探討各地端設備 (如手機、手錶、IoT 設備) 上執行 AI
@@ -42,7 +194,7 @@ import StarIcon from '../assets/star.svg?raw';
           Mobile & Edge AI Hardware Platforms
         </h3>
         <div class="star-icon">
-          <span class="w-12 h-12 text-black" set:html={StarIcon}></span>
+          <span class="w-12 h-12 text-black" set:html={StarIcon} />
         </div>
         <p class="text-gray-700 leading-relaxed">
           涵蓋支援 AI 的硬體平台，如 Android、iOS、VR/AR 裝置、MCU、嵌入式系統
@@ -57,7 +209,7 @@ import StarIcon from '../assets/star.svg?raw';
           Performance & Resource Optimization
         </h3>
         <div class="star-icon">
-          <span class="w-12 h-12 text-black" set:html={StarIcon}></span>
+          <span class="w-12 h-12 text-black" set:html={StarIcon} />
         </div>
         <p class="text-gray-700 leading-relaxed">
           聚焦於提升效能與資源優化處理，包括硬體加速技術、功耗與記憶體優化、模型壓縮與量化效能，跨平台部署的
@@ -71,7 +223,7 @@ import StarIcon from '../assets/star.svg?raw';
           Privacy-Preserving AI
         </h3>
         <div class="star-icon">
-          <span class="w-12 h-12 text-black" set:html={StarIcon}></span>
+          <span class="w-12 h-12 text-black" set:html={StarIcon} />
         </div>
         <p class="text-gray-700 leading-relaxed">
           討論本地 AI 如何確保隱私和資料安全，包括聯邦學習、本地推理處理、AI
@@ -85,7 +237,7 @@ import StarIcon from '../assets/star.svg?raw';
           Real-world AI Applications
         </h3>
         <div class="star-icon">
-          <span class="w-12 h-12 text-black" set:html={StarIcon}></span>
+          <span class="w-12 h-12 text-black" set:html={StarIcon} />
         </div>
         <p class="text-gray-700 leading-relaxed">
           實例探討 AI
@@ -99,7 +251,7 @@ import StarIcon from '../assets/star.svg?raw';
           Product Design & Operations
         </h3>
         <div class="star-icon">
-          <span class="w-12 h-12 text-black" set:html={StarIcon}></span>
+          <span class="w-12 h-12 text-black" set:html={StarIcon} />
         </div>
         <p class="text-gray-700 leading-relaxed">
           涵蓋 UI/UX
@@ -193,4 +345,107 @@ import StarIcon from '../assets/star.svg?raw';
     position: relative;
     z-index: 2;
   }
+
+  /* Carousel specific styles */
+  .carousel-dot.active {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+  }
+
+  .carousel-dot:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector(".carousel-track") as HTMLElement;
+    const dots = document.querySelectorAll(".carousel-dot");
+    let currentSlide = 0;
+    const totalSlides = dots.length;
+
+    function updateCarousel() {
+      if (track) {
+        const translateX = -currentSlide * 100;
+        track.style.transform = `translateX(${translateX}%)`;
+      }
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentSlide);
+      });
+    }
+
+    // Add click event to dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        currentSlide = index;
+        updateCarousel();
+      });
+    });
+
+    // Auto-play carousel
+    let autoPlay = setInterval(() => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }, 4000);
+
+    // Pause auto-play on hover
+    const carouselContainer = document.querySelector(".carousel-container");
+    if (carouselContainer) {
+      carouselContainer.addEventListener("mouseenter", () => {
+        clearInterval(autoPlay);
+      });
+
+      carouselContainer.addEventListener("mouseleave", () => {
+        autoPlay = setInterval(() => {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          updateCarousel();
+        }, 4000);
+      });
+    }
+
+    // Touch/swipe support for mobile
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+
+    if (track) {
+      track.addEventListener("touchstart", (e: TouchEvent) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        clearInterval(autoPlay);
+      });
+
+      track.addEventListener("touchmove", (e: TouchEvent) => {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+        e.preventDefault();
+      });
+
+      track.addEventListener("touchend", () => {
+        if (!isDragging) return;
+        isDragging = false;
+
+        const diffX = startX - currentX;
+        const threshold = 50;
+
+        if (diffX > threshold && currentSlide < totalSlides - 1) {
+          currentSlide++;
+        } else if (diffX < -threshold && currentSlide > 0) {
+          currentSlide--;
+        }
+
+        updateCarousel();
+
+        // Restart auto-play
+        autoPlay = setInterval(() => {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          updateCarousel();
+        }, 4000);
+      });
+    }
+
+    // Initialize
+    updateCarousel();
+  });
+</script>
