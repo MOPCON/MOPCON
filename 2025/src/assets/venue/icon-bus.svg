@@ -1,0 +1,15 @@
+<svg width="44" height="32" viewBox="0 0 44 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14 2V14M28 2V14M2 14H41.2M34 26H40C40 26 41 22.6 41.6 20.4C41.8 19.6 42 18.8 42 18C42 17.2 41.8 16.4 41.6 15.6L38.8 5.6C38.2 3.6 36.2 2 34 2H6C4.93913 2 3.92172 2.42143 3.17157 3.17157C2.42143 3.92172 2 4.93913 2 6V26H8M34 26C34 28.2091 32.2091 30 30 30C27.7909 30 26 28.2091 26 26M34 26C34 23.7909 32.2091 22 30 22C27.7909 22 26 23.7909 26 26M8 26C8 28.2091 9.79086 30 12 30C14.2091 30 16 28.2091 16 26M8 26C8 23.7909 9.79086 22 12 22C14.2091 22 16 23.7909 16 26M26 26H16" stroke="url(#paint0_radial_49_1799)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<radialGradient id="paint0_radial_49_1799" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(46.1758 -12.8485) rotate(90.3235) scale(38.9249 80.6587)">
+<stop offset="0.0729167" stop-color="#FBFBFD"/>
+<stop offset="0.244792" stop-color="#C8D4DA"/>
+<stop offset="0.434957" stop-color="white"/>
+<stop offset="0.532623" stop-color="#AEC0CE"/>
+<stop offset="0.658692" stop-color="#E3E9EE"/>
+<stop offset="0.708863" stop-color="#FAFBFC"/>
+<stop offset="0.861413" stop-color="#D6DFE6"/>
+<stop offset="0.921875" stop-color="#B8C9D3"/>
+</radialGradient>
+</defs>
+</svg>

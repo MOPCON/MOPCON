@@ -1,9 +1,10 @@
+@import 'tailwindcss';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
 @font-face {
   font-family: 'Mantou Sans';
   src: url('../assets/fonts/MantouSans-Regular.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -16,6 +17,14 @@
   font-display: swap;
 }
 
-@tailwind base;
-@tailwind components;
+@theme {
+  --font-family-spaceGrotesk: 'Space Grotesk', sans-serif;
+
+  --breakpoint-mobile: 390px;
+  --breakpoint-tablet: 391px;
+  --breakpoint-desktop: 1441px;
+  --color-grey-400: #314158;
+}
+
+@import "tailwindcss/preflight";
 @tailwind utilities;
