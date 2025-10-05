@@ -1,0 +1,38 @@
+---
+---
+
+<button
+    class="relative flex justify-center items-center py-4 px-6 rounded-full w-full max-w-[368px] h-[64px] isolate mt-auto overflow-hidden"
+>
+    <!-- BG layer -->
+    <div class="absolute inset-0"></div>
+
+    <!-- Blur layer (first one) -->
+    <div class="absolute -left-[26px] -right-[26px] -top-[26px] -bottom-[26px] opacity-67"></div>
+
+    <!-- Mask layer -->
+    <div class="absolute -left-[50px] -right-[50px] -top-[50px] -bottom-[50px] bg-white"></div>
+
+    <!-- Shape layer -->
+    <div class="absolute left-[76px] right-[76px] top-[76px] bottom-[76px] bg-black rounded-[1000px]"></div>
+
+    <!-- Blur layer (second one) -->
+    <div class="absolute left-[26px] right-[26px] top-[28px] bottom-[24px] rounded-[1000px]"
+        style="background: rgba(0, 0, 0, 0.04); backdrop-filter: blur(20px); filter: blur(10px); background-blend-mode: hard-light;"
+    ></div>
+
+    <!-- Fill layer -->
+    <div class="absolute inset-0 rounded-[296px]"
+        style="background: linear-gradient(0deg, #F7F7F7, #F7F7F7), rgba(255, 255, 255, 0.7); background-blend-mode: plus-darker, normal;"
+    ></div>
+
+    <!-- Glass Effect layer -->
+    <div class="absolute inset-0 bg-black/[0.001] rounded-[296px]"></div>
+
+    <!-- Text content -->
+    <span class="relative z-10 font-['Space Grotesk'] text-[20px] font-bold leading-[1.2] text-[#020618] flex justify-center items-center"
+        style="font-feature-settings: 'ss16' on;"
+    >
+        <slot />
+    </span>
+</button>
