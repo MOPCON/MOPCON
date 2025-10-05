@@ -9,9 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
     "@tailwindcss/vite": "^4.1.12",
     "astro": "^5.13.2",
     "sass": "^1.91.0",
     "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6"
   }
 }
