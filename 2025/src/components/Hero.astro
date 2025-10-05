@@ -1,0 +1,96 @@
+---
+import "../styles/global.css";
+import clouds from "../assets/hero/clouds.svg";
+import ellipse from "../assets/hero/ellipse.png";
+import title from "../assets/hero/title.png";
+import star from "../assets/hero/star.svg";
+import Typewriter from "../components/hero/Typewriter.astro";
+
+
+const typeWriteMsg = ["Warning: Our hardware thinks."];
+---
+
+<div class="bg-[#020618] relative min-h-screen flex flex-col">
+	<!-- 背景圖片層 -->
+	<div class="absolute inset-0 z-[1]">
+		<img 
+			id="clouds" 
+			src={clouds.src} 
+			alt="" 
+			class="w-full h-auto"
+		/>
+		<img 
+			id="ellipse" 
+			src={ellipse.src} 
+			alt="" 
+			class="absolute top-1/4 w-500 h-auto object-contain"
+		/>
+	</div>
+
+	<!-- 頂部內容 -->
+	<div class="z-50 w-full flex justify-between p-10">
+		<div class="">
+			<img
+				id="title"
+				src={title.src}
+				alt=""
+				class=""
+			>
+			<div class='flex mt-6 gap-3'> 
+				<img 
+					id="star" 
+					src={star.src} 
+					alt="" 
+					class="h-7" 
+				>
+				<p class="text-3xl text-white leading-7">行動科技年會</p>
+				<img
+					id="star"
+					src={star.src}
+					alt=""
+					class="h-7"
+				>
+			</div>
+		</div>
+		<div class="">
+			<p class="text-4xl text-white">11.01 → 11.02</p>
+			<p class="text-4xl text-white">@ICC TAINAN</p>
+			<div class="flex gap-2 mt-3">
+				<button 
+					class="bg-gray-400 text-black font-bold py-2 px-4 rounded-full 
+					hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] 
+					active:bg-gray-300 transition-all duration-200">
+					大會議程
+				</button>
+				<button 
+					class="group bg-cyan-400 text-black font-bold py-2 px-4 rounded-full 
+					hover:bg-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.8)] 
+					active:bg-cyan-500 transition-all duration-200">
+					立即購票 
+					<span class="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1">→</span>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="flex-1"></div>
+	<div class="z-50 w-full px-6">
+		<div class="relative">
+			{/* 靜態背景文字 - 完全重疊 */}
+			<p class="font-bold text-white text-5xl py-10 opacity-50">
+				{typeWriteMsg[0]}
+			</p>
+
+			{/* 動態前景文字 - 完全重疊 */}
+			<div class="absolute inset-0">
+				<Typewriter
+					words={typeWriteMsg}
+					speed={3000}
+					deleteSpeed={3000}
+					pauseTime={3000}
+					className="font-bold text-white text-5xl py-10"
+				/>
+			</div>
+		</div>
+	</div>
+</div>

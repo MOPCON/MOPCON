@@ -1,0 +1,130 @@
+---
+export interface Props {
+  words: string[];
+  speed?: number;
+  deleteSpeed?: number;
+  pauseTime?: number;
+  loop?: boolean;
+  cursor?: string;
+  className?: string;
+}
+
+const { 
+  words, 
+  speed = 3000, 
+  deleteSpeed = 3000, 
+  pauseTime = 3000, 
+  loop = true,
+  cursor = "|",
+  className = ""
+} = Astro.props;
+---
+
+<div class={`${className}`}>
+  <span id="typewriter-text"></span>
+  <span class="cursor" id="cursor">{cursor}</span>
+</div>
+
+<style>
+  
+  .cursor {
+    animation: blink 1s infinite;
+    color: currentColor;
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+</style>
+
+<script define:vars={{ words, speed, deleteSpeed, pauseTime, loop }}>
+  class TypeWriter {
+    constructor(element, words, options = {}) {
+      this.element = element;
+      this.words = words;
+      this.totalTypingTime = options.speed || 3000;
+      this.totalDeletingTime = options.deleteSpeed || 3000;
+      this.pauseTime = options.pauseTime || 3000;
+      this.loop = options.loop !== false;
+      
+      this.currentWordIndex = 0;
+      this.currentCharIndex = 0;
+      this.isDeleting = false;
+      this.isPaused = false;
+      
+      this.start();
+    }
+    
+    start() {
+      this.type();
+    }
+    
+    type() {
+      const currentWord = this.words[this.currentWordIndex];
+      
+      if (this.isPaused) {
+        setTimeout(() => {
+          this.isPaused = false;
+          this.type();
+        }, this.pauseTime);
+        return;
+      }
+      
+      if (this.isDeleting) {
+        this.element.textContent = currentWord.substring(0, this.currentCharIndex - 1);
+        this.currentCharIndex--;
+        
+        if (this.currentCharIndex === 0) {
+          this.isDeleting = false;
+          this.currentWordIndex = (this.currentWordIndex + 1) % this.words.length;
+          
+          if (!this.loop && this.currentWordIndex === 0 && this.currentCharIndex === 0) {
+            return;
+          }
+        }
+        
+        const deleteSpeed = this.totalDeletingTime / currentWord.length;
+        setTimeout(() => this.type(), deleteSpeed);
+      } else {
+        this.element.textContent = currentWord.substring(0, this.currentCharIndex + 1);
+        this.currentCharIndex++;
+        
+        if (this.currentCharIndex === currentWord.length) {
+          this.isPaused = true;
+          this.isDeleting = true;
+        }
+        
+        const typeSpeed = this.totalTypingTime / currentWord.length;
+        setTimeout(() => this.type(), typeSpeed);
+      }
+    }
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const element = document.getElementById('typewriter-text');
+    if (element && words.length > 0) {
+      new TypeWriter(element, words, {
+        speed: speed,
+        deleteSpeed: deleteSpeed,
+        pauseTime: pauseTime,
+        loop
+      });
+      element.setAttribute('data-typewriter-initialized', 'true');
+    }
+  });
+
+  // Initialize for Astro page transitions
+  document.addEventListener('astro:page-load', () => {
+    const element = document.getElementById('typewriter-text');
+    if (element && words.length > 0 && !element.hasAttribute('data-typewriter-initialized')) {
+      new TypeWriter(element, words, {
+        speed: speed,
+        deleteSpeed: deleteSpeed,
+        pauseTime: pauseTime,
+        loop
+      });
+      element.setAttribute('data-typewriter-initialized', 'true');
+    }
+  });
+</script>
