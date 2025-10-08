@@ -1,6 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
+
+import { Image } from 'astro:assets';
+
+import heroBg from '../assets/hero-bg.jpg';
+import mopconLogo from '../assets/mopcon.svg';
+import volunteer from '../assets/volunteer.png';
+import sponsor from '../assets/sponsor.png';
+import starWhite from '../assets/star_white.svg';
+import sectionBg from '../assets/SectionBg.svg';
 ---
 
 <style is:global>
@@ -15,11 +24,7 @@ import Button from "../components/Button.astro";
         <section
             class="relative w-full flex flex-col items-center overflow-visible px-6 py-[120px] tablet:p-[120px] desktop:px-[240px]"
         >
-            <div
-                class="absolute top-0 left-0 w-full h-[87px] tablet:h-[230px] desktop:h-[323px] bg-gradient-to-b from-black/0 to-[#020618]"
-                style="background-image: url('/bg-sponsor.jpg'); background-size: cover; background-position: center;"
-            >
-            </div>
+            <Image src={heroBg} alt="Hero Background" class="absolute top-0 left-0 w-full h-[87px] tablet:h-[230px] desktop:h-[323px] object-cover" />
 
             <div
                 class="relative z-10 w-full flex flex-col items-center gap-10 text-white"
@@ -55,7 +60,7 @@ import Button from "../components/Button.astro";
                     </p>
                     <p class="font-noto text-[20px] font-bold leading-8">
                         無論你是對最新的科技趨勢充滿好奇，還是想要尋找實際的技術解決方案，MOPCON
-                        2024
+                        2025
                         都將為你提供豐富的內容和多樣的活動。我們希望促進南部地區的科技發展，並為在地社群帶來更多的機會與挑戰。
                     </p>
                 </div>
@@ -85,8 +90,8 @@ import Button from "../components/Button.astro";
                     >
                         成為
                     </span>
-                    <img
-                        src="/mopcon.svg"
+                    <Image
+                        src={mopconLogo}
                         alt="MOPCON Icon"
                         class="flex-shrink-0 tablet:h-[38px] tablet:w-[283.27px] desktop:h-[48px] desktop:w-[350px]"
                     />
@@ -110,9 +115,17 @@ import Button from "../components/Button.astro";
                             </h4>
                         </div>
                         <div
-                            class="rounded-3xl border-8 border-[#314158] overflow-hidden w-full aspect-[5/3]"
-                            style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) 88.42%, #5755A4 100%), url('/volunteer.png'); background-size: cover; background-position: center;"
+                            class="rounded-3xl border-8 border-[#314158] overflow-hidden w-full aspect-[5/3] relative"
                         >
+                            <Image
+                                src={volunteer}
+                                alt="Volunteer Image"
+                                class="w-full h-full object-cover"
+                            />
+                            <div
+                                class="absolute inset-0"
+                                style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) 88.42%, #5755A4 100%);"
+                            />
                         </div>
                         <p
                             class="font-noto text-[18px] font-bold leading-7 text-[#EBEBED]"
@@ -134,9 +147,17 @@ import Button from "../components/Button.astro";
                             </h4>
                         </div>
                         <div
-                            class="rounded-3xl border-8 border-[#314158] overflow-hidden w-full aspect-[5/3]"
-                            style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) 88.42%, #5755A4 100%), url('/sponsor.png'); background-size: cover; background-position: center;"
+                            class="rounded-3xl border-8 border-[#314158] overflow-hidden w-full aspect-[5/3] relative"
                         >
+                            <Image
+                                src={sponsor}
+                                alt="Sponsor Image"
+                                class="w-full h-full object-cover"
+                            />
+                            <div
+                                class="absolute inset-0"
+                                style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) 88.42%, #5755A4 100%);"
+                            />
                         </div>
                         <p
                             class="font-noto text-[18px] font-bold leading-7 text-[#EBEBED]"
@@ -153,11 +174,7 @@ import Button from "../components/Button.astro";
         <section
             class="relative w-full flex flex-col items-center px-6 py-12 tablet:px-[120px] tablet:py-24 desktop:px-[240px] text-white"
         >
-            <div
-                class="absolute left-1/2 -translate-x-1/2 top-[500px] tablet:top-[648px] desktop:top-[560px] z-0 h-[429px] w-full max-w-[1756px] -rotate-7 rounded-[18px]"
-                style="background-image: url('/Ellipse_7.svg'); background-size: cover; background-position: center; background-repeat: no-repeat;"
-            >
-            </div>
+            <Image src={sectionBg} alt="Section Background" class="absolute left-1/2 -translate-x-1/2 top-[500px] tablet:top-[648px] desktop:top-[560px] z-0 h-[429px] w-full max-w-[1756px] -rotate-7 rounded-[18px]" />
             <div class="z-10 flex max-w-4xl flex-col items-start gap-5">
                 <a
                     href="#"
@@ -165,7 +182,7 @@ import Button from "../components/Button.astro";
     inline-flex h-10 items-center justify-center gap-1
     rounded-full bg-[#314158] py-2 px-4 w-[200.99px]"
                 >
-                    <img src="/Ellipse 6.svg" alt="Ellipse 6" class="w-6 h-6" />
+                    <Image src={starWhite} alt="Section Background" class="w-6 h-6" />
                     <span>CODE OF CONDUCT</span>
                 </a>
                 <h2 class="font-mantou text-[36px] leading-[1.2]">
