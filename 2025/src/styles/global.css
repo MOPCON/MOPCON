@@ -1,6 +1,7 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
-@import "tailwindcss/preflight";
+
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
 @font-face {
@@ -19,20 +20,15 @@
   font-display: swap;
 }
 
-@theme {
-  --font-family-spaceGrotesk: 'Space Grotesk', sans-serif;
-
-  --breakpoint-mobile: 390px;
-  --breakpoint-tablet: 391px;
-  --breakpoint-desktop: 1441px;
-  --color-grey-400: #314158;
-}
-
-
 :root {
   --bg-dark: #020618;
   --gradient-start: #607BDA;
   --gradient-end: #B8C3F0;
   --title-purple: #5755A4;
   --mopcon-bg: #314158;
+  --font-family-spaceGrotesk: 'Space Grotesk', sans-serif;
+  --breakpoint-mobile: 390px;
+  --breakpoint-tablet: 391px;
+  --breakpoint-desktop: 1441px;
+  --color-grey-400: #314158;
 }
