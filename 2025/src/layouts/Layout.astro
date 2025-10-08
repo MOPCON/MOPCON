@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
 ---
 
 <!doctype html>
@@ -8,10 +9,15 @@ import "../styles/global.css";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!-- Import the font files -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>MOPCON 2025 - 南台灣最大行動科技年會</title>
 	</head>
 	<body>
+		<Navbar />
 		<slot />
 	</body>
 </html>
@@ -19,8 +25,9 @@ import "../styles/global.css";
 <style>
 	html,
 	body {
-		margin: 0;
-		width: 100%;
+		max-width: 1440px;
 		height: 100%;
+		margin: 0 auto;
+		background-color: #020618;
 	}
 </style>
