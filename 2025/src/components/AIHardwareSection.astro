@@ -1,6 +1,7 @@
 ---
 // AI x Hardware Section Component
-import StarIcon from "../assets/star.svg?raw";
+import StarIcon from "../assets/star_white.svg";
+import { Image } from 'astro:assets';
 ---
 
 <section class="relative overflow-hidden bg-[var(--bg-dark)] px-8 py-16">
@@ -9,7 +10,7 @@ import StarIcon from "../assets/star.svg?raw";
       <span
         class="inline-flex items-center rounded-full bg-[#314158] px-3 py-1 text-[1.25rem] sm:text-xl text-white"
       >
-        <span class="mr-2 w-5 h-5" set:html={StarIcon} />
+        <Image src={StarIcon} alt="Star Icon" class="w-6 h-6 mr-1" />
         議程主軸
       </span>
     </div>
