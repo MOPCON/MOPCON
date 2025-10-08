@@ -14,18 +14,23 @@ const transports = [
   {
     icon: BusIcon,
     title: '公車 Bus',
-    desc: 'H31/62路/綠16  搭至高鐵台南站，\n步行約 5 分鐘',
+    desc: '高雄科大(楠梓)：6號公車、29號公車、市公車28、市公車301、7C公車',
   },
   {
     icon: HSRIcon,
     title: '高鐵 HSR',
-    desc: '從高鐵台南站步行約 3 分鐘即可抵達',
+    desc: '由左營高鐵站搭捷運至後勁站下車，步行100公尺即可到達',
   },
   {
     icon: TrainIcon,
     title: '火車 Train',
-    desc: '從台南火車站搭乘沙崙線至沙崙站下車，\n步行約 8 分鐘即可抵達',
+    desc: '楠梓火車站 > 6號公車/29號公車 > 高雄科大(楠梓)\n高雄火車站 > 28公車/301號公車 > 後勁國中',
   },
+  {
+    icon: TrainIcon,
+    title: '捷運 MRT',
+    desc: '搭乘高雄捷運於後勁站下車，步行100公尺即可到達',
+  }
 ];
 
 const cardItems = [
@@ -200,9 +205,9 @@ const cardItems = [
     <div class="flex flex-col md:grid md:grid-cols-2 mb-6">
       <Image class="border-8 mb-8 border-grey-400 rounded-3xl" src={venueImage} alt="Venue Image" />
       <div class="md:p-6">
-        <h2 class="venue__section__info-location font-mantou text-4xl">大台南會展中心</h2>
-        <div class="venue__section__info-location font-mantou text-2xl">ICC TAINAN</div>
-        <div class="flex gap-1 my-6 text-lg"><MapPinIcon />臺南市歸仁區歸仁十二路3號</div>
+        <h2 class="venue__section__info-location font-mantou text-4xl">高雄科技大學 楠梓校區</h2>
+        <div class="venue__section__info-location font-mantou text-2xl">NKUST Nanzi Campus</div>
+        <div class="flex gap-1 my-6 text-lg"><MapPinIcon />高雄市楠梓區瑞屏里025鄰海專路142號</div>
         <a href="#" class="venue__section__info-link mb-3 rounded-3xl text-black">打開Google Map<ExternalLinkIcon /></a>
       </div>
     </div>
