@@ -1,0 +1,125 @@
+---
+import { Image } from 'astro:assets';
+
+import mopconLogo from '../assets/mopcon.svg';
+import starWhite from '../assets/star_white.svg';
+
+const currentPath = Astro.url.pathname;
+const links = [
+  { href: '/about', label: '主辦單位' },
+  { href: '/agenda', label: '議程介紹' },
+  { href: '/sponsor', label: '贊助夥伴' },
+  { href: '/time-machine', label: '時光機' },
+];
+---
+
+<nav class="navbar">
+  <div class="navbar__inner">
+    <a class="navbar__brand" href="/">
+      <Image src={mopconLogo} alt="MOPCON Logo" class="my-auto w-[90%]" />
+    </a>
+    <ul class="navbar__menu">
+      {links.map(({ href, label }) => {
+        const active = currentPath === href;
+        return (
+          <li>
+            <a href={href} class={active ? 'is-active' : ''}>
+              {active && (
+                <span class="navbar__star">
+                  <Image src={starWhite} alt="active" width={12} height={12} />
+                </span>
+              )}
+              {label}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+  
+  <!-- mobile placeholder for future toggle; hidden on desktop -->
+  <div class="navbar__spacer"></div>
+</nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    width: 100%;
+    margin: 0 auto;
+    background: linear-gradient(180deg, rgba(2,6,24,0.5) 0%, rgba(6,12,34,0.5) 100%);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(96, 123, 218, 0.15);
+  }
+
+  .navbar__inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 24px;
+    width: 92%;
+  }
+
+  .navbar__brand {
+    font-family: 'Mantou Sans', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  .navbar__menu {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar__menu a {
+    font-family: var(--font-family-spaceGrotesk, 'Space Grotesk', sans-serif);
+    color: #E5E7EB;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 150ms ease, opacity 150ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .navbar__star {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar__menu a:hover {
+    color: #FFFFFF;
+  }
+
+  .navbar__spacer {
+    height: 0;
+  }
+
+  @media (max-width: 960px) {
+    .navbar__inner {
+      padding: 24px 12px;
+    }
+    .navbar__menu {
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .navbar__menu {
+      display: none;
+    }
+  }
+</style>
