@@ -36,15 +36,15 @@ const topics = [
     <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-6">
       <div>
         <span
-          class="inline-flex items-center rounded-full bg-[#314158] px-3 py-1 text-[1.25rem] sm:text-xl text-white"
+          class="inline-flex items-center rounded-full bg-[#314158] px-4 py-2 text-[1.25rem] sm:text-xl font-bold text-white"
         >
           <Image src={StarIcon} alt="Star Icon" class="w-6 h-6 mr-1" />
           專題演講
         </span>
       </div>
 
-      <p class="text-white/90 text-base sm:text-xl">
-        45 分鐘 <span class="text-gray-200"
+      <p class="text-white/90 text-base sm:text-xl font-bold">
+        45 分鐘 <span class="text-gray-400"
           >(含問題及 Q&A)，並需要符合以下主題：</span
         >
       </p>
@@ -90,11 +90,11 @@ const topics = [
     <div class="hidden md:grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {topics.map((topic, index) => (
         <div class="featured-talk-card">
-          <h3 class="text-xl font-bold mb-4" style="color: var(--title-purple);">
+          <h3 class="text-3xl font-bold mb-4" style="color: var(--title-purple);">
             {topic.title}
           </h3>
           <div class="star-icon">
-            <Image src={StarIcon} alt="Star Icon" class="w-12 h-12" />
+            <Image src={StarIcon} alt="Star Icon" class="w-14 h-14" />
           </div>
           <p class="text-gray-700 leading-relaxed">
             {topic.description}
@@ -134,9 +134,17 @@ const topics = [
   }
 
   .featured-talk-card h3 {
-    min-height: 3rem;
+    /* Reserve consistent space for headings so the star rows align */
+    min-height: 7rem;
     display: flex;
     align-items: flex-start;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 767px) {
+    .featured-talk-card h3 {
+      min-height: 3.5rem;
+    }
   }
 
   .featured-talk-card .star-icon {

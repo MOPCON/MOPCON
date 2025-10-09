@@ -1,71 +1,47 @@
 ---
 import "../styles/global.css";
 import clouds from "../assets/hero/clouds.svg";
-import ellipse from "../assets/hero/ellipse.png";
+import ellipse from "../assets/hero/Hero.png";
 import title from "../assets/hero/title.png";
 import star from "../assets/hero/star.svg";
 import Typewriter from "../components/hero/Typewriter.astro";
+import { Image } from 'astro:assets';
 
 
 const typeWriteMsg = ["Warning: Our hardware thinks."];
 ---
 
-<div class="bg-[#020618] relative min-h-screen flex flex-col">
+<div class="bg-[#020618] min-h-screen flex flex-col pt-24 px-10 md:pt-[6.25rem]">
 	<!-- 背景圖片層 -->
-	<div class="absolute inset-0 z-[1]">
-		<img 
-			id="clouds" 
-			src={clouds.src} 
-			alt="" 
-			class="w-full h-auto"
-		/>
-		<img 
-			id="ellipse" 
-			src={ellipse.src} 
-			alt="" 
-			class="absolute top-1/4 w-500 h-auto object-contain"
-		/>
+	<div class="absolute inset-0 z-[1] overflow-hidden">
+		<Image src={clouds} alt="Clouds" class="absolute top-0 max-sm:top-[50px] w-full h-auto object-contain" />
+		<Image src={ellipse} alt="Ellipse" class="absolute top-1/4 max-lg:top-1/2 max-sm:top-1/3 max-sm:-left-2/3 max-sm:min-w-[900px] h-auto object-contain" />
 	</div>
 
 	<!-- 頂部內容 -->
-	<div class="z-50 w-full flex justify-between p-10">
+	<div class="z-40 w-full flex max-sm:flex-col justify-between px-10 max-sm:px-6">
 		<div class="">
-			<img
-				id="title"
-				src={title.src}
-				alt=""
-				class=""
-			>
-			<div class='flex mt-6 gap-3'> 
-				<img 
-					id="star" 
-					src={star.src} 
-					alt="" 
-					class="h-7" 
-				>
-				<p class="text-3xl text-white leading-7">行動科技年會</p>
-				<img
-					id="star"
-					src={star.src}
-					alt=""
-					class="h-7"
-				>
+			<Image src={title} alt="Title" class="w-[300px] max-sm:w-[250px]" />
+			<div class='flex mt-6 max-sm:mt-4 items-center'> 
+				<Image src={star} alt="Star" class="h-7 max-sm:h-6" />
+				<p class="text-3xl text-white font-bold leading-7 max-sm:text-2xl">行動科技年會</p>
+				<Image src={star} alt="Star" class="h-7 max-sm:h-6" />
 			</div>
 		</div>
-		<div class="">
-			<p class="text-4xl text-white">11.01 → 11.02</p>
-			<p class="text-4xl text-white">@ICC TAINAN</p>
+		<div class="flex-col flex items-end max-sm:absolute max-sm:bottom-4 max-sm:left-6 max-sm:items-start">
+			<p class="text-5xl font-bold text-white max-lg:text-4xl">11.08 → 11.09</p>
+			<p class="text-4xl font-bold text-white max-lg:text-3xl">@NKUST Nanzi Campus</p>
 			<div class="flex gap-2 mt-3">
 				<button 
-					class="bg-gray-400 text-black font-bold py-2 px-4 rounded-full 
+					class="bg-gray-400 text-black text-xl font-bold py-5 px-8 rounded-full 
 					hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] 
-					active:bg-gray-300 transition-all duration-200">
+					active:bg-gray-300 transition-all duration-200 max-lg:text-lg max-lg:py-4 max-lg:px-6">
 					大會議程
 				</button>
 				<button 
-					class="group bg-cyan-400 text-black font-bold py-2 px-4 rounded-full 
+					class="group bg-cyan-400 text-black text-xl font-bold py-5 px-8 rounded-full 
 					hover:bg-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.8)] 
-					active:bg-cyan-500 transition-all duration-200">
+					active:bg-cyan-500 transition-all duration-200 max-lg:text-lg max-lg:py-4 max-lg:px-6">
 					立即購票 
 					<span class="inline-block transition-transform duration-300 ease-out group-hover:translate-x-1">→</span>
 				</button>
@@ -74,23 +50,24 @@ const typeWriteMsg = ["Warning: Our hardware thinks."];
 	</div>
 
 	<div class="flex-1"></div>
-	<div class="z-50 w-full px-6">
-		<div class="relative">
-			{/* 靜態背景文字 - 完全重疊 */}
-			<p class="font-bold text-white text-5xl py-10 opacity-50">
-				{typeWriteMsg[0]}
-			</p>
+</div>
 
-			{/* 動態前景文字 - 完全重疊 */}
-			<div class="absolute inset-0">
-				<Typewriter
-					words={typeWriteMsg}
-					speed={3000}
-					deleteSpeed={3000}
-					pauseTime={3000}
-					className="font-bold text-white text-5xl py-10"
-				/>
-			</div>
+<div class="z-40 w-full px-6 sm:absolute sm:bottom-2 sm:left-14">
+	<div class="relative">
+		{/* 靜態背景文字 - 完全重疊 */}
+		<p class="font-bold text-white text-5xl max-lg:text-4xl py-10 opacity-50 font-mantou">
+			{typeWriteMsg[0]}
+		</p>
+
+		{/* 動態前景文字 - 完全重疊 */}
+		<div class="absolute inset-0">
+			<Typewriter
+				words={typeWriteMsg}
+				speed={3000}
+				deleteSpeed={3000}
+				pauseTime={3000}
+				className="font-bold text-white text-5xl max-lg:text-4xl py-10"
+			/>
 		</div>
 	</div>
 </div>
