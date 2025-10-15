@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SegmentedControl from '../components/SegmentedControl.astro';
+import FilterChip from '../components/FilterChip.astro';
+import SessionCard from '../components/SessionCard.astro';
+import SessionModal from '../components/SessionModal.astro';
+
+const dates = [
+  { label: '11/8 (六)', value: 'day1' },
+  { label: '11/9 (日)', value: 'day2' },
+];
+
+const topics = [
+  'On-Device AI Technologies',
+  'Mobile & Edge AI Hardware Platforms',
+  'Performance & Resource Optimization',
+  'Privacy-Preserving AI',
+  'Real-world AI Applications',
+  'Product Design & Operations',
+];
+
+// Fixed routine slots for the day
+const routine = [
+  { start: '08:30', end: '09:00', type: 'event', label: '報到 Registration' },
+  { start: '09:00', end: '09:15', type: 'event', label: 'Opening / Second Opening' },
+  { start: '09:15', end: '10:00', type: 'talk' },
+  { start: '10:00', end: '10:15', type: 'event', label: 'Break' },
+  { start: '10:15', end: '11:00', type: 'talk' },
+  { start: '11:00', end: '11:15', type: 'event', label: 'Break' },
+  { start: '11:15', end: '12:00', type: 'talk' },
+  { start: '12:00', end: '13:15', type: 'event', label: 'Lunch' },
+  { start: '13:15', end: '14:00', type: 'talk' },
+  { start: '14:00', end: '14:15', type: 'event', label: 'Lunch' },
+  { start: '14:15', end: '15:00', type: 'talk' },
+  { start: '15:00', end: '15:30', type: 'event', label: 'Tea time' },
+  { start: '15:30', end: '16:15', type: 'talk' },
+  { start: '16:15', end: '16:30', type: 'event', label: 'Break' },
+  { start: '16:30', end: '17:15', type: 'talk' },
+  { start: '17:15', end: '17:30', type: 'event' },
+];
+
+// demo data mapped by slot start time
+const sessionsByDay = {
+  day1: {
+    '09:15': {
+      R1: {
+        room: 'R1',
+        title: '練啟的黑歷史：開源技術照亮網路中的隱藏威脅，終端設備的資訊安全',
+        topics: [topics[0], topics[1], topics[2]],
+        speaker: { name: '會厚芸', title: 'RD 研發工程師' },
+      },
+      R2: {
+        room: 'R2',
+        title: '軟體工程師轉戰無人機領域需要的基礎知識與發展機會',
+        topics: [topics[0], topics[1]],
+        speaker: { name: 'ericpi', title: '高雄在地開發社群管理' },
+      },
+    },
+    '10:15': {
+      R1: {
+        room: 'R1',
+        title: '10:15 範例議程 R1',
+        topics: [topics[3]],
+        speaker: { name: 'Conan', title: 'Senior Engineer' },
+      },
+    },
+  },
+  day2: {
+    '09:15': {},
+  },
+} as Record<string, Record<string, any>>;
+---
+
+<Layout>
+  <section class="agenda">
+    <h1 class="agenda__title font-mantou">精采議程</h1>
+
+    <div class="agenda__seg">
+      <SegmentedControl options={dates} value="day1" client:load />
+    </div>
+
+    <div class="agenda__filters" id="agenda-filters">
+      {topics.map((t, i) => (
+        <FilterChip label={t} selected={i < 3} client:load />
+      ))}
+    </div>
+
+    <div class="agenda__days">
+      {['day1','day2'].map((day) => (
+        <div class="agenda__grid" data-day={day} class:list={{ hidden: day !== 'day1' }}>
+          {routine.map((slot) => {
+            const slotSessions = (sessionsByDay[day] && sessionsByDay[day][slot.start]) || {};
+            const isTalk = slot.type === 'talk';
+            return (
+              <div class="agenda__row">
+                <div class="agenda__time">{slot.start}</div>
+                {isTalk ? (
+                  <div class="agenda__cards">
+                    <button class="agenda__cardbtn" data-open-modal>
+                      {slotSessions.R1 && <SessionCard session={slotSessions.R1} />}
+                    </button>
+                    <button class="agenda__cardbtn" data-open-modal>
+                      {slotSessions.R2 && <SessionCard session={slotSessions.R2} />}
+                    </button>
+                  </div>
+                ) : (
+                  <div class="agenda__event">
+                    <div class="agenda__event-line"></div>
+                    <div class="agenda__event-label">{slot.label}</div>
+                    <div class="agenda__event-line"></div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <SessionModal open={false} client:load>
+    <div slot="topic">
+      <div class="modal__tags">
+        {topics.slice(0,3).map((t) => (<span class="tag">{t}</span>))}
+      </div>
+      <p class="modal__text">
+        在我們享受行動及 IoT 設備帶給我們的便利時，隱藏的數位威脅是否悄悄伺機而動？本議程將帶你理解如何運用開源工具來監控和保護你的網路。
+      </p>
+    </div>
+    <div slot="speaker">
+      <div class="speaker__head">
+        <img class="avatar" src="/2025/avatar-demo.webp" alt="speaker" />
+        <div>
+          <div class="name">曾厚荃</div>
+          <div class="title">Gronext RD 研發工程師</div>
+        </div>
+      </div>
+      <p class="modal__text">
+        現職為研發工程師，專長於網路維運與資安探索，負責前端開發及資料流整合。
+      </p>
+    </div>
+  </SessionModal>
+</Layout>
+
+<script>
+  const filters = document.getElementById('agenda-filters')!;
+  filters.addEventListener('click', (e) => {
+    const target = (e.target as HTMLElement).closest('button');
+    if (!target) return;
+    target.classList.toggle('is-selected');
+    // filtering data can be wired when real data is ready
+  });
+
+  document.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('[data-open-modal]');
+    const modal = document.querySelector('dialog.modal') as HTMLDialogElement;
+    if (btn && modal) modal.showModal();
+  });
+
+  // switch days via segmented control
+  const seg = document.querySelector('.agenda__seg .segmented') as HTMLElement;
+  if (seg) {
+    seg.addEventListener('change', (e: any) => {
+      const value = e.detail as string;
+      document.querySelectorAll<HTMLElement>('.agenda__grid').forEach((grid) => {
+        grid.classList.toggle('hidden', grid.dataset.day !== value);
+      });
+    });
+  }
+</script>
+
+<style>
+  .agenda { padding: 120px 16px 32px; max-width: 1100px; margin: 0 auto; }
+  .agenda__title { color:#fff; font-size: 48px; text-align:center; margin-bottom: 16px; }
+  .agenda__seg { display:flex; justify-content:center; margin-bottom: 16px; }
+  .agenda__filters { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom: 16px; }
+  .agenda__grid { margin-top: 8px; display: grid; gap: 18px; }
+  .agenda__row { display:grid; grid-template-columns: 90px 1fr; gap: 18px; align-items:start; }
+  .agenda__time { color:#a9b3c7; font-weight:800; text-align:right; padding-top: 8px; }
+  .agenda__cards { display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .agenda__cardbtn { text-align: left; }
+  .agenda__event { display:flex; align-items:center; gap:12px; color:#cbd5e1; font-weight:800; }
+  .agenda__event-line { flex:1; height:2px; background: rgba(255,255,255,0.12); }
+  .agenda__event-label { white-space:nowrap; }
+
+  .modal__tags { display:flex; gap:8px; flex-wrap:wrap; }
+  .tag { padding:6px 10px; background:#25324a; border-radius:10px; }
+  .modal__text { color:#e6edf8; line-height:1.9; }
+  .speaker__head { display:flex; gap:12px; align-items:center; margin-bottom: 12px; }
+  .speaker__head .avatar { width:56px; height:56px; border-radius:9999px; object-fit:cover; }
+  .speaker__head .name { color:#fff; font-weight:900; }
+  .speaker__head .title { color:#a9b3c7; }
+  
+  @media (max-width: 840px) {
+    .agenda__row { grid-template-columns: 64px 1fr; }
+    .agenda__cards { grid-template-columns: 1fr; }
+  }
+</style>
+
+
