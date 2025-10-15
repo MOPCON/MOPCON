@@ -1,0 +1,60 @@
+---
+interface Speaker {
+  name: string;
+  title: string;
+  avatar?: string;
+}
+
+interface Session {
+  room: string; // R1, R2
+  title: string;
+  topics: string[];
+  speaker: Speaker;
+}
+
+const { session } = Astro.props as { session: Session };
+---
+
+<article class="card" data-room={session.room}>
+  <header class="card__head">
+    <span class="card__room">{session.room}</span>
+  </header>
+
+  <h3 class="card__title">{session.title}</h3>
+
+  <div class="card__topics">
+    {session.topics.map((t) => (<span class="card__topic">{t}</span>))}
+  </div>
+
+  <footer class="card__speaker">
+    {session.speaker.avatar && <img src={session.speaker.avatar} alt={session.speaker.name} />}
+    <div class="card__speaker-info">
+      <div class="card__speaker-name">{session.speaker.name}</div>
+      <div class="card__speaker-title">{session.speaker.title}</div>
+    </div>
+  </footer>
+</article>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #0b1222;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 0 0 2px rgba(149, 164, 255, 0.3) inset;
+  }
+  .card__head { display:flex; align-items:center; gap:6px; color:#cbd5e1; }
+  .card__room { border-radius: 9999px; padding: 4px 8px; background: #1f2a44; font-weight: 800; font-size: 12px; }
+  .card__title { color: #fff; font-weight: 800; font-size: 18px; line-height: 1.4; }
+  .card__topics { display: flex; flex-wrap: wrap; gap: 8px; }
+  .card__topic { padding: 6px 10px; background: #0d172a; color: #c1c8d6; border-radius: 10px; font-size: 12px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06); }
+  .card__speaker { display:flex; align-items:center; gap:10px; margin-top:auto; }
+  .card__speaker img { width: 44px; height: 44px; border-radius: 9999px; object-fit: cover; }
+  .card__speaker-name { color:#fff; font-weight: 800; }
+  .card__speaker-title { color:#a9b3c7; font-size: 13px; }
+</style>
+
+
+

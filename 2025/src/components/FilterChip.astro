@@ -1,0 +1,32 @@
+---
+const { label, selected = false } = Astro.props as { label: string; selected?: boolean };
+---
+
+<button class={["chip", selected ? "is-selected" : ""].join(" ")}>{label}</button>
+
+<style>
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: #0b1222;
+    color: #c1c8d6;
+    font-weight: 700;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+    transition: background .2s ease, color .2s ease, box-shadow .2s ease;
+  }
+  .chip:hover { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18); }
+  .chip.is-selected {
+    background: #485469;
+    color: #eaf0ff;
+  }
+  .chip.is-selected::before {
+    content: "✓";
+    font-size: 12px;
+  }
+</style>
+
+
+

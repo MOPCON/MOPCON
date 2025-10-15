@@ -1,0 +1,74 @@
+---
+const { open = false } = Astro.props as { open?: boolean };
+---
+
+<dialog class="modal" open={open}>
+  <div class="modal__content">
+    <div class="modal__tabs">
+      <button class="is-active" data-tab="topic">議程主題</button>
+      <button data-tab="speaker">關於講師</button>
+      <div class="modal__underline"></div>
+    </div>
+
+    <section class="modal__panel" data-panel="topic">
+      <slot name="topic" />
+    </section>
+    <section class="modal__panel hidden" data-panel="speaker">
+      <slot name="speaker" />
+    </section>
+
+    <div class="modal__actions">
+      <button class="share">分享議程</button>
+      <button class="calendar">加到行事曆</button>
+    </div>
+    <button class="modal__close" aria-label="Close">×</button>
+  </div>
+</dialog>
+
+<script>
+  const dialog = (document.currentScript!.previousElementSibling as HTMLDialogElement);
+  const tabs = Array.from(dialog.querySelectorAll<HTMLButtonElement>('.modal__tabs > button'));
+  const underline = dialog.querySelector('.modal__underline') as HTMLElement;
+  const closeBtn = dialog.querySelector('.modal__close') as HTMLButtonElement;
+
+  function moveUnderline(btn: HTMLButtonElement) {
+    const { offsetLeft, offsetWidth } = btn;
+    underline.style.transform = `translateX(${offsetLeft}px)`;
+    underline.style.width = `${offsetWidth}px`;
+  }
+  function switchTo(btn: HTMLButtonElement) {
+    tabs.forEach((b) => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    moveUnderline(btn);
+    const key = btn.dataset.tab;
+    dialog.querySelectorAll<HTMLElement>('.modal__panel').forEach((p) => {
+      p.classList.toggle('hidden', p.dataset.panel !== key);
+    });
+  }
+  tabs.forEach((btn) => btn.addEventListener('click', () => switchTo(btn)));
+  window.addEventListener('resize', () => {
+    const active = tabs.find((b) => b.classList.contains('is-active'));
+    if (active) moveUnderline(active);
+  });
+  moveUnderline(tabs[0]);
+
+  closeBtn.addEventListener('click', () => dialog.close());
+</script>
+
+<style>
+  .modal { border: none; padding: 0; width: min(960px, 92vw); background: transparent; }
+  .modal::backdrop { background: rgba(2,6,24,0.6); backdrop-filter: blur(2px); }
+  .modal__content { position: relative; background: #0b1222; color: #e6edf8; border-radius: 16px; padding: 16px; }
+  .modal__close { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 9999px; background: #1e293b; color:#fff; font-size: 20px; }
+  .modal__tabs { position: relative; display:flex; gap: 8px; background: #0f172a; padding: 6px; border-radius: 9999px; width: fit-content; }
+  .modal__tabs > button { position: relative; z-index:1; padding: 10px 16px; border-radius: 9999px; font-weight: 800; color:#cbd5e1; }
+  .modal__tabs > button.is-active { color: #0b1222; }
+  .modal__underline { position:absolute; inset:auto auto 6px 6px; height: calc(100% - 12px); width: 0; background:#fff; border-radius:9999px; transition: transform .26s cubic-bezier(.2,.8,.2,1), width .26s cubic-bezier(.2,.8,.2,1); }
+  .modal__panel { margin-top: 16px; max-height: min(60vh, 560px); overflow: auto; padding-right: 6px; }
+  .modal__actions { display:flex; gap: 12px; padding: 16px 0 4px; }
+  .share { background:#22d3ee; color:#001018; font-weight:800; padding:12px 16px; border-radius:9999px; }
+  .calendar { background:#cbd5e1; color:#0b1222; font-weight:800; padding:12px 16px; border-radius:9999px; }
+</style>
+
+
+
