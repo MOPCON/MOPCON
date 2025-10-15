@@ -1,5 +1,11 @@
 ---
-// No props needed for this static component
+import mopconTitle from '../assets/mopcon-title.svg';
+import facebook from '../assets/facebook.svg';
+import threads from '../assets/threads.svg';
+import x from '../assets/x.svg';
+import telegram from '../assets/telegram.svg';
+import instagram from '../assets/instagram.svg';
+import mopcon from '../assets/mopcon.jpg';
 ---
 
 <div
@@ -12,7 +18,7 @@
     <!-- MOPCON Title -->
     <div class="mb-6 sm:mb-8 w-full">
       <img
-        src="/src/assets/mopcon-title.svg"
+        src={mopconTitle.src}
         alt="MOPCON"
         class="h-8 sm:h-10 md:h-12 lg:h-14 sm:mx-auto"
         style="filter: brightness(0) invert(1);"
@@ -35,7 +41,7 @@
     <div class="w-full max-w-full sm:max-w-md md:max-w-2xl lg:max-w-4xl mx-auto mb-8 sm:mb-12 lg:mb-16 relative">
       <div class="rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl border-2 sm:border-4 border-white relative">
         <img
-          src="/src/assets/mopcon.jpg"
+          src={mopcon.src}
           alt="MOPCON 2024 團體照"
           class="w-full h-auto"
         />
@@ -86,28 +92,28 @@
       </div>
       <div class="flex justify-center items-center gap-2 sm:gap-3 lg:gap-4">
         <!-- Facebook -->
-        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#1877F2] flex items-center justify-center hover:opacity-80 transition-opacity">
-          <img src="/src/assets/facebook.svg" alt="Facebook" class="w-5 h-5 sm:w-6 sm:h-6" />
+        <a href="https://www.facebook.com/mopcon" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#1877F2] flex items-center justify-center hover:opacity-80 transition-opacity">
+          <img src={facebook.src} alt="Facebook" class="w-5 h-5 sm:w-6 sm:h-6" />
         </a>
 
         <!-- Threads -->
-        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-black border-2 border-gray-400 flex items-center justify-center hover:opacity-80 transition-opacity">
-          <img src="/src/assets/threads.svg" alt="Threads" class="w-5 h-5 sm:w-6 sm:h-6" />
+        <a href="https://www.threads.com/@mopcon.tw" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-black border-2 border-gray-400 flex items-center justify-center hover:opacity-80 transition-opacity">
+          <img src={threads.src} alt="Threads" class="w-5 h-5 sm:w-6 sm:h-6" />
         </a>
 
         <!-- X (Twitter) -->
-        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-black border-2 border-gray-400 flex items-center justify-center hover:opacity-80 transition-opacity">
-          <img src="/src/assets/x.svg" alt="X" class="w-5 h-5 sm:w-6 sm:h-6" />
+        <a href="https://x.com/mopcon" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-black border-2 border-gray-400 flex items-center justify-center hover:opacity-80 transition-opacity">
+          <img src={x.src} alt="X" class="w-5 h-5 sm:w-6 sm:h-6" />
         </a>
 
         <!-- Telegram -->
-        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#0088CC] flex items-center justify-center hover:opacity-80 transition-opacity">
-          <img src="/src/assets/telegram.svg" alt="Telegram" class="w-5 h-5 sm:w-6 sm:h-6" />
+        <a href="https://t.me/mopcon" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#0088CC] flex items-center justify-center hover:opacity-80 transition-opacity">
+          <img src={telegram.src} alt="Telegram" class="w-5 h-5 sm:w-6 sm:h-6" />
         </a>
 
         <!-- Instagram -->
-        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-[#FFD600] via-[#FF0100] to-[#D800B9] flex items-center justify-center hover:opacity-80 transition-opacity">
-          <img src="/src/assets/instagram.svg" alt="Instagram" class="w-5 h-5 sm:w-6 sm:h-6" />
+        <a href="https://www.instagram.com/mopcon.tw/" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-[#FFD600] via-[#FF0100] to-[#D800B9] flex items-center justify-center hover:opacity-80 transition-opacity">
+          <img src={instagram.src} alt="Instagram" class="w-5 h-5 sm:w-6 sm:h-6" />
         </a>
       </div>
     </div>

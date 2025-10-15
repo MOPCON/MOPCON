@@ -1,8 +1,15 @@
 ---
----
+interface Props {
+    href: string;
+    target?: string;
+}
 
-<button
+const { href, target } = Astro.props;
+---
+<a
     class="relative flex justify-center items-center py-4 px-6 rounded-full w-full max-w-[368px] h-[64px] isolate mt-auto overflow-hidden"
+    href={href}
+    target={target}
 >
     <!-- BG layer -->
     <div class="absolute inset-0"></div>
@@ -35,4 +42,4 @@
     >
         <slot />
     </span>
-</button>
+</a>

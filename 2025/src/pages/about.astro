@@ -22,7 +22,7 @@ import sectionBg from '../assets/SectionBg.svg';
     <div>
         <!-- ================= 我們在打造高速資訊交流圈 ================= -->
         <section
-            class="relative w-full flex flex-col items-center overflow-visible px-6 py-[120px] tablet:p-[120px] desktop:px-[240px]"
+            class="relative w-full flex flex-col items-center overflow-visible px-6 py-[120px] tablet:px-[60px] desktop:px-[240px]"
         >
             <Image src={heroBg} alt="Hero Background" class="absolute top-0 left-0 w-full h-[87px] tablet:h-[230px] desktop:h-[323px] object-cover" />
 
@@ -79,7 +79,7 @@ import sectionBg from '../assets/SectionBg.svg';
 
         <!-- ================= 成為MOPCON一員 ================= -->
         <section
-            class="relative w-full bg-gradient-to-b from-[#314158] to-[#314158]/20 rounded-[40px] tablet:rounded-[120px] desktop:rounded-[120px] px-6 py-12 tablet:px-[120px] tablet:py-[80px] desktop:px-[240px] flex flex-col gap-16 items-center"
+            class="relative w-full bg-gradient-to-b from-[#314158] to-[#314158]/20 rounded-[40px] tablet:rounded-[120px] desktop:rounded-[120px] px-6 py-12 tablet:px-[60px] tablet:py-[80px] desktop:px-[240px] flex flex-col gap-16 items-center"
         >
             <div class="max-w-4xl flex flex-col gap-10 text-center text-white">
                 <h2
@@ -103,7 +103,7 @@ import sectionBg from '../assets/SectionBg.svg';
                 </h2>
 
                 <div
-                    class="grid grid-cols-1 tablet:grid-cols-2 gap-12 text-left"
+                    class="grid grid-cols-2 max-md:grid-cols-1 gap-12 text-left"
                 >
                     <!-- 左邊：志工招募 -->
                     <div class="flex flex-col gap-8">
@@ -134,7 +134,7 @@ import sectionBg from '../assets/SectionBg.svg';
                             Facebook，我們會在下一屆準備開始前
                             PO出徵才資訊！加入我們不僅有機會參與改變的過程，還可以得到寶貴的辦展經驗、認識大神們哦！
                         </p>
-                        <Button> 追蹤 Facebook </Button>
+                        <Button href="https://www.facebook.com/mopcon/" target="_blank"> 追蹤 Facebook </Button>
                     </div>
 
                     <!-- 右邊：贊助招募 -->
@@ -164,7 +164,7 @@ import sectionBg from '../assets/SectionBg.svg';
                         >
                             謝謝你願意成為全台最大行動科技領域社群研討會的參與者及貢獻者之一！
                         </p>
-                        <Button> 我要贊助 </Button>
+                        <Button href="mailto:sponsor@mopcon.org" target="_blank"> 我要贊助 </Button>
                     </div>
                 </div>
             </div>
@@ -172,9 +172,9 @@ import sectionBg from '../assets/SectionBg.svg';
 
         <!-- ================= 行為準則 ================= -->
         <section
-            class="relative w-full flex flex-col items-center px-6 py-12 tablet:px-[120px] tablet:py-24 desktop:px-[240px] text-white"
+            class="relative w-full flex flex-col items-center px-6 py-12 tablet:px-[60px] tablet:py-24 desktop:px-[240px] text-white"
         >
-            <Image src={sectionBg} alt="Section Background" class="absolute left-1/2 -translate-x-1/2 top-[500px] tablet:top-[648px] desktop:top-[560px] z-0 h-[429px] w-full max-w-[1756px] -rotate-7 rounded-[18px]" />
+            <Image src={sectionBg} alt="Section Background" class="absolute left-1/2 -translate-x-1/2 top-[500px] tablet:bottom-0 tablet:top-auto desktop:top-[560px] -z-10 h-[429px] w-full max-w-[1756px] -rotate-7 rounded-[18px]" />
             <div class="z-10 flex max-w-4xl flex-col items-start gap-5">
                 <a
                     href="#"
@@ -192,7 +192,7 @@ import sectionBg from '../assets/SectionBg.svg';
                     >
                 </h2>
 
-                <div class="grid grid-cols-1 tablet:grid-cols-2 gap-8">
+                <div class="grid grid-cols-2 max-md:grid-cols-1 gap-8">
                     <div
                         class="flex flex-col gap-5 text-[18px] font-normal leading-7 text-[#EBEBED]"
                     >

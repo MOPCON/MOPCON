@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import venueImage from '../assets/venue/venue-image.png';
+import venueImage from '../assets/venue/venue-image.webp';
 import SubtractIcon from '../assets/venue/Subtract.svg';
 import MapPinIcon from '../assets/venue/map-pin.svg';
 import ExternalLinkIcon from '../assets/venue/external-link.svg';
@@ -126,6 +126,11 @@ const cardItems = [
     }
 
     &__cardlist {
+
+      @media (max-width: 640px) {
+        margin-top: 3rem;
+      }
+      
       // 大螢幕橫向滾動容器
       @media (min-width: 640px) {
         overflow-x: auto;
@@ -156,28 +161,28 @@ const cardItems = [
 
       &-card {
         min-width: 342px;
-        height: 340px;
+        min-height: 340px;
         background-color: #182434;
         flex-shrink: 0; // 防止在flex容器中被壓縮
 
         // 不同螢幕時的高度
         @media (min-width: 390px) {
-          height: 330px;
+          min-height: 330px;
         }
 
         @media (min-width: 500px) {
-          height: 280px;
+          min-height: 280px;
         }
 
         // 不同螢幕時的寬度
         @media (min-width: 640px) {
           min-width: 700px;
-          height: 233px;
+          min-height: 245px;
           width: 700px;
         }
         @media (min-width: 768px) {
           min-width: 825px;
-          height: 233px;
+          height: 245px;
           width: 825px;
         }
 
@@ -208,7 +213,7 @@ const cardItems = [
         <h2 class="venue__section__info-location font-mantou text-4xl">高雄科技大學 楠梓校區</h2>
         <div class="venue__section__info-location font-mantou text-2xl">NKUST Nanzi Campus</div>
         <div class="flex gap-1 my-6 text-lg"><MapPinIcon />高雄市楠梓區瑞屏里025鄰海專路142號</div>
-        <a href="#" class="venue__section__info-link mb-3 rounded-3xl text-black">打開Google Map<ExternalLinkIcon /></a>
+        <a href="https://maps.app.goo.gl/CQERfwKxk6JLDK1x6" target="_blank" class="venue__section__info-link mb-3 rounded-3xl text-black">打開Google Map<ExternalLinkIcon /></a>
       </div>
     </div>
 
@@ -230,9 +235,9 @@ const cardItems = [
   </div>
   <!-- 紫色背景圖區塊 + 跑馬燈文字 -->
   <div class="relative">
-    <picture class="absolute right-0 -top-90 sm:top-8 sm:scale-200 sm:-translate-x-42 md:top-20 md:-translate-x-42 md:scale-x-200 md:scale-y-300 lg:top-20 lg:scale-350 lg:right-62">
+    <picture class="absolute right-0 -top-90 sm:top-8 z-[-1] sm:scale-200 sm:-translate-x-42 md:top-20 md:-translate-x-42 md:scale-x-200 md:scale-y-300 lg:-top-20 lg:scale-350 lg:right-62">
       <!-- 大於等於640px換另一張 -->
-      <source srcset={EllipseDesktopImage.src} media="(min-width: 640px)" />
+      <source srcset={EllipseDesktopImage.src} media="(min-width: 2000px)" />
       <!-- 預設手機用 Ellipse -->
       <Image class="ellipse" src={EllipseMobileImage} alt="Ellipse" />
     </picture>
@@ -245,7 +250,7 @@ const cardItems = [
   </div>
 
   <!-- 卡片 -->
-  <div class="venue__section__cardlist mt-22 px-6 sm:mt-36 lg:mt-56">
+  <div class="venue__section__cardlist mt-22 px-6 sm:mt-36 lg:mt-56 z-10">
     <div class="venue__section__cardlist-container sm:grid sm:grid-cols-3 sm:gap-4 lg:pl-8">
       { cardItems.map(({ tag, title, description }) => (
         <div class="venue__section__cardlist-card border-grey-400 border-8 bg- rounded-3xl p-6 mb-6 last:mb-0">

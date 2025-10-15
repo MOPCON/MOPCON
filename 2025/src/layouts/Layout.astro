@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -19,6 +20,7 @@ import Navbar from "../components/Navbar.astro";
 	<body>
 		<Navbar />
 		<slot />
+		<Footer />
 	</body>
 </html>
 
@@ -28,5 +30,6 @@ import Navbar from "../components/Navbar.astro";
 		height: 100%;
 		margin: 0 auto;
 		background-color: #020618;
+		scroll-behavior: smooth;
 	}
 </style>

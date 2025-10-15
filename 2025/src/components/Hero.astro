@@ -19,7 +19,7 @@ const typeWriteMsg = ["Warning: Our hardware thinks."];
 	</div>
 
 	<!-- 頂部內容 -->
-	<div class="z-40 w-full flex max-sm:flex-col justify-between px-10 max-sm:px-6">
+	<div class="z-40 w-full flex max-sm:flex-col justify-between px-10 max-sm:px-0">
 		<div class="">
 			<Image src={title} alt="Title" class="w-[300px] max-sm:w-[250px]" />
 			<div class='flex mt-6 max-sm:mt-4 items-center'> 
@@ -39,6 +39,7 @@ const typeWriteMsg = ["Warning: Our hardware thinks."];
 					大會議程
 				</button>
 				<button 
+					onclick="window.location.href='#tickets'"
 					class="group bg-cyan-400 text-black text-xl font-bold py-5 px-8 rounded-full 
 					hover:bg-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.8)] 
 					active:bg-cyan-500 transition-all duration-200 max-lg:text-lg max-lg:py-4 max-lg:px-6">
