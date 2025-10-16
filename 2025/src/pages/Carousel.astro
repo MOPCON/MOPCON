@@ -1,0 +1,128 @@
+<>
+    <section
+      class="relative w-full h-full flex items-center justify-center overflow-hidden"
+      style="background-image: url(/sponsor/bg.svg); background-size: cover; background-position: center;"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div class="relative z-10 flex flex-col items-center justify-center w-full max-w-4xl px-4 py-16">
+        <div class="text-white mb-16">
+          <h2 class="text-center text-4xl font-extrabold tracking-tight mb-8 md:flex md:justify-center gap-x-1">
+            我們在打造
+            <p class="bg-gradient-to-r from-indigo-500 to-indigo-200 text-transparent bg-clip-text">高速資訊交流圈</p>
+          </h2>
+          <p class="text-lg opacity-90 pt-2">MOPCON 是一個專注於濁水溪以南地區的科技社群。自創立以來，我們致力於為南台灣提供一個討論技術與交流的平台。我們深知南部地區的人才和技術資源豐富，但往往缺乏能夠匯聚這些力量的場域。因此，我們的目標是提供一個專注於南部社群的舞台，讓每位社群夥伴都能夠在這裡一同交流、成長，創造共好生態系。</p>
+          <p class="text-lg opacity-90 py-2">無論你是對最新的科技趨勢充滿好奇，還是想要尋找實際的技術解決方案，MOPCON 2024 都將為你提供豐富的內容和多樣的活動。我們希望促進南部地區的科技發展，並為在地社群帶來更多的機會與挑戰。</p>
+          <p class="text-lg bg-gradient-to-r from-indigo-400 to-indigo-200 text-black px-1 font-bold w-fit">MOPCON 志在打造出一座「高速資訊交流圈」！</p>
+        </div>
+
+        <div class="w-full max-w-4xl mx-auto hidden xl:block">
+          <div id="carousel" class="relative w-full">
+            <div class="rounded-lg w-full flex justify-end mb-10">
+              <div id="carousel-slides" class="relative w-[26rem] h-[21rem]">
+                <img src="/sponsor/sponsor1.svg" class="carousel-img absolute left-1/2 -translate-x-1/2 w-[26rem] h-[21rem] object-cover transition-all duration-500 rounded-3xl" alt="carousel image 1" data-idx="0" />
+                <img src="/sponsor/sponsor2.svg" class="carousel-img absolute left-1/2 -translate-x-1/2 w-[26rem] h-[21rem] object-cover transition-all duration-500 rounded-3xl" alt="carousel image 2" data-idx="1" />
+                <img src="/sponsor/sponsor3.svg" class="carousel-img absolute left-1/2 -translate-x-1/2 w-[26rem] h-[21rem] object-cover transition-all duration-500 rounded-3xl" alt="carousel image 3" data-idx="2" />
+                <img src="/sponsor/sponsor4.svg" class="carousel-img absolute left-1/2 -translate-x-1/2 w-[26rem] h-[21rem] object-cover transition-all duration-500 rounded-3xl" alt="carousel image 4" data-idx="3" />
+                <img src="/sponsor/sponsor5.svg" class="carousel-img absolute left-1/2 -translate-x-1/2 w-[26rem] h-[21rem] object-cover transition-all duration-500 rounded-3xl" alt="carousel image 5" data-idx="4" />
+              </div>
+            </div>
+            
+            <div class="flex justify-center mt-4 space-x-2">
+              <button id="carousel-prev" type="button" class="-translate-y-1/2 text-indigo-400 relative top-1 pr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button class="carousel-dot w-2 h-2 rounded-full bg-white bg-opacity-50" data-index="0"></button>
+              <button class="carousel-dot w-2 h-2 rounded-full bg-white bg-opacity-50" data-index="1"></button>
+              <button class="carousel-dot w-2 h-2 rounded-full bg-white bg-opacity-50" data-index="2"></button>
+              <button class="carousel-dot w-2 h-2 rounded-full bg-white bg-opacity-50" data-index="3"></button>
+              <button class="carousel-dot w-2 h-2 rounded-full bg-white bg-opacity-50" data-index="4"></button>
+              <button id="carousel-next" type="button" class="-translate-y-1/2 text-indigo-400 relative top-1 pl-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script is:inline>
+      const slides = document.getElementById('carousel-slides');
+      const imgs = slides.querySelectorAll('.carousel-img');
+      const total = imgs.length;
+      let current = 0;
+      let intervalId = null;
+      function updateCarousel(idx) {
+        const NEAR = 320;
+        imgs.forEach((img, i) => {
+          const pos = (i - idx + total) % total;
+          img.style.transition = 'transform 500ms ease, opacity 500ms ease, filter 500ms ease';
+          if (pos === 0) {
+            img.style.transform = 'translateX(-50%) scale(1.08)';
+            img.style.opacity = '1';
+            img.style.zIndex = '10';
+            img.style.filter = 'drop-shadow(0 6px 12px rgba(0,0,0,0.18))';
+            img.style.pointerEvents = 'auto';
+          } else if (pos === 1) {
+            img.style.transform = `translateX(calc(-50% + ${NEAR}px)) scale(0.92)`;
+            img.style.opacity = '0.9';
+            img.style.zIndex = '5';
+            img.style.filter = '';
+            img.style.pointerEvents = 'auto';
+          } else if (pos === (total - 1)) {
+            img.style.transform = `translateX(calc(-50% - ${NEAR}px)) scale(0.92)`;
+            img.style.opacity = '0.9';
+            img.style.zIndex = '5';
+            img.style.filter = '';
+            img.style.pointerEvents = 'auto';
+          } else {
+            const FAR = NEAR * 2;
+            const dir = (pos < total / 2) ? 1 : -1;
+            img.style.transform = `translateX(calc(-50% + ${dir * FAR}px)) scale(0.85)`;
+            img.style.opacity = '0';
+            img.style.zIndex = '0';
+            img.style.filter = '';
+            img.style.pointerEvents = 'none';
+          }
+        });
+      }
+      function goTo(idx) {
+        current = idx;
+        updateCarousel(current);
+      }
+      function next() {
+        current = (current + 1) % total;
+        updateCarousel(current);
+      }
+      function prev() {
+        current = (current - 1 + total) % total;
+        updateCarousel(current);
+      }
+      document.getElementById('carousel-next').addEventListener('click', () => {
+        next();
+        resetInterval();
+      });
+      document.getElementById('carousel-prev').addEventListener('click', () => {
+        prev();
+        resetInterval();
+      });
+      document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          goTo(i);
+          resetInterval();
+        });
+      });
+      function startInterval() {
+        intervalId = setInterval(next, 3500);
+      }
+      function resetInterval() {
+        clearInterval(intervalId);
+        startInterval();
+      }
+      updateCarousel(current);
+      startInterval();
+    </script>
+<>
