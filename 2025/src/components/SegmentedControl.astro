@@ -25,38 +25,41 @@ const { options, value } = Astro.props as {
 </div>
 
 <script>
-  const root = (document.currentScript!.previousElementSibling as HTMLElement);
-  const track = root.querySelector('.segmented__track') as HTMLElement;
-  const thumb = root.querySelector('.segmented__thumb') as HTMLElement;
-  const items = Array.from(track.querySelectorAll<HTMLButtonElement>('.segmented__item'));
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.segmented').forEach((root) => {
+      const track = root.querySelector('.segmented__track') as HTMLElement;
+      const thumb = root.querySelector('.segmented__thumb') as HTMLElement;
+      const items = Array.from(track.querySelectorAll<HTMLButtonElement>('.segmented__item'));
 
-  function moveThumbTo(active: HTMLButtonElement) {
-    const { offsetLeft, offsetWidth } = active;
-    thumb.style.transform = `translateX(${offsetLeft}px)`;
-    thumb.style.width = `${offsetWidth}px`;
-  }
+      function moveThumbTo(active: HTMLButtonElement) {
+        const { offsetLeft, offsetWidth } = active;
+        thumb.style.transform = `translateX(${offsetLeft}px)`;
+        thumb.style.width = `${offsetWidth}px`;
+      }
 
-  function init() {
-    const active = items.find((el) => el.classList.contains('is-active')) || items[0];
-    if (!active) return;
-    moveThumbTo(active);
-  }
+      function init() {
+        const active = items.find((el) => el.classList.contains('is-active')) || items[0];
+        if (!active) return;
+        moveThumbTo(active);
+      }
 
-  items.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      items.forEach((b) => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-      moveThumbTo(btn);
-      root.dispatchEvent(new CustomEvent('change', { detail: btn.dataset.value }));
+      items.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          items.forEach((b) => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          moveThumbTo(btn);
+          root.dispatchEvent(new CustomEvent('change', { detail: btn.dataset.value, bubbles: true }));
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        const active = items.find((el) => el.classList.contains('is-active'));
+        if (active) moveThumbTo(active);
+      });
+
+      init();
     });
   });
-
-  window.addEventListener('resize', () => {
-    const active = items.find((el) => el.classList.contains('is-active'));
-    if (active) moveThumbTo(active);
-  });
-
-  init();
 </script>
 
 <style>

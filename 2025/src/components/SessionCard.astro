@@ -1,8 +1,10 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Speaker {
   name: string;
   title: string;
-  avatar?: string;
+  avatar?: any;
 }
 
 interface Session {
@@ -27,7 +29,7 @@ const { session } = Astro.props as { session: Session };
   </div>
 
   <footer class="card__speaker">
-    {session.speaker.avatar && <img src={session.speaker.avatar} alt={session.speaker.name} />}
+    {session.speaker.avatar && <Image src={session.speaker.avatar} alt={session.speaker.name} width={44} height={44} />}
     <div class="card__speaker-info">
       <div class="card__speaker-name">{session.speaker.name}</div>
       <div class="card__speaker-title">{session.speaker.title}</div>
@@ -44,6 +46,42 @@ const { session } = Astro.props as { session: Session };
     border-radius: 16px;
     padding: 16px;
     box-shadow: 0 0 0 2px rgba(149, 164, 255, 0.3) inset;
+    position: relative;
+    height: 100%;
+  }
+
+  .card[data-room="R1"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 4px;
+    background: linear-gradient(180deg, #607BDA 0%, #B8C3F0 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .card[data-room="R1"] {
+    box-shadow: none;
+  }
+
+  .card[data-room="R2"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 4px;
+    background: linear-gradient(180deg, #25D3FF 0%, #92E9FF 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .card[data-room="R2"] {
+    box-shadow: none;
   }
   .card__head { display:flex; align-items:center; gap:6px; color:#cbd5e1; }
   .card__room { border-radius: 9999px; padding: 4px 8px; background: #1f2a44; font-weight: 800; font-size: 12px; }
