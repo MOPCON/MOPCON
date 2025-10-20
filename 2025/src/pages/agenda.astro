@@ -20,6 +20,9 @@ const speakerImages = import.meta.glob<{ default: ImageMetadata }>(
 
 const { dates, topics, routine, sessionsByDay: sessionsRaw } = agendaData;
 
+// Get the star icon source for use in client-side script
+const starWhiteSrc = starWhite.src;
+
 // Helper function to resolve topic indices to topic strings and speaker avatar
 const resolveSession = (session: any) => {
     // Resolve the speaker avatar image
@@ -211,10 +214,13 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
     </SessionModal>
 </Layout>
 
+<script is:inline set:html={`window.__starWhiteSrc = "${starWhiteSrc}";`} />
+
 <script>
     // ============================
     // Modal Management
     // ============================
+    const starWhiteSrc = (window as any).__starWhiteSrc;
     const modal = document.querySelector("dialog") as HTMLDialogElement;
 
     // Modal utility functions
@@ -273,19 +279,19 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                 <div class="modal__divider"></div>
                 <p class="modal__text">${session.description || ""}</p>
                 <div class="modal__info-item">
-                    <img src="${import.meta.env.BASE_URL}star_white.svg" alt="star" class="modal__info-icon" />
+                    <img src="${starWhiteSrc}" alt="star" class="modal__info-icon" />
                     <span class="modal__info-label">目標會眾</span>
                     <span class="modal__info-separator">|</span>
                     <span class="modal__text">${session.target_audience || ""}</span>
                 </div>
                 <div class="modal__info-item">
-                    <img src="${import.meta.env.BASE_URL}star_white.svg" alt="star" class="modal__info-icon" />
+                    <img src="${starWhiteSrc}" alt="star" class="modal__info-icon" />
                     <span class="modal__info-label">先備知識</span>
                     <span class="modal__info-separator">|</span>
                     <span class="modal__text">${session.prerequisites || ""}</span>
                 </div>
                 <div class="modal__info-item">
-                    <img src="${import.meta.env.BASE_URL}star_white.svg" alt="star" class="modal__info-icon" />
+                    <img src="${starWhiteSrc}" alt="star" class="modal__info-icon" />
                     <span class="modal__info-label">會眾預期收穫</span>
                     <span class="modal__info-separator">|</span>
                     <span class="modal__text">${session.expected_gains || ""}</span>
@@ -346,7 +352,7 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                 <div class="modal__divider"></div>
                 <div class="speaker__bio-section">
                     <div class="speaker__bio-label">
-                        <img src="${import.meta.env.BASE_URL}star_white.svg" alt="star" />
+                        <img src="${starWhiteSrc}" alt="star" />
                         <span>介紹</span>
                     </div>
                     <p class="modal__text">${session.speaker.bio || ""}</p>
