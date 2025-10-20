@@ -9,734 +9,909 @@ import agendaBg from "../assets/agenda_bg.svg";
 import speakerAvatar from "../assets/speaker/speaker_1.png";
 
 const dates = [
-  { label: "11/8 (六)", value: "day1" },
-  { label: "11/9 (日)", value: "day2" },
+    { label: "11/8 (六)", value: "day1" },
+    { label: "11/9 (日)", value: "day2" },
 ];
 
 const topics = [
-  "On-Device AI Technologies",
-  "Mobile & Edge AI Hardware Platforms",
-  "Performance & Resource Optimization",
-  "Privacy-Preserving AI",
-  "Real-world AI Applications",
-  "Product Design & Operations",
+    "On-Device AI Technologies",
+    "Mobile & Edge AI Hardware Platforms",
+    "Performance & Resource Optimization",
+    "Privacy-Preserving AI",
+    "Real-world AI Applications",
+    "Product Design & Operations",
 ];
 
 // Fixed routine slots for the day
 const routine = [
-  { start: "08:30", end: "09:00", type: "event", label: "報到 Registration" },
-  { start: "09:00", end: "09:15", type: "event", label: "Second Opening" },
-  { start: "09:15", end: "10:00", type: "talk" },
-  { start: "10:00", end: "10:15", type: "event", label: "休息 Break" },
-  { start: "10:15", end: "11:00", type: "talk" },
-  { start: "11:00", end: "11:15", type: "event", label: "休息 Break" },
-  { start: "11:15", end: "12:00", type: "talk" },
-  { start: "12:00", end: "13:15", type: "event", label: "午餐 Lunch" },
-  { start: "13:15", end: "14:00", type: "talk" },
-  { start: "14:00", end: "14:15", type: "event", label: "休息 Break" },
-  { start: "14:15", end: "15:00", type: "talk" },
-  {
-    start: "15:00",
-    end: "15:30",
-    type: "event",
-    label: "下午茶交流 Afternoon Tea",
-  },
-  { start: "15:30", end: "16:15", type: "talk" },
-  { start: "16:15", end: "16:30", type: "event", label: "休息 Break" },
-  { start: "16:30", end: "17:15", type: "event", label: "Lightning Talk" },
-  { start: "17:15", end: "17:30", type: "event", label: "閉幕 Closing" },
+    { start: "08:30", end: "09:00", type: "event", label: "報到 Registration" },
+    { start: "09:00", end: "09:15", type: "event", label: "Second Opening" },
+    { start: "09:15", end: "10:00", type: "talk" },
+    { start: "10:00", end: "10:15", type: "event", label: "休息 Break" },
+    { start: "10:15", end: "11:00", type: "talk" },
+    { start: "11:00", end: "11:15", type: "event", label: "休息 Break" },
+    { start: "11:15", end: "12:00", type: "talk" },
+    { start: "12:00", end: "13:15", type: "event", label: "午餐 Lunch" },
+    { start: "13:15", end: "14:00", type: "talk" },
+    { start: "14:00", end: "14:15", type: "event", label: "休息 Break" },
+    { start: "14:15", end: "15:00", type: "talk" },
+    {
+        start: "15:00",
+        end: "15:30",
+        type: "event",
+        label: "下午茶交流 Afternoon Tea",
+    },
+    { start: "15:30", end: "16:15", type: "talk" },
+    { start: "16:15", end: "16:30", type: "event", label: "休息 Break" },
+    { start: "16:30", end: "17:15", type: "event", label: "Lightning Talk" },
+    { start: "17:15", end: "17:30", type: "event", label: "閉幕 Closing" },
 ];
 
 // demo data mapped by slot start time
 const sessionsByDay = {
-  day1: {
-    "09:15": {
-      R1: {
-        room: "R1",
-        title: "練啟的黑歷史：開源技術照亮網路中的隱藏威脅，終端設備的資訊安全",
-        topics: [topics[0], topics[1], topics[2]],
-        speaker: {
-          name: "會厚芸",
-          title: "Gronext 可羅渥斯特股份有限公司\nRD 研發工程師",
-          avatar: speakerAvatar,
+    day1: {
+        "09:15": {
+            R1: {
+                room: "R1",
+                title: "練啟的黑歷史：開源技術照亮網路中的隱藏威脅，終端設備的資訊安全",
+                topics: [topics[0], topics[1], topics[2]],
+                speaker: {
+                    name: "會厚芸",
+                    title: "Gronext 可羅渥斯特股份有限公司\nRD 研發工程師",
+                    avatar: speakerAvatar,
+                },
+            },
+            R2: {
+                room: "R2",
+                title: "軟體工程師轉戰無人機領域需要的基礎知識與發展機會",
+                topics: [topics[0], topics[1]],
+                speaker: {
+                    name: "ericpi",
+                    title: "高雄在地開發社群管理",
+                    avatar: speakerAvatar,
+                },
+            },
         },
-      },
-      R2: {
-        room: "R2",
-        title: "軟體工程師轉戰無人機領域需要的基礎知識與發展機會",
-        topics: [topics[0], topics[1]],
-        speaker: {
-          name: "ericpi",
-          title: "高雄在地開發社群管理",
-          avatar: speakerAvatar,
+        "10:15": {
+            R1: {
+                room: "R1",
+                title: "邊緣裝置上的即時物件辨識與追蹤系統",
+                topics: [topics[0], topics[2]],
+                speaker: {
+                    name: "陳建志",
+                    title: "EdgeTech Solutions\nAI Engineer",
+                    avatar: speakerAvatar,
+                },
+            },
+            R2: {
+                room: "R2",
+                title: "隱私保護技術在行動裝置 AI 的應用與挑戰",
+                topics: [topics[3], topics[4]],
+                speaker: {
+                    name: "林雅婷",
+                    title: "Privacy AI Lab\nResearch Scientist",
+                    avatar: speakerAvatar,
+                },
+            },
         },
-      },
+        "11:15": {
+            R1: {
+                room: "R1",
+                title: "打造高效能的端側 AI 推論引擎",
+                topics: [topics[1], topics[2]],
+                speaker: {
+                    name: "王大明",
+                    title: "Mobile AI Corp\nSenior Developer",
+                    avatar: speakerAvatar,
+                },
+            },
+            R2: {
+                room: "R2",
+                title: "從零開始建構你的 AI 驅動行動應用",
+                topics: [topics[0], topics[4], topics[5]],
+                speaker: {
+                    name: "張小華",
+                    title: "Startup Founder & Developer",
+                    avatar: speakerAvatar,
+                },
+            },
+        },
+        "13:15": {
+            R1: {
+                room: "R1",
+                title: "TinyML：在微控制器上實現機器學習",
+                topics: [topics[0], topics[1]],
+                speaker: {
+                    name: "李志明",
+                    title: "IoT Solutions\nEmbedded Engineer",
+                    avatar: speakerAvatar,
+                },
+            },
+            R2: {
+                room: "R2",
+                title: "聯邦學習：保護隱私的分散式 AI 訓練",
+                topics: [topics[3], topics[4]],
+                speaker: {
+                    name: "黃美玲",
+                    title: "Secure AI Inc\nML Researcher",
+                    avatar: speakerAvatar,
+                },
+            },
+        },
+        "14:15": {
+            R1: {
+                room: "R1",
+                title: "AI 模型壓縮與量化技術實戰",
+                topics: [topics[2], topics[1]],
+                speaker: {
+                    name: "劉建國",
+                    title: "Optimization Labs\nStaff Engineer",
+                    avatar: speakerAvatar,
+                },
+            },
+            R2: {
+                room: "R2",
+                title: "智慧型語音助理的產品設計思維",
+                topics: [topics[4], topics[5]],
+                speaker: {
+                    name: "吳佳穎",
+                    title: "Voice AI Company\nProduct Manager",
+                    avatar: speakerAvatar,
+                },
+            },
+        },
+        "15:30": {
+            R1: {
+                room: "R1",
+                title: "NPU 與 GPU：行動裝置 AI 加速器比較",
+                topics: [topics[1], topics[2]],
+                speaker: {
+                    name: "徐文傑",
+                    title: "Hardware AI Lab\nHardware Architect",
+                    avatar: speakerAvatar,
+                },
+            },
+            R2: {
+                room: "R2",
+                title: "AR 眼鏡中的即時 AI 視覺處理",
+                topics: [topics[0], topics[1], topics[4]],
+                speaker: {
+                    name: "趙敏慧",
+                    title: "AR Vision Tech\nComputer Vision Engineer",
+                    avatar: speakerAvatar,
+                },
+            },
+        },
+        "16:30": {
+            R1: {
+                room: "R1",
+                title: "醫療影像辨識在行動裝置上的應用",
+                topics: [topics[0], topics[3], topics[4]],
+                speaker: {
+                    name: "孫立強",
+                    title: "MedTech AI\nClinical AI Specialist",
+                    avatar: speakerAvatar,
+                },
+            },
+            R2: {
+                room: "R2",
+                title: "Edge AI 產品從開發到上線的完整流程",
+                topics: [topics[4], topics[5]],
+                speaker: {
+                    name: "鄭雅萍",
+                    title: "Edge Solutions\nTech Lead",
+                    avatar: speakerAvatar,
+                },
+            },
+        },
     },
-    "10:15": {
-      R1: {
-        room: "R1",
-        title: "邊緣裝置上的即時物件辨識與追蹤系統",
-        topics: [topics[0], topics[2]],
-        speaker: {
-          name: "陳建志",
-          title: "EdgeTech Solutions\nAI Engineer",
-          avatar: speakerAvatar,
+    day2: {
+        "09:15": {
+            R1: {
+                room: "R1",
+                title: "自動駕駛系統中的邊緣運算架構",
+                topics: [topics[1], topics[2], topics[4]],
+                speaker: {
+                    name: "周俊良",
+                    title: "Autonomous Driving Co\nSystem Architect",
+                    avatar: speakerAvatar,
+                },
+            },
+            R2: {
+                room: "R2",
+                title: "智慧家居：端側 AI 的隱私保護實踐",
+                topics: [topics[0], topics[3]],
+                speaker: {
+                    name: "馬欣怡",
+                    title: "Smart Home Tech\nSecurity Engineer",
+                    avatar: speakerAvatar,
+                },
+            },
         },
-      },
-      R2: {
-        room: "R2",
-        title: "隱私保護技術在行動裝置 AI 的應用與挑戰",
-        topics: [topics[3], topics[4]],
-        speaker: {
-          name: "林雅婷",
-          title: "Privacy AI Lab\nResearch Scientist",
-          avatar: speakerAvatar,
+        "10:15": {
+            R1: {
+                room: "R1",
+                title: "5G 時代的邊緣智能應用場景",
+                topics: [topics[1], topics[4]],
+                speaker: {
+                    name: "許志豪",
+                    title: "Telecom AI Lab\n5G Solutions Lead",
+                    avatar: speakerAvatar,
+                },
+            },
+            R2: {
+                room: "R2",
+                title: "手機攝影中的 AI 影像增強技術",
+                topics: [topics[0], topics[2], topics[4]],
+                speaker: {
+                    name: "范佳玲",
+                    title: "Camera AI Team\nImage Processing Expert",
+                    avatar: speakerAvatar,
+                },
+            },
         },
-      },
+        "11:15": {
+            R1: {
+                room: "R1",
+                title: "WebAssembly 與瀏覽器端的 AI 應用",
+                topics: [topics[0], topics[2]],
+                speaker: {
+                    name: "曾國華",
+                    title: "Web AI Solutions\nFrontend Architect",
+                    avatar: speakerAvatar,
+                },
+            },
+            R2: {
+                room: "R2",
+                title: "AI 晶片設計：從概念到量產",
+                topics: [topics[1], topics[5]],
+                speaker: {
+                    name: "蔡明宏",
+                    title: "Chip Design Inc\nSilicon Engineer",
+                    avatar: speakerAvatar,
+                },
+            },
+        },
+        "13:15": {
+            R1: {
+                room: "R1",
+                title: "即時翻譯應用的端側 AI 實現",
+                topics: [topics[0], topics[2], topics[3]],
+                speaker: {
+                    name: "謝淑芬",
+                    title: "Translation AI\nNLP Engineer",
+                    avatar: speakerAvatar,
+                },
+            },
+            R2: {
+                room: "R2",
+                title: "運動追蹤與姿態識別技術解析",
+                topics: [topics[0], topics[4]],
+                speaker: {
+                    name: "羅偉傑",
+                    title: "Sports Tech\nMotion Analysis Expert",
+                    avatar: speakerAvatar,
+                },
+            },
+        },
+        "14:15": {
+            R1: {
+                room: "R1",
+                title: "Android 與 iOS 的 AI 框架比較",
+                topics: [topics[0], topics[5]],
+                speaker: {
+                    name: "葉淑惠",
+                    title: "Mobile Platform Team\nCross-platform Developer",
+                    avatar: speakerAvatar,
+                },
+            },
+            R2: {
+                room: "R2",
+                title: "差分隱私在 AI 模型訓練中的應用",
+                topics: [topics[3], topics[4]],
+                speaker: {
+                    name: "高志偉",
+                    title: "Privacy Tech Research\nData Scientist",
+                    avatar: speakerAvatar,
+                },
+            },
+        },
+        "15:30": {
+            R1: {
+                room: "R1",
+                title: "無人機視覺導航的邊緣 AI 方案",
+                topics: [topics[0], topics[1], topics[2]],
+                speaker: {
+                    name: "梁家豪",
+                    title: "Drone Tech\nFlight Control Engineer",
+                    avatar: speakerAvatar,
+                },
+            },
+            R2: {
+                room: "R2",
+                title: "AI 驅動的使用者體驗優化策略",
+                topics: [topics[4], topics[5]],
+                speaker: {
+                    name: "彭雅筑",
+                    title: "UX AI Lab\nProduct Designer",
+                    avatar: speakerAvatar,
+                },
+            },
+        },
+        "16:30": {
+            R1: {
+                room: "R1",
+                title: "邊緣運算的能源效率優化技術",
+                topics: [topics[1], topics[2]],
+                speaker: {
+                    name: "蕭立文",
+                    title: "Green AI Solutions\nPower Management Specialist",
+                    avatar: speakerAvatar,
+                },
+            },
+            R2: {
+                room: "R2",
+                title: "AI 產品商業化的成功案例分享",
+                topics: [topics[4], topics[5]],
+                speaker: {
+                    name: "陳怡君",
+                    title: "AI Ventures\nBusiness Development",
+                    avatar: speakerAvatar,
+                },
+            },
+        },
     },
-    "11:15": {
-      R1: {
-        room: "R1",
-        title: "打造高效能的端側 AI 推論引擎",
-        topics: [topics[1], topics[2]],
-        speaker: {
-          name: "王大明",
-          title: "Mobile AI Corp\nSenior Developer",
-          avatar: speakerAvatar,
-        },
-      },
-      R2: {
-        room: "R2",
-        title: "從零開始建構你的 AI 驅動行動應用",
-        topics: [topics[0], topics[4], topics[5]],
-        speaker: {
-          name: "張小華",
-          title: "Startup Founder & Developer",
-          avatar: speakerAvatar,
-        },
-      },
-    },
-    "13:15": {
-      R1: {
-        room: "R1",
-        title: "TinyML：在微控制器上實現機器學習",
-        topics: [topics[0], topics[1]],
-        speaker: {
-          name: "李志明",
-          title: "IoT Solutions\nEmbedded Engineer",
-          avatar: speakerAvatar,
-        },
-      },
-      R2: {
-        room: "R2",
-        title: "聯邦學習：保護隱私的分散式 AI 訓練",
-        topics: [topics[3], topics[4]],
-        speaker: {
-          name: "黃美玲",
-          title: "Secure AI Inc\nML Researcher",
-          avatar: speakerAvatar,
-        },
-      },
-    },
-    "14:15": {
-      R1: {
-        room: "R1",
-        title: "AI 模型壓縮與量化技術實戰",
-        topics: [topics[2], topics[1]],
-        speaker: {
-          name: "劉建國",
-          title: "Optimization Labs\nStaff Engineer",
-          avatar: speakerAvatar,
-        },
-      },
-      R2: {
-        room: "R2",
-        title: "智慧型語音助理的產品設計思維",
-        topics: [topics[4], topics[5]],
-        speaker: {
-          name: "吳佳穎",
-          title: "Voice AI Company\nProduct Manager",
-          avatar: speakerAvatar,
-        },
-      },
-    },
-    "15:30": {
-      R1: {
-        room: "R1",
-        title: "NPU 與 GPU：行動裝置 AI 加速器比較",
-        topics: [topics[1], topics[2]],
-        speaker: {
-          name: "徐文傑",
-          title: "Hardware AI Lab\nHardware Architect",
-          avatar: speakerAvatar,
-        },
-      },
-      R2: {
-        room: "R2",
-        title: "AR 眼鏡中的即時 AI 視覺處理",
-        topics: [topics[0], topics[1], topics[4]],
-        speaker: {
-          name: "趙敏慧",
-          title: "AR Vision Tech\nComputer Vision Engineer",
-          avatar: speakerAvatar,
-        },
-      },
-    },
-    "16:30": {
-      R1: {
-        room: "R1",
-        title: "醫療影像辨識在行動裝置上的應用",
-        topics: [topics[0], topics[3], topics[4]],
-        speaker: {
-          name: "孫立強",
-          title: "MedTech AI\nClinical AI Specialist",
-          avatar: speakerAvatar,
-        },
-      },
-      R2: {
-        room: "R2",
-        title: "Edge AI 產品從開發到上線的完整流程",
-        topics: [topics[4], topics[5]],
-        speaker: {
-          name: "鄭雅萍",
-          title: "Edge Solutions\nTech Lead",
-          avatar: speakerAvatar,
-        },
-      },
-    },
-  },
-  day2: {
-    "09:15": {
-      R1: {
-        room: "R1",
-        title: "自動駕駛系統中的邊緣運算架構",
-        topics: [topics[1], topics[2], topics[4]],
-        speaker: {
-          name: "周俊良",
-          title: "Autonomous Driving Co\nSystem Architect",
-          avatar: speakerAvatar,
-        },
-      },
-      R2: {
-        room: "R2",
-        title: "智慧家居：端側 AI 的隱私保護實踐",
-        topics: [topics[0], topics[3]],
-        speaker: {
-          name: "馬欣怡",
-          title: "Smart Home Tech\nSecurity Engineer",
-          avatar: speakerAvatar,
-        },
-      },
-    },
-    "10:15": {
-      R1: {
-        room: "R1",
-        title: "5G 時代的邊緣智能應用場景",
-        topics: [topics[1], topics[4]],
-        speaker: {
-          name: "許志豪",
-          title: "Telecom AI Lab\n5G Solutions Lead",
-          avatar: speakerAvatar,
-        },
-      },
-      R2: {
-        room: "R2",
-        title: "手機攝影中的 AI 影像增強技術",
-        topics: [topics[0], topics[2], topics[4]],
-        speaker: {
-          name: "范佳玲",
-          title: "Camera AI Team\nImage Processing Expert",
-          avatar: speakerAvatar,
-        },
-      },
-    },
-    "11:15": {
-      R1: {
-        room: "R1",
-        title: "WebAssembly 與瀏覽器端的 AI 應用",
-        topics: [topics[0], topics[2]],
-        speaker: {
-          name: "曾國華",
-          title: "Web AI Solutions\nFrontend Architect",
-          avatar: speakerAvatar,
-        },
-      },
-      R2: {
-        room: "R2",
-        title: "AI 晶片設計：從概念到量產",
-        topics: [topics[1], topics[5]],
-        speaker: {
-          name: "蔡明宏",
-          title: "Chip Design Inc\nSilicon Engineer",
-          avatar: speakerAvatar,
-        },
-      },
-    },
-    "13:15": {
-      R1: {
-        room: "R1",
-        title: "即時翻譯應用的端側 AI 實現",
-        topics: [topics[0], topics[2], topics[3]],
-        speaker: {
-          name: "謝淑芬",
-          title: "Translation AI\nNLP Engineer",
-          avatar: speakerAvatar,
-        },
-      },
-      R2: {
-        room: "R2",
-        title: "運動追蹤與姿態識別技術解析",
-        topics: [topics[0], topics[4]],
-        speaker: {
-          name: "羅偉傑",
-          title: "Sports Tech\nMotion Analysis Expert",
-          avatar: speakerAvatar,
-        },
-      },
-    },
-    "14:15": {
-      R1: {
-        room: "R1",
-        title: "Android 與 iOS 的 AI 框架比較",
-        topics: [topics[0], topics[5]],
-        speaker: {
-          name: "葉淑惠",
-          title: "Mobile Platform Team\nCross-platform Developer",
-          avatar: speakerAvatar,
-        },
-      },
-      R2: {
-        room: "R2",
-        title: "差分隱私在 AI 模型訓練中的應用",
-        topics: [topics[3], topics[4]],
-        speaker: {
-          name: "高志偉",
-          title: "Privacy Tech Research\nData Scientist",
-          avatar: speakerAvatar,
-        },
-      },
-    },
-    "15:30": {
-      R1: {
-        room: "R1",
-        title: "無人機視覺導航的邊緣 AI 方案",
-        topics: [topics[0], topics[1], topics[2]],
-        speaker: {
-          name: "梁家豪",
-          title: "Drone Tech\nFlight Control Engineer",
-          avatar: speakerAvatar,
-        },
-      },
-      R2: {
-        room: "R2",
-        title: "AI 驅動的使用者體驗優化策略",
-        topics: [topics[4], topics[5]],
-        speaker: {
-          name: "彭雅筑",
-          title: "UX AI Lab\nProduct Designer",
-          avatar: speakerAvatar,
-        },
-      },
-    },
-    "16:30": {
-      R1: {
-        room: "R1",
-        title: "邊緣運算的能源效率優化技術",
-        topics: [topics[1], topics[2]],
-        speaker: {
-          name: "蕭立文",
-          title: "Green AI Solutions\nPower Management Specialist",
-          avatar: speakerAvatar,
-        },
-      },
-      R2: {
-        room: "R2",
-        title: "AI 產品商業化的成功案例分享",
-        topics: [topics[4], topics[5]],
-        speaker: {
-          name: "陳怡君",
-          title: "AI Ventures\nBusiness Development",
-          avatar: speakerAvatar,
-        },
-      },
-    },
-  },
 } as Record<string, Record<string, any>>;
 ---
 
 <Layout>
-  <section class="agenda">
-    <!-- Hero section with background -->
-    <div class="agenda-hero">
-      <!-- Background layer -->
-      <div class="agenda-hero__bg">
-        <Image
-          src={agendaBg}
-          alt="Agenda Background"
-          class="agenda-hero__bg-image"
-        />
-      </div>
+    <section class="agenda">
+        <!-- Hero section with background -->
+        <div class="agenda-hero">
+            <!-- Background layer -->
+            <div class="agenda-hero__bg">
+                <Image
+                    src={agendaBg}
+                    alt="Agenda Background"
+                    class="agenda-hero__bg-image"
+                />
+            </div>
 
-      <!-- Hero content layer -->
-      <div class="agenda-hero__content">
-        <h1 class="agenda__title font-mantou">精采議程</h1>
+            <!-- Hero content layer -->
+            <div class="agenda-hero__content">
+                <h1 class="agenda__title font-mantou">精采議程</h1>
 
-        <div class="agenda__seg">
-          <SegmentedControl options={dates} value="day1" />
-        </div>
-
-        <div class="agenda__filters" id="agenda-filters">
-          {
-            topics.map((t) => (
-              <FilterChip label={t} selected={true} client:load />
-            ))
-          }
-        </div>
-      </div>
-    </div>
-
-    <!-- Schedule grid (outside hero) -->
-    <div class="agenda__days">
-      {
-        ["day1", "day2"].map((day) => (
-          <div
-            class="agenda__grid"
-            data-day={day}
-            class:list={{ hidden: day !== "day1" }}
-          >
-            {routine.map((slot) => {
-              const slotSessions =
-                (sessionsByDay[day] && sessionsByDay[day][slot.start]) || {};
-              const isTalk = slot.type === "talk";
-              return (
-                <div class="agenda__row">
-                  <div class="agenda__time">{slot.start}</div>
-                  <div class="agenda__slot">
-                    {isTalk ? (
-                      <>
-                        <div class="h-[1rem] flex">
-                          <div class="agenda__divider" />
-                        </div>
-                        <div class="agenda__cards">
-                          <button
-                            class="agenda__cardbtn"
-                            data-open-modal
-                            data-topics={
-                              slotSessions.R1
-                                ? JSON.stringify(slotSessions.R1.topics)
-                                : "[]"
-                            }
-                          >
-                            {slotSessions.R1 && (
-                              <SessionCard session={slotSessions.R1} />
-                            )}
-                          </button>
-                          <button
-                            class="agenda__cardbtn"
-                            data-open-modal
-                            data-topics={
-                              slotSessions.R2
-                                ? JSON.stringify(slotSessions.R2.topics)
-                                : "[]"
-                            }
-                          >
-                            {slotSessions.R2 && (
-                              <SessionCard session={slotSessions.R2} />
-                            )}
-                          </button>
-                        </div>
-                      </>
-                    ) : (
-                      <>
-                        <div class="h-[1rem] flex">
-                          <div class="agenda__divider" />
-                        </div>
-                        <div class="agenda__event-simple">{slot.label}</div>
-                      </>
-                    )}
-                  </div>
+                <div class="agenda__seg">
+                    <SegmentedControl options={dates} value="day1" />
                 </div>
-              );
-            })}
-          </div>
-        ))
-      }
-    </div>
-  </section>
 
-  <SessionModal open={false} client:load>
-    <div slot="topic">
-      <div class="modal__tags">
-        {topics.slice(0, 3).map((t) => <span class="tag">{t}</span>)}
-      </div>
-      <p class="modal__text">
-        在我們享受行動及 IoT
-        設備帶給我們的便利時，隱藏的數位威脅是否悄悄伺機而動？本議程將帶你理解如何運用開源工具來監控和保護你的網路。
-      </p>
-    </div>
-    <div slot="speaker">
-      <div class="speaker__head">
-        <img class="avatar" src="/2025/avatar-demo.webp" alt="speaker" />
-        <div>
-          <div class="name">曾厚荃</div>
-          <div class="title">Gronext RD 研發工程師</div>
+                <div class="agenda__filters" id="agenda-filters">
+                    {
+                        topics.map((t) => (
+                            <FilterChip label={t} selected={true} client:load />
+                        ))
+                    }
+                </div>
+            </div>
         </div>
-      </div>
-      <p class="modal__text">
-        現職為研發工程師，專長於網路維運與資安探索，負責前端開發及資料流整合。
-      </p>
-    </div>
-  </SessionModal>
+
+        <!-- Schedule grid (outside hero) -->
+        <div class="agenda__days">
+            {
+                ["day1", "day2"].map((day) => (
+                    <div
+                        class="agenda__grid"
+                        data-day={day}
+                        class:list={{ hidden: day !== "day1" }}
+                    >
+                        {routine.map((slot) => {
+                            const slotSessions =
+                                (sessionsByDay[day] &&
+                                    sessionsByDay[day][slot.start]) ||
+                                {};
+                            const isTalk = slot.type === "talk";
+                            return (
+                                <div class="agenda__row">
+                                    <div class="agenda__time">{slot.start}</div>
+                                    <div class="agenda__slot">
+                                        {isTalk ? (
+                                            <>
+                                                <div class="h-[1rem] flex">
+                                                    <div class="agenda__divider" />
+                                                </div>
+                                                <div class="agenda__cards">
+                                                    <button
+                                                        class="agenda__cardbtn"
+                                                        data-open-modal
+                                                        data-topics={
+                                                            slotSessions.R1
+                                                                ? JSON.stringify(
+                                                                      slotSessions
+                                                                          .R1
+                                                                          .topics,
+                                                                  )
+                                                                : "[]"
+                                                        }
+                                                        data-session={
+                                                            slotSessions.R1
+                                                                ? JSON.stringify(
+                                                                      slotSessions.R1,
+                                                                  )
+                                                                : "{}"
+                                                        }
+                                                    >
+                                                        {slotSessions.R1 && (
+                                                            <SessionCard
+                                                                session={
+                                                                    slotSessions.R1
+                                                                }
+                                                            />
+                                                        )}
+                                                    </button>
+                                                    <button
+                                                        class="agenda__cardbtn"
+                                                        data-open-modal
+                                                        data-topics={
+                                                            slotSessions.R2
+                                                                ? JSON.stringify(
+                                                                      slotSessions
+                                                                          .R2
+                                                                          .topics,
+                                                                  )
+                                                                : "[]"
+                                                        }
+                                                        data-session={
+                                                            slotSessions.R2
+                                                                ? JSON.stringify(
+                                                                      slotSessions.R2,
+                                                                  )
+                                                                : "{}"
+                                                        }
+                                                    >
+                                                        {slotSessions.R2 && (
+                                                            <SessionCard
+                                                                session={
+                                                                    slotSessions.R2
+                                                                }
+                                                            />
+                                                        )}
+                                                    </button>
+                                                </div>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <div class="h-[1rem] flex">
+                                                    <div class="agenda__divider" />
+                                                </div>
+                                                <div class="agenda__event-simple">
+                                                    {slot.label}
+                                                </div>
+                                            </>
+                                        )}
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                ))
+            }
+        </div>
+    </section>
+
+    <SessionModal open={false}>
+        <div slot="topic">
+            <div class="modal__tags">
+                {topics.slice(0, 3).map((t) => <span class="tag">{t}</span>)}
+            </div>
+            <p class="modal__text">
+                在我們享受行動及 IoT
+                設備帶給我們的便利時，隱藏的數位威脅是否悄悄伺機而動？本議程將帶你理解如何運用開源工具來監控和保護你的網路。
+            </p>
+        </div>
+        <div slot="speaker">
+            <div class="speaker__head">
+                <img
+                    class="avatar"
+                    src="/2025/avatar-demo.webp"
+                    alt="speaker"
+                />
+                <div>
+                    <div class="name">曾厚荃</div>
+                    <div class="title">Gronext RD 研發工程師</div>
+                </div>
+            </div>
+            <p class="modal__text">
+                現職為研發工程師，專長於網路維運與資安探索，負責前端開發及資料流整合。
+            </p>
+        </div>
+    </SessionModal>
 </Layout>
 
 <script>
-  // Function to apply filters to session cards
-  function applyFilters() {
-    const filterButtons = document.querySelectorAll("#agenda-filters button");
-    const selectedTopics: string[] = [];
+    // ============================
+    // Modal Management
+    // ============================
+    const modal = document.querySelector("dialog") as HTMLDialogElement;
 
-    // Collect all selected topic filters
-    filterButtons.forEach((btn) => {
-      if (btn.classList.contains("is-selected")) {
-        selectedTopics.push(btn.textContent?.trim() || "");
-      }
-    });
+    // Modal utility functions
+    function getModalElements() {
+        return {
+            tabs: Array.from(
+                modal.querySelectorAll<HTMLButtonElement>(
+                    ".modal__tabs > button",
+                ),
+            ),
+            underline: modal.querySelector(".modal__underline") as HTMLElement,
+            topicPanel: modal.querySelector('[data-panel="topic"]'),
+            speakerPanel: modal.querySelector('[data-panel="speaker"]'),
+        };
+    }
 
-    // Get all session card buttons
-    const sessionCards =
-      document.querySelectorAll<HTMLElement>(".agenda__cardbtn");
+    function moveUnderline(btn: HTMLButtonElement, underline: HTMLElement) {
+        const { offsetLeft, offsetWidth } = btn;
+        underline.style.transform = `translateX(${offsetLeft}px)`;
+        underline.style.width = `${offsetWidth}px`;
+    }
 
-    sessionCards.forEach((card) => {
-      const topicsAttr = card.getAttribute("data-topics");
-      if (!topicsAttr) return;
+    function switchTab(targetBtn: HTMLButtonElement) {
+        const { tabs, underline } = getModalElements();
+        tabs.forEach((b) => b.classList.remove("is-active"));
+        targetBtn.classList.add("is-active");
+        moveUnderline(targetBtn, underline);
 
-      try {
-        const cardTopics = JSON.parse(topicsAttr) as string[];
-
-        // If no filters selected, show all cards
-        if (selectedTopics.length === 0) {
-          card.classList.remove("hidden");
-          return;
-        }
-
-        // Check if card has at least one matching topic
-        const hasMatch = cardTopics.some((topic) =>
-          selectedTopics.includes(topic),
-        );
-
-        if (hasMatch) {
-          card.classList.remove("hidden");
-        } else {
-          card.classList.add("hidden");
-        }
-      } catch (e) {
-        // If parsing fails, show the card
-        card.classList.remove("hidden");
-      }
-    });
-  }
-
-  const filters = document.getElementById("agenda-filters")!;
-  filters.addEventListener("click", (e) => {
-    const target = (e.target as HTMLElement).closest("button");
-    if (!target) return;
-    target.classList.toggle("is-selected");
-    // Apply filters after toggle
-    applyFilters();
-  });
-
-  document.addEventListener("click", (e) => {
-    const btn = (e.target as HTMLElement).closest("[data-open-modal]");
-    const modal = document.querySelector("dialog.modal") as HTMLDialogElement;
-    if (btn && modal) modal.showModal();
-  });
-
-  // switch days via segmented control
-  const seg = document.querySelector(".agenda__seg .segmented") as HTMLElement;
-  if (seg) {
-    seg.addEventListener("change", (e: any) => {
-      const value = e.detail as string;
-      document
-        .querySelectorAll<HTMLElement>(".agenda__grid")
-        .forEach((grid) => {
-          if (grid.dataset.day === value) {
-            grid.classList.remove("hidden");
-          } else {
-            grid.classList.add("hidden");
-          }
+        const key = targetBtn.dataset.tab;
+        modal.querySelectorAll<HTMLElement>(".modal__panel").forEach((p) => {
+            p.classList.toggle("hidden", p.dataset.panel !== key);
         });
-    });
-  }
+    }
 
-  // Apply initial filters on page load
-  applyFilters();
+    function initializeModal() {
+        const { tabs, underline } = getModalElements();
+        // Initialize underline position
+        const activeTab =
+            tabs.find((b) => b.classList.contains("is-active")) || tabs[0];
+        if (activeTab && underline) {
+            moveUnderline(activeTab, underline);
+        }
+    }
+
+    function updateModalContent(session: any) {
+        const { topicPanel, speakerPanel } = getModalElements();
+
+        // Update topic section
+        if (topicPanel) {
+            const tagsHtml = session.topics
+                .map((t: string) => `<span class="tag">${t}</span>`)
+                .join("");
+            topicPanel.innerHTML = `
+                <div class="modal__tags">${tagsHtml}</div>
+                <p class="modal__text">${session.description || "在我們享受行動及 IoT 設備帶給我們的便利時，隱藏的數位威脅是否悄悄伺機而動？本議程將帶你理解如何運用開源工具來監控和保護你的網路。"}</p>
+            `;
+        }
+
+        // Update speaker section
+        if (speakerPanel && session.speaker) {
+            speakerPanel.innerHTML = `
+                <div class="speaker__head">
+                    <img class="avatar" src="${session.speaker.avatar || "/2025/avatar-demo.webp"}" alt="speaker" />
+                    <div>
+                        <div class="name">${session.speaker.name}</div>
+                        <div class="title">${session.speaker.title}</div>
+                    </div>
+                </div>
+                <p class="modal__text">${session.speaker.bio || "現職為研發工程師，專長於網路維運與資安探索，負責前端開發及資料流整合。"}</p>
+            `;
+        }
+    }
+
+    // ============================
+    // Event Delegation
+    // ============================
+
+    // Global click handler for all modal interactions
+    document.addEventListener("click", (e) => {
+        const target = e.target as HTMLElement;
+
+        // Handle open modal button clicks
+        const openBtn = target.closest("[data-open-modal]");
+        if (openBtn && modal) {
+            const sessionData = openBtn.getAttribute("data-session");
+            if (sessionData) {
+                try {
+                    const session = JSON.parse(sessionData);
+                    updateModalContent(session);
+                    initializeModal();
+                    modal.showModal();
+                } catch (e) {
+                    console.error("Failed to parse session data:", e);
+                }
+            }
+            return;
+        }
+
+        // Handle modal close button clicks
+        const closeBtn = target.closest(".modal__close");
+        if (closeBtn && modal) {
+            modal.close();
+            return;
+        }
+
+        // Handle tab switching
+        const tabBtn = target.closest(".modal__tabs > button");
+        if (tabBtn && modal.contains(tabBtn as Node)) {
+            switchTab(tabBtn as HTMLButtonElement);
+            return;
+        }
+    });
+
+    // Handle backdrop clicks to close modal
+    if (modal) {
+        modal.addEventListener("click", (e) => {
+            // Close if clicking on backdrop (the dialog element itself, not its children)
+            if (e.target === modal) {
+                modal.close();
+            }
+        });
+
+        // Handle window resize for underline repositioning
+        window.addEventListener("resize", () => {
+            const { tabs, underline } = getModalElements();
+            const active = tabs.find((b) => b.classList.contains("is-active"));
+            if (active && underline) {
+                moveUnderline(active, underline);
+            }
+        });
+    }
+
+    // ============================
+    // Filter Management
+    // ============================
+
+    function applyFilters() {
+        const filterButtons = document.querySelectorAll(
+            "#agenda-filters button",
+        );
+        const selectedTopics: string[] = [];
+
+        // Collect selected topic filters
+        filterButtons.forEach((btn) => {
+            if (btn.classList.contains("is-selected")) {
+                selectedTopics.push(btn.textContent?.trim() || "");
+            }
+        });
+
+        // Filter session cards
+        const sessionCards =
+            document.querySelectorAll<HTMLElement>(".agenda__cardbtn");
+        sessionCards.forEach((card) => {
+            const topicsAttr = card.getAttribute("data-topics");
+            if (!topicsAttr) return;
+
+            try {
+                const cardTopics = JSON.parse(topicsAttr) as string[];
+
+                // Show all if no filters selected
+                if (selectedTopics.length === 0) {
+                    card.classList.remove("hidden");
+                    return;
+                }
+
+                // Show if card has at least one matching topic
+                const hasMatch = cardTopics.some((topic) =>
+                    selectedTopics.includes(topic),
+                );
+                card.classList.toggle("hidden", !hasMatch);
+            } catch (e) {
+                card.classList.remove("hidden");
+            }
+        });
+    }
+
+    // Handle filter clicks
+    const filters = document.getElementById("agenda-filters");
+    if (filters) {
+        filters.addEventListener("click", (e) => {
+            const target = (e.target as HTMLElement).closest("button");
+            if (!target) return;
+            target.classList.toggle("is-selected");
+            applyFilters();
+        });
+    }
+
+    // ============================
+    // Day Switching
+    // ============================
+
+    const seg = document.querySelector(
+        ".agenda__seg .segmented",
+    ) as HTMLElement;
+    if (seg) {
+        seg.addEventListener("change", (e: any) => {
+            const value = e.detail as string;
+            document
+                .querySelectorAll<HTMLElement>(".agenda__grid")
+                .forEach((grid) => {
+                    grid.classList.toggle("hidden", grid.dataset.day !== value);
+                });
+        });
+    }
+
+    // ============================
+    // Initialization
+    // ============================
+
+    // Apply initial filters and initialize modal
+    applyFilters();
+    if (modal) {
+        initializeModal();
+    }
 </script>
 
 <style>
-  .agenda {
-    background: #020618;
-  }
+    .agenda {
+        background: #020618;
+    }
 
-  /* Hero container - only for header section */
-  .agenda-hero {
-    position: relative;
-    padding: 120px 16px 48px;
-    min-height: 500px;
-  }
+    /* Hero container - only for header section */
+    .agenda-hero {
+        position: relative;
+        padding: 120px 16px 48px;
+        min-height: 500px;
+    }
 
-  /* Background layer */
-  .agenda-hero__bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    pointer-events: none;
-  }
+    /* Background layer */
+    .agenda-hero__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
 
-  .agenda-hero__bg-image {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+    .agenda-hero__bg-image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
-  /* Hero content layer */
-  .agenda-hero__content {
-    position: relative;
-    z-index: 10;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+    /* Hero content layer */
+    .agenda-hero__content {
+        position: relative;
+        z-index: 10;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
 
-  /* Schedule days container */
-  .agenda__days {
-    position: relative;
-    z-index: 10;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 16px 32px;
-  }
+    /* Schedule days container */
+    .agenda__days {
+        position: relative;
+        z-index: 10;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 16px 32px;
+    }
 
-  .agenda__title {
-    color: #020618;
-    font-size: 48px;
-    text-align: center;
-    margin-bottom: 16px;
-  }
-  .agenda__seg {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 16px;
-  }
-  .agenda__filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-bottom: 16px;
-  }
-  .agenda__grid {
-    margin-top: 8px;
-    display: grid;
-    gap: 18px;
-  }
-  .agenda__row {
-    display: grid;
-    grid-template-columns: 90px 1fr;
-    gap: 18px;
-    align-items: start;
-  }
-  .agenda__time {
-    color: #a9b3c7;
-    font-weight: 800;
-    text-align: right;
-    line-height: 1;
-  }
-  .agenda__slot {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .agenda__divider {
-    width: 100%;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.12);
-    margin: auto 0;
-  }
-  .agenda__cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .agenda__cardbtn {
-    text-align: left;
-  }
-  .agenda__event-simple {
-    text-align: center;
-    color: #fff;
-    font-weight: 800;
-  }
-  .agenda__event {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #cbd5e1;
-    font-weight: 800;
-    line-height: 1;
-  }
-  .agenda__event-line {
-    flex: 1;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.12);
-  }
-  .agenda__event-label {
-    white-space: nowrap;
-  }
-
-  .modal__tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .tag {
-    padding: 6px 10px;
-    background: #25324a;
-    border-radius: 10px;
-  }
-  .modal__text {
-    color: #e6edf8;
-    line-height: 1.9;
-  }
-  .speaker__head {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 12px;
-  }
-  .speaker__head .avatar {
-    width: 56px;
-    height: 56px;
-    border-radius: 9999px;
-    object-fit: cover;
-  }
-  .speaker__head .name {
-    color: #fff;
-    font-weight: 900;
-  }
-  .speaker__head .title {
-    color: #a9b3c7;
-  }
-
-  .hidden {
-    display: none !important;
-  }
-
-  @media (max-width: 840px) {
+    .agenda__title {
+        color: #020618;
+        font-size: 48px;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    .agenda__seg {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+    .agenda__filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+    .agenda__grid {
+        margin-top: 8px;
+        display: grid;
+        gap: 18px;
+    }
     .agenda__row {
-      grid-template-columns: 64px 1fr;
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 18px;
+        align-items: start;
+    }
+    .agenda__time {
+        color: #a9b3c7;
+        font-weight: 800;
+        text-align: right;
+        line-height: 1;
+    }
+    .agenda__slot {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .agenda__divider {
+        width: 100%;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.12);
+        margin: auto 0;
     }
     .agenda__cards {
-      grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
     }
-  }
+    .agenda__cardbtn {
+        text-align: left;
+    }
+    .agenda__event-simple {
+        text-align: center;
+        color: #fff;
+        font-weight: 800;
+    }
+    .agenda__event {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #cbd5e1;
+        font-weight: 800;
+        line-height: 1;
+    }
+    .agenda__event-line {
+        flex: 1;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.12);
+    }
+    .agenda__event-label {
+        white-space: nowrap;
+    }
+
+    .modal__tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    .tag {
+        padding: 6px 10px;
+        background: #25324a;
+        border-radius: 10px;
+    }
+    .modal__text {
+        color: #e6edf8;
+        line-height: 1.9;
+    }
+    .speaker__head {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+    .speaker__head .avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 9999px;
+        object-fit: cover;
+    }
+    .speaker__head .name {
+        color: #fff;
+        font-weight: 900;
+    }
+    .speaker__head .title {
+        color: #a9b3c7;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    @media (max-width: 840px) {
+        .agenda__row {
+            grid-template-columns: 64px 1fr;
+        }
+        .agenda__cards {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
