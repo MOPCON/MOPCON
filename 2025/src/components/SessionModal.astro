@@ -30,6 +30,7 @@ const { open = false } = Astro.props as { open?: boolean };
         border: none;
         padding: 0;
         width: min(960px, 92vw);
+        max-height: 80vh;
         background: transparent;
     }
     .modal::backdrop {
@@ -38,10 +39,10 @@ const { open = false } = Astro.props as { open?: boolean };
     }
     .modal__content {
         position: relative;
-        background: #0b1222;
+        background: linear-gradient(to bottom, #314158, #000000);
         color: #e6edf8;
         border-radius: 16px;
-        padding: 16px;
+        padding: 32px;
     }
     .modal__close {
         position: absolute;
@@ -50,7 +51,6 @@ const { open = false } = Astro.props as { open?: boolean };
         width: 36px;
         height: 36px;
         border-radius: 9999px;
-        background: #1e293b;
         color: #fff;
         font-size: 20px;
     }
@@ -61,11 +61,11 @@ const { open = false } = Astro.props as { open?: boolean };
         background: #0f172a;
         padding: 6px;
         border-radius: 9999px;
-        width: fit-content;
     }
     .modal__tabs > button {
         position: relative;
         z-index: 1;
+        flex: 1;
         padding: 10px 16px;
         border-radius: 9999px;
         font-weight: 800;
@@ -88,8 +88,22 @@ const { open = false } = Astro.props as { open?: boolean };
     .modal__panel {
         margin-top: 16px;
         max-height: min(60vh, 560px);
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
         padding-right: 6px;
+    }
+    .modal__panel::-webkit-scrollbar {
+        width: 6px;
+    }
+    .modal__panel::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .modal__panel::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 3px;
+    }
+    .modal__panel::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
     }
     .modal__actions {
         display: flex;
@@ -97,6 +111,7 @@ const { open = false } = Astro.props as { open?: boolean };
         padding: 16px 0 4px;
     }
     .share {
+        flex: 1;
         background: #22d3ee;
         color: #001018;
         font-weight: 800;
@@ -104,10 +119,85 @@ const { open = false } = Astro.props as { open?: boolean };
         border-radius: 9999px;
     }
     .calendar {
+        flex: 1;
         background: #cbd5e1;
         color: #0b1222;
         font-weight: 800;
         padding: 12px 16px;
         border-radius: 9999px;
+    }
+
+    /* Content styles - using :global() to apply to dynamically injected content */
+    :global(.modal__tags) {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    :global(.tag) {
+        padding: 6px 10px;
+        background: #25324a;
+        border-radius: 10px;
+        color: #e6edf8;
+    }
+    :global(.modal__text) {
+        color: #e6edf8;
+        line-height: 1.9;
+    }
+    :global(.modal__session-title) {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 900;
+        margin-bottom: 16px;
+        line-height: 1.4;
+    }
+    :global(.modal__divider) {
+        width: 100%;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 16px 0;
+    }
+    :global(.modal__info-item) {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 12px;
+        line-height: 1.6;
+    }
+    :global(.modal__info-icon) {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+    }
+    :global(.modal__info-label) {
+        color: #fff;
+        font-weight: 700;
+        flex-shrink: 0;
+    }
+    :global(.modal__info-separator) {
+        color: #a9b3c7;
+        flex-shrink: 0;
+    }
+    :global(.modal__info-item .modal__text) {
+        flex: 1;
+        margin: 0;
+    }
+    :global(.speaker__head) {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+    :global(.speaker__head .avatar) {
+        width: 56px;
+        height: 56px;
+        border-radius: 9999px;
+        object-fit: cover;
+    }
+    :global(.speaker__head .name) {
+        color: #fff;
+        font-weight: 900;
+    }
+    :global(.speaker__head .title) {
+        color: #a9b3c7;
     }
 </style>

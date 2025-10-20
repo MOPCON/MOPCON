@@ -7,6 +7,7 @@ import SessionModal from "../components/SessionModal.astro";
 import { Image } from "astro:assets";
 import agendaBg from "../assets/agenda_bg.svg";
 import speakerAvatar from "../assets/speaker/speaker_1.png";
+import starWhite from "../assets/star_white.svg";
 
 const dates = [
     { label: "11/8 (六)", value: "day1" },
@@ -55,6 +56,12 @@ const sessionsByDay = {
                 room: "R1",
                 title: "練啟的黑歷史：開源技術照亮網路中的隱藏威脅，終端設備的資訊安全",
                 topics: [topics[0], topics[1], topics[2]],
+                description:
+                    "在我們享受行動及 IoT 設備帶給我們的便利時，隱藏的數位威脅是否悄悄伺機而動？本議程將帶你理解如何運用開源工具來監控和保護你的網路。",
+                target_audience: "對網路安全有興趣的開發者、系統管理員",
+                prerequisites: "基礎網路知識、Linux 指令操作經驗",
+                expected_gains:
+                    "了解常見的網路威脅、學習使用開源工具進行網路監控、掌握終端設備的基礎防護技巧",
                 speaker: {
                     name: "會厚芸",
                     title: "Gronext 可羅渥斯特股份有限公司\nRD 研發工程師",
@@ -65,6 +72,12 @@ const sessionsByDay = {
                 room: "R2",
                 title: "軟體工程師轉戰無人機領域需要的基礎知識與發展機會",
                 topics: [topics[0], topics[1]],
+                description:
+                    "想進入無人機領域卻不知從何開始？本議程將分享軟體工程師轉職無人機開發所需的技術知識與產業發展機會。",
+                target_audience: "想要跨足無人機領域的軟體工程師",
+                prerequisites: "基本程式設計能力",
+                expected_gains:
+                    "認識無人機技術堆疊、了解產業發展趨勢、掌握轉職所需技能",
                 speaker: {
                     name: "ericpi",
                     title: "高雄在地開發社群管理",
@@ -77,6 +90,12 @@ const sessionsByDay = {
                 room: "R1",
                 title: "邊緣裝置上的即時物件辨識與追蹤系統",
                 topics: [topics[0], topics[2]],
+                description:
+                    "探討如何在資源受限的邊緣裝置上實現高效能的物件辨識與追蹤，分享實作經驗與優化技巧。",
+                target_audience: "AI 開發者、嵌入式系統工程師",
+                prerequisites: "基礎機器學習概念、Python 程式設計",
+                expected_gains:
+                    "了解邊緣運算的限制與挑戰、學習模型優化技術、掌握即時追蹤系統的實作要點",
                 speaker: {
                     name: "陳建志",
                     title: "EdgeTech Solutions\nAI Engineer",
@@ -87,6 +106,12 @@ const sessionsByDay = {
                 room: "R2",
                 title: "隱私保護技術在行動裝置 AI 的應用與挑戰",
                 topics: [topics[3], topics[4]],
+                description:
+                    "深入探討在行動裝置上實現隱私保護 AI 的技術方案，包括聯邦學習、差分隱私等先進技術。",
+                target_audience: "關注隱私保護的 AI 開發者、資安研究人員",
+                prerequisites: "機器學習基礎、資訊安全概念",
+                expected_gains:
+                    "理解隱私保護技術原理、認識實際應用場景、掌握實作考量要點",
                 speaker: {
                     name: "林雅婷",
                     title: "Privacy AI Lab\nResearch Scientist",
@@ -99,6 +124,12 @@ const sessionsByDay = {
                 room: "R1",
                 title: "打造高效能的端側 AI 推論引擎",
                 topics: [topics[1], topics[2]],
+                description:
+                    "從架構設計到效能優化，完整解析如何打造一個高效能的端側 AI 推論引擎。",
+                target_audience: "行動應用開發者、效能優化工程師",
+                prerequisites: "C/C++ 或 Python 開發經驗、基礎 AI 模型概念",
+                expected_gains:
+                    "理解推論引擎架構、掌握效能優化技巧、學習硬體加速應用",
                 speaker: {
                     name: "王大明",
                     title: "Mobile AI Corp\nSenior Developer",
@@ -109,6 +140,12 @@ const sessionsByDay = {
                 room: "R2",
                 title: "從零開始建構你的 AI 驅動行動應用",
                 topics: [topics[0], topics[4], topics[5]],
+                description:
+                    "實戰教學：從零開始建構一個完整的 AI 驅動行動應用，涵蓋產品設計、技術選型到上線部署。",
+                target_audience: "行動應用開發者、產品經理、創業者",
+                prerequisites: "基本行動應用開發經驗",
+                expected_gains:
+                    "了解 AI 應用開發流程、學習技術選型考量、掌握產品設計要點",
                 speaker: {
                     name: "張小華",
                     title: "Startup Founder & Developer",
@@ -121,6 +158,12 @@ const sessionsByDay = {
                 room: "R1",
                 title: "TinyML：在微控制器上實現機器學習",
                 topics: [topics[0], topics[1]],
+                description:
+                    "探索 TinyML 的奧秘，學習如何在資源極度受限的微控制器上實現機器學習應用。",
+                target_audience: "嵌入式系統開發者、IoT 工程師",
+                prerequisites: "C 語言程式設計、基礎硬體知識",
+                expected_gains:
+                    "認識 TinyML 生態系統、了解模型壓縮技術、掌握微控制器 AI 開發流程",
                 speaker: {
                     name: "李志明",
                     title: "IoT Solutions\nEmbedded Engineer",
@@ -131,6 +174,12 @@ const sessionsByDay = {
                 room: "R2",
                 title: "聯邦學習：保護隱私的分散式 AI 訓練",
                 topics: [topics[3], topics[4]],
+                description:
+                    "深入淺出介紹聯邦學習的原理與實作，探討如何在保護隱私的前提下進行分散式 AI 模型訓練。",
+                target_audience: "機器學習工程師、隱私技術研究者",
+                prerequisites: "深度學習基礎、分散式系統概念",
+                expected_gains:
+                    "理解聯邦學習架構、掌握實作技術要點、認識實際應用案例",
                 speaker: {
                     name: "黃美玲",
                     title: "Secure AI Inc\nML Researcher",
@@ -143,6 +192,12 @@ const sessionsByDay = {
                 room: "R1",
                 title: "AI 模型壓縮與量化技術實戰",
                 topics: [topics[2], topics[1]],
+                description:
+                    "實戰分享如何透過模型壓縮與量化技術，將大型 AI 模型部署到資源受限的行動裝置上。",
+                target_audience: "AI 工程師、行動應用開發者",
+                prerequisites: "深度學習基礎、Python 開發經驗",
+                expected_gains:
+                    "掌握模型壓縮技術、理解量化原理與實作、學習部署優化策略",
                 speaker: {
                     name: "劉建國",
                     title: "Optimization Labs\nStaff Engineer",
@@ -153,6 +208,12 @@ const sessionsByDay = {
                 room: "R2",
                 title: "智慧型語音助理的產品設計思維",
                 topics: [topics[4], topics[5]],
+                description:
+                    "從產品經理的視角，分享如何設計一個好用的智慧型語音助理，平衡技術能力與使用者體驗。",
+                target_audience: "產品經理、UX 設計師、AI 開發者",
+                prerequisites: "產品設計基礎概念",
+                expected_gains:
+                    "了解語音助理設計要點、學習用戶體驗優化方法、認識技術與設計的平衡",
                 speaker: {
                     name: "吳佳穎",
                     title: "Voice AI Company\nProduct Manager",
@@ -165,6 +226,12 @@ const sessionsByDay = {
                 room: "R1",
                 title: "NPU 與 GPU：行動裝置 AI 加速器比較",
                 topics: [topics[1], topics[2]],
+                description:
+                    "深入比較 NPU 與 GPU 在行動裝置上的 AI 運算特性，協助開發者選擇最適合的硬體加速方案。",
+                target_audience: "AI 開發者、硬體工程師、效能優化專家",
+                prerequisites: "基礎硬體架構知識、AI 模型概念",
+                expected_gains:
+                    "理解 NPU 與 GPU 差異、掌握硬體選型要點、學習效能優化策略",
                 speaker: {
                     name: "徐文傑",
                     title: "Hardware AI Lab\nHardware Architect",
@@ -175,6 +242,12 @@ const sessionsByDay = {
                 room: "R2",
                 title: "AR 眼鏡中的即時 AI 視覺處理",
                 topics: [topics[0], topics[1], topics[4]],
+                description:
+                    "探討 AR 眼鏡中即時 AI 視覺處理的技術挑戰與解決方案，分享實際產品開發經驗。",
+                target_audience: "電腦視覺工程師、AR 開發者",
+                prerequisites: "電腦視覺基礎、即時系統概念",
+                expected_gains:
+                    "了解 AR 視覺處理挑戰、學習即時優化技術、認識 AR 產品開發流程",
                 speaker: {
                     name: "趙敏慧",
                     title: "AR Vision Tech\nComputer Vision Engineer",
@@ -187,6 +260,12 @@ const sessionsByDay = {
                 room: "R1",
                 title: "醫療影像辨識在行動裝置上的應用",
                 topics: [topics[0], topics[3], topics[4]],
+                description:
+                    "分享醫療 AI 在行動裝置上的實際應用案例，探討如何在保護隱私的前提下實現精準的影像辨識。",
+                target_audience: "醫療科技開發者、AI 工程師、醫療從業人員",
+                prerequisites: "影像辨識基礎、醫療 AI 基本概念",
+                expected_gains:
+                    "了解醫療 AI 應用場景、掌握隱私保護技術、認識法規遵循要點",
                 speaker: {
                     name: "孫立強",
                     title: "MedTech AI\nClinical AI Specialist",
@@ -197,6 +276,12 @@ const sessionsByDay = {
                 room: "R2",
                 title: "Edge AI 產品從開發到上線的完整流程",
                 topics: [topics[4], topics[5]],
+                description:
+                    "完整分享 Edge AI 產品從概念發想、技術開發、測試驗證到正式上線的完整流程與注意事項。",
+                target_audience: "產品經理、技術主管、全端開發者",
+                prerequisites: "產品開發基礎概念",
+                expected_gains:
+                    "了解完整產品開發流程、學習專案管理要點、掌握上線部署策略",
                 speaker: {
                     name: "鄭雅萍",
                     title: "Edge Solutions\nTech Lead",
@@ -211,6 +296,12 @@ const sessionsByDay = {
                 room: "R1",
                 title: "自動駕駛系統中的邊緣運算架構",
                 topics: [topics[1], topics[2], topics[4]],
+                description:
+                    "探討自動駕駛系統中的邊緣運算架構設計，分析如何在車載環境實現高效能、低延遲的 AI 運算。",
+                target_audience: "自動駕駛工程師、系統架構師、嵌入式開發者",
+                prerequisites: "系統架構基礎、即時系統概念",
+                expected_gains:
+                    "理解車載邊緣運算挑戰、掌握架構設計要點、學習效能優化方法",
                 speaker: {
                     name: "周俊良",
                     title: "Autonomous Driving Co\nSystem Architect",
@@ -221,6 +312,12 @@ const sessionsByDay = {
                 room: "R2",
                 title: "智慧家居：端側 AI 的隱私保護實踐",
                 topics: [topics[0], topics[3]],
+                description:
+                    "分享智慧家居產品中如何實踐端側 AI 與隱私保護，在便利性與安全性之間取得平衡。",
+                target_audience: "IoT 開發者、資安工程師、智慧家居產品經理",
+                prerequisites: "IoT 基礎知識、隱私保護概念",
+                expected_gains:
+                    "了解智慧家居隱私挑戰、學習端側 AI 實作、掌握安全設計原則",
                 speaker: {
                     name: "馬欣怡",
                     title: "Smart Home Tech\nSecurity Engineer",
@@ -233,6 +330,12 @@ const sessionsByDay = {
                 room: "R1",
                 title: "5G 時代的邊緣智能應用場景",
                 topics: [topics[1], topics[4]],
+                description:
+                    "探索 5G 網路與邊緣運算結合的創新應用場景，分析低延遲、高頻寬環境下的 AI 應用機會。",
+                target_audience: "5G 應用開發者、邊緣運算工程師、電信業者",
+                prerequisites: "網路技術基礎、邊緣運算概念",
+                expected_gains:
+                    "認識 5G 邊緣運算架構、了解創新應用場景、掌握開發關鍵技術",
                 speaker: {
                     name: "許志豪",
                     title: "Telecom AI Lab\n5G Solutions Lead",
@@ -243,6 +346,13 @@ const sessionsByDay = {
                 room: "R2",
                 title: "手機攝影中的 AI 影像增強技術",
                 topics: [topics[0], topics[2], topics[4]],
+                description:
+                    "深入解析手機攝影中的 AI 影像增強技術，從夜景模式到人像美化，探討背後的技術原理。",
+                target_audience:
+                    "影像處理工程師、手機應用開發者、攝影 AI 研究者",
+                prerequisites: "影像處理基礎、深度學習概念",
+                expected_gains:
+                    "理解影像增強技術原理、學習實作關鍵技術、掌握效能優化方法",
                 speaker: {
                     name: "范佳玲",
                     title: "Camera AI Team\nImage Processing Expert",
@@ -255,6 +365,12 @@ const sessionsByDay = {
                 room: "R1",
                 title: "WebAssembly 與瀏覽器端的 AI 應用",
                 topics: [topics[0], topics[2]],
+                description:
+                    "探討如何使用 WebAssembly 在瀏覽器端實現高效能的 AI 應用，無需安裝即可體驗 AI 功能。",
+                target_audience: "前端工程師、Web 應用開發者、AI 開發者",
+                prerequisites: "JavaScript 開發經驗、基礎 AI 概念",
+                expected_gains:
+                    "認識 WebAssembly 技術、學習瀏覽器 AI 實作、掌握效能優化技巧",
                 speaker: {
                     name: "曾國華",
                     title: "Web AI Solutions\nFrontend Architect",
@@ -265,6 +381,12 @@ const sessionsByDay = {
                 room: "R2",
                 title: "AI 晶片設計：從概念到量產",
                 topics: [topics[1], topics[5]],
+                description:
+                    "從晶片設計師的視角，分享 AI 晶片從概念設計、架構規劃到量產的完整流程與挑戰。",
+                target_audience: "硬體工程師、晶片設計師、產品經理",
+                prerequisites: "基礎硬體知識、數位電路概念",
+                expected_gains:
+                    "了解 AI 晶片設計流程、認識量產挑戰、掌握產業趨勢",
                 speaker: {
                     name: "蔡明宏",
                     title: "Chip Design Inc\nSilicon Engineer",
@@ -277,6 +399,12 @@ const sessionsByDay = {
                 room: "R1",
                 title: "即時翻譯應用的端側 AI 實現",
                 topics: [topics[0], topics[2], topics[3]],
+                description:
+                    "分享如何在行動裝置上實現即時翻譯功能，探討端側 NLP 模型的優化與隱私保護設計。",
+                target_audience: "NLP 工程師、行動應用開發者、語言處理研究者",
+                prerequisites: "NLP 基礎、深度學習概念",
+                expected_gains:
+                    "理解端側 NLP 技術、學習模型優化方法、掌握即時處理技巧",
                 speaker: {
                     name: "謝淑芬",
                     title: "Translation AI\nNLP Engineer",
@@ -287,6 +415,13 @@ const sessionsByDay = {
                 room: "R2",
                 title: "運動追蹤與姿態識別技術解析",
                 topics: [topics[0], topics[4]],
+                description:
+                    "深入解析運動追蹤與姿態識別的技術原理，分享在健身、復健等領域的實際應用經驗。",
+                target_audience:
+                    "電腦視覺工程師、運動科技開發者、健康應用產品經理",
+                prerequisites: "電腦視覺基礎、姿態估測概念",
+                expected_gains:
+                    "理解姿態識別技術、學習運動分析方法、認識實際應用案例",
                 speaker: {
                     name: "羅偉傑",
                     title: "Sports Tech\nMotion Analysis Expert",
@@ -299,6 +434,12 @@ const sessionsByDay = {
                 room: "R1",
                 title: "Android 與 iOS 的 AI 框架比較",
                 topics: [topics[0], topics[5]],
+                description:
+                    "全面比較 Android ML Kit 與 iOS Core ML 等主流行動 AI 框架，協助開發者選擇最適合的平台方案。",
+                target_audience: "行動應用開發者、跨平台開發者、技術決策者",
+                prerequisites: "Android 或 iOS 開發經驗、基礎 AI 概念",
+                expected_gains:
+                    "了解兩大平台 AI 框架差異、掌握選型決策要點、學習跨平台開發策略",
                 speaker: {
                     name: "葉淑惠",
                     title: "Mobile Platform Team\nCross-platform Developer",
@@ -309,6 +450,12 @@ const sessionsByDay = {
                 room: "R2",
                 title: "差分隱私在 AI 模型訓練中的應用",
                 topics: [topics[3], topics[4]],
+                description:
+                    "介紹差分隱私技術在 AI 模型訓練中的應用，探討如何在保護數據隱私的同時維持模型效能。",
+                target_audience: "資料科學家、隱私技術研究者、AI 工程師",
+                prerequisites: "機器學習基礎、統計學概念",
+                expected_gains:
+                    "理解差分隱私原理、學習實作技術方法、掌握隱私-效能平衡",
                 speaker: {
                     name: "高志偉",
                     title: "Privacy Tech Research\nData Scientist",
@@ -321,6 +468,13 @@ const sessionsByDay = {
                 room: "R1",
                 title: "無人機視覺導航的邊緣 AI 方案",
                 topics: [topics[0], topics[1], topics[2]],
+                description:
+                    "探討無人機視覺導航系統的邊緣 AI 解決方案，分析如何在飛行過程中實現即時環境感知與避障。",
+                target_audience:
+                    "無人機開發者、電腦視覺工程師、嵌入式系統工程師",
+                prerequisites: "電腦視覺基礎、飛控系統概念",
+                expected_gains:
+                    "理解無人機視覺導航技術、學習邊緣 AI 部署方法、掌握即時處理要點",
                 speaker: {
                     name: "梁家豪",
                     title: "Drone Tech\nFlight Control Engineer",
@@ -331,6 +485,12 @@ const sessionsByDay = {
                 room: "R2",
                 title: "AI 驅動的使用者體驗優化策略",
                 topics: [topics[4], topics[5]],
+                description:
+                    "從設計師的角度，探討如何運用 AI 技術優化使用者體驗，打造更智慧、更貼心的產品。",
+                target_audience: "產品設計師、UX 研究員、產品經理",
+                prerequisites: "UX 設計基礎概念",
+                expected_gains:
+                    "了解 AI 在 UX 中的應用、學習數據驅動設計方法、掌握優化策略框架",
                 speaker: {
                     name: "彭雅筑",
                     title: "UX AI Lab\nProduct Designer",
@@ -343,6 +503,13 @@ const sessionsByDay = {
                 room: "R1",
                 title: "邊緣運算的能源效率優化技術",
                 topics: [topics[1], topics[2]],
+                description:
+                    "探討邊緣運算中的能源效率優化技術，分享如何在有限電力下實現高效能 AI 運算。",
+                target_audience:
+                    "嵌入式系統工程師、效能優化專家、綠色科技研究者",
+                prerequisites: "硬體效能優化基礎、電源管理概念",
+                expected_gains:
+                    "理解能源效率優化原理、學習省電設計技巧、掌握效能平衡策略",
                 speaker: {
                     name: "蕭立文",
                     title: "Green AI Solutions\nPower Management Specialist",
@@ -353,6 +520,12 @@ const sessionsByDay = {
                 room: "R2",
                 title: "AI 產品商業化的成功案例分享",
                 topics: [topics[4], topics[5]],
+                description:
+                    "分享多個 AI 產品成功商業化的實際案例，探討從技術原型到市場產品的關鍵成功因素。",
+                target_audience: "創業者、產品經理、商業開發人員",
+                prerequisites: "產品開發基礎概念",
+                expected_gains:
+                    "了解商業化關鍵因素、學習市場策略制定、認識成功案例經驗",
                 speaker: {
                     name: "陳怡君",
                     title: "AI Ventures\nBusiness Development",
@@ -500,13 +673,40 @@ const sessionsByDay = {
 
     <SessionModal open={false}>
         <div slot="topic">
+            <h3 class="modal__session-title">
+                練啟的黑歷史：開源技術照亮網路中的隱藏威脅，終端設備的資訊安全
+            </h3>
             <div class="modal__tags">
                 {topics.slice(0, 3).map((t) => <span class="tag">{t}</span>)}
             </div>
+            <div class="modal__divider"></div>
             <p class="modal__text">
                 在我們享受行動及 IoT
                 設備帶給我們的便利時，隱藏的數位威脅是否悄悄伺機而動？本議程將帶你理解如何運用開源工具來監控和保護你的網路。
             </p>
+            <div class="modal__info-item">
+                <Image src={starWhite} alt="star" class="modal__info-icon" />
+                <span class="modal__info-label">目標會眾</span>
+                <span class="modal__info-separator">|</span>
+                <span class="modal__text"
+                    >對網路安全有興趣的開發者、系統管理員</span
+                >
+            </div>
+            <div class="modal__info-item">
+                <Image src={starWhite} alt="star" class="modal__info-icon" />
+                <span class="modal__info-label">先備知識</span>
+                <span class="modal__info-separator">|</span>
+                <span class="modal__text">基礎網路知識、Linux 指令操作經驗</span
+                >
+            </div>
+            <div class="modal__info-item">
+                <Image src={starWhite} alt="star" class="modal__info-icon" />
+                <span class="modal__info-label">會眾預期收穫</span>
+                <span class="modal__info-separator">|</span>
+                <span class="modal__text"
+                    >了解常見的網路威脅、學習使用開源工具進行網路監控、掌握終端設備的基礎防護技巧</span
+                >
+            </div>
         </div>
         <div slot="speaker">
             <div class="speaker__head">
@@ -584,8 +784,28 @@ const sessionsByDay = {
                 .map((t: string) => `<span class="tag">${t}</span>`)
                 .join("");
             topicPanel.innerHTML = `
+                <h3 class="modal__session-title">${session.title || ""}</h3>
                 <div class="modal__tags">${tagsHtml}</div>
+                <div class="modal__divider"></div>
                 <p class="modal__text">${session.description || "在我們享受行動及 IoT 設備帶給我們的便利時，隱藏的數位威脅是否悄悄伺機而動？本議程將帶你理解如何運用開源工具來監控和保護你的網路。"}</p>
+                <div class="modal__info-item">
+                    <img src="${import.meta.env.BASE_URL}star_white.svg" alt="star" class="modal__info-icon" />
+                    <span class="modal__info-label">目標會眾</span>
+                    <span class="modal__info-separator">|</span>
+                    <span class="modal__text">${session.target_audience || "對此主題有興趣的開發者"}</span>
+                </div>
+                <div class="modal__info-item">
+                    <img src="${import.meta.env.BASE_URL}star_white.svg" alt="star" class="modal__info-icon" />
+                    <span class="modal__info-label">先備知識</span>
+                    <span class="modal__info-separator">|</span>
+                    <span class="modal__text">${session.prerequisites || "基礎程式設計能力"}</span>
+                </div>
+                <div class="modal__info-item">
+                    <img src="${import.meta.env.BASE_URL}star_white.svg" alt="star" class="modal__info-icon" />
+                    <span class="modal__info-label">會眾預期收穫</span>
+                    <span class="modal__info-separator">|</span>
+                    <span class="modal__text">${session.expected_gains || "了解相關技術概念與應用"}</span>
+                </div>
             `;
         }
 
@@ -620,8 +840,11 @@ const sessionsByDay = {
                 try {
                     const session = JSON.parse(sessionData);
                     updateModalContent(session);
-                    initializeModal();
                     modal.showModal();
+                    // Initialize underline after modal is shown
+                    requestAnimationFrame(() => {
+                        initializeModal();
+                    });
                 } catch (e) {
                     console.error("Failed to parse session data:", e);
                 }
@@ -866,40 +1089,6 @@ const sessionsByDay = {
     }
     .agenda__event-label {
         white-space: nowrap;
-    }
-
-    .modal__tags {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-    }
-    .tag {
-        padding: 6px 10px;
-        background: #25324a;
-        border-radius: 10px;
-    }
-    .modal__text {
-        color: #e6edf8;
-        line-height: 1.9;
-    }
-    .speaker__head {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-        margin-bottom: 12px;
-    }
-    .speaker__head .avatar {
-        width: 56px;
-        height: 56px;
-        border-radius: 9999px;
-        object-fit: cover;
-    }
-    .speaker__head .name {
-        color: #fff;
-        font-weight: 900;
-    }
-    .speaker__head .title {
-        color: #a9b3c7;
     }
 
     .hidden {
