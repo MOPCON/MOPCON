@@ -183,21 +183,80 @@ const { open = false } = Astro.props as { open?: boolean };
     }
     :global(.speaker__head) {
         display: flex;
-        gap: 12px;
-        align-items: center;
-        margin-bottom: 12px;
+        gap: 16px;
+        margin-bottom: 16px;
     }
     :global(.speaker__head .avatar) {
-        width: 56px;
-        height: 56px;
+        width: 80px;
+        height: 80px;
         border-radius: 9999px;
         object-fit: cover;
+        flex-shrink: 0;
     }
-    :global(.speaker__head .name) {
+    :global(.speaker__info) {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    :global(.speaker__info .name) {
         color: #fff;
         font-weight: 900;
+        font-size: 24px;
+        line-height: 1.2;
     }
-    :global(.speaker__head .title) {
+    :global(.speaker__company-row) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+    :global(.speaker__company-row .company-name) {
         color: #a9b3c7;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    :global(.speaker__company-row .social-links) {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+    :global(.speaker__company-row .social-links a) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #475569;
+        border-radius: 9999px;
+        color: #fff;
+        transition: all 0.2s;
+        font-size: 20px;
+    }
+    :global(.speaker__company-row .social-links a:hover) {
+        background: #22d3ee;
+        transform: scale(1.1);
+    }
+    :global(.speaker__info .title) {
+        color: #a9b3c7;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    :global(.speaker__bio-section) {
+        margin-top: 16px;
+    }
+    :global(.speaker__bio-label) {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+    :global(.speaker__bio-label img) {
+        width: 16px;
+        height: 16px;
+    }
+    :global(.speaker__bio-label span) {
+        color: #fff;
+        font-weight: 700;
     }
 </style>
