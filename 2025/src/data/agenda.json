@@ -97,7 +97,8 @@
             "website": "dsa",
             "facebook": "dsa",
             "linkedin": "dsa",
-            "github": "dsa"
+            "github": "dsa",
+            "bio": "現職為研發工程師，專長於網路維運與資安探索，負責前端開發及資料流整合，致力於打造更安全的終端設備環境。"
           }
         },
         "R2": {
@@ -115,7 +116,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "高雄在地開發社群的活躍成員，熱衷於推廣技術交流與知識分享，對無人機技術與軟體開發有豐富經驗。"
           }
         }
       },
@@ -135,7 +137,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "專注於邊緣運算與電腦視覺領域，擅長在資源受限的環境中實現高效能的 AI 應用，具備豐富的實作經驗。"
           }
         },
         "R2": {
@@ -153,7 +156,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "隱私保護技術研究專家，致力於在 AI 應用中實現隱私與效能的平衡，對聯邦學習與差分隱私有深入研究。"
           }
         }
       },
@@ -173,7 +177,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "資深軟體開發工程師，專精於行動裝置 AI 推論引擎開發，在效能優化與架構設計方面有豐富經驗。"
           }
         },
         "R2": {
@@ -191,7 +196,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "創業者與全端開發者，擁有從零到一打造 AI 產品的完整經驗，熱衷於將 AI 技術應用於實際產品中。"
           }
         }
       },
@@ -211,7 +217,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "嵌入式系統專家，專注於 TinyML 與 IoT 領域，擅長在微控制器上實現機器學習應用。"
           }
         },
         "R2": {
@@ -229,7 +236,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "機器學習研究員，專注於隱私保護技術與分散式學習，對聯邦學習架構有深入理解與實作經驗。"
           }
         }
       },
@@ -249,7 +257,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "資深技術專家，專精於模型壓縮與量化技術，協助多個團隊成功將 AI 模型部署到行動裝置上。"
           }
         },
         "R2": {
@@ -267,7 +276,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "產品經理，擁有豐富的 AI 產品設計經驗，專注於使用者體驗優化與技術產品化。"
           }
         }
       },
@@ -287,7 +297,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "硬體架構師，專精於 AI 加速器設計，對 NPU、GPU 等硬體平台有深入研究。"
           }
         },
         "R2": {
@@ -305,7 +316,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "電腦視覺工程師，專注於即時影像處理與 AR 應用，在邊緣運算視覺系統方面有豐富經驗。"
           }
         }
       },
@@ -325,7 +337,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "醫療 AI 專家，致力於將 AI 技術應用於醫療影像分析，同時注重隱私保護與法規遵循。"
           }
         },
         "R2": {
@@ -343,7 +356,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "技術主管，擁有完整的 Edge AI 產品開發與上線經驗，擅長團隊管理與技術決策。"
           }
         }
       }
@@ -365,7 +379,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "系統架構師，專注於自動駕駛與車載系統，在即時邊緣運算架構設計方面有深厚經驗。"
           }
         },
         "R2": {
@@ -383,7 +398,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "資訊安全工程師，專精於 IoT 與智慧家居安全，致力於在便利性與安全性之間取得平衡。"
           }
         }
       },
@@ -403,7 +419,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "5G 解決方案負責人，專注於 5G 與邊緣運算的結合應用，對新世代網路技術有深入研究。"
           }
         },
         "R2": {
@@ -421,7 +438,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "影像處理專家，專精於手機攝影 AI 技術，在影像增強與優化方面有豐富的產品化經驗。"
           }
         }
       },
@@ -441,7 +459,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "前端架構師，專注於 WebAssembly 與瀏覽器端 AI 應用，致力於讓 AI 功能在網頁上無縫運行。"
           }
         },
         "R2": {
@@ -459,7 +478,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "晶片設計工程師，從事 AI 晶片設計與開發，對從設計到量產的完整流程有深入理解。"
           }
         }
       },
@@ -479,7 +499,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "自然語言處理工程師，專精於端側 NLP 模型優化，在即時翻譯應用方面有豐富經驗。"
           }
         },
         "R2": {
@@ -497,7 +518,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "運動分析專家，專注於姿態識別與運動追蹤技術，將 AI 技術應用於健身與復健領域。"
           }
         }
       },
@@ -517,7 +539,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "跨平台開發者，熟悉 Android 與 iOS 平台的 AI 框架，擅長技術選型與跨平台解決方案。"
           }
         },
         "R2": {
@@ -535,7 +558,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "資料科學家，專注於隱私保護技術研究，在差分隱私與模型訓練方面有深入研究。"
           }
         }
       },
@@ -555,7 +579,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "飛控工程師，專精於無人機視覺導航系統，在邊緣 AI 與即時處理方面有豐富經驗。"
           }
         },
         "R2": {
@@ -573,7 +598,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "UX 產品設計師，專注於 AI 驅動的使用者體驗優化，擅長數據驅動的設計方法。"
           }
         }
       },
@@ -593,7 +619,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "電源管理專家，專注於邊緣運算的能源效率優化，在綠色 AI 技術方面有深入研究。"
           }
         },
         "R2": {
@@ -611,7 +638,8 @@
             "website": "",
             "facebook": "",
             "linkedin": "",
-            "github": ""
+            "github": "",
+            "bio": "商業開發負責人，擁有多個 AI 產品商業化經驗，擅長市場策略與產品規劃。"
           }
         }
       }

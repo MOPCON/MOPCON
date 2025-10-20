@@ -6,21 +6,41 @@ import SessionCard from "../components/SessionCard.astro";
 import SessionModal from "../components/SessionModal.astro";
 import { Image } from "astro:assets";
 import { Globe, Facebook, Linkedin, Github } from "lucide-astro";
+import type { ImageMetadata } from "astro";
 import agendaBg from "../assets/agenda_bg.svg";
 import speakerAvatar from "../assets/speaker/speaker_1.png";
 import starWhite from "../assets/star_white.svg";
 import agendaData from "../data/agenda.json";
 
+// Dynamically import all speaker images
+const speakerImages = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/speaker/*.{png,jpg,jpeg,webp}",
+    { eager: true },
+);
+
 const { dates, topics, routine, sessionsByDay: sessionsRaw } = agendaData;
 
 // Helper function to resolve topic indices to topic strings and speaker avatar
 const resolveSession = (session: any) => {
+    // Resolve the speaker avatar image
+    let avatarImage = speakerAvatar; // Default fallback image object
+    let avatarUrl = "/2025/avatar-demo.webp"; // Default fallback URL for modal
+
+    if (session.speaker?.avatar) {
+        const imagePath = `/src/assets/speaker/${session.speaker.avatar}`;
+        if (speakerImages[imagePath]) {
+            avatarImage = speakerImages[imagePath].default;
+            avatarUrl = speakerImages[imagePath].default.src;
+        }
+    }
+
     return {
         ...session,
         topics: session.topics.map((idx: number) => topics[idx]),
         speaker: {
             ...session.speaker,
-            avatar: speakerAvatar,
+            avatar: avatarImage, // Image object for Astro <Image> component
+            avatarUrl: avatarUrl, // URL string for modal's <img> tag
         },
     };
 };
@@ -71,7 +91,7 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                 <div class="agenda__filters" id="agenda-filters">
                     {
                         topics.map((t) => (
-                            <FilterChip label={t} selected={true} client:load />
+                            <FilterChip label={t} selected={true} />
                         ))
                     }
                 </div>
@@ -182,70 +202,11 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
     </section>
 
     <SessionModal open={false}>
-        <div slot="topic">
-            <h3 class="modal__session-title">
-                練啟的黑歷史：開源技術照亮網路中的隱藏威脅，終端設備的資訊安全
-            </h3>
-            <div class="modal__tags">
-                {topics.slice(0, 3).map((t) => <span class="tag">{t}</span>)}
-            </div>
-            <div class="modal__divider"></div>
-            <p class="modal__text">
-                在我們享受行動及 IoT
-                設備帶給我們的便利時，隱藏的數位威脅是否悄悄伺機而動？本議程將帶你理解如何運用開源工具來監控和保護你的網路。
-            </p>
-            <div class="modal__info-item">
-                <Image src={starWhite} alt="star" class="modal__info-icon" />
-                <span class="modal__info-label">目標會眾</span>
-                <span class="modal__info-separator">|</span>
-                <span class="modal__text"
-                    >對網路安全有興趣的開發者、系統管理員</span
-                >
-            </div>
-            <div class="modal__info-item">
-                <Image src={starWhite} alt="star" class="modal__info-icon" />
-                <span class="modal__info-label">先備知識</span>
-                <span class="modal__info-separator">|</span>
-                <span class="modal__text">基礎網路知識、Linux 指令操作經驗</span
-                >
-            </div>
-            <div class="modal__info-item">
-                <Image src={starWhite} alt="star" class="modal__info-icon" />
-                <span class="modal__info-label">會眾預期收穫</span>
-                <span class="modal__info-separator">|</span>
-                <span class="modal__text"
-                    >了解常見的網路威脅、學習使用開源工具進行網路監控、掌握終端設備的基礎防護技巧</span
-                >
-            </div>
+        <div slot="topic" id="modal-topic-content">
+            <!-- Content will be dynamically populated by JavaScript -->
         </div>
-        <div slot="speaker">
-            <div class="speaker__head">
-                <img
-                    class="avatar"
-                    src="/2025/avatar-demo.webp"
-                    alt="speaker"
-                />
-                <div>
-                    <div class="name">曾厚荃</div>
-
-                    <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Website">🌐</a
-                    >
-                    <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn">💼</a
-                    >
-                    <div class="title">Gronext RD 研發工程師</div>
-                </div>
-            </div>
-            <p class="modal__text">
-                現職為研發工程師，專長於網路維運與資安探索，負責前端開發及資料流整合。
-            </p>
+        <div slot="speaker" id="modal-speaker-content">
+            <!-- Content will be dynamically populated by JavaScript -->
         </div>
     </SessionModal>
 </Layout>
@@ -310,24 +271,24 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                 <h3 class="modal__session-title">${session.title || ""}</h3>
                 <div class="modal__tags">${tagsHtml}</div>
                 <div class="modal__divider"></div>
-                <p class="modal__text">${session.description || "在我們享受行動及 IoT 設備帶給我們的便利時，隱藏的數位威脅是否悄悄伺機而動？本議程將帶你理解如何運用開源工具來監控和保護你的網路。"}</p>
+                <p class="modal__text">${session.description || ""}</p>
                 <div class="modal__info-item">
                     <img src="${import.meta.env.BASE_URL}star_white.svg" alt="star" class="modal__info-icon" />
                     <span class="modal__info-label">目標會眾</span>
                     <span class="modal__info-separator">|</span>
-                    <span class="modal__text">${session.target_audience || "對此主題有興趣的開發者"}</span>
+                    <span class="modal__text">${session.target_audience || ""}</span>
                 </div>
                 <div class="modal__info-item">
                     <img src="${import.meta.env.BASE_URL}star_white.svg" alt="star" class="modal__info-icon" />
                     <span class="modal__info-label">先備知識</span>
                     <span class="modal__info-separator">|</span>
-                    <span class="modal__text">${session.prerequisites || "基礎程式設計能力"}</span>
+                    <span class="modal__text">${session.prerequisites || ""}</span>
                 </div>
                 <div class="modal__info-item">
                     <img src="${import.meta.env.BASE_URL}star_white.svg" alt="star" class="modal__info-icon" />
                     <span class="modal__info-label">會眾預期收穫</span>
                     <span class="modal__info-separator">|</span>
-                    <span class="modal__text">${session.expected_gains || "了解相關技術概念與應用"}</span>
+                    <span class="modal__text">${session.expected_gains || ""}</span>
                 </div>
             `;
         }
@@ -366,7 +327,7 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
 
             speakerPanel.innerHTML = `
                 <div class="speaker__head">
-                    <img class="avatar" src="${session.speaker.avatar || "/2025/avatar-demo.webp"}" alt="speaker" />
+                    <img class="avatar" src="${session.speaker.avatarUrl || "/2025/avatar-demo.webp"}" alt="speaker" />
                     <div class="speaker__info">
                         <div class="name">${session.speaker.name}</div>
                         ${
@@ -388,7 +349,7 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                         <img src="${import.meta.env.BASE_URL}star_white.svg" alt="star" />
                         <span>介紹</span>
                     </div>
-                    <p class="modal__text">${session.speaker.bio || "現職為研發工程師，專長於網路維運與資安探索，負責前端開發及資料流整合。"}</p>
+                    <p class="modal__text">${session.speaker.bio || ""}</p>
                 </div>
             `;
         }
