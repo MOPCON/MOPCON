@@ -129,6 +129,11 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                                                     <button
                                                         class="agenda__cardbtn"
                                                         data-open-modal
+                                                        data-day={day}
+                                                        data-time-slot={
+                                                            slot.start
+                                                        }
+                                                        data-time-end={slot.end}
                                                         data-topics={
                                                             slotSessions.R1
                                                                 ? JSON.stringify(
@@ -157,6 +162,11 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                                                     <button
                                                         class="agenda__cardbtn"
                                                         data-open-modal
+                                                        data-day={day}
+                                                        data-time-slot={
+                                                            slot.start
+                                                        }
+                                                        data-time-end={slot.end}
                                                         data-topics={
                                                             slotSessions.R2
                                                                 ? JSON.stringify(
@@ -265,7 +275,22 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
         }
     }
 
-    function updateModalContent(session: any) {
+    // Store current session data for action buttons
+    let currentSession: any = null;
+    let currentDay: string = "";
+    let currentTimeSlot: string = "";
+    let currentTimeEnd: string = "";
+
+    function updateModalContent(
+        session: any,
+        day?: string,
+        timeSlot?: string,
+        timeEnd?: string,
+    ) {
+        currentSession = session;
+        currentDay = day || "";
+        currentTimeSlot = timeSlot || "";
+        currentTimeEnd = timeEnd || "";
         const { topicPanel, speakerPanel } = getModalElements();
 
         // Update topic section
@@ -362,6 +387,195 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
     }
 
     // ============================
+    // Action Button Handlers
+    // ============================
+
+    function shareSession() {
+        if (!currentSession || !currentDay || !currentTimeSlot) return;
+
+        // Generate hash: day-time-room (e.g., day1-09:15-R1)
+        const hash = `${currentDay}-${currentTimeSlot}-${currentSession.room}`;
+
+        // Build shareable URL with hash
+        const shareUrl = `${window.location.origin}${window.location.pathname}#${hash}`;
+
+        const shareData = {
+            title: `MOPCON 2025 - ${currentSession.title}`,
+            text: `${currentSession.title}\n講者: ${currentSession.speaker?.name || "待定"}\n\n${currentSession.description || ""}`,
+            url: shareUrl,
+        };
+
+        // Check if Web Share API is available
+        if (navigator.share) {
+            navigator
+                .share(shareData)
+                .then(() => console.log("Shared successfully"))
+                .catch((error) => console.log("Error sharing:", error));
+        } else {
+            // Fallback: Copy URL to clipboard
+            navigator.clipboard
+                .writeText(shareUrl)
+                .then(() => {
+                    alert("議程連結已複製到剪貼簿！\n" + shareUrl);
+                })
+                .catch((error) => {
+                    console.error("Failed to copy:", error);
+                    alert("無法複製到剪貼簿");
+                });
+        }
+    }
+
+    function addToCalendar() {
+        if (!currentSession || !currentDay || !currentTimeSlot) return;
+
+        // Map day to actual date (MOPCON 2025: Nov 8-9)
+        const dateMap: Record<string, string> = {
+            day1: "2025-11-08",
+            day2: "2025-11-09",
+        };
+
+        const eventDate = dateMap[currentDay];
+        if (!eventDate) return;
+
+        // Parse time slots (format: "HH:MM")
+        const [startHour, startMinute] = currentTimeSlot.split(":").map(Number);
+        const [endHour, endMinute] = (currentTimeEnd || currentTimeSlot)
+            .split(":")
+            .map(Number);
+
+        // Create date objects in local timezone
+        const startDateTime = new Date(
+            eventDate + "T" + currentTimeSlot + ":00",
+        );
+        const endDateTime = new Date(
+            eventDate + "T" + (currentTimeEnd || currentTimeSlot) + ":00",
+        );
+
+        // Format for ICS (YYYYMMDDTHHMMSS format in local timezone)
+        const formatICSDate = (date: Date) => {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, "0");
+            const day = String(date.getDate()).padStart(2, "0");
+            const hour = String(date.getHours()).padStart(2, "0");
+            const minute = String(date.getMinutes()).padStart(2, "0");
+            const second = String(date.getSeconds()).padStart(2, "0");
+            return `${year}${month}${day}T${hour}${minute}${second}`;
+        };
+
+        const startDate = formatICSDate(startDateTime);
+        const endDate = formatICSDate(endDateTime);
+
+        // Build description with session details
+        let description = currentSession.description || "";
+        if (currentSession.target_audience) {
+            description += `\\n\\n目標會眾: ${currentSession.target_audience}`;
+        }
+        if (currentSession.prerequisites) {
+            description += `\\n先備知識: ${currentSession.prerequisites}`;
+        }
+        if (currentSession.expected_gains) {
+            description += `\\n預期收穫: ${currentSession.expected_gains}`;
+        }
+
+        const icsContent = [
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "PRODID:-//MOPCON 2025//Agenda//EN",
+            "CALSCALE:GREGORIAN",
+            "METHOD:PUBLISH",
+            "BEGIN:VEVENT",
+            `DTSTART:${startDate}`,
+            `DTEND:${endDate}`,
+            `SUMMARY:${currentSession.title}`,
+            `DESCRIPTION:${description.replace(/\n/g, "\\n")}`,
+            `LOCATION:MOPCON 2025 - ${currentSession.room || ""}`,
+            currentSession.speaker?.name
+                ? `ORGANIZER;CN=${currentSession.speaker.name}:MAILTO:noreply@mopcon.org`
+                : "",
+            "STATUS:CONFIRMED",
+            "TRANSP:OPAQUE",
+            `UID:mopcon-2025-${currentDay}-${currentTimeSlot}-${currentSession.room}@mopcon.org`,
+            `DTSTAMP:${formatICSDate(new Date())}`,
+            "END:VEVENT",
+            "END:VCALENDAR",
+        ]
+            .filter((line) => line)
+            .join("\r\n");
+
+        // Create blob and download
+        const blob = new Blob([icsContent], {
+            type: "text/calendar;charset=utf-8",
+        });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `mopcon-2025-${currentSession.title.replace(/[\s:]/g, "-").toLowerCase()}.ics`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+    }
+
+    // ============================
+    // URL Hash Management
+    // ============================
+
+    function updateURLHash(hash?: string) {
+        if (hash) {
+            // Set hash without triggering scroll or page reload
+            history.replaceState(null, "", `#${hash}`);
+        } else {
+            // Clear hash from URL
+            history.replaceState(null, "", window.location.pathname);
+        }
+    }
+
+    function openSessionFromHash() {
+        const hash = window.location.hash.slice(1); // Remove the '#'
+        if (!hash) return;
+
+        // Parse hash format: day1-09:15-R1
+        const parts = hash.split("-");
+        if (parts.length < 3) return;
+
+        const day = parts[0]; // "day1" or "day2"
+        const timeSlot = parts.slice(1, -1).join("-"); // "09:15" (handles if time has dashes)
+        const room = parts[parts.length - 1]; // "R1" or "R2"
+
+        // First, switch to the correct day if needed
+        const dayGrid = document.querySelector(
+            `.agenda__grid[data-day="${day}"]`,
+        );
+        if (!dayGrid) return;
+
+        // Show the correct day grid
+        document
+            .querySelectorAll<HTMLElement>(".agenda__grid")
+            .forEach((grid) => {
+                grid.classList.toggle("hidden", grid.dataset.day !== day);
+            });
+
+        // Update the segmented control to show correct day
+        const segControl = document.querySelector(".agenda__seg .segmented");
+        if (segControl) {
+            const event = new CustomEvent("change", { detail: day });
+            segControl.dispatchEvent(event);
+        }
+
+        // Find and click the session button
+        const sessionButton = document.querySelector(
+            `.agenda__cardbtn[data-day="${day}"][data-time-slot="${timeSlot}"][data-session*='"room":"${room}"']`,
+        );
+
+        if (sessionButton) {
+            // Use setTimeout to ensure DOM is ready and day switch animation completes
+            setTimeout(() => {
+                (sessionButton as HTMLElement).click();
+            }, 100);
+        }
+    }
+
+    // ============================
     // Event Delegation
     // ============================
 
@@ -373,11 +587,25 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
         const openBtn = target.closest("[data-open-modal]");
         if (openBtn && modal) {
             const sessionData = openBtn.getAttribute("data-session");
+            const day = openBtn.getAttribute("data-day");
+            const timeSlot = openBtn.getAttribute("data-time-slot");
+            const timeEnd = openBtn.getAttribute("data-time-end");
             if (sessionData) {
                 try {
                     const session = JSON.parse(sessionData);
-                    updateModalContent(session);
+                    updateModalContent(
+                        session,
+                        day || undefined,
+                        timeSlot || undefined,
+                        timeEnd || undefined,
+                    );
                     modal.showModal();
+
+                    // Update URL hash with session identifier
+                    if (day && timeSlot && session.room) {
+                        updateURLHash(`${day}-${timeSlot}-${session.room}`);
+                    }
+
                     // Initialize underline after modal is shown
                     requestAnimationFrame(() => {
                         initializeModal();
@@ -393,6 +621,8 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
         const closeBtn = target.closest(".modal__close");
         if (closeBtn && modal) {
             modal.close();
+            // Clear URL hash when modal closes
+            updateURLHash();
             return;
         }
 
@@ -400,6 +630,20 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
         const tabBtn = target.closest(".modal__tabs > button");
         if (tabBtn && modal.contains(tabBtn as Node)) {
             switchTab(tabBtn as HTMLButtonElement);
+            return;
+        }
+
+        // Handle share button clicks
+        const shareBtn = target.closest("[data-share-session]");
+        if (shareBtn && modal.contains(shareBtn as Node)) {
+            shareSession();
+            return;
+        }
+
+        // Handle add to calendar button clicks
+        const calendarBtn = target.closest("[data-add-calendar]");
+        if (calendarBtn && modal.contains(calendarBtn as Node)) {
+            addToCalendar();
             return;
         }
     });
@@ -410,6 +654,8 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
             // Close if clicking on backdrop (the dialog element itself, not its children)
             if (e.target === modal) {
                 modal.close();
+                // Clear URL hash when modal closes via backdrop
+                updateURLHash();
             }
         });
 
@@ -505,6 +751,26 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
     if (modal) {
         initializeModal();
     }
+
+    // Check for URL hash on page load and open session if present
+    if (window.location.hash) {
+        // Use setTimeout to ensure DOM is fully ready
+        setTimeout(() => {
+            openSessionFromHash();
+        }, 200);
+    }
+
+    // Listen for hash changes (browser back/forward navigation)
+    window.addEventListener("hashchange", () => {
+        if (window.location.hash) {
+            openSessionFromHash();
+        } else {
+            // If hash is cleared, close the modal
+            if (modal && modal.open) {
+                modal.close();
+            }
+        }
+    });
 </script>
 
 <style>

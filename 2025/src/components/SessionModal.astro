@@ -1,4 +1,5 @@
 ---
+import { Share2, CalendarPlus } from "lucide-astro";
 const { open = false } = Astro.props as { open?: boolean };
 ---
 
@@ -18,8 +19,14 @@ const { open = false } = Astro.props as { open?: boolean };
         </section>
 
         <div class="modal__actions">
-            <button class="share">分享議程</button>
-            <button class="calendar">加到行事曆</button>
+            <button class="share" data-share-session>
+                <Share2 size={20} />
+                <span>分享議程</span>
+            </button>
+            <button class="calendar" data-add-calendar>
+                <CalendarPlus size={20} />
+                <span>加到行事曆</span>
+            </button>
         </div>
         <button class="modal__close" aria-label="Close">×</button>
     </div>
@@ -117,6 +124,15 @@ const { open = false } = Astro.props as { open?: boolean };
         font-weight: 800;
         padding: 12px 16px;
         border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.2s;
+    }
+    .share:hover {
+        background: #06b6d4;
+        transform: translateY(-2px);
     }
     .calendar {
         flex: 1;
@@ -125,6 +141,15 @@ const { open = false } = Astro.props as { open?: boolean };
         font-weight: 800;
         padding: 12px 16px;
         border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.2s;
+    }
+    .calendar:hover {
+        background: #94a3b8;
+        transform: translateY(-2px);
     }
 
     /* Content styles - using :global() to apply to dynamically injected content */
