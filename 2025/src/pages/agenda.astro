@@ -241,38 +241,20 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                     ".modal__tabs > button",
                 ),
             ),
-            underline: modal.querySelector(".modal__underline") as HTMLElement,
             topicPanel: modal.querySelector('[data-panel="topic"]'),
             speakerPanel: modal.querySelector('[data-panel="speaker"]'),
         };
     }
 
-    function moveUnderline(btn: HTMLButtonElement, underline: HTMLElement) {
-        const { offsetLeft, offsetWidth } = btn;
-        underline.style.transform = `translateX(${offsetLeft}px)`;
-        underline.style.width = `${offsetWidth}px`;
-    }
-
     function switchTab(targetBtn: HTMLButtonElement) {
-        const { tabs, underline } = getModalElements();
+        const { tabs } = getModalElements();
         tabs.forEach((b) => b.classList.remove("is-active"));
         targetBtn.classList.add("is-active");
-        moveUnderline(targetBtn, underline);
 
         const key = targetBtn.dataset.tab;
         modal.querySelectorAll<HTMLElement>(".modal__panel").forEach((p) => {
             p.classList.toggle("hidden", p.dataset.panel !== key);
         });
-    }
-
-    function initializeModal() {
-        const { tabs, underline } = getModalElements();
-        // Initialize underline position
-        const activeTab =
-            tabs.find((b) => b.classList.contains("is-active")) || tabs[0];
-        if (activeTab && underline) {
-            moveUnderline(activeTab, underline);
-        }
     }
 
     // Store current session data for action buttons
@@ -605,11 +587,6 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                     if (day && timeSlot && session.room) {
                         updateURLHash(`${day}-${timeSlot}-${session.room}`);
                     }
-
-                    // Initialize underline after modal is shown
-                    requestAnimationFrame(() => {
-                        initializeModal();
-                    });
                 } catch (e) {
                     console.error("Failed to parse session data:", e);
                 }
@@ -656,15 +633,6 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                 modal.close();
                 // Clear URL hash when modal closes via backdrop
                 updateURLHash();
-            }
-        });
-
-        // Handle window resize for underline repositioning
-        window.addEventListener("resize", () => {
-            const { tabs, underline } = getModalElements();
-            const active = tabs.find((b) => b.classList.contains("is-active"));
-            if (active && underline) {
-                moveUnderline(active, underline);
             }
         });
     }
@@ -746,11 +714,8 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
     // Initialization
     // ============================
 
-    // Apply initial filters and initialize modal
+    // Apply initial filters
     applyFilters();
-    if (modal) {
-        initializeModal();
-    }
 
     // Check for URL hash on page load and open session if present
     if (window.location.hash) {
@@ -819,7 +784,7 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
     }
 
     .agenda__title {
-        color: #020618;
+        color: #ffffff;
         font-size: 48px;
         text-align: center;
         margin-bottom: 16px;

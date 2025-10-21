@@ -8,7 +8,6 @@ const { open = false } = Astro.props as { open?: boolean };
         <div class="modal__tabs">
             <button class="is-active" data-tab="topic">議程主題</button>
             <button data-tab="speaker">關於講師</button>
-            <div class="modal__underline"></div>
         </div>
 
         <section class="modal__panel" data-panel="topic">
@@ -62,7 +61,6 @@ const { open = false } = Astro.props as { open?: boolean };
         font-size: 20px;
     }
     .modal__tabs {
-        position: relative;
         display: flex;
         gap: 8px;
         background: #0f172a;
@@ -70,27 +68,27 @@ const { open = false } = Astro.props as { open?: boolean };
         border-radius: 9999px;
     }
     .modal__tabs > button {
-        position: relative;
-        z-index: 1;
         flex: 1;
         padding: 10px 16px;
         border-radius: 9999px;
         font-weight: 800;
         color: #cbd5e1;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-family: inherit;
+        outline: none;
+        transition:
+            color 0.26s cubic-bezier(0.2, 0.8, 0.2, 1),
+            background-color 0.26s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .modal__tabs > button.is-active {
         color: #0b1222;
-    }
-    .modal__underline {
-        position: absolute;
-        inset: auto auto 6px 6px;
-        height: calc(100% - 12px);
-        width: 0;
         background: #fff;
-        border-radius: 9999px;
-        transition:
-            transform 0.26s cubic-bezier(0.2, 0.8, 0.2, 1),
-            width 0.26s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .modal__tabs > button:focus-visible {
+        outline: 2px solid rgba(255, 255, 255, 0.5);
+        outline-offset: 2px;
     }
     .modal__panel {
         margin-top: 16px;
