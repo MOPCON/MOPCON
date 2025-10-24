@@ -5,10 +5,11 @@ import FilterChip from "../components/FilterChip.astro";
 import SessionCard from "../components/SessionCard.astro";
 import SessionModal from "../components/SessionModal.astro";
 import { Image } from "astro:assets";
-import { Globe, Facebook, Linkedin, Github } from "lucide-astro";
+// import { Globe, Facebook, Linkedin, Github } from "lucide-astro";
 import type { ImageMetadata } from "astro";
-import agendaBg from "../assets/agenda_bg.svg";
-import speakerAvatar from "../assets/speaker/speaker_1.png";
+import agendaBg from "../assets/agenda_bg.webp";
+import agendaBgMobile from "../assets/agenda_bg_mobile.webp";
+import speakerAvatar from "../assets/speaker/speaker_1.jpg";
 import starWhite from "../assets/star_white.svg";
 import agendaData from "../data/agenda.json";
 
@@ -25,26 +26,35 @@ const starWhiteSrc = starWhite.src;
 
 // Helper function to resolve topic indices to topic strings and speaker avatar
 const resolveSession = (session: any) => {
-    // Resolve the speaker avatar image
-    let avatarImage = speakerAvatar; // Default fallback image object
-    let avatarUrl = "/2025/avatar-demo.webp"; // Default fallback URL for modal
+    // Handle both single speaker and multiple speakers
+    const resolveSpeaker = (speaker: any) => {
+        let avatarImage = speakerAvatar; // Default fallback image object
+        let avatarUrl = "/2025/avatar-demo.webp"; // Default fallback URL for modal
 
-    if (session.speaker?.avatar) {
-        const imagePath = `/src/assets/speaker/${session.speaker.avatar}`;
-        if (speakerImages[imagePath]) {
-            avatarImage = speakerImages[imagePath].default;
-            avatarUrl = speakerImages[imagePath].default.src;
+        if (speaker?.avatar) {
+            const imagePath = `/src/assets/speaker/${speaker.avatar}`;
+            if (speakerImages[imagePath]) {
+                avatarImage = speakerImages[imagePath].default;
+                avatarUrl = speakerImages[imagePath].default.src;
+            }
         }
-    }
+
+        return {
+            ...speaker,
+            avatar: avatarImage, // Image object for Astro <Image> component
+            avatarUrl: avatarUrl, // URL string for modal's <img> tag
+        };
+    };
+
+    // Resolve speakers (handle both single and array)
+    const resolvedSpeaker = Array.isArray(session.speaker) 
+        ? session.speaker.map(resolveSpeaker)
+        : resolveSpeaker(session.speaker);
 
     return {
         ...session,
         topics: session.topics.map((idx: number) => topics[idx]),
-        speaker: {
-            ...session.speaker,
-            avatar: avatarImage, // Image object for Astro <Image> component
-            avatarUrl: avatarUrl, // URL string for modal's <img> tag
-        },
+        speaker: resolvedSpeaker,
     };
 };
 
@@ -83,6 +93,14 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                 />
             </div>
 
+            <div class="agenda-hero__bg-mobile">
+                <Image
+                    src={agendaBgMobile}
+                    alt="Agenda Background"
+                    class="agenda-hero__bg-image-mobile"
+                />
+            </div>
+
             <!-- Hero content layer -->
             <div class="agenda-hero__content">
                 <h1 class="agenda__title font-mantou">精采議程</h1>
@@ -94,7 +112,7 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                 <div class="agenda__filters" id="agenda-filters">
                     {
                         topics.map((t) => (
-                            <FilterChip label={t} selected={true} />
+                            <FilterChip label={t} selected={false} />
                         ))
                     }
                 </div>
@@ -110,18 +128,28 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                         data-day={day}
                         class:list={{ hidden: day !== "day1" }}
                     >
-                        {routine.map((slot) => {
-                            const slotSessions =
-                                (sessionsByDay[day] &&
-                                    sessionsByDay[day][slot.start]) ||
-                                {};
-                            const isTalk = slot.type === "talk";
-                            return (
-                                <div class="agenda__row">
-                                    <div class="agenda__time">{slot.start}</div>
-                                    <div class="agenda__slot">
-                                        {isTalk ? (
-                                            <>
+                        {(() => {
+                            // Handle room-specific lunch events specially for Day 2
+                            const processedTimes = new Set();
+                            const slots = (routine as any)[day];
+                            
+                            return slots.map((slot: any) => {
+                                const slotSessions =
+                                    (sessionsByDay[day] &&
+                                        sessionsByDay[day][slot.start]) ||
+                                    {};
+                                const isTalk = slot.type === "talk";
+                                const isRoomSpecific = slot.room;
+                                
+                                // Handle overlapping lunch events for Day 2
+                                if (day === "day2" && slot.start === "12:00" && slot.type === "talk") {
+                                    // This is the 12:00-12:20 talk slot, but R2 lunch should also be shown here
+                                    const r2Lunch = slots.find((s: any) => s.room === "R2" && s.start === "12:00");
+                                    
+                                    return (
+                                        <div class="agenda__row">
+                                            <div class="agenda__time">{slot.start}</div>
+                                            <div class="agenda__slot">
                                                 <div class="h-[1rem] flex">
                                                     <div class="agenda__divider" />
                                                 </div>
@@ -130,84 +158,223 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                                                         class="agenda__cardbtn"
                                                         data-open-modal
                                                         data-day={day}
-                                                        data-time-slot={
-                                                            slot.start
-                                                        }
+                                                        data-time-slot={slot.start}
                                                         data-time-end={slot.end}
                                                         data-topics={
                                                             slotSessions.R1
-                                                                ? JSON.stringify(
-                                                                      slotSessions
-                                                                          .R1
-                                                                          .topics,
-                                                                  )
+                                                                ? JSON.stringify(slotSessions.R1.topics)
                                                                 : "[]"
                                                         }
                                                         data-session={
                                                             slotSessions.R1
-                                                                ? JSON.stringify(
-                                                                      slotSessions.R1,
-                                                                  )
+                                                                ? JSON.stringify(slotSessions.R1)
                                                                 : "{}"
                                                         }
                                                     >
                                                         {slotSessions.R1 && (
-                                                            <SessionCard
-                                                                session={
-                                                                    slotSessions.R1
-                                                                }
-                                                            />
+                                                            <SessionCard session={slotSessions.R1} />
                                                         )}
                                                     </button>
-                                                    <button
-                                                        class="agenda__cardbtn"
-                                                        data-open-modal
-                                                        data-day={day}
-                                                        data-time-slot={
-                                                            slot.start
-                                                        }
-                                                        data-time-end={slot.end}
-                                                        data-topics={
-                                                            slotSessions.R2
-                                                                ? JSON.stringify(
-                                                                      slotSessions
-                                                                          .R2
-                                                                          .topics,
-                                                                  )
-                                                                : "[]"
-                                                        }
-                                                        data-session={
-                                                            slotSessions.R2
-                                                                ? JSON.stringify(
-                                                                      slotSessions.R2,
-                                                                  )
-                                                                : "{}"
-                                                        }
-                                                    >
-                                                        {slotSessions.R2 && (
-                                                            <SessionCard
-                                                                session={
-                                                                    slotSessions.R2
-                                                                }
-                                                            />
-                                                        )}
-                                                    </button>
+                                                    <div class="agenda__event-room">
+                                                        <div class="agenda__event-label">{r2Lunch?.label || ""}</div>
+                                                    </div>
                                                 </div>
-                                            </>
-                                        ) : (
-                                            <>
+                                            </div>
+                                        </div>
+                                    );
+                                }
+                                
+                                // Handle the 12:00-12:10 slot with R1 sponsor talk and R2 lunch
+                                if (day === "day2" && slot.start === "12:00" && slot.type === "event" && slot.room === "R1") {
+                                    const r2Lunch = slots.find((s: any) => s.room === "R2" && s.start === "12:00");
+                                    
+                                    return (
+                                        <div class="agenda__row">
+                                            <div class="agenda__time">{slot.start}</div>
+                                            <div class="agenda__slot">
                                                 <div class="h-[1rem] flex">
                                                     <div class="agenda__divider" />
                                                 </div>
-                                                <div class="agenda__event-simple">
-                                                    {slot.label}
+                                                <div class="agenda__cards">
+                                                    <div class="agenda__event-room">
+                                                        <div class="agenda__event-label">{slot.label}</div>
+                                                    </div>
+                                                    <div class="agenda__event-room">
+                                                        <div class="agenda__event-label">{r2Lunch?.label || ""}</div>
+                                                    </div>
                                                 </div>
-                                            </>
-                                        )}
+                                            </div>
+                                        </div>
+                                    );
+                                }
+                                
+                                // Handle the 12:10-12:20 slot with R1 sponsor talk and R2 lunch
+                                if (day === "day2" && slot.start === "12:10" && slot.type === "event" && slot.room === "R1") {
+                                    const r2Lunch = slots.find((s: any) => s.room === "R2" && s.start === "12:10");
+                                    
+                                    return (
+                                        <div class="agenda__row">
+                                            <div class="agenda__time">{slot.start}</div>
+                                            <div class="agenda__slot">
+                                                <div class="h-[1rem] flex">
+                                                    <div class="agenda__divider" />
+                                                </div>
+                                                <div class="agenda__cards">
+                                                    <div class="agenda__event-room">
+                                                        <div class="agenda__event-label">{slot.label}</div>
+                                                    </div>
+                                                    <div class="agenda__event-room">
+                                                        <div class="agenda__event-label">{r2Lunch?.label || ""}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                }
+                                
+                                // Handle the 12:20-13:15 slot with both R1 and R2 lunch
+                                if (isRoomSpecific && slot.room === "R1" && slot.start === "12:20") {
+                                    const r2Lunch = slots.find((s: any) => s.room === "R2" && s.start === "12:20");
+                                    
+                                    return (
+                                        <div class="agenda__row">
+                                            <div class="agenda__time">{slot.start}</div>
+                                            <div class="agenda__slot">
+                                                <div class="h-[1rem] flex">
+                                                    <div class="agenda__divider" />
+                                                </div>
+                                                <div class="agenda__cards">
+                                                    <div class="agenda__event-room">
+                                                        <div class="agenda__event-label">{slot.label}</div>
+                                                    </div>
+                                                    <div class="agenda__event-room">
+                                                        <div class="agenda__event-label">{r2Lunch?.label || ""}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                }
+                                
+                                // Skip individual R2 lunch events as they're handled above
+                                if (slot.room === "R2" && slot.label === "午餐 Lunch") {
+                                    return null;
+                                }
+                                
+                                // Check if R1 and R2 have the same talk (same title and speaker)
+                                const isSameTalk = slotSessions.R1 && slotSessions.R2 && 
+                                    slotSessions.R1.title === slotSessions.R2.title && 
+                                    slotSessions.R1.speaker?.name === slotSessions.R2.speaker?.name;
+                                
+                                return (
+                                    <div class="agenda__row">
+                                        <div class="agenda__time">{slot.start}</div>
+                                        <div class="agenda__slot">
+                                            {isTalk ? (
+                                                <>
+                                                    <div class="h-[1rem] flex">
+                                                        <div class="agenda__divider" />
+                                                    </div>
+                                                    {isSameTalk ? (
+                                                        // Single spanning session for both rooms
+                                                        <div class="agenda__session-spanning">
+                                                            <button
+                                                                class="agenda__cardbtn agenda__cardbtn-spanning"
+                                                                data-open-modal
+                                                                data-day={day}
+                                                                data-time-slot={slot.start}
+                                                                data-time-end={slot.end}
+                                                                data-topics={
+                                                                    slotSessions.R1
+                                                                        ? JSON.stringify(slotSessions.R1.topics)
+                                                                        : "[]"
+                                                                }
+                                                                data-session={
+                                                                    slotSessions.R1
+                                                                        ? JSON.stringify(slotSessions.R1)
+                                                                        : "{}"
+                                                                }
+                                                            >
+                                                                {slotSessions.R1 && (
+                                                                    <SessionCard session={slotSessions.R1} />
+                                                                )}
+                                                            </button>
+                                                        </div>
+                                                    ) : (
+                                                        // Separate sessions for each room
+                                                        <div class="agenda__cards">
+                                                            <button
+                                                                class="agenda__cardbtn"
+                                                                data-open-modal
+                                                                data-day={day}
+                                                                data-time-slot={slot.start}
+                                                                data-time-end={slot.end}
+                                                                data-topics={
+                                                                    slotSessions.R1
+                                                                        ? JSON.stringify(slotSessions.R1.topics)
+                                                                        : "[]"
+                                                                }
+                                                                data-session={
+                                                                    slotSessions.R1
+                                                                        ? JSON.stringify(slotSessions.R1)
+                                                                        : "{}"
+                                                                }
+                                                            >
+                                                                {slotSessions.R1 && (
+                                                                    <SessionCard session={slotSessions.R1} />
+                                                                )}
+                                                            </button>
+                                                            <button
+                                                                class="agenda__cardbtn"
+                                                                data-open-modal
+                                                                data-day={day}
+                                                                data-time-slot={slot.start}
+                                                                data-time-end={slot.end}
+                                                                data-topics={
+                                                                    slotSessions.R2
+                                                                        ? JSON.stringify(slotSessions.R2.topics)
+                                                                        : "[]"
+                                                                }
+                                                                data-session={
+                                                                    slotSessions.R2
+                                                                        ? JSON.stringify(slotSessions.R2)
+                                                                        : "{}"
+                                                                }
+                                                            >
+                                                                {slotSessions.R2 && (
+                                                                    <SessionCard session={slotSessions.R2} />
+                                                                )}
+                                                            </button>
+                                                        </div>
+                                                    )}
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <div class="h-[1rem] flex">
+                                                        <div class="agenda__divider" />
+                                                    </div>
+                                                    {isRoomSpecific ? (
+                                                        // Room-specific event (like Day 2 lunch)
+                                                        <div class="agenda__cards">
+                                                            <div class="agenda__event-room">
+                                                                <div class="agenda__event-label">
+                                                                    {slot.label}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        // General event
+                                                        <div class="agenda__event-simple">
+                                                            {slot.label}
+                                                        </div>
+                                                    )}
+                                                </>
+                                            )}
+                                        </div>
                                     </div>
-                                </div>
-                            );
-                        })}
+                                );
+                            }).filter(Boolean);
+                        })()}
                     </div>
                 ))
             }
@@ -246,6 +413,23 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
         };
     }
 
+    function openModal() {
+        modal.showModal();
+        // Force a reflow to ensure the modal is in the DOM before animation
+        modal.offsetHeight;
+        // Add the show class to trigger animations
+        modal.classList.add('show');
+    }
+
+    function closeModal() {
+        // Remove the show class to trigger close animation
+        modal.classList.remove('show');
+        // Wait for animation to complete before closing
+        setTimeout(() => {
+            modal.close();
+        }, 300);
+    }
+
     function switchTab(targetBtn: HTMLButtonElement) {
         const { tabs } = getModalElements();
         tabs.forEach((b) => b.classList.remove("is-active"));
@@ -280,91 +464,128 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
             const tagsHtml = session.topics
                 .map((t: string) => `<span class="tag">${t}</span>`)
                 .join("");
+            
+            // Build info items conditionally
+            let infoItemsHtml = "";
+            
+            if (session.target_audience && session.target_audience.trim()) {
+                infoItemsHtml += `
+                    <div class="modal__info-item">
+                        <img src="${starWhiteSrc}" alt="star" class="modal__info-icon" />
+                        <span class="modal__info-label">目標會眾</span>
+                        <span class="modal__info-separator">|</span>
+                        <span class="modal__text">${session.target_audience.replace(/\n/g, '<br>')}</span>
+                    </div>
+                `;
+            }
+            
+            if (session.prerequisites && session.prerequisites.trim()) {
+                infoItemsHtml += `
+                    <div class="modal__info-item">
+                        <img src="${starWhiteSrc}" alt="star" class="modal__info-icon" />
+                        <span class="modal__info-label">先備知識</span>
+                        <span class="modal__info-separator">|</span>
+                        <span class="modal__text">${session.prerequisites.replace(/\n/g, '<br>')}</span>
+                    </div>
+                `;
+            }
+            
+            if (session.expected_gains && session.expected_gains.trim()) {
+                infoItemsHtml += `
+                    <div class="modal__info-item">
+                        <img src="${starWhiteSrc}" alt="star" class="modal__info-icon" />
+                        <span class="modal__info-label">會眾預期收穫</span>
+                        <span class="modal__info-separator">|</span>
+                        <span class="modal__text">${session.expected_gains.replace(/\n/g, '<br>')}</span>
+                    </div>
+                `;
+            }
+            
             topicPanel.innerHTML = `
                 <h3 class="modal__session-title">${session.title || ""}</h3>
                 <div class="modal__tags">${tagsHtml}</div>
                 <div class="modal__divider"></div>
-                <p class="modal__text">${session.description || ""}</p>
-                <div class="modal__info-item">
-                    <img src="${starWhiteSrc}" alt="star" class="modal__info-icon" />
-                    <span class="modal__info-label">目標會眾</span>
-                    <span class="modal__info-separator">|</span>
-                    <span class="modal__text">${session.target_audience || ""}</span>
-                </div>
-                <div class="modal__info-item">
-                    <img src="${starWhiteSrc}" alt="star" class="modal__info-icon" />
-                    <span class="modal__info-label">先備知識</span>
-                    <span class="modal__info-separator">|</span>
-                    <span class="modal__text">${session.prerequisites || ""}</span>
-                </div>
-                <div class="modal__info-item">
-                    <img src="${starWhiteSrc}" alt="star" class="modal__info-icon" />
-                    <span class="modal__info-label">會眾預期收穫</span>
-                    <span class="modal__info-separator">|</span>
-                    <span class="modal__text">${session.expected_gains || ""}</span>
-                </div>
+                <p class="modal__text">${(session.description || "").replace(/\n/g, '<br>')}</p>
+                ${infoItemsHtml}
             `;
         }
 
         // Update speaker section
         if (speakerPanel && session.speaker) {
-            // Split title and company if they are on separate lines
-            const titleParts = (session.speaker.title || "").split("\n");
-            const company = titleParts.length > 1 ? titleParts[0] : "";
-            const jobTitle =
-                titleParts.length > 1 ? titleParts[1] : titleParts[0];
+            // Handle both single speaker and multiple speakers
+            const speakers = Array.isArray(session.speaker) ? session.speaker : [session.speaker];
+            
+            let speakersHtml = "";
+            
+            speakers.forEach((speaker: any, index: number) => {
+                // Split title and company if they are on separate lines
+                const titleParts = (speaker.title || "").split("\n");
+                const company = titleParts.length > 1 ? titleParts[0] : "";
+                const jobTitle = titleParts.length > 1 ? titleParts[1] : titleParts[0];
 
-            // Build social links HTML
-            let socialLinksHtml = "";
-            if (
-                session.speaker.website ||
-                session.speaker.facebook ||
-                session.speaker.linkedin ||
-                session.speaker.github
-            ) {
-                socialLinksHtml = '<div class="social-links">';
-                if (session.speaker.website) {
-                    socialLinksHtml += `<a href="${session.speaker.website}" target="_blank" rel="noopener noreferrer" aria-label="Website"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></a>`;
+                // Build social links HTML
+                let socialLinksHtml = "";
+                if (
+                    speaker.website ||
+                    speaker.facebook ||
+                    speaker.linkedin ||
+                    speaker.github
+                ) {
+                    socialLinksHtml = '<div class="social-links">';
+                    if (speaker.website) {
+                        socialLinksHtml += `<a href="${speaker.website}" target="_blank" rel="noopener noreferrer" aria-label="Website"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></a>`;
+                    }
+                    if (speaker.facebook) {
+                        socialLinksHtml += `<a href="${speaker.facebook}" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>`;
+                    }
+                    if (speaker.linkedin) {
+                        socialLinksHtml += `<a href="${speaker.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>`;
+                    }
+                    if (speaker.github) {
+                        socialLinksHtml += `<a href="${speaker.github}" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>`;
+                    }
+                    socialLinksHtml += "</div>";
                 }
-                if (session.speaker.facebook) {
-                    socialLinksHtml += `<a href="${session.speaker.facebook}" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>`;
-                }
-                if (session.speaker.linkedin) {
-                    socialLinksHtml += `<a href="${session.speaker.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>`;
-                }
-                if (session.speaker.github) {
-                    socialLinksHtml += `<a href="${session.speaker.github}" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>`;
-                }
-                socialLinksHtml += "</div>";
-            }
 
-            speakerPanel.innerHTML = `
-                <div class="speaker__head">
-                    <img class="avatar" src="${session.speaker.avatarUrl || "/2025/avatar-demo.webp"}" alt="speaker" />
-                    <div class="speaker__info">
-                        <div class="name">${session.speaker.name}</div>
-                        ${
-                            company
-                                ? `
-                        <div class="speaker__company-row">
-                            <span class="company-name">${company}</span>
-                            ${socialLinksHtml}
+                speakersHtml += `
+                    <div class="speaker__head ${speakers.length > 1 ? 'speaker__head-multiple' : ''}">
+                        <img class="avatar" src="${speaker.avatarUrl || "/2025/avatar-demo.webp"}" alt="speaker" />
+                        <div class="speaker__info">
+                            <div class="name">${speaker.name}</div>
+                            ${
+                                company
+                                    ? `
+                            <div class="speaker__company-row">
+                                <span class="company-name">${company}</span>
+                                <span class="max-sm:hidden">
+                                    ${socialLinksHtml}
+                                </span>
+                            </div>
+                            `
+                                    : ""
+                            }
+                            <div class="title">${jobTitle}</div>
                         </div>
-                        `
-                                : ""
-                        }
-                        <div class="title">${jobTitle}</div>
                     </div>
-                </div>
-                <div class="modal__divider"></div>
-                <div class="speaker__bio-section">
-                    <div class="speaker__bio-label">
-                        <img src="${starWhiteSrc}" alt="star" />
-                        <span>介紹</span>
+                    <div class="speaker__company-row">
+                        <span class="sm:hidden">
+                            ${socialLinksHtml}
+                        </span>
                     </div>
-                    <p class="modal__text">${session.speaker.bio || ""}</p>
-                </div>
-            `;
+                    ${speaker.bio ? `
+                    <div class="speaker__bio-section">
+                        <div class="speaker__bio-label">
+                            <img src="${starWhiteSrc}" alt="star" />
+                            <span>介紹</span>
+                        </div>
+                        <p class="modal__text">${(speaker.bio || "").replace(/\n/g, '<br>')}</p>
+                    </div>
+                    ` : ''}
+                    ${index < speakers.length - 1 ? '<div class="modal__divider"></div>' : ''}
+                `;
+            });
+
+            speakerPanel.innerHTML = speakersHtml;
         }
     }
 
@@ -581,7 +802,7 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
                         timeSlot || undefined,
                         timeEnd || undefined,
                     );
-                    modal.showModal();
+                    openModal();
 
                     // Update URL hash with session identifier
                     if (day && timeSlot && session.room) {
@@ -595,9 +816,9 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
         }
 
         // Handle modal close button clicks
-        const closeBtn = target.closest(".modal__close");
+        const closeBtn = target.closest(".modal__close") || target.closest(".modal__close_button");
         if (closeBtn && modal) {
-            modal.close();
+            closeModal();
             // Clear URL hash when modal closes
             updateURLHash();
             return;
@@ -630,8 +851,22 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
         modal.addEventListener("click", (e) => {
             // Close if clicking on backdrop (the dialog element itself, not its children)
             if (e.target === modal) {
-                modal.close();
+                closeModal();
                 // Clear URL hash when modal closes via backdrop
+                updateURLHash();
+            }
+        });
+
+        // Ensure modal is properly closed and page is interactive
+        modal.addEventListener("close", () => {
+            // Remove any remaining show class
+            modal.classList.remove('show');
+        });
+
+        // Handle Escape key to close modal
+        modal.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeModal();
                 updateURLHash();
             }
         });
@@ -732,7 +967,7 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
         } else {
             // If hash is cleared, close the modal
             if (modal && modal.open) {
-                modal.close();
+                closeModal();
             }
         }
     });
@@ -746,26 +981,38 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
     /* Hero container - only for header section */
     .agenda-hero {
         position: relative;
-        padding: 120px 16px 48px;
+        padding: 160px 16px 48px;
         min-height: 500px;
     }
 
     /* Background layer */
     .agenda-hero__bg {
         position: absolute;
-        top: 0;
+        top: 4.5rem;
         left: 0;
         right: 0;
         z-index: 1;
         pointer-events: none;
     }
-
-    .agenda-hero__bg-image {
-        width: 100%;
-        height: auto;
-        display: block;
+    .agenda-hero__bg-mobile {
+        display: none;
     }
-
+    .agenda-hero__bg-image-mobile {
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+    @media (max-width: 768px) {
+        .agenda-hero__bg {
+            display: none;
+        }
+        .agenda-hero__bg-mobile {
+            display: block;
+        }
+    }
     /* Hero content layer */
     .agenda-hero__content {
         position: relative;
@@ -784,7 +1031,6 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
     }
 
     .agenda__title {
-        color: #ffffff;
         font-size: 48px;
         text-align: center;
         margin-bottom: 16px;
@@ -834,6 +1080,16 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
         grid-template-columns: 1fr 1fr;
         gap: 16px;
     }
+    
+    .agenda__session-spanning {
+        display: flex;
+        width: 100%;
+    }
+    
+    .agenda__cardbtn-spanning {
+        width: 100%;
+        grid-column: 1 / -1;
+    }
     .agenda__cardbtn {
         text-align: left;
     }
@@ -841,6 +1097,135 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
         text-align: center;
         color: #fff;
         font-weight: 800;
+    }
+    .agenda__event-room {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 800;
+        text-align: center;
+        padding: 8px 16px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+    }
+    
+    /* Spanning event styles for events that cross multiple time slots */
+    .agenda__event-spanning {
+        position: relative;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .agenda__event-spanning::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, 
+            rgba(255, 255, 255, 0.1) 0%, 
+            rgba(255, 255, 255, 0.2) 50%, 
+            rgba(255, 255, 255, 0.1) 100%
+        );
+        border-radius: 10px;
+        z-index: -1;
+        animation: shimmer 3s ease-in-out infinite;
+    }
+    
+    @keyframes shimmer {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.6; }
+    }
+    
+    /* Overlapping event styles for desktop */
+    .agenda__event-overlap-start {
+        position: relative;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1));
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .agenda__event-overlap-start::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    }
+    
+    .agenda__event-overlap-end {
+        position: relative;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .agenda__event-overlap-end::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    }
+    
+    /* Visual connection between overlapping events */
+    .agenda__event-overlap-start::after,
+    .agenda__event-overlap-end::before {
+        animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.8; }
+    }
+    
+    /* Enhanced visual overlap for desktop */
+    @media (min-width: 841px) {
+        .agenda__event-overlap-start {
+            margin-bottom: -18px;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .agenda__event-overlap-end {
+            margin-top: -18px;
+            z-index: 1;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Create visual connection line */
+        .agenda__event-overlap-start::after {
+            bottom: -20px;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.4) 20%, 
+                rgba(255, 255, 255, 0.6) 50%, 
+                rgba(255, 255, 255, 0.4) 80%, 
+                transparent 100%
+            );
+        }
+        
+        .agenda__event-overlap-end::before {
+            top: -20px;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.4) 20%, 
+                rgba(255, 255, 255, 0.6) 50%, 
+                rgba(255, 255, 255, 0.4) 80%, 
+                transparent 100%
+            );
+        }
     }
     .agenda__event {
         display: flex;
@@ -869,6 +1254,14 @@ const sessionsByDay = Object.entries(sessionsRaw).reduce(
         }
         .agenda__cards {
             grid-template-columns: 1fr;
+        }
+        
+        .agenda__session-spanning {
+            display: block;
+        }
+        
+        .agenda__cardbtn-spanning {
+            width: 100%;
         }
     }
 </style>
