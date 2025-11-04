@@ -1,12 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Carousel from './Carousel.astro';
-import Sponsor from './Sponsor.astro';
+import Hero from '../components/Hero.astro';
+import AIHardwareSection from '../components/AIHardwareSection.astro';
+import FeaturedTalksSection from '../components/FeaturedTalksSection.astro';
+import MOPCONHero from '../components/MOPCONHero.astro';
+import VenueInfo from '../components/VenueInfo.astro';
+import Tickets from '../components/Tickets.astro';
 ---
 
-<Layout class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 bg-black">
-    <Carousel />
-    <div class="hidden xl:block">
-        <Sponsor />
-    </div>
+<Layout>
+    <Hero/>
+    <AIHardwareSection />
+    <FeaturedTalksSection />
+    <MOPCONHero />
+    <VenueInfo />
+    <Tickets />
 </Layout>

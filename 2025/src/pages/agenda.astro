@@ -1,0 +1,1267 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SegmentedControl from "../components/SegmentedControl.astro";
+import FilterChip from "../components/FilterChip.astro";
+import SessionCard from "../components/SessionCard.astro";
+import SessionModal from "../components/SessionModal.astro";
+import { Image } from "astro:assets";
+// import { Globe, Facebook, Linkedin, Github } from "lucide-astro";
+import type { ImageMetadata } from "astro";
+import agendaBg from "../assets/agenda_bg.webp";
+import agendaBgMobile from "../assets/agenda_bg_mobile.webp";
+import speakerAvatar from "../assets/speaker/speaker_1.jpg";
+import starWhite from "../assets/star_white.svg";
+import agendaData from "../data/agenda.json";
+
+// Dynamically import all speaker images
+const speakerImages = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/speaker/*.{png,jpg,jpeg,webp}",
+    { eager: true },
+);
+
+const { dates, topics, routine, sessionsByDay: sessionsRaw } = agendaData;
+
+// Get the star icon source for use in client-side script
+const starWhiteSrc = starWhite.src;
+
+// Helper function to resolve topic indices to topic strings and speaker avatar
+const resolveSession = (session: any) => {
+    // Handle both single speaker and multiple speakers
+    const resolveSpeaker = (speaker: any) => {
+        let avatarImage = speakerAvatar; // Default fallback image object
+        let avatarUrl = "/2025/avatar-demo.webp"; // Default fallback URL for modal
+
+        if (speaker?.avatar) {
+            const imagePath = `/src/assets/speaker/${speaker.avatar}`;
+            if (speakerImages[imagePath]) {
+                avatarImage = speakerImages[imagePath].default;
+                avatarUrl = speakerImages[imagePath].default.src;
+            }
+        }
+
+        return {
+            ...speaker,
+            avatar: avatarImage, // Image object for Astro <Image> component
+            avatarUrl: avatarUrl, // URL string for modal's <img> tag
+        };
+    };
+
+    // Resolve speakers (handle both single and array)
+    const resolvedSpeaker = Array.isArray(session.speaker) 
+        ? session.speaker.map(resolveSpeaker)
+        : resolveSpeaker(session.speaker);
+
+    return {
+        ...session,
+        topics: session.topics.map((idx: number) => topics[idx]),
+        speaker: resolvedSpeaker,
+    };
+};
+
+// Transform sessionsByDay to resolve topic indices
+const sessionsByDay = Object.entries(sessionsRaw).reduce(
+    (acc, [day, slots]) => {
+        acc[day] = Object.entries(slots as Record<string, any>).reduce(
+            (slotAcc, [time, rooms]) => {
+                slotAcc[time] = Object.entries(rooms).reduce(
+                    (roomAcc, [room, session]) => {
+                        roomAcc[room] = resolveSession(session);
+                        return roomAcc;
+                    },
+                    {} as Record<string, any>,
+                );
+                return slotAcc;
+            },
+            {} as Record<string, any>,
+        );
+        return acc;
+    },
+    {} as Record<string, any>,
+);
+---
+
+<Layout>
+    <section class="agenda">
+        <!-- Hero section with background -->
+        <div class="agenda-hero">
+            <!-- Background layer -->
+            <div class="agenda-hero__bg">
+                <Image
+                    src={agendaBg}
+                    alt="Agenda Background"
+                    class="agenda-hero__bg-image"
+                />
+            </div>
+
+            <div class="agenda-hero__bg-mobile">
+                <Image
+                    src={agendaBgMobile}
+                    alt="Agenda Background"
+                    class="agenda-hero__bg-image-mobile"
+                />
+            </div>
+
+            <!-- Hero content layer -->
+            <div class="agenda-hero__content">
+                <h1 class="agenda__title font-mantou">精采議程</h1>
+
+                <div class="agenda__seg">
+                    <SegmentedControl options={dates} value="day1" />
+                </div>
+
+                <div class="agenda__filters" id="agenda-filters">
+                    {
+                        topics.map((t) => (
+                            <FilterChip label={t} selected={false} />
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Schedule grid (outside hero) -->
+        <div class="agenda__days">
+            {
+                ["day1", "day2"].map((day) => (
+                    <div
+                        class="agenda__grid"
+                        data-day={day}
+                        class:list={{ hidden: day !== "day1" }}
+                    >
+                        {(() => {
+                            // Handle room-specific lunch events specially for Day 2
+                            const processedTimes = new Set();
+                            const slots = (routine as any)[day];
+                            
+                            return slots.map((slot: any) => {
+                                const slotSessions =
+                                    (sessionsByDay[day] &&
+                                        sessionsByDay[day][slot.start]) ||
+                                    {};
+                                const isTalk = slot.type === "talk";
+                                const isRoomSpecific = slot.room;
+                                
+                                // Handle overlapping lunch events for Day 2
+                                if (day === "day2" && slot.start === "12:00" && slot.type === "talk") {
+                                    // This is the 12:00-12:20 talk slot, but R2 lunch should also be shown here
+                                    const r2Lunch = slots.find((s: any) => s.room === "R2" && s.start === "12:00");
+                                    
+                                    return (
+                                        <div class="agenda__row">
+                                            <div class="agenda__time">{slot.start}</div>
+                                            <div class="agenda__slot">
+                                                <div class="h-[1rem] flex">
+                                                    <div class="agenda__divider" />
+                                                </div>
+                                                <div class="agenda__cards">
+                                                    <button
+                                                        class="agenda__cardbtn"
+                                                        data-open-modal
+                                                        data-day={day}
+                                                        data-time-slot={slot.start}
+                                                        data-time-end={slot.end}
+                                                        data-topics={
+                                                            slotSessions.R1
+                                                                ? JSON.stringify(slotSessions.R1.topics)
+                                                                : "[]"
+                                                        }
+                                                        data-session={
+                                                            slotSessions.R1
+                                                                ? JSON.stringify(slotSessions.R1)
+                                                                : "{}"
+                                                        }
+                                                    >
+                                                        {slotSessions.R1 && (
+                                                            <SessionCard session={slotSessions.R1} />
+                                                        )}
+                                                    </button>
+                                                    <div class="agenda__event-room">
+                                                        <div class="agenda__event-label">{r2Lunch?.label || ""}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                }
+                                
+                                // Handle the 12:00-12:10 slot with R1 sponsor talk and R2 lunch
+                                if (day === "day2" && slot.start === "12:00" && slot.type === "event" && slot.room === "R1") {
+                                    const r2Lunch = slots.find((s: any) => s.room === "R2" && s.start === "12:00");
+                                    
+                                    return (
+                                        <div class="agenda__row">
+                                            <div class="agenda__time">{slot.start}</div>
+                                            <div class="agenda__slot">
+                                                <div class="h-[1rem] flex">
+                                                    <div class="agenda__divider" />
+                                                </div>
+                                                <div class="agenda__cards">
+                                                    <div class="agenda__event-room">
+                                                        <div class="agenda__event-label">{slot.label}</div>
+                                                    </div>
+                                                    <div class="agenda__event-room">
+                                                        <div class="agenda__event-label">{r2Lunch?.label || ""}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                }
+                                
+                                // Handle the 12:10-12:20 slot with R1 sponsor talk and R2 lunch
+                                if (day === "day2" && slot.start === "12:10" && slot.type === "event" && slot.room === "R1") {
+                                    const r2Lunch = slots.find((s: any) => s.room === "R2" && s.start === "12:10");
+                                    
+                                    return (
+                                        <div class="agenda__row">
+                                            <div class="agenda__time">{slot.start}</div>
+                                            <div class="agenda__slot">
+                                                <div class="h-[1rem] flex">
+                                                    <div class="agenda__divider" />
+                                                </div>
+                                                <div class="agenda__cards">
+                                                    <div class="agenda__event-room">
+                                                        <div class="agenda__event-label">{slot.label}</div>
+                                                    </div>
+                                                    <div class="agenda__event-room">
+                                                        <div class="agenda__event-label">{r2Lunch?.label || ""}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                }
+                                
+                                // Handle the 12:20-13:15 slot with both R1 and R2 lunch
+                                if (isRoomSpecific && slot.room === "R1" && slot.start === "12:20") {
+                                    const r2Lunch = slots.find((s: any) => s.room === "R2" && s.start === "12:20");
+                                    
+                                    return (
+                                        <div class="agenda__row">
+                                            <div class="agenda__time">{slot.start}</div>
+                                            <div class="agenda__slot">
+                                                <div class="h-[1rem] flex">
+                                                    <div class="agenda__divider" />
+                                                </div>
+                                                <div class="agenda__cards">
+                                                    <div class="agenda__event-room">
+                                                        <div class="agenda__event-label">{slot.label}</div>
+                                                    </div>
+                                                    <div class="agenda__event-room">
+                                                        <div class="agenda__event-label">{r2Lunch?.label || ""}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                }
+                                
+                                // Skip individual R2 lunch events as they're handled above
+                                if (slot.room === "R2" && slot.label === "午餐 Lunch") {
+                                    return null;
+                                }
+                                
+                                // Check if R1 and R2 have the same talk (same title and speaker)
+                                const isSameTalk = slotSessions.R1 && slotSessions.R2 && 
+                                    slotSessions.R1.title === slotSessions.R2.title && 
+                                    slotSessions.R1.speaker?.name === slotSessions.R2.speaker?.name;
+                                
+                                return (
+                                    <div class="agenda__row">
+                                        <div class="agenda__time">{slot.start}</div>
+                                        <div class="agenda__slot">
+                                            {isTalk ? (
+                                                <>
+                                                    <div class="h-[1rem] flex">
+                                                        <div class="agenda__divider" />
+                                                    </div>
+                                                    {isSameTalk ? (
+                                                        // Single spanning session for both rooms
+                                                        <div class="agenda__session-spanning">
+                                                            <button
+                                                                class="agenda__cardbtn agenda__cardbtn-spanning"
+                                                                data-open-modal
+                                                                data-day={day}
+                                                                data-time-slot={slot.start}
+                                                                data-time-end={slot.end}
+                                                                data-topics={
+                                                                    slotSessions.R1
+                                                                        ? JSON.stringify(slotSessions.R1.topics)
+                                                                        : "[]"
+                                                                }
+                                                                data-session={
+                                                                    slotSessions.R1
+                                                                        ? JSON.stringify(slotSessions.R1)
+                                                                        : "{}"
+                                                                }
+                                                            >
+                                                                {slotSessions.R1 && (
+                                                                    <SessionCard session={slotSessions.R1} />
+                                                                )}
+                                                            </button>
+                                                        </div>
+                                                    ) : (
+                                                        // Separate sessions for each room
+                                                        <div class="agenda__cards">
+                                                            <button
+                                                                class="agenda__cardbtn"
+                                                                data-open-modal
+                                                                data-day={day}
+                                                                data-time-slot={slot.start}
+                                                                data-time-end={slot.end}
+                                                                data-topics={
+                                                                    slotSessions.R1
+                                                                        ? JSON.stringify(slotSessions.R1.topics)
+                                                                        : "[]"
+                                                                }
+                                                                data-session={
+                                                                    slotSessions.R1
+                                                                        ? JSON.stringify(slotSessions.R1)
+                                                                        : "{}"
+                                                                }
+                                                            >
+                                                                {slotSessions.R1 && (
+                                                                    <SessionCard session={slotSessions.R1} />
+                                                                )}
+                                                            </button>
+                                                            <button
+                                                                class="agenda__cardbtn"
+                                                                data-open-modal
+                                                                data-day={day}
+                                                                data-time-slot={slot.start}
+                                                                data-time-end={slot.end}
+                                                                data-topics={
+                                                                    slotSessions.R2
+                                                                        ? JSON.stringify(slotSessions.R2.topics)
+                                                                        : "[]"
+                                                                }
+                                                                data-session={
+                                                                    slotSessions.R2
+                                                                        ? JSON.stringify(slotSessions.R2)
+                                                                        : "{}"
+                                                                }
+                                                            >
+                                                                {slotSessions.R2 && (
+                                                                    <SessionCard session={slotSessions.R2} />
+                                                                )}
+                                                            </button>
+                                                        </div>
+                                                    )}
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <div class="h-[1rem] flex">
+                                                        <div class="agenda__divider" />
+                                                    </div>
+                                                    {isRoomSpecific ? (
+                                                        // Room-specific event (like Day 2 lunch)
+                                                        <div class="agenda__cards">
+                                                            <div class="agenda__event-room">
+                                                                <div class="agenda__event-label">
+                                                                    {slot.label}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        // General event
+                                                        <div class="agenda__event-simple">
+                                                            {slot.label}
+                                                        </div>
+                                                    )}
+                                                </>
+                                            )}
+                                        </div>
+                                    </div>
+                                );
+                            }).filter(Boolean);
+                        })()}
+                    </div>
+                ))
+            }
+        </div>
+    </section>
+
+    <SessionModal open={false}>
+        <div slot="topic" id="modal-topic-content">
+            <!-- Content will be dynamically populated by JavaScript -->
+        </div>
+        <div slot="speaker" id="modal-speaker-content">
+            <!-- Content will be dynamically populated by JavaScript -->
+        </div>
+    </SessionModal>
+</Layout>
+
+<script is:inline set:html={`window.__starWhiteSrc = "${starWhiteSrc}";`} />
+
+<script>
+    // ============================
+    // Modal Management
+    // ============================
+    const starWhiteSrc = (window as any).__starWhiteSrc;
+    const modal = document.querySelector("dialog") as HTMLDialogElement;
+
+    // Modal utility functions
+    function getModalElements() {
+        return {
+            tabs: Array.from(
+                modal.querySelectorAll<HTMLButtonElement>(
+                    ".modal__tabs > button",
+                ),
+            ),
+            topicPanel: modal.querySelector('[data-panel="topic"]'),
+            speakerPanel: modal.querySelector('[data-panel="speaker"]'),
+        };
+    }
+
+    function openModal() {
+        modal.showModal();
+        // Force a reflow to ensure the modal is in the DOM before animation
+        modal.offsetHeight;
+        // Add the show class to trigger animations
+        modal.classList.add('show');
+    }
+
+    function closeModal() {
+        // Remove the show class to trigger close animation
+        modal.classList.remove('show');
+        // Wait for animation to complete before closing
+        setTimeout(() => {
+            modal.close();
+        }, 300);
+    }
+
+    function switchTab(targetBtn: HTMLButtonElement) {
+        const { tabs } = getModalElements();
+        tabs.forEach((b) => b.classList.remove("is-active"));
+        targetBtn.classList.add("is-active");
+
+        const key = targetBtn.dataset.tab;
+        modal.querySelectorAll<HTMLElement>(".modal__panel").forEach((p) => {
+            p.classList.toggle("hidden", p.dataset.panel !== key);
+        });
+    }
+
+    // Store current session data for action buttons
+    let currentSession: any = null;
+    let currentDay: string = "";
+    let currentTimeSlot: string = "";
+    let currentTimeEnd: string = "";
+
+    function updateModalContent(
+        session: any,
+        day?: string,
+        timeSlot?: string,
+        timeEnd?: string,
+    ) {
+        currentSession = session;
+        currentDay = day || "";
+        currentTimeSlot = timeSlot || "";
+        currentTimeEnd = timeEnd || "";
+        const { topicPanel, speakerPanel } = getModalElements();
+
+        // Update topic section
+        if (topicPanel) {
+            const tagsHtml = session.topics
+                .map((t: string) => `<span class="tag">${t}</span>`)
+                .join("");
+            
+            // Build info items conditionally
+            let infoItemsHtml = "";
+            
+            if (session.target_audience && session.target_audience.trim()) {
+                infoItemsHtml += `
+                    <div class="modal__info-item">
+                        <img src="${starWhiteSrc}" alt="star" class="modal__info-icon" />
+                        <span class="modal__info-label">目標會眾</span>
+                        <span class="modal__info-separator">|</span>
+                        <span class="modal__text">${session.target_audience.replace(/\n/g, '<br>')}</span>
+                    </div>
+                `;
+            }
+            
+            if (session.prerequisites && session.prerequisites.trim()) {
+                infoItemsHtml += `
+                    <div class="modal__info-item">
+                        <img src="${starWhiteSrc}" alt="star" class="modal__info-icon" />
+                        <span class="modal__info-label">先備知識</span>
+                        <span class="modal__info-separator">|</span>
+                        <span class="modal__text">${session.prerequisites.replace(/\n/g, '<br>')}</span>
+                    </div>
+                `;
+            }
+            
+            if (session.expected_gains && session.expected_gains.trim()) {
+                infoItemsHtml += `
+                    <div class="modal__info-item">
+                        <img src="${starWhiteSrc}" alt="star" class="modal__info-icon" />
+                        <span class="modal__info-label">會眾預期收穫</span>
+                        <span class="modal__info-separator">|</span>
+                        <span class="modal__text">${session.expected_gains.replace(/\n/g, '<br>')}</span>
+                    </div>
+                `;
+            }
+            
+            topicPanel.innerHTML = `
+                <h3 class="modal__session-title">${session.title || ""}</h3>
+                <div class="modal__tags">${tagsHtml}</div>
+                <div class="modal__divider"></div>
+                <p class="modal__text">${(session.description || "").replace(/\n/g, '<br>')}</p>
+                ${infoItemsHtml}
+            `;
+        }
+
+        // Update speaker section
+        if (speakerPanel && session.speaker) {
+            // Handle both single speaker and multiple speakers
+            const speakers = Array.isArray(session.speaker) ? session.speaker : [session.speaker];
+            
+            let speakersHtml = "";
+            
+            speakers.forEach((speaker: any, index: number) => {
+                // Split title and company if they are on separate lines
+                const titleParts = (speaker.title || "").split("\n");
+                const company = titleParts.length > 1 ? titleParts[0] : "";
+                const jobTitle = titleParts.length > 1 ? titleParts[1] : titleParts[0];
+
+                // Build social links HTML
+                let socialLinksHtml = "";
+                if (
+                    speaker.website ||
+                    speaker.facebook ||
+                    speaker.linkedin ||
+                    speaker.github
+                ) {
+                    socialLinksHtml = '<div class="social-links">';
+                    if (speaker.website) {
+                        socialLinksHtml += `<a href="${speaker.website}" target="_blank" rel="noopener noreferrer" aria-label="Website"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></a>`;
+                    }
+                    if (speaker.facebook) {
+                        socialLinksHtml += `<a href="${speaker.facebook}" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>`;
+                    }
+                    if (speaker.linkedin) {
+                        socialLinksHtml += `<a href="${speaker.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>`;
+                    }
+                    if (speaker.github) {
+                        socialLinksHtml += `<a href="${speaker.github}" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>`;
+                    }
+                    socialLinksHtml += "</div>";
+                }
+
+                speakersHtml += `
+                    <div class="speaker__head ${speakers.length > 1 ? 'speaker__head-multiple' : ''}">
+                        <img class="avatar" src="${speaker.avatarUrl || "/2025/avatar-demo.webp"}" alt="speaker" />
+                        <div class="speaker__info">
+                            <div class="name">${speaker.name}</div>
+                            ${
+                                company
+                                    ? `
+                            <div class="speaker__company-row">
+                                <span class="company-name">${company}</span>
+                                <span class="max-sm:hidden">
+                                    ${socialLinksHtml}
+                                </span>
+                            </div>
+                            `
+                                    : ""
+                            }
+                            <div class="title">${jobTitle}</div>
+                        </div>
+                    </div>
+                    <div class="speaker__company-row">
+                        <span class="sm:hidden">
+                            ${socialLinksHtml}
+                        </span>
+                    </div>
+                    ${speaker.bio ? `
+                    <div class="speaker__bio-section">
+                        <div class="speaker__bio-label">
+                            <img src="${starWhiteSrc}" alt="star" />
+                            <span>介紹</span>
+                        </div>
+                        <p class="modal__text">${(speaker.bio || "").replace(/\n/g, '<br>')}</p>
+                    </div>
+                    ` : ''}
+                    ${index < speakers.length - 1 ? '<div class="modal__divider"></div>' : ''}
+                `;
+            });
+
+            speakerPanel.innerHTML = speakersHtml;
+        }
+    }
+
+    // ============================
+    // Action Button Handlers
+    // ============================
+
+    function shareSession() {
+        if (!currentSession || !currentDay || !currentTimeSlot) return;
+
+        // Generate hash: day-time-room (e.g., day1-09:15-R1)
+        const hash = `${currentDay}-${currentTimeSlot}-${currentSession.room}`;
+
+        // Build shareable URL with hash
+        const shareUrl = `${window.location.origin}${window.location.pathname}#${hash}`;
+
+        const shareData = {
+            title: `MOPCON 2025 - ${currentSession.title}`,
+            text: `${currentSession.title}\n講者: ${currentSession.speaker?.name || "待定"}\n\n${currentSession.description || ""}`,
+            url: shareUrl,
+        };
+
+        // Check if Web Share API is available
+        if (navigator.share) {
+            navigator
+                .share(shareData)
+                .then(() => console.log("Shared successfully"))
+                .catch((error) => console.log("Error sharing:", error));
+        } else {
+            // Fallback: Copy URL to clipboard
+            navigator.clipboard
+                .writeText(shareUrl)
+                .then(() => {
+                    alert("議程連結已複製到剪貼簿！\n" + shareUrl);
+                })
+                .catch((error) => {
+                    console.error("Failed to copy:", error);
+                    alert("無法複製到剪貼簿");
+                });
+        }
+    }
+
+    function addToCalendar() {
+        if (!currentSession || !currentDay || !currentTimeSlot) return;
+
+        // Map day to actual date (MOPCON 2025: Nov 8-9)
+        const dateMap: Record<string, string> = {
+            day1: "2025-11-08",
+            day2: "2025-11-09",
+        };
+
+        const eventDate = dateMap[currentDay];
+        if (!eventDate) return;
+
+        // Parse time slots (format: "HH:MM")
+        const [startHour, startMinute] = currentTimeSlot.split(":").map(Number);
+        const [endHour, endMinute] = (currentTimeEnd || currentTimeSlot)
+            .split(":")
+            .map(Number);
+
+        // Create date objects in local timezone
+        const startDateTime = new Date(
+            eventDate + "T" + currentTimeSlot + ":00",
+        );
+        const endDateTime = new Date(
+            eventDate + "T" + (currentTimeEnd || currentTimeSlot) + ":00",
+        );
+
+        // Format for ICS (YYYYMMDDTHHMMSS format in local timezone)
+        const formatICSDate = (date: Date) => {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, "0");
+            const day = String(date.getDate()).padStart(2, "0");
+            const hour = String(date.getHours()).padStart(2, "0");
+            const minute = String(date.getMinutes()).padStart(2, "0");
+            const second = String(date.getSeconds()).padStart(2, "0");
+            return `${year}${month}${day}T${hour}${minute}${second}`;
+        };
+
+        const startDate = formatICSDate(startDateTime);
+        const endDate = formatICSDate(endDateTime);
+
+        // Build description with session details
+        let description = currentSession.description || "";
+        if (currentSession.target_audience) {
+            description += `\\n\\n目標會眾: ${currentSession.target_audience}`;
+        }
+        if (currentSession.prerequisites) {
+            description += `\\n先備知識: ${currentSession.prerequisites}`;
+        }
+        if (currentSession.expected_gains) {
+            description += `\\n預期收穫: ${currentSession.expected_gains}`;
+        }
+
+        const icsContent = [
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "PRODID:-//MOPCON 2025//Agenda//EN",
+            "CALSCALE:GREGORIAN",
+            "METHOD:PUBLISH",
+            "BEGIN:VEVENT",
+            `DTSTART:${startDate}`,
+            `DTEND:${endDate}`,
+            `SUMMARY:${currentSession.title}`,
+            `DESCRIPTION:${description.replace(/\n/g, "\\n")}`,
+            `LOCATION:MOPCON 2025 - ${currentSession.room || ""}`,
+            currentSession.speaker?.name
+                ? `ORGANIZER;CN=${currentSession.speaker.name}:MAILTO:noreply@mopcon.org`
+                : "",
+            "STATUS:CONFIRMED",
+            "TRANSP:OPAQUE",
+            `UID:mopcon-2025-${currentDay}-${currentTimeSlot}-${currentSession.room}@mopcon.org`,
+            `DTSTAMP:${formatICSDate(new Date())}`,
+            "END:VEVENT",
+            "END:VCALENDAR",
+        ]
+            .filter((line) => line)
+            .join("\r\n");
+
+        // Create blob and download
+        const blob = new Blob([icsContent], {
+            type: "text/calendar;charset=utf-8",
+        });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `mopcon-2025-${currentSession.title.replace(/[\s:]/g, "-").toLowerCase()}.ics`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+    }
+
+    // ============================
+    // URL Hash Management
+    // ============================
+
+    function updateURLHash(hash?: string) {
+        if (hash) {
+            // Set hash without triggering scroll or page reload
+            history.replaceState(null, "", `#${hash}`);
+        } else {
+            // Clear hash from URL
+            history.replaceState(null, "", window.location.pathname);
+        }
+    }
+
+    function openSessionFromHash() {
+        const hash = window.location.hash.slice(1); // Remove the '#'
+        if (!hash) return;
+
+        // Parse hash format: day1-09:15-R1
+        const parts = hash.split("-");
+        if (parts.length < 3) return;
+
+        const day = parts[0]; // "day1" or "day2"
+        const timeSlot = parts.slice(1, -1).join("-"); // "09:15" (handles if time has dashes)
+        const room = parts[parts.length - 1]; // "R1" or "R2"
+
+        // First, switch to the correct day if needed
+        const dayGrid = document.querySelector(
+            `.agenda__grid[data-day="${day}"]`,
+        );
+        if (!dayGrid) return;
+
+        // Show the correct day grid
+        document
+            .querySelectorAll<HTMLElement>(".agenda__grid")
+            .forEach((grid) => {
+                grid.classList.toggle("hidden", grid.dataset.day !== day);
+            });
+
+        // Update the segmented control to show correct day
+        const segControl = document.querySelector(".agenda__seg .segmented");
+        if (segControl) {
+            const event = new CustomEvent("change", { detail: day });
+            segControl.dispatchEvent(event);
+        }
+
+        // Find and click the session button
+        const sessionButton = document.querySelector(
+            `.agenda__cardbtn[data-day="${day}"][data-time-slot="${timeSlot}"][data-session*='"room":"${room}"']`,
+        );
+
+        if (sessionButton) {
+            // Use setTimeout to ensure DOM is ready and day switch animation completes
+            setTimeout(() => {
+                (sessionButton as HTMLElement).click();
+            }, 100);
+        }
+    }
+
+    // ============================
+    // Event Delegation
+    // ============================
+
+    // Global click handler for all modal interactions
+    document.addEventListener("click", (e) => {
+        const target = e.target as HTMLElement;
+
+        // Handle open modal button clicks
+        const openBtn = target.closest("[data-open-modal]");
+        if (openBtn && modal) {
+            const sessionData = openBtn.getAttribute("data-session");
+            const day = openBtn.getAttribute("data-day");
+            const timeSlot = openBtn.getAttribute("data-time-slot");
+            const timeEnd = openBtn.getAttribute("data-time-end");
+            if (sessionData) {
+                try {
+                    const session = JSON.parse(sessionData);
+                    updateModalContent(
+                        session,
+                        day || undefined,
+                        timeSlot || undefined,
+                        timeEnd || undefined,
+                    );
+                    openModal();
+
+                    // Update URL hash with session identifier
+                    if (day && timeSlot && session.room) {
+                        updateURLHash(`${day}-${timeSlot}-${session.room}`);
+                    }
+                } catch (e) {
+                    console.error("Failed to parse session data:", e);
+                }
+            }
+            return;
+        }
+
+        // Handle modal close button clicks
+        const closeBtn = target.closest(".modal__close") || target.closest(".modal__close_button");
+        if (closeBtn && modal) {
+            closeModal();
+            // Clear URL hash when modal closes
+            updateURLHash();
+            return;
+        }
+
+        // Handle tab switching
+        const tabBtn = target.closest(".modal__tabs > button");
+        if (tabBtn && modal.contains(tabBtn as Node)) {
+            switchTab(tabBtn as HTMLButtonElement);
+            return;
+        }
+
+        // Handle share button clicks
+        const shareBtn = target.closest("[data-share-session]");
+        if (shareBtn && modal.contains(shareBtn as Node)) {
+            shareSession();
+            return;
+        }
+
+        // Handle add to calendar button clicks
+        const calendarBtn = target.closest("[data-add-calendar]");
+        if (calendarBtn && modal.contains(calendarBtn as Node)) {
+            addToCalendar();
+            return;
+        }
+    });
+
+    // Handle backdrop clicks to close modal
+    if (modal) {
+        modal.addEventListener("click", (e) => {
+            // Close if clicking on backdrop (the dialog element itself, not its children)
+            if (e.target === modal) {
+                closeModal();
+                // Clear URL hash when modal closes via backdrop
+                updateURLHash();
+            }
+        });
+
+        // Ensure modal is properly closed and page is interactive
+        modal.addEventListener("close", () => {
+            // Remove any remaining show class
+            modal.classList.remove('show');
+        });
+
+        // Handle Escape key to close modal
+        modal.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeModal();
+                updateURLHash();
+            }
+        });
+    }
+
+    // ============================
+    // Filter Management
+    // ============================
+
+    function applyFilters() {
+        const filterButtons = document.querySelectorAll(
+            "#agenda-filters button",
+        );
+        const selectedTopics: string[] = [];
+
+        // Collect selected topic filters
+        filterButtons.forEach((btn) => {
+            if (btn.classList.contains("is-selected")) {
+                selectedTopics.push(btn.textContent?.trim() || "");
+            }
+        });
+
+        // Filter session cards
+        const sessionCards =
+            document.querySelectorAll<HTMLElement>(".agenda__cardbtn");
+        sessionCards.forEach((card) => {
+            const topicsAttr = card.getAttribute("data-topics");
+            if (!topicsAttr) return;
+
+            try {
+                const cardTopics = JSON.parse(topicsAttr) as string[];
+
+                // Show all if no filters selected
+                if (selectedTopics.length === 0) {
+                    card.classList.remove("hidden");
+                    return;
+                }
+
+                // Show if card has at least one matching topic
+                const hasMatch = cardTopics.some((topic) =>
+                    selectedTopics.includes(topic),
+                );
+                card.classList.toggle("hidden", !hasMatch);
+            } catch (e) {
+                card.classList.remove("hidden");
+            }
+        });
+    }
+
+    // Handle filter clicks
+    const filters = document.getElementById("agenda-filters");
+    if (filters) {
+        filters.addEventListener("click", (e) => {
+            const target = (e.target as HTMLElement).closest("button");
+            if (!target) return;
+            target.classList.toggle("is-selected");
+            applyFilters();
+        });
+    }
+
+    // ============================
+    // Day Switching
+    // ============================
+
+    const seg = document.querySelector(
+        ".agenda__seg .segmented",
+    ) as HTMLElement;
+    if (seg) {
+        seg.addEventListener("change", (e: any) => {
+            const value = e.detail as string;
+            document
+                .querySelectorAll<HTMLElement>(".agenda__grid")
+                .forEach((grid) => {
+                    grid.classList.toggle("hidden", grid.dataset.day !== value);
+                });
+        });
+    }
+
+    // ============================
+    // Initialization
+    // ============================
+
+    // Apply initial filters
+    applyFilters();
+
+    // Check for URL hash on page load and open session if present
+    if (window.location.hash) {
+        // Use setTimeout to ensure DOM is fully ready
+        setTimeout(() => {
+            openSessionFromHash();
+        }, 200);
+    }
+
+    // Listen for hash changes (browser back/forward navigation)
+    window.addEventListener("hashchange", () => {
+        if (window.location.hash) {
+            openSessionFromHash();
+        } else {
+            // If hash is cleared, close the modal
+            if (modal && modal.open) {
+                closeModal();
+            }
+        }
+    });
+</script>
+
+<style>
+    .agenda {
+        background: #020618;
+    }
+
+    /* Hero container - only for header section */
+    .agenda-hero {
+        position: relative;
+        padding: 160px 16px 48px;
+        min-height: 500px;
+    }
+
+    /* Background layer */
+    .agenda-hero__bg {
+        position: absolute;
+        top: 4.5rem;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .agenda-hero__bg-mobile {
+        display: none;
+    }
+    .agenda-hero__bg-image-mobile {
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+    @media (max-width: 768px) {
+        .agenda-hero__bg {
+            display: none;
+        }
+        .agenda-hero__bg-mobile {
+            display: block;
+        }
+    }
+    /* Hero content layer */
+    .agenda-hero__content {
+        position: relative;
+        z-index: 10;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    /* Schedule days container */
+    .agenda__days {
+        position: relative;
+        z-index: 10;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 16px 32px;
+    }
+
+    .agenda__title {
+        font-size: 48px;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    .agenda__seg {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+    .agenda__filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+    .agenda__grid {
+        margin-top: 8px;
+        display: grid;
+        gap: 18px;
+    }
+    .agenda__row {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 18px;
+        align-items: start;
+    }
+    .agenda__time {
+        color: #a9b3c7;
+        font-weight: 800;
+        text-align: right;
+        line-height: 1;
+    }
+    .agenda__slot {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .agenda__divider {
+        width: 100%;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.12);
+        margin: auto 0;
+    }
+    .agenda__cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+    
+    .agenda__session-spanning {
+        display: flex;
+        width: 100%;
+    }
+    
+    .agenda__cardbtn-spanning {
+        width: 100%;
+        grid-column: 1 / -1;
+    }
+    .agenda__cardbtn {
+        text-align: left;
+    }
+    .agenda__event-simple {
+        text-align: center;
+        color: #fff;
+        font-weight: 800;
+    }
+    .agenda__event-room {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 800;
+        text-align: center;
+        padding: 8px 16px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+    }
+    
+    /* Spanning event styles for events that cross multiple time slots */
+    .agenda__event-spanning {
+        position: relative;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .agenda__event-spanning::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, 
+            rgba(255, 255, 255, 0.1) 0%, 
+            rgba(255, 255, 255, 0.2) 50%, 
+            rgba(255, 255, 255, 0.1) 100%
+        );
+        border-radius: 10px;
+        z-index: -1;
+        animation: shimmer 3s ease-in-out infinite;
+    }
+    
+    @keyframes shimmer {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.6; }
+    }
+    
+    /* Overlapping event styles for desktop */
+    .agenda__event-overlap-start {
+        position: relative;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1));
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .agenda__event-overlap-start::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    }
+    
+    .agenda__event-overlap-end {
+        position: relative;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .agenda__event-overlap-end::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    }
+    
+    /* Visual connection between overlapping events */
+    .agenda__event-overlap-start::after,
+    .agenda__event-overlap-end::before {
+        animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.8; }
+    }
+    
+    /* Enhanced visual overlap for desktop */
+    @media (min-width: 841px) {
+        .agenda__event-overlap-start {
+            margin-bottom: -18px;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .agenda__event-overlap-end {
+            margin-top: -18px;
+            z-index: 1;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Create visual connection line */
+        .agenda__event-overlap-start::after {
+            bottom: -20px;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.4) 20%, 
+                rgba(255, 255, 255, 0.6) 50%, 
+                rgba(255, 255, 255, 0.4) 80%, 
+                transparent 100%
+            );
+        }
+        
+        .agenda__event-overlap-end::before {
+            top: -20px;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.4) 20%, 
+                rgba(255, 255, 255, 0.6) 50%, 
+                rgba(255, 255, 255, 0.4) 80%, 
+                transparent 100%
+            );
+        }
+    }
+    .agenda__event {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #cbd5e1;
+        font-weight: 800;
+        line-height: 1;
+    }
+    .agenda__event-line {
+        flex: 1;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.12);
+    }
+    .agenda__event-label {
+        white-space: nowrap;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    @media (max-width: 840px) {
+        .agenda__row {
+            grid-template-columns: 64px 1fr;
+        }
+        .agenda__cards {
+            grid-template-columns: 1fr;
+        }
+        
+        .agenda__session-spanning {
+            display: block;
+        }
+        
+        .agenda__cardbtn-spanning {
+            width: 100%;
+        }
+    }
+</style>

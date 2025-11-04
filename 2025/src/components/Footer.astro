@@ -1,0 +1,147 @@
+---
+import mopconTitle from '../assets/mopcon-title.svg';
+import facebook from '../assets/facebook.svg';
+import threads from '../assets/threads.svg';
+import x from '../assets/x.svg';
+import telegram from '../assets/telegram.svg';
+import instagram from '../assets/instagram.svg';
+import mopcon from '../assets/mopcon.jpg';
+---
+
+<footer class="footer">
+  <div class="footer-content">
+    <!-- Left Section: Contact & Copyright -->
+    <div class="footer-left">
+      <h3 class="contact-title">聯絡我們</h3>
+      <p class="contact-email">contact@mopcon.org</p>
+      <p class="copyright">Copyright © 2025 MOPCON. Icons by icons8.com</p>
+    </div>
+
+    <!-- Right Section: Social Media -->
+    <div class="footer-right">
+      <h3 class="social-title">在這裡找到 #MOPCON</h3>
+      <div class="flex justify-end items-center gap-2 sm:gap-3 lg:gap-4 max-md:justify-start">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/mopcon" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#1877F2] flex items-center justify-center hover:opacity-80 transition-opacity">
+          <img src={facebook.src} alt="Facebook" class="w-5 h-5 sm:w-6 sm:h-6" />
+        </a>
+
+        <!-- Threads -->
+        <a href="https://www.threads.com/@mopcon.tw" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-black border-2 border-gray-400 flex items-center justify-center hover:opacity-80 transition-opacity">
+          <img src={threads.src} alt="Threads" class="w-5 h-5 sm:w-6 sm:h-6" />
+        </a>
+
+        <!-- X (Twitter) -->
+        <a href="https://x.com/mopcon" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-black border-2 border-gray-400 flex items-center justify-center hover:opacity-80 transition-opacity">
+          <img src={x.src} alt="X" class="w-5 h-5 sm:w-6 sm:h-6" />
+        </a>
+
+        <!-- Telegram -->
+        <a href="https://t.me/mopcon" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#0088CC] flex items-center justify-center hover:opacity-80 transition-opacity">
+          <img src={telegram.src} alt="Telegram" class="w-5 h-5 sm:w-6 sm:h-6" />
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/mopcon.tw/" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-[#FFD600] via-[#FF0100] to-[#D800B9] flex items-center justify-center hover:opacity-80 transition-opacity">
+          <img src={instagram.src} alt="Instagram" class="w-5 h-5 sm:w-6 sm:h-6" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: #0A0A1A;
+    padding: 3rem 2rem;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .footer-left {
+    flex: 1;
+  }
+
+  .footer-right {
+    flex: 1;
+    text-align: right;
+  }
+
+  .contact-title,
+  .social-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    color: #FFFFFF;
+  }
+
+  .contact-email {
+    font-size: 1.125rem;
+    margin: 0 0 2rem 0;
+    color: #FFFFFF;
+  }
+
+  .copyright {
+    font-size: 0.875rem;
+    color: #AAAAAA;
+    margin: 0;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+
+  .social-icon:hover {
+    transform: translateY(-2px);
+  }
+
+  .social-icon svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+  }
+
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .footer-right {
+      text-align: left;
+    }
+
+    .social-icons {
+      justify-content: flex-start;
+    }
+
+    .footer {
+      padding: 2rem 3rem;
+    }
+  }
+</style>

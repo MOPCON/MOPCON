@@ -1,0 +1,348 @@
+---
+import { Share2, CalendarPlus, X } from "lucide-astro";
+const { open = false } = Astro.props as { open?: boolean };
+---
+
+<dialog class="modal">
+    <div class="modal__content">
+        <div class="modal__tabs">
+            <button class="is-active" data-tab="topic">議程主題</button>
+            <button data-tab="speaker">關於講師</button>
+        </div>
+
+        <section class="modal__panel" data-panel="topic">
+            <slot name="topic" />
+        </section>
+        <section class="modal__panel hidden" data-panel="speaker">
+            <slot name="speaker" />
+        </section>
+
+        <div class="modal__actions">
+            <button class="share" data-share-session>
+                <Share2 size={20} />
+                <span>分享議程</span>
+            </button>
+            <button class="calendar" data-add-calendar>
+                <CalendarPlus size={20} />
+                <span>加到行事曆</span>
+            </button>
+        </div>
+        <div class="modal__close-container">
+            <button class="share modal__close_button" aria-label="Close">
+                <X size={20} /> 關閉
+            </button>
+        </div>
+        <button class="modal__close" aria-label="Close">
+            <X size={20} />
+        </button>
+    </div>
+</dialog>
+
+<style>
+    .modal {
+        border: none;
+        padding: 0;
+        width: min(960px, 92vw);
+        max-height: 80vh;
+        background: transparent;
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .modal.show {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    .modal::backdrop {
+        background: rgba(2, 6, 24, 0.6);
+        backdrop-filter: blur(2px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .modal.show::backdrop {
+        opacity: 1;
+    }
+    .modal__content {
+        position: relative;
+        background: linear-gradient(to bottom, #314158, #000000);
+        color: #e6edf8;
+        border-radius: 16px;
+        padding: 32px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s;
+    }
+    .modal.show .modal__content {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .modal__close {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 36px;
+        height: 36px;
+        border-radius: 9999px;
+        color: #fff;
+        font-size: 20px;
+    }
+    .modal__close-container {
+        display: none;
+        margin-top: 20px;
+    }
+    .modal__tabs {
+        display: flex;
+        gap: 8px;
+        background: #0f172a;
+        padding: 6px;
+        border-radius: 9999px;
+    }
+    .modal__tabs > button {
+        flex: 1;
+        padding: 10px 16px;
+        border-radius: 9999px;
+        font-weight: 800;
+        color: #cbd5e1;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-family: inherit;
+        outline: none;
+        transition:
+            color 0.26s cubic-bezier(0.2, 0.8, 0.2, 1),
+            background-color 0.26s cubic-bezier(0.2, 0.8, 0.2, 1),
+            transform 0.2s ease;
+    }
+    .modal__tabs > button:hover {
+        transform: translateY(-1px);
+    }
+    .modal__tabs > button.is-active {
+        color: #0b1222;
+        background: #fff;
+    }
+    .modal__tabs > button:focus-visible {
+        outline: 2px solid rgba(255, 255, 255, 0.5);
+        outline-offset: 2px;
+    }
+    .modal__panel {
+        margin-top: 16px;
+        max-height: min(60vh, 560px);
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 6px;
+    }
+    .modal__panel::-webkit-scrollbar {
+        width: 6px;
+    }
+    .modal__panel::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .modal__panel::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 3px;
+    }
+    .modal__panel::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+    .modal__actions {
+        display: flex;
+        gap: 12px;
+        padding: 16px 0 4px;
+    }
+    .share {
+        flex: 1;
+        background: #22d3ee;
+        color: #001018;
+        font-weight: 800;
+        padding: 12px 16px;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.2s;
+    }
+    .share:hover {
+        background: #06b6d4;
+        transform: translateY(-2px);
+    }
+    .calendar {
+        flex: 1;
+        background: #cbd5e1;
+        color: #0b1222;
+        font-weight: 800;
+        padding: 12px 16px;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.2s;
+    }
+    .calendar:hover {
+        background: #94a3b8;
+        transform: translateY(-2px);
+    }
+
+    /* Content styles - using :global() to apply to dynamically injected content */
+    :global(.modal__tags) {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    :global(.tag) {
+        padding: 6px 10px;
+        background: #25324a;
+        border-radius: 10px;
+        color: #e6edf8;
+    }
+    :global(.modal__text) {
+        color: #e6edf8;
+        line-height: 1.9;
+    }
+    :global(.modal__text br) {
+        display: block;
+        margin: 8px 0;
+        content: "";
+    }
+    :global(.modal__text br + *),
+    :global(.modal__text br:first-child) {
+        margin-top: 8px;
+    }
+    :global(.modal__session-title) {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 900;
+        margin-bottom: 16px;
+        line-height: 1.4;
+    }
+    :global(.modal__divider) {
+        width: 100%;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 16px 0;
+    }
+    :global(.modal__info-item) {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        margin-top: 12px;
+        line-height: 1.6;
+    }
+    :global(.modal__info-icon) {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+    :global(.modal__info-label) {
+        color: #fff;
+        font-weight: 700;
+        flex-shrink: 0;
+    }
+    :global(.modal__info-separator) {
+        color: #a9b3c7;
+        flex-shrink: 0;
+    }
+    :global(.modal__info-item .modal__text) {
+        flex: 1;
+        margin: 0;
+    }
+    :global(.speaker__head) {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+    :global(.speaker__head .avatar) {
+        width: 80px;
+        height: 80px;
+        border-radius: 9999px;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+    :global(.speaker__info) {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+    :global(.speaker__info .name) {
+        color: #fff;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 1.2;
+    }
+    :global(.speaker__company-row) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+    :global(.speaker__company-row .company-name) {
+        color: #a9b3c7;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    :global(.speaker__company-row .social-links) {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+    :global(.speaker__company-row .social-links a) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #475569;
+        border-radius: 9999px;
+        color: #fff;
+        transition: all 0.2s;
+        font-size: 20px;
+    }
+    :global(.speaker__company-row .social-links a:hover) {
+        background: #22d3ee;
+        transform: scale(1.1);
+    }
+    :global(.speaker__info .title) {
+        color: #a9b3c7;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    :global(.speaker__bio-section) {
+        margin-top: 16px;
+    }
+    :global(.speaker__bio-label) {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+    :global(.speaker__bio-label img) {
+        width: 16px;
+        height: 16px;
+    }
+    :global(.speaker__bio-label span) {
+        color: #fff;
+        font-weight: 700;
+    }
+    
+    /* Multiple speakers layout */
+    :global(.speaker__head-multiple) {
+        margin-bottom: 24px;
+    }
+    
+    :global(.speaker__head-multiple:not(:last-child)) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .modal__close-container {
+            display: flex;
+        }
+        .modal__close {
+            display: none;
+        }
+    }
+</style>
