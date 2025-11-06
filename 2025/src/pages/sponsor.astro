@@ -1,132 +1,126 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Carousel from '../components/Carousel.astro';
 ---
 
-<Layout title="贊助夥伴">
-    <section
-      class="relative w-full min-h-[600px] flex items-center justify-center overflow-hidden"
-      style="background-image: url(/sponsor/bg.svg); background-size: cover; background-position: center;"
-    >
-      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-      <div class="relative z-10 flex flex-col items-center justify-center w-full max-w-4xl px-4 py-16">
-        <div class="text-white mb-16">
-          <h2 class="text-center text-4xl font-extrabold tracking-tight mb-8">
-            <span class="block">我們在打造</span>
-            <span class="bg-gradient-to-r from-indigo-500 to-indigo-200 bg-clip-text text-transparent">高速資訊交流圈</span>
-          </h2>
-          <p class="text-lg opacity-90 pt-2">MOPCON 是一個專注於濁水溪以南地區的科技社群。自創立以來，我們致力於為南台灣提供一個討論技術與交流的平台。我們深知南部地區的人才和技術資源豐富，但往往缺乏能夠匯聚這些力量的場域。因此，我們的目標是提供一個專注於南部社群的舞台，讓每位社群夥伴都能夠在這裡一同交流、成長，創造共好生態系。</p>
-          <p class="text-lg opacity-90 py-2">無論你是對最新的科技趨勢充滿好奇，還是想要尋找實際的技術解決方案，MOPCON 2025 都將為你提供豐富的內容和多樣的活動。我們希望促進南部地區的科技發展，並為在地社群帶來更多的機會與挑戰。</p>
-          <p class="text-lg bg-gradient-to-r from-indigo-400 to-indigo-200 text-black px-1 font-bold w-fit">MOPCON 志在打造出一座「高速資訊交流圈」！</p>
+<Layout>
+    <Carousel />
+    <section>
+        <div class="bg-black">
+            <div class="min-h-20 md:min-h-30 bg-gray-600 rounded-t-full" />
         </div>
-
-        <div class="w-full max-w-4xl mx-auto hidden xl:block">
-          <div id="carousel" class="relative w-full">
-            <div class="rounded-lg w-full flex justify-end mb-10">
-              <div id="carousel-slides" class="relative w-[26rem] h-[21rem]">
-                <img src="/sponsor/sponsor1.svg" class="carousel-img absolute left-1/2 -translate-x-1/2 w-[26rem] h-[21rem] object-cover transition-all duration-500 rounded-3xl" alt="carousel image 1" data-idx="0" />
-                <img src="/sponsor/sponsor2.svg" class="carousel-img absolute left-1/2 -translate-x-1/2 w-[26rem] h-[21rem] object-cover transition-all duration-500 rounded-3xl" alt="carousel image 2" data-idx="1" />
-                <img src="/sponsor/sponsor3.svg" class="carousel-img absolute left-1/2 -translate-x-1/2 w-[26rem] h-[21rem] object-cover transition-all duration-500 rounded-3xl" alt="carousel image 3" data-idx="2" />
-                <img src="/sponsor/sponsor4.svg" class="carousel-img absolute left-1/2 -translate-x-1/2 w-[26rem] h-[21rem] object-cover transition-all duration-500 rounded-3xl" alt="carousel image 4" data-idx="3" />
-                <img src="/sponsor/sponsor5.svg" class="carousel-img absolute left-1/2 -translate-x-1/2 w-[26rem] h-[21rem] object-cover transition-all duration-500 rounded-3xl" alt="carousel image 5" data-idx="4" />
-              </div>
+        <div class="bg-gradient-to-b bg-[#314158] from-gray-600 to-[#314158] px-4 md:px-0">
+            <h2 class="text-center font-mantou text-[44px] md:text-[54px] tracking-tight mb-4 md:mb-8 flex flex-col md:flex-row md:justify-center gap-x-1">
+                <p class="bg-gradient-to-r from-indigo-500 to-indigo-200 text-transparent bg-clip-text">成為</p>
+                <p class="mx-3 text-white">MOPCON</p>
+                <p class="bg-gradient-to-r from-indigo-500 to-indigo-200 text-transparent bg-clip-text">贊助夥伴</p>
+            </h2>
+            <div class="flex justify-center py-3 md:py-5">
+                <div class="flex flex-col w-full md:w-auto max-w-6xl px-4 md:px-0">
+                    <p class="w-fit rounded-r-full rounded-tl-full bg-gray-300 py-2 px-4 my-3 md:my-5 font-bold text-lg md:text-xl">
+                        加入MOPCON夥伴，最大的優勢是？
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-4 md:gap-0">
+                        <img src="/2025/sponsor/sponsor6.svg" class="rounded-3xl w-full md:w-auto md:mr-10 mb-4 md:mb-0" alt="sponsor image 1" />
+                        <div class="w-full md:w-auto">
+                            <div class="flex flex-col md:flex-row max-w-full md:max-w-96 py-3">
+                                <div class="flex justify-center items-center mb-2 md:mb-0">
+                                    <img src="/2025/sponsor/icons/icon1.svg" class="rounded-2xl bg-black p-3 border-gray-500 border md:mr-5 flex-shrink-0" alt="sponsor icon 1" />
+                                </div>
+                                <div>
+                                    <h3 class="text-lg md:text-xl text-white font-semibold pb-1 text-center md:text-left">促進徵才媒合</h3>
+                                    <p class="text-sm md:text-base text-white text-center md:text-left">接觸大量相關領域的高品質人才，大幅提升市場開發及徵才的效率及成功率。</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row max-w-full md:max-w-96 py-3">
+                                <div class="flex justify-center items-center mb-2 md:mb-0">
+                                    <img src="/2025/sponsor/icons/icon2.svg" class="rounded-2xl bg-black p-3 border-gray-500 border md:mr-5 flex-shrink-0" alt="sponsor icon 2" />
+                                </div>
+                                <div>
+                                    <h3 class="text-lg md:text-xl text-white font-semibold pb-1 text-center md:text-left">提升品牌曝光</h3>
+                                    <p class="text-sm md:text-base text-white text-center md:text-left">透過聚餐和厲害的講者們有更進一步的接觸，奠定日後合作關係。</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col md:flex-row max-w-full md:max-w-96 py-3">
+                                <div class="flex justify-center items-center mb-2 md:mb-0">
+                                    <img src="/2025/sponsor/icons/icon3.svg" class="rounded-2xl bg-black p-3 border-gray-500 border md:mr-5 flex-shrink-0" alt="sponsor icon 3" />
+                                </div>
+                                <div>
+                                    <h3 class="text-lg md:text-xl text-white font-semibold pb-1 text-center md:text-left">接觸專業人士</h3>
+                                    <p class="text-sm md:text-base text-white text-center md:text-left">接觸逾千名參與者的行動科技社群，是推廣服務及產品、曝光品牌的絕佳機會。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="flex justify-center mt-4 space-x-2">
-              <button id="carousel-prev" type="button" class="-translate-y-1/2 text-indigo-400 relative top-1 pr-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button class="carousel-dot w-2 h-2 rounded-full bg-white bg-opacity-50" data-index="0"></button>
-              <button class="carousel-dot w-2 h-2 rounded-full bg-white bg-opacity-50" data-index="1"></button>
-              <button class="carousel-dot w-2 h-2 rounded-full bg-white bg-opacity-50" data-index="2"></button>
-              <button class="carousel-dot w-2 h-2 rounded-full bg-white bg-opacity-50" data-index="3"></button>
-              <button class="carousel-dot w-2 h-2 rounded-full bg-white bg-opacity-50" data-index="4"></button>
-              <button id="carousel-next" type="button" class="-translate-y-1/2 text-indigo-400 relative top-1 pl-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
+            <div class="flex justify-center py-3 md:py-5">
+                <div class="flex flex-col w-full md:w-auto max-w-6xl px-4 md:px-0">
+                    <p class="w-fit rounded-r-full rounded-tl-full bg-gray-300 py-2 px-4 my-3 md:my-5 font-bold text-lg md:text-xl">
+                        加入MOPCON夥伴，會接觸到何種與會者？
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-4 md:gap-0">
+                        <img src="/2025/sponsor/sponsor7.svg" class="rounded-3xl w-full md:w-auto md:mr-10 mb-4 md:mb-0" alt="sponsor image 2" />
+                        <div class="w-full md:w-auto">
+                            <p class="py-1 text-sm md:text-base">
+                                <span class="text-white px-1">
+                                    # 濁水溪以南
+                                </span>
+                                <span class="text-base md:text-lg bg-gradient-to-r from-indigo-400 to-indigo-200 text-black px-1 font-bold w-fit">
+                                    破千人研討會
+                                </span>
+                            </p>
+                            <p class="py-1 text-sm md:text-base">
+                                <span class="text-white px-1">
+                                    # 與會者以
+                                </span>
+                                <span class="text-base md:text-lg bg-gradient-to-r from-indigo-400 to-indigo-200 text-black px-1 font-bold w-fit">
+                                    軟體開發者
+                                </span>
+                                <span class="text-white px-1">
+                                    居多, 也有
+                                </span>
+                                <span class="text-base md:text-lg bg-gradient-to-r from-indigo-400 to-indigo-200 text-black px-1 font-bold w-fit">
+                                    設計師、學生
+                                </span>
+                                <span class="text-white px-1">
+                                    等等
+                                </span>
+                            </p>
+                            <p class="py-1 text-sm md:text-base">
+                                <span class="text-white px-1">
+                                    # 每年超過 30 場
+                                </span>
+                                <span class="text-base md:text-lg bg-gradient-to-r from-indigo-400 to-indigo-200 text-black px-1 font-bold w-fit">
+                                    高品質議程，邀請超過 25 位講師
+                                </span>
+                            </p>
+                            <div class="flex rounded-full bg-gray-500 py-2 px-4 w-fit opacity-70 mt-5 mb-2">
+                                <img src="/2025/sponsor/icons/icon4.svg" class="mr-1" alt="sponsor icon 4" />
+                                <span class="text-gray-200 text-sm md:text-base">參與者目的</span>
+                            </div>
+                            <p class="py-1 text-sm md:text-base">
+                                <span class="text-lg md:text-xl bg-gradient-to-r from-indigo-500 to-indigo-200 text-transparent bg-clip-text">
+                                    Top 1
+                                </span>
+                                <span class="text-white font-bold pl-1">支持濁水溪以南科技研討會</span>
+                            </p>
+                            <p class="py-1 text-sm md:text-base">
+                                <span class="text-lg md:text-xl bg-gradient-to-r from-indigo-500 to-indigo-200 text-transparent bg-clip-text">
+                                    Top 2
+                                </span>
+                                <span class="text-white font-bold pl-1">想聽取不同領域的相關議題</span>
+                            </p>
+                            <p class="py-1 text-sm md:text-base">
+                                <span class="text-lg md:text-xl bg-gradient-to-r from-indigo-500 to-indigo-200 text-transparent bg-clip-text">
+                                    Top 3
+                                </span>
+                                <span class="text-white font-bold pl-1">有感興趣的議題</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
-
-    <script is:inline>
-      const slides = document.getElementById('carousel-slides');
-      const imgs = slides.querySelectorAll('.carousel-img');
-      const total = imgs.length;
-      let current = 0;
-      let intervalId = null;
-      function updateCarousel(idx) {
-        const NEAR = 320;
-        imgs.forEach((img, i) => {
-          const pos = (i - idx + total) % total;
-          img.style.transition = 'transform 500ms ease, opacity 500ms ease, filter 500ms ease';
-          if (pos === 0) {
-            img.style.transform = 'translateX(-50%) scale(1.08)';
-            img.style.opacity = '1';
-            img.style.zIndex = '10';
-            img.style.filter = 'drop-shadow(0 6px 12px rgba(0,0,0,0.18))';
-            img.style.pointerEvents = 'auto';
-          } else if (pos === 1) {
-            img.style.transform = `translateX(calc(-50% + ${NEAR}px)) scale(0.92)`;
-            img.style.opacity = '0.9';
-            img.style.zIndex = '5';
-            img.style.filter = '';
-            img.style.pointerEvents = 'auto';
-          } else if (pos === (total - 1)) {
-            img.style.transform = `translateX(calc(-50% - ${NEAR}px)) scale(0.92)`;
-            img.style.opacity = '0.9';
-            img.style.zIndex = '5';
-            img.style.filter = '';
-            img.style.pointerEvents = 'auto';
-          } else {
-            const FAR = NEAR * 2;
-            const dir = (pos < total / 2) ? 1 : -1;
-            img.style.transform = `translateX(calc(-50% + ${dir * FAR}px)) scale(0.85)`;
-            img.style.opacity = '0';
-            img.style.zIndex = '0';
-            img.style.filter = '';
-            img.style.pointerEvents = 'none';
-          }
-        });
-      }
-      function goTo(idx) {
-        current = idx;
-        updateCarousel(current);
-      }
-      function next() {
-        current = (current + 1) % total;
-        updateCarousel(current);
-      }
-      function prev() {
-        current = (current - 1 + total) % total;
-        updateCarousel(current);
-      }
-      document.getElementById('carousel-next').addEventListener('click', () => {
-        next();
-        resetInterval();
-      });
-      document.getElementById('carousel-prev').addEventListener('click', () => {
-        prev();
-        resetInterval();
-      });
-      document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
-        dot.addEventListener('click', () => {
-          goTo(i);
-          resetInterval();
-        });
-      });
-      function startInterval() {
-        intervalId = setInterval(next, 3500);
-      }
-      function resetInterval() {
-        clearInterval(intervalId);
-        startInterval();
-      }
-      updateCarousel(current);
-      startInterval();
-    </script>
 </Layout>

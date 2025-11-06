@@ -1,0 +1,248 @@
+---
+import { X, Globe } from "lucide-astro";
+---
+
+<dialog class="sponsor-modal">
+    <div class="sponsor-modal__content">
+        <button class="sponsor-modal__close" aria-label="Close">
+            <X size={20} />
+        </button>
+
+        <div class="sponsor-modal__logo-container" id="sponsor-modal-logo-container" style="display: none;">
+            <img class="sponsor-modal__logo" id="sponsor-modal-logo" alt="Company Logo" />
+        </div>
+
+        <div class="sponsor-modal__panel">
+            <h2 class="sponsor-modal__title" id="sponsor-modal-title"></h2>
+            <div class="sponsor-modal__description" id="sponsor-modal-description" style="display: none;"></div>
+        </div>
+        <div class="sponsor-modal__actions" id="sponsor-modal-actions" style="display: none;">
+            <a class="sponsor-modal__site-button" id="sponsor-modal-site-button" target="_blank" rel="noopener noreferrer" href="#">
+                <Globe size={20} />
+                <span>前往官網</span>
+            </a>
+        </div>
+
+        <div class="sponsor-modal__close-container">
+            <button class="sponsor-modal__close-button" aria-label="Close">
+                <X size={20} /> 關閉
+            </button>
+        </div>
+    </div>
+</dialog>
+
+<style>
+    .sponsor-modal {
+        border: none;
+        padding: 0;
+        width: min(960px, 92vw);
+        max-height: 80vh;
+        background: transparent;
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .sponsor-modal.show {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    .sponsor-modal::backdrop {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .sponsor-modal.show::backdrop {
+        opacity: 1;
+    }
+    .sponsor-modal__content {
+        position: relative;
+        background: linear-gradient(
+            225deg,
+            #fbfbfd,
+            #c8d4da,
+            #ffffff,
+            #aec0ce,
+            #e3e9ee,
+            #fafbfc,
+            #d6dfe6,
+            #b8c9d3
+        );
+        color: #1e293b;
+        border-radius: 16px;
+        padding: 32px;
+        opacity: 0;
+        min-height: 25vh;
+        transform: translateY(20px);
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s;
+        box-shadow:
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .sponsor-modal.show .sponsor-modal__content {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .sponsor-modal__close {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 36px;
+        height: 36px;
+        border-radius: 9999px;
+        color: #1e293b;
+        font-size: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+    }
+    .sponsor-modal__close:hover {
+        background: rgba(0, 0, 0, 0.1);
+    }
+    .sponsor-modal__close-container {
+        display: none;
+        margin-top: 20px;
+    }
+    .sponsor-modal__panel {
+        max-height: min(60vh, 560px);
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 6px;
+        padding-bottom: 40px;
+        min-height: calc(25vh - 120px);
+    }
+    .sponsor-modal__panel::-webkit-scrollbar {
+        width: 6px;
+    }
+    .sponsor-modal__panel::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .sponsor-modal__panel::-webkit-scrollbar-thumb {
+        background: #94a3b8;
+        border-radius: 3px;
+    }
+    .sponsor-modal__panel::-webkit-scrollbar-thumb:hover {
+        background: #64748b;
+    }
+    .sponsor-modal__logo-container {
+        position: absolute;
+        top: 48px;
+        right: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 12px;
+        z-index: 1;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .sponsor-modal__logo {
+        max-width: 180px;
+        max-height: 100px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+    .sponsor-modal__title {
+        color: #1e293b;
+        font-size: 24px;
+        font-weight: 900;
+        margin-bottom: 16px;
+        line-height: 1.4;
+        text-align: left;
+        padding-right: 200px;
+    }
+    .sponsor-modal__description {
+        color: #475569;
+        line-height: 1.9;
+        margin-bottom: 24px;
+        max-height: 300px;
+        padding-right: 220px;
+    }
+    .sponsor-modal__actions {
+        display: flex;
+        position: absolute;
+        bottom: 32px;
+        left: 32px;
+        justify-content: flex-start;
+        z-index: 2;
+    }
+    .sponsor-modal__site-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: #22d3ee;
+        color: #001018;
+        font-weight: 800;
+        padding: 12px 24px;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .sponsor-modal__site-button:hover {
+        background: #06b6d4;
+        transform: translateY(-2px);
+    }
+    .sponsor-modal__close-button {
+        width: 100%;
+        background: #22d3ee;
+        color: #001018;
+        font-weight: 800;
+        padding: 12px 16px;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .sponsor-modal__close-button:hover {
+        background: #06b6d4;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        .sponsor-modal__close-container {
+            display: flex;
+        }
+        .sponsor-modal__close {
+            display: none;
+        }
+        .sponsor-modal__logo-container {
+            position: static;
+            margin-bottom: 24px;
+            width: 100%;
+        }
+        .sponsor-modal__logo {
+            max-width: 100%;
+            max-height: 80px;
+        }
+        .sponsor-modal__title {
+            padding-right: 0;
+            text-align: center;
+        }
+        .sponsor-modal__description {
+            padding-right: 0;
+        }
+        .sponsor-modal__actions {
+            position: static;
+            left: auto;
+            right: auto;
+            bottom: auto;
+            margin-top: 24px;
+            justify-content: center;
+        }
+        .sponsor-modal__panel {
+            padding-bottom: 0;
+        }
+    }
+</style>
+

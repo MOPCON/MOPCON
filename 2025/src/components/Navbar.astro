@@ -6,23 +6,22 @@ import starWhite from '../assets/star_white.svg';
 
 const currentPath = Astro.url.pathname;
 const links = [
-  { href: '/about', label: '主辦單位' },
+  { href: '/2025/about', label: '主辦單位' },
   { href: '/2025/agenda', label: '議程介紹' },
-  { href: '/sponsor', label: '贊助夥伴' },
-  { href: '/time-machine', label: '時光機' },
+  { href: '/2025/sponsor', label: '贊助夥伴' },
 ];
 ---
 
 <nav class="navbar">
   <div class="navbar__inner">
-    <a class="navbar__brand" href="/">
+    <a class="navbar__brand" href="/2025">
       <Image src={mopconLogo} alt="MOPCON Logo" class="my-auto w-[90%]" />
     </a>
     
     <!-- Desktop menu -->
     <ul class="navbar__menu">
       {links.map(({ href, label }) => {
-        const active = currentPath === href;
+        const active = currentPath.includes(href);
         return (
           <li>
             <a href={href} class={active ? 'is-active' : ''}>

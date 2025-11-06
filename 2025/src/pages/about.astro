@@ -4,6 +4,10 @@ import Button from "../components/Button.astro";
 
 import { Image } from 'astro:assets';
 
+import MOPCONlogo from '../assets/sponsor/主辦mopcon.svg';
+import Logo1 from '../assets/sponsor/協辦1.svg';
+import Logo2 from '../assets/sponsor/協辦2.svg';
+import Logo3 from '../assets/sponsor/協辦3.svg';
 import heroBg from '../assets/hero-bg.jpg';
 import mopconLogo from '../assets/mopcon.svg';
 import volunteer from '../assets/volunteer.png';
@@ -22,7 +26,7 @@ import sectionBg from '../assets/SectionBg.svg';
     <div>
         <!-- ================= 我們在打造高速資訊交流圈 ================= -->
         <section
-            class="relative w-full flex flex-col items-center overflow-visible px-6 py-[120px] tablet:px-[60px] desktop:px-[240px]"
+            class="relative w-full flex flex-col items-center overflow-visible px-[240px] py-[120px] tablet:px-[30px] desktop:px-[240px]"
         >
             <Image src={heroBg} alt="Hero Background" class="absolute top-0 left-0 w-full h-[87px] tablet:h-[230px] desktop:h-[323px] object-cover" />
 
@@ -74,6 +78,44 @@ import sectionBg from '../assets/SectionBg.svg';
                         MOPCON 志在打造出一座「高速資訊交流圈」！
                     </p>
                 </div>
+
+                <div>
+                <span
+                class="bg-main-gradient bg-clip-text text-transparent font-mantou text-center text-[44px]"
+                >主辦單位</span
+                    >
+                    <div class="w-full flex justify-center items-stretch gap-6">
+                    <div class="featured-talk-card" data-sponsor-card data-company-id="tsmc">
+                        <div class="image-container">
+                        <Image src={MOPCONlogo} alt="MOPCON Logo" class="w-[600px] object-contain" />
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div>
+                    <span
+                    class="bg-main-gradient bg-clip-text text-transparent font-mantou text-center text-[44px]"
+                    >協辦單位</span
+                        >
+                        <div class="w-full flex md:flex-row flex-col justify-center items-stretch gap-6">
+                        <div class="featured-talk-card" data-sponsor-card data-company-id="tsmc">
+                            <div class="image-container">
+                            <Image src={Logo1} alt="NKUST logo" class="w-[600px] object-contain" />
+                            </div>
+                        </div>
+                        <div class="featured-talk-card" data-sponsor-card data-company-id="tsmc">
+                            <div class="image-container">
+                            <Image src={Logo2} alt="Innovation and design logo" class="w-[600px] object-contain" />
+                            </div>
+                        </div>
+                        <div class="featured-talk-card" data-sponsor-card data-company-id="tsmc">
+                            <div class="image-container">
+                            <Image src={Logo3} alt="文化創意學系 logo" class="w-[600px] object-contain" />
+                            </div>
+                    </div>
+
+            
             </div>
         </section>
 
@@ -233,3 +275,105 @@ import sectionBg from '../assets/SectionBg.svg';
         </section>
     </div>
 </Layout>
+
+<style>
+    .featured-talk-card {
+    position: relative;
+    background: linear-gradient(
+      225deg,
+      #fbfbfd,
+      #c8d4da,
+      #ffffff,
+      #aec0ce,
+      #e3e9ee,
+      #fafbfc,
+      #d6dfe6,
+      #b8c9d3
+    );
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition:
+      transform 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .featured-talk-card h3 {
+    /* Reserve consistent space for headings so the star rows align */
+    min-height: 3rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 767px) {
+    .featured-talk-card h3 {
+      min-height: 3.5rem;
+    }
+  }
+
+  .featured-talk-card .star-icon {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .featured-talk-card p {
+    flex: 1;
+  }
+
+  .featured-talk-card .image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .featured-talk-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      #e8f0f7,
+      #d1e2ec,
+      #f5f7f9,
+      #c4d6e0,
+      #dde6eb,
+      #f2f4f6,
+      #cad8e1,
+      #a8bbca
+    );
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 1;
+  }
+
+  .featured-talk-card:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .featured-talk-card:hover::before {
+    opacity: 1;
+  }
+
+  .featured-talk-card > * {
+    position: relative;
+    z-index: 2;
+  }
+</style>
