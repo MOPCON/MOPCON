@@ -25,20 +25,20 @@ for y in 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025; 
 done
 
 # 根目錄入口 (Phase 2 後才會 200)
-# check "/" 200
-# check "/album/" 200
-# check "/err/404.html" 200
+check "/" 200
+check "/album/" 200
+check "/err/404.html" 200
 
 # .htaccess redirect 規則 (Phase 2 後才會生效)
-# check "/index.php"            410
-# check "/feedback.php"          301
-# check "/warmup-feedback.php"   301
-# check "/warnup-feedback.php"   301
-# check "/2018/feedback.php"     301
-# check "/2018/warnup-feedback.php" 301
-# check "/app.php"               301
-# check "/2018/app.php"          301
-# check "/bof.php"               301
-# check "/album.php"             301
+check "/index.php"            410
+check "/feedback.php"          301
+check "/warmup-feedback.php"   301
+check "/warnup-feedback.php"   301
+check "/2018/feedback.php"     301
+check "/2018/warnup-feedback.php" 301
+check "/app.php"               301
+check "/2018/app.php"          301
+check "/bof.php"               301
+check "/album.php"             301
 
 exit $fail
