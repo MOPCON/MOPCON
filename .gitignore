@@ -16,3 +16,6 @@ config.php
 phinx.php
 *.cache.php
 .vscode
+
+# Local git worktrees (used by superpowers workflow)
+.worktrees/
