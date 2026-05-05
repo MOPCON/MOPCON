@@ -57,3 +57,80 @@
 3. Production (main branch on `mopcon.org`) 是 ground truth，wget 直接抓比 build 更接近真實上線版
 
 **Tasks 5–8 路徑：** 全部走 wget mirror (路徑代號 5B / 6B / 7B / 8B)。
+
+---
+
+## Phase 1 全量驗證 (2026-05-05)
+
+### 各年 artifact 統計
+
+| 年 | 來源 | 檔案數 | 大小 | Commit |
+|---|---|---|---|---|
+| 2019 | wget mirror (prod) | 98 | 22M | 99c6964c |
+| 2020 | wget mirror + 31 sponsor 圖補抓 | 110 | 18M | 0f1a7250 |
+| 2021 | wget mirror | 218 | 21M | 1bfe763c |
+| 2022 | wget mirror + 29 speaker 圖補抓 | 116 | 37M | efa4c75f |
+| 2024 | next build → 2024-static-tmp/ | 275 | 20M | 82c80b5f |
+| 2025 | astro build → 2025-static-tmp/ | 132 | 66M | 7ab67c41 |
+| album | curl prod | 1 | 28K | e2d9b2ef |
+
+### 驗證結果
+
+#### Step 1 — `tools/verify-freeze.sh` against worktree root (httpd container, repo root mounted)
+
+```
+OK   200  /2012/
+OK   200  /2013/
+OK   200  /2014/
+OK   200  /2015/
+OK   200  /2016/
+OK   200  /2017/
+OK   200  /2018/
+OK   200  /2019/
+OK   200  /2020/
+OK   200  /2021/
+OK   200  /2022/
+OK   200  /2023/
+OK   200  /2024/
+OK   200  /2025/
+exit 0
+```
+
+Note: `/2024/` 與 `/2025/` 在此模式下回 200 是因為 Apache 對 source 目錄出 directory listing（httpd image 預設 `AllowOverride None`，`.htaccess` 的 `Options -Indexes` 不生效）。實際 build artifact 由 Step 2 個別掛載驗證。
+
+#### Step 2 — Artifact 個別掛載驗證
+
+```
+# -v $PWD/2024-static-tmp:/usr/local/apache2/htdocs/2024
+/2024/ 200
+/2024/schedule/ 200
+/2024/speaker/ 200
+
+# -v $PWD/2025-static-tmp:/usr/local/apache2/htdocs/2025
+/2025/ 200
+/2025/agenda/ 200
+/2025/sponsor/ 200
+```
+
+#### Step 3 — Spot-check 新 freeze 年份 + album
+
+```
+/2019/ 200
+/2020/ 200
+/2021/ 200
+/2022/ 200
+/2019/speaker.html 200
+/2020/sponsor.html 200
+/2022/schedule.html 200
+/album/ 200
+```
+
+全部回 200，Phase 1 freeze 驗證通過。
+
+### 已知遺留問題 (Phase 2/3 接手)
+
+- `2024/`, `2025/` 仍是 source（Phase 3 Task 20 才會 swap 成 artifact）
+- `api/`, PHP 入口、root composer 殘留仍在（Phase 2 Task 17 砍）
+- `_nuxt/*.js` bundles 含 `/api/2020/` 等 dead URLs，但 SSR-rendered HTML 已 inline 內容，runtime hydration silent fallback
+- 2022 `<div class="btn">` ticket buttons 沒有 hyperlink（production 是用 Vue handler + Lumen POST，已停用）
+- httpd container 預設 `AllowOverride None` 使 `.htaccess` 的 `Options -Indexes` 失效；正式 production Apache 需確認 `AllowOverride All`（Phase 2 Task 16 改寫 .htaccess 時一併確認）
