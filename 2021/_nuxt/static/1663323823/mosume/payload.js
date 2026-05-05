@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/mosume", {data:[{}],fetch:{},mutations:void 0});
