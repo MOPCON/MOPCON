@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-# verify-freeze.sh — 對本機 Apache 模擬請求每條 redirect 規則 + 各年首頁，印 status code
-# 使用方式：先啟動本機 Apache (建議 docker run --rm -p 8080:80 -v $PWD:/usr/local/apache2/htdocs httpd)
-# 然後執行：BASE=http://localhost:8080 ./tools/verify-freeze.sh
+# verify-freeze.sh — 對本機 Apache 模擬請求每條 redirect 規則 + 各年首頁，印 status code。
+# 使用方式：
+#   1. 先啟動本機 Apache（建議跑 ./tools/test-server.sh）
+#   2. 另開 terminal 執行：
+#        BASE=http://localhost:8080 ./tools/verify-freeze.sh
 
 set -uo pipefail
 BASE=${BASE:-http://localhost:8080}
@@ -19,29 +21,26 @@ check() {
   fi
 }
 
-# 各年首頁 (Phase 1 起每完成一年就把對應行從 # 註解中拿出來)
-for y in 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023; do
+# 各年首頁
+for y in 2012 2013 2014 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025; do
   check "/$y/" 200
 done
-# 2024/2025 Phase 1 暫存於 *-static-tmp/；Phase 3 swap 後改回檢查 /2024/ /2025/
-check "/2024-static-tmp/" 200
-check "/2025-static-tmp/" 200
 
-# 根目錄入口 (Phase 2 後才會 200)
+# 根目錄入口 / 共用頁
 check "/" 200
 check "/album/" 200
 check "/err/404.html" 200
 
-# .htaccess redirect 規則 (Phase 2 後才會生效)
-check "/index.php"            410
-check "/feedback.php"          301
-check "/warmup-feedback.php"   301
-check "/warnup-feedback.php"   301
-check "/2018/feedback.php"     301
+# .htaccess redirect / 410 規則
+check "/index.php"                410
+check "/feedback.php"             301
+check "/warmup-feedback.php"      301
+check "/warnup-feedback.php"      301
+check "/2018/feedback.php"        301
 check "/2018/warnup-feedback.php" 301
-check "/app.php"               301
-check "/2018/app.php"          301
-check "/bof.php"               301
-check "/album.php"             301
+check "/app.php"                  301
+check "/2018/app.php"             301
+check "/bof.php"                  301
+check "/album.php"                301
 
 exit $fail
