@@ -35,3 +35,25 @@
 **頂層 `/SectionHero/` 完全沒有被任何檔案引用，Phase 2 可安全砍除。**
 
 12 筆 grep match 全為各年自有的同名 sibling 元件（2019-dev × 2、2022-dev × 1、2021-dev 為 `SectionHeroimg` 變體 × 1），與根目錄 `/SectionHero/` 無依賴關係，亦不需在 Phase 1 build 任一年時特別處理。
+
+---
+
+## api/ 後端啟動結果 (2026-05-05)
+
+**未實際嘗試啟動。** Controller 在 dispatch 此任務前已完成靜態檢查並做出決策：
+
+- 本機 PHP 版本: **8.5.5** (Homebrew)
+- `api/composer.json` 要求:
+  - `laravel/lumen-framework: 5.8.*` (Lumen 5.8 已 EOL，最高測試到 PHP 7.4)
+  - `illuminate/redis: 5.8.*`
+  - dev: `phpunit ^7.0` (不支援 PHP 8+)
+- 預期 `composer install` 會因版本約束失敗；即便繞過也會踩 Lumen 5.8 在 PHP 8 上的 runtime 不相容。
+
+**決策：放棄 api/ 復活，直接走 wget fallback。**
+
+理由:
+1. api/ 在 Phase 2 將整個砍除 (使用者已確認舊 App 停用)
+2. 投入時間讓 EOL 軟體在現代 PHP 上跑只為單次 build，ROI 過低
+3. Production (main branch on `mopcon.org`) 是 ground truth，wget 直接抓比 build 更接近真實上線版
+
+**Tasks 5–8 路徑：** 全部走 wget mirror (路徑代號 5B / 6B / 7B / 8B)。
