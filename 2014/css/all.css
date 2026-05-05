@@ -167,7 +167,7 @@ img {
 
 html {
   background: #0F222B;
-  background: url('../images/bg.png?1408974285') #0F222B;
+  background: url('../images/bg.png%3F1408974285') #0F222B;
 }
 
 html, body {
@@ -427,7 +427,7 @@ html, body {
 }
 .logo {
   display: none;
-  background: url('../images/2014-logo.png?1401505537');
+  background: url('../images/2014-logo.png%3F1401505537');
   width: 260px;
   height: 49px;
   float: left;
@@ -439,7 +439,7 @@ html, body {
 }
 @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
   .logo {
-    background: url('../images/2014-logo2x.png?1401505557');
+    background: url('../images/2014-logo2x.png%3F1401505557');
     -moz-background-size: 260px auto;
     -o-background-size: 260px auto;
     -webkit-background-size: 260px auto;
@@ -1003,8 +1003,8 @@ a.btn-selected {
   margin: 0 auto;
   max-width: 100%;
   z-index: -1;
-  background-image: url('../images/mopcon_mobile_logo.png?1411055366');
-  background-image: none, url('../images/mopcon_mobile_logo.svg?1411055366');
+  background-image: url('../images/mopcon_mobile_logo.png%3F1411055366');
+  background-image: none, url('../images/mopcon_mobile_logo.svg%3F1411055366');
   background-repeat: no-repeat;
   height: 64px;
   width: 360px;
@@ -1018,8 +1018,8 @@ a.btn-selected {
   .pc-banner .index-logo {
     margin-top: 0em;
     z-index: 5;
-    background-image: url('../images/index-logo.png?1408974285');
-    background-image: none, url('../images/index-logo.svg?1408974285');
+    background-image: url('../images/index-logo.png%3F1408974285');
+    background-image: none, url('../images/index-logo.svg%3F1408974285');
     background-repeat: no-repeat;
     height: 228px;
     width: 255px;
@@ -1106,8 +1106,8 @@ a.btn-selected {
 }
 
 .index .iphone {
-  background-image: url('../images/index-section-iphone.png?1408974285');
-  background-image: none, url('../images/index-section-iphone.svg?1408974285');
+  background-image: url('../images/index-section-iphone.png%3F1408974285');
+  background-image: none, url('../images/index-section-iphone.svg%3F1408974285');
   background-repeat: no-repeat;
   height: 237px;
   width: 112px;
@@ -1121,8 +1121,8 @@ a.btn-selected {
 }
 .index .ipad {
   position: relative;
-  background-image: url('../images/index-section-ipad.png?1408974285');
-  background-image: none, url('../images/index-section-ipad.svg?1408974285');
+  background-image: url('../images/index-section-ipad.png%3F1408974285');
+  background-image: none, url('../images/index-section-ipad.svg%3F1408974285');
   background-repeat: no-repeat;
   height: 291px;
   width: 432px;
@@ -1177,12 +1177,12 @@ a.btn-selected {
   overflow: hidden;
   text-align: left;
   text-transform: capitalize;
-  background-image: url('../images/section-tw-bg.png?1408974285');
+  background-image: url('../images/section-tw-bg.png%3F1408974285');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   width: 430px;
   height: 305px;
-  background-image: none, url('../images/section-tw-bg.svg?1408974285');
+  background-image: none, url('../images/section-tw-bg.svg%3F1408974285');
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
@@ -1223,8 +1223,8 @@ a.btn-selected {
   text-align: center;
 }
 .section-info-img-wp .index-section-map-text {
-  background-image: url('../images/index-section-map-text.png?1408974285');
-  background-image: none, url('../images/index-section-map-text.svg?1408974285');
+  background-image: url('../images/index-section-map-text.png%3F1408974285');
+  background-image: none, url('../images/index-section-map-text.svg%3F1408974285');
   background-repeat: no-repeat;
   height: 190px;
   width: 263px;
@@ -1251,7 +1251,7 @@ a.btn-selected {
   top: 0;
   right: 0;
   bottom: 0;
-  background: url('../images/zhuoshui_river.png?1408974285') center center no-repeat;
+  background: url('../images/zhuoshui_river.png%3F1408974285') center center no-repeat;
   -webkit-filter: invert(1);
   filter: invert(1);
   opacity: 0.35;

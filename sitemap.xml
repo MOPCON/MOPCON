@@ -1,136 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-<url>
-  <loc>http://mopcon.org/2013/</loc>
-  <changefreq>hourly</changefreq>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/session.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/sponsor.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/speakers.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/map.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/irc.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/apps.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/social.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/contact.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2012/activity.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/index_en.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/irc/20131026.log.html</loc>
-  <lastmod>2013-10-26T17:05:03+00:00</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/irc/20131027.log.html</loc>
-  <lastmod>2013-10-27T16:05:03+00:00</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2012/session.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2012/sponser.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2012/social.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2012/map.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2012/register.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2012/gallery.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2012/day1.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2012/day2.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/sponsor_en.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/cfp_en.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/map_en.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>http://mopcon.org/2013/index.php</loc>
-  <changefreq>hourly</changefreq>
-  <priority>0.64</priority>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://mopcon.org/</loc><changefreq>yearly</changefreq><priority>1.00</priority></url>
+  <url><loc>https://mopcon.org/2012/</loc><changefreq>yearly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://mopcon.org/2013/</loc><changefreq>yearly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://mopcon.org/2014/</loc><changefreq>yearly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://mopcon.org/2015/</loc><changefreq>yearly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://mopcon.org/2016/</loc><changefreq>yearly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://mopcon.org/2017/</loc><changefreq>yearly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://mopcon.org/2018/</loc><changefreq>yearly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://mopcon.org/2019/</loc><changefreq>yearly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://mopcon.org/2020/</loc><changefreq>yearly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://mopcon.org/2021/</loc><changefreq>yearly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://mopcon.org/2022/</loc><changefreq>yearly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://mopcon.org/2023/</loc><changefreq>yearly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://mopcon.org/2024/</loc><changefreq>yearly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://mopcon.org/2025/</loc><changefreq>yearly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://mopcon.org/album/</loc><changefreq>yearly</changefreq><priority>0.50</priority></url>
 </urlset>

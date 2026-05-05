@@ -237,8 +237,8 @@ th {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("../fonts/glyphicons-halflings-regular.eot");
-  src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+  src: url("https://mopcon.org/2017/fonts/glyphicons-halflings-regular.eot");
+  src: url("https://mopcon.org/2017/fonts/glyphicons-halflings-regular.eot?") format("embedded-opentype"), url("https://mopcon.org/2017/fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("https://mopcon.org/2017/fonts/glyphicons-halflings-regular.woff") format("woff"), url("https://mopcon.org/2017/fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("https://mopcon.org/2017/fonts/glyphicons-halflings-regular.svg") format("svg"); }
 
 .glyphicon {
   position: relative;
@@ -7609,7 +7609,7 @@ section {
     color: #7ab6ad;
     margin-bottom: 40px; }
   #descriptionContainer .logo {
-    background: transparent url(../images/badge.png) no-repeat center;
+    background: transparent url(https://mopcon.org/2017/images/badge.png) no-repeat center;
     background-size: 152px;
     width: 152px;
     height: 152px; }
@@ -8121,7 +8121,7 @@ tr:first-child {
   -webkit-transform: rotate(-36deg);
       -ms-transform: rotate(-36deg);
           transform: rotate(-36deg);
-  background: url(./../images/floater-pic.png) no-repeat;
+  background: url(../images/floater-pic.png) no-repeat;
   background-size: 103px 134px;
   height: 269px;
   position: absolute;
@@ -8656,8 +8656,8 @@ tr:first-child {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../fonts/fontawesome-webfont.eot?v=4.6.3");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.6.3") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.6.3") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.6.3") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.6.3") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular") format("svg");
+  src: url("../fonts/fontawesome-webfont.eot%3Fv=4.6.3");
+  src: url("../fonts/fontawesome-webfont.eot%3F") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2%3Fv=4.6.3") format("woff2"), url("../fonts/fontawesome-webfont.woff%3Fv=4.6.3") format("woff"), url("../fonts/fontawesome-webfont.ttf%3Fv=4.6.3") format("truetype"), url("../fonts/fontawesome-webfont.svg%3Fv=4.6.3") format("svg");
   font-weight: normal;
   font-style: normal; }
 

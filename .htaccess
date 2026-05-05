@@ -1,14 +1,32 @@
-DirectoryIndex index.php index.html index.htm
-RedirectMatch 404 /\.git
-ErrorDocument 400 /err/404.php
-ErrorDocument 401 /err/404.php
-ErrorDocument 403 /err/404.php
-ErrorDocument 404 /err/404.php
-ErrorDocument 500 /err/404.php
+DirectoryIndex index.html index.htm
+ErrorDocument 400 /err/404.html
+ErrorDocument 401 /err/404.html
+ErrorDocument 403 /err/404.html
+ErrorDocument 404 /err/404.html
+ErrorDocument 500 /err/404.html
 Options -Indexes
 
-Redirect 301 /2018/feedback.php /feedback.php
-Redirect 301 /2018/warnup-feedback.php /warnup-feedback.php
+RewriteEngine On
 
-# Use PHP5 Single php.ini as default
-#AddHandler application/x-httpd-php5s .php
+# 阻擋 .git 路徑
+RewriteRule ^\.git - [R=404,L]
+
+# app.php → 2018 App 文件 (HackMD)
+RewriteRule ^app\.php$ https://hackmd.io/z5JZG5AtSCakXU5te0Jilg?view [R=301,L]
+RewriteRule ^2018/app\.php$ https://hackmd.io/z5JZG5AtSCakXU5te0Jilg?view [R=301,L]
+
+# bof.php → HackMD
+RewriteRule ^bof\.php$ https://hackmd.io/z5JZG5AtSCakXU5te0Jilg?view [R=301,L]
+
+# feedback / warm[n]up-feedback → Google Forms (扁平化單跳)
+RewriteRule ^feedback\.php$ https://docs.google.com/forms/d/e/1FAIpQLSdr7tHCb6Jz1UHmaLtB_aWTmOsgUApzY6SWQdvBYy8o8dbRlA/viewform [R=301,L]
+RewriteRule ^2018/feedback\.php$ https://docs.google.com/forms/d/e/1FAIpQLSdr7tHCb6Jz1UHmaLtB_aWTmOsgUApzY6SWQdvBYy8o8dbRlA/viewform [R=301,L]
+RewriteRule ^warmup-feedback\.php$ https://docs.google.com/forms/d/e/1FAIpQLSc0cD8BjDdi2nxKXQCSpyCpBi-3g9LqkCzLo0nnikG7dk06ZQ/viewform [R=301,L]
+RewriteRule ^warnup-feedback\.php$ https://docs.google.com/forms/d/e/1FAIpQLSc0cD8BjDdi2nxKXQCSpyCpBi-3g9LqkCzLo0nnikG7dk06ZQ/viewform [R=301,L]
+RewriteRule ^2018/warnup-feedback\.php$ https://docs.google.com/forms/d/e/1FAIpQLSc0cD8BjDdi2nxKXQCSpyCpBi-3g9LqkCzLo0nnikG7dk06ZQ/viewform [R=301,L]
+
+# album.php → 靜態 album/
+RewriteRule ^album\.php$ /album/ [R=301,L]
+
+# 安全網: 任何遺漏的 .php 一律 410 Gone (必須放最後)
+RewriteRule \.php$ - [R=410,L]
