@@ -1,13 +1,10 @@
 name: Deploy to Develop Environment
 
+# Phase 1 (static-only freeze) 期間暫停 PR 自動觸發：DIGITALOCEANTOKEN 已失效，
+# pipeline 仍在 build Next.js source（與 2024-static-tmp/ 重複）。Phase 2 task 17
+# 會重寫整套 deploy；在那之前需要手動測試時可走 workflow_dispatch。
 on:
-  pull_request:
-    branches:
-      - develop
-    types:
-      - opened
-      - synchronize
-      - reopened
+  workflow_dispatch:
 
 jobs:
   call-deploy-job:
