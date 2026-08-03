@@ -1,0 +1,618 @@
+@charset "UTF-8";
+/* ==========================================================================
+   MOPCON 2026 網頁樣板 — arc-teal（曲線大色塊）
+   --------------------------------------------------------------------------
+   設計方向：把風格書封面的「大半徑圓弧／螺旋切分」當成網站骨架，
+             區塊之間用圓弧切分，白 / 淺青 / 深青交替，品牌色比例最高。
+   檔案順序：1 設計 token → 2 基礎 → 3 導航列 → 4 圓弧色帶 → 5 元件
+             → 6 首頁 → 7 議程頁 → 8 講者頁 → 9 贊助頁 → 10 頁尾 → 11 響應式
+   改顏色請只改「1 設計 token」，其他地方都用 var(--…) 取值。
+   ========================================================================== */
+
+/* ── 1 設計 token ───────────────────────────────────────────────────────── */
+:root{
+  /* 品牌色（風格書指定） */
+  --c-teal:#06a0a3; --c-mint:#62c3a5; --c-lime:#cae2aa;
+  --c-amber:#faaf43; --c-ink:#434243; --c-gray:#bcbec0; --c-white:#fff;
+  /* 無障礙衍生色（白底上的文字／連結、配白字的底） */
+  --c-teal-deep:#04787a; --c-teal-ink:#046062;
+  /* 中性階（由 ink 調出，僅供次要文字與線） */
+  --c-ink-70:#6f6e6f; --c-line:#e4e7e8; --c-surface:#f6faf9;
+  --font-display:"Alternity","PT Sans",sans-serif;
+  --font-body:"PT Sans",-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+:root{
+  /* 以下是本樣板自己加的，都是上面品牌色的極淡底色與版面常數 —— 可以改 */
+  --c-teal-tint:#e3f2f2;   /* teal 的極淡底（放 ink 文字用） */
+  --c-mint-tint:#e9f5f0;   /* mint 的極淡底 */
+  --c-lime-tint:#f3f8ea;   /* lime 的極淡底 */
+  /* 上面的色票是 hex，沒辦法直接加透明度，所以同一組顏色再存一份 RGB 值，
+     需要半透明時寫成 rgba(var(--rgb-ink), .06) 這種形式 */
+  --rgb-ink:67,66,67;        /* = --c-ink */
+  --rgb-teal-ink:4,96,98;    /* = --c-teal-ink */
+  --rgb-amber:250,175,67;    /* = --c-amber */
+  --rgb-white:255,255,255;   /* = --c-white */
+  --shadow-1:0 1px 2px rgba(var(--rgb-ink),.05), 0 6px 18px rgba(var(--rgb-ink),.05);
+  --shadow-2:0 2px 6px rgba(var(--rgb-ink),.07), 0 16px 34px rgba(var(--rgb-ink),.10);
+  --r-card:16px;           /* 卡片圓角 */
+  --wrap:1160px;           /* 內容最大寬度 */
+  --header-h:64px;         /* 導航列高度（sticky 用） */
+  --arc-h:clamp(26px,4.6vw,66px);  /* 區塊之間圓弧的深度 */
+  --arc-rim:clamp(6px,.9vw,12px);  /* 圓弧下面那道 mint 細鑲邊的厚度（見 .arc-rim） */
+}
+
+/* ── 2 基礎 ─────────────────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--c-white);color:var(--c-ink);
+  font-family:var(--font-body);font-size:16px;line-height:1.75;
+  overflow-x:hidden;              /* 保險：圓弧裝飾不會製造橫向捲動 */
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;height:auto;display:block}
+h1,h2,h3,h4{line-height:1.3;margin:0 0 .5em;font-weight:700;letter-spacing:.01em}
+p{margin:0 0 1em}
+p:last-child{margin-bottom:0}
+a{color:var(--c-teal-deep);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:0;padding:0}
+button{font:inherit;color:inherit}
+/* 鍵盤焦點環：用深青（對白底 7.36:1，符合 WCAG 2.2 非文字對比 3:1）。
+   不要換回 amber——amber 對白底只有 1.86:1，而且全站的購票按鈕本身就是 amber 底，
+   等於「amber 描邊畫在 amber 上」，鍵盤使用者看不到自己在哪裡。 */
+:focus-visible{outline:3px solid var(--c-teal-ink);outline-offset:2px;border-radius:4px}
+/* 深青底的區塊（hero、頁首、on-teal 區塊、頁尾）上改成白色環，白/深青 5.29:1 */
+.hero :focus-visible,.page-hero :focus-visible,.on-teal :focus-visible,
+.band-teal :focus-visible,.band-ink :focus-visible,.site-footer :focus-visible{outline-color:var(--c-white)}
+
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip-link{position:absolute;left:12px;top:-60px;z-index:200;background:var(--c-amber);color:var(--c-ink);
+  padding:10px 18px;border-radius:0 0 12px 12px;font-weight:700;transition:top .15s}
+.skip-link:focus{top:0;text-decoration:none}
+.display{font-family:var(--font-display)}   /* 只給英數短字串用（Alternity 沒有中文） */
+
+/* 區塊標題群組 */
+.sec-head{max-width:38em;margin:0 0 clamp(28px,3.6vw,44px)}
+.sec-head.is-center{margin-left:auto;margin-right:auto;text-align:center}
+.eyebrow{display:block;margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--c-teal-deep)}
+.on-teal .eyebrow{color:var(--c-white)}
+.sec-head h2{font-size:clamp(24px,3.2vw,36px);margin:0 0 .4em}
+.lead{font-size:17px;color:var(--c-ink-70);max-width:38em}
+.on-teal .lead,.on-teal p,.on-teal h2,.on-teal h3{color:var(--c-white)}
+.prose{max-width:38em}
+.prose p{color:var(--c-ink-70)}
+
+/* ── 3 導航列 ───────────────────────────────────────────────────────────── */
+.site-header{position:sticky;top:0;z-index:80;background:var(--c-white);border-bottom:1px solid var(--c-line)}
+.site-header.is-stuck{box-shadow:0 2px 14px rgba(var(--rgb-ink),.10)}
+.header-in{display:flex;align-items:center;gap:16px;min-height:var(--header-h)}
+.brand{flex:0 0 auto;display:block;padding:6px 0}
+/* 橫式 logo 的比例是 408:75，height:30px ≈ 寬 163px，
+   剛好過風格書的最小尺寸（橫式寬 ≥160px）。要再改請一起看 README 第 6 點。 */
+.brand img{height:30px;width:auto}
+.brand:hover{text-decoration:none}
+
+/* 選單本體預設先藏起來，等 site.js 跑完加上 .js-ready 才顯示。
+   這樣萬一 JS 壞掉（例如 NAV 陣列少打一個逗號），畫面上留下的是下面那份
+   靜態降級連結，而不是一個空選單＋按不動的漢堡。 */
+.nav{display:none;flex:1 1 auto;min-width:0}
+.js-ready .nav{display:block}
+.nav-list{display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:4px;list-style:none}
+.nav-item{position:relative;flex:0 0 auto}
+/* padding 左右 9px＋.nav-list 的 gap 4px：這組數字剛好讓 10 個項目在 1160px 的
+   內容寬度裡全部排得下（logo 放大到 30px 之後就沒有多餘空間了）。
+   要加大 padding 的話，「歷年 MOPCON」就會被收進「更多 ▾」，功能不受影響。 */
+.nav-link{display:inline-flex;align-items:center;gap:5px;padding:9px 9px;border-radius:999px;
+  color:var(--c-ink);font-size:15px;line-height:1.2;white-space:nowrap;background:none;border:0;cursor:pointer}
+.nav-link:hover{background:var(--c-teal-tint);color:var(--c-teal-ink);text-decoration:none}
+.nav-link[aria-current=page]{background:var(--c-teal-tint);color:var(--c-teal-ink);font-weight:700}
+.nav-link .caret{width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:rotate(45deg) translateY(-2px);flex:0 0 auto}
+.nav-item.is-open>.nav-link{background:var(--c-teal-tint);color:var(--c-teal-ink)}
+/* 被收進「更多」的項目裡有目前頁面時，「更多」上面點一顆點 */
+.nav-more[data-has-current=true]>.nav-link::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--c-teal-deep)}
+
+/* 下拉選單 */
+.sub{position:absolute;top:100%;left:50%;transform:translateX(-50%);z-index:90;
+  min-width:198px;max-height:min(70vh,520px);overflow:auto;
+  background:var(--c-white);border:1px solid var(--c-line);border-radius:14px;box-shadow:var(--shadow-2);
+  padding:8px;list-style:none;display:none}
+.sub--end{left:auto;right:0;transform:none}
+.nav-item.is-open>.sub{display:block}
+.sub a{display:block;padding:8px 12px;border-radius:9px;color:var(--c-ink);font-size:14.5px;white-space:nowrap}
+.sub a:hover{background:var(--c-surface);color:var(--c-teal-ink);text-decoration:none}
+.sub-group-t{display:block;padding:8px 12px 4px;font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--c-ink-70)}
+.sub-group ul{list-style:none}
+.sub-group ul a{padding-left:22px}
+
+/* 購票 CTA 與漢堡 */
+.header-cta{flex:0 0 auto}
+.burger{display:none;flex:0 0 auto;width:44px;height:44px;padding:0;background:none;border:1px solid var(--c-line);
+  border-radius:12px;cursor:pointer;position:relative}
+.burger-i,.burger-i::before,.burger-i::after{position:absolute;left:50%;width:20px;height:2px;
+  margin-left:-10px;background:var(--c-ink);border-radius:2px;content:""}
+.burger-i{top:21px}
+.burger-i::before{top:-6px}
+.burger-i::after{top:6px}
+.burger:hover{background:var(--c-surface)}
+
+/* 手機抽屜 */
+.drawer{position:fixed;inset:0;z-index:100;background:var(--c-white);display:flex;flex-direction:column}
+.drawer[hidden]{display:none}
+.drawer-top{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:10px 24px;min-height:var(--header-h);border-bottom:1px solid var(--c-line)}
+.drawer-top img{height:26px;width:auto}
+.drawer-close{width:44px;height:44px;background:none;border:1px solid var(--c-line);border-radius:12px;cursor:pointer;position:relative}
+.drawer-close::before,.drawer-close::after{content:"";position:absolute;left:50%;top:50%;width:20px;height:2px;
+  margin:-1px 0 0 -10px;background:var(--c-ink);border-radius:2px}
+.drawer-close::before{transform:rotate(45deg)}
+.drawer-close::after{transform:rotate(-45deg)}
+.drawer-body{flex:1 1 auto;overflow:auto;padding:12px 24px 32px}
+.drawer-body ul{list-style:none}
+.m-link{display:block;padding:13px 4px;font-size:18px;color:var(--c-ink);border-bottom:1px solid var(--c-line)}
+.m-link[aria-current=page]{color:var(--c-teal-ink);font-weight:700}
+.m-acc{display:flex;align-items:center;justify-content:space-between;width:100%;padding:13px 4px;
+  font-size:18px;background:none;border:0;border-bottom:1px solid var(--c-line);cursor:pointer;text-align:left}
+.m-acc .caret{width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:rotate(45deg);margin-right:6px;transition:transform .15s}
+.m-acc[aria-expanded=true] .caret{transform:rotate(-135deg)}
+.m-sub{padding:6px 0 10px 14px}
+.m-sub a{display:block;padding:9px 4px;font-size:15.5px;color:var(--c-ink-70)}
+.drawer-foot{padding:16px 24px 24px;border-top:1px solid var(--c-line)}
+.drawer-foot .btn{width:100%;justify-content:center}
+body.nav-open{overflow:hidden}
+
+/* 靜態降級選單（三頁 header 裡那份「首頁／議程介紹／贊助夥伴」）
+   ── 它是「正常 HTML」不是 <noscript>，所以「JS 被關掉」和「JS 出錯」兩種情況都救得到；
+      site.js 成功跑完會加上 .js-ready，這份就自動收起來換成完整選單。 */
+.ns-nav{display:flex;flex-wrap:wrap;gap:4px 10px;list-style:none;padding:6px 0;
+  flex:1 1 auto;min-width:0;justify-content:flex-end}
+.ns-nav a{color:var(--c-ink);font-size:15px}
+.js-ready .ns-nav{display:none}
+
+/* ── 4 圓弧色帶 ─────────────────────────────────────────────────────────
+   .band 是一整條區塊，--band-bg 是它的底色；
+   .arc-bot / .arc-bot-l / .arc-bot-r 會在區塊下緣長出一片同色的圓弧，
+   壓進下一個區塊，形成封面那種「大半徑弧線切分」。 */
+.band{position:relative;padding:clamp(64px,8vw,112px) 0}
+.band-white{--band-bg:var(--c-white)}
+.band-soft{--band-bg:var(--c-surface)}
+.band-teal{--band-bg:var(--c-teal-deep)}
+/* 備用：更深的一階青色區塊。目前三頁都沒用到，需要「兩種深青交替」時，
+   把某個 <section> 的 band-teal 換成 band-ink 就好（白字對比 7.36:1）。 */
+.band-ink{--band-bg:var(--c-teal-ink)}
+.band{background:var(--band-bg,var(--c-white))}
+.band-teal,.band-ink{color:var(--c-white)}
+/* 注意：z-index 要下在 ::after（不能下在 .band 上），
+   否則下一個區塊會蓋掉這片圓弧。 */
+.arc-bot::after,.arc-bot-l::after,.arc-bot-r::after{
+  content:"";position:absolute;left:0;right:0;top:calc(100% - 1px);height:var(--arc-h);
+  background:var(--band-bg);pointer-events:none;z-index:1}
+.arc-bot::after{border-radius:0 0 50% 50%/100% 100%}      /* 中央下凸的大弧 */
+.arc-bot-l::after{border-radius:0 0 0 100%/0 0 0 100%}    /* 左淺右深的單邊弧 */
+.arc-bot-r::after{border-radius:0 0 100% 0/0 0 100% 0}    /* 右淺左深的單邊弧 */
+
+/* mint 細鑲邊（.arc-rim）
+   白底 → 淺青底（--c-surface #f6faf9）這兩個底色亮度只差 1%，光靠底色看不出弧線在哪，
+   所以在弧線後面再墊一片 mint、往下錯開 --arc-rim 的距離露出一道細邊，
+   跟 hero 的 .hero-shell 是同一種「雙層弧」語言。
+   要讓某一道弧有鑲邊，就在那個 <section> 的 class 後面加 arc-rim（目前首頁用了三處）。 */
+.arc-rim::before{content:"";position:absolute;left:0;right:0;
+  top:calc(100% - 1px + var(--arc-rim));height:var(--arc-h);
+  background:var(--c-mint);pointer-events:none;z-index:1}
+.arc-rim.arc-bot::before{border-radius:0 0 50% 50%/100% 100%}
+.arc-rim.arc-bot-l::before{border-radius:0 0 0 100%/0 0 0 100%}
+.arc-rim.arc-bot-r::before{border-radius:0 0 100% 0/0 0 100% 0}
+/* 弧線壓進來的那一段，下一個區塊要留出上緣空間 */
+.arc-bot+.band,.arc-bot-l+.band,.arc-bot-r+.band{padding-top:calc(clamp(64px,8vw,112px) + var(--arc-h) * .6)}
+.arc-rim+.band{padding-top:calc(clamp(64px,8vw,112px) + var(--arc-h) * .6 + var(--arc-rim))}
+
+/* 邊角紋理（DNA／六邊形）：極低對比、只放邊角，中央永遠淨空 */
+.motif{position:absolute;pointer-events:none;z-index:0}
+.motif-dna-r{right:0;top:8%;width:clamp(90px,11vw,150px);opacity:.09}
+.motif-hex-l{left:-30px;bottom:-20px;width:clamp(160px,22vw,300px);opacity:.08}
+.band-teal .motif-dna-r,.band-ink .motif-dna-r{opacity:.16}
+.band-teal .motif-hex-l,.band-ink .motif-hex-l{opacity:.14}
+.band>.wrap{position:relative;z-index:2}
+
+/* ── 5 元件 ─────────────────────────────────────────────────────────────── */
+/* 按鈕 */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border:2px solid transparent;
+  border-radius:999px;font-size:16px;font-weight:700;line-height:1.2;cursor:pointer;text-align:center;
+  transition:transform .15s,box-shadow .15s,background-color .15s}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn-amber{background:var(--c-amber);color:var(--c-ink)}   /* 全站唯一暖色，只給最重要的 CTA */
+.btn-amber:hover{box-shadow:0 8px 20px rgba(var(--rgb-amber),.42)}
+.btn-teal{background:var(--c-teal-deep);color:var(--c-white)}
+.btn-teal:hover{background:var(--c-teal-ink)}
+.btn-line{background:none;border-color:var(--c-line);color:var(--c-ink)}
+.btn-line:hover{border-color:var(--c-mint);background:var(--c-surface)}
+.btn-w{background:none;border-color:rgba(var(--rgb-white),.72);color:var(--c-white)}
+.btn-w:hover{background:rgba(var(--rgb-white),.14)}
+.btn-sm{padding:9px 18px;font-size:15px}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px}
+.btn-row.is-center{justify-content:center}
+
+/* 卡片 */
+.card{background:var(--c-white);border:1px solid var(--c-line);border-radius:var(--r-card);padding:24px;
+  transition:transform .18s,box-shadow .18s,border-color .18s}
+a.card{display:block;color:inherit}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-2);border-color:var(--c-mint);text-decoration:none}
+.card h3{font-size:19px;margin:0 0 8px}
+.card p{color:var(--c-ink-70);font-size:15px;margin:0}
+.grid{display:grid;gap:clamp(16px,2vw,24px)}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+
+/* 基本圖形（風格書指定：粗圓環／正六邊形／正方形，單色實填、不加陰影漸層） */
+.shape{display:block;--s:64px;flex:0 0 auto}
+.shape-ring{width:var(--s);height:var(--s);border-radius:50%;border:calc(var(--s)/3) solid var(--c-teal);background:none}
+.shape-hex{width:var(--s);height:calc(var(--s)*.866);background:var(--c-teal);
+  clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}
+.shape-sq{width:calc(var(--s)*.86);height:calc(var(--s)*.86);background:var(--c-teal)}
+.shape-w.shape-hex,.shape-w.shape-sq{background:var(--c-white)}
+.shape-w.shape-ring{border-color:var(--c-white)}
+
+/* 標籤 */
+.tag{display:inline-flex;align-items:center;gap:6px;padding:3px 11px;border-radius:999px;background:var(--c-surface);
+  font-size:12.5px;font-weight:700;line-height:1.7;color:var(--c-ink);white-space:nowrap}
+.tag-A{background:var(--c-teal-tint)}
+.tag-B{background:var(--c-mint-tint)}
+.tag-C{background:var(--c-lime-tint)}
+.tag-dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto}
+.tag-A .tag-dot{background:var(--c-teal)}
+.tag-B .tag-dot{background:var(--c-mint)}
+/* Track C 的 lime 太淺（對白底只有 1.40:1，色點會整顆融進底色），
+   所以 lime 實心再加一圈 1px 深墨描邊，才看得出來這裡有一顆色點。
+   多加軌道時也照這個原則：太淺的色一定要補描邊。 */
+.tag-C .tag-dot{background:var(--c-lime);border:1px solid var(--c-ink-70)}
+.tag-level{background:none;border:1px solid var(--c-line);color:var(--c-ink-70);font-weight:400}
+.tag-key{background:var(--c-amber)}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+
+/* logo／頭像佔位塊（正式素材進來就換掉） */
+.ph{display:grid;place-items:center;background:var(--c-surface);border:1px solid var(--c-line);border-radius:12px;
+  min-height:96px;padding:16px}
+.ph-round{border-radius:50%;width:96px;height:96px;min-height:0;padding:0;
+  background:var(--c-teal-tint);border-color:transparent}
+.on-teal .ph-round{background:rgba(var(--rgb-white),.18)}
+
+/* ── 6 首頁 ─────────────────────────────────────────────────────────────── */
+/* Hero：全幅深青，兩道超大半徑圓弧從邊角切進來，中央淨空給 logo 與大標
+   .hero-shell 是墊在後面的 mint 色塊，比 .hero 多露出 --hero-rim 的高度，
+   兩層用「一樣的弧度、差一點高度」疊出封面那種雙層曲線。 */
+.hero-shell{--hero-arc:clamp(30px,5vw,78px);--hero-rim:clamp(10px,1.2vw,18px);
+  background:var(--c-mint);padding-bottom:var(--hero-rim);
+  border-radius:0 0 50% 50%/var(--hero-arc)}
+.hero{position:relative;background:var(--c-teal-deep);color:var(--c-white);
+  overflow:hidden;border-radius:0 0 50% 50%/var(--hero-arc)}
+.hero-art{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero-art .arc-mint{fill:var(--c-mint)}
+.hero-art .arc-teal{fill:var(--c-teal)}
+/* 壓暗層（很重要，不要拿掉）：
+   mint／teal 兩道弧線比底色「亮」，白色小字壓在上面只有 2.13:1／3.2:1，是風格書的紅線。
+   所以這一層做兩件事：
+     1) radial 讓中央（logo、大標、日期）最暗；
+     2) 再疊一層「全幅實色」，因為 radial 到邊緣會淡成 0，
+        中等寬度（約 500–1000px）時 .hero-sub／.hero-meta 會延伸到弧線上。
+   兩層疊起來，文字可能落到的範圍白字都還有 4.5:1 以上；
+   想讓弧線更鮮豔就調小第二層的 alpha，但改完務必回頭量 500 / 768 兩個寬度。 */
+.hero-scrim{position:absolute;inset:0;z-index:1;
+  background:
+    radial-gradient(78% 72% at 50% 46%,rgba(var(--rgb-teal-ink),.56) 0%,rgba(var(--rgb-teal-ink),.46) 62%,rgba(var(--rgb-teal-ink),.06) 100%),
+    linear-gradient(rgba(var(--rgb-teal-ink),.16),rgba(var(--rgb-teal-ink),.16))}
+.hero-in{position:relative;z-index:3;text-align:center;
+  padding:clamp(56px,9vw,104px) 24px clamp(76px,10vw,120px);
+  min-height:min(76vh,660px);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero-logo{width:clamp(148px,17vw,224px);margin:0 auto clamp(22px,3vw,34px)}
+.hero h1{margin:0;font-size:clamp(28px,4.6vw,48px);color:var(--c-white)}
+.hero-tag{display:block;font-size:clamp(28px,4.6vw,48px);font-weight:700}
+/* 兩段小字都給寬度上限，讓它們留在畫面中央的深色核心區、不要延伸到 mint 弧線上。
+   .hero-meta 的 620px 是「量出來」的：單日日期＋場地排成一行最寬 587px（1440px 時），
+   給到 620 就不會在桌機被折成兩行、把中間那顆 lime 圓點孤零零留在第一行行尾。
+   桌機以外的窄螢幕本來就走 <768px 的 column 版（圓點會隱藏），不受這個數字影響。
+   ▲ 改大這個數字要回頭量對比：目前 500／768／900／1024／1440 都是白字 6.31:1。 */
+.hero-sub{max-width:min(100%,28em);margin:18px auto 0;font-size:clamp(16px,1.5vw,18px);color:var(--c-white)}
+.hero-meta{max-width:min(100%,620px);margin:clamp(24px,3vw,34px) auto 0;
+  display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;
+  align-items:center;font-size:clamp(17px,2vw,21px);font-weight:700}
+.hero-meta .dot{width:7px;height:7px;border-radius:50%;background:var(--c-lime)}
+.hero-meta .date{letter-spacing:.04em}
+.hero-btns{margin-top:clamp(28px,3.4vw,40px);justify-content:center}
+.hero-motif{position:absolute;z-index:1;pointer-events:none;opacity:.10}
+.hero-motif.is-dna{right:2%;top:6%;width:clamp(70px,9vw,128px)}
+.hero-motif.is-hex{left:-24px;bottom:2%;width:clamp(150px,20vw,280px);opacity:.13}
+
+/* 大會簡介 */
+.intro-grid{display:grid;gap:clamp(24px,4vw,56px);align-items:center;grid-template-columns:1fr}
+.intro-figure{position:relative;display:grid;place-items:center;min-height:240px}
+/* 這顆大圓環直接沿用 .shape-ring（環寬＝直徑的 1/3、teal 單色實填，風格書第 5 節），
+   只用 --s 把它放大；不要另外寫一組 border-width，否則同一頁會出現兩種環寬。 */
+.intro-figure .ring-xl{--s:min(72vw,300px)}
+.intro-figure .hex-sm{position:absolute;right:6%;top:6%;--s:72px}
+.intro-figure .sq-sm{position:absolute;left:4%;bottom:8%;--s:56px}
+.stat-row{display:flex;flex-wrap:wrap;gap:14px 34px;margin-top:28px;padding-top:24px;border-top:1px solid var(--c-line)}
+/* 這三個數字是「資訊」不是裝飾，所以用內文字型：Alternity 是第三方 CDN，
+   下載中的那 1–3 秒會整串看不見（見 README 第 6 點）。 */
+.stat b{display:block;font-size:30px;font-weight:700;line-height:1.1;letter-spacing:.02em;color:var(--c-teal-deep)}
+.stat span{font-size:14px;color:var(--c-ink-70)}
+
+/* 三個亮點 */
+.hi-card{display:flex;flex-direction:column;gap:16px;align-items:flex-start;background:var(--c-white)}
+.hi-card .shape{--s:72px}
+
+/* 議程預覽 */
+.prev-list{display:grid;gap:14px;list-style:none}
+.prev-item{display:grid;grid-template-columns:auto 1fr;gap:4px 20px;align-items:center;
+  background:var(--c-white);border:1px solid var(--c-line);border-radius:var(--r-card);padding:18px 22px;
+  transition:transform .18s,box-shadow .18s,border-color .18s}
+.prev-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-1);border-color:var(--c-mint)}
+/* 時間是「資訊」，用內文字型（理由同 .stat b） */
+.prev-time{font-size:19px;font-weight:700;color:var(--c-teal-deep);letter-spacing:.03em}
+.prev-body h3{font-size:17.5px;margin:0 0 6px}
+.prev-meta{font-size:14px;color:var(--c-ink-70);margin:0 0 8px}
+.sec-foot{margin-top:clamp(26px,3vw,38px)}
+
+/* 講者陣容（深青底＋白卡不用，改成白字＋白圖形佔位） */
+.spk-grid{display:grid;gap:clamp(20px,2.6vw,32px);grid-template-columns:repeat(2,1fr);list-style:none}
+.spk{text-align:center}
+.spk .ph-round{margin:0 auto 14px}
+.spk h3{font-size:17.5px;margin:0 0 4px;color:var(--c-white)}
+.spk p{font-size:14px;margin:0;color:var(--c-white)}
+
+/* 贊助牆（首頁精簡版） */
+.wall{margin-bottom:clamp(24px,3vw,38px)}
+.wall-t{display:flex;align-items:center;gap:14px;margin:0 0 16px;font-size:15px;color:var(--c-ink-70)}
+.wall-t::after{content:"";flex:1 1 auto;height:1px;background:var(--c-line)}
+.wall-grid{display:grid;gap:14px}
+.wall-1{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.wall-2{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.wall-3{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+.wall-name{font-size:15px;font-weight:700;text-align:center;color:var(--c-ink)}
+.wall-grid .ph{min-height:84px;gap:10px}
+.wall-grid .ph .shape{--s:34px}
+
+/* 會場資訊 */
+.venue-grid{display:grid;gap:clamp(24px,4vw,48px);grid-template-columns:1fr;align-items:start}
+.venue-card{background:var(--c-white);border:1px solid var(--c-line);border-radius:var(--r-card);
+  padding:clamp(22px,3vw,32px)}
+.venue-card dl{margin:0;display:grid;gap:14px}
+.venue-card dt{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--c-teal-deep)}
+.venue-card dd{margin:4px 0 0;font-size:16.5px}
+.venue-map{position:relative;overflow:hidden;border-radius:var(--r-card);background:var(--c-teal-tint);
+  min-height:clamp(220px,26vw,300px);display:grid;place-items:center;padding:24px;text-align:center}
+.venue-map .shape{--s:88px;margin:0 auto}
+.venue-note{margin-top:18px}
+/* 紋理上限：淺底 .06–.12（風格書寫 5–10%）。再往上調就會壓到中央的場地名稱。 */
+.venue-map .motif-hex-l{left:-56px;bottom:-38px;opacity:.1}
+.venue-map p{position:relative;z-index:2;margin:16px 0 0;font-weight:700;font-size:16px;color:var(--c-ink)}
+
+/* 底部 CTA 條 */
+.cta-band{text-align:center}
+.cta-band h2{font-size:clamp(26px,3.4vw,40px);margin:0 0 14px;color:var(--c-white)}
+.cta-band p{max-width:34em;margin:0 auto 28px;color:var(--c-white)}
+
+/* ── 7 議程頁 ───────────────────────────────────────────────────────────── */
+/* 頁首小 hero */
+.page-hero{position:relative;background:var(--c-teal-deep);color:var(--c-white);
+  overflow:hidden;border-radius:0 0 50% 50%/var(--hero-arc)}
+.page-hero .hero-art{z-index:0}
+/* 只設上下內距！這個元素同時掛著 .wrap，用 padding 簡寫會把 .wrap 的左右 24px 洗掉，
+   768–1160px 之間文字就會直接貼在畫面邊緣（.hero-in 是自己補了 24px 才沒事）。 */
+.page-hero-in{position:relative;z-index:3;
+  padding-top:clamp(44px,6vw,76px);padding-bottom:clamp(56px,7vw,88px)}
+.page-hero h1{font-size:clamp(28px,4.2vw,44px);margin:0 0 12px;color:var(--c-white)}
+.page-hero .lead{color:var(--c-white);max-width:34em}
+.page-hero .crumb{font-size:14px;color:var(--c-white);margin:0 0 14px;display:block;letter-spacing:.08em}
+
+/* 篩選列 */
+.filters{position:sticky;top:var(--header-h);z-index:40;background:var(--c-surface);
+  border-bottom:1px solid var(--c-line);padding:14px 0}
+.filters-in{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+.chip-set{display:flex;flex-wrap:wrap;gap:8px;list-style:none;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:999px;
+  border:1px solid var(--c-line);background:var(--c-white);color:var(--c-ink);font-size:14px;cursor:pointer;
+  transition:background-color .15s,color .15s,border-color .15s}
+.chip:hover{border-color:var(--c-mint)}
+.chip[aria-pressed=true],.chip[aria-selected=true]{background:var(--c-teal-deep);color:var(--c-white);border-color:var(--c-teal-deep)}
+/* 篩選按鈕上的軌道色點（軌道 id 對應一個色；多加軌道時在這裡補一行） */
+.chip .tag-dot{background:var(--c-gray)}
+.chip-A .tag-dot{background:var(--c-teal)}
+.chip-B .tag-dot{background:var(--c-mint)}
+.chip-C .tag-dot{background:var(--c-lime);border:1px solid var(--c-ink-70)}
+/* 被選起來的按鈕底色是深青，色點外面加一圈白色光環就看得見了，
+   這時 Track C 的深墨描邊反而多餘，收掉。 */
+.chip[aria-pressed=true] .tag-dot,.chip[aria-selected=true] .tag-dot{
+  box-shadow:0 0 0 2px rgba(var(--rgb-white),.5);border-color:transparent}
+.filter-count{font-size:14px;color:var(--c-ink-70)}
+
+/* 縱向時間軸 */
+.agenda-band{background:var(--c-surface);padding:clamp(36px,5vw,64px) 0 clamp(60px,8vw,100px)}
+/* 時間軸本身不要拉到 1160px 那麼寬（讀起來比較舒服），但外層容器還是用一般的 .wrap，
+   這樣 h1、Track 篩選按鈕、時間欄的左邊界才會對齊在同一條線上——
+   不要改成 .agenda-band>.wrap{max-width:940px}，那樣時間軸會被置中而跟頁首錯開約 110px。 */
+.tl{list-style:none;position:relative;margin:0;padding:0;max-width:940px}
+.tl::before{content:"";position:absolute;left:10px;top:10px;bottom:10px;width:2px;background:var(--c-line)}
+/* 一個 .ses 是「一個時段」，不是「一場議程」——同一時段的各軌卡片都放在裡面那個
+   .ses-cards 裡（見 site.js 的 paintAgenda）。所以時間只印一次，桌機時三軌會並排，
+   時間軸上一個時間點就對應畫面上的一條水平線。 */
+.ses{display:grid;grid-template-columns:22px minmax(0,1fr);grid-template-areas:"n t" "n c";
+  column-gap:14px;padding-bottom:16px}
+.ses-node{grid-area:n;position:relative}
+.ses-node::before{content:"";position:absolute;left:50%;top:9px;width:14px;height:14px;margin-left:-7px;
+  border-radius:50%;background:var(--c-teal);box-shadow:0 0 0 4px var(--c-surface)}
+/* 時間是「資訊」，用內文字型（理由同 .stat b） */
+.ses-time{grid-area:t;font-size:16px;font-weight:700;color:var(--c-teal-deep);
+  letter-spacing:.03em;padding-bottom:6px}
+.ses-time .to{color:var(--c-ink-70);font-weight:400;white-space:nowrap;margin-left:6px}
+/* 這個時段的卡片群：預設直向堆疊（窄螢幕），桌機才改成橫向並排（見 11 響應式）。
+   --cols 是 site.js 寫在 <li> 上的行內樣式，值就是這個時段有幾張卡片。 */
+.ses-cards{grid-area:c;display:grid;gap:14px}
+.ses-card{background:var(--c-white);border:1px solid var(--c-line);border-radius:var(--r-card);
+  padding:18px 20px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.ses-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-1);border-color:var(--c-mint)}
+.ses-card h3{font-size:17.5px;margin:0 0 8px}
+.ses-who{font-size:14.5px;color:var(--c-ink-70);margin:0 0 12px}
+.ses-who b{color:var(--c-ink);font-size:15px}
+/* 特殊列型：報到／開幕／休息／Tea Time／午餐／閉幕／散場，都畫成一顆細長膠囊，
+   跟一般議程卡片明顯區隔。這裡用「不是 talk 也不是 keynote」來認，
+   所以 data.js 要多一種 type（例如加一個 'party'）時，這裡完全不用改。 */
+.ses:not(.is-talk):not(.is-keynote) .ses-node::before{width:10px;height:10px;margin-left:-5px;top:11px;
+  background:var(--c-white);border:2px solid var(--c-gray);box-shadow:0 0 0 4px var(--c-surface)}
+.ses:not(.is-talk):not(.is-keynote) .ses-card{background:var(--c-lime-tint);border-color:var(--c-line);
+  border-radius:999px;padding:9px 26px;display:inline-flex;align-items:center;gap:12px;justify-self:start}
+.ses:not(.is-talk):not(.is-keynote) .ses-card:hover{transform:none;box-shadow:none;border-color:var(--c-line)}
+.ses-label{font-weight:700;font-size:15px}
+/* 午餐是一天正中間最長的一段，底色換成 mint 淡底，掃過去一眼就找得到中午在哪裡 */
+.ses.is-lunch .ses-card{background:var(--c-mint-tint)}
+/* 閉幕與散場是一天的收尾，色點改成 mint 實心，跟中途的休息區分開 */
+.ses.is-closing .ses-node::before,.ses.is-end .ses-node::before{background:var(--c-mint);border-color:var(--c-mint)}
+.ses.is-keynote .ses-node::before{background:var(--c-amber);width:18px;height:18px;margin-left:-9px;top:7px}
+.ses.is-keynote .ses-card{border-color:var(--c-mint);box-shadow:var(--shadow-1)}
+.ses.is-keynote .ses-card h3{font-size:20px}
+.tl-empty{background:var(--c-white);border:1px solid var(--c-line);border-radius:var(--r-card);padding:28px;text-align:center;color:var(--c-ink-70)}
+/* 時間軸下面那行補充說明（例如 Unconf 不在表內），寬度跟著時間軸走 */
+.tl-note{max-width:940px;margin:18px 0 0;font-size:14.5px;color:var(--c-ink-70)}
+
+/* ── 8 講者頁 ───────────────────────────────────────────────────────────── */
+/* 首頁的講者區塊是深青底、白字、只有姓名職稱（見上面的 .spk-grid）；
+   這裡是講者頁專用的白底卡片，多了軌道標籤與一段 bio。
+   .card 的 hover 效果直接沿用，不用另外寫。 */
+.spk-list{display:grid;gap:clamp(16px,2vw,24px);list-style:none;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.spk-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start}
+/* 頭像佔位比首頁小一階（首頁 96px）：講者頁一行擠兩到三張卡，96px 會把文字壓得太窄 */
+.spk-card .ph-round{width:72px;height:72px}
+.spk-card .ph-round .shape{--s:28px}
+.spk-card h3{font-size:18px;margin:0 0 4px}
+.spk-role{font-size:14px;color:var(--c-ink-70);margin:0 0 10px}
+.spk-card .tag-row{margin-bottom:10px}
+.spk-bio{font-size:14.5px;color:var(--c-ink-70);margin:0}
+.spk-note{font-size:14px;color:var(--c-ink-70);margin:0}
+
+/* ── 9 贊助頁 ───────────────────────────────────────────────────────────── */
+.tier{margin:0 0 clamp(44px,6vw,72px)}
+.tier:last-child{margin-bottom:0}
+.tier-head{display:flex;align-items:baseline;gap:14px;margin:0 0 clamp(18px,2.4vw,26px)}
+.tier-head h2{font-size:clamp(21px,2.6vw,28px);margin:0}
+.tier-head .shape{--s:22px}
+.tier-head .count{font-size:14px;color:var(--c-ink-70)}
+.tier-grid{display:grid;gap:clamp(16px,2vw,24px)}
+.t-xl{grid-template-columns:1fr}
+.t-lg{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.t-md{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.t-sm{grid-template-columns:repeat(auto-fit,minmax(185px,1fr))}
+.t-xs{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.sp-card h3{margin:0 0 10px}
+.sp-card p{max-width:38em}
+.t-xl .sp-card{display:grid;grid-template-columns:1fr;gap:clamp(18px,3vw,32px);align-items:center;padding:clamp(22px,3vw,34px)}
+.t-xl .ph{min-height:170px}
+.t-xl .ph .shape{--s:78px}
+.t-xl .sp-card h3{font-size:clamp(21px,2.4vw,26px)}
+.t-lg .ph{min-height:130px}
+.t-lg .ph .shape{--s:56px}
+.t-lg .sp-card h3{font-size:19px}
+.t-md .ph{min-height:104px}
+.t-md .ph .shape{--s:44px}
+.t-md .sp-card h3{font-size:17px}
+.t-md .sp-card p{font-size:14.5px}
+.t-sm .sp-card{padding:18px}
+.t-sm .ph{min-height:86px}
+.t-sm .ph .shape{--s:34px}
+.t-sm .sp-card h3{font-size:16px}
+.t-sm .sp-card p{font-size:14px}
+.t-xs .sp-card{padding:14px;text-align:center}
+.t-xs .ph{min-height:64px}
+.t-xs .ph .shape{--s:26px}
+.t-xs .sp-card h3{font-size:15px;margin:10px 0 0}
+
+/* ── 10 頁尾 ────────────────────────────────────────────────────────────── */
+.on-teal a:not(.btn),.site-footer .foot-brand a,.site-footer .foot-bottom a{color:var(--c-white)}
+.site-footer{position:relative;background:var(--c-teal-ink);color:var(--c-white);
+  padding:clamp(48px,6vw,76px) 0 32px;overflow:hidden}
+.foot-grid{display:grid;gap:clamp(28px,4vw,48px);grid-template-columns:1fr;position:relative;z-index:2}
+.foot-brand img{width:190px;margin-bottom:18px}
+.foot-brand p{color:rgba(var(--rgb-white),.86);font-size:15px;max-width:26em}
+.foot-brand a{color:var(--c-white)}
+.foot-col h2{font-size:14px;letter-spacing:.12em;margin:0 0 14px;color:var(--c-white)}
+.foot-col ul{list-style:none;display:grid;gap:9px}
+.foot-col a{color:rgba(var(--rgb-white),.86);font-size:15px;text-decoration:none}
+.foot-col a:hover{text-decoration:underline}
+.foot-col a:hover{color:var(--c-white)}
+.foot-col .foot-years{display:flex;flex-wrap:wrap;gap:6px 18px}
+.foot-bottom{position:relative;z-index:2;margin-top:clamp(32px,4vw,52px);padding-top:22px;
+  border-top:1px solid rgba(var(--rgb-white),.22);display:flex;flex-wrap:wrap;gap:8px 24px;
+  justify-content:space-between;font-size:14px;color:rgba(var(--rgb-white),.86)}
+.foot-bottom a{color:var(--c-white)}
+.site-footer .motif-dna-r{opacity:.14;top:auto;bottom:-40px;right:-8px;width:clamp(90px,10vw,140px)}
+
+/* ── 11 響應式 ──────────────────────────────────────────────────────────── */
+@media (max-width:767px){
+  :root{--header-h:58px}
+  /* 手機版面窄，紋理會壓到文字，所以整組收起來（風格書：紋理不可壓文字） */
+  .motif,.hero-motif{display:none}
+  .venue-map .motif{display:block}
+  .intro-figure{min-height:170px}
+  .intro-figure .ring-xl{--s:min(52vw,196px)}
+  .intro-figure .hex-sm{--s:52px}
+  .intro-figure .sq-sm{--s:40px}
+  /* 只調左右 padding：用 padding 簡寫會把 .hero-in／.page-hero-in 的上下留白洗掉；
+     反過來也一樣——.page-hero-in 如果用 padding 簡寫，會把 .wrap 的左右內距洗掉。 */
+  .wrap{padding-left:18px;padding-right:18px}
+  .hero-in{padding-left:18px;padding-right:18px}
+  .js-ready .nav{display:none}
+  .js-ready .burger{display:block}
+  /* margin-left:auto 把「購票＋漢堡」推到右邊、logo 留在左邊。
+     少了這行，桌機那個撐開空間的 .nav 在手機是隱藏的，三個東西會全部擠在左側。 */
+  .header-cta{margin-left:auto;padding:8px 14px;font-size:14px}
+  .header-in{gap:20px}
+  .brand img{height:26px}
+  /* 窄螢幕時 SVG 的弧線會被裁到畫面外（弧線一進畫面就會壓到中央的白字，見 .hero-scrim 的說明），
+     所以把 hero 下緣那道「深青＋mint 雙層弧」加深一點，維持「曲線大色塊」的個性。 */
+  .hero-shell{--hero-arc:clamp(34px,9vw,48px);--hero-rim:14px}
+  .hero-in{min-height:0;padding-bottom:clamp(64px,14vw,96px)}
+  .hero-meta{flex-direction:column;gap:6px}
+  .hero-meta .dot{display:none}
+  .hero-btns{flex-direction:column;align-items:stretch;width:100%;max-width:320px}
+  .hero-btns .btn{justify-content:center}
+  .prev-item{grid-template-columns:1fr;gap:8px}
+  .filters-in{gap:10px}
+  .filter-count{width:100%}
+}
+@media (min-width:768px){
+  .drawer{display:none!important}
+  .tl::before{left:87px}
+  .ses{grid-template-columns:74px 26px minmax(0,1fr);grid-template-areas:"t n c";column-gap:0;padding-bottom:20px}
+  .ses-time{text-align:right;padding:8px 18px 0 0}
+  .ses-time .to{display:block;font-size:13px;margin-left:0}
+  .venue-grid{grid-template-columns:1fr 1fr}
+  .t-xl .sp-card{grid-template-columns:minmax(200px,32%) 1fr}
+  .foot-grid{grid-template-columns:1.4fr .8fr 1fr}
+  .spk-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media (min-width:1024px){
+  .hero-logo{margin-bottom:36px}
+  .intro-grid{grid-template-columns:1.12fr .88fr}
+  .prev-item{grid-template-columns:104px 1fr}
+  /* 桌機才把同一時段的各軌卡片橫向排開（欄數 = site.js 寫在 <li> 上的 --cols），
+     這樣同一個時間的三軌會對齊在同一條水平線上。
+     窄一點的螢幕不做：940px 內塞三欄一張只剩約 300px，標題會被折成好幾行。 */
+  .ses-cards{grid-template-columns:repeat(var(--cols,1),minmax(0,1fr))}
+  /* 三軌並排時要多一點寬度，所以「全部」的時候時間軸放寬到跟 .wrap 一樣
+     （篩選單一軌時 site.js 會把 .is-wide 拿掉，收回 940px 的閱讀寬度）。
+     只放寬 max-width、不加 margin，時間欄的左邊界仍然跟 h1／篩選按鈕對齊。 */
+  .tl.is-wide{max-width:100%}
+}
+/* 尊重使用者的「減少動態效果」設定 */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}
+  .btn:hover,.card:hover,.prev-item:hover,.ses-card:hover{transform:none}
+}
+/* 列印時把深色底拿掉，省墨水 */
+@media print{
+  .site-header,.drawer,.filters{display:none!important}
+  .band-teal,.band-ink,.hero,.page-hero,.site-footer{background:var(--c-white)!important;color:var(--c-ink)!important}
+  .on-teal *,.hero *,.page-hero *,.site-footer *{color:var(--c-ink)!important}
+}

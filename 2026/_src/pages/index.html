@@ -1,0 +1,193 @@
+
+
+  <!-- ======================= Hero =======================
+       全幅深青色塊 ＋ 兩道超大半徑圓弧（下面那段 SVG 就是弧線，
+       改弧線請直接改 path 的座標，不要換成點陣圖）。 -->
+  <!-- .hero-shell 是墊在後面的 mint 色塊，讓 hero 下緣變成「雙層大圓弧」 -->
+  <div class="hero-shell">
+  <section class="hero">
+    <!-- preserveAspectRatio="xMidYMid slice"：讓弧線保持原本的弧度（不會被壓扁），
+         而且視窗變窄時弧線會自動往兩側移出去，白色小字才不會壓到 mint 弧上。
+         不要改回 "none"。 -->
+    <svg class="hero-art" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <path class="arc-teal" d="M1300 -40 C1180 220 1560 520 1360 860 L1700 860 L1700 -40 Z"/>
+      <path class="arc-mint" d="M1080 -40 C900 200 1380 420 1120 840 L1300 840 C1560 420 1080 200 1260 -40 Z"/>
+      <path class="arc-mint" d="M-60 520 C180 470 260 700 220 900 L340 900 C380 700 300 470 60 520 Z"/>
+    </svg>
+    <span class="hero-scrim" aria-hidden="true"></span>
+    <img class="hero-motif is-dna" src="assets/img/motif-dna-white.svg" alt="" aria-hidden="true" width="200" height="640">
+    <img class="hero-motif is-hex" src="assets/img/motif-hex-white.svg" alt="" aria-hidden="true" width="420" height="360">
+
+    <div class="wrap hero-in">
+      <img class="hero-logo" src="assets/img/logo-stack-white.svg" alt="MOPCON {{year}}" width="309" height="182">
+      <h1><span class="hero-tag">{{tagline}}</span></h1>
+      <p class="hero-sub">一天三軌並行，從軟體定義載具到生成式 AI，與南台灣的開發者一起把前沿技術談到落地。</p>
+      <p class="hero-meta">
+        <span class="date">{{date}}</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>{{venue}}</span>
+      </p>
+      <div class="btn-row hero-btns">
+        <a class="btn btn-amber" href="#">立即報名</a>
+        <a class="btn btn-w" href="agenda.html">看完整議程</a>
+      </div>
+    </div>
+  </section>
+  </div><!-- /.hero-shell -->
+
+  <!-- ======================= 大會簡介 ======================= -->
+  <section class="band band-white arc-bot-r arc-rim" id="about" aria-labelledby="about-t">
+    <img class="motif motif-dna-r" src="assets/img/motif-dna-teal.svg" alt="" aria-hidden="true" width="200" height="640">
+    <div class="wrap">
+      <div class="intro-grid">
+        <div>
+          <div class="sec-head">
+            <span class="eyebrow">MOPCON {{year}}</span>
+            <h2 id="about-t">大會簡介</h2>
+          </div>
+          <div class="prose">
+            <p>為南台灣最大軟科技應用研討會，堅持在濁水溪以南舉辦已經長達 14年！
+我們為南台灣每年帶來最前沿且務實的軟科技實踐與應用議程，協助科技從業者本業能力精進、企業宣傳與招募，並鼓勵在地科技社群發展、產業經驗交流，打造企業與科技人的優質互動環境，期待您成為 MOPCON 的重要夥伴，與我們一同共襄盛舉！</p>
+          </div>
+          <!-- 統計數字：Tracks／Sessions 由 site.js 依 assets/js/data.js 自動算，
+               寫在標籤裡的數字只是「JS 沒跑時」的備援值，不用手動維護。
+               天數算不出來（今年單日，資料裡已經沒有日期欄位），所以是寫死的。 -->
+          <div class="stat-row">
+            <div class="stat"><b data-count="tracks">3</b><span>Tracks</span></div>
+            <div class="stat"><b data-count="sessions">16</b><span>Sessions</span></div>
+          </div>
+        </div>
+        <!-- 裝飾用的基本圖形：粗圓環＋六邊形＋正方形，單色實填不加陰影 -->
+        <div class="intro-figure" aria-hidden="true">
+          <span class="shape shape-ring ring-xl"></span>
+          <span class="shape shape-hex hex-sm"></span>
+          <span class="shape shape-sq sq-sm"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 年度主軸 ======================= -->
+  <section class="band band-soft arc-bot arc-rim" id="highlights" aria-labelledby="hl-t">
+    <div class="wrap">
+      <div class="sec-head is-center">
+        <span class="eyebrow">HIGHLIGHTS</span>
+        <h2 id="hl-t">年度主軸</h2>
+      </div>
+      <div class="grid grid-3">
+        <article class="card hi-card">
+          <span class="shape shape-ring" aria-hidden="true"></span>
+          <h3>Software Defined Reality</h3>
+          <p>聚焦軟體如何跨越虛擬邊界，成為驅動實體設備的核心大腦。從無人機的飛控演算法、各類載具濾波調校，到機器人邊緣運算與電腦視覺的即時反應，深入探討「軟體定義載具」（SDV）的底層技術與韌體架構。我們將解析程式碼如何突破物理極限，賦予硬體設備持續進化的靈魂。</p>
+        </article>
+        <article class="card hi-card">
+          <span class="shape shape-hex" aria-hidden="true"></span>
+          <h3>Next-Gen Intelligence</h3>
+          <p>探索人工智慧技術的最前線與發展藍圖。本軌將深入解析 AI 發展與演進、LLM 語言模型現況與 Agentic AI 的自主決策機制，以及從文字生成邁向多模態理解的技術突破。幫助掌握 AI 演算法的底層邏輯與運算效能最佳化趨勢，一窺顛覆未來科技發展的關鍵核心技術。</p>
+        </article>
+        <article class="card hi-card">
+          <span class="shape shape-sq" aria-hidden="true"></span>
+          <h3>AI in Action</h3>
+          <p>讓技術紅利真正落地！本軌專注於 AI 與現代軟體工程在商業場景的實戰經驗。從高併發的 SaaS 架構設計、雲端系統部署，到自動化工作流（Workflows）的無縫導入。講者將分享嚴謹的迭代開發流程與架構規劃，展示如何將 AI 概念轉化為解決真實業務痛點的強大生產力。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 議程預覽 ======================= -->
+  <section class="band band-white arc-bot-l" id="agenda" aria-labelledby="ag-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">AGENDA</span>
+        <h2 id="ag-t">大會議程</h2>
+        <p class="lead">單日三軌並行，橫跨今年的三大主軸。完整議程與講者陣容陸續公布中。</p>
+      </div>
+      <!-- 這一段的內容來自 assets/js/data.js 的 SESSIONS -->
+      <ul class="prev-list" id="agendaPreview"></ul>
+      <noscript><p class="lead">議程資料由 assets/js/data.js 載入，需要開啟 JavaScript 才看得到；也可以直接前往<a href="agenda.html">大會議程</a>。</p></noscript>
+      <div class="btn-row sec-foot">
+        <a class="btn btn-teal" href="agenda.html">看完整議程</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 講者陣容 ======================= -->
+  <!-- 這一段用 band-ink（#046062）而不是 band-teal（#04787a）：講者卡片有 14px 的白色小字，
+       而右邊那張白色六邊形紋理（16% 不透明度）會把底色提亮，teal-deep 上白字只剩 4.12:1
+       （低於 AA 的 4.5）。換成深一階的 teal-ink 之後同樣位置量到 5.47:1。 -->
+  <section class="band band-ink on-teal arc-bot-r" id="speakers" aria-labelledby="sp-t">
+    <img class="motif motif-hex-l" src="assets/img/motif-hex-white.svg" alt="" aria-hidden="true" width="420" height="360">
+    <div class="wrap">
+      <div class="sec-head is-center">
+        <span class="eyebrow">SPEAKERS</span>
+        <h2 id="sp-t">講者陣容</h2>
+      </div>
+      <!-- 這一段的內容來自 assets/js/data.js 的 SPEAKERS -->
+      <ul class="spk-grid" id="speakerGrid"></ul>
+      <noscript><p class="lead">講者資料由 assets/js/data.js 載入，需要開啟 JavaScript 才看得到。</p></noscript>
+    </div>
+  </section>
+
+  <!-- ======================= 贊助夥伴 ======================= -->
+  <section class="band band-white arc-bot arc-rim" id="sponsors" aria-labelledby="spo-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">SPONSORS</span>
+        <h2 id="spo-t">贊助夥伴</h2>
+        <p class="lead">MOPCON 是不以營利為目的的社群年會，每一年的舉辦都仰賴贊助夥伴的支持。</p>
+      </div>
+      <!-- 這一段的內容來自 assets/js/data.js 的 SPONSORS -->
+      <div id="sponsorWall"></div>
+      <noscript><p class="lead">贊助資料由 assets/js/data.js 載入，需要開啟 JavaScript 才看得到；也可以直接前往<a href="sponsor.html">贊助夥伴</a>。</p></noscript>
+      <div class="btn-row sec-foot">
+        <a class="btn btn-teal" href="sponsor.html">贊助夥伴</a>
+        <a class="btn btn-line" href="mailto:{{email}}">成為贊助夥伴</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 會場資訊 ======================= -->
+  <section class="band band-soft arc-bot-l" id="venue" aria-labelledby="ve-t">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">VENUE</span>
+        <h2 id="ve-t">會場資訊</h2>
+      </div>
+      <div class="venue-grid">
+        <div class="venue-card">
+          <dl>
+            <div>
+              <dt class="display">Date</dt>
+              <dd>{{date}}</dd>
+            </div>
+            <div>
+              <dt class="display">Venue</dt>
+              <dd>{{venue}}</dd>
+            </div>
+          </dl>
+          <p class="lead venue-note">今年一樣在高雄舉辦，確切場地與交通資訊確認後會在這裡公布。歡迎先把日期空下來。</p>
+        </div>
+        <div class="venue-map">
+          <img class="motif motif-hex-l" src="assets/img/motif-hex-teal.svg" alt="" aria-hidden="true" width="420" height="360">
+          <div>
+            <span class="shape shape-ring" aria-hidden="true"></span>
+            <!-- 這塊是地圖佔位，正式地圖進來時整塊換掉 -->
+            <p>{{venue}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 立即報名 ======================= -->
+  <section class="band band-teal on-teal cta-band arc-bot" aria-labelledby="cta-t">
+    <div class="wrap">
+      <h2 id="cta-t">立即報名</h2>
+      <p>票種與售票時程即將公布，敬請期待。</p>
+      <div class="btn-row is-center">
+        <a class="btn btn-amber" href="#">前往購票</a>
+        <a class="btn btn-w" href="#">票種介紹</a>
+      </div>
+    </div>
+  </section>
+

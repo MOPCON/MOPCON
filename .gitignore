@@ -15,3 +15,10 @@ phinx.php
 
 # Local git worktrees (used by superpowers workflow)
 .worktrees/
+
+# MOPCON 2026：頁面由 2026/_src/ 產生，開發期間產出不進版控
+# （部署時 GitHub Actions 會重新產生一次）。
+# 活動結束後要把最後的靜態成品封存進 repo 時，刪掉這三行再 git add 即可，
+# 詳見 2026/README.md 的「活動結束後：封存成靜態檔」。
+/2026/*.html
+/2026/sitemap.xml

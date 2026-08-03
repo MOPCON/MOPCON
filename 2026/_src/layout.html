@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{desc}}">
+<link rel="canonical" href="{{url}}">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<!-- 社群分享預覽。
+     FB／LINE／Slack／Discord／X 的預覽爬蟲「完全不執行 JavaScript」，
+     所以這一段一定要是靜態 HTML，不可以改成用 JS 產生。 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MOPCON {{year}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{desc}}">
+<meta property="og:url" content="{{url}}">
+<meta property="og:image" content="{{ogImage}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Alternity 只給英數短標題用，載不到也不影響（--font-body 會接手） -->
+<link href="https://fonts.cdnfonts.com/css/alternity" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+{{head}}</head>
+<body>
+<a class="skip-link" href="#main">跳到主要內容</a>
+
+<!--#include parts/header.html -->
+
+<!--#include parts/drawer.html -->
+
+<main id="main">{{content}}</main>
+
+<!--#include parts/footer.html -->
+
+<!-- data.js 一定要在 site.js 前面（site.js 會讀 SESSIONS / SPEAKERS / SPONSORS） -->
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
