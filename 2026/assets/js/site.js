@@ -30,20 +30,20 @@ var NAV = [
   { text: '講者陣容',    href: 'speakers.html' },
   { text: '贊助夥伴',    href: 'sponsor.html' },
   { text: '時光機', children: [
-      { text: 'MOPCON 2025', href: 'https://mopcon.org/2025/' },
-      { text: 'MOPCON 2024', href: 'https://mopcon.org/2024/' },
-      { text: 'MOPCON 2023', href: 'https://mopcon.org/2023/' },
-      { text: 'MOPCON 2022', href: 'https://mopcon.org/2022/' },
-      { text: 'MOPCON 2021', href: 'https://mopcon.org/2021/' },
-      { text: 'MOPCON 2020', href: 'https://mopcon.org/2020/' },
-      { text: 'MOPCON 2019', href: 'https://mopcon.org/2019/' },
-      { text: 'MOPCON 2018', href: 'https://mopcon.org/2018/' },
-      { text: 'MOPCON 2017', href: 'https://mopcon.org/2017/' },
-      { text: 'MOPCON 2016', href: 'https://mopcon.org/2016/' },
-      { text: 'MOPCON 2015', href: 'https://mopcon.org/2015/' },
-      { text: 'MOPCON 2014', href: 'https://mopcon.org/2014/' },
-      { text: 'MOPCON 2013', href: 'https://mopcon.org/2013/' },
-      { text: 'MOPCON 2012', href: 'https://mopcon.org/2012/' }
+      { text: 'MOPCON 2025', target: "_blank", href: 'https://mopcon.org/2025/' },
+      { text: 'MOPCON 2024', target: "_blank", href: 'https://mopcon.org/2024/' },
+      { text: 'MOPCON 2023', target: "_blank", href: 'https://mopcon.org/2023/' },
+      { text: 'MOPCON 2022', target: "_blank", href: 'https://mopcon.org/2022/' },
+      { text: 'MOPCON 2021', target: "_blank", href: 'https://mopcon.org/2021/' },
+      { text: 'MOPCON 2020', target: "_blank", href: 'https://mopcon.org/2020/' },
+      { text: 'MOPCON 2019', target: "_blank", href: 'https://mopcon.org/2019/' },
+      { text: 'MOPCON 2018', target: "_blank", href: 'https://mopcon.org/2018/' },
+      { text: 'MOPCON 2017', target: "_blank", href: 'https://mopcon.org/2017/' },
+      { text: 'MOPCON 2016', target: "_blank", href: 'https://mopcon.org/2016/' },
+      { text: 'MOPCON 2015', target: "_blank", href: 'https://mopcon.org/2015/' },
+      { text: 'MOPCON 2014', target: "_blank", href: 'https://mopcon.org/2014/' },
+      { text: 'MOPCON 2013', target: "_blank", href: 'https://mopcon.org/2013/' },
+      { text: 'MOPCON 2012', target: "_blank", href: 'https://mopcon.org/2012/' }
   ]}
 ];
 var NAV_CTA = { text: '前往購票', href: '#' };
@@ -124,6 +124,14 @@ function buildDesktopNav() {
   }
 }
 
+function _buildNavA(item, style) {
+  var a = el('a', style);
+  a.setAttribute('href', item.href);
+  a.textContent = item.text;
+  if (item.target) a.setAttribute('target', item.target);
+  return a;
+}
+
 function buildNavItem(item, i) {
   var li = el('li', 'nav-item');
   li.setAttribute('data-i', i);
@@ -135,14 +143,13 @@ function buildNavItem(item, i) {
     var sub = el('ul', 'sub');
     item.children.forEach(function (c) {
       var sli = document.createElement('li');
-      sli.innerHTML = '<a href="' + esc(c.href) + '">' + esc(c.text) + '</a>';
+      sli.appendChild(_buildNavA(c));
       sub.appendChild(sli);
     });
     li.appendChild(btn);
     li.appendChild(sub);
   } else {
-    var a = el('a', 'nav-link', esc(item.text));
-    a.setAttribute('href', item.href);
+    var a = _buildNavA(item, 'nav-link');
     if (isCurrent(item.href)) a.setAttribute('aria-current', 'page');
     li.appendChild(a);
   }

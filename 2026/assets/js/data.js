@@ -18,9 +18,9 @@
    要多一軌就多一行，議程頁的篩選按鈕會自己多一顆，不用改 CSS。
    ※ 場地代號沿用大會時刻表：R1 在 1F，R2／R3 在 B1F。 */
 var TRACKS = [
-  { id: 'A', name: 'R1（1F）' },
-  { id: 'B', name: 'R2（B1F-L）' },
-  { id: 'C', name: 'R3（B1F-R）' }
+  { id: 'A', name: 'R1（大禮堂）' },
+  { id: 'B', name: 'R2（小劇場）' },
+  { id: 'C', name: 'R3（音樂廳）' }
 ];
 
 /* ── 議程 ─────────────────────────────────────────────────────────────────
@@ -149,7 +149,7 @@ var SPEAKERS = [
    由上到下就是贊助頁的區塊順序。 */
 var SPONSOR_TIERS = [
   { id: 'metaverse', name: '元宇宙級',   size: 'xl' },
-  { id: 'matrix',    name: '矩陣級黃金級',   size: 'lg' },
+  { id: 'matrix',    name: '矩陣級',   size: 'lg' },
   { id: 'cloudnative',  name: '雲原生級',   size: 'md' },
   { id: 'gateway',  name: '閘道級',     size: 'sm' },
   { id: 'node',  name: '節點級', size: 'xs' }
