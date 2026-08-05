@@ -16,17 +16,34 @@ export const SITE = {
   tagline: '南台灣最大行動科技年會',
   email:   'contact@mopcon.org',
 
-  /* TODO: 日期為預訂（2026.10.31），場地未定案，確認後改下面這五行就好。
+  /* TODO: 日期為預訂（2026.10.31），場地未定案，確認後改下面這幾行就好。
            全站所有出現日期／場地的地方都是從這裡代進去的，不用再逐頁找。
            ⚠ 改完之後，社群分享圖 assets/img/og.png 也要重新產生一次
              （圖上印著日期與場地，指令見 README「社群分享圖」那一節）。
-           date / venue  給人看的字串
-           dateISO       給搜尋引擎看的（JSON-LD 用，格式固定 YYYY-MM-DD）
-           venueCity     JSON-LD 的城市欄位 */
+           date / venue    給人看的字串
+           dateISO         給搜尋引擎看的（JSON-LD 用，格式固定 YYYY-MM-DD）
+           venueCity       JSON-LD 的 addressLocality
+           venueStreet     JSON-LD 的 streetAddress（含區名，台灣地址的慣例寫法）
+           venueZip        JSON-LD 的 postalCode
+           venueMapQuery   Google 地圖要查的地名，**必須是 URL encode 過的**。
+                           首頁的內嵌地圖、「在 Google 地圖開啟」連結、JSON-LD 的
+                           hasMap 三個地方共用這一個值。
+                           產生方式：node -e "console.log(encodeURIComponent('地名'))"
+           venueLat/Lng    JSON-LD 的經緯度。
+                           ⚠ 這兩個值在 JSON-LD 裡是**不加引號**直接代進去的，
+                             所以只能填純數字，不要寫成 '22.7度' 或留空，
+                             否則整段 JSON 會壞掉而且 build 不會報錯（見下面註解）。
+                           來源：Google 地圖的 Plus Code P8F7+VR 瑞屏里 高雄市楠梓區
+                           （完整碼 7QJ2P8F7+VR）反解，格子精度約 14 公尺。 */
   date:      '2026.10.31（六）',
   dateISO:   '2026-10-31',
-  venue:     '高雄科技大學楠梓校區活動中心',
-  venueCity: '高雄市',
+  venue:      '高雄科技大學楠梓校區活動中心',
+  venueCity:  '高雄市',
+  venueStreet: '楠梓區海專路 142 號',
+  venueZip:    '811',
+  venueMapQuery: '%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%B8%E6%A5%A0%E6%A2%93%E6%A0%A1%E5%8D%80',
+  venueLat:    '22.724687',
+  venueLng:    '120.314562',
 
   /* 網址設定：canonical、og:url、sitemap 都是從這兩個組出來的。
      origin 不要加結尾斜線，base 前後都要有斜線。 */

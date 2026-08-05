@@ -157,24 +157,54 @@
         <div class="venue-card">
           <dl>
             <div>
-              <dt class="display">Date</dt>
-              <dd>{{date}}</dd>
-            </div>
-            <div>
               <dt class="display">Venue</dt>
               <dd>{{venue}}</dd>
             </div>
+            <div>
+              <dt class="display">Address</dt>
+              <dd>{{venueZip}} {{venueCity}}{{venueStreet}}</dd>
+            </div>
           </dl>
-          <p class="lead venue-note">今年一樣在高雄舉辦，確切場地與交通資訊確認後會在這裡公布。歡迎先把日期空下來。</p>
+          <p class="venue-link"><a href="https://www.google.com/maps/search/?api=1&amp;query={{venueMapQuery}}" target="_blank" rel="noopener">在 Google 地圖開啟 ↗</a></p>
         </div>
+        <!-- 地圖是 Google Maps 的內嵌網址（output=embed），不需要 API key。
+             換場地時改 config.js 的 venueMapQuery，這裡跟 JSON-LD 會一起換掉。 -->
         <div class="venue-map">
-          <img class="motif motif-hex-l" src="assets/img/motif-hex-teal.svg" alt="" aria-hidden="true" width="420" height="360">
-          <div>
-            <span class="shape shape-ring" aria-hidden="true"></span>
-            <!-- 這塊是地圖佔位，正式地圖進來時整塊換掉 -->
-            <p>{{venue}}</p>
-          </div>
+          <iframe
+            src="https://www.google.com/maps?q={{venueMapQuery}}&amp;hl=zh-TW&amp;z=16&amp;output=embed"
+            title="{{venue}}位置地圖"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
         </div>
+      </div>
+
+      <!-- 交通方式：dt 的英文用 display 字型（Alternity 沒有中文，所以中文要留在
+           span 外面走內文字型）。四張卡片在 768px 以上排成兩欄。 -->
+      <div class="transit">
+        <h3 class="transit-t">交通方式</h3>
+        <dl class="transit-list">
+          <div class="transit-item">
+            <dt><span class="display">MRT</span> 捷運</dt>
+            <dd>搭乘高雄捷運於後勁站下車，步行 100 公尺即可到達。</dd>
+          </div>
+          <div class="transit-item">
+            <dt><span class="display">HSR</span> 高鐵</dt>
+            <dd>由左營高鐵站轉搭捷運至後勁站下車，步行 100 公尺即可到達。</dd>
+          </div>
+          <div class="transit-item">
+            <dt><span class="display">Bus</span> 公車</dt>
+            <dd>於「高雄科大（楠梓）」站下車：6 號、29 號、市公車 28、市公車 301、7C。</dd>
+          </div>
+          <div class="transit-item">
+            <dt><span class="display">Train</span> 火車</dt>
+            <dd>
+              <ul>
+                <li>楠梓火車站 → 6 號／29 號公車 → 高雄科大（楠梓）</li>
+                <li>高雄火車站 → 28 號／301 號公車 → 後勁國中</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
       </div>
     </div>
   </section>
