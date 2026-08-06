@@ -338,7 +338,20 @@ a.card{display:block;color:inherit}
 .stat b{display:block;font-size:30px;font-weight:700;line-height:1.1;letter-spacing:.02em;color:var(--c-teal-deep)}
 .stat span{font-size:14px;color:var(--c-ink-70)}
 
-/* 三個亮點 */
+/* 三個亮點：上面先放一段共用的主軸說明，寬度收到 46em（比 .sec-head 的 38em 寬一點，
+   因為這裡是連續四段落的長文，太窄會排成細長條）；區塊本身置中，段落文字靠左比較好讀。
+   刻意不做成卡片（沒有底色／外框／陰影）：它是下面三張卡的開場白，不是第四張卡，
+   所以只用左邊一條漸層細線把它標成一段引言。 */
+.hi-intro{position:relative;max-width:46em;margin:0 auto clamp(30px,4vw,48px);
+  padding-left:clamp(18px,2.2vw,28px);text-align:left}
+.hi-intro::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:3px;border-radius:3px;
+  background:linear-gradient(180deg,var(--c-teal) 0%,var(--c-mint) 52%,var(--c-lime) 100%)}
+.hi-intro p{color:var(--c-ink-70);font-size:16px;margin:0 0 .9em}
+.hi-intro p:last-child{margin-bottom:0}
+/* 標語自己是一行標題，所以給它 teal-ink（白／淺底上 7.36:1）跟一點字距，
+   跟下面三段內文拉開層級。 */
+.hi-intro .hi-slogan{font-size:clamp(17px,1.9vw,20px);font-weight:700;line-height:1.55;
+  color:var(--c-teal-ink);margin-bottom:1.1em}
 .hi-card{display:flex;flex-direction:column;gap:16px;align-items:flex-start;background:var(--c-white)}
 .hi-card .shape{--s:72px}
 
