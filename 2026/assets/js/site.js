@@ -25,10 +25,10 @@
    桌機寬度不夠時，右邊的項目會自動收進「更多 ▾」，不用改 CSS。 */
 var NAV = [
   { text: '首頁',        href: 'index.html' },
-  { text: '主辦單位',    href: '#' },
-  { text: '議程介紹',    href: 'agenda.html' },
-  { text: '講者陣容',    href: 'speakers.html' },
-  { text: '贊助夥伴',    href: 'sponsor.html' },
+  // { text: '主辦單位',    href: '#' },
+  // { text: '議程介紹',    href: 'agenda.html' },
+  // { text: '講者陣容',    href: 'speakers.html' },
+  // { text: '贊助夥伴',    href: 'sponsor.html' },
   { text: '時光機', children: [
       { text: 'MOPCON 2025', target: "_blank", href: 'https://mopcon.org/2025/' },
       { text: 'MOPCON 2024', target: "_blank", href: 'https://mopcon.org/2024/' },
