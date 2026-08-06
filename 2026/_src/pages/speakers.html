@@ -1,0 +1,35 @@
+
+
+<!--#include parts/page-hero.html -->
+
+  <!-- ======================= 講者列表 =======================
+       內容來自 assets/js/data.js 的 SPEAKERS（全部列出，不像首頁只取前 8 位）。
+       軌道標籤與首頁、議程頁共用同一套顏色規則，加軌道時只要改 data.js 的 TRACKS。 -->
+  <section class="band band-white arc-bot" aria-labelledby="spk-t">
+    <img class="motif motif-dna-r" src="assets/img/motif-dna-teal.svg" alt="" aria-hidden="true" width="200" height="640">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">SPEAKERS</span>
+        <h2 id="spk-t">講者陣容</h2>
+        <p class="lead">依報名與審稿進度陸續公布，本頁會持續更新。每位講者的議程時間與軌道請見大會議程。</p>
+        <p class="spk-note" id="speakerCount" aria-live="polite"></p>
+      </div>
+      <ul class="spk-list" id="speakerList"></ul>
+      <noscript><p class="tl-empty">講者資料由 assets/js/data.js 載入，需要開啟 JavaScript 才看得到。</p></noscript>
+      <div class="btn-row sec-foot">
+        <a class="btn btn-teal" href="agenda.html">看完整議程</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 立即報名 ======================= -->
+  <section class="band band-teal on-teal cta-band arc-bot" aria-labelledby="cta-t">
+    <div class="wrap">
+      <h2 id="cta-t">想聽這些議程？</h2>
+      <p>票種與售票時程即將公布，敬請期待。</p>
+      <div class="btn-row is-center">
+        <a class="btn btn-amber" href="agenda.html">看完整議程</a>
+        <a class="btn btn-w" href="index.html">關於大會</a>
+      </div>
+    </div>
+  </section>

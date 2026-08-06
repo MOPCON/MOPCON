@@ -1,0 +1,47 @@
+<!-- 給搜尋引擎看的大會結構化資料（schema.org Event）。
+     Google 認得這個之後，搜尋結果可以直接顯示日期與地點。
+     值全部來自 _src/config.js 的 SITE，不要在這裡直接寫死日期或場地。
+     ※ 這是 JSON，字串裡不能出現半形雙引號 "。
+     ※ latitude／longitude 兩個 {{…}} 沒有加引號，代進來的必須是純數字，
+       填了別的東西整段 JSON 會壞掉，而且 build 只做變數代換、不會驗 JSON
+       （頁面看起來完全正常，只有 Google 那邊安靜地讀不到）。
+     ※ 想連議程一起餵給 Google 的話，可以之後在這裡加 subEvent 陣列，
+       但要等 assets/js/data.js 換成真的議程資料再做，假資料不要送出去。 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "MOPCON {{year}}",
+  "description": "{{desc}}",
+  "url": "{{url}}",
+  "image": "{{ogImage}}",
+  "startDate": "{{dateISO}}",
+  "endDate": "{{dateISO}}",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "inLanguage": "zh-Hant-TW",
+  "location": {
+    "@type": "Place",
+    "name": "{{venue}}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{venueStreet}}",
+      "addressLocality": "{{venueCity}}",
+      "postalCode": "{{venueZip}}",
+      "addressCountry": "TW"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": {{venueLat}},
+      "longitude": {{venueLng}}
+    },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query={{venueMapQuery}}"
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "MOPCON",
+    "url": "{{origin}}/",
+    "email": "{{email}}"
+  }
+}
+</script>

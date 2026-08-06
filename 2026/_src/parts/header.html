@@ -1,0 +1,27 @@
+<!-- ==========================================================================
+     導航列：這裡只放「外框」，選單項目是由 assets/js/site.js 最上面的
+     NAV 陣列產生的。要增減項目請去改那個陣列，這三份 HTML 都不用動。
+     ========================================================================== -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-in">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-inline-ink.svg" alt="MOPCON {{year}}" width="408" height="75">
+    </a>
+    <nav class="nav" id="mainNav" aria-label="主選單">
+      <ul class="nav-list" id="navList"></ul>
+    </nav>
+    <!-- 降級選單：故意寫成「一般 HTML」而不是 <noscript>。
+         這樣不只「JS 被關掉」，連「site.js 出錯」（例如 NAV 陣列少打一個逗號）
+         都還留得住三個基本連結；site.js 跑成功後會自己把這份收起來。
+         → 不要把它搬回 <noscript> 裡面。 -->
+    <ul class="ns-nav">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="agenda.html">議程介紹</a></li>
+      <li><a href="sponsor.html">贊助夥伴</a></li>
+    </ul>
+    <a class="btn btn-amber btn-sm header-cta" id="headerCta" href="#">前往購票</a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="開啟選單">
+      <span class="burger-i" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>

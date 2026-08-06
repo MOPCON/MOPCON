@@ -27,6 +27,13 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      # 2026 的頁面是由 2026/_src/ 產生的（其他年份都是現成的靜態檔，不用動）。
+      # runner 內建 Node，這一步不需要 npm install，也沒有任何相依套件。
+      # 產出的 2026/*.html 沒有進版控，所以每次部署都會在這裡重新產生一次。
+      # → 活動結束後把產出 commit 進 repo，就可以把這一步整個刪掉（見 2026/README.md）。
+      - name: Build 2026
+        run: node 2026/tools/build.mjs
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
