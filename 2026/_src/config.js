@@ -13,7 +13,7 @@
    總共 5 個地方會一起換掉。 */
 export const SITE = {
   year:    '2026',
-  tagline: '南台灣最大行動科技年會',
+  tagline: '堅持在濁水以南的應用科技年會',
   email:   'contact@mopcon.org',
 
   /* TODO: 日期為預訂（2026.10.31），場地未定案，確認後改下面這幾行就好。
