@@ -33,9 +33,11 @@
      ========================================================================== -->
 <header class="site-header" id="siteHeader">
   <div class="wrap header-in">
-    <a class="brand" href="index.html">
-      <img src="assets/img/logo-inline-ink.svg" alt="MOPCON 2026" width="408" height="75">
-    </a>
+    <div class="brand" onclick="location.href='index.html'" onkeydown="if(event.key==='Enter'||event.key===' ')location.href='index.html'" role="link" tabindex="0" aria-label="MOPCON 2026 x JSDC 首頁">
+      <img class="brand-logo-mopcon" src="assets/img/logo-inline-ink.svg" alt="MOPCON 2026" width="408" height="75">
+      <img class="brand-logo-cross" src="assets/img/cross_symbol.svg" alt="x" width="200" height="150" aria-hidden="true">
+      <img class="brand-logo-jsdc" src="assets/img/JSDC.svg" alt="JSDC.tw" width="143" height="143">
+    </div>
     <nav class="nav" id="mainNav" aria-label="主選單">
       <ul class="nav-list" id="navList"></ul>
     </nav>
@@ -58,7 +60,11 @@
 <!-- 手機漢堡抽屜：內容同樣由 site.js 依 NAV 產生 -->
 <div class="drawer" id="drawer" hidden>
   <div class="drawer-top">
-    <img src="assets/img/logo-inline-ink.svg" alt="MOPCON 2026" width="408" height="75">
+    <div class="brand" onclick="location.href='index.html'" onkeydown="if(event.key==='Enter'||event.key===' ')location.href='index.html'" role="link" tabindex="0" aria-label="MOPCON 2026 x JSDC 首頁">
+      <img class="brand-logo-mopcon" src="assets/img/logo-inline-ink.svg" alt="MOPCON 2026" width="408" height="75">
+      <img class="brand-logo-cross" src="assets/img/cross_symbol.svg" alt="x" width="200" height="150" aria-hidden="true">
+      <img class="brand-logo-jsdc" src="assets/img/JSDC.svg" alt="JSDC.tw" width="143" height="143">
+    </div>
     <button class="drawer-close" id="drawerClose" type="button" aria-label="關閉選單"></button>
   </div>
   <nav class="drawer-body" id="drawerNav" aria-label="主選單"></nav>
