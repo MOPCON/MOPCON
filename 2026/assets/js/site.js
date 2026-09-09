@@ -25,6 +25,7 @@
    桌機寬度不夠時，右邊的項目會自動收進「更多 ▾」，不用改 CSS。 */
 var NAV = [
   { text: '首頁',        href: 'index.html' },
+  { text: 'JSDC',        href: 'https://2026.jsdc.tw/' },
   // { text: '主辦單位',    href: '#' },
   // { text: '議程介紹',    href: 'agenda.html' },
   // { text: '講者陣容',    href: 'speakers.html' },
