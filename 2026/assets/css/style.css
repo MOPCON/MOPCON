@@ -87,10 +87,10 @@ button{font:inherit;color:inherit}
 /* ── 3 導航列 ───────────────────────────────────────────────────────────── */
 .site-header{position:sticky;top:0;z-index:80;background:var(--c-white);border-bottom:1px solid var(--c-line)}
 .site-header.is-stuck{box-shadow:0 2px 14px rgba(var(--rgb-ink),.10)}
-.header-in{display:flex;align-items:center;gap:16px;min-height:var(--header-h)}
-.brand{flex:0 0 auto;display:inline-flex;align-items:center;gap:10px;padding:6px 0;cursor:pointer;user-select:none}
+.header-in{display:flex;flex-wrap:nowrap;align-items:center;gap:16px;min-height:var(--header-h)}
+.brand{flex:0 0 auto;display:inline-flex;flex-direction:row;flex-wrap:nowrap;align-items:center;white-space:nowrap;gap:10px;padding:6px 0;cursor:pointer;user-select:none}
 .brand:focus-visible{outline:2px solid var(--c-teal);outline-offset:4px;border-radius:4px}
-.brand img{display:block;width:auto}
+.brand img{display:inline-block;vertical-align:middle;flex-shrink:0;width:auto}
 .brand .brand-logo-mopcon{height:30px}
 .brand .brand-logo-cross{height:20px;opacity:.9}
 .brand .brand-logo-jsdc{height:38.5px}
@@ -585,12 +585,13 @@ a.card{display:block;color:inherit}
   .js-ready .burger{display:block}
   /* margin-left:auto 把「購票＋漢堡」推到右邊、logo 留在左邊。
      少了這行，桌機那個撐開空間的 .nav 在手機是隱藏的，三個東西會全部擠在左側。 */
-  .header-cta{margin-left:auto;padding:8px 14px;font-size:14px}
-  .header-in{gap:12px}
-  .brand{gap:6px}
-  .brand .brand-logo-mopcon{height:24px}
-  .brand .brand-logo-cross{height:16px}
-  .brand .brand-logo-jsdc{height:32px}
+  .header-cta{margin-left:auto;padding:7px 12px;font-size:13.5px;white-space:nowrap;flex-shrink:0}
+  .burger{flex-shrink:0}
+  .header-in{gap:10px;flex-wrap:nowrap}
+  .brand{gap:6px;flex-shrink:0;white-space:nowrap}
+  .brand .brand-logo-mopcon{height:22px}
+  .brand .brand-logo-cross{height:15px}
+  .brand .brand-logo-jsdc{height:29px}
   /* 窄螢幕時 SVG 的弧線會被裁到畫面外（弧線一進畫面就會壓到中央的白字，見 .hero-scrim 的說明），
      所以把 hero 下緣那道「深青＋mint 雙層弧」加深一點，維持「曲線大色塊」的個性。 */
   .hero-shell{--hero-arc:clamp(34px,9vw,48px);--hero-rim:14px}

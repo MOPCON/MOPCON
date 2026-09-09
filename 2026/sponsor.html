@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- Alternity 只給英數短標題用，載不到也不影響（--font-body 會接手） -->
 <link href="https://fonts.cdnfonts.com/css/alternity" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=20260909c">
 </head>
 <body>
 <a class="skip-link" href="#main">跳到主要內容</a>
@@ -33,10 +33,10 @@
      ========================================================================== -->
 <header class="site-header" id="siteHeader">
   <div class="wrap header-in">
-    <div class="brand" onclick="location.href='index.html'" onkeydown="if(event.key==='Enter'||event.key===' ')location.href='index.html'" role="link" tabindex="0" aria-label="MOPCON 2026 x JSDC 首頁">
-      <img class="brand-logo-mopcon" src="assets/img/logo-inline-ink.svg" alt="MOPCON 2026" width="408" height="75">
-      <img class="brand-logo-cross" src="assets/img/cross_symbol.svg" alt="x" width="200" height="150" aria-hidden="true">
-      <img class="brand-logo-jsdc" src="assets/img/JSDC.svg" alt="JSDC.tw" width="143" height="143">
+    <div class="brand" onclick="location.href='index.html'" onkeydown="if(event.key==='Enter'||event.key===' ')location.href='index.html'" role="link" tabindex="0" aria-label="MOPCON 2026 x JSDC 首頁" style="display:inline-flex;align-items:center;flex-direction:row;flex-wrap:nowrap;white-space:nowrap;gap:8px;flex-shrink:0;">
+      <img class="brand-logo-mopcon" src="assets/img/logo-inline-ink.svg" alt="MOPCON 2026" width="408" height="75" style="display:inline-block;vertical-align:middle;flex-shrink:0;">
+      <img class="brand-logo-cross" src="assets/img/cross_symbol.svg" alt="x" width="200" height="150" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0;">
+      <img class="brand-logo-jsdc" src="assets/img/JSDC.svg" alt="JSDC.tw" width="143" height="143" style="display:inline-block;vertical-align:middle;flex-shrink:0;">
     </div>
     <nav class="nav" id="mainNav" aria-label="主選單">
       <ul class="nav-list" id="navList"></ul>
@@ -60,10 +60,10 @@
 <!-- 手機漢堡抽屜：內容同樣由 site.js 依 NAV 產生 -->
 <div class="drawer" id="drawer" hidden>
   <div class="drawer-top">
-    <div class="brand" onclick="location.href='index.html'" onkeydown="if(event.key==='Enter'||event.key===' ')location.href='index.html'" role="link" tabindex="0" aria-label="MOPCON 2026 x JSDC 首頁">
-      <img class="brand-logo-mopcon" src="assets/img/logo-inline-ink.svg" alt="MOPCON 2026" width="408" height="75">
-      <img class="brand-logo-cross" src="assets/img/cross_symbol.svg" alt="x" width="200" height="150" aria-hidden="true">
-      <img class="brand-logo-jsdc" src="assets/img/JSDC.svg" alt="JSDC.tw" width="143" height="143">
+    <div class="brand" onclick="location.href='index.html'" onkeydown="if(event.key==='Enter'||event.key===' ')location.href='index.html'" role="link" tabindex="0" aria-label="MOPCON 2026 x JSDC 首頁" style="display:inline-flex;align-items:center;flex-direction:row;flex-wrap:nowrap;white-space:nowrap;gap:8px;flex-shrink:0;">
+      <img class="brand-logo-mopcon" src="assets/img/logo-inline-ink.svg" alt="MOPCON 2026" width="408" height="75" style="display:inline-block;vertical-align:middle;flex-shrink:0;">
+      <img class="brand-logo-cross" src="assets/img/cross_symbol.svg" alt="x" width="200" height="150" aria-hidden="true" style="display:inline-block;vertical-align:middle;flex-shrink:0;">
+      <img class="brand-logo-jsdc" src="assets/img/JSDC.svg" alt="JSDC.tw" width="143" height="143" style="display:inline-block;vertical-align:middle;flex-shrink:0;">
     </div>
     <button class="drawer-close" id="drawerClose" type="button" aria-label="關閉選單"></button>
   </div>
