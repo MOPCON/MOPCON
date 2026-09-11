@@ -28,7 +28,7 @@ var NAV = [
   { text: 'JSDC',        href: 'https://2026.jsdc.tw/' },
   // { text: '主辦單位',    href: '#' },
   // { text: '議程介紹',    href: 'agenda.html' },
-  // { text: '講者陣容',    href: 'speakers.html' },
+  { text: '講者陣容',    href: 'speakers.html' },
   // { text: '贊助夥伴',    href: 'sponsor.html' },
   { text: '時光機', children: [
       { text: 'MOPCON 2025', target: "_blank", href: 'https://mopcon.org/2025/' },
