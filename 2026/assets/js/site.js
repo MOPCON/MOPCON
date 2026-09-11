@@ -474,8 +474,9 @@ function renderSpeakers() {
   if (!box || typeof SPEAKERS === 'undefined') return;
   var h = '';
   SPEAKERS.slice(0, 8).forEach(function (p, i) {
+    let avatar = p.img ? '<img loading="lazy" decoding="async" src="' + esc(p.img) + '" alt="">' : '<div class="avatar">' + phShape(i, true) + '</div>';
     h += '<li class="spk">' +
-           '<div class="ph ph-round">' + phShape(i, true) + '</div>' +
+           '<div class="ph ph-round avatar">' + avatar + '</div>' +
            '<h3>' + esc(p.name) + '</h3>' +
            '<p>' + esc(p.role) + '｜' + esc(p.org) + '</p>' +
          '</li>';
@@ -495,7 +496,7 @@ function renderSponsorWall() {
     h += '<div class="wall"><h3 class="wall-t">' + esc(tier.name) + '</h3>' +
          '<div class="wall-grid ' + (WALL_CLASS[tier.size] || 'wall-3') + '">';
     list.forEach(function (s) {
-      h += '<div class="ph">' + (s.logo ? '<img src="' + esc(s.logo) + '" alt="' + esc(s.name) + '">'
+      h += '<div class="ph">' + (s.logo ? '<img src="' + esc(s.logo) + '" alt="">'
              : phShape(n, false)) +
            '<span class="wall-name">' + esc(s.name) + '</span></div>';
       n++;
@@ -662,8 +663,9 @@ function renderSpeakerPage() {
     var tags = (p.track || p.keynote)
       ? tagsHtml({ type: p.keynote ? 'keynote' : 'talk', track: p.track })
       : '';
+    let avatar = p.img ? '<img loading="lazy" decoding="async" src="' + esc(p.img) + '" alt="' + esc(p.name) + '">' : phShape(i, true);
     h += '<li class="card spk-card">' +
-           '<div class="ph ph-round">' + phShape(i, false) + '</div>' +
+           '<div class="ph ph-round avatar">' + avatar + '</div>' +
            '<div class="spk-body">' +
              '<h3>' + esc(p.name) + '</h3>' +
              '<p class="spk-role">' + esc(p.role) + '｜' + esc(p.org) + '</p>' +

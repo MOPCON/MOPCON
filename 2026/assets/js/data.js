@@ -99,6 +99,7 @@ var SESSIONS = [
    track  ：'A' / 'B' / 'C'，講者頁會顯示成軌道標籤；不確定就整個欄位不要填
    keynote：填 true 會多一個 Keynote 標籤（通常只有一位）
    bio    ：一段講者簡介，只有講者頁會顯示；填 '' 就只顯示姓名與職稱
+   img    ：講者頭像檔案路徑（可省略），首頁跟講者頁都會顯示
    link   ：講者的社群／個人頁網址（可省略），只有講者頁會顯示成一個對外連結
    linkText：那個連結顯示的文字（可省略）；沒填就顯示網址的網域（例如 kaochenlong.com）
 
@@ -116,20 +117,26 @@ var SESSIONS = [
 var SPEAKERS = [
   { name: 'zonble', role: '軟體工程師', org: 'Noetiq Inc',
     bio: '軟體工程師',
+    img: 'assets/img/speakers/zonble.jpg',
     link: 'https://x.com/zonble', linkText: 'X @zonble' },
   { name: 'Kuon Ding', role: 'CTO', org: 'Funny Systems',
     bio: 'Kuon，現任職於法泥系統。關心各種 「安全技術」，喜愛研究和解決問題，包含系統軟體、網路協定、網站應用、解密實務，所有想學習的一切，都圍繞著 「安全技術」 為中心。相信建立好的防守，比攻擊更困難。',
+    img: 'assets/img/speakers/kuon_ding_sliced.png',
     link: 'https://www.smallcrows.org/' },
   { name: 'Stanley', role: 'Engineer Manager', org: 'ViewSonic',
+    img: 'assets/img/speakers/stanley_sliced.jpg',
     link: 'https://www.linkedin.com/in/stanleyc1982/', linkText: 'LinkedIn' },
   { name: '高見龍', role: '負責人', org: '五倍學院',
     bio: '網站程式開發者 / 講師 / 遊戲宅 / 漫畫宅，喜愛非主流的新玩具，著有《為你自己學 Git》、《為你自己學 Python》以及《為你自己學 Ruby on Rails》等暢銷書籍。是個喜歡寫程式而且希望可以寫一輩子程式的電腦阿宅！',
+    img: 'assets/img/speakers/eddie_sliced.jpg',
     link: 'https://kaochenlong.com/' },
   { name: 'Rete Lin', role: '系統工程師', org: '品翔航太',
     bio: '在 無人機、嵌入式系統、系統整合 裡載浮載沉的工程師，最大的興趣是看機器跑起來(然後不小心一頭撞上牆..)',
+    img: 'assets/img/speakers/rete_sliced.jpg',
     link: 'https://x.com/Rete_Lin', linkText: 'X @Rete_Lin' },
   { name: 'Hanwei', role: '副教授', org: '國立高雄大學資訊管理學系',
     bio: '從事網路安全與管理、無人載具開發、物聯網應用、無人機偵測技術等多方面技術研究，並曾經協助國內災害救助，包括利用自組無人載具快速探勘高雄氣爆事件，近年來發展高空氦氣飛船載具自主飛行技術，將學術技術轉化為實質防災能量',
+    img: 'assets/img/speakers/hanwei_sliced.jpg',
     link: 'https://www.facebook.com/xiao.han.wei.117741', linkText: 'Facebook' }
 ];
 
