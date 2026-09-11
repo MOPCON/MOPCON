@@ -176,7 +176,7 @@ node 2026/tools/build.mjs
 |---|---|
 | `TRACKS` | `id`（A／B／C）、`name`（顯示用的場地名，例如 `R1（1F）`） |
 | `SESSIONS` | `start`、`end`、`type`、`track`、`title`、`speaker`、`org`、`level` |
-| `SPEAKERS` | `name`、`role`、`org`、`track`（可省略）、`keynote`（可省略）、`bio`（可省略） |
+| `SPEAKERS` | `name`、`role`、`org`、`track`（可省略）、`keynote`（可省略）、`bio`（可省略）、`link`／`linkText`（可省略） |
 | `SPONSOR_TIERS` | `id`、`name`、`size`（`xl`→`xs`，決定卡片大小） |
 | `SPONSORS` | `tier`、`name`、`desc`、`logo`（可省略） |
 
@@ -219,7 +219,7 @@ HTML 只放空的掛載點，內容全由這裡填：
 | `#sponsorTiers` | 贊助頁 | `SPONSORS` + `SPONSOR_TIERS` | `renderSponsors` |
 
 兩個講者渲染函式的差別：`renderSpeakers` 是首頁那塊深青底、只有姓名職稱的精簡版；
-`renderSpeakerPage` 是講者頁的白底卡片，多了軌道標籤與 `bio`。兩邊讀同一份 `SPEAKERS`。
+`renderSpeakerPage` 是講者頁的白底卡片，多了軌道標籤、`bio` 與社群連結（`link`，另開新分頁；顯示文字用 `linkText`，沒填就顯示網域）。兩邊讀同一份 `SPEAKERS`。
 
 軌道標籤在議程頁與講者頁共用同一個 `tagsHtml()`，所以 Track 的顏色永遠一致。
 

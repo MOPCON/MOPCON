@@ -639,6 +639,19 @@ function paintAgenda() {
      講者頁 列出 SPEAKERS 的全部，多顯示軌道標籤與 bio（白底卡片）
    兩邊讀的是同一份 data.js，所以加人只要改那個陣列。
    ========================================================================== */
+/* 講者的社群／個人頁連結：data.js 有填 link 才會出現。
+   顯示文字優先用 linkText，沒填就拿網址的網域來顯示（去掉 www.）。
+   一律另開新分頁，rel 加 noopener 避免對方頁面拿到 window.opener。 */
+function speakerLinkHtml(p) {
+  if (!p.link) return '';
+  var text = p.linkText;
+  if (!text) {
+    text = String(p.link).replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '');
+  }
+  return '<a class="spk-link" href="' + esc(p.link) + '" target="_blank" rel="noopener">' +
+           esc(text) + '<span class="sr-only">（另開新視窗）</span></a>';
+}
+
 function renderSpeakerPage() {
   var box = document.getElementById('speakerList');
   if (!box || typeof SPEAKERS === 'undefined') return;
@@ -656,6 +669,7 @@ function renderSpeakerPage() {
              '<p class="spk-role">' + esc(p.role) + '｜' + esc(p.org) + '</p>' +
              tags +
              (p.bio ? '<p class="spk-bio">' + esc(p.bio) + '</p>' : '') +
+             speakerLinkHtml(p) +
            '</div>' +
          '</li>';
   });

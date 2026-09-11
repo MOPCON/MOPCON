@@ -512,6 +512,9 @@ a.card{display:block;color:inherit}
 .spk-role{font-size:14px;color:var(--c-ink-70);margin:0 0 10px}
 .spk-card .tag-row{margin-bottom:10px}
 .spk-bio{font-size:14.5px;color:var(--c-ink-70);margin:0}
+/* 講者的社群／個人頁連結（data.js 的 link 欄位）：跟在 bio 後面，用一般連結色 */
+.spk-link{display:inline-block;margin-top:10px;font-size:14px;font-weight:600}
+.spk-link::after{content:"\2197";margin-left:3px;font-size:12px}
 .spk-note{font-size:14px;color:var(--c-ink-70);margin:0}
 
 /* ── 9 贊助頁 ───────────────────────────────────────────────────────────── */
