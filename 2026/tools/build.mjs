@@ -14,7 +14,8 @@
                                           （路徑相對於 _src/；被貼進來的檔案
                                             自己帶縮排，指令請寫在行首）
      {{key}}                              代入 _src/config.js 裡的值
-                                          （SITE 的每個 key ＋ 該頁自己的欄位）
+                                          （SITE 的每個 key ＋ 該頁自己的欄位
+                                            ＋ build 自己算的 url／ogImage／assetv）
 
    注意：{{key}} 是「原封不動貼進去」，不會做 HTML 逸出。
          所以 config.js 的 title／desc 裡不要用半形雙引號 "。
@@ -68,7 +69,19 @@ function fillVars(text, vars, from) {
 
 let buildId = 0;
 
+/* assets 的快取破除版本號（layout.html 的 ?v={{assetv}}）。
+   每跑一次 build 就換一個新值，所以 CSS／JS 改了之後不會有人卡在舊快取。
+   格式是本地時間 YYYYMMDDHHMMSS，純粹為了看得懂是哪一次產生的。 */
+let ASSET_V = '';
+
+function stamp(d = new Date()) {
+  const p = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}${p(d.getMonth() + 1)}${p(d.getDate())}` +
+         `${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`;
+}
+
 async function build() {
+  ASSET_V = stamp();
   /* 加上 query 讓 Node 每次都重新讀 config.js（不然 watch 時會拿到舊的） */
   const { SITE, PAGES } = await import(pathToFileURL(join(SRC, 'config.js')).href + '?v=' + Date.now());
   const layout = readFileSync(join(SRC, 'layout.html'), 'utf8');
@@ -118,7 +131,8 @@ function derived(SITE, page) {
   return {
     /* canonical／og:url：首頁用目錄網址（.../2026/），其他頁才帶檔名 */
     url:     pageUrl(SITE, page.file),
-    ogImage: SITE.origin + SITE.base + SITE.ogImage
+    ogImage: SITE.origin + SITE.base + SITE.ogImage,
+    assetv:  ASSET_V
   };
 }
 

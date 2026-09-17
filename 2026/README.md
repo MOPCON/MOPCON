@@ -91,6 +91,10 @@ MOPCON/                        ← 這裡就是 https://mopcon.org/
 ```
 
 **`_src/` 管版型，`assets/` 管內容與行為，兩者互不相干。**
+
+`layout.html` 引用 `assets/` 時後面掛的 `?v={{assetv}}` 是快取破除用的，
+由 build 自動填成產生當下的時間戳（`YYYYMMDDHHMMSS`），**不用也不要手動維護**。
+每次 build 都是新值，所以改了 `style.css` 或 `site.js` 之後，部署上去不會有人卡在舊快取。
 改顏色改 `style.css`、改議程資料改 `data.js`、改導覽列項目改 `site.js` 的 `NAV` 陣列，
 這三件事都不用碰 `_src/`，也不需要重新產生（重新整理瀏覽器就好）。
 
@@ -154,7 +158,7 @@ node 2026/tools/build.mjs
 |---|---|
 | `config.js` 的 `SITE` | `year`、`tagline`、`email`、`date`、`dateISO`、`venue`、`venueCity`、`origin`、`base` |
 | `config.js` 的 `PAGES`（該頁自己的） | `title`、`desc`、`h1`、`lead`，以及你自己加的任何欄位 |
-| build 自動算出來的 | `url`（這一頁的正式網址）、`ogImage`（分享圖的絕對網址） |
+| build 自動算出來的 | `url`（這一頁的正式網址）、`ogImage`（分享圖的絕對網址）、`assetv`（assets 的快取版本號） |
 
 另外 `layout.html` 有兩個「坑」由 build 填：`{{content}}`（該頁 `<main>` 的內容）
 與 `{{head}}`（該頁額外的 `<head>` 內容）。
