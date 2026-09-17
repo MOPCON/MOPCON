@@ -557,6 +557,19 @@ a.card{display:block;color:inherit}
 .t-xs .ph .shape{--s:26px}
 .t-xs .sp-card h3{font-size:15px;margin:10px 0 0}
 
+/* ── 9.5 主辦單位頁 ───────────────────────────────────────────────────────── */
+.org-sec{margin:0 0 clamp(44px,6vw,72px)}
+.org-sec:last-child{margin-bottom:0}
+.org-sec-head{display:flex;align-items:center;gap:12px;margin:0 0 clamp(18px,2.4vw,26px)}
+.org-sec-head h3{font-size:clamp(20px,2.5vw,26px);font-weight:700;margin:0;color:var(--c-ink)}
+.org-sec-head .shape{--s:20px}
+.org-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:clamp(18px,2.4vw,28px)}
+.org-card{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(28px,3.5vw,36px) 24px;background:var(--c-white);border:1px solid var(--c-line);border-radius:var(--r-card);min-height:224px;box-shadow:var(--shadow-1);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.org-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-2);border-color:var(--c-mint)}
+.org-logo-wrap{height:96px;width:100%;max-width:240px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.org-logo-wrap img{max-height:84px;max-width:210px;width:auto;height:auto;object-fit:contain}
+.org-card-name{font-size:clamp(17px,1.8vw,19px);font-weight:600;color:var(--c-ink);margin:0;line-height:1.4}
+
 /* ── 10 頁尾 ────────────────────────────────────────────────────────────── */
 .on-teal a:not(.btn),.site-footer .foot-brand a,.site-footer .foot-bottom a{color:var(--c-white)}
 .site-footer{position:relative;background:var(--c-teal-ink);color:var(--c-white);
@@ -640,7 +653,7 @@ a.card{display:block;color:inherit}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}
-  .btn:hover,.card:hover,.prev-item:hover,.ses-card:hover{transform:none}
+  .btn:hover,.card:hover,.prev-item:hover,.ses-card:hover,.org-card:hover{transform:none}
 }
 /* 列印時把深色底拿掉，省墨水 */
 @media print{

@@ -177,3 +177,29 @@ var SPONSORS = [
   { tier: 'node',  name: '片跟朋真的一為', desc: '' },
   { tier: 'node',  name: '是村莊害的自', desc: '' }
 ];
+
+/* ── 主辦單位 ─────────────────────────────────────────────────────────────
+   指導單位、主辦法人、主辦社群
+*/
+var ORGANIZERS = [
+  {
+    category: '指導單位',
+    items: [
+      { name: '經濟部產業園區管理局', logo: 'assets/img/gov-bip-logo.png' }
+    ]
+  },
+  {
+    category: '主辦法人',
+    items: [
+      { name: '臺灣產學策進會', logo: 'https://mopcon.org/2024/assets/community/taic.webp' },
+      { name: 'KSDA', logo: 'https://mopcon.org/2024/assets/community/ksda.webp' }
+    ]
+  },
+  {
+    category: '主辦社群',
+    items: [
+      { name: 'MOPCON 社群', logo: 'assets/img/logo-stack-ink.svg' },
+      { name: 'JSDC 社群', logo: 'assets/img/JSDC.svg' }
+    ]
+  }
+];

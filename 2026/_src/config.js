@@ -79,10 +79,24 @@ export const PAGES = [
     head:  'parts/jsonld-event.html'
   },
   {
+    file:  'organizers.html',
+    title: `大會主辦｜MOPCON ${SITE.year}`,
+    desc:  `MOPCON ${SITE.year} 是濁水溪以南規模最大的科技年會，透過社群驅動與融合產官學資源將前沿科技在南台灣交流激盪。`,
+    h1:    '大會主辦',
+    lead:  '濁水溪以南規模最大的科技年會，透過社群驅動與融合產官學資源將前沿科技在南台灣交流激盪。'
+  },
+  {
+    file:  'sessions.html',
+    title: `大會議程清單｜MOPCON ${SITE.year}`,
+    desc:  `MOPCON ${SITE.year} 大會議程：單日三軌並行，涵蓋 Software Defined Reality、Next-Gen Intelligence 與 AI in Action 三大主軸。`,
+    h1:    '大會議程清單',
+    lead:  '單日三軌並行，橫跨今年的三大主軸。可以用下方的軌道篩選，只看某一軌的場次。'
+  },
+  {
     file:  'agenda.html',
-    title: `大會議程｜MOPCON ${SITE.year}`,
+    title: `大會議程表｜MOPCON ${SITE.year}`,
     desc:  `MOPCON ${SITE.year} 大會議程：單日三軌並行，涵蓋 Software Defined Reality、Next-Gen Intelligence 與 AI in Action 三大主軸。${SITE.date}。`,
-    h1:    '大會議程',
+    h1:    '大會議程表',
     lead:  '單日三軌並行，橫跨今年的三大主軸。可以用下方的軌道篩選，只看某一軌的場次。'
   },
   {

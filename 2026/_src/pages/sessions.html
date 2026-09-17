@@ -1,0 +1,32 @@
+
+
+<!--#include parts/page-hero.html -->
+
+  <!-- ======================= 級別分區 =======================
+       每一級的卡片大小由 data.js 的 SPONSOR_TIERS 的 size 欄位決定
+       （xl 最大 → xs 最小），內容來自 SPONSORS。 -->
+  <section class="band band-white arc-bot" aria-label="贊助夥伴">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">SPONSORS</span>
+        <p class="lead">以下依贊助級別列出今年的贊助夥伴，名單持續更新中。感謝每一間願意投資在地技術社群的公司。</p>
+      </div>
+      <!-- 每一級的標題（鑽石級／黃金級…）是 site.js 依 SPONSOR_TIERS 產生的 h2；
+           logo 目前全部是佔位塊，正式 logo 進來後請看 README 第 5 點。 -->
+      <div id="sponsorTiers"></div>
+      <noscript><p class="tl-empty">贊助資料由 assets/js/data.js 載入，需要開啟 JavaScript 才看得到。</p></noscript>
+    </div>
+  </section>
+
+  <!-- ======================= 成為贊助夥伴 ======================= -->
+  <section class="band band-teal on-teal cta-band arc-bot" aria-labelledby="cta-t">
+    <div class="wrap">
+      <h2 id="cta-t">成為贊助夥伴</h2>
+      <p>贊助 MOPCON，讓您的品牌被南台灣的科技從業者看見，也一起支持在地技術社群持續發展。歡迎來信索取贊助方案。</p>
+      <div class="btn-row is-center">
+        <a class="btn btn-amber" href="mailto:{{email}}">成為贊助夥伴</a>
+        <a class="btn btn-w" href="index.html">大會簡介</a>
+      </div>
+    </div>
+  </section>
+
