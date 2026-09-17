@@ -465,7 +465,16 @@ function levelClass(level) {
 
 function categoryClass(cls) {
   if (!cls) return '';
-  var c = String(cls).toLowerCase();
+  var c = String(cls).toLowerCase().trim();
+  if (c.indexOf('software defined reality') !== -1) {
+    return 'tag-class-sdr';
+  }
+  if (c.indexOf('next-gen intelligence') !== -1 || c.indexOf('next-gen') !== -1) {
+    return 'tag-class-nextgen';
+  }
+  if (c.indexOf('ai in action') !== -1) {
+    return 'tag-class-ai-action';
+  }
   if (c.indexOf('ai') !== -1) {
     return 'tag-class-ai';
   }
