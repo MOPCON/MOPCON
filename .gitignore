@@ -23,3 +23,4 @@ phinx.php
 # 詳見 2026/README.md 的「活動結束後：封存成靜態檔」。
 /2026/*.html
 /2026/sitemap.xml
+2026/assets/js/raw.js

@@ -448,6 +448,57 @@ function trackName(id) {
   for (var i = 0; i < TRACKS.length; i++) if (TRACKS[i].id === id) return TRACKS[i].name;
   return id;
 }
+function levelClass(level) {
+  if (!level) return '';
+  var l = String(level).toLowerCase();
+  if (l.indexOf('expert') !== -1 || l.indexOf('進階') !== -1 || l.indexOf('高階') !== -1) {
+    return 'tag-level-expert';
+  }
+  if (l.indexOf('normal') !== -1 || l.indexOf('中階') !== -1 || l.indexOf('實作') !== -1) {
+    return 'tag-level-normal';
+  }
+  if (l.indexOf('basic') !== -1 || l.indexOf('入門') !== -1 || l.indexOf('基礎') !== -1) {
+    return 'tag-level-basic';
+  }
+  return 'tag-level-default';
+}
+
+function categoryClass(cls) {
+  if (!cls) return '';
+  var c = String(cls).toLowerCase();
+  if (c.indexOf('ai') !== -1) {
+    return 'tag-class-ai';
+  }
+  if (c.indexOf('uxv') !== -1 || c.indexOf('unmanned') !== -1 || c.indexOf('vehicle') !== -1) {
+    return 'tag-class-uxv';
+  }
+  if (c.indexOf('robotics') !== -1 || c.indexOf('robot') !== -1) {
+    return 'tag-class-robotics';
+  }
+  if (c.indexOf('security') !== -1 || c.indexOf('安全') !== -1) {
+    return 'tag-class-security';
+  }
+  if (c.indexOf('mobile') !== -1 || c.indexOf('ios') !== -1 || c.indexOf('android') !== -1) {
+    return 'tag-class-mobile';
+  }
+  if (c.indexOf('cloud') !== -1 || c.indexOf('devops') !== -1) {
+    return 'tag-class-cloud';
+  }
+  return 'tag-class-default';
+}
+
+function levelTagHtml(level) {
+  if (!level) return '';
+  var cls = levelClass(level);
+  return '<span class="tag tag-level ' + cls + '"><span class="tag-dot" aria-hidden="true"></span>' + esc(level) + '</span>';
+}
+
+function classTagHtml(className) {
+  if (!className) return '';
+  var cls = categoryClass(className);
+  return '<span class="tag tag-class ' + cls + '"><span class="tag-dot" aria-hidden="true"></span>' + esc(className) + '</span>';
+}
+
 function tagsHtml(s) {
   var h = '<div class="tag-row">';
   if (s.type === 'keynote') h += '<span class="tag tag-key">Keynote</span>';
@@ -455,7 +506,7 @@ function tagsHtml(s) {
     h += '<span class="tag tag-' + esc(s.track) + '"><span class="tag-dot" aria-hidden="true"></span>' +
          esc(trackName(s.track)) + '</span>';
   }
-  if (s.level) h += '<span class="tag tag-level">' + esc(s.level) + '</span>';
+  if (s.level) h += levelTagHtml(s.level);
   return h + '</div>';
 }
 
@@ -717,6 +768,47 @@ function openSpeakerModal(id, pushUrl) {
       '<div class="spk-modal-bio">' + esc(speaker.bio || '尚無講者簡介') + '</div>' +
     '</div>';
 
+  if (speaker.agenda) {
+    var metaBadges = '';
+    if (speaker.class) {
+      speaker.class.split(',').forEach(function (c) {
+        var t = c.trim();
+        if (t) metaBadges += classTagHtml(t);
+      });
+    }
+    if (speaker.level) metaBadges += levelTagHtml(speaker.level);
+    contentHtml +=
+      '<hr class="spk-modal-divider">' +
+      '<div class="spk-modal-section">' +
+        '<h4 class="spk-modal-section-title">議程主題</h4>' +
+        '<h5 class="spk-modal-agenda-title">' + esc(speaker.agenda) + '</h5>' +
+        (metaBadges ? '<div class="tag-row spk-modal-tags">' + metaBadges + '</div>' : '') +
+      '</div>';
+  } else if (speaker.class || speaker.level) {
+    var metaBadges = '';
+    if (speaker.class) {
+      speaker.class.split(',').forEach(function (c) {
+        var t = c.trim();
+        if (t) metaBadges += classTagHtml(t);
+      });
+    }
+    if (speaker.level) metaBadges += levelTagHtml(speaker.level);
+    if (metaBadges) {
+      contentHtml +=
+        '<hr class="spk-modal-divider">' +
+        '<div class="spk-modal-section">' +
+          '<div class="tag-row spk-modal-tags">' + metaBadges + '</div>' +
+        '</div>';
+    }
+  }
+  if (speaker.summary) {
+    contentHtml +=
+      '<br><div class="spk-modal-section">' +
+        '<h4 class="spk-modal-section-title">議程摘要</h4>' +
+        '<div class="spk-modal-bio">' + esc(speaker.summary) + '</div>' +
+      '</div>';
+  }
+
   body.innerHTML = contentHtml;
   modal.hidden = false;
   document.body.classList.add('modal-open');
@@ -789,8 +881,7 @@ function renderSpeakerPage() {
   if (!box || typeof SPEAKERS === 'undefined') return;
   var h = '';
   SPEAKERS.forEach(function (p, i) {
-    /* 標籤沿用議程那一套（tagsHtml 吃的是議程列的欄位名，這裡湊一個一樣形狀的物件給它，
-       這樣講者頁的軌道色點跟議程頁永遠是同一個顏色，不會有兩套規則） */
+    /* 講者頁卡片上不顯示 level 與 class，僅在個別講者彈出視窗（speaker.html?id=...）顯示 */
     var tags = (p.track || p.keynote)
       ? tagsHtml({ type: p.keynote ? 'keynote' : 'talk', track: p.track })
       : '';

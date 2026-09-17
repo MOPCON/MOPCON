@@ -269,7 +269,32 @@ a.card{display:block;color:inherit}
    所以 lime 實心再加一圈 1px 深墨描邊，才看得出來這裡有一顆色點。
    多加軌道時也照這個原則：太淺的色一定要補描邊。 */
 .tag-C .tag-dot{background:var(--c-lime);border:1px solid var(--c-ink-70)}
-.tag-level{background:none;border:1px solid var(--c-line);color:var(--c-ink-70);font-weight:400}
+.tag-level{border:1px solid var(--c-line);font-weight:600}
+.tag-level-basic{background:#f1f8eb;border-color:#c8e6b8;color:#286f37}
+.tag-level-basic .tag-dot{background:#43a047}
+.tag-level-normal{background:var(--c-teal-tint);border-color:#b4e3e3;color:var(--c-teal-ink)}
+.tag-level-normal .tag-dot{background:var(--c-teal)}
+.tag-level-expert{background:#fef5e7;border-color:#fcdcb0;color:#965b05}
+.tag-level-expert .tag-dot{background:var(--c-amber)}
+.tag-level-default{background:var(--c-surface);border-color:var(--c-line);color:var(--c-ink-70)}
+.tag-level-default .tag-dot{background:var(--c-gray)}
+
+.tag-class{border:1px solid transparent;font-weight:600}
+.tag-class-ai{background:#f0effe;border-color:#d5d0fb;color:#4338ca}
+.tag-class-ai .tag-dot{background:#6366f1}
+.tag-class-uxv{background:#eaf4ff;border-color:#bee0fd;color:#0c589c}
+.tag-class-uxv .tag-dot{background:#0284c7}
+.tag-class-robotics{background:#fdf2f8;border-color:#fbcfe8;color:#9d174d}
+.tag-class-robotics .tag-dot{background:#e11d48}
+.tag-class-security{background:#eff6f7;border-color:#cde0e3;color:#155e75}
+.tag-class-security .tag-dot{background:#0e7490}
+.tag-class-mobile{background:var(--c-mint-tint);border-color:#c2e9dc;color:#0f6b52}
+.tag-class-mobile .tag-dot{background:var(--c-mint)}
+.tag-class-cloud{background:#f0f9ff;border-color:#bae6fd;color:#0369a1}
+.tag-class-cloud .tag-dot{background:#0ea5e9}
+.tag-class-default{background:var(--c-surface);border-color:var(--c-line);color:var(--c-ink)}
+.tag-class-default .tag-dot{background:var(--c-gray)}
+
 .tag-key{background:var(--c-amber)}
 .tag-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 
@@ -600,6 +625,11 @@ body.modal-open{overflow:hidden}
   font-size:15.5px;line-height:1.8;color:var(--c-ink);
   white-space:pre-wrap;word-break:break-word;margin:0;
 }
+.spk-modal-agenda-title{
+  font-size:17.5px;font-weight:700;color:var(--c-ink);
+  margin:0 0 10px;line-height:1.5;
+}
+.spk-modal-tags{margin-top:10px}
 
 @keyframes spkFadeIn{
   from{opacity:0}
