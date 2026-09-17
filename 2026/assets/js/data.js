@@ -125,7 +125,8 @@ var SPEAKERS = [
     agenda: "當 AI 翼展天際：無人機的創新、應用與未來",
     summary: "當人工智慧擁有翅膀，無人機便不再只是遙控飛行的工具，而是能自主感知、分析環境、協同作業並執行任務的智慧載具。\n本次演講以臺灣希望創新股份有限公司的發展經驗為基礎，從百架無人機群飛展演出發，分享企業如何將自主飛控、群控演算法、AI影像辨識與系統整合等技術，逐步延伸至太陽能電廠、橋梁、高科技廠房等智慧巡檢場域，以及公共安全、防災救援、低空經濟與國防自主等前瞻應用。\n演講也將探討AI如何推動無人機從「被操控的飛行器」走向能夠自主決策、群體協作的智慧系統，並從技術創新、商業模式、供應鏈安全與產業生態系等面向，解析臺灣無人機產業面臨的機會與挑戰。\n透過實際創業與產業應用經驗，本次演講將帶領聽眾看見：當AI翼展天際，無人機不僅改變我們觀察世界與執行任務的方式，也將成為推動智慧城市、產業升級與科技自主的重要力量。",
     level: "Normal - 需相關基礎知識",
-    class: "Software Defined Reality, AI, UXV (Unmanned x Vehicle), Robotics"
+    track: "Software Defined Reality",
+    class: "AI, UXV (Unmanned x Vehicle), Robotics"
   },
   {
     id: "2026_Kuon-Ding",
@@ -138,7 +139,8 @@ var SPEAKERS = [
     agenda: "自主飛行的決策系統 - 從態勢感知到語意理解",
     summary: "假設無人機已經會飛\n\n但是如何應對複雜情境？\n\n從遙控到自主\n\n如何實現技能轉移？\n\n當代語言模型的成熟度\n\n要如何賦與無人載具智慧？\n\n有哪些關卡要克服？\n\n一一道來",
     level: "Expert - 建議聽眾具備相關經驗",
-    class: "Software Defined Reality, AI, UXV (Unmanned x Vehicle)"
+    track: "Software Defined Reality",
+    class: "AI, UXV (Unmanned x Vehicle)"
   },
   {
     id: "2026_蕭漢威",
@@ -152,7 +154,8 @@ var SPEAKERS = [
     agenda: "無人飛船：長期滯空載具的基礎原理與自主飛控實務經驗",
     summary: "在無人載具續航力備受挑戰的時代，擁有長期滯空優勢的無人飛船，提供了一種不同的空中探索解決方案。本次演講將介紹研發團隊多年在無人飛船發展的經驗，並分享從零打造自主導航系統時的實務歷程與開發經驗。",
     level: "Basic - 基礎入門",
-    class: "Software Defined Reality, UXV (Unmanned x Vehicle)"
+    track: "Software Defined Reality",
+    class: "UXV (Unmanned x Vehicle)"
   },
   {
     id: "2026_Rete-Lin",
@@ -166,7 +169,8 @@ var SPEAKERS = [
     agenda: "無人機PX4的架構介紹與實作",
     summary: "帶大家從系統與程式架構面，看看無人機的另一個大家族-PX4，並且實做一個\"樂於分享愛的無人機\"吧!",
     level: "Normal - 需相關基礎知識",
-    class: "Software Defined Reality, UXV (Unmanned x Vehicle), Robotics"
+    track: "Software Defined Reality",
+    class: "UXV (Unmanned x Vehicle), Robotics"
   },
   {
     id: "2026_高見龍",
@@ -179,7 +183,8 @@ var SPEAKERS = [
     agenda: "SDD 工作迴圈設計拆解",
     summary: "用 Claude Code、Codex 這類 coding agent 寫程式，你可能遇過做到一半它忘了前面講好的設計、東西沒做完就說做完了、測試沒跑就說過了、放了幾個禮拜再回來它還照著過期的計畫改。這些多半是它跑的那個工作迴圈沒設計好。\n\n我自己寫了一套 Spec-Driven Development（SDD）工具，今年幾個產品都用它做，連這套工具本身也是，這個迴圈加起來跑了將近一千四百輪。我會拿執行任務的那份 skill 出來講，看它怎麼處理這些狀況，哪些靠 prompt、哪些靠 CLI。進度誰說了算、忘了怎麼辦、失敗怎麼分類、做完怎麼驗、中斷後怎麼繼續、多個 subagent 一起做時誰能改狀態。這些問題拿回自己的專案照樣能問。",
     level: "Normal - 需相關基礎知識",
-    class: "Next-Gen Intelligence, AI"
+    track: "Next-Gen Intelligence",
+    class: "AI"
   },
   {
     id: "2026_zonble",
@@ -193,7 +198,8 @@ var SPEAKERS = [
     agenda: "跟著AI 做一套AI 時代的台灣式編輯器",
     summary: "文字 prompt 仍然是我們與 AI 互動的主要方式，但文字 prompt 並不是一個單向的過程，我們往往需要將 AI 產生的內容，經過修改之後回饋給 AI，來來回回之後，才完成最後的作品。AI 產生文字內容的方式與人類不同，不受到人類慣用的編輯器的限制，經常大量產生流行的編輯器難以編輯的文字圖，我們使用 AI 是為了追求效率，但為了文字圖類型的 prompt，我們反而在不順手的編輯器上進行低效的編輯。\n\n我做了一套強調 2D 文字繪圖的跨平台終端機編輯器，當中包含一套直譯式語言的直譯器。在這段過程中，我從 AI 學到做出一套編輯器會遇到的挑戰，Swift 語言在 Windows/Linux/WASM 平台上開發應用程式的現狀，AI 擅長什麼與不擅長什麼。",
     level: "Basic - 基礎入門",
-    class: "AI in Action, AI"
+    track: "AI in Action",
+    class: "AI"
   },
   {
     id: "2026_Stanley",
@@ -207,7 +213,8 @@ var SPEAKERS = [
     agenda: "當工程師不再打字寫 code,他在做什麼?——一個人、12 週、17 萬行的 AI Native 開發模式",
     summary: "12 週、一位工程師、17 萬行 C#、5,150 個測試——一個十多年歷史的 Windows 白板 monolith,用 WinUI 3 / .NET 10 從零重寫。而這段時間裡,我真正打字寫 C# 的時間不到 5%。\n\n這場分享不談工具教學,談一條在真實產品上跑了三個月的 AI Native 開發流程,以及它逼我重新理解的四件事:人的工作從寫 code 變成做決策(整條 pipeline 只留 4 個 human gate);spec 與憲法成為新的 source code;品質不再靠人 review,而靠跨家族模型互相抓錯的對抗式結構;最後、也最關鍵的——流程不能只寫成文字期望 AI 遵守,要用 Workflow 與 Hook 把它固化成不可繞過的 code。\n\n剩下的 95%,我在做什麼?決定要做什麼、把判斷寫成文字、設計讓模型互相抓錯的結構、把流程刻成 code——以及不斷優化這條流程、寫小工具,讓自己開發得更舒服。\n\n適合已經在用 AI 寫 code、想從「一個人跟 AI 對話」走到「整條流程由 AI 承擔、人只做決策」的工程師與 tech lead。",
     level: "Normal - 需相關基礎知識",
-    class: "AI in Action, AI"
+    track: "AI in Action",
+    class: "AI"
   }
 ];
 

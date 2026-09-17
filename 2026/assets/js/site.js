@@ -448,6 +448,15 @@ function trackName(id) {
   for (var i = 0; i < TRACKS.length; i++) if (TRACKS[i].id === id) return TRACKS[i].name;
   return id;
 }
+function trackClass(track) {
+  if (!track) return '';
+  var t = String(track).toLowerCase().trim();
+  if (t.indexOf('software defined reality') !== -1 || t === 'sdr') return 'tag-track-sdr tag-class-sdr';
+  if (t.indexOf('next-gen intelligence') !== -1 || t.indexOf('next-gen') !== -1) return 'tag-track-nextgen tag-class-nextgen';
+  if (t.indexOf('ai in action') !== -1) return 'tag-track-ai-action tag-class-ai-action';
+  if (t === 'a' || t === 'b' || t === 'c') return 'tag-' + t.toUpperCase();
+  return 'tag-' + t.replace(/[^a-z0-9_-]+/gi, '-');
+}
 function levelClass(level) {
   if (!level) return '';
   var l = String(level).toLowerCase();
@@ -502,6 +511,12 @@ function levelTagHtml(level) {
   return '<span class="tag tag-level ' + cls + '"><span class="tag-dot" aria-hidden="true"></span>' + esc(level) + '</span>';
 }
 
+function trackTagHtml(track) {
+  if (!track || track === 'ALL') return '';
+  return '<span class="tag ' + esc(trackClass(track)) + '"><span class="tag-dot" aria-hidden="true"></span>' +
+         esc(trackName(track)) + '</span>';
+}
+
 function classTagHtml(className) {
   if (!className) return '';
   var cls = categoryClass(className);
@@ -512,7 +527,7 @@ function tagsHtml(s) {
   var h = '<div class="tag-row">';
   if (s.type === 'keynote') h += '<span class="tag tag-key">Keynote</span>';
   if (s.track && s.track !== 'ALL') {
-    h += '<span class="tag tag-' + esc(s.track) + '"><span class="tag-dot" aria-hidden="true"></span>' +
+    h += '<span class="tag ' + esc(trackClass(s.track)) + '"><span class="tag-dot" aria-hidden="true"></span>' +
          esc(trackName(s.track)) + '</span>';
   }
   if (s.level) h += levelTagHtml(s.level);
@@ -757,9 +772,7 @@ function openSpeakerModal(id, pushUrl) {
     ? '<img src="' + esc(speaker.img) + '" alt="' + esc(speaker.name) + '">'
     : phShape(idx >= 0 ? idx : 0, true);
 
-  var tags = (speaker.track || speaker.keynote)
-    ? tagsHtml({ type: speaker.keynote ? 'keynote' : 'talk', track: speaker.track })
-    : '';
+  var profileTags = speaker.keynote ? '<span class="tag tag-key">Keynote</span>' : '';
 
   var contentHtml =
     '<div class="spk-modal-profile">' +
@@ -767,7 +780,7 @@ function openSpeakerModal(id, pushUrl) {
       '<div class="spk-modal-meta">' +
         '<h3 id="spkModalName" class="spk-modal-name">' + esc(speaker.name) + '</h3>' +
         '<p class="spk-modal-role">' + esc(speaker.role) + '｜' + esc(speaker.org) + '</p>' +
-        (tags ? '<div class="tag-row">' + tags + '</div>' : '') +
+        (profileTags ? '<div class="tag-row">' + profileTags + '</div>' : '') +
         speakerLinkHtml(speaker) +
       '</div>' +
     '</div>' +
@@ -777,38 +790,36 @@ function openSpeakerModal(id, pushUrl) {
       '<div class="spk-modal-bio">' + esc(speaker.bio || '尚無講者簡介') + '</div>' +
     '</div>';
 
+  var row1Badges = '';
+  if (speaker.track) row1Badges += trackTagHtml(speaker.track);
+  if (speaker.level) row1Badges += levelTagHtml(speaker.level);
+  var row1Html = row1Badges ? '<div class="tag-row spk-modal-tags">' + row1Badges + '</div>' : '';
+
+  var row2Badges = '';
+  if (speaker.class) {
+    speaker.class.split(',').forEach(function (c) {
+      var t = c.trim();
+      if (t) row2Badges += classTagHtml(t);
+    });
+  }
+  var row2Html = row2Badges ? '<div class="tag-row spk-modal-tags">' + row2Badges + '</div>' : '';
+
   if (speaker.agenda) {
-    var metaBadges = '';
-    if (speaker.class) {
-      speaker.class.split(',').forEach(function (c) {
-        var t = c.trim();
-        if (t) metaBadges += classTagHtml(t);
-      });
-    }
-    if (speaker.level) metaBadges += levelTagHtml(speaker.level);
     contentHtml +=
       '<hr class="spk-modal-divider">' +
       '<div class="spk-modal-section">' +
         '<h4 class="spk-modal-section-title">議程主題</h4>' +
         '<h5 class="spk-modal-agenda-title">' + esc(speaker.agenda) + '</h5>' +
-        (metaBadges ? '<div class="tag-row spk-modal-tags">' + metaBadges + '</div>' : '') +
+        row1Html +
+        row2Html +
       '</div>';
-  } else if (speaker.class || speaker.level) {
-    var metaBadges = '';
-    if (speaker.class) {
-      speaker.class.split(',').forEach(function (c) {
-        var t = c.trim();
-        if (t) metaBadges += classTagHtml(t);
-      });
-    }
-    if (speaker.level) metaBadges += levelTagHtml(speaker.level);
-    if (metaBadges) {
-      contentHtml +=
-        '<hr class="spk-modal-divider">' +
-        '<div class="spk-modal-section">' +
-          '<div class="tag-row spk-modal-tags">' + metaBadges + '</div>' +
-        '</div>';
-    }
+  } else if (row1Html || row2Html) {
+    contentHtml +=
+      '<hr class="spk-modal-divider">' +
+      '<div class="spk-modal-section">' +
+        row1Html +
+        row2Html +
+      '</div>';
   }
   if (speaker.summary) {
     contentHtml +=
@@ -890,10 +901,8 @@ function renderSpeakerPage() {
   if (!box || typeof SPEAKERS === 'undefined') return;
   var h = '';
   SPEAKERS.forEach(function (p, i) {
-    /* 講者頁卡片上不顯示 level 與 class，僅在個別講者彈出視窗（speaker.html?id=...）顯示 */
-    var tags = (p.track || p.keynote)
-      ? tagsHtml({ type: p.keynote ? 'keynote' : 'talk', track: p.track })
-      : '';
+    /* 講者頁卡片上不顯示 track、level 與 class，僅在個別講者彈出視窗（speakers.html?id=...）顯示 */
+    var tags = p.keynote ? '<div class="tag-row"><span class="tag tag-key">Keynote</span></div>' : '';
     var avatar = p.img ? '<img loading="lazy" decoding="async" src="' + esc(p.img) + '" alt="' + esc(p.name) + '">' : phShape(i, true);
     h += '<li class="card spk-card" data-speaker-id="' + esc(p.id) + '" tabindex="0" role="button" aria-haspopup="dialog">' +
            '<div class="ph ph-round avatar">' + avatar + '</div>' +

@@ -295,8 +295,11 @@ a.card{display:block;color:inherit}
 
 /* Software Defined Reality, Next-Gen Intelligence, AI in Action：底色 #FAAF43、淺灰字體、高對比識別邊框與標記點 */
 .tag-class-sdr,
+.tag-track-sdr,
 .tag-class-nextgen,
-.tag-class-ai-action{
+.tag-track-nextgen,
+.tag-class-ai-action,
+.tag-track-ai-action{
   background:#FAAF43;
   color:#f1f5f9;
   font-weight:700;
@@ -306,26 +309,32 @@ a.card{display:block;color:inherit}
 }
 
 /* 1. Software Defined Reality: 亮天藍邊框與標記點 */
-.tag-class-sdr{
+.tag-class-sdr,
+.tag-track-sdr{
   border-color:#38bdf8;
 }
-.tag-class-sdr .tag-dot{
+.tag-class-sdr .tag-dot,
+.tag-track-sdr .tag-dot{
   background:#38bdf8;
 }
 
 /* 2. Next-Gen Intelligence: 皇家紫羅蘭邊框與標記點 */
-.tag-class-nextgen{
+.tag-class-nextgen,
+.tag-track-nextgen{
   border-color:#7c3aed;
 }
-.tag-class-nextgen .tag-dot{
+.tag-class-nextgen .tag-dot,
+.tag-track-nextgen .tag-dot{
   background:#7c3aed;
 }
 
 /* 3. AI in Action: 亮翠綠邊框與標記點 */
-.tag-class-ai-action{
+.tag-class-ai-action,
+.tag-track-ai-action{
   border-color:#10b981;
 }
-.tag-class-ai-action .tag-dot{
+.tag-class-ai-action .tag-dot,
+.tag-track-ai-action .tag-dot{
   background:#10b981;
 }
 
@@ -667,6 +676,7 @@ body.modal-open{overflow:hidden}
   margin:0 0 10px;line-height:1.5;
 }
 .spk-modal-tags{margin-top:10px}
+.spk-modal-tags + .spk-modal-tags{margin-top:8px}
 
 @keyframes spkFadeIn{
   from{opacity:0}
