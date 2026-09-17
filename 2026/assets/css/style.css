@@ -567,6 +567,7 @@ a.card{display:block;color:inherit}
 .org-card{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(28px,3.5vw,36px) 24px;background:var(--c-white);border:1px solid var(--c-line);border-radius:var(--r-card);min-height:224px;box-shadow:var(--shadow-1);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
 .org-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-2);border-color:var(--c-mint)}
 .org-logo-wrap{height:96px;width:100%;max-width:240px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.org-logo-wrap:last-child{margin-bottom:0}
 .org-logo-wrap img{max-height:84px;max-width:210px;width:auto;height:auto;object-fit:contain}
 .org-card-name{font-size:clamp(17px,1.8vw,19px);font-weight:600;color:var(--c-ink);margin:0;line-height:1.4}
 
