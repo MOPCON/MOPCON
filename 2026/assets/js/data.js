@@ -115,32 +115,32 @@ var SESSIONS = [
      track / keynote 要等議程時段與場地定案後再補；
      演講主題、摘要、難易度、標籤屬於議程資料，之後填進上面的 SESSIONS。 */
 var SPEAKERS = [
-  { name: 'Kuon Ding', role: 'CTO', org: 'Funny Systems',
+  { id: '2026_Alias', name: 'Alias', role: '執行長', org: '臺灣希望創新股份有限公司',
+    img: 'assets/img/speakers/alias_sliced.jpg',
+    bio: '國立成功大學航太博士，研究領域為無人機系統及資通訊技術應用，「搞飛機」的經驗近 30 年，2018 年基於 SkySentry 無人機雲端監控系統技術，建構完全由國人自製的 Taiwan Drone 100 無人機群飛表演技術，致力於無人機群飛及自主飛控系統等無人機關鍵技術開發，並於 2019 年 8 月基於 Taiwan Drone 100 之技術及團隊成立臺灣希望創新股份有限公司，致力於無人機研發、展演、教育、服務等四大領域，努力成為臺灣無人機產業的推手。近年來更推動公司轉型為非紅無人機關鍵零組件及 AI 無人載具技術研發公司，並積極推動臺灣無人機產業國產化、智能化，利用臺灣的半導體、精密機械及資通訊產業優勢進軍國際市場。' },
+  { id: '2026_Kuon-Ding', name: 'Kuon Ding', role: 'CTO', org: 'Funny Systems',
     bio: 'Kuon，現任職於法泥系統。關心各種 「安全技術」，喜愛研究和解決問題，包含系統軟體、網路協定、網站應用、解密實務，所有想學習的一切，都圍繞著 「安全技術」 為中心。相信建立好的防守，比攻擊更困難。',
     img: 'assets/img/speakers/kuon_ding_sliced.png',
     link: 'https://www.smallcrows.org/' },
-  { name: '蕭漢威', role: '副教授', org: '國立高雄大學資訊管理學系',
+  { id: '2026_蕭漢威', name: '蕭漢威', role: '副教授', org: '國立高雄大學資訊管理學系',
     bio: '從事網路安全與管理、無人載具開發、物聯網應用、無人機偵測技術等多方面技術研究，並曾經協助國內災害救助，包括利用自組無人載具快速探勘高雄氣爆事件，近年來發展高空氦氣飛船載具自主飛行技術，將學術技術轉化為實質防災能量',
     img: 'assets/img/speakers/hanwei_sliced.jpg',
     link: 'https://www.facebook.com/xiao.han.wei.117741', linkText: 'Facebook' },
-  { name: 'Rete Lin', role: '系統工程師', org: '品翔航太',
+  { id: '2026_Rete-Lin', name: 'Rete Lin', role: '系統工程師', org: '品翔航太',
     bio: '在 無人機、嵌入式系統、系統整合 裡載浮載沉的工程師，最大的興趣是看機器跑起來(然後不小心一頭撞上牆..)',
     img: 'assets/img/speakers/rete_sliced.jpg',
     link: 'https://x.com/Rete_Lin', linkText: 'X @Rete_Lin' },
-  { name: '高見龍', role: '負責人', org: '五倍學院',
+  { id: '2026_高見龍', name: '高見龍', role: '負責人', org: '五倍學院',
     bio: '網站程式開發者 / 講師 / 遊戲宅 / 漫畫宅，喜愛非主流的新玩具，著有《為你自己學 Git》、《為你自己學 Python》以及《為你自己學 Ruby on Rails》等暢銷書籍。是個喜歡寫程式而且希望可以寫一輩子程式的電腦阿宅！',
     img: 'assets/img/speakers/eddie_sliced.jpg',
     link: 'https://kaochenlong.com/' },
-  { name: 'zonble', role: '軟體工程師', org: 'Noetiq Inc',
+  { id: '2026_zonble', name: 'zonble', role: '軟體工程師', org: 'Noetiq Inc',
     bio: '軟體工程師',
     img: 'assets/img/speakers/zonble.jpg',
     link: 'https://x.com/zonble', linkText: 'X @zonble' },
-  { name: 'Stanley', role: 'Engineer Manager', org: 'ViewSonic',
+  { id: '2026_Stanley', name: 'Stanley', role: 'Engineer Manager', org: 'ViewSonic',
     img: 'assets/img/speakers/stanley_sliced.jpg',
     link: 'https://www.linkedin.com/in/stanleyc1982/', linkText: 'LinkedIn' },
-  { name: 'Alias', role: '執行長', org: '臺灣希望創新股份有限公司',
-    img: 'assets/img/speakers/alias_sliced.jpg',
-    bio: '國立成功大學航太博士，研究領域為無人機系統及資通訊技術應用，「搞飛機」的經驗近 30 年，2018 年基於 SkySentry 無人機雲端監控系統技術，建構完全由國人自製的 Taiwan Drone 100 無人機群飛表演技術，致力於無人機群飛及自主飛控系統等無人機關鍵技術開發，並於 2019 年 8 月基於 Taiwan Drone 100 之技術及團隊成立臺灣希望創新股份有限公司，致力於無人機研發、展演、教育、服務等四大領域，努力成為臺灣無人機產業的推手。近年來更推動公司轉型為非紅無人機關鍵零組件及 AI 無人載具技術研發公司，並積極推動臺灣無人機產業國產化、智能化，利用臺灣的半導體、精密機械及資通訊產業優勢進軍國際市場。' }
 ];
 
 /* ── 贊助級別 ─────────────────────────────────────────────────────────────

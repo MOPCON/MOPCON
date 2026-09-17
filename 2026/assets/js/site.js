@@ -81,6 +81,34 @@ function el(tag, cls, html) {
   return n;
 }
 
+/* 截斷字串至指定字元數（預設 120 字元），超過部分補上 '...'。
+   完整支援 multi-byte 字元（中文、全形字、Emoji、Surrogate Pairs 等），
+   優先使用 Intl.Segmenter 或 Array.from（以 Unicode 字元/字形叢集為單位），
+   確保截斷時不破壞最後一個 multi-byte 字元。 */
+function truncateBio(s, maxLen) {
+  if (!s) return '';
+  maxLen = maxLen || 120;
+
+  var chars;
+  if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+    var segmenter = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
+    chars = Array.from(segmenter.segment(s), function (item) { return item.segment; });
+  } else {
+    chars = Array.from(s);
+  }
+
+  if (chars.length <= maxLen) return s;
+
+  var out = chars.slice(0, maxLen).join('');
+  /* 防禦性檢查：若最後一個 code unit 恰好為孤立的高位代理字元（High Surrogate），予以移除以防亂碼 */
+  var lastCode = out.charCodeAt(out.length - 1);
+  if (lastCode >= 0xD800 && lastCode <= 0xDBFF) {
+    out = out.slice(0, -1);
+  }
+
+  return out + '...';
+}
+
 /* ==========================================================================
    C. 桌機導航列
    --------------------------------------------------------------------------
@@ -653,6 +681,109 @@ function speakerLinkHtml(p) {
            esc(text) + '<span class="sr-only">（另開新視窗）</span></a>';
 }
 
+function openSpeakerModal(id, pushUrl) {
+  if (!id || typeof SPEAKERS === 'undefined') return false;
+  var speaker = SPEAKERS.find(function (s) {
+    return s.id === id || ('2026_' + s.name.replace(/\s+/g, '-')) === id;
+  });
+  if (!speaker) return false;
+
+  var modal = document.getElementById('speakerModal');
+  var body = document.getElementById('speakerModalBody');
+  if (!modal || !body) return false;
+
+  var idx = SPEAKERS.indexOf(speaker);
+  var avatar = speaker.img
+    ? '<img src="' + esc(speaker.img) + '" alt="' + esc(speaker.name) + '">'
+    : phShape(idx >= 0 ? idx : 0, true);
+
+  var tags = (speaker.track || speaker.keynote)
+    ? tagsHtml({ type: speaker.keynote ? 'keynote' : 'talk', track: speaker.track })
+    : '';
+
+  var contentHtml =
+    '<div class="spk-modal-profile">' +
+      '<div class="spk-modal-avatar ph ph-round">' + avatar + '</div>' +
+      '<div class="spk-modal-meta">' +
+        '<h3 id="spkModalName" class="spk-modal-name">' + esc(speaker.name) + '</h3>' +
+        '<p class="spk-modal-role">' + esc(speaker.role) + '｜' + esc(speaker.org) + '</p>' +
+        (tags ? '<div class="tag-row">' + tags + '</div>' : '') +
+        speakerLinkHtml(speaker) +
+      '</div>' +
+    '</div>' +
+    '<hr class="spk-modal-divider">' +
+    '<div class="spk-modal-section">' +
+      '<h4 class="spk-modal-section-title">介紹</h4>' +
+      '<div class="spk-modal-bio">' + esc(speaker.bio || '尚無講者簡介') + '</div>' +
+    '</div>';
+
+  body.innerHTML = contentHtml;
+  modal.hidden = false;
+  document.body.classList.add('modal-open');
+
+  var closeBtn = document.getElementById('speakerModalClose');
+  if (closeBtn) closeBtn.focus();
+
+  if (pushUrl) {
+    var url = new URL(window.location.href);
+    url.searchParams.set('id', speaker.id);
+    window.history.pushState({ speakerId: speaker.id }, '', url.toString());
+  }
+
+  return true;
+}
+
+function closeSpeakerModal(pushUrl) {
+  var modal = document.getElementById('speakerModal');
+  if (!modal || modal.hidden) return;
+  modal.hidden = true;
+  document.body.classList.remove('modal-open');
+
+  if (pushUrl) {
+    var url = new URL(window.location.href);
+    if (url.searchParams.has('id')) {
+      url.searchParams.delete('id');
+      window.history.pushState(null, '', url.pathname + (url.search ? url.search : ''));
+    }
+  }
+}
+
+var speakerModalBound = false;
+function bindSpeakerModalEvents() {
+  if (speakerModalBound) return;
+  speakerModalBound = true;
+
+  var closeBtn = document.getElementById('speakerModalClose');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      closeSpeakerModal(true);
+    });
+  }
+  var backdrop = document.getElementById('speakerModalBackdrop');
+  if (backdrop) {
+    backdrop.addEventListener('click', function () {
+      closeSpeakerModal(true);
+    });
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      var modal = document.getElementById('speakerModal');
+      if (modal && !modal.hidden) {
+        closeSpeakerModal(true);
+      }
+    }
+  });
+  window.addEventListener('popstate', function () {
+    var params = new URLSearchParams(window.location.search);
+    var id = params.get('id');
+    if (id) {
+      openSpeakerModal(id, false);
+    } else {
+      closeSpeakerModal(false);
+    }
+  });
+}
+
 function renderSpeakerPage() {
   var box = document.getElementById('speakerList');
   if (!box || typeof SPEAKERS === 'undefined') return;
@@ -663,14 +794,14 @@ function renderSpeakerPage() {
     var tags = (p.track || p.keynote)
       ? tagsHtml({ type: p.keynote ? 'keynote' : 'talk', track: p.track })
       : '';
-    let avatar = p.img ? '<img loading="lazy" decoding="async" src="' + esc(p.img) + '" alt="' + esc(p.name) + '">' : phShape(i, true);
-    h += '<li class="card spk-card">' +
+    var avatar = p.img ? '<img loading="lazy" decoding="async" src="' + esc(p.img) + '" alt="' + esc(p.name) + '">' : phShape(i, true);
+    h += '<li class="card spk-card" data-speaker-id="' + esc(p.id) + '" tabindex="0" role="button" aria-haspopup="dialog">' +
            '<div class="ph ph-round avatar">' + avatar + '</div>' +
            '<div class="spk-body">' +
              '<h3>' + esc(p.name) + '</h3>' +
              '<p class="spk-role">' + esc(p.role) + '｜' + esc(p.org) + '</p>' +
              tags +
-             (p.bio ? '<p class="spk-bio">' + esc(p.bio) + '</p>' : '') +
+             (p.bio ? '<p class="spk-bio">' + esc(truncateBio(p.bio, 120)) + '</p>' : '') +
              speakerLinkHtml(p) +
            '</div>' +
          '</li>';
@@ -680,6 +811,34 @@ function renderSpeakerPage() {
   /* 「共 N 位講者」；跟議程頁的篩選統計一樣，不寫成分數，維護的人才不會誤會 */
   var count = document.getElementById('speakerCount');
   if (count) count.textContent = '共 ' + SPEAKERS.length + ' 位講者';
+
+  /* 綁定彈出視窗相關事件 */
+  bindSpeakerModalEvents();
+
+  /* 點擊講者卡片開啟彈窗（點擊卡片內的對外連結則不觸發） */
+  box.onclick = function (e) {
+    if (e.target.closest('a')) return;
+    var card = e.target.closest('.spk-card');
+    if (!card) return;
+    var id = card.getAttribute('data-speaker-id');
+    if (id) openSpeakerModal(id, true);
+  };
+  box.onkeydown = function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      if (e.target.closest('a')) return;
+      var card = e.target.closest('.spk-card');
+      if (!card) return;
+      e.preventDefault();
+      var id = card.getAttribute('data-speaker-id');
+      if (id) openSpeakerModal(id, true);
+    }
+  };
+
+  /* 初始載入時若網址帶有 ?id=$speaker_id 則直接開啟該講者視窗 */
+  var initialId = new URLSearchParams(window.location.search).get('id');
+  if (initialId) {
+    openSpeakerModal(initialId, false);
+  }
 }
 
 /* ==========================================================================
