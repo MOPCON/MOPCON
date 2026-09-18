@@ -209,7 +209,7 @@ var SPEAKERS = [
     img: "assets/img/speakers/stanley_sliced.jpg",
     link: "https://www.linkedin.com/in/stanleyc1982/",
     linkText: "LinkedIn",
-    bio: "",
+    bio: "https://www.linkedin.com/in/stanleyc1982/",
     agenda: "當工程師不再打字寫 code,他在做什麼?——一個人、12 週、17 萬行的 AI Native 開發模式",
     summary: "12 週、一位工程師、17 萬行 C#、5,150 個測試——一個十多年歷史的 Windows 白板 monolith,用 WinUI 3 / .NET 10 從零重寫。而這段時間裡,我真正打字寫 C# 的時間不到 5%。\n\n這場分享不談工具教學,談一條在真實產品上跑了三個月的 AI Native 開發流程,以及它逼我重新理解的四件事:人的工作從寫 code 變成做決策(整條 pipeline 只留 4 個 human gate);spec 與憲法成為新的 source code;品質不再靠人 review,而靠跨家族模型互相抓錯的對抗式結構;最後、也最關鍵的——流程不能只寫成文字期望 AI 遵守,要用 Workflow 與 Hook 把它固化成不可繞過的 code。\n\n剩下的 95%,我在做什麼?決定要做什麼、把判斷寫成文字、設計讓模型互相抓錯的結構、把流程刻成 code——以及不斷優化這條流程、寫小工具,讓自己開發得更舒服。\n\n適合已經在用 AI 寫 code、想從「一個人跟 AI 對話」走到「整條流程由 AI 承擔、人只做決策」的工程師與 tech lead。",
     level: "Normal - 需相關基礎知識",
