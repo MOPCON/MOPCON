@@ -87,7 +87,7 @@ button{font:inherit;color:inherit}
 /* ── 3 導航列 ───────────────────────────────────────────────────────────── */
 .site-header{position:sticky;top:0;z-index:80;background:var(--c-white);border-bottom:1px solid var(--c-line)}
 .site-header.is-stuck{box-shadow:0 2px 14px rgba(var(--rgb-ink),.10)}
-.header-in{display:flex;flex-wrap:nowrap;align-items:center;gap:16px;min-height:var(--header-h)}
+.header-in{display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:16px;min-height:var(--header-h)}
 .brand{flex:0 0 auto;display:inline-flex;flex-direction:row;flex-wrap:nowrap;align-items:center;white-space:nowrap;gap:10px;padding:6px 0;cursor:pointer;user-select:none}
 .brand:focus-visible{outline:2px solid var(--c-teal);outline-offset:4px;border-radius:4px}
 .brand img{display:inline-block;vertical-align:middle;flex-shrink:0;width:auto}
@@ -99,7 +99,7 @@ button{font:inherit;color:inherit}
 /* 選單本體預設先藏起來，等 site.js 跑完加上 .js-ready 才顯示。
    這樣萬一 JS 壞掉（例如 NAV 陣列少打一個逗號），畫面上留下的是下面那份
    靜態降級連結，而不是一個空選單＋按不動的漢堡。 */
-.nav{display:none;flex:1 1 auto;min-width:0}
+.nav{display:none;flex:1 1 auto;min-width:0;margin-left:auto}
 .js-ready .nav{display:block}
 .nav-list{display:flex;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:4px;list-style:none}
 .nav-item{position:relative;flex:0 0 auto}
@@ -132,7 +132,7 @@ button{font:inherit;color:inherit}
 /* 購票 CTA 與漢堡 */
 .header-cta{flex:0 0 auto}
 .burger{display:none;flex:0 0 auto;width:44px;height:44px;padding:0;background:none;border:1px solid var(--c-line);
-  border-radius:12px;cursor:pointer;position:relative}
+  border-radius:12px;cursor:pointer;position:relative;margin-left:auto}
 .burger-i,.burger-i::before,.burger-i::after{position:absolute;left:50%;width:20px;height:2px;
   margin-left:-10px;background:var(--c-ink);border-radius:2px;content:""}
 .burger-i{top:21px}
@@ -578,20 +578,52 @@ a.card{display:block;color:inherit}
    .card 的 hover 效果直接沿用，不用另外寫。 */
 .spk-list{display:grid;gap:clamp(16px,2vw,24px);list-style:none;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-.spk-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;outline:none}
+.spk-card{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;outline:none;padding-bottom:34px}
 .spk-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-2)}
 .spk-card:focus-visible{outline:2px solid var(--c-teal);outline-offset:2px}
 /* 頭像佔位比首頁小一階（首頁 96px）：講者頁一行擠兩到三張卡，96px 會把文字壓得太窄 */
 .spk-card .avatar{width:72px;height:72px; border-radius:50%; overflow:hidden;}
 .spk-card .avatar img{width:100%;height:100%;object-fit:cover;background:var(--c-surface)}
 .spk-card .avatar .shape{--s:38px}
+.spk-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:0 0 4px}
+.spk-head h3{font-size:18px;margin:0}
+.spk-head .spk-role{font-size:14px;color:var(--c-ink-70);margin:0}
 .spk-card h3{font-size:18px;margin:0 0 4px}
 .spk-role{font-size:14px;color:var(--c-ink-70);margin:0 0 10px}
+.spk-org{font-size:14px;font-weight:700;color:var(--c-ink-70);margin:0 0 10px}
 .spk-card .tag-row{margin-bottom:10px}
 .spk-bio{font-size:14.5px;color:var(--c-ink-70);margin:0}
+/* 講者卡片右下角的小淺灰色「more →」提示 */
+.spk-card-more{
+  position:absolute;right:20px;bottom:14px;
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:12.5px;font-weight:600;color:#94a3b8;letter-spacing:.02em;
+  transition:color .2s ease,transform .2s ease;pointer-events:none;
+}
+.spk-card:hover .spk-card-more,
+.spk-card:focus-visible .spk-card-more{
+  color:var(--c-teal);transform:translateX(3px);
+}
+/* 講者簡介為純網址時的連結樣式 */
+.spk-bio-link{display:inline-flex;align-items:center;gap:3px;color:var(--c-teal-deep);font-weight:600;text-decoration:none}
+.spk-bio-link:hover{color:var(--c-teal);text-decoration:underline}
+.spk-bio-link::after{content:"\2197";font-size:12px;margin-left:2px}
 /* 講者的社群／個人頁連結（data.js 的 link 欄位）：跟在 bio 後面，用一般連結色 */
 .spk-link{display:inline-block;margin-top:10px;font-size:14px;font-weight:600}
 .spk-link::after{content:"\2197";margin-left:3px;font-size:12px}
+/* 講者彈出視窗：社群圖標按鈕 */
+.spk-modal-socials{display:inline-flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}
+.spk-social-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:50%;
+  background:var(--c-teal-tint);color:var(--c-teal-ink);
+  transition:background .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease;
+  flex:0 0 auto;
+}
+.spk-social-btn:hover{
+  background:var(--c-teal);color:var(--c-white);
+  transform:translateY(-2px);box-shadow:0 4px 10px rgba(var(--rgb-teal),.25);
+}
 .spk-note{font-size:14px;color:var(--c-ink-70);margin:0}
 
 /* 講者完整資訊彈出視窗（Modal） */
@@ -776,11 +808,12 @@ body.modal-open{overflow:hidden}
   .hero-in{padding-left:18px;padding-right:18px}
   .js-ready .nav{display:none}
   .js-ready .burger{display:block}
-  /* margin-left:auto 把「購票＋漢堡」推到右邊、logo 留在左邊。
-     少了這行，桌機那個撐開空間的 .nav 在手機是隱藏的，三個東西會全部擠在左側。 */
+  /* margin-left:auto 確保主選單圖示（漢堡）永遠靠右顯示；即使 .header-cta 被移除也不會擠在左側。
+     若有購票按鈕，則購票按鈕與漢堡選單皆靠右顯示。 */
+  .burger{margin-left:auto;flex-shrink:0}
   .header-cta{margin-left:auto;padding:7px 12px;font-size:13.5px;white-space:nowrap;flex-shrink:0}
-  .burger{flex-shrink:0}
-  .header-in{gap:10px;flex-wrap:nowrap}
+  .header-cta + .burger{margin-left:0}
+  .header-in{gap:10px;flex-wrap:nowrap;justify-content:space-between}
   .brand{gap:6px;flex-shrink:0;white-space:nowrap}
   .brand .brand-logo-mopcon{height:22px}
   .brand .brand-logo-cross{height:15px}
