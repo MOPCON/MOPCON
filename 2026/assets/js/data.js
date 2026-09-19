@@ -55,41 +55,41 @@ var TRACKS = [
    ※ Unconf 不是正式議程（場外互動，在各休息與 Tea Time 時段進行），所以不列在這裡，
      議程頁時間軸下面有一行說明。 */
 var SESSIONS = [
-  { start: '08:30', end: '09:00', type: 'reg',     track: 'ALL', title: '報到入場' },
+  { start: '08:30', end: '09:00', type: 'reg', track: 'ALL', title: '報到入場' },
   { start: '09:00', end: '09:10', type: 'opening', track: 'ALL', title: '開幕 Opening' },
   /* Keynote 在 R1（1F），但屬於全場共同場次，所以 track 填 'ALL'，篩選任何一軌都看得到 */
   { start: '09:10', end: '09:50', type: 'keynote', track: 'ALL', title: '能便宜的是一個能我不會', speaker: '真的', org: '覺得沒告訴你', level: '入門' },
-  { start: '09:50', end: '10:00', type: 'break',   track: 'ALL', title: '休息' },
-  { start: '10:00', end: '10:40', type: 'talk',    track: 'A',   title: '為這樣本上不知都不會會喜歡', speaker: '的不知', org: '一種浪得般推', level: '進階' },
-  { start: '10:00', end: '10:40', type: 'talk',    track: 'B',   title: '的也這本來如此眼睛會出', speaker: '我才看', org: '年紀主角以的以', level: '實作' },
-  { start: '10:00', end: '10:40', type: 'talk',    track: 'C',   title: '也比較這樣忍不住己在是很', speaker: '卡片上', org: '大太好為為什', level: '進階' },
-  { start: '10:40', end: '11:00', type: 'tea',     track: 'ALL', title: 'Tea Time' },
-  { start: '11:00', end: '11:40', type: 'talk',    track: 'A',   title: '個者來就回家日向知道', speaker: '的是', org: '第一個可以後覺得', level: '實作' },
-  { start: '11:00', end: '11:40', type: 'talk',    track: 'B',   title: '時間不今年隔死亡了細節果可以當', speaker: '時要', org: '成年要啊', level: '入門' },
-  { start: '11:00', end: '11:40', type: 'talk',    track: 'C',   title: '我要等多指教也可已經不', speaker: '也不會', org: '得了覺有在有', level: '實作' },
-  { start: '11:40', end: '11:50', type: 'break',   track: 'ALL', title: '休息' },
-  { start: '11:50', end: '12:30', type: 'talk',    track: 'A',   title: '所謂有的那覺到不要著不想好可喜歡他', speaker: '嘛或', org: '喵喵喵的的心', level: '入門' },
-  { start: '11:50', end: '12:30', type: 'talk',    track: 'B',   title: '水故的同啊我怎麼公主說什麼', speaker: '不然我', org: '的我已經姊', level: '進階' },
-  { start: '11:50', end: '12:30', type: 'talk',    track: 'C',   title: '看到不知我喜有這麼線他就是', speaker: '人時候', org: '因我最喜歡哈', level: '入門' },
-  { start: '12:30', end: '13:20', type: 'lunch',   track: 'ALL', title: '午餐 Lunch' },
-  { start: '13:20', end: '14:00', type: 'talk',    track: 'A',   title: '友神中一個的同學廣告', speaker: '麼排忍', org: '這禮拜麼會這雷怎', level: '進階' },
-  { start: '13:20', end: '14:00', type: 'talk',    track: 'B',   title: '意我的時候這篇故事的一個還有一', speaker: '可以', org: '我希望形不還是不', level: '實作' },
-  { start: '13:20', end: '14:00', type: 'talk',    track: 'C',   title: '也算是這句話我吃始一的點', speaker: '他這', org: '只要把自卡', level: '進階' },
-  { start: '14:00', end: '14:10', type: 'break',   track: 'ALL', title: '休息' },
-  { start: '14:10', end: '14:50', type: 'talk',    track: 'A',   title: '可以幫我都再了我我愛你週', speaker: '有好愛', org: '不錯知道以', level: '實作' },
-  { start: '14:10', end: '14:50', type: 'talk',    track: 'B',   title: '原本以這種跑著這只要看的時', speaker: '麼意', org: '十年但其的這麼互', level: '入門' },
-  { start: '14:10', end: '14:50', type: 'talk',    track: 'C',   title: '嗎一下花不選擇看很多他們會', speaker: '一起外', org: '的我怎麼好帥現', level: '實作' },
-  { start: '14:50', end: '15:10', type: 'tea',     track: 'ALL', title: 'Tea Time' },
-  { start: '15:10', end: '15:50', type: 'talk',    track: 'A',   title: '知道有幾關心對於要是太好', speaker: '千已經', org: '第一個可以後覺得', level: '入門' },
-  { start: '15:10', end: '15:50', type: 'talk',    track: 'B',   title: '角的的地方一個小給人', speaker: '等等', org: '喵喵喵的的心', level: '進階' },
-  { start: '15:10', end: '15:50', type: 'talk',    track: 'C',   title: '本格叫文字會再跑到還是也可', speaker: '看到了', org: '度有溫暖位', level: '實作' },
-  { start: '15:50', end: '16:00', type: 'break',   track: 'ALL', title: '休息' },
-  { start: '16:00', end: '16:40', type: 'talk',    track: 'A',   title: '時間的小姐我反而會直幸運', speaker: '無法', org: '行了對己我當知', level: '入門' },
-  { start: '16:00', end: '16:40', type: 'talk',    track: 'B',   title: '歌得我一波有一的的我我說的', speaker: '好的', org: '如果好像不說跟他', level: '進階' },
-  { start: '16:00', end: '16:40', type: 'talk',    track: 'C',   title: '開心就是個多了今天要', speaker: '開感', org: '覺得沒告訴你', level: '實作' },
-  { start: '16:40', end: '16:50', type: 'break',   track: 'ALL', title: '休息' },
+  { start: '09:50', end: '10:00', type: 'break', track: 'ALL', title: '休息' },
+  { start: '10:00', end: '10:40', type: 'talk', track: 'A', title: '為這樣本上不知都不會會喜歡', speaker: '的不知', org: '一種浪得般推', level: '進階' },
+  { start: '10:00', end: '10:40', type: 'talk', track: 'B', title: '的也這本來如此眼睛會出', speaker: '我才看', org: '年紀主角以的以', level: '實作' },
+  { start: '10:00', end: '10:40', type: 'talk', track: 'C', title: '也比較這樣忍不住己在是很', speaker: '卡片上', org: '大太好為為什', level: '進階' },
+  { start: '10:40', end: '11:00', type: 'tea', track: 'ALL', title: 'Tea Time' },
+  { start: '11:00', end: '11:40', type: 'talk', track: 'A', title: '個者來就回家日向知道', speaker: '的是', org: '第一個可以後覺得', level: '實作' },
+  { start: '11:00', end: '11:40', type: 'talk', track: 'B', title: '時間不今年隔死亡了細節果可以當', speaker: '時要', org: '成年要啊', level: '入門' },
+  { start: '11:00', end: '11:40', type: 'talk', track: 'C', title: '我要等多指教也可已經不', speaker: '也不會', org: '得了覺有在有', level: '實作' },
+  { start: '11:40', end: '11:50', type: 'break', track: 'ALL', title: '休息' },
+  { start: '11:50', end: '12:30', type: 'talk', track: 'A', title: '所謂有的那覺到不要著不想好可喜歡他', speaker: '嘛或', org: '喵喵喵的的心', level: '入門' },
+  { start: '11:50', end: '12:30', type: 'talk', track: 'B', title: '水故的同啊我怎麼公主說什麼', speaker: '不然我', org: '的我已經姊', level: '進階' },
+  { start: '11:50', end: '12:30', type: 'talk', track: 'C', title: '看到不知我喜有這麼線他就是', speaker: '人時候', org: '因我最喜歡哈', level: '入門' },
+  { start: '12:30', end: '13:20', type: 'lunch', track: 'ALL', title: '午餐 Lunch' },
+  { start: '13:20', end: '14:00', type: 'talk', track: 'A', title: '友神中一個的同學廣告', speaker: '麼排忍', org: '這禮拜麼會這雷怎', level: '進階' },
+  { start: '13:20', end: '14:00', type: 'talk', track: 'B', title: '意我的時候這篇故事的一個還有一', speaker: '可以', org: '我希望形不還是不', level: '實作' },
+  { start: '13:20', end: '14:00', type: 'talk', track: 'C', title: '也算是這句話我吃始一的點', speaker: '他這', org: '只要把自卡', level: '進階' },
+  { start: '14:00', end: '14:10', type: 'break', track: 'ALL', title: '休息' },
+  { start: '14:10', end: '14:50', type: 'talk', track: 'A', title: '可以幫我都再了我我愛你週', speaker: '有好愛', org: '不錯知道以', level: '實作' },
+  { start: '14:10', end: '14:50', type: 'talk', track: 'B', title: '原本以這種跑著這只要看的時', speaker: '麼意', org: '十年但其的這麼互', level: '入門' },
+  { start: '14:10', end: '14:50', type: 'talk', track: 'C', title: '嗎一下花不選擇看很多他們會', speaker: '一起外', org: '的我怎麼好帥現', level: '實作' },
+  { start: '14:50', end: '15:10', type: 'tea', track: 'ALL', title: 'Tea Time' },
+  { start: '15:10', end: '15:50', type: 'talk', track: 'A', title: '知道有幾關心對於要是太好', speaker: '千已經', org: '第一個可以後覺得', level: '入門' },
+  { start: '15:10', end: '15:50', type: 'talk', track: 'B', title: '角的的地方一個小給人', speaker: '等等', org: '喵喵喵的的心', level: '進階' },
+  { start: '15:10', end: '15:50', type: 'talk', track: 'C', title: '本格叫文字會再跑到還是也可', speaker: '看到了', org: '度有溫暖位', level: '實作' },
+  { start: '15:50', end: '16:00', type: 'break', track: 'ALL', title: '休息' },
+  { start: '16:00', end: '16:40', type: 'talk', track: 'A', title: '時間的小姐我反而會直幸運', speaker: '無法', org: '行了對己我當知', level: '入門' },
+  { start: '16:00', end: '16:40', type: 'talk', track: 'B', title: '歌得我一波有一的的我我說的', speaker: '好的', org: '如果好像不說跟他', level: '進階' },
+  { start: '16:00', end: '16:40', type: 'talk', track: 'C', title: '開心就是個多了今天要', speaker: '開感', org: '覺得沒告訴你', level: '實作' },
+  { start: '16:40', end: '16:50', type: 'break', track: 'ALL', title: '休息' },
   { start: '16:50', end: '17:20', type: 'closing', track: 'ALL', title: '閉幕 Closing' },
-  { start: '17:20', end: '',      type: 'end',     track: 'ALL', title: '散場' }
+  { start: '17:20', end: '', type: 'end', track: 'ALL', title: '散場' }
 ];
 
 /* ── 講者 ─────────────────────────────────────────────────────────────────
@@ -100,8 +100,8 @@ var SESSIONS = [
    keynote：填 true 會多一個 Keynote 標籤（通常只有一位）
    bio    ：一段講者簡介，只有講者頁會顯示；填 '' 就只顯示姓名與職稱
    img    ：講者頭像檔案路徑（可省略），首頁跟講者頁都會顯示
-   link   ：講者的社群／個人頁網址（可省略），只有講者頁會顯示成一個對外連結
-   linkText：那個連結顯示的文字（可省略）；沒填就顯示網址的網域（例如 kaochenlong.com）
+   link   ：講者的社群／個人頁網址（可省略）；若有多個請用逗號（,）分隔，彈出視窗會依序顯示對應圖標
+   linkText：那個連結顯示的文字（可省略）；若有多個請用逗號（,）對應 link，沒填就自動判斷服務或網域
 
    首頁的講者陣容區塊只取前 8 位（且只用 name / role / org），
    講者頁 speakers.html 會列出全部並且加上 track 與 bio。
@@ -133,7 +133,7 @@ var SPEAKERS = [
     name: "Kuon Ding",
     role: "CTO",
     org: "Funny Systems",
-    bio: "Kuon，現任職於法泥系統。關心各種 「安全技術」，喜愛研究和解決問題，包含系統軟體、網路協定、網站應用、解密實務，所有想學習的一切，都圍繞著 「安全技術」 為中心。相信建立好的防守，比攻擊更困難。",
+    bio: "Kuon，現任職於法泥系統。\n\n關心各種 「安全技術」，喜愛研究和解決問題，包含系統軟體、網路協定、網站應用、解密實務，所有想學習的一切，都圍繞著 「安全技術」 為中心。\n\n相信建立好的防守，比攻擊更困難。",
     img: "assets/img/speakers/kuon_ding_sliced.png",
     link: "https://www.smallcrows.org/",
     agenda: "自主飛行的決策系統 - 從態勢感知到語意理解",
@@ -149,8 +149,8 @@ var SPEAKERS = [
     org: "國立高雄大學資訊管理學系",
     bio: "從事網路安全與管理、無人載具開發、物聯網應用、無人機偵測技術等多方面技術研究，並曾經協助國內災害救助，包括利用自組無人載具快速探勘高雄氣爆事件，近年來發展高空氦氣飛船載具自主飛行技術，將學術技術轉化為實質防災能量",
     img: "assets/img/speakers/hanwei_sliced.jpg",
-    link: "https://www.facebook.com/xiao.han.wei.117741",
-    linkText: "Facebook",
+    link: "https://www.facebook.com/xiao.han.wei.117741,https://im.nuk.edu.tw/p/404-1038-99300.php?Lang=zh-tw",
+    linkText: "Facebook,Website",
     agenda: "無人飛船：長期滯空載具的基礎原理與自主飛控實務經驗",
     summary: "在無人載具續航力備受挑戰的時代，擁有長期滯空優勢的無人飛船，提供了一種不同的空中探索解決方案。本次演講將介紹研發團隊多年在無人飛船發展的經驗，並分享從零打造自主導航系統時的實務歷程與開發經驗。",
     level: "Basic - 基礎入門",
@@ -177,7 +177,7 @@ var SPEAKERS = [
     name: "高見龍",
     role: "負責人",
     org: "五倍學院",
-    bio: "網站程式開發者 / 講師 / 遊戲宅 / 漫畫宅，喜愛非主流的新玩具，著有《為你自己學 Git》、《為你自己學 Python》以及《為你自己學 Ruby on Rails》等暢銷書籍。是個喜歡寫程式而且希望可以寫一輩子程式的電腦阿宅！",
+    bio: "網站程式開發者 / 講師 / 遊戲宅 / 漫畫宅，喜愛非主流的新玩具，著有《為你自己學 Git》、《為你自己學 Python》以及《為你自己學 Ruby on Rails》等暢銷書籍。\n\n是個喜歡寫程式而且希望可以寫一輩子程式的電腦阿宅！",
     img: "assets/img/speakers/eddie_sliced.jpg",
     link: "https://kaochenlong.com/",
     agenda: "SDD 工作迴圈設計拆解",
@@ -215,6 +215,21 @@ var SPEAKERS = [
     level: "Normal - 需相關基礎知識",
     track: "AI in Action",
     class: "AI"
+  },
+  {
+    id: "2026_鄭聖文",
+    name: "鄭聖文",
+    role: "軟體工程師",
+    org: "不公開",
+    img: "assets/img/speakers/Sheng-Wen_Cheng.jpg",
+    link: "https://www.linkedin.com/in/shengwen-tw,https://shengwen-tw.github.io/",
+    linkText: "LinkedIn,Github",
+    bio: "鄭聖文是一名軟體工程師，現任職於美商科技公司，長期投入底層軟體開發與系統研究，專注領域橫跨機器人系統、控制演算法與即時系統。\n\n他長期研究無人機底層系統與相關演算法，並持續參與開放原始碼社群及專案貢獻。其研究所期間設計的無人機飛控成果，曾透過指導教授主持的產學合作計畫授權予國家太空中心；此外，他亦曾於 Linux Foundation 主辦的 Open Source Summit 發表開源相關技術成果。",
+    agenda: "Learning to Fly in Simulation: Quadrotor Reinforcement Learning from First Principles",
+    summary: "This talk explores quadrotor reinforcement learning from first principles, with a focus on how reinforcement learning algorithms interact with a flight simulator.\n\nWe will begin by formulating quadrotor flight as a reinforcement learning problem, looking at how observations, actions, and rewards define the interaction between an agent and the simulated vehicle. From there, we will introduce core concepts such as value functions, Q-values, and policy optimization, and connect them to modern policy-gradient methods for continuous-control problems.\n\nThe talk will also examine the systems side of reinforcement learning. We will discuss how parallel rollouts allow many simulated quadrotors to collect experience simultaneously, how rigid-body dynamics can be expressed as batched tensor operations in PyTorch, and how GPU acceleration changes the simulation and training workflow compared with traditional single-environment simulation.\n\nThe examples are based on RotorBench, an open-source Python-based quadrotor simulation and control benchmarking framework featuring GPU-accelerated batched rollouts:\n\nhttps://github.com/shengwen-tw/rotor-bench",
+    level: "Basic - 基礎入門",
+    track: "Software Defined Reality",
+    class: "AI, UXV (Unmanned x Vehicle), Robotics"
   }
 ];
 
@@ -224,11 +239,11 @@ var SPEAKERS = [
    size ：卡片大小，只能填 xl / lg / md / sm / xs（級別越高填越大）
    由上到下就是贊助頁的區塊順序。 */
 var SPONSOR_TIERS = [
-  { id: 'metaverse', name: '元宇宙級',   size: 'xl' },
-  { id: 'matrix',    name: '矩陣級',   size: 'lg' },
-  { id: 'cloudnative',  name: '雲原生級',   size: 'md' },
-  { id: 'gateway',  name: '閘道級',     size: 'sm' },
-  { id: 'node',  name: '節點級', size: 'xs' }
+  { id: 'metaverse', name: '元宇宙級', size: 'xl' },
+  { id: 'matrix', name: '矩陣級', size: 'lg' },
+  { id: 'cloudnative', name: '雲原生級', size: 'md' },
+  { id: 'gateway', name: '閘道級', size: 'sm' },
+  { id: 'node', name: '節點級', size: 'xs' }
 ];
 
 /* ── 贊助商 ───────────────────────────────────────────────────────────────
@@ -240,20 +255,20 @@ var SPONSOR_TIERS = [
 var SPONSORS = [
   { tier: 'metaverse', name: '可愛的我', desc: '怎麼感冒來有，得是多指到爆室出門熟悉的看不出：又人實就本以為夢女他現在，代表很路是故意這麼好工作：可惜話可這麼回事，另一開不是來找的時候。我沒看嘗試色想知道的番會覺，在哪普通近覺真的真不真的，收這樣以興趣，居搬家他這近有是這麼生什麼：或上的常面都，的遺啊啊啊己一看來我。復包有興趣相我記得，果是。原本以這種跑著這只要看的時，過真的會的覺得：我今就作不太又是錯版的，交換的都為一片時候就給：喜歡的好就是要出好想現在，覺得是才看到提還沒有。' },
   { tier: 'diametaversemond', name: '度有溫暖位', desc: '氣一個南無，好想是會看，喜歡這兩本又不但是給我的⋯會不都快不知人我也想且剛好我真，喜歡到自應該是會直剛為了，這個好是人狼了的感覺。去樣的還有人有機會，其他都電破變成了，成的率心裡，下次再什麼邊還有：午安因為我不會了謝謝，死到他們以也很？也不沒想到的意義要是不好意。知遠是非常多一點像真的，是說他好麼時，實是謝謝再去，者互動外想回很厲，是什麼的定要在不但還是，時的有比這種後一個。因為用要不要本第一覺得。' },
-  { tier: 'matrix',    name: '疾病概也瞬間大的', desc: '沒打我有可愛的完全無部分實在太，不覺得怎樣都想給，一覺得有說起來太棒道我。我現在但因旁邊，啊啊啊就好，知道有幾關心對於要是太好，活動的這樣就。' },
-  { tier: 'matrix',    name: '日什麼時對於好不', desc: '開心就是個多了今天要⋯您意到細節真心突然想，是第中國⋯就是，肺炎都是一下有打了。角的的地方一個小給人，來一口所謂的是直差不多：為自己黑暗牛等我也前回想，不錯後在治正確原地。' },
-  { tier: 'matrix',    name: '啊啊不斷一', desc: '所有人天的視線。開始的就才為是這個看到大家好？雙人結果好的⋯要一真ㄉ啊啊恭喜中心親任的無快樂，持你說的貼可以，就已經會不會可，有什麼麥當勞著你⋯何正太弟持而且發現自。' },
-  { tier: 'cloudnative',  name: '很正常同', desc: '有沒有看沒有的為什麼，什麼真的你師可是嘗試，我己的我也有結果集聲⋯超好在如果是到底要，最報的顏色信片出來了是一，卡方式狀覺得開了但就。到那畢竟喜歡以做的事幹嘛追蹤，耳係社交。' },
-  { tier: 'cloudnative',  name: '行了對己我當知', desc: '本格叫文字會再，跑到還是也可可以繼一個，作為如果怎麼想在禮但還是想，給他為什信出來，首友信特別的第一醒來關係啦都好可，時候說法腦袋我大。電影過來便宜醒來你就，的自次接下吹其他說這傍晚翔，都今天要小，後的了對方辛苦所以說作品，沒有然沒帶著意思並以的也這種：是好得後來。' },
-  { tier: 'cloudnative',  name: '我員在也不有些怎', desc: '也可以個，的對象寫己過後路線還可。黑暗來⋯時間的小姐，我反而會直幸運種之類的：直接溫還有這，不咖啡，但一關今年只剩聽得不同一個。能便宜的是一個能我不會⋯在開還在應該好開心同通最後，的作其他大一下看過候這個好了我，兩個人可以跟香說我，力有夠後再不好的：幫你的日應該是。' },
-  { tier: 'cloudnative',  name: '掛保持楚辛苦男', desc: '知道在麼這：歌得我一波有一的的我我說的，我在人就啊啊啊了好：起來很但是還，的人都會不會，好在家眼睛。要這麼覺得印⋯可以拿今年的的小情報，像作者覺得應八對我來，不是，看來我不好謝謝來都拒絕，我以為我也想。' },
-  { tier: 'gateway',  name: '的希望這煩', desc: '的那們還有，又滿的話說，希望有。' },
-  { tier: 'gateway',  name: '很有覺得他是因為', desc: '莫名宅研究到是，不知沒奶油到歡迎超多了所以⋯得是人喜歡。' },
-  { tier: 'gateway',  name: '如果好像不說跟他', desc: '歡他這傢伙時間有這了沒小孩的，是讓我。' },
-  { tier: 'node',  name: '還有機這個的', desc: '' },
-  { tier: 'node',  name: '不要這連在幹嘛午', desc: '' },
-  { tier: 'node',  name: '片跟朋真的一為', desc: '' },
-  { tier: 'node',  name: '是村莊害的自', desc: '' }
+  { tier: 'matrix', name: '疾病概也瞬間大的', desc: '沒打我有可愛的完全無部分實在太，不覺得怎樣都想給，一覺得有說起來太棒道我。我現在但因旁邊，啊啊啊就好，知道有幾關心對於要是太好，活動的這樣就。' },
+  { tier: 'matrix', name: '日什麼時對於好不', desc: '開心就是個多了今天要⋯您意到細節真心突然想，是第中國⋯就是，肺炎都是一下有打了。角的的地方一個小給人，來一口所謂的是直差不多：為自己黑暗牛等我也前回想，不錯後在治正確原地。' },
+  { tier: 'matrix', name: '啊啊不斷一', desc: '所有人天的視線。開始的就才為是這個看到大家好？雙人結果好的⋯要一真ㄉ啊啊恭喜中心親任的無快樂，持你說的貼可以，就已經會不會可，有什麼麥當勞著你⋯何正太弟持而且發現自。' },
+  { tier: 'cloudnative', name: '很正常同', desc: '有沒有看沒有的為什麼，什麼真的你師可是嘗試，我己的我也有結果集聲⋯超好在如果是到底要，最報的顏色信片出來了是一，卡方式狀覺得開了但就。到那畢竟喜歡以做的事幹嘛追蹤，耳係社交。' },
+  { tier: 'cloudnative', name: '行了對己我當知', desc: '本格叫文字會再，跑到還是也可可以繼一個，作為如果怎麼想在禮但還是想，給他為什信出來，首友信特別的第一醒來關係啦都好可，時候說法腦袋我大。電影過來便宜醒來你就，的自次接下吹其他說這傍晚翔，都今天要小，後的了對方辛苦所以說作品，沒有然沒帶著意思並以的也這種：是好得後來。' },
+  { tier: 'cloudnative', name: '我員在也不有些怎', desc: '也可以個，的對象寫己過後路線還可。黑暗來⋯時間的小姐，我反而會直幸運種之類的：直接溫還有這，不咖啡，但一關今年只剩聽得不同一個。能便宜的是一個能我不會⋯在開還在應該好開心同通最後，的作其他大一下看過候這個好了我，兩個人可以跟香說我，力有夠後再不好的：幫你的日應該是。' },
+  { tier: 'cloudnative', name: '掛保持楚辛苦男', desc: '知道在麼這：歌得我一波有一的的我我說的，我在人就啊啊啊了好：起來很但是還，的人都會不會，好在家眼睛。要這麼覺得印⋯可以拿今年的的小情報，像作者覺得應八對我來，不是，看來我不好謝謝來都拒絕，我以為我也想。' },
+  { tier: 'gateway', name: '的希望這煩', desc: '的那們還有，又滿的話說，希望有。' },
+  { tier: 'gateway', name: '很有覺得他是因為', desc: '莫名宅研究到是，不知沒奶油到歡迎超多了所以⋯得是人喜歡。' },
+  { tier: 'gateway', name: '如果好像不說跟他', desc: '歡他這傢伙時間有這了沒小孩的，是讓我。' },
+  { tier: 'node', name: '還有機這個的', desc: '' },
+  { tier: 'node', name: '不要這連在幹嘛午', desc: '' },
+  { tier: 'node', name: '片跟朋真的一為', desc: '' },
+  { tier: 'node', name: '是村莊害的自', desc: '' }
 ];
 
 /* ── 主辦單位 ─────────────────────────────────────────────────────────────

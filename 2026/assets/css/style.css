@@ -703,6 +703,24 @@ body.modal-open{overflow:hidden}
   font-size:15.5px;line-height:1.8;color:var(--c-ink);
   white-space:pre-wrap;word-break:break-word;margin:0;
 }
+.spk-modal-bio a,
+.spk-summary-link{
+  color:var(--c-teal-deep);
+  font-weight:600;
+  text-decoration:underline;
+  word-break:break-all;
+}
+.spk-modal-bio a:hover,
+.spk-summary-link:hover{
+  color:var(--c-teal);
+}
+.spk-modal-bio a::after,
+.spk-summary-link::after{
+  content:"\2197";
+  font-size:12px;
+  margin-left:3px;
+  display:inline-block;
+}
 .spk-modal-agenda-title{
   font-size:17.5px;font-weight:700;color:var(--c-ink);
   margin:0 0 10px;line-height:1.5;
