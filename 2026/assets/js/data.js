@@ -230,6 +230,21 @@ var SPEAKERS = [
     level: "Basic - 基礎入門",
     track: "Software Defined Reality",
     class: "AI, UXV (Unmanned x Vehicle), Robotics"
+  },
+  {
+    id: "2026_allen54a0",
+    name: "allen54a0",
+    role: "站長",
+    org: "UAV 無人機任務規劃與安全討論群",
+    img: "assets/img/speakers/Allen_TRANS-Allen-Lin.png",
+    bio: "各位朋友大家好，我是有20年以上無人機開發、測試、運用經驗的阿仁，很高興可以跟大家分享無人機開發過程中遇到的問題跟我們曾經嘗試過的方法",
+    link: "https://www.facebook.com/groups/1215514938555547",
+    linkText: "Facebook",
+    agenda: "用AI打造大氣探測無人機",
+    summary: "本次分享將介紹一項結合無人機與氣象氣球的大氣探勘任務，全程以AI貫穿任務規劃與落地執行。\n\n內容涵蓋三個關鍵環節：\n\n- 上升段大氣剖面預測\n- 無人機控制Lua腳本撰寫\n- SITL模擬測試驗證\n\n從任務需求出發，到方案設計、模擬驗證，再到實際落地測試，完整呈現AI如何賦能大氣科學領域的無人機應用。",
+    level: "Normal - 需相關基礎知識",
+    track: "Software Defined Reality",
+    class: "AI, UXV (Unmanned x Vehicle)"
   }
 ];
 
