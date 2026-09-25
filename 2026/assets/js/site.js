@@ -27,6 +27,7 @@ var NAV = [
   { text: '首頁',        href: 'index.html' },
   { text: 'JSDC',        href: 'https://2026.jsdc.tw/' },
   { text: '主辦單位',    href: 'organizers.html' },
+  { text: '特色議程',    href: 'sessions.html' },
   // { text: '議程介紹',    href: 'agenda.html' },
   { text: '講者陣容',    href: 'speakers.html' },
   // { text: '贊助夥伴',    href: 'sponsor.html' },
@@ -1134,6 +1135,275 @@ function renderSponsors() {
 }
 
 /* ==========================================================================
+   J. 議程清單頁（sessions.html）
+   ========================================================================== */
+var sessionPageState = {
+  currentTrack: 'Software Defined Reality'
+};
+
+var TRACK_DESCRIPTIONS = {
+  'Software Defined Reality': '聚焦軟體如何跨越虛擬邊界，成為驅動實體設備的核心大腦。從無人機的飛控演算法、各類載具濾波調校，到機器人邊緣運算與電腦視覺的即時反應，深入探討「軟體定義載具」（SDV）的底層技術與韌體架構。我們將解析程式碼如何突破物理極限，賦予硬體設備持續進化的靈魂。',
+  'Next-Gen Intelligence': '探索人工智慧技術的最前線與發展藍圖。本軌將深入解析 AI 發展與演進、LLM 語言模型現況與 Agentic AI 的自主決策機制，以及從文字生成邁向多模態理解的技術突破。幫助掌握 AI 演算法的底層邏輯與運算效能最佳化趨勢，一窺顛覆未來科技發展的關鍵核心技術。',
+  'AI in Action': '讓技術紅利真正落地！本軌專注於 AI 與現代軟體工程在商業場景的實戰經驗。從高併發的 SaaS 架構設計、雲端系統部署，到自動化工作流（Workflows）的無縫導入。講者將分享嚴謹的迭代開發流程與架構規劃，展示如何將 AI 概念轉化為解決真實業務痛點的強大生產力。'
+};
+
+function truncateSummary(text, maxChars) {
+  if (!text) return { text: '', isLong: false };
+  var limit = maxChars || 100;
+  var chars = Array.from(text);
+  if (chars.length > limit) {
+    return { text: chars.slice(0, limit).join(''), isLong: true };
+  }
+  return { text: text, isLong: false };
+}
+
+function renderSessionsPage() {
+  var list = document.getElementById('sessionList');
+  var tabsBox = document.getElementById('sessionTrackTabs');
+  if (!list || !tabsBox || typeof SPEAKERS === 'undefined') return;
+
+  var DEFAULT_TRACK = 'Software Defined Reality';
+
+  /* 收集所有出現過的軌道 */
+  var allTracks = [];
+  SPEAKERS.forEach(function (s) {
+    if (s.track && allTracks.indexOf(s.track) === -1) {
+      allTracks.push(s.track);
+    }
+  });
+
+  /* 確保預設的 Software Defined Reality 排在第一個 */
+  if (allTracks.indexOf(DEFAULT_TRACK) !== -1) {
+    allTracks = [DEFAULT_TRACK].concat(allTracks.filter(function (t) { return t !== DEFAULT_TRACK; }));
+  }
+
+  /* 檢查網址參數是否有指定 track，否則使用預設 track */
+  var urlTrack = new URLSearchParams(window.location.search).get('track');
+  if (urlTrack && allTracks.indexOf(urlTrack) !== -1) {
+    sessionPageState.currentTrack = urlTrack;
+  } else {
+    sessionPageState.currentTrack = DEFAULT_TRACK;
+  }
+
+  function getTrackChipClass(track) {
+    var t = String(track).toLowerCase().trim();
+    if (t.indexOf('software defined reality') !== -1 || t === 'sdr') return 'chip-sdr';
+    if (t.indexOf('next-gen intelligence') !== -1 || t.indexOf('next-gen') !== -1) return 'chip-nextgen';
+    if (t.indexOf('ai in action') !== -1) return 'chip-ai-action';
+    return '';
+  }
+
+  /* 渲染軌道 Tabs */
+  function renderTabs() {
+    var th = '';
+    allTracks.forEach(function (tr, idx) {
+      var isSelected = (tr === sessionPageState.currentTrack);
+      var chipCls = getTrackChipClass(tr);
+      th += '<li>' +
+              '<button type="button" role="tab" class="chip ' + chipCls + '" data-track="' + esc(tr) + '"' +
+                ' id="tab-' + idx + '"' +
+                ' aria-selected="' + (isSelected ? 'true' : 'false') + '"' +
+                ' tabindex="' + (isSelected ? '0' : '-1') + '">' +
+                '<span class="tag-dot" aria-hidden="true"></span>' +
+                esc(tr) +
+              '</button>' +
+            '</li>';
+    });
+    tabsBox.innerHTML = th;
+  }
+
+  /* 渲染目前軌道的議程清單 */
+  function paintSessions() {
+    var curTrack = sessionPageState.currentTrack;
+    var filtered = SPEAKERS.filter(function (s) {
+      return s.track === curTrack;
+    });
+
+    /* 更新標題與統計 */
+    var headingEl = document.getElementById('sessionBandTitle');
+    if (headingEl) headingEl.textContent = curTrack;
+
+    /* 更新軌道專屬說明文字（對應 index.html 三大軌道說明） */
+    var descEl = document.getElementById('sessionTrackDesc');
+    if (descEl) {
+      descEl.textContent = TRACK_DESCRIPTIONS[curTrack] || '聚焦軟體與前沿科技的創新實踐與深入探討。';
+    }
+
+    var countEl = document.getElementById('sessionFilterCount');
+    if (countEl) countEl.textContent = '共 ' + filtered.length + ' 場議程';
+
+    if (!filtered.length) {
+      list.innerHTML = '<li class="card"><p class="tl-empty">該軌道尚無議程資料。</p></li>';
+      return;
+    }
+
+    var html = '';
+    filtered.forEach(function (s) {
+      /* 標籤列：難易度、類別 */
+      var badges = '';
+      if (s.level) badges += levelTagHtml(s.level);
+      if (s.class) {
+        s.class.split(',').forEach(function (c) {
+          var t = c.trim();
+          if (t) badges += classTagHtml(t);
+        });
+      }
+      var tagsRow = badges ? '<div class="tag-row session-tags">' + badges + '</div>' : '';
+
+      /* 講者連結：僅列出 name 與 org，點擊時連至 speakers.html 對應講者頁面 */
+      var speakerLink = 'speakers.html?id=' + encodeURIComponent(s.id);
+      var speakerInfo =
+        '<div class="session-speaker-row">' +
+          '<span class="session-speaker-label">講者</span>' +
+          '<a class="session-speaker-link" href="' + esc(speakerLink) + '" title="檢視講者 ' + esc(s.name) + ' 完整簡介">' +
+            '<span class="session-speaker-name">' + esc(s.name) + '</span>' +
+            (s.org ? '<span class="session-speaker-org">（' + esc(s.org) + '）</span>' : '') +
+            '<span class="session-speaker-arrow" aria-hidden="true">&rarr;</span>' +
+          '</a>' +
+        '</div>';
+
+      /* 議程摘要：顯示原始資料前 100 個 multi-bytes 字元，超過接上 .. 與 more icon */
+      var summaryHtml = '';
+      if (s.summary) {
+        var truncInfo = truncateSummary(s.summary, 100);
+        if (truncInfo.isLong) {
+          summaryHtml =
+            '<div class="session-summary-box" data-session-id="' + esc(s.id) + '">' +
+              '<h4 class="session-summary-heading">議程摘要</h4>' +
+              '<div class="session-summary-content session-summary-short">' +
+                linkifyText(truncInfo.text) + '<span class="session-summary-dots">..</span>' +
+                '<button type="button" class="session-more-btn" aria-expanded="false" title="展開完整摘要">' +
+                  '<span class="session-more-text">more</span>' +
+                  '<svg class="session-more-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">' +
+                    '<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>' +
+                  '</svg>' +
+                '</button>' +
+              '</div>' +
+              '<div class="session-summary-content session-summary-full">' +
+                linkifyText(s.summary) +
+                '<div class="session-less-wrap">' +
+                  '<button type="button" class="session-less-btn" aria-expanded="true" title="收合摘要">' +
+                    '<span class="session-more-text">less</span>' +
+                    '<svg class="session-more-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">' +
+                      '<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd"/>' +
+                    '</svg>' +
+                  '</button>' +
+                '</div>' +
+              '</div>' +
+            '</div>';
+        } else {
+          summaryHtml =
+            '<div class="session-summary-box">' +
+              '<h4 class="session-summary-heading">議程摘要</h4>' +
+              '<div class="session-summary-content session-summary-short">' + linkifyText(truncInfo.text) + '</div>' +
+            '</div>';
+        }
+      }
+
+      html +=
+        '<li class="session-card">' +
+          '<div class="session-card-header">' +
+            tagsRow +
+            '<h3 class="session-agenda-title">' + esc(s.agenda || '議程主題陸續公布中') + '</h3>' +
+            speakerInfo +
+          '</div>' +
+          (summaryHtml ? '<hr class="session-divider">' + summaryHtml : '') +
+        '</li>';
+    });
+
+    list.innerHTML = html;
+  }
+
+  /* 摘要展開／收合事件（全頁一次僅展開一個議程） */
+  list.addEventListener('click', function (e) {
+    var moreBtn = e.target.closest('.session-more-btn');
+    if (moreBtn) {
+      var targetBox = moreBtn.closest('.session-summary-box');
+      if (!targetBox) return;
+
+      /* 收合全頁面上其他已展開的議程摘要 */
+      var allExpanded = list.querySelectorAll('.session-summary-box.is-expanded');
+      for (var i = 0; i < allExpanded.length; i++) {
+        if (allExpanded[i] !== targetBox) {
+          allExpanded[i].classList.remove('is-expanded');
+          var prevMore = allExpanded[i].querySelector('.session-more-btn');
+          if (prevMore) prevMore.setAttribute('aria-expanded', 'false');
+        }
+      }
+
+      /* 展開目標議程 */
+      targetBox.classList.add('is-expanded');
+      moreBtn.setAttribute('aria-expanded', 'true');
+      return;
+    }
+
+    var lessBtn = e.target.closest('.session-less-btn');
+    if (lessBtn) {
+      var box = lessBtn.closest('.session-summary-box');
+      if (!box) return;
+      box.classList.remove('is-expanded');
+      var moreInBox = box.querySelector('.session-more-btn');
+      if (moreInBox) {
+        moreInBox.setAttribute('aria-expanded', 'false');
+        moreInBox.focus();
+      }
+      return;
+    }
+  });
+
+  /* 點擊切換 Tab 事件 */
+  tabsBox.addEventListener('click', function (e) {
+    var btn = e.target.closest('button[data-track]');
+    if (!btn) return;
+    var track = btn.getAttribute('data-track');
+    if (!track || track === sessionPageState.currentTrack) return;
+    sessionPageState.currentTrack = track;
+
+    var allBtns = tabsBox.querySelectorAll('button[data-track]');
+    for (var i = 0; i < allBtns.length; i++) {
+      var isCur = (allBtns[i] === btn);
+      allBtns[i].setAttribute('aria-selected', isCur ? 'true' : 'false');
+      allBtns[i].setAttribute('tabindex', isCur ? '0' : '-1');
+    }
+
+    try {
+      var newUrl = new URL(window.location);
+      newUrl.searchParams.set('track', track);
+      window.history.replaceState(null, '', newUrl.toString());
+    } catch (_) {}
+
+    paintSessions();
+  });
+
+  /* 鍵盤無障礙導覽：左右箭頭切換 Tab */
+  tabsBox.addEventListener('keydown', function (e) {
+    var buttons = Array.from(tabsBox.querySelectorAll('button[data-track]'));
+    var currentIndex = buttons.indexOf(document.activeElement);
+    if (currentIndex === -1) return;
+
+    var nextIndex = -1;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      nextIndex = (currentIndex + 1) % buttons.length;
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+    } else if (e.key === 'Home') {
+      nextIndex = 0;
+    } else if (e.key === 'End') {
+      nextIndex = buttons.length - 1;
+    }
+
+    if (nextIndex !== -1) {
+      e.preventDefault();
+      buttons[nextIndex].focus();
+      buttons[nextIndex].click();
+    }
+  });
+
+  renderTabs();
+  paintSessions();
+}
+
+/* ==========================================================================
    I. 啟動
    ========================================================================== */
 function boot() {
@@ -1157,6 +1427,7 @@ function boot() {
   renderSponsorWall();
   renderAgendaPage();
   renderSponsors();
+  renderSessionsPage();
 
   var rt = false;
   window.addEventListener('resize', function () {

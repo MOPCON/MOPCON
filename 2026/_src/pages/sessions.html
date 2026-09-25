@@ -2,30 +2,36 @@
 
 <!--#include parts/page-hero.html -->
 
-  <!-- ======================= 級別分區 =======================
-       每一級的卡片大小由 data.js 的 SPONSOR_TIERS 的 size 欄位決定
-       （xl 最大 → xs 最小），內容來自 SPONSORS。 -->
-  <section class="band band-white arc-bot" aria-label="贊助夥伴">
+  <!-- ======================= 軌道切換 Tab =======================
+       以 SPEAKERS 的 track 欄位為切換 Tab，預設選取 "Software Defined Reality" -->
+  <div class="filters" role="region" aria-label="軌道切換">
+    <div class="wrap filters-in">
+      <ul class="chip-set" id="sessionTrackTabs" role="tablist" aria-label="議程軌道切換"></ul>
+      <p class="filter-count" id="sessionFilterCount" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- ======================= 議程清單 ======================= -->
+  <section class="band band-white arc-bot session-band" aria-labelledby="sessionBandTitle">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">SPONSORS</span>
-        <p class="lead">以下依贊助級別列出今年的贊助夥伴，名單持續更新中。感謝每一間願意投資在地技術社群的公司。</p>
+        <span class="eyebrow" id="sessionTrackEyebrow">TRACK SESSIONS</span>
+        <h2 id="sessionBandTitle">Software Defined Reality</h2>
+        <p class="lead" id="sessionTrackDesc">聚焦軟體如何跨越虛擬邊界，成為驅動實體設備的核心大腦。從無人機的飛控演算法、各類載具濾波調校，到機器人邊緣運算與電腦視覺的即時反應，深入探討「軟體定義載具」（SDV）的底層技術與韌體架構。我們將解析程式碼如何突破物理極限，賦予硬體設備持續進化的靈魂。</p>
       </div>
-      <!-- 每一級的標題（鑽石級／黃金級…）是 site.js 依 SPONSOR_TIERS 產生的 h2；
-           logo 目前全部是佔位塊，正式 logo 進來後請看 README 第 5 點。 -->
-      <div id="sponsorTiers"></div>
-      <noscript><p class="tl-empty">贊助資料由 assets/js/data.js 載入，需要開啟 JavaScript 才看得到。</p></noscript>
+      <ul class="session-list" id="sessionList" role="tabpanel" aria-labelledby="sessionBandTitle"></ul>
+      <noscript><p class="tl-empty">議程資料由 assets/js/data.js 載入，需要開啟 JavaScript 才看得到。</p></noscript>
     </div>
   </section>
 
-  <!-- ======================= 成為贊助夥伴 ======================= -->
+  <!-- ======================= 立即報名 ======================= -->
   <section class="band band-teal on-teal cta-band arc-bot" aria-labelledby="cta-t">
     <div class="wrap">
-      <h2 id="cta-t">成為贊助夥伴</h2>
-      <p>贊助 MOPCON，讓您的品牌被南台灣的科技從業者看見，也一起支持在地技術社群持續發展。歡迎來信索取贊助方案。</p>
+      <h2 id="cta-t">想聽這些精彩議程？</h2>
+      <p>講者與議程陸續公開中，請密切注意更新。</p>
       <div class="btn-row is-center">
-        <a class="btn btn-amber" href="mailto:{{email}}">成為贊助夥伴</a>
-        <a class="btn btn-w" href="index.html">大會簡介</a>
+        <a class="btn btn-amber" href="https://kktix.com/events/mopcon-2026/registrations/new">早鳥票限量搶購中</a>
+        <a class="btn btn-w" href="speakers.html">講者陣容</a>
       </div>
     </div>
   </section>

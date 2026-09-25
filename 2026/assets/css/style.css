@@ -518,6 +518,9 @@ a.card{display:block;color:inherit}
 .chip-A .tag-dot{background:var(--c-teal)}
 .chip-B .tag-dot{background:var(--c-mint)}
 .chip-C .tag-dot{background:var(--c-lime);border:1px solid var(--c-ink-70)}
+.chip-sdr .tag-dot{background:#38bdf8}
+.chip-nextgen .tag-dot{background:#7c3aed}
+.chip-ai-action .tag-dot{background:#10b981}
 /* 被選起來的按鈕底色是深青，色點外面加一圈白色光環就看得見了，
    這時 Track C 的深墨描邊反而多餘，收掉。 */
 .chip[aria-pressed=true] .tag-dot,.chip[aria-selected=true] .tag-dot{
@@ -792,6 +795,180 @@ body.modal-open{overflow:hidden}
 .org-logo-wrap:last-child{margin-bottom:0}
 .org-logo-wrap img{max-height:84px;max-width:210px;width:auto;height:auto;object-fit:contain}
 .org-card-name{font-size:clamp(17px,1.8vw,19px);font-weight:600;color:var(--c-ink);margin:0;line-height:1.4}
+
+/* ── 9.6 議程清單頁 ───────────────────────────────────────────────────────── */
+.session-band{background:var(--c-white);padding:clamp(36px,5vw,64px) 0 clamp(60px,8vw,100px)}
+.session-list{list-style:none;margin:0 auto;padding:0;display:flex;flex-direction:column;gap:24px;max-width:940px}
+.session-card{
+  background:var(--c-white);
+  border:1px solid var(--c-line);
+  border-radius:var(--r-card);
+  padding:clamp(22px,3.5vw,34px);
+  box-shadow:var(--shadow-1);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+  display:flex;
+  flex-direction:column;
+}
+.session-card:hover{
+  transform:translateY(-3px);
+  border-color:var(--c-mint);
+  box-shadow:var(--shadow-2);
+}
+.session-card-header{margin-bottom:6px}
+.session-tags{margin-bottom:12px}
+.session-agenda-title{
+  font-size:clamp(20px,2.4vw,25px);
+  font-weight:700;
+  color:var(--c-ink);
+  line-height:1.42;
+  margin:0 0 14px;
+}
+.session-speaker-row{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 12px;
+  font-size:15px;
+  margin-top:6px;
+}
+.session-speaker-label{
+  color:var(--c-ink-70);
+  font-size:14px;
+  font-weight:600;
+}
+.session-speaker-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:var(--c-teal-deep);
+  font-weight:600;
+  text-decoration:none;
+  padding:5px 14px;
+  background:var(--c-teal-tint);
+  border:1px solid rgba(var(--rgb-teal),.2);
+  border-radius:999px;
+  transition:all .18s ease;
+}
+.session-speaker-link:hover{
+  background:var(--c-teal-deep);
+  color:var(--c-white);
+  border-color:var(--c-teal-deep);
+  text-decoration:none;
+  transform:translateY(-1px);
+  box-shadow:0 3px 8px rgba(var(--rgb-teal),.25);
+}
+.session-speaker-name{font-weight:700}
+.session-speaker-org{font-weight:400;font-size:13.5px;opacity:.9}
+.session-speaker-link:hover .session-speaker-org{color:var(--c-white)}
+.session-speaker-arrow{font-size:13px;transition:transform .18s ease}
+.session-speaker-link:hover .session-speaker-arrow{transform:translateX(3px)}
+.session-divider{
+  border:0;
+  border-top:1px solid var(--c-line);
+  margin:18px 0 20px;
+}
+.session-summary-box{
+  background:var(--c-surface);
+  border-radius:10px;
+  padding:18px 22px;
+  border-left:4px solid var(--c-teal);
+}
+.session-summary-heading{
+  font-size:14px;
+  font-weight:700;
+  color:var(--c-teal-deep);
+  letter-spacing:.05em;
+  margin:0 0 10px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.session-summary-heading::before{
+  content:"";
+  display:inline-block;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--c-teal);
+}
+.session-summary-content{
+  font-size:15.5px;
+  line-height:1.85;
+  color:var(--c-ink);
+  white-space:pre-wrap;
+  word-break:break-word;
+}
+.session-summary-content a{
+  color:var(--c-teal-deep);
+  font-weight:600;
+  text-decoration:underline;
+  word-break:break-all;
+}
+.session-summary-content a:hover{
+  color:var(--c-teal);
+}
+.session-summary-content a::after{
+  content:"\2197";
+  font-size:12px;
+  margin-left:3px;
+  display:inline-block;
+}
+.session-summary-box .session-summary-full{
+  display:none;
+}
+.session-summary-box.is-expanded .session-summary-short{
+  display:none;
+}
+.session-summary-box.is-expanded .session-summary-full{
+  display:block;
+  animation:spkFadeIn .2s ease;
+}
+.session-summary-dots{
+  color:var(--c-ink-70);
+  font-weight:700;
+  letter-spacing:1px;
+}
+.session-more-btn,
+.session-less-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  background:var(--c-teal-tint);
+  border:1px solid rgba(var(--rgb-teal),.25);
+  border-radius:999px;
+  color:var(--c-teal-deep);
+  font-size:12.5px;
+  font-weight:700;
+  padding:2px 10px 2px 9px;
+  cursor:pointer;
+  vertical-align:middle;
+  transition:all .18s ease;
+  line-height:1.4;
+  margin-left:6px;
+}
+.session-more-btn:hover,
+.session-less-btn:hover{
+  background:var(--c-teal-deep);
+  color:var(--c-white);
+  border-color:var(--c-teal-deep);
+  transform:translateY(-1px);
+  box-shadow:0 2px 6px rgba(var(--rgb-teal),.2);
+}
+.session-more-icon{
+  flex-shrink:0;
+  transition:transform .18s ease;
+}
+.session-more-btn:hover .session-more-icon{
+  transform:translateY(1px);
+}
+.session-less-btn:hover .session-more-icon{
+  transform:translateY(-1px);
+}
+.session-less-wrap{
+  margin-top:12px;
+  display:flex;
+  justify-content:flex-end;
+}
 
 /* ── 10 頁尾 ────────────────────────────────────────────────────────────── */
 .on-teal a:not(.btn),.site-footer .foot-brand a,.site-footer .foot-bottom a{color:var(--c-white)}
