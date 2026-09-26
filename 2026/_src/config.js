@@ -80,23 +80,23 @@ export const PAGES = [
   },
   {
     file:  'organizers.html',
-    title: `大會主辦｜MOPCON ${SITE.year}`,
+    title: `主辦｜MOPCON ${SITE.year}`,
     desc:  `MOPCON ${SITE.year} 是濁水溪以南規模最大的科技年會，透過社群驅動與融合產官學資源將前沿科技在南台灣交流激盪。`,
-    h1:    '大會主辦',
+    h1:    '主辦',
     lead:  '濁水溪以南規模最大的科技年會，透過社群驅動與融合產官學資源將前沿科技在南台灣交流激盪。'
   },
   {
     file:  'sessions.html',
-    title: `大會議程清單｜MOPCON ${SITE.year}`,
-    desc:  `MOPCON ${SITE.year} 大會議程：單日三軌並行，涵蓋 Software Defined Reality、Next-Gen Intelligence 與 AI in Action 三大主軸。`,
-    h1:    '大會議程清單',
-    lead:  '單日三軌並行，橫跨今年的三大主軸。可以用下方的軌道篩選，只看某一軌的場次。'
+    title: `特色議程｜MOPCON ${SITE.year}`,
+    desc:  `MOPCON ${SITE.year} 特色議程：Software Defined Reality、Next-Gen Intelligence 與 AI in Action 三大科技趨勢，從軟體、AI 到無人載具，讓您一次充電最新軟科技的技術能量。`,
+    h1:    '特色議程',
+    lead:  '單日三大科技趨勢並行，Software Defined Reality、Next-Gen Intelligence 與 AI in Action：從軟體、AI 到無人載具，讓您一次充電最新軟科技的技術能量，可以用下方按鈕篩選各領域議題的議程清單。'
   },
   {
     file:  'agenda.html',
-    title: `大會議程表｜MOPCON ${SITE.year}`,
-    desc:  `MOPCON ${SITE.year} 大會議程：單日三軌並行，涵蓋 Software Defined Reality、Next-Gen Intelligence 與 AI in Action 三大主軸。${SITE.date}。`,
-    h1:    '大會議程表',
+    title: `議程表｜MOPCON ${SITE.year}`,
+    desc:  `MOPCON ${SITE.year} 議程表：單日三軌並行，涵蓋 Software Defined Reality、Next-Gen Intelligence 與 AI in Action 三大主軸。${SITE.date}。`,
+    h1:    '議程表',
     lead:  '單日三軌並行，橫跨今年的三大主軸。可以用下方的軌道篩選，只看某一軌的場次。'
   },
   {

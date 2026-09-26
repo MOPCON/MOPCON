@@ -1238,34 +1238,49 @@ function renderSessionsPage() {
     }
 
     var html = '';
-    filtered.forEach(function (s) {
-      /* 標籤列：難易度、類別 */
-      var badges = '';
-      if (s.level) badges += levelTagHtml(s.level);
+    filtered.forEach(function (s, idx) {
+      /* 標籤列：難易度 (level) 與類別 (class) 用換行隔開 */
+      var levelBadge = s.level ? '<div class="tag-row session-level-row">' + levelTagHtml(s.level) + '</div>' : '';
+      var classBadges = '';
       if (s.class) {
         s.class.split(',').forEach(function (c) {
           var t = c.trim();
-          if (t) badges += classTagHtml(t);
+          if (t) classBadges += classTagHtml(t);
         });
       }
-      var tagsRow = badges ? '<div class="tag-row session-tags">' + badges + '</div>' : '';
+      var classRow = classBadges ? '<div class="tag-row session-class-row">' + classBadges + '</div>' : '';
+      var tagsRow = (levelBadge || classRow)
+        ? '<div class="session-tags">' + levelBadge + classRow + '</div>'
+        : '';
 
-      /* 講者連結：僅列出 name 與 org，點擊時連至 speakers.html 對應講者頁面 */
+      /* 講者資訊：格式為 "img name | role \n org"，點選連至 speakers.html 對應講者頁面 */
       var speakerLink = 'speakers.html?id=' + encodeURIComponent(s.id);
+      var avatarHtml = s.img
+        ? '<img loading="lazy" decoding="async" src="' + esc(s.img) + '" alt="' + esc(s.name) + '">'
+        : phShape(idx, true);
+      var speakerLine1 = '<span class="session-speaker-name">' + esc(s.name) + '</span>' +
+        (s.role ? ' <span class="session-speaker-sep" aria-hidden="true">|</span> <span class="session-speaker-role">' + esc(s.role) + '</span>' : '');
+      var speakerLine2 = s.org ? '<div class="session-speaker-org">' + esc(s.org) + '</div>' : '';
+
       var speakerInfo =
         '<div class="session-speaker-row">' +
-          '<span class="session-speaker-label">講者</span>' +
-          '<a class="session-speaker-link" href="' + esc(speakerLink) + '" title="檢視講者 ' + esc(s.name) + ' 完整簡介">' +
-            '<span class="session-speaker-name">' + esc(s.name) + '</span>' +
-            (s.org ? '<span class="session-speaker-org">（' + esc(s.org) + '）</span>' : '') +
-            '<span class="session-speaker-arrow" aria-hidden="true">&rarr;</span>' +
+          '<a class="session-speaker-card" href="' + esc(speakerLink) + '" title="檢視講者 ' + esc(s.name) + ' 完整簡介">' +
+            '<div class="session-speaker-avatar avatar ph-round">' + avatarHtml + '</div>' +
+            '<div class="session-speaker-meta">' +
+              '<div class="session-speaker-line1">' + speakerLine1 + '</div>' +
+              speakerLine2 +
+            '</div>' +
           '</a>' +
         '</div>';
 
-      /* 議程摘要：顯示原始資料前 100 個 multi-bytes 字元，超過接上 .. 與 more icon */
+      /* 議程摘要：如果 summary 內容有 "\n\n" 或多重換行，顯示時一律 replace 為 "\n" */
       var summaryHtml = '';
       if (s.summary) {
-        var truncInfo = truncateSummary(s.summary, 100);
+        var cleanSummary = s.summary
+          .replace(/\r\n/g, '\n')
+          .replace(/\r/g, '\n')
+          .replace(/(?:[ \t]*\n[ \t]*){2,}/g, '\n');
+        var truncInfo = truncateSummary(cleanSummary, 100);
         if (truncInfo.isLong) {
           summaryHtml =
             '<div class="session-summary-box" data-session-id="' + esc(s.id) + '">' +
@@ -1280,7 +1295,7 @@ function renderSessionsPage() {
                 '</button>' +
               '</div>' +
               '<div class="session-summary-content session-summary-full">' +
-                linkifyText(s.summary) +
+                linkifyText(cleanSummary) +
                 '<div class="session-less-wrap">' +
                   '<button type="button" class="session-less-btn" aria-expanded="true" title="收合摘要">' +
                     '<span class="session-more-text">less</span>' +
