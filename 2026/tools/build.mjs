@@ -143,7 +143,7 @@ function pageUrl(SITE, file) {
 /* 只列這一年的頁面。根目錄那份 sitemap.xml 是列各年度首頁的，兩份互不干擾，
    robots.txt 兩份都有列出來。新增頁面時這裡會自己跟著長，不用手動維護。 */
 function sitemap(SITE, PAGES) {
-  const rows = PAGES.map((p) =>
+  const rows = PAGES.filter((p) => p.sitemap !== false).map((p) =>
     `  <url><loc>${pageUrl(SITE, p.file)}</loc><changefreq>weekly</changefreq>` +
     `<priority>${p.file === 'index.html' ? '1.00' : '0.80'}</priority></url>`).join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>\n` +

@@ -107,6 +107,14 @@ export const PAGES = [
     lead:  '來自業界第一線的實踐者，橫跨軟體定義載具、AI 技術前沿與工程落地實戰。'
   },
   {
+    file:  'speakers2.html',
+    title: `講者陣容｜MOPCON ${SITE.year}`,
+    desc:  `MOPCON ${SITE.year} 講者陣容：Software Defined Reality。來自業界第一線的軟體工程、AI 與載具技術實踐者。`,
+    h1:    '講者陣容',
+    lead:  '來自業界第一線的實踐者，橫跨軟體定義載具、AI 技術前沿與工程落地實戰。',
+    sitemap: false
+  },
+  {
     file:  'sponsor.html',
     title: `贊助夥伴｜MOPCON ${SITE.year}`,
     desc:  `MOPCON ${SITE.year} 贊助夥伴：鑽石級／黃金級／白銀級／銅級／友情贊助，以及成為贊助夥伴的聯絡方式 ${SITE.email}。`,

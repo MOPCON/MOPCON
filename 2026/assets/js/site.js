@@ -24,14 +24,15 @@
       children 有填就變成下拉選單（下拉項目只要 text + href）
    桌機寬度不夠時，右邊的項目會自動收進「更多 ▾」，不用改 CSS。 */
 var NAV = [
-  { text: '首頁',        href: 'index.html' },
-  { text: 'JSDC',        href: 'https://2026.jsdc.tw/' },
-  { text: '主辦單位',    href: 'organizers.html' },
-  { text: '特色議程',    href: 'sessions.html' },
+  { text: '首頁', href: 'index.html' },
+  { text: 'JSDC', href: 'https://2026.jsdc.tw/' },
+  { text: '主辦單位', href: 'organizers.html' },
+  { text: '特色議程', href: 'sessions.html' },
   // { text: '議程介紹',    href: 'agenda.html' },
-  { text: '講者陣容',    href: 'speakers.html' },
+  { text: '講者陣容', href: 'speakers.html' },
   // { text: '贊助夥伴',    href: 'sponsor.html' },
-  { text: '時光機', children: [
+  {
+    text: '時光機', children: [
       { text: 'MOPCON 2025', target: "_blank", href: 'https://mopcon.org/2025/' },
       { text: 'MOPCON 2024', target: "_blank", href: 'https://mopcon.org/2024/' },
       { text: 'MOPCON 2023', target: "_blank", href: 'https://mopcon.org/2023/' },
@@ -46,7 +47,8 @@ var NAV = [
       { text: 'MOPCON 2014', target: "_blank", href: 'https://mopcon.org/2014/' },
       { text: 'MOPCON 2013', target: "_blank", href: 'https://mopcon.org/2013/' },
       { text: 'MOPCON 2012', target: "_blank", href: 'https://mopcon.org/2012/' }
-  ]}
+    ]
+  }
 ];
 var NAV_CTA = { text: '前往購票', href: '#' };
 NAV_CTA = null;  // 還沒有購票連結，先隱藏
@@ -515,7 +517,7 @@ function levelTagHtml(level) {
 function trackTagHtml(track) {
   if (!track || track === 'ALL') return '';
   return '<span class="tag ' + esc(trackClass(track)) + '"><span class="tag-dot" aria-hidden="true"></span>' +
-         esc(trackName(track)) + '</span>';
+    esc(trackName(track)) + '</span>';
 }
 
 function classTagHtml(className) {
@@ -529,7 +531,7 @@ function tagsHtml(s) {
   if (s.type === 'keynote') h += '<span class="tag tag-key">Keynote</span>';
   if (s.track && s.track !== 'ALL') {
     h += '<span class="tag ' + esc(trackClass(s.track)) + '"><span class="tag-dot" aria-hidden="true"></span>' +
-         esc(trackName(s.track)) + '</span>';
+      esc(trackName(s.track)) + '</span>';
   }
   if (s.level) h += levelTagHtml(s.level);
   return h + '</div>';
@@ -562,13 +564,13 @@ function renderAgendaPreview() {
   var h = '';
   picked.forEach(function (s) {
     h += '<li class="prev-item">' +
-           '<div class="prev-time">' + esc(s.start) + '</div>' +
-           '<div class="prev-body">' +
-             '<h3>' + esc(s.title) + '</h3>' +
-             '<p class="prev-meta">' + esc(s.speaker) + '｜' + esc(s.org) + '</p>' +
-             tagsHtml(s) +
-           '</div>' +
-         '</li>';
+      '<div class="prev-time">' + esc(s.start) + '</div>' +
+      '<div class="prev-body">' +
+      '<h3>' + esc(s.title) + '</h3>' +
+      '<p class="prev-meta">' + esc(s.speaker) + '｜' + esc(s.org) + '</p>' +
+      tagsHtml(s) +
+      '</div>' +
+      '</li>';
   });
   box.innerHTML = h;
 }
@@ -580,10 +582,10 @@ function renderSpeakers() {
   SPEAKERS.slice(0, 8).forEach(function (p, i) {
     let avatar = p.img ? '<img loading="lazy" decoding="async" src="' + esc(p.img) + '" alt="">' : '<div class="avatar">' + phShape(i, true) + '</div>';
     h += '<li class="spk">' +
-           '<div class="ph ph-round avatar">' + avatar + '</div>' +
-           '<h3>' + esc(p.name) + '</h3>' +
-           '<p>' + esc(p.role) + '｜' + esc(p.org) + '</p>' +
-         '</li>';
+      '<div class="ph ph-round avatar">' + avatar + '</div>' +
+      '<h3>' + esc(p.name) + '</h3>' +
+      '<p>' + esc(p.role) + '｜' + esc(p.org) + '</p>' +
+      '</li>';
   });
   box.innerHTML = h;
 }
@@ -598,11 +600,11 @@ function renderSponsorWall() {
     var list = SPONSORS.filter(function (s) { return s.tier === tier.id; });
     if (!list.length) return;
     h += '<div class="wall"><h3 class="wall-t">' + esc(tier.name) + '</h3>' +
-         '<div class="wall-grid ' + (WALL_CLASS[tier.size] || 'wall-3') + '">';
+      '<div class="wall-grid ' + (WALL_CLASS[tier.size] || 'wall-3') + '">';
     list.forEach(function (s) {
       h += '<div class="ph">' + (s.logo ? '<img src="' + esc(s.logo) + '" alt="">'
-             : phShape(n, false)) +
-           '<span class="wall-name">' + esc(s.name) + '</span></div>';
+        : phShape(n, false)) +
+        '<span class="wall-name">' + esc(s.name) + '</span></div>';
       n++;
     });
     h += '</div></div>';
@@ -620,7 +622,7 @@ function renderSponsorWall() {
 function fillCounts() {
   if (typeof SESSIONS === 'undefined') return;
   var map = {
-    tracks:   (typeof TRACKS === 'undefined' ? 0 : TRACKS.length),
+    tracks: (typeof TRACKS === 'undefined' ? 0 : TRACKS.length),
     sessions: SESSIONS.filter(isTalkRow).length,
     speakers: (typeof SPEAKERS === 'undefined' ? 0 : SPEAKERS.length),
     sponsors: (typeof SPONSORS === 'undefined' ? 0 : SPONSORS.length)
@@ -654,8 +656,8 @@ function renderAgendaPage() {
     var th = '<li><button type="button" class="chip" data-track="ALL" aria-pressed="true">全部</button></li>';
     (typeof TRACKS === 'undefined' ? [] : TRACKS).forEach(function (t) {
       th += '<li><button type="button" class="chip chip-' + esc(t.id) + '" data-track="' + esc(t.id) +
-            '" aria-pressed="false"><span class="tag-dot" aria-hidden="true"></span>' +
-            esc(t.name) + '</button></li>';
+        '" aria-pressed="false"><span class="tag-dot" aria-hidden="true"></span>' +
+        esc(t.name) + '</button></li>';
     });
     trBox.innerHTML = th;
     trBox.addEventListener('click', function (e) {
@@ -696,11 +698,11 @@ function paintAgenda() {
        同時段的三軌則一定都是 talk。--cols 是給 CSS 排橫向欄數用的。 */
     var head = slot.items[0];
     h += '<li class="ses is-' + esc(head.type) + '" style="--cols:' + slot.items.length + '">' +
-           '<span class="ses-node" aria-hidden="true"></span>' +
-           '<span class="ses-time">' + esc(slot.start) +
-             (slot.end ? '<span class="to">– ' + esc(slot.end) + '</span>' : '') +
-           '</span>' +
-           '<div class="ses-cards">';
+      '<span class="ses-node" aria-hidden="true"></span>' +
+      '<span class="ses-time">' + esc(slot.start) +
+      (slot.end ? '<span class="to">– ' + esc(slot.end) + '</span>' : '') +
+      '</span>' +
+      '<div class="ses-cards">';
     slot.items.forEach(function (s) {
       /* 非議程的列（報到／休息／午餐／閉幕⋯）畫成一顆細長膠囊，不畫講者與標籤 */
       h += '<div class="ses-card">';
@@ -708,8 +710,8 @@ function paintAgenda() {
         h += '<span class="ses-label">' + esc(s.title || '') + '</span>';
       } else {
         h += '<h3>' + esc(s.title) + '</h3>' +
-             '<p class="ses-who"><b>' + esc(s.speaker) + '</b>　' + esc(s.org) + '</p>' +
-             tagsHtml(s);
+          '<p class="ses-who"><b>' + esc(s.speaker) + '</b>　' + esc(s.org) + '</p>' +
+          tagsHtml(s);
       }
       h += '</div>';
     });
@@ -778,7 +780,7 @@ function linkifyText(text) {
       rawUrl = rawUrl.slice(0, -trailingPunct.length);
     }
     parts.push('<a class="spk-summary-link" href="' + esc(rawUrl) + '" target="_blank" rel="noopener noreferrer">' +
-               esc(rawUrl) + '<span class="sr-only">（另開新視窗）</span></a>' + esc(trailingPunct));
+      esc(rawUrl) + '<span class="sr-only">（另開新視窗）</span></a>' + esc(trailingPunct));
     last = m.index + m[0].length;
   }
   if (last < text.length) {
@@ -797,7 +799,7 @@ function formatBioHtml(bio, truncateLength) {
     if (/^www\./i.test(url)) url = 'https://' + url;
     var serviceName = getServiceDisplayName(url);
     return '<a class="spk-bio-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' +
-           esc(serviceName) + '<span class="sr-only">（另開新視窗）</span></a>';
+      esc(serviceName) + '<span class="sr-only">（另開新視窗）</span></a>';
   }
   if (truncateLength) {
     return esc(truncateBio(trimmed, truncateLength));
@@ -898,10 +900,10 @@ function speakerSocialsHtml(p) {
     var info = getSocialIconInfo(item.url, item.label);
     if (!info) return;
     h += '<a class="spk-social-btn spk-social-' + esc(info.type) + '" href="' + esc(item.url) +
-         '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(info.label) +
-         '" title="' + esc(info.label) + '">' +
-         info.svg +
-         '<span class="sr-only">（另開新視窗）</span></a>';
+      '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(info.label) +
+      '" title="' + esc(info.label) + '">' +
+      info.svg +
+      '<span class="sr-only">（另開新視窗）</span></a>';
   });
   h += '</div>';
   return h;
@@ -927,18 +929,18 @@ function openSpeakerModal(id, pushUrl) {
 
   var contentHtml =
     '<div class="spk-modal-profile">' +
-      '<div class="spk-modal-avatar ph ph-round">' + avatar + '</div>' +
-      '<div class="spk-modal-meta">' +
-        '<h3 id="spkModalName" class="spk-modal-name">' + esc(speaker.name) + '</h3>' +
-        '<p class="spk-modal-role">' + esc(speaker.role) + '｜' + esc(speaker.org) + '</p>' +
-        (profileTags ? '<div class="tag-row">' + profileTags + '</div>' : '') +
-        speakerSocialsHtml(speaker) +
-      '</div>' +
+    '<div class="spk-modal-avatar ph ph-round">' + avatar + '</div>' +
+    '<div class="spk-modal-meta">' +
+    '<h3 id="spkModalName" class="spk-modal-name">' + esc(speaker.name) + '</h3>' +
+    '<p class="spk-modal-role">' + esc(speaker.role) + '｜' + esc(speaker.org) + '</p>' +
+    (profileTags ? '<div class="tag-row">' + profileTags + '</div>' : '') +
+    speakerSocialsHtml(speaker) +
+    '</div>' +
     '</div>' +
     '<hr class="spk-modal-divider">' +
     '<div class="spk-modal-section">' +
-      '<h4 class="spk-modal-section-title">介紹</h4>' +
-      '<div class="spk-modal-bio">' + (speaker.bio ? formatBioHtml(speaker.bio, 0) : '尚無講者簡介') + '</div>' +
+    '<h4 class="spk-modal-section-title">介紹</h4>' +
+    '<div class="spk-modal-bio">' + (speaker.bio ? formatBioHtml(speaker.bio, 0) : '尚無講者簡介') + '</div>' +
     '</div>';
 
   var row1Badges = '';
@@ -959,24 +961,24 @@ function openSpeakerModal(id, pushUrl) {
     contentHtml +=
       '<hr class="spk-modal-divider">' +
       '<div class="spk-modal-section">' +
-        '<h4 class="spk-modal-section-title">議程主題</h4>' +
-        '<h5 class="spk-modal-agenda-title">' + esc(speaker.agenda) + '</h5>' +
-        row1Html +
-        row2Html +
+      '<h4 class="spk-modal-section-title">議程主題</h4>' +
+      '<h5 class="spk-modal-agenda-title">' + esc(speaker.agenda) + '</h5>' +
+      row1Html +
+      row2Html +
       '</div>';
   } else if (row1Html || row2Html) {
     contentHtml +=
       '<hr class="spk-modal-divider">' +
       '<div class="spk-modal-section">' +
-        row1Html +
-        row2Html +
+      row1Html +
+      row2Html +
       '</div>';
   }
   if (speaker.summary) {
     contentHtml +=
       '<br><div class="spk-modal-section">' +
-        '<h4 class="spk-modal-section-title">議程摘要</h4>' +
-        '<div class="spk-modal-bio">' + linkifyText(speaker.summary) + '</div>' +
+      '<h4 class="spk-modal-section-title">議程摘要</h4>' +
+      '<div class="spk-modal-bio">' + linkifyText(speaker.summary) + '</div>' +
       '</div>';
   }
 
@@ -1050,30 +1052,43 @@ function bindSpeakerModalEvents() {
 function renderSpeakerPage() {
   var box = document.getElementById('speakerList');
   if (!box || typeof SPEAKERS === 'undefined') return;
+
+  var targetTrack = box.getAttribute('data-track');
+  var cur = currentFile();
+  if (!targetTrack && cur === 'speakers2.html') {
+    targetTrack = 'Software Defined Reality';
+  }
+
+  var speakers = targetTrack
+    ? SPEAKERS.filter(function (p) {
+      return p.track && p.track.trim().toLowerCase() === targetTrack.trim().toLowerCase();
+    })
+    : SPEAKERS;
+
   var h = '';
-  SPEAKERS.forEach(function (p, i) {
+  speakers.forEach(function (p, i) {
     /* 講者頁卡片上不顯示 track、level 與 class，僅在個別講者彈出視窗（speakers.html?id=...）顯示 */
     var tags = p.keynote ? '<div class="tag-row"><span class="tag tag-key">Keynote</span></div>' : '';
     var avatar = p.img ? '<img loading="lazy" decoding="async" src="' + esc(p.img) + '" alt="' + esc(p.name) + '">' : phShape(i, true);
     h += '<li class="card spk-card" data-speaker-id="' + esc(p.id) + '" tabindex="0" role="button" aria-haspopup="dialog">' +
-           '<div class="ph ph-round avatar">' + avatar + '</div>' +
-           '<div class="spk-body">' +
-             '<div class="spk-head">' +
-               '<h3>' + esc(p.name) + '</h3>' +
-               (p.role ? '<span class="spk-role">' + esc(p.role) + '</span>' : '') +
-             '</div>' +
-             (p.org ? '<p class="spk-org">' + esc(p.org) + '</p>' : '') +
-             tags +
-             (p.bio ? '<p class="spk-bio">' + formatBioHtml(p.bio, 120) + '</p>' : '') +
-           '</div>' +
-           '<span class="spk-card-more" aria-hidden="true">more &rarr;</span>' +
-         '</li>';
+      '<div class="ph ph-round avatar">' + avatar + '</div>' +
+      '<div class="spk-body">' +
+      '<div class="spk-head">' +
+      '<h3>' + esc(p.name) + '</h3>' +
+      (p.role ? '<span class="spk-role">' + esc(p.role) + '</span>' : '') +
+      '</div>' +
+      (p.org ? '<p class="spk-org">' + esc(p.org) + '</p>' : '') +
+      tags +
+      (p.bio ? '<p class="spk-bio">' + formatBioHtml(p.bio, 120) + '</p>' : '') +
+      '</div>' +
+      '<span class="spk-card-more" aria-hidden="true">more &rarr;</span>' +
+      '</li>';
   });
   box.innerHTML = h;
 
   /* 「共 N 位講者」；跟議程頁的篩選統計一樣，不寫成分數，維護的人才不會誤會 */
   var count = document.getElementById('speakerCount');
-  if (count) count.textContent = '共 ' + SPEAKERS.length + ' 位講者';
+  if (count) count.textContent = '共 ' + speakers.length + ' 位講者';
 
   /* 綁定彈出視窗相關事件 */
   bindSpeakerModalEvents();
@@ -1100,7 +1115,10 @@ function renderSpeakerPage() {
   /* 初始載入時若網址帶有 ?id=$speaker_id 則直接開啟該講者視窗 */
   var initialId = new URLSearchParams(window.location.search).get('id');
   if (initialId) {
-    openSpeakerModal(initialId, false);
+    var hasSpeaker = speakers.some(function (s) { return s.id === initialId; });
+    if (hasSpeaker) {
+      openSpeakerModal(initialId, false);
+    }
   }
 }
 
@@ -1115,18 +1133,18 @@ function renderSponsors() {
     var list = SPONSORS.filter(function (s) { return s.tier === tier.id; });
     if (!list.length) return;
     h += '<section class="tier">' +
-           '<div class="tier-head">' +
-             '<span class="shape ' + PH_SHAPES[n % 3] + '" aria-hidden="true"></span>' +
-             '<h2>' + esc(tier.name) + '</h2>' +
-           '</div>' +
-           '<div class="tier-grid t-' + esc(tier.size) + '">';
+      '<div class="tier-head">' +
+      '<span class="shape ' + PH_SHAPES[n % 3] + '" aria-hidden="true"></span>' +
+      '<h2>' + esc(tier.name) + '</h2>' +
+      '</div>' +
+      '<div class="tier-grid t-' + esc(tier.size) + '">';
     list.forEach(function (s) {
       h += '<article class="card sp-card">' +
-             '<div class="ph">' + (s.logo ? '<img src="' + esc(s.logo) + '" alt="' + esc(s.name) + '">'
-               : phShape(n, false)) + '</div>' +
-             '<div><h3>' + esc(s.name) + '</h3>' +
-             (s.desc ? '<p>' + esc(s.desc) + '</p>' : '') + '</div>' +
-           '</article>';
+        '<div class="ph">' + (s.logo ? '<img src="' + esc(s.logo) + '" alt="' + esc(s.name) + '">'
+          : phShape(n, false)) + '</div>' +
+        '<div><h3>' + esc(s.name) + '</h3>' +
+        (s.desc ? '<p>' + esc(s.desc) + '</p>' : '') + '</div>' +
+        '</article>';
       n++;
     });
     h += '</div></section>';
@@ -1200,14 +1218,14 @@ function renderSessionsPage() {
       var isSelected = (tr === sessionPageState.currentTrack);
       var chipCls = getTrackChipClass(tr);
       th += '<li>' +
-              '<button type="button" role="tab" class="chip ' + chipCls + '" data-track="' + esc(tr) + '"' +
-                ' id="tab-' + idx + '"' +
-                ' aria-selected="' + (isSelected ? 'true' : 'false') + '"' +
-                ' tabindex="' + (isSelected ? '0' : '-1') + '">' +
-                '<span class="tag-dot" aria-hidden="true"></span>' +
-                esc(tr) +
-              '</button>' +
-            '</li>';
+        '<button type="button" role="tab" class="chip ' + chipCls + '" data-track="' + esc(tr) + '"' +
+        ' id="tab-' + idx + '"' +
+        ' aria-selected="' + (isSelected ? 'true' : 'false') + '"' +
+        ' tabindex="' + (isSelected ? '0' : '-1') + '">' +
+        '<span class="tag-dot" aria-hidden="true"></span>' +
+        esc(tr) +
+        '</button>' +
+        '</li>';
     });
     tabsBox.innerHTML = th;
   }
@@ -1264,13 +1282,13 @@ function renderSessionsPage() {
 
       var speakerInfo =
         '<div class="session-speaker-row">' +
-          '<a class="session-speaker-card" href="' + esc(speakerLink) + '" title="檢視講者 ' + esc(s.name) + ' 完整簡介">' +
-            '<div class="session-speaker-avatar avatar ph-round">' + avatarHtml + '</div>' +
-            '<div class="session-speaker-meta">' +
-              '<div class="session-speaker-line1">' + speakerLine1 + '</div>' +
-              speakerLine2 +
-            '</div>' +
-          '</a>' +
+        '<a class="session-speaker-card" href="' + esc(speakerLink) + '" title="檢視講者 ' + esc(s.name) + ' 完整簡介">' +
+        '<div class="session-speaker-avatar avatar ph-round">' + avatarHtml + '</div>' +
+        '<div class="session-speaker-meta">' +
+        '<div class="session-speaker-line1">' + speakerLine1 + '</div>' +
+        speakerLine2 +
+        '</div>' +
+        '</a>' +
         '</div>';
 
       /* 議程摘要：如果 summary 內容有 "\n\n" 或多重換行，顯示時一律 replace 為 "\n" */
@@ -1284,45 +1302,45 @@ function renderSessionsPage() {
         if (truncInfo.isLong) {
           summaryHtml =
             '<div class="session-summary-box" data-session-id="' + esc(s.id) + '">' +
-              '<h4 class="session-summary-heading">議程摘要</h4>' +
-              '<div class="session-summary-content session-summary-short">' +
-                linkifyText(truncInfo.text) + '<span class="session-summary-dots">..</span>' +
-                '<button type="button" class="session-more-btn" aria-expanded="false" title="展開完整摘要">' +
-                  '<span class="session-more-text">more</span>' +
-                  '<svg class="session-more-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">' +
-                    '<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>' +
-                  '</svg>' +
-                '</button>' +
-              '</div>' +
-              '<div class="session-summary-content session-summary-full">' +
-                linkifyText(cleanSummary) +
-                '<div class="session-less-wrap">' +
-                  '<button type="button" class="session-less-btn" aria-expanded="true" title="收合摘要">' +
-                    '<span class="session-more-text">less</span>' +
-                    '<svg class="session-more-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">' +
-                      '<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd"/>' +
-                    '</svg>' +
-                  '</button>' +
-                '</div>' +
-              '</div>' +
+            '<h4 class="session-summary-heading">議程摘要</h4>' +
+            '<div class="session-summary-content session-summary-short">' +
+            linkifyText(truncInfo.text) + '<span class="session-summary-dots">..</span>' +
+            '<button type="button" class="session-more-btn" aria-expanded="false" title="展開完整摘要">' +
+            '<span class="session-more-text">more</span>' +
+            '<svg class="session-more-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">' +
+            '<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>' +
+            '</svg>' +
+            '</button>' +
+            '</div>' +
+            '<div class="session-summary-content session-summary-full">' +
+            linkifyText(cleanSummary) +
+            '<div class="session-less-wrap">' +
+            '<button type="button" class="session-less-btn" aria-expanded="true" title="收合摘要">' +
+            '<span class="session-more-text">less</span>' +
+            '<svg class="session-more-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">' +
+            '<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd"/>' +
+            '</svg>' +
+            '</button>' +
+            '</div>' +
+            '</div>' +
             '</div>';
         } else {
           summaryHtml =
             '<div class="session-summary-box">' +
-              '<h4 class="session-summary-heading">議程摘要</h4>' +
-              '<div class="session-summary-content session-summary-short">' + linkifyText(truncInfo.text) + '</div>' +
+            '<h4 class="session-summary-heading">議程摘要</h4>' +
+            '<div class="session-summary-content session-summary-short">' + linkifyText(truncInfo.text) + '</div>' +
             '</div>';
         }
       }
 
       html +=
         '<li class="session-card">' +
-          '<div class="session-card-header">' +
-            tagsRow +
-            '<h3 class="session-agenda-title">' + esc(s.agenda || '議程主題陸續公布中') + '</h3>' +
-            speakerInfo +
-          '</div>' +
-          (summaryHtml ? '<hr class="session-divider">' + summaryHtml : '') +
+        '<div class="session-card-header">' +
+        tagsRow +
+        '<h3 class="session-agenda-title">' + esc(s.agenda || '議程主題陸續公布中') + '</h3>' +
+        speakerInfo +
+        '</div>' +
+        (summaryHtml ? '<hr class="session-divider">' + summaryHtml : '') +
         '</li>';
     });
 
@@ -1385,7 +1403,7 @@ function renderSessionsPage() {
       var newUrl = new URL(window.location);
       newUrl.searchParams.set('track', track);
       window.history.replaceState(null, '', newUrl.toString());
-    } catch (_) {}
+    } catch (_) { }
 
     paintSessions();
   });
