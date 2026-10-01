@@ -2,7 +2,7 @@
 3:I[2578,["988","static/chunks/988-005d2f21704835b3.js","878","static/chunks/878-b3ffdafc9823196b.js","972","static/chunks/972-8b90811e525dd0b2.js","589","static/chunks/app/ticket/page-ecd6f3b19c5a1702.js"],"default"]
 4:I[4707,[],""]
 5:I[6423,[],""]
-6:I[8087,["972","static/chunks/972-8b90811e525dd0b2.js","654","static/chunks/654-eb0140116f96fada.js","185","static/chunks/app/layout-9f4ee1a0ef43f77c.js"],"GoogleTagManager"]
+6:I[4888,["972","static/chunks/972-8b90811e525dd0b2.js","654","static/chunks/654-eb0140116f96fada.js","185","static/chunks/app/layout-9f4ee1a0ef43f77c.js"],"GoogleAnalytics"]
 7:I[4539,["972","static/chunks/972-8b90811e525dd0b2.js","654","static/chunks/654-eb0140116f96fada.js","185","static/chunks/app/layout-9f4ee1a0ef43f77c.js"],"default"]
 8:I[6261,["972","static/chunks/972-8b90811e525dd0b2.js","654","static/chunks/654-eb0140116f96fada.js","185","static/chunks/app/layout-9f4ee1a0ef43f77c.js"],"default"]
 9:I[3470,["988","static/chunks/988-005d2f21704835b3.js","489","static/chunks/app/template-decd05118314f540.js"],"default"]
