@@ -4,7 +4,7 @@
 5:I[2092,["706","static/chunks/9c4e2130-42a7212e4e83e839.js","240","static/chunks/53c13509-dfccd8a3f142b946.js","699","static/chunks/8e1d74a4-201264da0b3f0e24.js","956","static/chunks/ee560e2c-e0563add68279d38.js","212","static/chunks/59650de3-4fe8e5ffb8bb6209.js","675","static/chunks/b563f954-7799c1fe876cc733.js","305","static/chunks/eec3d76d-255c6f6d049c2146.js","988","static/chunks/988-005d2f21704835b3.js","878","static/chunks/878-b3ffdafc9823196b.js","422","static/chunks/422-4a687f414edba433.js","560","static/chunks/560-25ca7bbcc012c2a1.js","512","static/chunks/512-152960f6c4982bde.js","586","static/chunks/586-1beaf9585715af75.js","29","static/chunks/29-40a6a879791b3442.js","681","static/chunks/app/schedule/page-c1ce45f15239c666.js"],"Toaster"]
 6:I[4707,[],""]
 7:I[6423,[],""]
-8:I[8087,["972","static/chunks/972-8b90811e525dd0b2.js","654","static/chunks/654-eb0140116f96fada.js","185","static/chunks/app/layout-9f4ee1a0ef43f77c.js"],"GoogleTagManager"]
+8:I[4888,["972","static/chunks/972-8b90811e525dd0b2.js","654","static/chunks/654-eb0140116f96fada.js","185","static/chunks/app/layout-9f4ee1a0ef43f77c.js"],"GoogleAnalytics"]
 9:I[4539,["972","static/chunks/972-8b90811e525dd0b2.js","654","static/chunks/654-eb0140116f96fada.js","185","static/chunks/app/layout-9f4ee1a0ef43f77c.js"],"default"]
 a:I[6261,["972","static/chunks/972-8b90811e525dd0b2.js","654","static/chunks/654-eb0140116f96fada.js","185","static/chunks/app/layout-9f4ee1a0ef43f77c.js"],"default"]
 b:I[3470,["988","static/chunks/988-005d2f21704835b3.js","489","static/chunks/app/template-decd05118314f540.js"],"default"]
