@@ -580,14 +580,15 @@ a.card{display:block;color:inherit}
    這裡是講者頁專用的白底卡片，多了軌道標籤與一段 bio。
    .card 的 hover 效果直接沿用，不用另外寫。 */
 .spk-list{display:grid;gap:clamp(16px,2vw,24px);list-style:none;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-.spk-card{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;outline:none;padding-bottom:34px}
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.spk-card{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;outline:none;padding-bottom:34px;min-width:0}
 .spk-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-2)}
 .spk-card:focus-visible{outline:2px solid var(--c-teal);outline-offset:2px}
 /* 頭像佔位比首頁小一階（首頁 96px）：講者頁一行擠兩到三張卡，96px 會把文字壓得太窄 */
-.spk-card .avatar{width:72px;height:72px; border-radius:50%; overflow:hidden;}
+.spk-card .avatar{width:72px;height:72px; border-radius:50%; overflow:hidden;flex-shrink:0}
 .spk-card .avatar img{width:100%;height:100%;object-fit:cover;background:var(--c-surface)}
 .spk-card .avatar .shape{--s:38px}
+.spk-body{min-width:0}
 .spk-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:0 0 4px}
 .spk-head h3{font-size:18px;margin:0}
 .spk-head .spk-role{font-size:14px;color:var(--c-ink-70);margin:0}
@@ -595,7 +596,7 @@ a.card{display:block;color:inherit}
 .spk-role{font-size:14px;color:var(--c-ink-70);margin:0 0 10px}
 .spk-org{font-size:14px;font-weight:700;color:var(--c-ink-70);margin:0 0 10px}
 .spk-card .tag-row{margin-bottom:10px}
-.spk-bio{font-size:14.5px;color:var(--c-ink-70);margin:0}
+.spk-bio{font-size:14.5px;color:var(--c-ink-70);margin:0;overflow-wrap:anywhere;word-break:break-word}
 /* 講者卡片右下角的小淺灰色「more →」提示 */
 .spk-card-more{
   position:absolute;right:20px;bottom:14px;
@@ -608,11 +609,11 @@ a.card{display:block;color:inherit}
   color:var(--c-teal);transform:translateX(3px);
 }
 /* 講者簡介為純網址時的連結樣式 */
-.spk-bio-link{display:inline-flex;align-items:center;gap:3px;color:var(--c-teal-deep);font-weight:600;text-decoration:none}
+.spk-bio-link{display:inline-flex;align-items:center;gap:3px;color:var(--c-teal-deep);font-weight:600;text-decoration:none;word-break:break-all}
 .spk-bio-link:hover{color:var(--c-teal);text-decoration:underline}
 .spk-bio-link::after{content:"\2197";font-size:12px;margin-left:2px}
 /* 講者的社群／個人頁連結（data.js 的 link 欄位）：跟在 bio 後面，用一般連結色 */
-.spk-link{display:inline-block;margin-top:10px;font-size:14px;font-weight:600}
+.spk-link{display:inline-block;margin-top:10px;font-size:14px;font-weight:600;word-break:break-all}
 .spk-link::after{content:"\2197";margin-left:3px;font-size:12px}
 /* 講者彈出視窗：社群圖標按鈕 */
 .spk-modal-socials{display:inline-flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}
@@ -1100,6 +1101,9 @@ body.modal-open{overflow:hidden}
   .prev-item{grid-template-columns:1fr;gap:8px}
   .filters-in{gap:10px}
   .filter-count{width:100%}
+  .spk-list{grid-template-columns:1fr;gap:16px}
+  .spk-card{padding:20px 16px 32px;gap:14px}
+  .spk-card .avatar{width:60px;height:60px}
 }
 @media (min-width:768px){
   .drawer{display:none!important}
