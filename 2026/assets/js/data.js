@@ -245,6 +245,35 @@ var SPEAKERS = [
     level: "Normal - 需相關基礎知識",
     track: "Software Defined Reality",
     class: "AI, UXV (Unmanned x Vehicle)"
+  },
+  {
+    id: "2026_Cherie-Hsieh",
+    name: "Cherie Hsieh",
+    role: "Principal Engineer",
+    org: "台灣積體電路製造股份有限公司",
+    bio: "跨領域轉職人，目前擔任軟體開發管理職，除了是 Gopher 之外，也喜歡研究電腦架構與效能改善等議題。",
+    img: "assets/img/speakers/Cherie-Hsieh.jpg",
+    link: "",
+    agenda: "當專案 100% 都由 AI coding，身為工程師和管理職的價值在哪裡？",
+    summary: "從大型專案的實戰經驗中，討論工程師與管理職的定位和責任。",
+    level: "Normal - 需相關基礎知識",
+    track: "AI in Action",
+    class: "AI, DevOps, Management"
+  },
+  {
+    id: "2026_Voidful",
+    name: "Voidful",
+    role: "博士生",
+    org: "OpenFormosa",
+    bio: "目前是台大博士生，主要研究本土化的語言語言模型",
+    img: "assets/img/speakers/Eric-Lam.jpg",
+    link: "https://github.com/voidful",
+    linkText: "Github",
+    agenda: "模型愈來愈大，我們該往哪裡走？2026 本土 AI 的訓練與突圍",
+    summary: "2026 年想自己訓練模型，遇到的第一個問題可能不是「模型要多大」，而是「為什麼還要自己訓練？」\n\n新的模型幾乎每個月出現，能力與榜單持續往前推。大型公司有更多 GPU、更多資料，也有更完整的模型與 Agent 生態。如果本土團隊只是跟著同一套 benchmark、同一種模型規模往前追，通常很難靠算力追上。\n\n但實際做模型之後，我們發現仍然有不少問題不能直接交給通用模型解決。台灣華語與台語、在地資料、長文本、語音，以及模型如何使用工具完成真實任務，都可能需要重新處理資料、訓練方法與模型架構。\n\n這場分享會從實際訓練模型踩過的坑出發，談 2026 年我們怎麼重新思考 Pre-training、Post-training、Long Context、Agent、Tool Use 與語音模型。也會談哪些東西現在已經沒有必要從頭訓練，哪些能力反而值得小團隊集中資源自己做。\n\n如果沒有數萬張 GPU，我們需要的可能不是另一個縮小版的大公司模型，而是先回答一個更實際的問題：有哪些問題，大公司沒有理由替我們做好，但我們自己非做不可？",
+    level: "Expert - 建議聽眾具備相關經驗",
+    track: "Next-Gen Intelligence",
+    class: "AI"
   }
 ];
 
