@@ -1,0 +1,40 @@
+
+
+<!--#include parts/page-hero.html -->
+
+  <!-- ======================= 篩選列 =======================
+       今年是單日，所以只有「軌道篩選」（全部／Track A／B／C），沒有日期切換。
+       這排按鈕是 site.js 依 data.js 的 TRACKS 產生的，多一軌也不用改這裡。 -->
+  <div class="filters" role="group" aria-label="議程篩選">
+    <div class="wrap filters-in">
+      <ul class="chip-set" id="trackChips" role="group" aria-label="軌道篩選"></ul>
+      <p class="filter-count" id="filterCount" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- ======================= 時間軸 ======================= -->
+  <section class="agenda-band" aria-labelledby="tl-t">
+    <div class="wrap">
+      <h2 class="sr-only" id="tl-t">大會議程</h2>
+      <!-- 這一段的內容來自 assets/js/data.js 的 SESSIONS。
+           一列 = 一個時段，同一時段的各軌會在桌機寬度橫向並排（見 site.js 的 paintAgenda）。 -->
+      <ul class="tl" id="agendaList"></ul>
+      <noscript><p class="tl-empty">議程資料由 assets/js/data.js 載入，需要開啟 JavaScript 才看得到。</p></noscript>
+      <!-- Unconf 不是正式議程（場外互動），所以不列進上面的時刻表，改成一行說明。
+           這行是寫死的文字，不在 data.js 裡；Unconf 取消或改辦法就直接改這一行。 -->
+      <p class="tl-note">Unconf 不是正式議程，而是場外的自由交流，於各休息與 Tea Time 時段進行，每場約 20～40 分鐘，其餘時間供休息與互動。</p>
+    </div>
+  </section>
+
+  <!-- ======================= 立即報名 ======================= -->
+  <section class="band band-teal on-teal cta-band arc-bot" aria-labelledby="cta-t">
+    <div class="wrap">
+      <h2 id="cta-t">立即報名</h2>
+      <p>票種與售票時程即將公布，敬請期待。</p>
+      <div class="btn-row is-center">
+        <a class="btn btn-amber" href="#">前往購票</a>
+        <a class="btn btn-w" href="index.html">關於大會</a>
+      </div>
+    </div>
+  </section>
+
