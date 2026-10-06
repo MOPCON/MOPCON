@@ -3160,7 +3160,7 @@ body.modal-open {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 15.5px;
+  font-size: 18.6px;
   line-height: 1.3;
   color: var(--c-ink);
   white-space: nowrap;
@@ -3169,7 +3169,7 @@ body.modal-open {
 }
 
 .st-speaker-name {
-  font-size: 15.5px;
+  font-size: 18.6px;
   font-weight: 700;
   color: var(--c-teal-deep);
   transition: color .15s ease;
@@ -3185,7 +3185,7 @@ body.modal-open {
 }
 
 .st-speaker-role {
-  font-size: 15.5px;
+  font-size: 18.6px;
   color: var(--c-ink-70);
   font-weight: 500;
 }
