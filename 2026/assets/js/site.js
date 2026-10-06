@@ -1237,6 +1237,9 @@ function renderSessionsPage() {
       return s.track === curTrack;
     });
 
+    var isSessions2 = (currentFile() === 'sessions2.html') || (list && list.getAttribute('data-session-page') === 'sessions2');
+    var isTableMode = (list && (list.tagName === 'TBODY' || list.classList.contains('session-table')));
+
     /* 更新標題與統計 */
     var headingEl = document.getElementById('sessionBandTitle');
     if (headingEl) headingEl.textContent = curTrack;
@@ -1251,26 +1254,16 @@ function renderSessionsPage() {
     if (countEl) countEl.textContent = '共 ' + filtered.length + ' 場議程';
 
     if (!filtered.length) {
-      list.innerHTML = '<li class="card"><p class="tl-empty">該軌道尚無議程資料。</p></li>';
+      if (isTableMode) {
+        list.innerHTML = '<tr><td colspan="3" class="tl-empty" style="text-align:center;padding:36px 16px;">該軌道尚無議程資料。</td></tr>';
+      } else {
+        list.innerHTML = '<li class="card"><p class="tl-empty">該軌道尚無議程資料。</p></li>';
+      }
       return;
     }
 
     var html = '';
     filtered.forEach(function (s, idx) {
-      /* 標籤列：難易度 (level) 與類別 (class) 用換行隔開 */
-      var levelBadge = s.level ? '<div class="tag-row session-level-row">' + levelTagHtml(s.level) + '</div>' : '';
-      var classBadges = '';
-      if (s.class) {
-        s.class.split(',').forEach(function (c) {
-          var t = c.trim();
-          if (t) classBadges += classTagHtml(t);
-        });
-      }
-      var classRow = classBadges ? '<div class="tag-row session-class-row">' + classBadges + '</div>' : '';
-      var tagsRow = (levelBadge || classRow)
-        ? '<div class="session-tags">' + levelBadge + classRow + '</div>'
-        : '';
-
       /* 講者資訊：格式為 "img name | role \n org"，點選連至 speakers.html 對應講者頁面 */
       var speakerLink = 'speakers.html?id=' + encodeURIComponent(s.id);
       var avatarHtml = s.img
@@ -1280,75 +1273,207 @@ function renderSessionsPage() {
         (s.role ? ' <span class="session-speaker-sep" aria-hidden="true">|</span> <span class="session-speaker-role">' + esc(s.role) + '</span>' : '');
       var speakerLine2 = s.org ? '<div class="session-speaker-org">' + esc(s.org) + '</div>' : '';
 
-      var speakerInfo =
-        '<div class="session-speaker-row">' +
-        '<a class="session-speaker-card" href="' + esc(speakerLink) + '" title="檢視講者 ' + esc(s.name) + ' 完整簡介">' +
-        '<div class="session-speaker-avatar avatar ph-round">' + avatarHtml + '</div>' +
-        '<div class="session-speaker-meta">' +
-        '<div class="session-speaker-line1">' + speakerLine1 + '</div>' +
-        speakerLine2 +
-        '</div>' +
-        '</a>' +
-        '</div>';
+      var cleanSummary = s.summary
+        ? s.summary.replace(/\r\n/g, '\n').replace(/\r/g, '\n').replace(/(?:[ \t]*\n[ \t]*){2,}/g, '\n')
+        : '';
+      var truncInfo = truncateSummary(cleanSummary, 100);
 
-      /* 議程摘要：如果 summary 內容有 "\n\n" 或多重換行，顯示時一律 replace 為 "\n" */
-      var summaryHtml = '';
-      if (s.summary) {
-        var cleanSummary = s.summary
-          .replace(/\r\n/g, '\n')
-          .replace(/\r/g, '\n')
-          .replace(/(?:[ \t]*\n[ \t]*){2,}/g, '\n');
-        var truncInfo = truncateSummary(cleanSummary, 100);
-        if (truncInfo.isLong) {
-          summaryHtml =
-            '<div class="session-summary-box" data-session-id="' + esc(s.id) + '">' +
-            '<h4 class="session-summary-heading">議程摘要</h4>' +
-            '<div class="session-summary-content session-summary-short">' +
-            linkifyText(truncInfo.text) + '<span class="session-summary-dots">..</span>' +
-            '<button type="button" class="session-more-btn" aria-expanded="false" title="展開完整摘要">' +
-            '<span class="session-more-text">more</span>' +
-            '<svg class="session-more-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">' +
-            '<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>' +
-            '</svg>' +
-            '</button>' +
-            '</div>' +
-            '<div class="session-summary-content session-summary-full">' +
-            linkifyText(cleanSummary) +
-            '<div class="session-less-wrap">' +
-            '<button type="button" class="session-less-btn" aria-expanded="true" title="收合摘要">' +
-            '<span class="session-more-text">less</span>' +
-            '<svg class="session-more-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">' +
-            '<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd"/>' +
-            '</svg>' +
-            '</button>' +
-            '</div>' +
-            '</div>' +
-            '</div>';
-        } else {
-          summaryHtml =
-            '<div class="session-summary-box">' +
-            '<h4 class="session-summary-heading">議程摘要</h4>' +
-            '<div class="session-summary-content session-summary-short">' + linkifyText(truncInfo.text) + '</div>' +
-            '</div>';
+      if (isTableMode) {
+        /* 表格形式（若有 table 結構） */
+        var introText = s.intro || cleanSummary || '尚無議程簡介。';
+
+        var speakerInnerHtml =
+          '<a class="st-speaker-link" href="' + esc(speakerLink) + '" title="檢視講者 ' + esc(s.name) + ' 完整簡介">' +
+          '<div class="st-avatar avatar ph-round">' + avatarHtml + '</div>' +
+          '<div class="st-speaker-meta">' +
+          '<div class="st-speaker-line1">' + speakerLine1 + '</div>' +
+          (s.org ? '<div class="st-speaker-org" title="' + esc(s.org) + '">' + esc(s.org) + '</div>' : '') +
+          '</div>' +
+          '</a>';
+
+        var titleInnerHtml =
+          '<a class="st-title-link" href="' + esc(speakerLink) + '" title="檢視 ' + esc(s.name) + ' 議程詳情">' +
+          esc(s.agenda || '議程主題陸續公布中') +
+          '</a>';
+
+        var introInnerHtml =
+          '<p class="st-intro-text">' + linkifyText(introText) + '</p>';
+
+        html +=
+          '<tr class="st-row" data-href="' + esc(speakerLink) + '" tabindex="0" role="link" aria-label="檢視講者 ' + esc(s.name) + ' 完整簡介">' +
+          '<td class="st-td-speaker">' + speakerInnerHtml + '</td>' +
+          '<td class="st-td-title">' + titleInnerHtml + '</td>' +
+          '<td class="st-td-intro">' + introInnerHtml + '</td>' +
+          '</tr>';
+      } else if (isSessions2) {
+        /* sessions2.html：顯示方式與目前 git 版本的 sessions.html 內容與顯示樣式格式完全一致（level 與 class 均在標題上方） */
+        var levelBadge = s.level ? '<div class="tag-row session-level-row">' + levelTagHtml(s.level) + '</div>' : '';
+        var classBadges = '';
+        if (s.class) {
+          s.class.split(',').forEach(function (c) {
+            var t = c.trim();
+            if (t) classBadges += classTagHtml(t);
+          });
         }
-      }
+        var classRow = classBadges ? '<div class="tag-row session-class-row">' + classBadges + '</div>' : '';
+        var tagsRow = (levelBadge || classRow)
+          ? '<div class="session-tags">' + levelBadge + classRow + '</div>'
+          : '';
 
-      html +=
-        '<li class="session-card">' +
-        '<div class="session-card-header">' +
-        tagsRow +
-        '<h3 class="session-agenda-title">' + esc(s.agenda || '議程主題陸續公布中') + '</h3>' +
-        speakerInfo +
-        '</div>' +
-        (summaryHtml ? '<hr class="session-divider">' + summaryHtml : '') +
-        '</li>';
+        var summaryHtml = '';
+        if (cleanSummary) {
+          if (truncInfo.isLong) {
+            summaryHtml =
+              '<div class="session-summary-box" data-session-id="' + esc(s.id) + '">' +
+              '<h4 class="session-summary-heading">議程摘要</h4>' +
+              '<div class="session-summary-content session-summary-short">' +
+              linkifyText(truncInfo.text) + '<span class="session-summary-dots">..</span>' +
+              '<button type="button" class="session-more-btn" aria-expanded="false" title="展開完整摘要">' +
+              '<span class="session-more-text">more</span>' +
+              '<svg class="session-more-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">' +
+              '<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>' +
+              '</svg>' +
+              '</button>' +
+              '</div>' +
+              '<div class="session-summary-content session-summary-full">' +
+              linkifyText(cleanSummary) +
+              '<div class="session-less-wrap">' +
+              '<button type="button" class="session-less-btn" aria-expanded="true" title="收合摘要">' +
+              '<span class="session-more-text">less</span>' +
+              '<svg class="session-more-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">' +
+              '<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd"/>' +
+              '</svg>' +
+              '</button>' +
+              '</div>' +
+              '</div>' +
+              '</div>';
+          } else {
+            summaryHtml =
+              '<div class="session-summary-box">' +
+              '<h4 class="session-summary-heading">議程摘要</h4>' +
+              '<div class="session-summary-content session-summary-short">' + linkifyText(truncInfo.text) + '</div>' +
+              '</div>';
+          }
+        }
+
+        var speakerCardHtml =
+          '<a class="session-speaker-card" href="' + esc(speakerLink) + '" title="檢視講者 ' + esc(s.name) + ' 完整簡介">' +
+          '<div class="session-speaker-avatar avatar ph-round">' + avatarHtml + '</div>' +
+          '<div class="session-speaker-meta">' +
+          '<div class="session-speaker-line1">' + speakerLine1 + '</div>' +
+          speakerLine2 +
+          '</div>' +
+          '</a>';
+
+        var speakerInfo =
+          '<div class="session-speaker-row">' +
+          speakerCardHtml +
+          '</div>';
+
+        html +=
+          '<li class="session-card">' +
+          '<div class="session-card-header">' +
+          tagsRow +
+          '<h3 class="session-agenda-title">' + esc(s.agenda || '議程主題陸續公布中') + '</h3>' +
+          speakerInfo +
+          '</div>' +
+          (summaryHtml ? '<hr class="session-divider">' + summaryHtml : '') +
+          '</li>';
+      } else {
+        /* sessions.html：各議程名稱下方加回之前 class 的標籤顯示 */
+        var levelBadge = s.level ? '<div class="tag-row session-level-row">' + levelTagHtml(s.level) + '</div>' : '';
+        var classBadges = '';
+        if (s.class) {
+          s.class.split(',').forEach(function (c) {
+            var t = c.trim();
+            if (t) classBadges += classTagHtml(t);
+          });
+        }
+        var classRow = classBadges ? '<div class="tag-row session-class-row session-class-under-title">' + classBadges + '</div>' : '';
+        var levelTags = levelBadge ? '<div class="session-tags">' + levelBadge + '</div>' : '';
+
+        var summaryHtml = '';
+        if (cleanSummary) {
+          if (truncInfo.isLong) {
+            summaryHtml =
+              '<div class="session-summary-box" data-session-id="' + esc(s.id) + '">' +
+              '<h4 class="session-summary-heading">議程摘要</h4>' +
+              '<div class="session-summary-content session-summary-short">' +
+              linkifyText(truncInfo.text) + '<span class="session-summary-dots">..</span>' +
+              '<button type="button" class="session-more-btn" aria-expanded="false" title="展開完整摘要">' +
+              '<span class="session-more-text">more</span>' +
+              '<svg class="session-more-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">' +
+              '<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>' +
+              '</svg>' +
+              '</button>' +
+              '</div>' +
+              '<div class="session-summary-content session-summary-full">' +
+              linkifyText(cleanSummary) +
+              '<div class="session-less-wrap">' +
+              '<button type="button" class="session-less-btn" aria-expanded="true" title="收合摘要">' +
+              '<span class="session-more-text">less</span>' +
+              '<svg class="session-more-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true">' +
+              '<path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832l-3.71 3.938a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd"/>' +
+              '</svg>' +
+              '</button>' +
+              '</div>' +
+              '</div>' +
+              '</div>';
+          } else {
+            summaryHtml =
+              '<div class="session-summary-box">' +
+              '<h4 class="session-summary-heading">議程摘要</h4>' +
+              '<div class="session-summary-content session-summary-short">' + linkifyText(truncInfo.text) + '</div>' +
+              '</div>';
+          }
+        }
+
+        var speakerCardHtml =
+          '<a class="session-speaker-card" href="' + esc(speakerLink) + '" title="檢視講者 ' + esc(s.name) + ' 完整簡介">' +
+          '<div class="session-speaker-avatar avatar ph-round">' + avatarHtml + '</div>' +
+          '<div class="session-speaker-meta">' +
+          '<div class="session-speaker-line1">' + speakerLine1 + '</div>' +
+          speakerLine2 +
+          '</div>' +
+          '</a>';
+
+        var speakerInfo =
+          '<div class="session-speaker-row">' +
+          speakerCardHtml +
+          '</div>';
+
+        html +=
+          '<li class="session-card">' +
+          '<div class="session-card-header">' +
+          levelTags +
+          '<h3 class="session-agenda-title">' + esc(s.agenda || '議程主題陸續公布中') + '</h3>' +
+          classRow +
+          speakerInfo +
+          '</div>' +
+          (summaryHtml ? '<hr class="session-divider">' + summaryHtml : '') +
+          '</li>';
+      }
     });
 
     list.innerHTML = html;
   }
 
-  /* 摘要展開／收合事件（全頁一次僅展開一個議程） */
+  /* 表格行點擊或卡片摘要展開／收合事件 */
   list.addEventListener('click', function (e) {
+    var row = e.target.closest('tr[data-href]');
+    if (row) {
+      if (e.target.closest('a[target="_blank"]')) return;
+      var href = row.getAttribute('data-href');
+      if (href) {
+        if (e.metaKey || e.ctrlKey) {
+          window.open(href, '_blank');
+        } else {
+          window.location.href = href;
+        }
+        return;
+      }
+    }
+
     var moreBtn = e.target.closest('.session-more-btn');
     if (moreBtn) {
       var targetBox = moreBtn.closest('.session-summary-box');
@@ -1381,6 +1506,18 @@ function renderSessionsPage() {
         moreInBox.focus();
       }
       return;
+    }
+  });
+
+  /* 表格行鍵盤可及性（Enter 或空白鍵開啟） */
+  list.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      var row = e.target.closest('tr[data-href]');
+      if (row && e.target === row) {
+        e.preventDefault();
+        var href = row.getAttribute('data-href');
+        if (href) window.location.href = href;
+      }
     }
   });
 

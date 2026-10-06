@@ -843,6 +843,9 @@ body.modal-open{overflow:hidden}
   gap:8px;
   align-items:center;
 }
+.session-class-row.session-class-under-title{
+  margin:-4px 0 14px;
+}
 .session-agenda-title{
   font-size:clamp(19px,2vw,22px);
   font-weight:700;
@@ -1045,6 +1048,205 @@ body.modal-open{overflow:hidden}
   margin-top:12px;
   display:flex;
   justify-content:flex-end;
+}
+
+/* ── 9.7 議程表格（sessions2.html） ─────────────────────────────────────────── */
+.session-table-wrap{
+  width:100%;
+  background:var(--c-white);
+  border:1px solid var(--c-line);
+  border-radius:var(--r-card);
+  box-shadow:var(--shadow-1);
+  overflow:hidden;
+  margin:0 auto;
+}
+.session-table{
+  width:100%;
+  table-layout:fixed;
+  border-collapse:collapse;
+  text-align:left;
+}
+.session-table thead{
+  background:linear-gradient(180deg, var(--c-surface) 0%, #edf6f4 100%);
+  border-bottom:2px solid var(--c-teal);
+}
+.session-table th{
+  padding:15px 20px;
+  font-size:15px;
+  font-weight:700;
+  color:var(--c-teal-deep);
+  letter-spacing:.03em;
+  white-space:nowrap;
+  text-align:center;
+}
+.st-col-speaker, .st-th-speaker{
+  width:32%;
+  min-width:270px;
+}
+.st-col-title, .st-th-title{
+  width:27%;
+  min-width:210px;
+}
+.st-col-intro, .st-th-intro{
+  width:41%;
+  min-width:290px;
+}
+.session-table tbody tr{
+  border-bottom:1px solid var(--c-line);
+  transition:background .15s ease;
+  height:104px;
+  cursor:pointer;
+}
+.session-table tbody tr:nth-child(even){
+  background:#fafcfb;
+}
+.session-table tbody tr:last-child{
+  border-bottom:none;
+}
+.session-table tbody tr:hover{
+  background:var(--c-teal-tint);
+}
+.session-table tbody tr:focus-visible{
+  outline:2px solid var(--c-teal);
+  outline-offset:-2px;
+}
+.session-table tbody tr:hover .st-speaker-name{
+  color:var(--c-teal);
+}
+.session-table tbody tr:hover .st-title-link{
+  color:var(--c-teal-deep);
+}
+.session-table td{
+  padding:14px 20px;
+  vertical-align:middle;
+  box-sizing:border-box;
+}
+
+/* 講者欄位 */
+.st-td-speaker{
+  vertical-align:middle;
+}
+.st-speaker-link{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:inherit;
+  min-width:0;
+}
+.st-avatar{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  border:2px solid var(--c-mint);
+  overflow:hidden;
+  flex-shrink:0;
+  background:var(--c-white);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.st-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.st-avatar .shape{
+  --s:26px;
+}
+.st-speaker-meta{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  min-width:0;
+}
+.st-speaker-line1{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  font-size:15px;
+  line-height:1.3;
+  color:var(--c-ink);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.st-speaker-name{
+  font-weight:700;
+  color:var(--c-teal-deep);
+  transition:color .15s ease;
+}
+.st-speaker-link:hover .st-speaker-name{
+  color:var(--c-teal);
+}
+.st-speaker-sep{
+  color:var(--c-line);
+  font-weight:300;
+}
+.st-speaker-role{
+  font-size:13px;
+  color:var(--c-ink-70);
+  font-weight:500;
+}
+.st-speaker-org{
+  font-size:12.5px;
+  color:var(--c-ink-70);
+  line-height:1.35;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width:230px;
+}
+
+/* 議程名稱欄位 */
+.st-td-title{
+  vertical-align:middle;
+}
+.st-title-link{
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  font-size:15.5px;
+  font-weight:700;
+  color:var(--c-ink);
+  line-height:1.45;
+  text-decoration:none;
+  transition:color .15s ease;
+}
+.st-title-link:hover{
+  color:var(--c-teal-deep);
+  text-decoration:none;
+}
+
+/* 議程簡介欄位 */
+.st-td-intro{
+  vertical-align:middle;
+}
+.st-intro-text{
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  font-size:13.5px;
+  line-height:1.6;
+  color:var(--c-ink);
+  margin:0;
+}
+.st-intro-text a{
+  color:var(--c-teal-deep);
+  text-decoration:underline;
+}
+
+@media (max-width:860px){
+  .session-table-wrap{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  .session-table{
+    min-width:760px;
+  }
 }
 
 /* ── 10 頁尾 ────────────────────────────────────────────────────────────── */

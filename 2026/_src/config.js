@@ -93,6 +93,14 @@ export const PAGES = [
     lead:  '單日三大科技趨勢並行，Software Defined Reality、Next-Gen Intelligence 與 AI in Action：從軟體、AI 到無人載具，讓您一次充電最新軟科技的技術能量，可以用下方按鈕篩選各領域議題的議程清單。'
   },
   {
+    file:    'sessions2.html',
+    title:   `特色議程｜MOPCON ${SITE.year}`,
+    desc:    `MOPCON ${SITE.year} 特色議程：Software Defined Reality、Next-Gen Intelligence 與 AI in Action 三大科技趨勢。`,
+    h1:      '特色議程',
+    lead:    '單日三大科技趨勢並行，Software Defined Reality、Next-Gen Intelligence 與 AI in Action：從軟體、AI 到無人載具，讓您一次充電最新軟科技的技術能量，可以用下方按鈕切換各軌道議程清單。',
+    sitemap: false
+  },
+  {
     file:  'agenda.html',
     title: `議程表｜MOPCON ${SITE.year}`,
     desc:  `MOPCON ${SITE.year} 議程表：單日三軌並行，涵蓋 Software Defined Reality、Next-Gen Intelligence 與 AI in Action 三大主軸。${SITE.date}。`,

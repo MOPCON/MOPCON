@@ -124,6 +124,7 @@ var SPEAKERS = [
     bio: "國立成功大學航太博士，研究領域為無人機系統及資通訊技術應用，「搞飛機」的經驗近 30 年，2018 年基於 SkySentry 無人機雲端監控系統技術，建構完全由國人自製的 Taiwan Drone 100 無人機群飛表演技術，致力於無人機群飛及自主飛控系統等無人機關鍵技術開發，並於 2019 年 8 月基於 Taiwan Drone 100 之技術及團隊成立臺灣希望創新股份有限公司，致力於無人機研發、展演、教育、服務等四大領域，努力成為臺灣無人機產業的推手。近年來更推動公司轉型為非紅無人機關鍵零組件及 AI 無人載具技術研發公司，並積極推動臺灣無人機產業國產化、智能化，利用臺灣的半導體、精密機械及資通訊產業優勢進軍國際市場。",
     agenda: "當 AI 翼展天際：無人機的創新、應用與未來",
     summary: "當人工智慧擁有翅膀，無人機便不再只是遙控飛行的工具，而是能自主感知、分析環境、協同作業並執行任務的智慧載具。\n本次演講以臺灣希望創新股份有限公司的發展經驗為基礎，從百架無人機群飛展演出發，分享企業如何將自主飛控、群控演算法、AI影像辨識與系統整合等技術，逐步延伸至太陽能電廠、橋梁、高科技廠房等智慧巡檢場域，以及公共安全、防災救援、低空經濟與國防自主等前瞻應用。\n演講也將探討AI如何推動無人機從「被操控的飛行器」走向能夠自主決策、群體協作的智慧系統，並從技術創新、商業模式、供應鏈安全與產業生態系等面向，解析臺灣無人機產業面臨的機會與挑戰。\n透過實際創業與產業應用經驗，本次演講將帶領聽眾看見：當AI翼展天際，無人機不僅改變我們觀察世界與執行任務的方式，也將成為推動智慧城市、產業升級與科技自主的重要力量。",
+    intro: "以臺灣希望創新的無人機群飛與研發經驗為基礎，分享自主飛控、群控演算法與 AI 影像整合技術，探討無人機如何從操控飛行邁向自主決策智慧系統，並解析產業機會與關鍵挑戰。",
     level: "Normal - 需相關基礎知識",
     track: "Software Defined Reality",
     class: "AI, UXV (Unmanned x Vehicle), Robotics"
@@ -138,6 +139,7 @@ var SPEAKERS = [
     link: "https://www.smallcrows.org/",
     agenda: "自主飛行的決策系統 - 從態勢感知到語意理解",
     summary: "假設無人機已經會飛\n\n但是如何應對複雜情境？\n\n從遙控到自主\n\n如何實現技能轉移？\n\n當代語言模型的成熟度\n\n要如何賦與無人載具智慧？\n\n有哪些關卡要克服？\n\n一一道來",
+    intro: "探討無人機面對複雜情境時，如何從傳統遙控跨越至自主飛行決策。結合現代大型語言模型與語意理解技術，解析賦予無人載具智慧決策能力的技能轉移途徑與關鍵克服難題。",
     level: "Expert - 建議聽眾具備相關經驗",
     track: "Software Defined Reality",
     class: "AI, UXV (Unmanned x Vehicle)"
@@ -153,6 +155,7 @@ var SPEAKERS = [
     linkText: "Facebook,Website",
     agenda: "無人飛船：長期滯空載具的基礎原理與自主飛控實務經驗",
     summary: "在無人載具續航力備受挑戰的時代，擁有長期滯空優勢的無人飛船，提供了一種不同的空中探索解決方案。本次演講將介紹研發團隊多年在無人飛船發展的經驗，並分享從零打造自主導航系統時的實務歷程與開發經驗。",
+    intro: "針對無人載具續航力瓶頸，介紹具備長期滯空優勢的無人飛船基礎原理。分享研發團隊多年深耕經驗，解析從零打造自主導航與飛控系統的實務歷程，展現空中探索的新型解決方案。",
     level: "Basic - 基礎入門",
     track: "Software Defined Reality",
     class: "UXV (Unmanned x Vehicle)"
@@ -168,6 +171,7 @@ var SPEAKERS = [
     linkText: "X @Rete_Lin",
     agenda: "無人機PX4的架構介紹與實作",
     summary: "帶大家從系統與程式架構面，看看無人機的另一個大家族-PX4，並且實做一個\"樂於分享愛的無人機\"吧!",
+    intro: "從系統與程式架構層面深入解析開源無人機飛控體系 PX4 的核心設計，並結合軟硬體整合實作經驗，帶領大家動手實現具備互動特性的無人機應用，掌握無人機底層開發要領。",
     level: "Normal - 需相關基礎知識",
     track: "Software Defined Reality",
     class: "UXV (Unmanned x Vehicle), Robotics"
@@ -182,6 +186,7 @@ var SPEAKERS = [
     link: "https://kaochenlong.com/",
     agenda: "SDD 工作迴圈設計拆解",
     summary: "用 Claude Code、Codex 這類 coding agent 寫程式，你可能遇過做到一半它忘了前面講好的設計、東西沒做完就說做完了、測試沒跑就說過了、放了幾個禮拜再回來它還照著過期的計畫改。這些多半是它跑的那個工作迴圈沒設計好。\n\n我自己寫了一套 Spec-Driven Development（SDD）工具，今年幾個產品都用它做，連這套工具本身也是，這個迴圈加起來跑了將近一千四百輪。我會拿執行任務的那份 skill 出來講，看它怎麼處理這些狀況，哪些靠 prompt、哪些靠 CLI。進度誰說了算、忘了怎麼辦、失敗怎麼分類、做完怎麼驗、中斷後怎麼繼續、多個 subagent 一起做時誰能改狀態。這些問題拿回自己的專案照樣能問。",
+    intro: "剖析 Coding Agent 在實務開發中常見的失控與遺忘問題，拆解歷經上千輪運作的規格驅動開發（SDD）工作迴圈。探討如何透過 Prompt、CLI 與流程固化，確保 Agent 交付精確成果。",
     level: "Normal - 需相關基礎知識",
     track: "Next-Gen Intelligence",
     class: "AI"
@@ -197,6 +202,7 @@ var SPEAKERS = [
     linkText: "X @zonble",
     agenda: "跟著AI 做一套AI 時代的台灣式編輯器",
     summary: "文字 prompt 仍然是我們與 AI 互動的主要方式，但文字 prompt 並不是一個單向的過程，我們往往需要將 AI 產生的內容，經過修改之後回饋給 AI，來來回回之後，才完成最後的作品。AI 產生文字內容的方式與人類不同，不受到人類慣用的編輯器的限制，經常大量產生流行的編輯器難以編輯的文字圖，我們使用 AI 是為了追求效率，但為了文字圖類型的 prompt，我們反而在不順手的編輯器上進行低效的編輯。\n\n我做了一套強調 2D 文字繪圖的跨平台終端機編輯器，當中包含一套直譯式語言的直譯器。在這段過程中，我從 AI 學到做出一套編輯器會遇到的挑戰，Swift 語言在 Windows/Linux/WASM 平台上開發應用程式的現狀，AI 擅長什麼與不擅長什麼。",
+    intro: "分享打造一套強調 2D 文字繪圖的跨平台終端機編輯器與直譯器的歷程，探討人機協作應對非結構化文字輸入的挑戰，並解析 Swift 跨平台開發架構與 AI 輔助開發的優勢與邊界。",
     level: "Basic - 基礎入門",
     track: "AI in Action",
     class: "AI"
@@ -212,6 +218,7 @@ var SPEAKERS = [
     bio: "https://www.linkedin.com/in/stanleyc1982/",
     agenda: "當工程師不再打字寫 code,他在做什麼?——一個人、12 週、17 萬行的 AI Native 開發模式",
     summary: "12 週、一位工程師、17 萬行 C#、5,150 個測試——一個十多年歷史的 Windows 白板 monolith,用 WinUI 3 / .NET 10 從零重寫。而這段時間裡,我真正打字寫 C# 的時間不到 5%。\n\n這場分享不談工具教學,談一條在真實產品上跑了三個月的 AI Native 開發流程,以及它逼我重新理解的四件事:人的工作從寫 code 變成做決策(整條 pipeline 只留 4 個 human gate);spec 與憲法成為新的 source code;品質不再靠人 review,而靠跨家族模型互相抓錯的對抗式結構;最後、也最關鍵的——流程不能只寫成文字期望 AI 遵守,要用 Workflow 與 Hook 把它固化成不可繞過的 code。\n\n剩下的 95%,我在做什麼?決定要做什麼、把判斷寫成文字、設計讓模型互相抓錯的結構、把流程刻成 code——以及不斷優化這條流程、寫小工具,讓自己開發得更舒服。\n\n適合已經在用 AI 寫 code、想從「一個人跟 AI 對話」走到「整條流程由 AI 承擔、人只做決策」的工程師與 tech lead。",
+    intro: "分享一人在 12 週內重構 17 萬行大型專案的 AI Native 開發實戰，深入探討工程師轉型為決策者的流程架構，包含規格即源碼、跨模型對抗驗證，以及用工作流固化品質的關鍵實踐。",
     level: "Normal - 需相關基礎知識",
     track: "AI in Action",
     class: "AI"
@@ -227,6 +234,7 @@ var SPEAKERS = [
     bio: "鄭聖文是一名軟體工程師，現任職於美商科技公司，長期投入底層軟體開發與系統研究，專注領域橫跨機器人系統、控制演算法與即時系統。\n\n他長期研究無人機底層系統與相關演算法，並持續參與開放原始碼社群及專案貢獻。其研究所期間設計的無人機飛控成果，曾透過指導教授主持的產學合作計畫授權予國家太空中心；此外，他亦曾於 Linux Foundation 主辦的 Open Source Summit 發表開源相關技術成果。",
     agenda: "Learning to Fly in Simulation: Quadrotor Reinforcement Learning from First Principles",
     summary: "This talk explores quadrotor reinforcement learning from first principles, with a focus on how reinforcement learning algorithms interact with a flight simulator.\n\nWe will begin by formulating quadrotor flight as a reinforcement learning problem, looking at how observations, actions, and rewards define the interaction between an agent and the simulated vehicle. From there, we will introduce core concepts such as value functions, Q-values, and policy optimization, and connect them to modern policy-gradient methods for continuous-control problems.\n\nThe talk will also examine the systems side of reinforcement learning. We will discuss how parallel rollouts allow many simulated quadrotors to collect experience simultaneously, how rigid-body dynamics can be expressed as batched tensor operations in PyTorch, and how GPU acceleration changes the simulation and training workflow compared with traditional single-environment simulation.\n\nThe examples are based on RotorBench, an open-source Python-based quadrotor simulation and control benchmarking framework featuring GPU-accelerated batched rollouts:\n\nhttps://github.com/shengwen-tw/rotor-bench",
+    intro: "以第一原理探討四旋翼無人機強化學習與飛行模擬器的整合互動，剖析連續控制任務的策略優化方法。同時解析 GPU 加速批次運算架構與開源 RotorBench 框架的實作經驗。",
     level: "Basic - 基礎入門",
     track: "Software Defined Reality",
     class: "AI, UXV (Unmanned x Vehicle), Robotics"
@@ -242,6 +250,7 @@ var SPEAKERS = [
     linkText: "Facebook",
     agenda: "用AI打造大氣探測無人機",
     summary: "本次分享將介紹一項結合無人機與氣象氣球的大氣探勘任務，全程以AI貫穿任務規劃與落地執行。\n\n內容涵蓋三個關鍵環節：\n\n- 上升段大氣剖面預測\n- 無人機控制Lua腳本撰寫\n- SITL模擬測試驗證\n\n從任務需求出發，到方案設計、模擬驗證，再到實際落地測試，完整呈現AI如何賦能大氣科學領域的無人機應用。",
+    intro: "介紹結合無人機與氣象氣球的大氣探勘任務，全程由 AI 貫穿規劃與落地執行。涵蓋大氣剖面預測、Lua 控制腳本編寫與 SITL 模擬驗證，展現 AI 賦能大氣科學探測的完整工程實踐。",
     level: "Normal - 需相關基礎知識",
     track: "Software Defined Reality",
     class: "AI, UXV (Unmanned x Vehicle)"
@@ -256,6 +265,7 @@ var SPEAKERS = [
     link: "",
     agenda: "當專案 100% 都由 AI coding，身為工程師和管理職的價值在哪裡？",
     summary: "從大型專案的實戰經驗中，討論工程師與管理職的定位和責任。",
+    intro: "立足大型軟體專案實戰經驗，探討在 AI 全面接管程式碼撰寫的新時代下，工程師與管理職的定位轉變、核心責任劃分，以及技術人員如何重塑無可取代的專業決策價值。",
     level: "Normal - 需相關基礎知識",
     track: "AI in Action",
     class: "AI, DevOps, Management"
@@ -271,6 +281,7 @@ var SPEAKERS = [
     linkText: "Github",
     agenda: "模型愈來愈大，我們該往哪裡走？2026 本土 AI 的訓練與突圍",
     summary: "2026 年想自己訓練模型，遇到的第一個問題可能不是「模型要多大」，而是「為什麼還要自己訓練？」\n\n新的模型幾乎每個月出現，能力與榜單持續往前推。大型公司有更多 GPU、更多資料，也有更完整的模型與 Agent 生態。如果本土團隊只是跟著同一套 benchmark、同一種模型規模往前追，通常很難靠算力追上。\n\n但實際做模型之後，我們發現仍然有不少問題不能直接交給通用模型解決。台灣華語與台語、在地資料、長文本、語音，以及模型如何使用工具完成真實任務，都可能需要重新處理資料、訓練方法與模型架構。\n\n這場分享會從實際訓練模型踩過的坑出發，談 2026 年我們怎麼重新思考 Pre-training、Post-training、Long Context、Agent、Tool Use 與語音模型。也會談哪些東西現在已經沒有必要從頭訓練，哪些能力反而值得小團隊集中資源自己做。\n\n如果沒有數萬張 GPU，我們需要的可能不是另一個縮小版的大公司模型，而是先回答一個更實際的問題：有哪些問題，大公司沒有理由替我們做好，但我們自己非做不可？",
+    intro: "立足在地語言與真實應用場景，探討本土團隊在算力差距下如何找到突圍方向。分享預訓練、後訓練、長文本與工具呼叫的實務經驗，解析資源受限時應專注解決的關鍵本土 AI 課題。",
     level: "Expert - 建議聽眾具備相關經驗",
     track: "Next-Gen Intelligence",
     class: "AI"
