@@ -309,7 +309,7 @@ var SPEAKERS = [
     role: "AI 應用工程師 / 資深後端工程師",
     org: "Open to Work",
     bio: "寫程式十幾年，主攻 Java 後端，近年專注 AI 應用落地。\n能坐就不站，能躺就不坐，集懶惰美德於一身。\n\n2025 年起在 JCConf、GDG Taichung、國泰高雄 CDC 等場合演講與帶工作坊，主題從 Spring Boot Test、Refactoring 一路到 Text-to-SQL 與 AI Agent。\n\n被兩隻貓咪領養的貓奴，偶爾也會玩玩 AI 影片工作流。\n目前正在尋找全職機會，也歡迎專案合作。",
-    img: "assets/img/speakers/AbiChang.jpg",
+    img: "assets/img/speakers/AbiChang_.jpg",
     link: "https://abi.tw",
     linkText: "Website",
     agenda: "從存檔到內容富翁：讓個人知識庫自己長出內容",
