@@ -121,6 +121,7 @@ var SPEAKERS = [
     role: "執行長",
     org: "臺灣希望創新股份有限公司",
     img: "assets/img/speakers/alias_sliced.jpg",
+    link: "",
     bio: "國立成功大學航太博士，研究領域為無人機系統及資通訊技術應用，「搞飛機」的經驗近 30 年，2018 年基於 SkySentry 無人機雲端監控系統技術，建構完全由國人自製的 Taiwan Drone 100 無人機群飛表演技術，致力於無人機群飛及自主飛控系統等無人機關鍵技術開發，並於 2019 年 8 月基於 Taiwan Drone 100 之技術及團隊成立臺灣希望創新股份有限公司，致力於無人機研發、展演、教育、服務等四大領域，努力成為臺灣無人機產業的推手。近年來更推動公司轉型為非紅無人機關鍵零組件及 AI 無人載具技術研發公司，並積極推動臺灣無人機產業國產化、智能化，利用臺灣的半導體、精密機械及資通訊產業優勢進軍國際市場。",
     agenda: "當 AI 翼展天際：無人機的創新、應用與未來",
     summary: "當人工智慧擁有翅膀，無人機便不再只是遙控飛行的工具，而是能自主感知、分析環境、協同作業並執行任務的智慧載具。\n本次演講以臺灣希望創新股份有限公司的發展經驗為基礎，從百架無人機群飛展演出發，分享企業如何將自主飛控、群控演算法、AI影像辨識與系統整合等技術，逐步延伸至太陽能電廠、橋梁、高科技廠房等智慧巡檢場域，以及公共安全、防災救援、低空經濟與國防自主等前瞻應用。\n演講也將探討AI如何推動無人機從「被操控的飛行器」走向能夠自主決策、群體協作的智慧系統，並從技術創新、商業模式、供應鏈安全與產業生態系等面向，解析臺灣無人機產業面臨的機會與挑戰。\n透過實際創業與產業應用經驗，本次演講將帶領聽眾看見：當AI翼展天際，無人機不僅改變我們觀察世界與執行任務的方式，也將成為推動智慧城市、產業升級與科技自主的重要力量。",
@@ -285,6 +286,54 @@ var SPEAKERS = [
     level: "Expert - 建議聽眾具備相關經驗",
     track: "Next-Gen Intelligence",
     class: "AI"
+  },
+  {
+    id: "2026_Vic-Wen",
+    name: "Vic Wen",
+    role: "RD intern",
+    org: "Microsoft",
+    bio: "Vic Wen 熱衷於探索 AI 與開源技術。現為微軟 RD intern 和 Apache Mahout Committer。除了投入 AI infra 與分散式系統的研究及開發，也活躍於國際開源社群與技術舞台，期望讓技術不只停留在研究與程式碼中，更能透過開放協作創造實際影響力。",
+    img: "assets/img/speakers/viiccwen.jpg",
+    link: "https://www.linkedin.com/in/viiccwen",
+    linkText: "LinkedIn",
+    agenda: "Beyond the Agent：當模型越來越強，我們該刪掉什麼、留下什麼？",
+    summary: "隨著大型語言模型的能力快速提升，AI Agent 已經能自主規劃任務、呼叫工具，甚至完成複雜的工作流程。然而，當模型越來越聰明，我們真的還需要替 Agent 建立層層堆疊的 Planning、Reflection、Multi-Agent Orchestration 與各種 Harness 機制嗎？哪些設計曾經不可或缺，如今卻可能成為不必要的複雜度？\n\n近年來，Agent Engineering 正在經歷一場轉變：開發者開始重新檢視複雜的 Harness 設計，將更多決策交還給模型。但當 Agent 真正進入 Production，OAuth、權限隔離、API Rate Limiting、Idempotency、Failure Recovery 與 Observability 等問題，並不會隨著模型變得更聰明而自動消失。\n\n本場演講將從各大廠的工程實踐出發，探討模型能力演進如何改變 Agent Harness 的設計取捨，並透過真實的系統失敗情境，解析 Agent 從 Demo 走向 Production 時必須面對的工程挑戰。接著，我們將重新思考 Agent Runtime、MCP 與 Integration Layer 之間的責任邊界，探討如何以更精簡的 Harness，打造安全、可靠且可觀測的 AI Agent 系統。\n\n當模型越來越強，我們需要的或許不是更複雜的 Agent Framework，而是更清楚的系統邊界，以及真正可靠的 Infrastructure。",
+    intro: "從大廠實務剖析模型能力演進對 Agent Harness 設計的取捨衝擊，並透過真實失敗情境解析走向 Production 必經的工程挑戰。重新梳理 Runtime、MCP 與整合層邊界，探討如何以精簡架構打造可靠的 AI Agent 系統。",
+    level: "Normal - 需相關基礎知識",
+    track: "Next-Gen Intelligence",
+    class: "AI"
+  },
+  {
+    id: "2026_Abi-Chang",
+    name: "Abi Chang",
+    role: "AI 應用工程師 / 資深後端工程師",
+    org: "Open to Work",
+    bio: "寫程式十幾年，主攻 Java 後端，近年專注 AI 應用落地。\n能坐就不站，能躺就不坐，集懶惰美德於一身。\n\n2025 年起在 JCConf、GDG Taichung、國泰高雄 CDC 等場合演講與帶工作坊，主題從 Spring Boot Test、Refactoring 一路到 Text-to-SQL 與 AI Agent。\n\n被兩隻貓咪領養的貓奴，偶爾也會玩玩 AI 影片工作流。\n目前正在尋找全職機會，也歡迎專案合作。",
+    img: "assets/img/speakers/AbiChang.jpg",
+    link: "https://abi.tw",
+    linkText: "Website",
+    agenda: "從存檔到內容富翁：讓個人知識庫自己長出內容",
+    summary: "很多人以為知識庫存得越多越好用，我從今年五、六月開始累積自己的知識庫，中間也曾打掉重練，一路累積到現在。\n曾經想用它發想文章，但出來的結果總覺得不對，後來才發現，Input 跟 Output 是二回事。\n這場將分享我現在怎麼用個人知識庫寫出像我自己寫的文章、幫我客製履歷，還有接住一路冒出來的新題目。",
+    intro: "打破「知識庫存越多越好用」的迷思，分享建構與重構個人知識庫的實務心得。解析 Input 與 Output 的關鍵差異，探討如何善用知識庫自動發想個人風格文章、客製履歷並接住源源不絕的靈感題目。",
+    level: "Basic - 基礎入門",
+    track: "AI in Action",
+    class: "AI, Knowledge Management"
+  },
+  {
+    id: "2026_陳葵懋(Ian)",
+    name: "陳葵懋(Ian)",
+    role: "研發部主任工程師",
+    org: "一等一科技",
+    bio: "任職於一等一科技，同時也是微軟 AI 人工智慧最有價值專家（MVP）與微軟認證講師（MCT）。專注於Azure雲端解決方案、AI、軟體架構與設計，受邀担任公務機關與大學院校AI培訓課程講師、跨國企業AI課程講師，經常於iThome AI & Cloud、Microsoft、Mopcon等研討會分享實務經驗。自2023年起陸續出版多本關於生成式AI與AI Agent的開發書籍，最新一本著作為：AI Agent 奇幻旅程：MCP 通往異世界金鑰。",
+    img: "assets/img/speakers/IanChen.jpg",
+    link: "https://www.facebook.com/ian.no18",
+    linkText: "Facebook",
+    agenda: "Code 是 AI 寫的，就真的有一支開發團隊嗎？",
+    summary: "AI 已經能幫我們寫 Code、修 Bug、跑測試，但當我們把多個 AI Coding Agent 放在一起，就真的能稱得上一支軟體開發團隊嗎？\n\n從最初使用 VS Code 搭配 GitHub Copilot 輔助開發，到現在轉向 Herdr，嘗試打造一支能夠自主分工、協作與執行開發任務的 AI Agent Team，我逐漸發現，真正的挑戰是如何讓這群 AI Agent 像一支開發團隊一樣有效運作。\n\n這場議程將分享我組建 AI 開發團隊的實戰經驗，包含如何設計 Agent 的角色與職責、建立開發規範與協作流程，讓 Coding、Code Review、資安預檢與測試驗證各司其職。同時，也將實際介紹如何運用 Herdr 指揮多個 AI Agent，進行任務分派、協作與開發管理。一起探索當 AI 從寫程式的助手，變成可以被指揮的開發團隊，我們的軟體開發方式將如何改變? 我們能不能真的躺平了",
+    intro: "分享從單兵 Copilot 輔助轉向組建自主協作 AI Agent 開發團隊的實戰經驗。解析角色職責劃分、開發規範與協作流程設計，並透過 Herdr 示範多 Agent 任務分派與管理，探索人機協作的新型軟體開發模式。",
+    level: "Normal - 需相關基礎知識",
+    track: "AI in Action",
+    class: "AI, Web Development, IoT, DevOps"
   }
 ];
 
