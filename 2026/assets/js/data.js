@@ -300,7 +300,7 @@ var SPEAKERS = [
     summary: "隨著大型語言模型的能力快速提升，AI Agent 已經能自主規劃任務、呼叫工具，甚至完成複雜的工作流程。然而，當模型越來越聰明，我們真的還需要替 Agent 建立層層堆疊的 Planning、Reflection、Multi-Agent Orchestration 與各種 Harness 機制嗎？哪些設計曾經不可或缺，如今卻可能成為不必要的複雜度？\n\n近年來，Agent Engineering 正在經歷一場轉變：開發者開始重新檢視複雜的 Harness 設計，將更多決策交還給模型。但當 Agent 真正進入 Production，OAuth、權限隔離、API Rate Limiting、Idempotency、Failure Recovery 與 Observability 等問題，並不會隨著模型變得更聰明而自動消失。\n\n本場演講將從各大廠的工程實踐出發，探討模型能力演進如何改變 Agent Harness 的設計取捨，並透過真實的系統失敗情境，解析 Agent 從 Demo 走向 Production 時必須面對的工程挑戰。接著，我們將重新思考 Agent Runtime、MCP 與 Integration Layer 之間的責任邊界，探討如何以更精簡的 Harness，打造安全、可靠且可觀測的 AI Agent 系統。\n\n當模型越來越強，我們需要的或許不是更複雜的 Agent Framework，而是更清楚的系統邊界，以及真正可靠的 Infrastructure。",
     intro: "從大廠實務剖析模型能力演進對 Agent Harness 設計的取捨衝擊，並透過真實失敗情境解析走向 Production 必經的工程挑戰。重新梳理 Runtime、MCP 與整合層邊界，探討如何以精簡架構打造可靠的 AI Agent 系統。",
     level: "Normal - 需相關基礎知識",
-    track: "Next-Gen Intelligence",
+    track: "AI in Action",
     class: "AI"
   },
   {

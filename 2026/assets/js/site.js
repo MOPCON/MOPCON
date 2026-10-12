@@ -927,59 +927,116 @@ function openSpeakerModal(id, pushUrl) {
 
   var profileTags = speaker.keynote ? '<span class="tag tag-key">Keynote</span>' : '';
 
-  var contentHtml =
-    '<div class="spk-modal-profile">' +
-    '<div class="spk-modal-avatar ph ph-round">' + avatar + '</div>' +
-    '<div class="spk-modal-meta">' +
-    '<h3 id="spkModalName" class="spk-modal-name">' + esc(speaker.name) + '</h3>' +
-    '<p class="spk-modal-role">' + esc(speaker.role) + '｜' + esc(speaker.org) + '</p>' +
-    (profileTags ? '<div class="tag-row">' + profileTags + '</div>' : '') +
-    speakerSocialsHtml(speaker) +
-    '</div>' +
-    '</div>' +
-    '<hr class="spk-modal-divider">' +
-    '<div class="spk-modal-section">' +
-    '<h4 class="spk-modal-section-title">介紹</h4>' +
-    '<div class="spk-modal-bio">' + (speaker.bio ? formatBioHtml(speaker.bio, 0) : '尚無講者簡介') + '</div>' +
-    '</div>';
+  var isAgenda2 = currentFile() === 'agenda2.html';
+  var contentHtml = '';
 
-  var row1Badges = '';
-  if (speaker.track) row1Badges += trackTagHtml(speaker.track);
-  if (speaker.level) row1Badges += levelTagHtml(speaker.level);
-  var row1Html = row1Badges ? '<div class="tag-row spk-modal-tags">' + row1Badges + '</div>' : '';
+  if (isAgenda2) {
+    /* 規格 4 (更新): 不要顯示 track、class 標題、hr 分隔線 */
+    var trackBadges = speaker.track ? trackTagHtml(speaker.track) : '';
+    var levelBadges = speaker.level ? levelTagHtml(speaker.level) : '';
 
-  var row2Badges = '';
-  if (speaker.class) {
-    speaker.class.split(',').forEach(function (c) {
-      var t = c.trim();
-      if (t) row2Badges += classTagHtml(t);
-    });
-  }
-  var row2Html = row2Badges ? '<div class="tag-row spk-modal-tags">' + row2Badges + '</div>' : '';
+    var classBadges = '';
+    if (speaker.class) {
+      speaker.class.split(',').forEach(function (c) {
+        var t = c.trim();
+        if (t) classBadges += classTagHtml(t);
+      });
+    }
 
-  if (speaker.agenda) {
+    /* 1. 議程主題 */
     contentHtml +=
-      '<hr class="spk-modal-divider">' +
       '<div class="spk-modal-section">' +
       '<h4 class="spk-modal-section-title">議程主題</h4>' +
-      '<h5 class="spk-modal-agenda-title">' + esc(speaker.agenda) + '</h5>' +
-      row1Html +
-      row2Html +
+      '<h3 class="spk-modal-agenda-title">' + esc(speaker.agenda || '議程主題即將公布') + '</h3>' +
+      (levelBadges ? '<div class="tag-row spk-modal-tags">' + levelBadges + '</div>' : '') +
       '</div>';
-  } else if (row1Html || row2Html) {
+
+    /* 2. 議程摘要 */
     contentHtml +=
+      '<div class="spk-modal-section" style="margin-top: 1.5rem;">' +
+      '<h4 class="spk-modal-section-title">議程摘要</h4>' +
+      '<div class="spk-modal-bio">' + (speaker.summary ? linkifyText(speaker.summary) : '暫無議程摘要') + '</div>' +
+      '</div>';
+
+    /* 3. track & 4. class (不顯示 track、class 標題，直接以標籤列呈現) */
+    if (trackBadges || classBadges) {
+      contentHtml +=
+        '<div class="spk-modal-section" style="margin-top: 1.25rem;">' +
+        '<div class="tag-row spk-modal-tags">' + trackBadges + classBadges + '</div>' +
+        '</div>';
+    }
+
+    /* 5. 講者資訊 */
+    contentHtml +=
+      '<div class="spk-modal-section" style="margin-top: 1.75rem;">' +
+      '<h4 class="spk-modal-section-title">講者資訊</h4>' +
+      '<div class="spk-modal-profile">' +
+      '<div class="spk-modal-avatar ph ph-round">' + avatar + '</div>' +
+      '<div class="spk-modal-meta">' +
+      '<h3 id="spkModalName" class="spk-modal-name">' + esc(speaker.name) + '</h3>' +
+      (speaker.role || speaker.org ? '<p class="spk-modal-role">' + esc(speaker.role || '') + (speaker.role && speaker.org ? '｜' : '') + esc(speaker.org || '') + '</p>' : '') +
+      (profileTags ? '<div class="tag-row">' + profileTags + '</div>' : '') +
+      speakerSocialsHtml(speaker) +
+      '</div>' +
+      '</div>' +
+      '<div class="spk-modal-bio" style="margin-top: 1rem;">' + (speaker.bio ? formatBioHtml(speaker.bio, 0) : '尚無講者簡介') + '</div>' +
+      '</div>';
+
+  } else {
+    contentHtml =
+      '<div class="spk-modal-profile">' +
+      '<div class="spk-modal-avatar ph ph-round">' + avatar + '</div>' +
+      '<div class="spk-modal-meta">' +
+      '<h3 id="spkModalName" class="spk-modal-name">' + esc(speaker.name) + '</h3>' +
+      '<p class="spk-modal-role">' + esc(speaker.role) + '｜' + esc(speaker.org) + '</p>' +
+      (profileTags ? '<div class="tag-row">' + profileTags + '</div>' : '') +
+      speakerSocialsHtml(speaker) +
+      '</div>' +
+      '</div>' +
       '<hr class="spk-modal-divider">' +
       '<div class="spk-modal-section">' +
-      row1Html +
-      row2Html +
+      '<h4 class="spk-modal-section-title">介紹</h4>' +
+      '<div class="spk-modal-bio">' + (speaker.bio ? formatBioHtml(speaker.bio, 0) : '尚無講者簡介') + '</div>' +
       '</div>';
-  }
-  if (speaker.summary) {
-    contentHtml +=
-      '<br><div class="spk-modal-section">' +
-      '<h4 class="spk-modal-section-title">議程摘要</h4>' +
-      '<div class="spk-modal-bio">' + linkifyText(speaker.summary) + '</div>' +
-      '</div>';
+
+    var row1Badges = '';
+    if (speaker.track) row1Badges += trackTagHtml(speaker.track);
+    if (speaker.level) row1Badges += levelTagHtml(speaker.level);
+    var row1Html = row1Badges ? '<div class="tag-row spk-modal-tags">' + row1Badges + '</div>' : '';
+
+    var row2Badges = '';
+    if (speaker.class) {
+      speaker.class.split(',').forEach(function (c) {
+        var t = c.trim();
+        if (t) row2Badges += classTagHtml(t);
+      });
+    }
+    var row2Html = row2Badges ? '<div class="tag-row spk-modal-tags">' + row2Badges + '</div>' : '';
+
+    if (speaker.agenda) {
+      contentHtml +=
+        '<hr class="spk-modal-divider">' +
+        '<div class="spk-modal-section">' +
+        '<h4 class="spk-modal-section-title">議程主題</h4>' +
+        '<h5 class="spk-modal-agenda-title">' + esc(speaker.agenda) + '</h5>' +
+        row1Html +
+        row2Html +
+        '</div>';
+    } else if (row1Html || row2Html) {
+      contentHtml +=
+        '<hr class="spk-modal-divider">' +
+        '<div class="spk-modal-section">' +
+        row1Html +
+        row2Html +
+        '</div>';
+    }
+    if (speaker.summary) {
+      contentHtml +=
+        '<br><div class="spk-modal-section">' +
+        '<h4 class="spk-modal-section-title">議程摘要</h4>' +
+        '<div class="spk-modal-bio">' + linkifyText(speaker.summary) + '</div>' +
+        '</div>';
+    }
   }
 
   body.innerHTML = contentHtml;
@@ -1510,6 +1567,242 @@ function renderSessionsPage() {
 }
 
 /* ==========================================================================
+   H-2. 議程表 Timetable（agenda2.html）
+   ========================================================================== */
+function renderAgenda2Page() {
+  var tbody = document.getElementById('agenda2Body');
+  if (!tbody || typeof SPEAKERS === 'undefined') return;
+
+  var schedule = [
+    { time: '8:30', type: 'common', title: '報到入場時間' },
+    { time: '9:00', type: 'common', title: '開幕 Opening' },
+    {
+      time: '9:10',
+      type: 'span-talk',
+      highlight: 'keynote',
+      speakerName: 'Alias'
+    },
+    { time: '9:50', type: 'common', title: 'break' },
+    {
+      time: '10:00',
+      type: 'talks',
+      halls: [
+        { hall: 'R1', speakerName: '蕭漢威' },
+        { hall: 'R2', speakerName: '陳葵懋(Ian)' },
+        { hall: 'R3', tbd: true }
+      ]
+    },
+    { time: '10:40', type: 'common', title: 'break' },
+    {
+      time: '11:00',
+      type: 'talks',
+      halls: [
+        { hall: 'R1', speakerName: '鄭聖文' },
+        { hall: 'R2', speakerName: 'Stanley' },
+        { hall: 'R3', speakerName: 'Voidful' }
+      ]
+    },
+    { time: '11:40', type: 'common', title: 'break' },
+    {
+      time: '11:50',
+      type: 'talks',
+      halls: [
+        { hall: 'R1', speakerName: 'allen54a0' },
+        { hall: 'R2', speakerName: 'Vic Wen' },
+        { hall: 'R3', tbd: true }
+      ]
+    },
+    { time: '12:30', type: 'common', highlight: 'lunch', title: 'Lunch' },
+    {
+      time: '13:20',
+      type: 'talks',
+      halls: [
+        { hall: 'R1', speakerName: '高見龍' },
+        { hall: 'R2', speakerName: 'Rete Lin' },
+        { hall: 'R3', tbd: true }
+      ]
+    },
+    { time: '14:00', type: 'common', title: 'break' },
+    {
+      time: '14:10',
+      type: 'talks',
+      halls: [
+        { hall: 'R1', speakerName: 'Cherie Hsieh' },
+        { hall: 'R2', speakerName: 'Kuon Ding' },
+        { hall: 'R3', tbd: true }
+      ]
+    },
+    { time: '14:50', type: 'common', highlight: 'tea', title: 'tea time' },
+    {
+      time: '15:10',
+      type: 'talks',
+      halls: [
+        { hall: 'R1', speakerName: 'zonble' },
+        { hall: 'R2', speakerName: 'Abi Chang' },
+        { hall: 'R3', tbd: true }
+      ]
+    },
+    { time: '15:50', type: 'common', title: 'break' },
+    {
+      time: '16:00',
+      type: 'talks',
+      halls: [
+        { hall: 'R1', tbd: true },
+        { hall: 'R2', tbd: true },
+        { hall: 'R3', tbd: true }
+      ]
+    },
+    { time: '16:40', type: 'common', title: 'break' },
+    { time: '16:50', type: 'common', highlight: 'closing', title: '閉幕 Closing' },
+    { time: '17:20', type: 'common', title: '散場' }
+  ];
+
+  var speakerMap = {};
+  SPEAKERS.forEach(function (spk, idx) {
+    if (spk.name) {
+      speakerMap[spk.name.trim()] = { speaker: spk, index: idx };
+    }
+  });
+
+  var html = '';
+  schedule.forEach(function (slot) {
+    var trClass = 'ag2-row';
+    if (slot.type === 'common') trClass += ' ag2-row-common';
+    if (slot.highlight) trClass += ' ag2-hl-' + slot.highlight;
+
+    html += '<tr class="' + trClass + '">';
+    html += '<th scope="row" class="ag2-td-time">' + esc(slot.time) + '</th>';
+
+    if (slot.type === 'common') {
+      html += '<td colspan="3" class="ag2-td-common"><div class="ag2-common-badge">' + esc(slot.title) + '</div></td>';
+    } else if (slot.type === 'span-talk') {
+      var entry = speakerMap[slot.speakerName];
+      if (!entry) {
+        html += '<td colspan="3" class="ag2-td-talk ag2-td-tbd"><div class="ag2-card ag2-card-tbd"><span class="ag2-tbd-badge">敬請期待</span></div></td>';
+      } else {
+        var s = entry.speaker;
+        var idx = entry.index;
+
+        /* 規格 2 依序使用: agenda, img, name, class, track */
+        var agendaHtml = '<div class="ag2-card-agenda">' + esc(s.agenda || '議程主題即將公布') + '</div>';
+
+        var avatar = s.img
+          ? '<img loading="lazy" decoding="async" src="' + esc(s.img) + '" alt="' + esc(s.name) + '">'
+          : phShape(idx >= 0 ? idx : 0, true);
+        var imgHtml = '<div class="ag2-card-avatar ph ph-round">' + avatar + '</div>';
+
+        var nameHtml = '<div class="ag2-card-name">' + esc(s.name) + '</div>';
+
+        var classBadges = '';
+        if (s.class) {
+          s.class.split(',').forEach(function (c) {
+            var t = c.trim();
+            if (t) classBadges += classTagHtml(t);
+          });
+        }
+        var classHtml = classBadges ? '<div class="tag-row ag2-card-class">' + classBadges + '</div>' : '';
+
+        var trackBadges = s.track ? trackTagHtml(s.track) : '';
+        var trackHtml = trackBadges ? '<div class="tag-row ag2-card-track">' + trackBadges + '</div>' : '';
+
+        html += '<td colspan="3" class="ag2-td-talk ag2-td-span">' +
+          '<div class="ag2-card ag2-card-span" data-speaker-id="' + esc(s.id) + '" tabindex="0" role="button" aria-haspopup="dialog" aria-label="' + esc(s.name) + '：' + esc(s.agenda || '') + '">' +
+          agendaHtml +
+          imgHtml +
+          nameHtml +
+          classHtml +
+          trackHtml +
+          '</div>' +
+          '</td>';
+      }
+    } else {
+      slot.halls.forEach(function (col) {
+        if (col.empty) {
+          html += '<td class="ag2-td-talk ag2-td-empty"><div class="ag2-card ag2-card-empty"><span class="ag2-empty-dash">-</span></div></td>';
+        } else if (col.tbd || col.speakerName === 'TBD') {
+          html += '<td class="ag2-td-talk ag2-td-tbd"><div class="ag2-card ag2-card-tbd"><span class="ag2-tbd-badge">敬請期待</span></div></td>';
+        } else {
+          var entry = speakerMap[col.speakerName];
+          if (!entry) {
+            html += '<td class="ag2-td-talk ag2-td-tbd"><div class="ag2-card ag2-card-tbd"><span class="ag2-tbd-badge">敬請期待</span></div></td>';
+          } else {
+            var s = entry.speaker;
+            var idx = entry.index;
+
+            /* 規格 2 依序使用: agenda, img, name, class, track */
+            var agendaHtml = '<div class="ag2-card-agenda">' + esc(s.agenda || '議程主題即將公布') + '</div>';
+
+            var avatar = s.img
+              ? '<img loading="lazy" decoding="async" src="' + esc(s.img) + '" alt="' + esc(s.name) + '">'
+              : phShape(idx >= 0 ? idx : 0, true);
+            var imgHtml = '<div class="ag2-card-avatar ph ph-round">' + avatar + '</div>';
+
+            var nameHtml = '<div class="ag2-card-name">' + esc(s.name) + '</div>';
+
+            var classBadges = '';
+            if (s.class) {
+              s.class.split(',').forEach(function (c) {
+                var t = c.trim();
+                if (t) classBadges += classTagHtml(t);
+              });
+            }
+            var classHtml = classBadges ? '<div class="tag-row ag2-card-class">' + classBadges + '</div>' : '';
+
+            var trackBadges = s.track ? trackTagHtml(s.track) : '';
+            var trackHtml = trackBadges ? '<div class="tag-row ag2-card-track">' + trackBadges + '</div>' : '';
+
+            html += '<td class="ag2-td-talk">' +
+              '<div class="ag2-card" data-speaker-id="' + esc(s.id) + '" tabindex="0" role="button" aria-haspopup="dialog" aria-label="' + esc(s.name) + '：' + esc(s.agenda || '') + '">' +
+              agendaHtml +
+              imgHtml +
+              nameHtml +
+              classHtml +
+              trackHtml +
+              '</div>' +
+              '</td>';
+          }
+        }
+      });
+    }
+    html += '</tr>';
+  });
+
+  tbody.innerHTML = html;
+
+  /* 綁定彈窗開啟事件（支援 Click 與 鍵盤 Enter/Space） */
+  bindSpeakerModalEvents();
+
+  tbody.addEventListener('click', function (e) {
+    var card = e.target.closest ? e.target.closest('.ag2-card[data-speaker-id]') : null;
+    if (!card) return;
+    var id = card.getAttribute('data-speaker-id');
+    if (id) {
+      openSpeakerModal(id, true);
+    }
+  });
+
+  tbody.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      var card = e.target.closest ? e.target.closest('.ag2-card[data-speaker-id]') : null;
+      if (card) {
+        e.preventDefault();
+        var id = card.getAttribute('data-speaker-id');
+        if (id) {
+          openSpeakerModal(id, true);
+        }
+      }
+    }
+  });
+
+  /* 檢查網址是否有 ?id=xxxx 並自動開啟 */
+  var initialParams = new URLSearchParams(window.location.search);
+  var initialId = initialParams.get('id');
+  if (initialId) {
+    openSpeakerModal(initialId, false);
+  }
+}
+
+/* ==========================================================================
    I. 啟動
    ========================================================================== */
 function boot() {
@@ -1534,6 +1827,7 @@ function boot() {
   renderAgendaPage();
   renderSponsors();
   renderSessionsPage();
+  renderAgenda2Page();
 
   var rt = false;
   window.addEventListener('resize', function () {

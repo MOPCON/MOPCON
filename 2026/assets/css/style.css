@@ -3276,6 +3276,294 @@ body.modal-open {
   }
 }
 
+/* ── 9.8 議程表時刻表（agenda2.html） ──────────────────────────────────── */
+.agenda2-band {
+  padding: 50px 0 80px;
+}
+
+.agenda2-table-wrap {
+  width: 100%;
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-1);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto;
+}
+
+.agenda2-table {
+  width: 100%;
+  min-width: 860px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.agenda2-table thead {
+  background: linear-gradient(180deg, var(--c-surface) 0%, #edf6f4 100%);
+  border-bottom: 2px solid var(--c-teal);
+}
+
+.agenda2-table th {
+  padding: 16px 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--c-teal-deep);
+  letter-spacing: .03em;
+  text-align: center;
+  border-right: 1px solid var(--c-line);
+}
+
+.agenda2-table th:last-child {
+  border-right: none;
+}
+
+.ag2-th-time {
+  width: 110px;
+}
+
+.ag2-th-hall {
+  width: calc((100% - 110px) / 3);
+}
+
+.ag2-row {
+  border-bottom: 1px solid var(--c-line);
+}
+
+.ag2-row:last-child {
+  border-bottom: none;
+}
+
+.ag2-td-time {
+  padding: 16px 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--c-teal-deep);
+  text-align: center;
+  background: #fafcfb;
+  border-right: 1px solid var(--c-line);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* 共同時段（報到、開幕、休息、午餐、閉幕、散場） */
+.ag2-row-common {
+  background: #f8faf9;
+}
+
+.ag2-td-common {
+  padding: 14px 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.ag2-common-badge {
+  display: inline-block;
+  padding: 6px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #374151;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 999px;
+  letter-spacing: .03em;
+}
+
+/* Keynote 列（淡藍） */
+.ag2-hl-keynote {
+  background: #f0f7ff;
+}
+
+.ag2-hl-keynote .ag2-td-time {
+  background: #e6f0fa;
+  color: #1d4ed8;
+}
+
+/* 午餐列（淡綠） */
+.ag2-hl-lunch {
+  background: #f0fdf4;
+}
+
+.ag2-hl-lunch .ag2-common-badge {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+/* Tea Time 列（淡黃/橘） */
+.ag2-hl-tea {
+  background: #fffbeb;
+}
+
+.ag2-hl-tea .ag2-common-badge {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+/* 閉幕列（淡粉紅） */
+.ag2-hl-closing {
+  background: #fef2f2;
+}
+
+.ag2-hl-closing .ag2-common-badge {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* 議程格 */
+.ag2-td-talk {
+  padding: 12px;
+  vertical-align: top;
+  border-right: 1px solid var(--c-line);
+  background: var(--c-white);
+}
+
+.ag2-td-talk:last-child {
+  border-right: none;
+}
+
+/* 跨三軌議程格（如 9:10 Keynote） */
+.ag2-td-span {
+  padding: 16px 20px;
+  background: inherit;
+  text-align: center;
+}
+
+.ag2-card-span {
+  width: 95%;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+/* 卡片 */
+.ag2-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 14px 12px;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-card);
+  background: var(--c-white);
+  transition: border-color .15s ease, background .15s ease, transform .15s ease, box-shadow .15s ease;
+  box-sizing: border-box;
+  outline: none;
+  min-height: 250px;
+}
+
+.ag2-card[data-speaker-id] {
+  cursor: pointer;
+}
+
+.ag2-card[data-speaker-id]:hover {
+  border-color: var(--c-teal);
+  background: var(--c-teal-tint);
+  box-shadow: var(--shadow-1);
+  transform: translateY(-2px);
+}
+
+.ag2-card[data-speaker-id]:focus-visible {
+  outline: 2px solid var(--c-teal);
+  outline-offset: 1px;
+}
+
+/* 1. 議程主題 */
+.ag2-card-agenda {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--c-teal-deep);
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 42px;
+}
+
+/* 2. 講者頭像 */
+.ag2-card-avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 2px solid var(--c-mint);
+  overflow: hidden;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+  background: var(--c-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ag2-card-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 3. 講者姓名 */
+.ag2-card-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--c-text);
+  margin-bottom: 8px;
+}
+
+/* 4. class 標籤 */
+.ag2-card-class {
+  margin-bottom: 6px;
+  justify-content: center;
+  gap: 4px;
+}
+
+/* 5. track 標籤 */
+.ag2-card-track {
+  margin-top: auto;
+  justify-content: center;
+  gap: 4px;
+}
+
+/* TBD 卡片 */
+.ag2-card-tbd {
+  justify-content: center;
+  background: #f9fafb;
+  border-style: dashed;
+  min-height: 180px;
+}
+
+.ag2-tbd-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #6b7280;
+  background: #e5e7eb;
+  border-radius: 999px;
+}
+
+/* 空白卡片（-） */
+.ag2-card-empty {
+  justify-content: center;
+  background: #fafafa;
+  border-style: dashed;
+  min-height: 140px;
+}
+
+.ag2-empty-dash {
+  font-size: 20px;
+  font-weight: 700;
+  color: #9ca3af;
+}
+
+/* Modal 中的樣式微調 */
+.spk-modal-plain {
+  font-size: 14px;
+  color: var(--c-text-sub);
+  margin: 4px 0 0;
+}
+
 /* ── 10 頁尾 ────────────────────────────────────────────────────────────── */
 .on-teal a:not(.btn),
 .site-footer .foot-brand a,

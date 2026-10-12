@@ -108,6 +108,14 @@ export const PAGES = [
     lead:  '單日三軌並行，橫跨今年的三大主軸。可以用下方的軌道篩選，只看某一軌的場次。'
   },
   {
+    file:    'agenda2.html',
+    title:   `議程表｜MOPCON ${SITE.year}`,
+    desc:    `MOPCON ${SITE.year} 議程表：單日三軌並行。${SITE.date}。`,
+    h1:      '議程表',
+    lead:    '單日三軌並行，橫跨今年的三大主軸。',
+    sitemap: false
+  },
+  {
     file:  'speakers.html',
     title: `講者陣容｜MOPCON ${SITE.year}`,
     desc:  `MOPCON ${SITE.year} 講者陣容：來自業界第一線的軟體工程、AI 與載具技術實踐者。名單陸續公布中。`,
