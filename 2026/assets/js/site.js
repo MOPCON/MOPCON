@@ -27,8 +27,8 @@ var NAV = [
   { text: '首頁', href: 'index.html' },
   { text: 'JSDC', href: 'https://2026.jsdc.tw/' },
   { text: '主辦單位', href: 'organizers.html' },
+  { text: '議程時刻', href: 'agenda.html' },
   { text: '特色議程', href: 'sessions.html' },
-  // { text: '議程介紹',    href: 'agenda.html' },
   { text: '講者陣容', href: 'speakers.html' },
   // { text: '贊助夥伴',    href: 'sponsor.html' },
   {

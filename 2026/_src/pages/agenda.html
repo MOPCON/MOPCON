@@ -2,43 +2,40 @@
 
 <!--#include parts/page-hero.html -->
 
-  <!-- ======================= 軌道切換 Tab =======================
-       以 SPEAKERS 的 track 欄位為切換 Tab，預設選取 "Software Defined Reality" -->
-  <div class="filters" role="region" aria-label="軌道切換">
-    <div class="wrap filters-in">
-      <ul class="chip-set" id="sessionTrackTabs" role="tablist" aria-label="議程軌道切換"></ul>
-      <p class="filter-count" id="sessionFilterCount" aria-live="polite"></p>
-    </div>
-  </div>
-
-  <!-- ======================= 議程清單 ======================= -->
-  <section class="band band-white arc-bot session-band" aria-labelledby="sessionBandTitle">
+  <!-- ======================= 議程時刻表 ======================= -->
+  <section class="band band-white arc-bot agenda2-band" aria-labelledby="agenda2BandTitle">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow" id="sessionTrackEyebrow">TRACK SESSIONS</span>
-        <h2 id="sessionBandTitle">Software Defined Reality</h2>
-        <p class="lead" id="sessionTrackDesc">聚焦軟體如何跨越虛擬邊界，成為驅動實體設備的核心大腦。從無人機的飛控演算法、各類載具濾波調校，到機器人邊緣運算與電腦視覺的即時反應，深入探討「軟體定義載具」（SDV）的底層技術與韌體架構。我們將解析程式碼如何突破物理極限，賦予硬體設備持續進化的靈魂。</p>
+        <span class="eyebrow">AGENDA TIMETABLE</span>
+        <h2 id="agenda2BandTitle">大會議程表</h2>
+        <p class="lead">單日三軌並行，點擊各場議程可查看完整內容與講者介紹。</p>
       </div>
-      <div class="session-table-wrap" role="region" aria-label="議程清單表格" tabindex="0">
-        <table class="session-table" role="table" aria-labelledby="sessionBandTitle">
-          <colgroup>
-            <col class="st-col-speaker">
-            <col class="st-col-title">
-            <col class="st-col-intro">
-          </colgroup>
+
+      <div class="agenda2-table-wrap" role="region" aria-label="議程時刻表" tabindex="0">
+        <table class="agenda2-table" id="agenda2Table" role="table" aria-labelledby="agenda2BandTitle">
           <thead>
             <tr>
-              <th scope="col" class="st-th-speaker">講者</th>
-              <th scope="col" class="st-th-title">議程名稱</th>
-              <th scope="col" class="st-th-intro">議程簡介</th>
+              <th scope="col" class="ag2-th-time">開始時間</th>
+              <th scope="col" class="ag2-th-hall">R1 (大禮堂)</th>
+              <th scope="col" class="ag2-th-hall">R2 (小劇場)</th>
+              <th scope="col" class="ag2-th-hall">R3 (音樂廳)</th>
             </tr>
           </thead>
-          <tbody id="sessionList"></tbody>
+          <tbody id="agenda2Body"></tbody>
         </table>
       </div>
       <noscript><p class="tl-empty">議程資料由 assets/js/data.js 載入，需要開啟 JavaScript 才看得到。</p></noscript>
     </div>
   </section>
+
+  <!-- 議程完整資訊彈出視窗（Modal） -->
+  <div class="spk-modal" id="speakerModal" hidden role="dialog" aria-modal="true" aria-labelledby="spkModalName">
+    <div class="spk-modal-backdrop" id="speakerModalBackdrop" tabindex="-1"></div>
+    <div class="spk-modal-dialog">
+      <button type="button" class="spk-modal-close" id="speakerModalClose" aria-label="關閉視窗">&times;</button>
+      <div class="spk-modal-body" id="speakerModalBody"></div>
+    </div>
+  </div>
 
   <!-- ======================= 立即報名 ======================= -->
   <section class="band band-teal on-teal cta-band arc-bot" aria-labelledby="cta-t">
