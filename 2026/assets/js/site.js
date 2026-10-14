@@ -927,7 +927,7 @@ function openSpeakerModal(id, pushUrl) {
 
   var profileTags = speaker.keynote ? '<span class="tag tag-key">Keynote</span>' : '';
 
-  var isAgenda2 = currentFile() === 'agenda2.html';
+  var isAgenda2 = currentFile() === 'agenda2.html' || currentFile() === 'agenda.html';
   var contentHtml = '';
 
   if (isAgenda2) {
@@ -1579,7 +1579,6 @@ function renderAgenda2Page() {
     {
       time: '9:10',
       type: 'span-talk',
-      highlight: 'keynote',
       speakerName: 'Alias'
     },
     { time: '9:50', type: 'common', title: 'break' },
@@ -1717,14 +1716,15 @@ function renderAgenda2Page() {
       }
     } else {
       slot.halls.forEach(function (col) {
+        var hallAttr = ' data-hall="' + esc(col.hall) + '"';
         if (col.empty) {
-          html += '<td class="ag2-td-talk ag2-td-empty"><div class="ag2-card ag2-card-empty"><span class="ag2-empty-dash">-</span></div></td>';
+          html += '<td class="ag2-td-talk ag2-td-empty"' + hallAttr + '><div class="ag2-card ag2-card-empty"><span class="ag2-empty-dash">-</span></div></td>';
         } else if (col.tbd || col.speakerName === 'TBD') {
-          html += '<td class="ag2-td-talk ag2-td-tbd"><div class="ag2-card ag2-card-tbd"><span class="ag2-tbd-badge">敬請期待</span></div></td>';
+          html += '<td class="ag2-td-talk ag2-td-tbd"' + hallAttr + '><div class="ag2-card ag2-card-tbd"><span class="ag2-tbd-badge">敬請期待</span></div></td>';
         } else {
           var entry = speakerMap[col.speakerName];
           if (!entry) {
-            html += '<td class="ag2-td-talk ag2-td-tbd"><div class="ag2-card ag2-card-tbd"><span class="ag2-tbd-badge">敬請期待</span></div></td>';
+            html += '<td class="ag2-td-talk ag2-td-tbd"' + hallAttr + '><div class="ag2-card ag2-card-tbd"><span class="ag2-tbd-badge">敬請期待</span></div></td>';
           } else {
             var s = entry.speaker;
             var idx = entry.index;
@@ -1751,7 +1751,7 @@ function renderAgenda2Page() {
             var trackBadges = s.track ? trackTagHtml(s.track) : '';
             var trackHtml = trackBadges ? '<div class="tag-row ag2-card-track">' + trackBadges + '</div>' : '';
 
-            html += '<td class="ag2-td-talk">' +
+            html += '<td class="ag2-td-talk"' + hallAttr + '>' +
               '<div class="ag2-card" data-speaker-id="' + esc(s.id) + '" tabindex="0" role="button" aria-haspopup="dialog" aria-label="' + esc(s.name) + '：' + esc(s.agenda || '') + '">' +
               agendaHtml +
               imgHtml +
@@ -1768,6 +1768,25 @@ function renderAgenda2Page() {
   });
 
   tbody.innerHTML = html;
+
+  /* 行動版會議廳切換事件 */
+  var hallTabs = document.getElementById('ag2HallTabs');
+  var table = document.getElementById('agenda2Table');
+  if (hallTabs && table) {
+    hallTabs.addEventListener('click', function (e) {
+      var btn = e.target.closest ? e.target.closest('button[data-hall]') : null;
+      if (!btn) return;
+      var hall = btn.getAttribute('data-hall');
+      if (!hall) return;
+
+      table.setAttribute('data-active-hall', hall);
+      var allBtns = hallTabs.querySelectorAll('button[data-hall]');
+      for (var i = 0; i < allBtns.length; i++) {
+        var isCurrent = allBtns[i] === btn;
+        allBtns[i].setAttribute('aria-selected', isCurrent ? 'true' : 'false');
+      }
+    });
+  }
 
   /* 綁定彈窗開啟事件（支援 Click 與 鍵盤 Enter/Space） */
   bindSpeakerModalEvents();

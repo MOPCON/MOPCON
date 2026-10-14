@@ -3413,18 +3413,13 @@ body.modal-open {
 .ag2-td-talk {
   padding: 12px;
   vertical-align: top;
-  border-right: 1px solid var(--c-line);
   background: var(--c-white);
-}
-
-.ag2-td-talk:last-child {
-  border-right: none;
 }
 
 /* 跨三軌議程格（如 9:10 Keynote） */
 .ag2-td-span {
   padding: 16px 20px;
-  background: inherit;
+  background: var(--c-white);
   text-align: center;
 }
 
@@ -3562,6 +3557,104 @@ body.modal-open {
   font-size: 14px;
   color: var(--c-text-sub);
   margin: 4px 0 0;
+}
+
+/* 行動版會議廳切換（桌機版隱藏） */
+.ag2-hall-tabs-wrap {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  /* 行動版會議廳切換列 */
+  .ag2-hall-tabs-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+
+  .ag2-hall-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .ag2-hall-tabs .chip {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+
+  /* 行動版自適應佈局（時間欄 + 目前選擇的會議廳欄） */
+  .agenda2-table-wrap {
+    overflow-x: visible;
+  }
+
+  .agenda2-table {
+    min-width: 0;
+    width: 100%;
+    table-layout: auto;
+  }
+
+  /* 隱藏未選取的會議廳表頭與儲存格 */
+  .agenda2-table th[data-hall],
+  .agenda2-table td[data-hall] {
+    display: none;
+  }
+
+  /* 依 data-active-hall 顯示當前選取的會議廳 */
+  .agenda2-table[data-active-hall="R1"] th[data-hall="R1"],
+  .agenda2-table[data-active-hall="R1"] td[data-hall="R1"],
+  .agenda2-table[data-active-hall="R2"] th[data-hall="R2"],
+  .agenda2-table[data-active-hall="R2"] td[data-hall="R2"],
+  .agenda2-table[data-active-hall="R3"] th[data-hall="R3"],
+  .agenda2-table[data-active-hall="R3"] td[data-hall="R3"] {
+    display: table-cell;
+    width: auto;
+  }
+
+  .ag2-th-time,
+  .ag2-td-time {
+    width: 80px;
+    min-width: 75px;
+    max-width: 85px;
+    padding: 12px 6px;
+    font-size: 13.5px;
+  }
+
+  .ag2-th-hall {
+    padding: 12px 10px;
+    font-size: 15px;
+  }
+
+  .ag2-td-talk {
+    padding: 10px 8px;
+  }
+
+  .ag2-card {
+    min-height: auto;
+    padding: 12px 10px;
+  }
+
+  .ag2-card-agenda {
+    font-size: 14.5px;
+    min-height: auto;
+    margin-bottom: 8px;
+  }
+
+  .ag2-card-avatar {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 8px;
+  }
+
+  .ag2-card-span {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 /* ── 10 頁尾 ────────────────────────────────────────────────────────────── */

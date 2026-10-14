@@ -11,14 +11,23 @@
         <p class="lead">單日三軌並行，點擊各場議程可查看完整內容與講者介紹。</p>
       </div>
 
+      <!-- 行動版會議廳切換 Tab（桌機版自動隱藏） -->
+      <div class="ag2-hall-tabs-wrap" role="region" aria-label="會議廳切換">
+        <ul class="chip-set ag2-hall-tabs" id="ag2HallTabs" role="tablist" aria-label="會議廳切換">
+          <li><button type="button" class="chip chip-A" data-hall="R1" role="tab" aria-selected="true"><span class="tag-dot" aria-hidden="true"></span>R1 (大禮堂)</button></li>
+          <li><button type="button" class="chip chip-B" data-hall="R2" role="tab" aria-selected="false"><span class="tag-dot" aria-hidden="true"></span>R2 (小劇場)</button></li>
+          <li><button type="button" class="chip chip-C" data-hall="R3" role="tab" aria-selected="false"><span class="tag-dot" aria-hidden="true"></span>R3 (音樂廳)</button></li>
+        </ul>
+      </div>
+
       <div class="agenda2-table-wrap" role="region" aria-label="議程時刻表" tabindex="0">
-        <table class="agenda2-table" id="agenda2Table" role="table" aria-labelledby="agenda2BandTitle">
+        <table class="agenda2-table" id="agenda2Table" role="table" aria-labelledby="agenda2BandTitle" data-active-hall="R1">
           <thead>
             <tr>
               <th scope="col" class="ag2-th-time">開始時間</th>
-              <th scope="col" class="ag2-th-hall">R1 (大禮堂)</th>
-              <th scope="col" class="ag2-th-hall">R2 (小劇場)</th>
-              <th scope="col" class="ag2-th-hall">R3 (音樂廳)</th>
+              <th scope="col" class="ag2-th-hall" data-hall="R1">R1 (大禮堂)</th>
+              <th scope="col" class="ag2-th-hall" data-hall="R2">R2 (小劇場)</th>
+              <th scope="col" class="ag2-th-hall" data-hall="R3">R3 (音樂廳)</th>
             </tr>
           </thead>
           <tbody id="agenda2Body"></tbody>
