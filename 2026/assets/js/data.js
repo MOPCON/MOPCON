@@ -259,7 +259,7 @@ var SPEAKERS = [
   {
     id: "2026_Cherie-Hsieh",
     name: "Cherie Hsieh",
-    role: "Principal Engineer",
+    role: "副理",
     org: "台灣積體電路製造股份有限公司",
     bio: "跨領域轉職人，目前擔任軟體開發管理職，除了是 Gopher 之外，也喜歡研究電腦架構與效能改善等議題。",
     img: "assets/img/speakers/Cherie-Hsieh.jpg",
