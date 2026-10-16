@@ -334,6 +334,54 @@ var SPEAKERS = [
     level: "Normal - 需相關基礎知識",
     track: "AI in Action",
     class: "AI, Web Development, IoT, DevOps"
+  },
+  {
+    id: "2026_工常張-Shawn",
+    name: "工常張 Shawn",
+    role: "前端工程師",
+    org: "海外加密貨幣交易所",
+    bio: "工常張 Shawn（張君祥）現任跨國 crypto 交易所的前端工程師，專注於高流量金融產品、前端架構與工程效率。過去亦參與供應鏈 ERP、社群平台與律師事務所 AI 工具開發。工作之外持續打造個人專案，包括累積 6 萬+ 使用者的 Threads 社群分析工具 Threadseeker、3.8 萬+ 使用者的大學科系查詢 LINE Bot。",
+    img: "assets/img/speakers/jcshawn19.jpg",
+    link: "https://jcshawn.com",
+    linkText: "Website",
+    agenda: "Meta.ai 出現前，我怎麼開發 Threads 問答機器人？",
+    summary: "2026 年，Meta 開始在 Threads 測試透過 @meta.ai 直接向 AI 提問的功能。但早在 2025 年 4 月，我就自製了一個能在同樣功能的 AI 問答機器人：WenThreads（問脆）。\n\n這個受到 X 平台 Grok 啟發的個人專案，背後為了讓 AI 真正融入社群討論，我透過迭代多次的爬蟲與事件驅動技術，讓機器人以不到一千塊的成本，自動回應了超過 600+ 則網友提問。\n\n這場分享，您將能透過我從零開發 WenThreads 的心路歷程，瞭解如何透過系統設計實現一個類似 X 的 Grok 或 meta.ai 的社群問答 bot，來結合您欲應用 AI 參與社群互動的使用場景中。",
+    intro: "分享從零打造 Threads 社群 AI 問答機器人 WenThreads 的實戰心路歷程，解析如何透過爬蟲與事件驅動系統設計，以極低成本讓 AI 深入社群互動，實現自主問答與高流量應用場景。",
+    level: "Normal - 需相關基礎知識",
+    track: "AI in Action",
+    class: "AI, Web Development, ChatBot"
+  },
+  {
+    id: "2026_維元",
+    name: "維元",
+    role: "社群主理人",
+    org: "資料科學家的工作日常",
+    bio: "目前是一名擅長網站開發與資料科學的雙棲工程師，熟悉 Python 跟 JavaScript。業餘經營知識性社群「資料科學家的工作日常」，擁有多次大型技術會議講者經驗，持續發表對 #資料科學、 #人工智慧 或 #軟體職涯 議題。",
+    img: "assets/img/speakers/v123582.jpg",
+    link: "https://www.facebook.com/v123582",
+    linkText: "Facebook",
+    agenda: "從 Prompt 到 Production：用 Harness 打造可持續交付的 AI Agent 開發工作流",
+    summary: "AI Coding Agent 已經很會寫 Code，但真正的挑戰，是如何讓它穩定參與完整的軟體交付流程。這場分享將從實際案例出發，介紹如何透過 Spec、Evaluator、Human Gate 與 Harness，串起需求、多 Agent 分工、Review、CI/CD 與部署，打造一套模型可替換、流程可持續累積的 AI 開發工作流。",
+    intro: "立足實際交付案例，探討如何讓 AI Agent 穩定參與軟體交付全流程。解析透過 Spec、Evaluator、Human Gate 與 Harness 串連需求、多 Agent 分工與 CI/CD 部署，打造可持續累積的 AI 開發工作流。",
+    level: "Normal - 需相關基礎知識",
+    track: "Next-Gen Intelligence",
+    class: "AI, Web Development"
+  },
+  {
+    id: "2026_Caesar",
+    name: "Caesar",
+    role: "經理",
+    org: "正美科技",
+    bio: "JavaScript 生態系的長期建設者，從社群、開源、顧問服務一路走進產業現場。為個人化品牌零售打造 AI 製造與供應鏈基礎設施的營運者。目前主要將打造品牌想像與製造現場之間的 AI 營運層。\n\n是一位 AI × 製造營運者，專注打造連接品牌想像、供應鏈協作與工廠現場執行的基礎設施。",
+    img: "assets/img/speakers/CaesarChi.jpg",
+    link: "https://blog.caesarchi.com/",
+    linkText: "Blog",
+    agenda: "一句需求到產品實現：如何讓 AI 真正參與製造？",
+    summary: "從客戶需求出發，透過問題拆解、規格定義與製程整合，建立清晰的工程邏輯，讓 AI 協助推進開發與製造，將市場需求轉化為可交付的產品。",
+    intro: "從客戶端需求出發，探討如何透過問題拆解、規格定義與製程整合建立清晰工程邏輯，讓 AI 協助推進開發與製造現場，將市場需求轉化為高品質的實體交付產品。",
+    level: "Basic - 基礎入門",
+    track: "Next-Gen Intelligence",
+    class: "AI, Web Development, IoT, UI / UX"
   }
 ];
 
