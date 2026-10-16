@@ -54,40 +54,129 @@ var TRACKS = [
      另有 8 列跨全軌的非議程列（報到／開幕／休息 ×4／Tea Time ×2／午餐／閉幕／散場）。
    ※ Unconf 不是正式議程（場外互動，在各休息與 Tea Time 時段進行），所以不列在這裡，
      議程頁時間軸下面有一行說明。 */
+/* ── 議程時刻表（agenda.html、agenda2.html 讀這一份）────────────────────────
+   每筆代表一個時段：
+     common    全場共同時段（報到、開幕、休息、午餐、閉幕、散場）
+     span-talk 跨三軌共同議程（例如 9:10 Keynote）
+     talks     各軌分場議程，halls 陣列指定 R1 / R2 / R3 的講者或 tbd: true
+*/
+var AGENDA_SCHEDULE = [
+  { time: '8:30', type: 'common', title: '報到入場時間' },
+  { time: '9:00', type: 'common', title: '開幕 Opening' },
+  {
+    time: '9:10',
+    type: 'span-talk',
+    speakerName: 'Alias'
+  },
+  { time: '9:50', type: 'common', title: 'break' },
+  {
+    time: '10:00',
+    type: 'talks',
+    halls: [
+      { hall: 'R1', speakerName: '蕭漢威' },
+      { hall: 'R2', speakerName: '陳葵懋(Ian)' },
+      { hall: 'R3', tbd: true }
+    ]
+  },
+  { time: '10:40', type: 'common', title: 'break' },
+  {
+    time: '11:00',
+    type: 'talks',
+    halls: [
+      { hall: 'R1', speakerName: '鄭聖文' },
+      { hall: 'R2', speakerName: 'Stanley' },
+      { hall: 'R3', speakerName: 'Voidful' }
+    ]
+  },
+  { time: '11:40', type: 'common', title: 'break' },
+  {
+    time: '11:50',
+    type: 'talks',
+    halls: [
+      { hall: 'R1', speakerName: 'allen54a0' },
+      { hall: 'R2', speakerName: 'Vic Wen' },
+      { hall: 'R3', speakerName: 'Caesar Chi' }
+    ]
+  },
+  { time: '12:30', type: 'common', highlight: 'lunch', title: 'Lunch' },
+  {
+    time: '13:20',
+    type: 'talks',
+    halls: [
+      { hall: 'R1', speakerName: '高見龍' },
+      { hall: 'R2', speakerName: 'Rete Lin' },
+      { hall: 'R3', speakerName: '張維元' }
+    ]
+  },
+  { time: '14:00', type: 'common', title: 'break' },
+  {
+    time: '14:10',
+    type: 'talks',
+    halls: [
+      { hall: 'R1', speakerName: 'Cherie Hsieh' },
+      { hall: 'R2', speakerName: 'Kuon Ding' },
+      { hall: 'R3', tbd: true }
+    ]
+  },
+  { time: '14:50', type: 'common', highlight: 'tea', title: 'tea time' },
+  {
+    time: '15:10',
+    type: 'talks',
+    halls: [
+      { hall: 'R1', speakerName: 'zonble' },
+      { hall: 'R2', speakerName: 'Abi Chang' },
+      { hall: 'R3', tbd: true }
+    ]
+  },
+  { time: '15:50', type: 'common', title: 'break' },
+  {
+    time: '16:00',
+    type: 'talks',
+    halls: [
+      { hall: 'R1', tbd: true },
+      { hall: 'R2', speakerName: 'Chun Shawn' },
+      { hall: 'R3', tbd: true }
+    ]
+  },
+  { time: '16:40', type: 'common', title: 'break' },
+  { time: '16:50', type: 'common', highlight: 'closing', title: '閉幕 Closing' },
+  { time: '17:20', type: 'common', title: '散場' }
+];
+
 var SESSIONS = [
-  { start: '08:30', end: '09:00', type: 'reg', track: 'ALL', title: '報到入場' },
+  { start: '08:30', end: '09:00', type: 'reg', track: 'ALL', title: '報到入場時間' },
   { start: '09:00', end: '09:10', type: 'opening', track: 'ALL', title: '開幕 Opening' },
   /* Keynote 在 R1（1F），但屬於全場共同場次，所以 track 填 'ALL'，篩選任何一軌都看得到 */
-  { start: '09:10', end: '09:50', type: 'keynote', track: 'ALL', title: '能便宜的是一個能我不會', speaker: '真的', org: '覺得沒告訴你', level: '入門' },
-  { start: '09:50', end: '10:00', type: 'break', track: 'ALL', title: '休息' },
-  { start: '10:00', end: '10:40', type: 'talk', track: 'A', title: '為這樣本上不知都不會會喜歡', speaker: '的不知', org: '一種浪得般推', level: '進階' },
-  { start: '10:00', end: '10:40', type: 'talk', track: 'B', title: '的也這本來如此眼睛會出', speaker: '我才看', org: '年紀主角以的以', level: '實作' },
-  { start: '10:00', end: '10:40', type: 'talk', track: 'C', title: '也比較這樣忍不住己在是很', speaker: '卡片上', org: '大太好為為什', level: '進階' },
-  { start: '10:40', end: '11:00', type: 'tea', track: 'ALL', title: 'Tea Time' },
-  { start: '11:00', end: '11:40', type: 'talk', track: 'A', title: '個者來就回家日向知道', speaker: '的是', org: '第一個可以後覺得', level: '實作' },
-  { start: '11:00', end: '11:40', type: 'talk', track: 'B', title: '時間不今年隔死亡了細節果可以當', speaker: '時要', org: '成年要啊', level: '入門' },
-  { start: '11:00', end: '11:40', type: 'talk', track: 'C', title: '我要等多指教也可已經不', speaker: '也不會', org: '得了覺有在有', level: '實作' },
-  { start: '11:40', end: '11:50', type: 'break', track: 'ALL', title: '休息' },
-  { start: '11:50', end: '12:30', type: 'talk', track: 'A', title: '所謂有的那覺到不要著不想好可喜歡他', speaker: '嘛或', org: '喵喵喵的的心', level: '入門' },
-  { start: '11:50', end: '12:30', type: 'talk', track: 'B', title: '水故的同啊我怎麼公主說什麼', speaker: '不然我', org: '的我已經姊', level: '進階' },
-  { start: '11:50', end: '12:30', type: 'talk', track: 'C', title: '看到不知我喜有這麼線他就是', speaker: '人時候', org: '因我最喜歡哈', level: '入門' },
-  { start: '12:30', end: '13:20', type: 'lunch', track: 'ALL', title: '午餐 Lunch' },
-  { start: '13:20', end: '14:00', type: 'talk', track: 'A', title: '友神中一個的同學廣告', speaker: '麼排忍', org: '這禮拜麼會這雷怎', level: '進階' },
-  { start: '13:20', end: '14:00', type: 'talk', track: 'B', title: '意我的時候這篇故事的一個還有一', speaker: '可以', org: '我希望形不還是不', level: '實作' },
-  { start: '13:20', end: '14:00', type: 'talk', track: 'C', title: '也算是這句話我吃始一的點', speaker: '他這', org: '只要把自卡', level: '進階' },
-  { start: '14:00', end: '14:10', type: 'break', track: 'ALL', title: '休息' },
-  { start: '14:10', end: '14:50', type: 'talk', track: 'A', title: '可以幫我都再了我我愛你週', speaker: '有好愛', org: '不錯知道以', level: '實作' },
-  { start: '14:10', end: '14:50', type: 'talk', track: 'B', title: '原本以這種跑著這只要看的時', speaker: '麼意', org: '十年但其的這麼互', level: '入門' },
-  { start: '14:10', end: '14:50', type: 'talk', track: 'C', title: '嗎一下花不選擇看很多他們會', speaker: '一起外', org: '的我怎麼好帥現', level: '實作' },
-  { start: '14:50', end: '15:10', type: 'tea', track: 'ALL', title: 'Tea Time' },
-  { start: '15:10', end: '15:50', type: 'talk', track: 'A', title: '知道有幾關心對於要是太好', speaker: '千已經', org: '第一個可以後覺得', level: '入門' },
-  { start: '15:10', end: '15:50', type: 'talk', track: 'B', title: '角的的地方一個小給人', speaker: '等等', org: '喵喵喵的的心', level: '進階' },
-  { start: '15:10', end: '15:50', type: 'talk', track: 'C', title: '本格叫文字會再跑到還是也可', speaker: '看到了', org: '度有溫暖位', level: '實作' },
-  { start: '15:50', end: '16:00', type: 'break', track: 'ALL', title: '休息' },
-  { start: '16:00', end: '16:40', type: 'talk', track: 'A', title: '時間的小姐我反而會直幸運', speaker: '無法', org: '行了對己我當知', level: '入門' },
-  { start: '16:00', end: '16:40', type: 'talk', track: 'B', title: '歌得我一波有一的的我我說的', speaker: '好的', org: '如果好像不說跟他', level: '進階' },
-  { start: '16:00', end: '16:40', type: 'talk', track: 'C', title: '開心就是個多了今天要', speaker: '開感', org: '覺得沒告訴你', level: '實作' },
-  { start: '16:40', end: '16:50', type: 'break', track: 'ALL', title: '休息' },
+  { start: '09:10', end: '09:50', type: 'keynote', track: 'ALL', title: '當 AI 翼展天際：無人機的創新、應用與未來', speaker: 'Alias', org: '臺灣希望創新股份有限公司', level: 'Normal - 需相關基礎知識' },
+  { start: '09:50', end: '10:00', type: 'break', track: 'ALL', title: 'break' },
+  { start: '10:00', end: '10:40', type: 'talk', track: 'A', title: '無人飛船：長期滯空載具的基礎原理與自主飛控實務經驗', speaker: '蕭漢威', org: '國立高雄大學資訊管理學系', level: 'Basic - 基礎入門' },
+  { start: '10:00', end: '10:40', type: 'talk', track: 'B', title: 'Code 是 AI 寫的，就真的有一支開發團隊嗎？', speaker: '陳葵懋(Ian)', org: '一等一科技', level: 'Normal - 需相關基礎知識' },
+  { start: '10:00', end: '10:40', type: 'talk', track: 'C', title: '敬請期待', speaker: 'TBD', org: '', level: '入門' },
+  { start: '10:40', end: '11:00', type: 'tea', track: 'ALL', title: 'break' },
+  { start: '11:00', end: '11:40', type: 'talk', track: 'A', title: 'Learning to Fly in Simulation: Quadrotor Reinforcement Learning from First Principles', speaker: '鄭聖文', org: '不公開', level: 'Basic - 基礎入門' },
+  { start: '11:00', end: '11:40', type: 'talk', track: 'B', title: '當工程師不再打字寫 code,他在做什麼?——一個人、12 週、17 萬行的 AI Native 開發模式', speaker: 'Stanley', org: 'ViewSonic', level: 'Normal - 需相關基礎知識' },
+  { start: '11:00', end: '11:40', type: 'talk', track: 'C', title: '模型愈來愈大，我們該往哪裡走？2026 本土 AI 的訓練與突圍', speaker: 'Voidful', org: 'OpenFormosa', level: 'Expert - 建議聽眾具備相關經驗' },
+  { start: '11:40', end: '11:50', type: 'break', track: 'ALL', title: 'break' },
+  { start: '11:50', end: '12:30', type: 'talk', track: 'A', title: '用AI打造大氣探測無人機', speaker: 'allen54a0', org: 'UAV 無人機任務規劃與安全討論群', level: 'Normal - 需相關基礎知識' },
+  { start: '11:50', end: '12:30', type: 'talk', track: 'B', title: 'Beyond the Agent：當模型越來越強，我們該刪掉什麼、留下什麼？', speaker: 'Vic Wen', org: 'Microsoft', level: 'Normal - 需相關基礎知識' },
+  { start: '11:50', end: '12:30', type: 'talk', track: 'C', title: '一句需求到產品實現：如何讓 AI 真正參與製造？', speaker: 'Caesar Chi', org: '正美科技', level: 'Basic - 基礎入門' },
+  { start: '12:30', end: '13:20', type: 'lunch', track: 'ALL', title: 'Lunch' },
+  { start: '13:20', end: '14:00', type: 'talk', track: 'A', title: 'SDD 工作迴圈設計拆解', speaker: '高見龍', org: '五倍學院', level: 'Normal - 需相關基礎知識' },
+  { start: '13:20', end: '14:00', type: 'talk', track: 'B', title: '無人機PX4的架構介紹與實作', speaker: 'Rete Lin', org: '品翔航太', level: 'Normal - 需相關基礎知識' },
+  { start: '13:20', end: '14:00', type: 'talk', track: 'C', title: '從 Prompt 到 Production：用 Harness 打造可持續交付的 AI Agent 開發工作流', speaker: '張維元', org: '資料科學家的工作日常', level: 'Normal - 需相關基礎知識' },
+  { start: '14:00', end: '14:10', type: 'break', track: 'ALL', title: 'break' },
+  { start: '14:10', end: '14:50', type: 'talk', track: 'A', title: '當專案 100% 都由 AI coding，身為工程師和管理職的價值在哪裡？', speaker: 'Cherie Hsieh', org: '台灣積體電路製造股份有限公司', level: 'Normal - 需相關基礎知識' },
+  { start: '14:10', end: '14:50', type: 'talk', track: 'B', title: '自主飛行的決策系統 - 從態勢感知到語意理解', speaker: 'Kuon Ding', org: 'Funny Systems', level: 'Expert - 建議聽眾具備相關經驗' },
+  { start: '14:10', end: '14:50', type: 'talk', track: 'C', title: '敬請期待', speaker: 'TBD', org: '', level: '入門' },
+  { start: '14:50', end: '15:10', type: 'tea', track: 'ALL', title: 'tea time' },
+  { start: '15:10', end: '15:50', type: 'talk', track: 'A', title: '跟著AI 做一套AI 時代的台灣式編輯器', speaker: 'zonble', org: 'Noetiq Inc', level: 'Basic - 基礎入門' },
+  { start: '15:10', end: '15:50', type: 'talk', track: 'B', title: '從存檔到內容富翁：讓個人知識庫自己長出內容', speaker: 'Abi Chang', org: 'Open to Work', level: 'Basic - 基礎入門' },
+  { start: '15:10', end: '15:50', type: 'talk', track: 'C', title: '敬請期待', speaker: 'TBD', org: '', level: '入門' },
+  { start: '15:50', end: '16:00', type: 'break', track: 'ALL', title: 'break' },
+  { start: '16:00', end: '16:40', type: 'talk', track: 'A', title: '敬請期待', speaker: 'TBD', org: '', level: '入門' },
+  { start: '16:00', end: '16:40', type: 'talk', track: 'B', title: 'Meta.ai 出現前，我怎麼開發 Threads 問答機器人？', speaker: 'Chun Shawn', org: '海外加密貨幣交易所', level: 'Normal - 需相關基礎知識' },
+  { start: '16:00', end: '16:40', type: 'talk', track: 'C', title: '敬請期待', speaker: 'TBD', org: '', level: '入門' },
+  { start: '16:40', end: '16:50', type: 'break', track: 'ALL', title: 'break' },
   { start: '16:50', end: '17:20', type: 'closing', track: 'ALL', title: '閉幕 Closing' },
   { start: '17:20', end: '', type: 'end', track: 'ALL', title: '散場' }
 ];

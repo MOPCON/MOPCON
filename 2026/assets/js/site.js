@@ -1573,7 +1573,7 @@ function renderAgenda2Page() {
   var tbody = document.getElementById('agenda2Body');
   if (!tbody || typeof SPEAKERS === 'undefined') return;
 
-  var schedule = [
+  var schedule = (typeof AGENDA_SCHEDULE !== 'undefined') ? AGENDA_SCHEDULE : [
     { time: '8:30', type: 'common', title: '報到入場時間' },
     { time: '9:00', type: 'common', title: '開幕 Opening' },
     {
@@ -1608,7 +1608,7 @@ function renderAgenda2Page() {
       halls: [
         { hall: 'R1', speakerName: 'allen54a0' },
         { hall: 'R2', speakerName: 'Vic Wen' },
-        { hall: 'R3', tbd: true }
+        { hall: 'R3', speakerName: 'Caesar Chi' }
       ]
     },
     { time: '12:30', type: 'common', highlight: 'lunch', title: 'Lunch' },
@@ -1618,7 +1618,7 @@ function renderAgenda2Page() {
       halls: [
         { hall: 'R1', speakerName: '高見龍' },
         { hall: 'R2', speakerName: 'Rete Lin' },
-        { hall: 'R3', tbd: true }
+        { hall: 'R3', speakerName: '張維元' }
       ]
     },
     { time: '14:00', type: 'common', title: 'break' },
@@ -1647,7 +1647,7 @@ function renderAgenda2Page() {
       type: 'talks',
       halls: [
         { hall: 'R1', tbd: true },
-        { hall: 'R2', tbd: true },
+        { hall: 'R2', speakerName: 'Chun Shawn' },
         { hall: 'R3', tbd: true }
       ]
     },
@@ -1659,7 +1659,18 @@ function renderAgenda2Page() {
   var speakerMap = {};
   SPEAKERS.forEach(function (spk, idx) {
     if (spk.name) {
-      speakerMap[spk.name.trim()] = { speaker: spk, index: idx };
+      var n = spk.name.trim();
+      speakerMap[n] = { speaker: spk, index: idx };
+      if (n === 'Caesar') {
+        speakerMap['Caesar Chi'] = { speaker: spk, index: idx };
+      }
+      if (n === '維元') {
+        speakerMap['張維元'] = { speaker: spk, index: idx };
+      }
+      if (n === '工常張 Shawn') {
+        speakerMap['Chun Shawn'] = { speaker: spk, index: idx };
+        speakerMap['Shawn'] = { speaker: spk, index: idx };
+      }
     }
   });
 
