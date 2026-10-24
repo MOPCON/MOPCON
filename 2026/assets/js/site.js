@@ -27,10 +27,10 @@ var NAV = [
   { text: '首頁', href: 'index.html' },
   { text: 'JSDC', href: 'https://2026.jsdc.tw/' },
   { text: '主辦單位', href: 'organizers.html' },
+  { text: '贊助夥伴', href: 'sponsor.html' },
   { text: '議程時刻', href: 'agenda.html' },
   { text: '特色議程', href: 'sessions.html' },
   { text: '講者陣容', href: 'speakers.html' },
-  // { text: '贊助夥伴',    href: 'sponsor.html' },
   {
     text: '時光機', children: [
       { text: 'MOPCON 2025', target: "_blank", href: 'https://mopcon.org/2025/' },
@@ -602,9 +602,14 @@ function renderSponsorWall() {
     h += '<div class="wall"><h3 class="wall-t">' + esc(tier.name) + '</h3>' +
       '<div class="wall-grid ' + (WALL_CLASS[tier.size] || 'wall-3') + '">';
     list.forEach(function (s) {
-      h += '<div class="ph">' + (s.logo ? '<img src="' + esc(s.logo) + '" alt="">'
+      var logoContent = (s.logo ? '<img src="' + esc(s.logo) + '" alt="' + esc(s.name) + '">'
         : phShape(n, false)) +
-        '<span class="wall-name">' + esc(s.name) + '</span></div>';
+        '<span class="wall-name">' + esc(s.name) + '</span>';
+      if (s.link) {
+        h += '<a class="ph" href="' + esc(s.link) + '" target="_blank" rel="noopener noreferrer">' + logoContent + '</a>';
+      } else {
+        h += '<div class="ph">' + logoContent + '</div>';
+      }
       n++;
     });
     h += '</div></div>';
@@ -1189,16 +1194,20 @@ function renderSponsors() {
   SPONSOR_TIERS.forEach(function (tier) {
     var list = SPONSORS.filter(function (s) { return s.tier === tier.id; });
     if (!list.length) return;
-    h += '<section class="tier">' +
+    h += '<section class="tier tier-' + esc(tier.id) + '">' +
       '<div class="tier-head">' +
       '<span class="shape ' + PH_SHAPES[n % 3] + '" aria-hidden="true"></span>' +
       '<h2>' + esc(tier.name) + '</h2>' +
       '</div>' +
-      '<div class="tier-grid t-' + esc(tier.size) + '">';
+      '<div class="tier-grid t-' + esc(tier.size) + ' tier-grid-' + esc(tier.id) + '">';
     list.forEach(function (s) {
-      h += '<article class="card sp-card">' +
-        '<div class="ph">' + (s.logo ? '<img src="' + esc(s.logo) + '" alt="' + esc(s.name) + '">'
-          : phShape(n, false)) + '</div>' +
+      var logoContent = s.logo ? '<img src="' + esc(s.logo) + '" alt="' + esc(s.name) + '">'
+        : phShape(n, false);
+      var phHtml = s.link
+        ? '<a class="ph" href="' + esc(s.link) + '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(s.name) + '">' + logoContent + '</a>'
+        : '<div class="ph">' + logoContent + '</div>';
+      h += '<article class="card sp-card sp-card-' + esc(tier.id) + '">' +
+        phHtml +
         '<div><h3>' + esc(s.name) + '</h3>' +
         (s.desc ? '<p>' + esc(s.desc) + '</p>' : '') + '</div>' +
         '</article>';

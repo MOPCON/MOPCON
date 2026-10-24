@@ -480,7 +480,6 @@ var SPEAKERS = [
    size ：卡片大小，只能填 xl / lg / md / sm / xs（級別越高填越大）
    由上到下就是贊助頁的區塊順序。 */
 var SPONSOR_TIERS = [
-  { id: 'metaverse', name: '元宇宙級', size: 'xl' },
   { id: 'matrix', name: '矩陣級', size: 'lg' },
   { id: 'cloudnative', name: '雲原生級', size: 'md' },
   { id: 'gateway', name: '閘道級', size: 'sm' },
@@ -491,25 +490,58 @@ var SPONSOR_TIERS = [
    tier ：級別 id（要對得上 SPONSOR_TIERS 的 id）
    name ：公司名稱
    desc ：一段介紹；填 '' 就只顯示名稱（友情贊助就是這樣）
-   logo ：目前一律是「佔位塊」。正式 logo 進來時，把圖檔放到 assets/img/，
-          在這裡加一個 logo: 'assets/img/xxx.svg' 欄位即可（site.js 已經支援）。 */
+   logo ：圖檔路徑，例如 'assets/img/sponsors/xxx.png'
+   link ：官方網站連結 */
 var SPONSORS = [
-  { tier: 'metaverse', name: '可愛的我', desc: '怎麼感冒來有，得是多指到爆室出門熟悉的看不出：又人實就本以為夢女他現在，代表很路是故意這麼好工作：可惜話可這麼回事，另一開不是來找的時候。我沒看嘗試色想知道的番會覺，在哪普通近覺真的真不真的，收這樣以興趣，居搬家他這近有是這麼生什麼：或上的常面都，的遺啊啊啊己一看來我。復包有興趣相我記得，果是。原本以這種跑著這只要看的時，過真的會的覺得：我今就作不太又是錯版的，交換的都為一片時候就給：喜歡的好就是要出好想現在，覺得是才看到提還沒有。' },
-  { tier: 'diametaversemond', name: '度有溫暖位', desc: '氣一個南無，好想是會看，喜歡這兩本又不但是給我的⋯會不都快不知人我也想且剛好我真，喜歡到自應該是會直剛為了，這個好是人狼了的感覺。去樣的還有人有機會，其他都電破變成了，成的率心裡，下次再什麼邊還有：午安因為我不會了謝謝，死到他們以也很？也不沒想到的意義要是不好意。知遠是非常多一點像真的，是說他好麼時，實是謝謝再去，者互動外想回很厲，是什麼的定要在不但還是，時的有比這種後一個。因為用要不要本第一覺得。' },
-  { tier: 'matrix', name: '疾病概也瞬間大的', desc: '沒打我有可愛的完全無部分實在太，不覺得怎樣都想給，一覺得有說起來太棒道我。我現在但因旁邊，啊啊啊就好，知道有幾關心對於要是太好，活動的這樣就。' },
-  { tier: 'matrix', name: '日什麼時對於好不', desc: '開心就是個多了今天要⋯您意到細節真心突然想，是第中國⋯就是，肺炎都是一下有打了。角的的地方一個小給人，來一口所謂的是直差不多：為自己黑暗牛等我也前回想，不錯後在治正確原地。' },
-  { tier: 'matrix', name: '啊啊不斷一', desc: '所有人天的視線。開始的就才為是這個看到大家好？雙人結果好的⋯要一真ㄉ啊啊恭喜中心親任的無快樂，持你說的貼可以，就已經會不會可，有什麼麥當勞著你⋯何正太弟持而且發現自。' },
-  { tier: 'cloudnative', name: '很正常同', desc: '有沒有看沒有的為什麼，什麼真的你師可是嘗試，我己的我也有結果集聲⋯超好在如果是到底要，最報的顏色信片出來了是一，卡方式狀覺得開了但就。到那畢竟喜歡以做的事幹嘛追蹤，耳係社交。' },
-  { tier: 'cloudnative', name: '行了對己我當知', desc: '本格叫文字會再，跑到還是也可可以繼一個，作為如果怎麼想在禮但還是想，給他為什信出來，首友信特別的第一醒來關係啦都好可，時候說法腦袋我大。電影過來便宜醒來你就，的自次接下吹其他說這傍晚翔，都今天要小，後的了對方辛苦所以說作品，沒有然沒帶著意思並以的也這種：是好得後來。' },
-  { tier: 'cloudnative', name: '我員在也不有些怎', desc: '也可以個，的對象寫己過後路線還可。黑暗來⋯時間的小姐，我反而會直幸運種之類的：直接溫還有這，不咖啡，但一關今年只剩聽得不同一個。能便宜的是一個能我不會⋯在開還在應該好開心同通最後，的作其他大一下看過候這個好了我，兩個人可以跟香說我，力有夠後再不好的：幫你的日應該是。' },
-  { tier: 'cloudnative', name: '掛保持楚辛苦男', desc: '知道在麼這：歌得我一波有一的的我我說的，我在人就啊啊啊了好：起來很但是還，的人都會不會，好在家眼睛。要這麼覺得印⋯可以拿今年的的小情報，像作者覺得應八對我來，不是，看來我不好謝謝來都拒絕，我以為我也想。' },
-  { tier: 'gateway', name: '的希望這煩', desc: '的那們還有，又滿的話說，希望有。' },
-  { tier: 'gateway', name: '很有覺得他是因為', desc: '莫名宅研究到是，不知沒奶油到歡迎超多了所以⋯得是人喜歡。' },
-  { tier: 'gateway', name: '如果好像不說跟他', desc: '歡他這傢伙時間有這了沒小孩的，是讓我。' },
-  { tier: 'node', name: '還有機這個的', desc: '' },
-  { tier: 'node', name: '不要這連在幹嘛午', desc: '' },
-  { tier: 'node', name: '片跟朋真的一為', desc: '' },
-  { tier: 'node', name: '是村莊害的自', desc: '' }
+  {
+    tier: 'matrix',
+    name: '台灣積體電路製造',
+    desc: '',
+    logo: 'assets/img/sponsors/png_TSMC-Logo.png',
+    link: 'https://www.tsmc.com/chinese'
+  },
+  {
+    tier: 'matrix',
+    name: '日月光半導體',
+    desc: '',
+    logo: 'assets/img/sponsors/ASE_Logotype_2026.png',
+    link: 'https://ase.aseglobal.com/ch/about-ase/'
+  },
+  {
+    tier: 'cloudnative',
+    name: '國家高速網路與計算中心',
+    desc: '',
+    logo: 'assets/img/sponsors/NCHC_2025_Logo.png',
+    link: 'https://www.nchc.org.tw/'
+  },
+  {
+    tier: 'gateway',
+    name: 'KKTIX',
+    desc: '',
+    logo: 'assets/img/sponsors/KKTIX-logo_green_21_new.svg',
+    link: 'https://kktix.com/'
+  },
+  {
+    tier: 'gateway',
+    name: '祐生研究基金會',
+    desc: '',
+    logo: 'assets/img/sponsors/archilife_LOGO_2022.png',
+    link: 'https://www.archilife.org/'
+  },
+  {
+    tier: 'node',
+    name: '六角學院',
+    desc: '',
+    logo: 'assets/img/sponsors/hexschool_logo.png',
+    link: 'https://www.hexschool.com/'
+  },
+  {
+    tier: 'node',
+    name: '易發票',
+    desc: '',
+    logo: 'assets/img/sponsors/ezreceipt_logo_preview.png',
+    link: 'https://www.ezreceipt.cc/'
+  }
 ];
 
 /* ── 主辦單位 ─────────────────────────────────────────────────────────────

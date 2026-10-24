@@ -1189,13 +1189,30 @@ a.card {
 
 /* logo／頭像佔位塊（正式素材進來就換掉） */
 .ph {
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--c-surface);
   border: 1px solid var(--c-line);
   border-radius: 12px;
   min-height: 96px;
-  padding: 16px
+  padding: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+a.ph {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+a.ph:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+  border-color: var(--c-mint);
+  text-decoration: none;
 }
 
 .ph-round {
@@ -2523,121 +2540,191 @@ body.modal-open {
 
 .tier-grid {
   display: grid;
-  gap: clamp(16px, 2vw, 24px)
+  gap: clamp(16px, 2vw, 24px);
 }
 
-.t-xl {
-  grid-template-columns: 1fr
+/* 贊助卡片通用樣式：保證排版穩定、絕不溢出邊框 */
+.sp-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-card);
+  padding: clamp(16px, 2.5vw, 24px);
+  box-shadow: var(--shadow-1);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.t-lg {
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr))
+.sp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2);
+  border-color: var(--c-mint);
 }
 
-.t-md {
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr))
+.sp-card .ph {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: 12px;
+  overflow: hidden !important;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  transition: border-color .2s ease, transform .2s ease;
 }
 
-.t-sm {
-  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr))
+.sp-card a.ph {
+  cursor: pointer;
 }
 
-.t-xs {
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+.sp-card a.ph:hover {
+  border-color: var(--c-teal);
+  transform: scale(1.01);
+}
+
+.sp-card .ph img {
+  display: block;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
 }
 
 .sp-card h3 {
-  margin: 0 0 10px
+  margin: 14px 0 0;
+  font-weight: 700;
+  color: var(--c-ink);
+  line-height: 1.35;
 }
 
 .sp-card p {
-  max-width: 38em
+  max-width: 38em;
+  margin: 8px 0 0;
 }
 
-.t-xl .sp-card {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(18px, 3vw, 32px);
-  align-items: center;
-  padding: clamp(22px, 3vw, 34px)
+/* ── 1. 矩陣級 (Matrix) ── 最大等級 */
+.t-lg {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
 }
 
-.t-xl .ph {
-  min-height: 170px
+.t-lg .sp-card .ph {
+  height: 160px;
+  min-height: 160px;
+  padding: 20px 32px;
 }
 
-.t-xl .ph .shape {
-  --s: 78px
+.t-lg .sp-card .ph img {
+  max-height: 110px !important;
+  max-width: 280px !important;
 }
 
-.t-xl .sp-card h3 {
-  font-size: clamp(21px, 2.4vw, 26px)
-}
-
-.t-lg .ph {
-  min-height: 130px
-}
-
-.t-lg .ph .shape {
-  --s: 56px
+.t-lg .sp-card .ph .shape {
+  --s: 64px;
 }
 
 .t-lg .sp-card h3 {
-  font-size: 19px
+  font-size: 20px;
 }
 
-.t-md .ph {
-  min-height: 104px
+/* ── 2. 雲原生級 (Cloud-Native) ── 次大等級 */
+.t-md {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 480px));
 }
 
-.t-md .ph .shape {
-  --s: 44px
+.t-md .sp-card {
+  max-width: 480px;
+}
+
+.t-md .sp-card .ph {
+  height: 124px;
+  min-height: 124px;
+  padding: 16px 26px;
+}
+
+.t-md .sp-card .ph img {
+  max-height: 76px !important;
+  max-width: 210px !important;
+}
+
+.t-md .sp-card .ph .shape {
+  --s: 48px;
 }
 
 .t-md .sp-card h3 {
-  font-size: 17px
+  font-size: 18px;
 }
 
 .t-md .sp-card p {
-  font-size: 14.5px
+  font-size: 14.5px;
+}
+
+/* ── 3. 閘道級 (Gateway) ── 中等等級 */
+.t-sm {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 360px));
 }
 
 .t-sm .sp-card {
-  padding: 18px
+  max-width: 360px;
+  padding: 18px;
 }
 
-.t-sm .ph {
-  min-height: 86px
+.t-sm .sp-card .ph {
+  height: 96px;
+  min-height: 96px;
+  padding: 12px 20px;
 }
 
-.t-sm .ph .shape {
-  --s: 34px
+.t-sm .sp-card .ph img {
+  max-height: 52px !important;
+  max-width: 160px !important;
+}
+
+.t-sm .sp-card .ph .shape {
+  --s: 36px;
 }
 
 .t-sm .sp-card h3 {
-  font-size: 16px
+  font-size: 16px;
 }
 
 .t-sm .sp-card p {
-  font-size: 14px
+  font-size: 14px;
+}
+
+/* ── 4. 節點級 (Node) ── 最小等級 */
+.t-xs {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 260px));
 }
 
 .t-xs .sp-card {
+  max-width: 260px;
   padding: 14px;
-  text-align: center
+  text-align: center;
 }
 
-.t-xs .ph {
-  min-height: 64px
+.t-xs .sp-card .ph {
+  height: 72px;
+  min-height: 72px;
+  padding: 8px 14px;
 }
 
-.t-xs .ph .shape {
-  --s: 26px
+.t-xs .sp-card .ph img {
+  max-height: 36px !important;
+  max-width: 120px !important;
+}
+
+.t-xs .sp-card .ph .shape {
+  --s: 26px;
 }
 
 .t-xs .sp-card h3 {
   font-size: 15px;
-  margin: 10px 0 0
+  margin: 10px 0 0;
 }
 
 /* ── 9.5 主辦單位頁 ───────────────────────────────────────────────────────── */

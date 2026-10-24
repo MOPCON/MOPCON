@@ -133,8 +133,8 @@ export const PAGES = [
   {
     file:  'sponsor.html',
     title: `贊助夥伴｜MOPCON ${SITE.year}`,
-    desc:  `MOPCON ${SITE.year} 贊助夥伴：鑽石級／黃金級／白銀級／銅級／友情贊助，以及成為贊助夥伴的聯絡方式 ${SITE.email}。`,
+    desc:  `MOPCON ${SITE.year} 贊助夥伴：矩陣級／雲原生級／閘道級／節點級，以及成為贊助夥伴的聯絡方式 ${SITE.email}。`,
     h1:    '贊助夥伴',
-    lead:  'MOPCON 由社群志工籌辦，能在濁水溪以南一路辦到今天，靠的是每一位贊助夥伴的支持。'
+    lead:  '以下依贊助級別列出今年的贊助夥伴，名單持續更新中。感謝每一間願意投資在地技術社群的公司。'
   }
 ];

@@ -2,17 +2,147 @@
 
 <!--#include parts/page-hero.html -->
 
+<style>
+.tier-grid { display: grid; gap: clamp(16px, 2vw, 24px); }
+.sp-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-card);
+  padding: clamp(16px, 2.5vw, 24px);
+  box-shadow: var(--shadow-1);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.sp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2);
+  border-color: var(--c-mint);
+}
+.sp-card .ph {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: 12px;
+  overflow: hidden !important;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  transition: border-color .2s ease, transform .2s ease;
+}
+.sp-card a.ph { cursor: pointer; }
+.sp-card a.ph:hover { border-color: var(--c-teal); transform: scale(1.01); }
+.sp-card .ph img {
+  display: block;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+.sp-card h3 {
+  margin: 14px 0 0;
+  font-weight: 700;
+  color: var(--c-ink);
+  line-height: 1.35;
+}
+.sp-card p {
+  max-width: 38em;
+  margin: 8px 0 0;
+}
+
+/* 1. 矩陣級 (Matrix) ── 最大等級 */
+.t-lg, .tier-grid-matrix {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+}
+.t-lg .sp-card .ph, .tier-grid-matrix .sp-card .ph {
+  height: 160px;
+  min-height: 160px;
+  padding: 20px 32px;
+}
+.t-lg .sp-card .ph img, .tier-grid-matrix .sp-card .ph img {
+  max-height: 110px !important;
+  max-width: 280px !important;
+}
+.t-lg .sp-card h3, .tier-grid-matrix .sp-card h3 {
+  font-size: 20px;
+}
+
+/* 2. 雲原生級 (Cloud-Native) ── 次大等級 */
+.t-md, .tier-grid-cloudnative {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 480px));
+}
+.t-md .sp-card, .tier-grid-cloudnative .sp-card {
+  max-width: 480px;
+}
+.t-md .sp-card .ph, .tier-grid-cloudnative .sp-card .ph {
+  height: 124px;
+  min-height: 124px;
+  padding: 16px 26px;
+}
+.t-md .sp-card .ph img, .tier-grid-cloudnative .sp-card .ph img {
+  max-height: 76px !important;
+  max-width: 210px !important;
+}
+.t-md .sp-card h3, .tier-grid-cloudnative .sp-card h3 {
+  font-size: 18px;
+}
+
+/* 3. 閘道級 (Gateway) ── 中等等級 */
+.t-sm, .tier-grid-gateway {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 360px));
+}
+.t-sm .sp-card, .tier-grid-gateway .sp-card {
+  max-width: 360px;
+  padding: 18px;
+}
+.t-sm .sp-card .ph, .tier-grid-gateway .sp-card .ph {
+  height: 96px;
+  min-height: 96px;
+  padding: 12px 20px;
+}
+.t-sm .sp-card .ph img, .tier-grid-gateway .sp-card .ph img {
+  max-height: 52px !important;
+  max-width: 160px !important;
+}
+.t-sm .sp-card h3, .tier-grid-gateway .sp-card h3 {
+  font-size: 16px;
+}
+
+/* 4. 節點級 (Node) ── 最小等級 */
+.t-xs, .tier-grid-node {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 260px));
+}
+.t-xs .sp-card, .tier-grid-node .sp-card {
+  max-width: 260px;
+  padding: 14px;
+  text-align: center;
+}
+.t-xs .sp-card .ph, .tier-grid-node .sp-card .ph {
+  height: 72px;
+  min-height: 72px;
+  padding: 8px 14px;
+}
+.t-xs .sp-card .ph img, .tier-grid-node .sp-card .ph img {
+  max-height: 36px !important;
+  max-width: 120px !important;
+}
+.t-xs .sp-card h3, .tier-grid-node .sp-card h3 {
+  font-size: 15px;
+  margin: 10px 0 0;
+}
+</style>
+
   <!-- ======================= 級別分區 =======================
        每一級的卡片大小由 data.js 的 SPONSOR_TIERS 的 size 欄位決定
        （xl 最大 → xs 最小），內容來自 SPONSORS。 -->
   <section class="band band-white arc-bot" aria-label="贊助夥伴">
+    <img class="motif motif-dna-r" src="assets/img/motif-dna-teal.svg" alt="" aria-hidden="true" width="200" height="640">
     <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">SPONSORS</span>
-        <p class="lead">以下依贊助級別列出今年的贊助夥伴，名單持續更新中。感謝每一間願意投資在地技術社群的公司。</p>
-      </div>
-      <!-- 每一級的標題（鑽石級／黃金級…）是 site.js 依 SPONSOR_TIERS 產生的 h2；
-           logo 目前全部是佔位塊，正式 logo 進來後請看 README 第 5 點。 -->
       <div id="sponsorTiers"></div>
       <noscript><p class="tl-empty">贊助資料由 assets/js/data.js 載入，需要開啟 JavaScript 才看得到。</p></noscript>
     </div>
