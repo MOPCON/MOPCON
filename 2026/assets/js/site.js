@@ -1203,14 +1203,18 @@ function renderSponsors() {
     list.forEach(function (s) {
       var logoContent = s.logo ? '<img src="' + esc(s.logo) + '" alt="' + esc(s.name) + '">'
         : phShape(n, false);
-      var phHtml = s.link
-        ? '<a class="ph" href="' + esc(s.link) + '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(s.name) + '">' + logoContent + '</a>'
-        : '<div class="ph">' + logoContent + '</div>';
-      h += '<article class="card sp-card sp-card-' + esc(tier.id) + '">' +
-        phHtml +
+      var innerCard = '<div class="ph">' + logoContent + '</div>' +
         '<div><h3>' + esc(s.name) + '</h3>' +
-        (s.desc ? '<p>' + esc(s.desc) + '</p>' : '') + '</div>' +
-        '</article>';
+        (s.desc ? '<p>' + esc(s.desc) + '</p>' : '') + '</div>';
+      if (s.link) {
+        h += '<a class="card sp-card sp-card-' + esc(tier.id) + '" href="' + esc(s.link) + '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(s.name) + '">' +
+          innerCard +
+          '</a>';
+      } else {
+        h += '<article class="card sp-card sp-card-' + esc(tier.id) + '">' +
+          innerCard +
+          '</article>';
+      }
       n++;
     });
     h += '</div></section>';

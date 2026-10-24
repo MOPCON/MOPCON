@@ -1,148 +1,159 @@
-
-
 <!--#include parts/page-hero.html -->
 
 <style>
-.tier-grid { display: grid; gap: clamp(16px, 2vw, 24px); }
-.sp-card {
+.tier { margin: 0 0 clamp(44px, 6vw, 72px); }
+.tier:last-child { margin-bottom: 0; }
+.tier-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 clamp(18px, 2.4vw, 26px);
+}
+.tier-head h2 {
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 700;
+  margin: 0;
+  color: var(--c-ink);
+}
+.tier-head .shape { --s: 20px; }
+.tier-grid { display: grid; gap: clamp(18px, 2.4vw, 28px); }
+
+.sp-card,
+a.sp-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   background: var(--c-white);
   border: 1px solid var(--c-line);
   border-radius: var(--r-card);
-  padding: clamp(16px, 2.5vw, 24px);
   box-shadow: var(--shadow-1);
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
   overflow: hidden;
   box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 .sp-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-2);
   border-color: var(--c-mint);
 }
+@media (prefers-reduced-motion: reduce) {
+  .sp-card:hover { transform: none; }
+}
+
 .sp-card .ph {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  background: var(--c-surface);
-  border: 1px solid var(--c-line);
-  border-radius: 12px;
+  background: var(--c-white) !important;
+  border: none !important;
+  border-radius: 0;
   overflow: hidden !important;
   box-sizing: border-box;
   width: 100%;
-  margin: 0;
-  transition: border-color .2s ease, transform .2s ease;
+  margin: 0 auto;
 }
-.sp-card a.ph { cursor: pointer; }
-.sp-card a.ph:hover { border-color: var(--c-teal); transform: scale(1.01); }
 .sp-card .ph img {
   display: block;
+  width: auto !important;
+  height: 100% !important;
   max-width: 100% !important;
   max-height: 100% !important;
-  width: auto !important;
-  height: auto !important;
   object-fit: contain !important;
 }
 .sp-card h3 {
-  margin: 14px 0 0;
-  font-weight: 700;
+  font-size: clamp(17px, 1.8vw, 19px);
+  font-weight: 600;
   color: var(--c-ink);
-  line-height: 1.35;
+  margin: 16px 0 0;
+  line-height: 1.4;
+  text-align: center;
 }
 .sp-card p {
   max-width: 38em;
   margin: 8px 0 0;
+  text-align: center;
 }
 
-/* 1. 矩陣級 (Matrix) ── 最大等級 */
+/* 1. 矩陣級 (Matrix) ── 最大等級：logo 等比例放大貼齊高度 */
 .t-lg, .tier-grid-matrix {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
 }
+.tier-matrix .sp-card, .sp-card-matrix {
+  padding: clamp(20px, 2.8vw, 30px) 24px;
+  min-height: 224px;
+}
 .t-lg .sp-card .ph, .tier-grid-matrix .sp-card .ph {
-  height: 160px;
-  min-height: 160px;
-  padding: 20px 32px;
-}
-.t-lg .sp-card .ph img, .tier-grid-matrix .sp-card .ph img {
-  max-height: 110px !important;
-  max-width: 280px !important;
-}
-.t-lg .sp-card h3, .tier-grid-matrix .sp-card h3 {
-  font-size: 20px;
+  height: 140px;
+  min-height: 140px;
+  max-width: 360px;
+  padding: 4px 20px;
 }
 
-/* 2. 雲原生級 (Cloud-Native) ── 次大等級 */
+/* 2. 雲原生級 (Cloud-Native) ── 次大等級：卡片放大 10%，logo 等比例放大貼齊高度 */
 .t-md, .tier-grid-cloudnative {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 480px));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 528px));
 }
-.t-md .sp-card, .tier-grid-cloudnative .sp-card {
-  max-width: 480px;
+.tier-cloudnative .sp-card, .sp-card-cloudnative {
+  max-width: 528px;
+  padding: clamp(20px, 2.5vw, 26px) 20px;
+  min-height: 215px;
 }
 .t-md .sp-card .ph, .tier-grid-cloudnative .sp-card .ph {
-  height: 124px;
-  min-height: 124px;
-  padding: 16px 26px;
-}
-.t-md .sp-card .ph img, .tier-grid-cloudnative .sp-card .ph img {
-  max-height: 76px !important;
-  max-width: 210px !important;
-}
-.t-md .sp-card h3, .tier-grid-cloudnative .sp-card h3 {
-  font-size: 18px;
+  height: 122px;
+  min-height: 122px;
+  max-width: 380px;
+  padding: 4px 18px;
 }
 
-/* 3. 閘道級 (Gateway) ── 中等等級 */
+/* 3. 閘道級 (Gateway) ── 中等等級：卡片縮小 5%，logo 等比例放大貼齊高度 */
 .t-sm, .tier-grid-gateway {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 360px));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 394px));
 }
-.t-sm .sp-card, .tier-grid-gateway .sp-card {
-  max-width: 360px;
-  padding: 18px;
+.tier-gateway .sp-card, .sp-card-gateway {
+  max-width: 394px;
+  padding: clamp(18px, 2.2vw, 22px) 18px;
+  min-height: 185px;
 }
 .t-sm .sp-card .ph, .tier-grid-gateway .sp-card .ph {
-  height: 96px;
-  min-height: 96px;
-  padding: 12px 20px;
-}
-.t-sm .sp-card .ph img, .tier-grid-gateway .sp-card .ph img {
-  max-height: 52px !important;
-  max-width: 160px !important;
-}
-.t-sm .sp-card h3, .tier-grid-gateway .sp-card h3 {
-  font-size: 16px;
+  height: 99px;
+  min-height: 99px;
+  max-width: 323px;
+  padding: 4px 16px;
 }
 
-/* 4. 節點級 (Node) ── 最小等級 */
+/* 4. 節點級 (Node) ── 最小等級：卡片放大 10%，logo 等比例放大高度為卡片高度 */
 .t-xs, .tier-grid-node {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 260px));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 378px));
 }
-.t-xs .sp-card, .tier-grid-node .sp-card {
-  max-width: 260px;
-  padding: 14px;
-  text-align: center;
+.tier-node .sp-card, .sp-card-node {
+  max-width: 378px;
+  padding: clamp(16px, 1.8vw, 20px) 16px;
+  min-height: 182px;
 }
 .t-xs .sp-card .ph, .tier-grid-node .sp-card .ph {
-  height: 72px;
-  min-height: 72px;
-  padding: 8px 14px;
-}
-.t-xs .sp-card .ph img, .tier-grid-node .sp-card .ph img {
-  max-height: 36px !important;
-  max-width: 120px !important;
-}
-.t-xs .sp-card h3, .tier-grid-node .sp-card h3 {
-  font-size: 15px;
-  margin: 10px 0 0;
+  height: 98px;
+  min-height: 98px;
+  max-width: 315px;
+  padding: 4px 14px;
 }
 </style>
 
   <!-- ======================= 級別分區 =======================
        每一級的卡片大小由 data.js 的 SPONSOR_TIERS 的 size 欄位決定
        （xl 最大 → xs 最小），內容來自 SPONSORS。 -->
-  <section class="band band-white arc-bot" aria-label="贊助夥伴">
+  <section class="band band-white arc-bot" aria-labelledby="spo-main-t">
     <img class="motif motif-dna-r" src="assets/img/motif-dna-teal.svg" alt="" aria-hidden="true" width="200" height="640">
     <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">SPONSORS</span>
+        <h2 id="spo-main-t">贊助夥伴</h2>
+      </div>
+
       <div id="sponsorTiers"></div>
       <noscript><p class="tl-empty">贊助資料由 assets/js/data.js 載入，需要開啟 JavaScript 才看得到。</p></noscript>
     </div>
@@ -159,4 +170,3 @@
       </div>
     </div>
   </section>
-
