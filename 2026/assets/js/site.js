@@ -859,6 +859,13 @@ function getSocialIconInfo(url, customLabel) {
       svg: '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12.186 24C5.466 24 0 18.673 0 12.108 0 5.405 5.442 0 12.186 0c6.643 0 11.968 5.253 11.968 11.957 0 .61-.044 1.218-.13 1.815h-4.372c.046-.576.07-1.157.07-1.742 0-4.303-3.327-7.697-7.536-7.697-4.27 0-7.72 3.424-7.72 7.683 0 4.28 3.427 7.724 7.72 7.724 2.873 0 5.378-1.572 6.64-3.905l3.856 2.052C20.65 21.362 16.745 24 12.186 24z"/></svg>'
     };
   }
+  if (u.indexOf('youtube.com') !== -1 || u.indexOf('youtu.be') !== -1 || lbl === 'youtube') {
+    return {
+      type: 'youtube',
+      label: customLabel || 'YouTube',
+      svg: '<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>'
+    };
+  }
   return {
     type: 'website',
     label: customLabel || '個人網站',
@@ -889,7 +896,7 @@ function speakerSocialsHtml(p) {
       else if (l && l.url) links.push({ url: l.url.trim(), label: (l.label || l.text || '').trim() });
     });
   }
-  ['fb', 'facebook', 'x', 'twitter', 'github', 'linkedin', 'web', 'website', 'instagram', 'threads'].forEach(function (key) {
+  ['fb', 'facebook', 'x', 'twitter', 'github', 'linkedin', 'web', 'website', 'instagram', 'threads', 'youtube'].forEach(function (key) {
     if (p[key]) {
       var val = String(p[key]).trim();
       if (!links.some(function (l) { return l.url === val; })) {
@@ -1641,7 +1648,7 @@ function renderAgenda2Page() {
       halls: [
         { hall: 'R1', speakerName: 'Cherie Hsieh' },
         { hall: 'R2', speakerName: 'Kuon Ding' },
-        { hall: 'R3', tbd: true }
+        { hall: 'R3', speakerName: 'John Forge' }
       ]
     },
     { time: '14:50', type: 'common', highlight: 'tea', title: 'tea time' },
@@ -1659,7 +1666,7 @@ function renderAgenda2Page() {
       time: '16:00',
       type: 'talks',
       halls: [
-        { hall: 'R1', tbd: true },
+        { hall: 'R1', speakerName: '焉德葳' },
         { hall: 'R2', speakerName: 'Chun Shawn' },
         { hall: 'R3', tbd: true }
       ]
@@ -1683,6 +1690,9 @@ function renderAgenda2Page() {
       if (n === '工常張 Shawn') {
         speakerMap['Chun Shawn'] = { speaker: spk, index: idx };
         speakerMap['Shawn'] = { speaker: spk, index: idx };
+      }
+      if (n === 'John Lu') {
+        speakerMap['John Forge'] = { speaker: spk, index: idx };
       }
     }
   });

@@ -18,9 +18,9 @@
    要多一軌就多一行，議程頁的篩選按鈕會自己多一顆，不用改 CSS。
    ※ 場地代號沿用大會時刻表：R1 在 1F，R2／R3 在 B1F。 */
 var TRACKS = [
-  { id: 'A', name: 'R1（大禮堂）' },
-  { id: 'B', name: 'R2（小劇場）' },
-  { id: 'C', name: 'R3（音樂廳）' }
+  { id: 'A', name: 'R1（1F）' },
+  { id: 'B', name: 'R2（B1F-R）' },
+  { id: 'C', name: 'R3（B1F-L）' }
 ];
 
 /* ── 議程 ─────────────────────────────────────────────────────────────────
@@ -115,7 +115,7 @@ var AGENDA_SCHEDULE = [
     halls: [
       { hall: 'R1', speakerName: 'Cherie Hsieh' },
       { hall: 'R2', speakerName: 'Kuon Ding' },
-      { hall: 'R3', tbd: true }
+      { hall: 'R3', speakerName: 'John Forge' }
     ]
   },
   { time: '14:50', type: 'common', highlight: 'tea', title: 'tea time' },
@@ -133,7 +133,7 @@ var AGENDA_SCHEDULE = [
     time: '16:00',
     type: 'talks',
     halls: [
-      { hall: 'R1', tbd: true },
+      { hall: 'R1', speakerName: '焉德葳' },
       { hall: 'R2', speakerName: 'Chun Shawn' },
       { hall: 'R3', tbd: true }
     ]
@@ -167,13 +167,13 @@ var SESSIONS = [
   { start: '14:00', end: '14:10', type: 'break', track: 'ALL', title: 'break' },
   { start: '14:10', end: '14:50', type: 'talk', track: 'A', title: '當專案 100% 都由 AI coding，身為工程師和管理職的價值在哪裡？', speaker: 'Cherie Hsieh', org: '台灣積體電路製造股份有限公司', level: 'Normal - 需相關基礎知識' },
   { start: '14:10', end: '14:50', type: 'talk', track: 'B', title: '自主飛行的決策系統 - 從態勢感知到語意理解', speaker: 'Kuon Ding', org: 'Funny Systems', level: 'Expert - 建議聽眾具備相關經驗' },
-  { start: '14:10', end: '14:50', type: 'talk', track: 'C', title: '敬請期待', speaker: 'TBD', org: '', level: '入門' },
+  { start: '14:10', end: '14:50', type: 'talk', track: 'C', title: '使用 Unsloth 強化學習微調小模型，建構飲食教練 Agent', speaker: 'John Lu', org: '一線大廠', level: 'Expert - 建議聽眾具備相關經驗' },
   { start: '14:50', end: '15:10', type: 'tea', track: 'ALL', title: 'tea time' },
   { start: '15:10', end: '15:50', type: 'talk', track: 'A', title: '跟著AI 做一套AI 時代的台灣式編輯器', speaker: 'zonble', org: 'Noetiq Inc', level: 'Basic - 基礎入門' },
   { start: '15:10', end: '15:50', type: 'talk', track: 'B', title: '從存檔到內容富翁：讓個人知識庫自己長出內容', speaker: 'Abi Chang', org: 'Open to Work', level: 'Basic - 基礎入門' },
   { start: '15:10', end: '15:50', type: 'talk', track: 'C', title: '敬請期待', speaker: 'TBD', org: '', level: '入門' },
   { start: '15:50', end: '16:00', type: 'break', track: 'ALL', title: 'break' },
-  { start: '16:00', end: '16:40', type: 'talk', track: 'A', title: '敬請期待', speaker: 'TBD', org: '', level: '入門' },
+  { start: '16:00', end: '16:40', type: 'talk', track: 'A', title: '0c靈犀 - Transformer 神經網路注音輸入法', speaker: '焉德葳', org: 'BigGo', level: 'Normal - 需相關基礎知識' },
   { start: '16:00', end: '16:40', type: 'talk', track: 'B', title: 'Meta.ai 出現前，我怎麼開發 Threads 問答機器人？', speaker: 'Chun Shawn', org: '海外加密貨幣交易所', level: 'Normal - 需相關基礎知識' },
   { start: '16:00', end: '16:40', type: 'talk', track: 'C', title: '敬請期待', speaker: 'TBD', org: '', level: '入門' },
   { start: '16:40', end: '16:50', type: 'break', track: 'ALL', title: 'break' },
@@ -471,6 +471,38 @@ var SPEAKERS = [
     level: "Basic - 基礎入門",
     track: "Next-Gen Intelligence",
     class: "AI, Web Development, IoT, UI / UX"
+  },
+  {
+    id: "2026_John-Lu",
+    name: "John Lu",
+    role: "Senior Machine Learning Engineer",
+    org: "一線大廠",
+    bio: "John 是一線大廠的 Senior Machine Learning Engineer，實務經驗涵蓋大型語言模型 (LLM) 與視覺語言模型 (VLM) 的訓練，以及 RAG 與 AI Agent 的建構。他喜歡拆解事物的底層邏輯，再重組成可執行的程式，應用到真實問題上。曾在 PyCon APAC 與 COSCUP 擔任講者，分享機器學習應用與 On-Device ML，講題包括「TasteGram：以 TensorFlow 與 Python 進行影像美學評分」與「Kimoji：以 On-Device LLM 打造心情日記的智慧撰稿系統」。",
+    img: "assets/img/speakers/John-Forge.jpeg",
+    link: "https://bit.ly/GrowthMTM",
+    linkText: "YouTube",
+    agenda: "使用 Unsloth 強化學習微調小模型，建構飲食教練 Agent",
+    summary: "隨手拍一張午餐照片，App 就幫你記下「雞腿便當，約 320 大卡、蛋白質 34 公克」。最直覺的做法，是使用一個多模態模大型進行處理，但整天開著跑，又慢又燒錢。\n我們以 Gemma 4 把這位營養教練做成一個多模態 Agent，接著處理真正的難題：怎麼讓它變便宜。做法是依部署的機器選擇模型的大小，用 Unsloth 在免費的 Colab 與 Kaggle GPU 上做後訓練（先 SFT，再用 GRPO 做強化學習），最後用 vLLM 上線提供推論服務。\n過程中，我們會用這個應用走完整個 LLM 生命週期：如何在 Gemma 4 的各種模型大小之間選擇；LLM 的強化學習如何從 PPO、DPO 一路演進到 GRPO，以及為什麼規則式獎勵（rule-based reward）可以取代另外訓練的獎勵模型；還有 vLLM 為什麼快 (PagedAttention、prefix caching、continuous batching 與 speculative decoding)。\n聽完你會知道 SFT 與 RL 的分界在哪：SFT 決定下限，RL 拉高上限。演講示範的所有 Demo，都能在家自己跑！",
+    intro: "以 Gemma 4 多模態模型建構飲食教練 Agent，解析如何透過 Unsloth 結合 SFT 與 GRPO 強化學習進行後訓練，並運用 vLLM 達成高性價比推論服務，完整走過開源 LLM 的微調與落地週期。",
+    level: "Expert - 建議聽眾具備相關經驗",
+    track: "Next-Gen Intelligence",
+    class: "AI"
+  },
+  {
+    id: "2026_焉德葳",
+    name: "焉德葳",
+    role: "CEO",
+    org: "BigGo",
+    bio: "https://funmula.com/",
+    img: "assets/img/speakers/BigGo_Kevin-Yen.jpg",
+    link: "https://funmula.com/",
+    linkText: "Website",
+    agenda: "0c靈犀 - Transformer 神經網路注音輸入法",
+    summary: "我們研究可在本機執行的小型 Transformer，處理繁體中文注音輸入法的兩項任務：利用已確認的上下文重新排序同音候選，以及在文字送出時還原標點。我們以包含新聞與財經討論文字、共 12.45 億個漢字的語料，從隨機初始化開始預訓練專用因果模型。在固定模型規模下，將抽樣訓練曝光量從約 900 萬個輸出單位增加至 11.6 億個，使先前已使用過的困難短詞開發集上，僅使用神經模型的正確率從 62.6–63.2% 提升至 76.8–77.1%；統計引擎的正確率為 65.7%。經排序微調與校準後，1,980 萬參數模型在 6,000 例封存測試上的正確率增加 4.92–4.97 個百分點，同時比早期神經基準減少錯誤覆寫。",
+    intro: "分享自主研發可在本機執行的小型 Transformer 注音輸入法「0c靈犀」，透過 12.45 億字繁中語料從頭預訓練專用因果模型，解析同音詞重排、標點還原及小模型極致優化實踐。",
+    level: "Normal - 需相關基礎知識",
+    track: "Next-Gen Intelligence",
+    class: "AI"
   }
 ];
 
