@@ -3154,6 +3154,19 @@ a.sp-card {
   min-width: 280px;
 }
 
+/* 雙欄模式（sessions3.html 無議程簡介） */
+.session-table.st-no-intro .st-col-speaker,
+.session-table.st-no-intro .st-th-speaker {
+  width: 38%;
+  min-width: 250px;
+}
+
+.session-table.st-no-intro .st-col-title,
+.session-table.st-no-intro .st-th-title {
+  width: 62%;
+  min-width: 280px;
+}
+
 .session-table tbody tr {
   border-bottom: 1px solid var(--c-line);
   transition: background .15s ease;
@@ -3354,6 +3367,10 @@ a.sp-card {
 
   .session-table {
     min-width: 760px;
+  }
+
+  .session-table.st-no-intro {
+    min-width: 540px;
   }
 }
 

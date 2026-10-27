@@ -125,7 +125,7 @@ var AGENDA_SCHEDULE = [
     halls: [
       { hall: 'R1', speakerName: 'zonble' },
       { hall: 'R2', speakerName: 'Abi Chang' },
-      { hall: 'R3', tbd: true }
+      { hall: 'R3', speakerName: 'Today' }
     ]
   },
   { time: '15:50', type: 'common', title: 'break' },
@@ -171,7 +171,7 @@ var SESSIONS = [
   { start: '14:50', end: '15:10', type: 'tea', track: 'ALL', title: 'tea time' },
   { start: '15:10', end: '15:50', type: 'talk', track: 'A', title: '跟著AI 做一套AI 時代的台灣式編輯器', speaker: 'zonble', org: 'Noetiq Inc', level: 'Basic - 基礎入門' },
   { start: '15:10', end: '15:50', type: 'talk', track: 'B', title: '從存檔到內容富翁：讓個人知識庫自己長出內容', speaker: 'Abi Chang', org: 'Open to Work', level: 'Basic - 基礎入門' },
-  { start: '15:10', end: '15:50', type: 'talk', track: 'C', title: '敬請期待', speaker: 'TBD', org: '', level: '入門' },
+  { start: '15:10', end: '15:50', type: 'talk', track: 'C', title: '從評測到落地：打造 LLM 去偏見與輸出治理工作流', speaker: 'Today', org: '財團法人資訊工業策進會', level: 'Basic - 基礎入門' },
   { start: '15:50', end: '16:00', type: 'break', track: 'ALL', title: 'break' },
   { start: '16:00', end: '16:40', type: 'talk', track: 'A', title: '0c靈犀 - Transformer 神經網路注音輸入法', speaker: '焉德葳', org: 'BigGo', level: 'Normal - 需相關基礎知識' },
   { start: '16:00', end: '16:40', type: 'talk', track: 'B', title: 'Meta.ai 出現前，我怎麼開發 Threads 問答機器人？', speaker: 'Chun Shawn', org: '海外加密貨幣交易所', level: 'Normal - 需相關基礎知識' },
@@ -469,7 +469,7 @@ var SPEAKERS = [
     summary: "從客戶需求出發，透過問題拆解、規格定義與製程整合，建立清晰的工程邏輯，讓 AI 協助推進開發與製造，將市場需求轉化為可交付的產品。",
     intro: "從客戶端需求出發，探討如何透過問題拆解、規格定義與製程整合建立清晰工程邏輯，讓 AI 協助推進開發與製造現場，將市場需求轉化為高品質的實體交付產品。",
     level: "Basic - 基礎入門",
-    track: "Next-Gen Intelligence",
+    track: "Software Defined Reality",
     class: "AI, Web Development, IoT, UI / UX"
   },
   {
@@ -503,6 +503,22 @@ var SPEAKERS = [
     level: "Normal - 需相關基礎知識",
     track: "Next-Gen Intelligence",
     class: "AI"
+  },
+  {
+    id: "2026_Today",
+    name: "Today",
+    role: "工程師",
+    org: "財團法人資訊工業策進會",
+    bio: "現任法人機構資深工程師，專長為資料分析與機器學習，長期使用 Python 開發 AI 應用，參與過智慧製造、影像辨識、交通最佳化等專案。近年投入 LLM 應用與 LLMOps 工具開發，關注如何讓 AI 從實驗走進實際工作流程。目前探索 AI Agent 的偏見偵測與自動化測試。喜歡從實際問題出發，將研究想法轉化為工程師用得上的方法與工具。",
+    img: "assets/img/speakers/today.jpg",
+    link: "https://github.com/stoday",
+    linkText: "Github",
+    agenda: "從評測到落地：打造 LLM 去偏見與輸出治理工作流",
+    summary: "偏見檢測與落差挑戰： 當生成式 AI 走入實際業務與終端應用時，刻板印象與偏見輸出對系統穩定性與信任度帶來的現實衝擊。這裡將分享討論：\n(1) 如何量化評估 LLM 輸出偏差，並進行歸因分析。\n(2) 結合 Prompt 改寫、動態檢測模組與治理防護層（Guardrails），將去偏見機制整合進現有 AI 應用的實戰經驗與開源工具探索。\n(3)  探討在實際工程場景中，如何在模型性能、延遲成本與公平性治理之間取得平衡。",
+    intro: "聚焦生成式 AI 落地實務，分享如何量化評估 LLM 輸出偏差並進行歸因分析，解析結合 Prompt 改寫、動態檢測模組與治理防護層（Guardrails）將去偏見機制整合進 AI 應用的實戰經驗與開源工具探索。",
+    level: "Basic - 基礎入門",
+    track: "Next-Gen Intelligence",
+    class: "AI, DevOps"
   }
 ];
 

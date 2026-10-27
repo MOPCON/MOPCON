@@ -1315,6 +1315,8 @@ function renderSessionsPage() {
     });
 
     var isTableMode = (list && (list.tagName === 'TBODY' || list.classList.contains('session-table') || !!document.querySelector('.session-table')));
+    var tableEl = list ? (list.closest ? list.closest('.session-table') : null) || document.querySelector('.session-table') : null;
+    var hasIntroCol = !!(tableEl && tableEl.querySelector('.st-th-intro'));
 
     /* 更新標題與統計 */
     var headingEl = document.getElementById('sessionBandTitle');
@@ -1331,7 +1333,8 @@ function renderSessionsPage() {
 
     if (!filtered.length) {
       if (isTableMode) {
-        list.innerHTML = '<tr><td colspan="3" class="tl-empty" style="text-align:center;padding:36px 16px;">該軌道尚無議程資料。</td></tr>';
+        var colSpan = hasIntroCol ? 3 : 2;
+        list.innerHTML = '<tr><td colspan="' + colSpan + '" class="tl-empty" style="text-align:center;padding:36px 16px;">該軌道尚無議程資料。</td></tr>';
       } else {
         list.innerHTML = '<li class="card"><p class="tl-empty">該軌道尚無議程資料。</p></li>';
       }
@@ -1355,7 +1358,7 @@ function renderSessionsPage() {
       var truncInfo = truncateSummary(cleanSummary, 100);
 
       if (isTableMode) {
-        /* 表格形式（_src/pages/sessions.html）：整行點擊跳轉講者頁面，使用 intro 欄位，議程名稱下方顯示 class 標籤 */
+        /* 表格形式（_src/pages/sessions.html / sessions3.html）：整行點擊跳轉講者頁面，使用 intro 欄位，議程名稱下方顯示 class 標籤 */
         var introText = s.intro || cleanSummary || '尚無議程簡介。';
 
         var speakerInnerHtml =
@@ -1389,7 +1392,7 @@ function renderSessionsPage() {
           '<tr class="st-row" data-href="' + esc(speakerLink) + '" tabindex="0" role="link" aria-label="檢視講者 ' + esc(s.name) + ' 完整簡介">' +
           '<td class="st-td-speaker">' + speakerInnerHtml + '</td>' +
           '<td class="st-td-title">' + titleInnerHtml + '</td>' +
-          '<td class="st-td-intro">' + introInnerHtml + '</td>' +
+          (hasIntroCol ? '<td class="st-td-intro">' + introInnerHtml + '</td>' : '') +
           '</tr>';
       } else {
         /* 原有的卡片形式（_src/pages/sessions2.html）：與目前 git 版本的 sessions.html 內容與顯示樣式格式完全一致（level 與 class 均在標題上方） */
@@ -1658,7 +1661,7 @@ function renderAgenda2Page() {
       halls: [
         { hall: 'R1', speakerName: 'zonble' },
         { hall: 'R2', speakerName: 'Abi Chang' },
-        { hall: 'R3', tbd: true }
+        { hall: 'R3', speakerName: 'Today' }
       ]
     },
     { time: '15:50', type: 'common', title: 'break' },
