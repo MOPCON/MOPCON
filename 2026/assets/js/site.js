@@ -1611,7 +1611,7 @@ function renderAgenda2Page() {
       halls: [
         { hall: 'R1', speakerName: '蕭漢威' },
         { hall: 'R2', speakerName: '陳葵懋(Ian)' },
-        { hall: 'R3', tbd: true }
+        { hall: 'R3', speakerName: '葉承達' }
       ]
     },
     { time: '10:40', type: 'common', title: 'break' },
@@ -1671,7 +1671,7 @@ function renderAgenda2Page() {
       halls: [
         { hall: 'R1', speakerName: '焉德葳' },
         { hall: 'R2', speakerName: 'Chun Shawn' },
-        { hall: 'R3', tbd: true }
+        { hall: 'R3', speakerName: 'ericpi' }
       ]
     },
     { time: '16:40', type: 'common', title: 'break' },
@@ -1696,6 +1696,12 @@ function renderAgenda2Page() {
       }
       if (n === 'John Lu') {
         speakerMap['John Forge'] = { speaker: spk, index: idx };
+      }
+      if (n === '阿達/Ahdaa' || n === '葉承達' || n.indexOf('阿達') !== -1) {
+        speakerMap['葉承達'] = { speaker: spk, index: idx };
+        speakerMap['阿達/Ahdaa'] = { speaker: spk, index: idx };
+        speakerMap['Ahdaa'] = { speaker: spk, index: idx };
+        speakerMap['阿達'] = { speaker: spk, index: idx };
       }
     }
   });

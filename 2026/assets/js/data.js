@@ -75,7 +75,7 @@ var AGENDA_SCHEDULE = [
     halls: [
       { hall: 'R1', speakerName: '蕭漢威' },
       { hall: 'R2', speakerName: '陳葵懋(Ian)' },
-      { hall: 'R3', tbd: true }
+      { hall: 'R3', speakerName: '葉承達' }
     ]
   },
   { time: '10:40', type: 'common', title: 'break' },
@@ -135,7 +135,7 @@ var AGENDA_SCHEDULE = [
     halls: [
       { hall: 'R1', speakerName: '焉德葳' },
       { hall: 'R2', speakerName: 'Chun Shawn' },
-      { hall: 'R3', tbd: true }
+      { hall: 'R3', speakerName: 'ericpi' }
     ]
   },
   { time: '16:40', type: 'common', title: 'break' },
@@ -151,7 +151,7 @@ var SESSIONS = [
   { start: '09:50', end: '10:00', type: 'break', track: 'ALL', title: 'break' },
   { start: '10:00', end: '10:40', type: 'talk', track: 'A', title: '無人飛船：長期滯空載具的基礎原理與自主飛控實務經驗', speaker: '蕭漢威', org: '國立高雄大學資訊管理學系', level: 'Basic - 基礎入門' },
   { start: '10:00', end: '10:40', type: 'talk', track: 'B', title: 'Code 是 AI 寫的，就真的有一支開發團隊嗎？', speaker: '陳葵懋(Ian)', org: '一等一科技', level: 'Normal - 需相關基礎知識' },
-  { start: '10:00', end: '10:40', type: 'talk', track: 'C', title: '敬請期待', speaker: 'TBD', org: '', level: '入門' },
+  { start: '10:00', end: '10:40', type: 'talk', track: 'C', title: '打造企業內部的數位員工管理', speaker: '葉承達', org: '水映工作坊', level: 'Basic - 基礎入門' },
   { start: '10:40', end: '11:00', type: 'tea', track: 'ALL', title: 'break' },
   { start: '11:00', end: '11:40', type: 'talk', track: 'A', title: 'Learning to Fly in Simulation: Quadrotor Reinforcement Learning from First Principles', speaker: '鄭聖文', org: '不公開', level: 'Basic - 基礎入門' },
   { start: '11:00', end: '11:40', type: 'talk', track: 'B', title: '當工程師不再打字寫 code,他在做什麼?——一個人、12 週、17 萬行的 AI Native 開發模式', speaker: 'Stanley', org: 'ViewSonic', level: 'Normal - 需相關基礎知識' },
@@ -175,7 +175,7 @@ var SESSIONS = [
   { start: '15:50', end: '16:00', type: 'break', track: 'ALL', title: 'break' },
   { start: '16:00', end: '16:40', type: 'talk', track: 'A', title: '0c靈犀 - Transformer 神經網路注音輸入法', speaker: '焉德葳', org: 'BigGo', level: 'Normal - 需相關基礎知識' },
   { start: '16:00', end: '16:40', type: 'talk', track: 'B', title: 'Meta.ai 出現前，我怎麼開發 Threads 問答機器人？', speaker: 'Chun Shawn', org: '海外加密貨幣交易所', level: 'Normal - 需相關基礎知識' },
-  { start: '16:00', end: '16:40', type: 'talk', track: 'C', title: '敬請期待', speaker: 'TBD', org: '', level: '入門' },
+  { start: '16:00', end: '16:40', type: 'talk', track: 'C', title: '從教育現場觀察，談談無人機使用者入門', speaker: 'ericpi', org: 'KSDA', level: 'Basic - 基礎入門' },
   { start: '16:40', end: '16:50', type: 'break', track: 'ALL', title: 'break' },
   { start: '16:50', end: '17:20', type: 'closing', track: 'ALL', title: '閉幕 Closing' },
   { start: '17:20', end: '', type: 'end', track: 'ALL', title: '散場' }
@@ -519,6 +519,38 @@ var SPEAKERS = [
     level: "Basic - 基礎入門",
     track: "Next-Gen Intelligence",
     class: "AI, DevOps"
+  },
+  {
+    id: "2026_葉承達",
+    name: "阿達/Ahdaa",
+    role: "總監",
+    org: "水映工作坊",
+    bio: "擁有多年行動裝置開發與系統架構規劃與管理經驗，現以資訊顧問身份行萬事屋之能事，協助來尋求協助的人能夠獲得合適的解方。",
+    img: "assets/img/speakers/ahdaa.jpg",
+    link: "http://github.com/mosil",
+    linkText: "GitHub",
+    agenda: "打造企業內部的數位員工管理",
+    summary: "現行大家都在嘗試以語言模型在打造自己的 agent 團隊，但實務上它們需要什麼，我們要怎麼治理，讓虛實整合成為自己或是企業內部的利器，這次會和大家分享在實務上導入的經驗。",
+    intro: "結合實務導入經驗，探討如何以語言模型打造並有效治理企業內部的數位員工（AI Agent）團隊，讓虛實整合技術真正轉化為組織與個人的核心生產力利器。",
+    level: "Basic - 基礎入門",
+    track: "Next-Gen Intelligence",
+    class: "AI, Cloud Service, DevOps"
+  },
+  {
+    id: "2026_ericpi",
+    name: "ericpi",
+    role: "理事長",
+    org: "KSDA",
+    bio: "現職企業顧問、AI/無人機課程講師、KSDA 理事長，曾任 KKBOX 集團軟體工程師/南部研發中心經理、Webduino 營運長等職務。\n\n固定翼飛行載具愛好者，持續在無人機浩瀚的知識領域中摸索。",
+    img: "assets/img/speakers/ericpi_26.jpg",
+    link: "https://www.linkedin.com/in/hsuanibi/ , https://github.com/ericpi",
+    linkText: "LinkedIn, GitHub",
+    agenda: "從教育現場觀察，談談無人機使用者入門",
+    summary: "從教授超過 200小時高中無人機課程經驗中，觀察年輕世代在課綱大幅度調整之後，面對無人機這種綜合知識領域面臨到的學習困境，進一步探討近期無人機足球即使在國家資源挹注的狀況下，依然存在眾多教學實務上的難題；身為軟體工程師這個對新興科技學習慾望跟能力較為旺盛的職業，要怎樣快速踏入無人機使用者，甚至於「微開發者」的領域，又是否能幫助這個大環境更快速的往前一步。",
+    intro: "從逾 200 小時高中無人機教學現場出發，探討新課綱下年輕世代面對跨領域無人機的學習困境與足球無人機實務挑戰。深入解析軟體工程師如何快速踏入無人機使用者與微開發者行列，共同推動科技教育與產業生態。",
+    level: "Basic - 基礎入門",
+    track: "Software Defined Reality",
+    class: "UXV (Unmanned x Vehicle)"
   }
 ];
 
